@@ -1,0 +1,9 @@
+book_filename: "PhdThesis"
+chapter_name: "Chapter "
+delete_merged_file: true
+output_dir: "docs"
+new_session: yes
+
+rmd_files: # defines the .Rmd files to be included in each output format
+  html: ["index.Rmd"]
+  latex: ["index.Rmd"]
