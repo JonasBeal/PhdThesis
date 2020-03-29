@@ -1,0 +1,41 @@
+@article{MBMH19,
+abstract = {A persistent obstacle for constructing kinetic models of metabolism is uncertainty in the kinetic properties of enzymes. Currently, available methods for building kinetic models can cope indirectly with uncertainties by integrating data from different biological levels and origins into models. In this study, we use the recently proposed computational approach iSCHRUNK (in Silico Approach to Characterization and Reduction of Uncertainty in the Kinetic Models), which combines Monte Carlo parameter sampling methods and machine learning techniques, in the context of Bayesian inference. Monte Carlo parameter sampling methods allow us to exploit synergies between different data sources and generate a population of kinetic models that are consistent with the available data and physicochemical laws. The machine learning allows us to data-mine the a priori generated kinetic parameters together with the integrated datasets and derive posterior distributions of kinetic parameters consistent with the observed physiology. In this work, we used iSCHRUNK to address a design question: can we identify which are the kinetic parameters and what are their values that give rise to a desired metabolic behavior? Such information is important for a wide variety of studies ranging from biotechnology to medicine. To illustrate the proposed methodology, we performed Metabolic Control Analysis, computed the flux control coefficients of the xylose uptake (XTR), and identified parameters that ensure a rate improvement of XTR in a glucose-xylose co-utilizing S. cerevisiae strain. Our results indicate that only three kinetic parameters need to be accurately characterized to describe the studied physiology, and ultimately to design and control the desired responses of the metabolism. This framework paves the way for a new generation of methods that will systematically integrate the wealth of available omics data and efficiently extract the information necessary for metabolic engineering and synthetic biology decisions.},
+author = {Miskovic, Ljubisa and B{\'{e}}al, Jonas and Moret, Michael and Hatzimanikatis, Vassily},
+doi = {10.1371/journal.pcbi.1007242},
+file = {::},
+issn = {15537358},
+journal = {PLoS Computational Biology},
+publisher = {Public Library of Science},
+title = {{Uncertainty reduction in biochemical kinetic models: Enforcing desired model properties}},
+url = {https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007242},
+year = {2019}
+}
+@article{MBMH17,
+author = {Miskovic, Ljubisa and B{\'{e}}al, Jonas and Moret, Micha{\"{e}}l Roger Germain and Hatzimanikatis, Vassily},
+journal = {Biochemical & Molecular Engineering},
+keywords = {and genome,large,machine learning,reduction of uncertainty,scale kinetic models},
+title = {{Deciphering ambiguous control over fluxes through characterization and reduction of uncertainty}},
+url = {https://infoscience.epfl.ch/record/231346},
+year = {2017}
+}
+@inproceedings{MBMH18,
+author = {Miskovic, Ljubisa and Beal, Jonas and Moret, Michael and Hatzimanikatis, Vassily},
+booktitle = {5th Conference on Constraint-Based Reconstruction and Analysis},
+keywords = {kinetic models,machine learning,metabolism,uncertainty},
+month = {oct},
+title = {{Machine Learning for Uncertainty Reduction in Biochemical Kinetic Models}},
+year = {2018}
+}
+@article{BMTBC19,
+abstract = {Logical models of cancer pathways are typically built by mining the literature for relevant experimental observations. They are usually generic as they apply for large cohorts of individuals. As a consequence, they generally do not capture the heterogeneity of patient tumors and their therapeutic responses. We present here a novel framework, referred to as PROFILE, to tailor logical models to a particular biological sample such as a patient tumor. This methodology permits to compare the model simulations to individual clinical data, i.e., survival time. Our approach focuses on integrating mutation data, copy number alterations (CNA), and expression data (transcriptomics or proteomics) to logical models. These data need first to be either binarized or set between 0 and 1, and can then be incorporated in the logical model by modifying the activity of the node, the initial conditions or the state transition rates. The use of MaBoSS, a tool based on Monte-Carlo kinetic algorithm to perform stochastic simulations on logical models results in model state probabilities, and allows for a semi-quantitative study of the model phenotypes and perturbations. As a proof of concept, we use a published generic model of cancer signaling pathways and molecular data from METABRIC breast cancer patients. For this example, we test several combinations of data incorporation and discuss that, with these data, the most comprehensive patient-specific cancer models are obtained by modifying the nodes' activity of the model with mutations, in combination or not with CNA data, and altering the transition rates with RNA expression. We conclude that these model simulations show good correlation with clinical data such as patients' Nottingham prognostic index (NPI) subgrouping and survival time. We observe that two highly relevant cancer phenotypes derived from personalized models, Proliferation and Apoptosis, are biologically consistent prognostic factors: patients with both high proliferation and low apoptosis have the worst survival rate, and conversely. Our approach aims to combine the mechanistic insights of logical modeling with multi-omics data integration to provide patient-relevant models. This work leads to the use of logical modeling for precision medicine and will eventually facilitate the choice of patient-specific drug treatments by physicians.},
+author = {B{\'{e}}al, Jonas and Montagud, Arnau and Traynard, Pauline and Barillot, Emmanuel and Calzone, Laurence},
+doi = {10.3389/fphys.2018.01965},
+file = {::},
+issn = {1664-042X},
+journal = {Frontiers in Physiology},
+keywords = {Breast cancer,Data discretization,Logical models,Personalized mechanistic models,Personalized medicine,Stochastic simulations},
+publisher = {Frontiers Media S.A.},
+title = {{Personalization of Logical Models With Multi-Omics Data Allows Clinical Stratification of Patients}},
+url = {https://www.frontiersin.org/article/10.3389/fphys.2018.01965/full},
+year = {2019}
+}

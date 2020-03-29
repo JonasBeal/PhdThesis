@@ -4,7 +4,7 @@ bookdown::gitbook: # generating the gitbook (html) version of the thesis
   date: "`r Sys.Date()`"
   github-repo: JonasBeal/PhdThesis
   citation_package: none # natbib or biblatex - needs to be "none" in order to use the csl file
-  pandoc_args: ["--csl", "./csl/apa6.csl"] # specifies the csl file to be used
+  #pandoc_args: ["--csl", "./csl/apa6.csl"] # specifies the csl file to be used
   split_bib: false # if true, adds references at the end of each chapter
   # split_by: chapter # "none" creates only one html file
   config:
@@ -29,4 +29,4 @@ bookdown::pdf_book: # generating the pdf version of the thesis
   dev: "cairo_pdf" # plotting device
   toc: false # deactivates default table of contents
   highlight: pygments # code highlighting style
-  pandoc_args: ["--csl", "./csl/apa6.csl"] # specifies the .csl (citation style) file
+  #pandoc_args: ["--csl", "./csl/apa6.csl"] # specifies the .csl (citation style) file
