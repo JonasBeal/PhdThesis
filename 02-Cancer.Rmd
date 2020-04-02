@@ -1,0 +1,11 @@
+# What is cancer
+
+This is a test
+
+## Abc
+
+Bla bla
+
+```{r figure_test, message=FALSE, warning=FALSE,echo=FALSE}
+hist(rnorm(1000,mean = 10))
+```

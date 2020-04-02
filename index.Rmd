@@ -1,7 +1,7 @@
 --- 
-title: This is my title
+title: From mechanistic modelling of cancer to clinical interpretation and impact evaluation
 author: "" # defined in _output.yml
-date: "" # defined in _output.yml
+date: "15/09/2020" # defined in _output.yml
 site: bookdown::bookdown_site
 
 documentclass: memoir # using the memoir package
@@ -13,8 +13,59 @@ lof: false # deactivating the default list of figures
 link-citations: yes
 bibliography: [bib/thesis.bib]
 #nocite: '@ito_control_2008' # references appearing in the references section but not in text
+
+description: "This is my PhD thesis."
 ---
 
-# First header
+```{r setup, include=FALSE}
+#is_pdf_output = function() {
+#  knitr::opts_knit$get("rmarkdown.pandoc.to") =="latex"
+#}
+```
 
-This is a test
+```{r setupup, include=FALSE}
+#is_html_output = function() {
+#  knitr::opts_knit$get("rmarkdown.pandoc.to") =="html4"
+#}
+```
+
+```{r setsize, include=FALSE}
+#if(is_pdf_output()){
+#  size.fig = "70%"
+#} else {
+#  size.fig = "100%"
+#}
+
+
+```
+
+```{r index, echo=FALSE, results='asis', include = identical(knitr:::pandoc_to(), "html")}
+#
+cat("# PhD Thesis{-}
+by [Jonas Béal](http://jonasbeal.github.io)
+
+Supervised by Emmanuel Barillot, Laurence Calzone and Aurélien Latouche
+
+# Summary {-}
+
+English abstract.\n
+
+# Resumé {-}
+
+Résumé en français.\n
+
+# Acknowledgements {-}
+
+I would like to thank my supervisors ...
+
+Jury...
+
+Lab...
+
+Others...
+
+")
+
+
+```
+

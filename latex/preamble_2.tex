@@ -49,8 +49,8 @@
 % https://stackoverflow.com/questions/45963505/coverpage-and-copyright-notice-before-title-in-r-bookdown
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-%\let\oldmaketitle\maketitle
-%\AtBeginDocument{\let\maketitle\relax}
+\let\oldmaketitle\maketitle
+\AtBeginDocument{\let\maketitle\relax}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Add a lettrine to the very first character of the content %
@@ -283,3 +283,62 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\nomenclature[2]{#1 & #2 \\}
+
+\title{My title}
+
+\author{Jonas BEAL}
+
+\institute{l'Institut Curie}
+\doctoralschool{Complexite du Vivant}{515}
+
+\institute{l'Institut Curie}
+\doctoralschool{Complexité du Vivant}{515}
+\specialty{Génomique}
+\date{15 septembre 2020}
+
+%% cotutelle
+% \entitle{Thesis Subject in English}
+% \otherinstitute{CEA Saclay}
+% \logootherinstitute{logo-institute}
+
+\jurymember{1}{Test NOM}{Titre, Établissement}{Président}
+\jurymember{2}{Test NOM}{Titre, Établissement}{Rapporteur}
+\jurymember{3}{Test NOM}{Titre, Établissement}{Examinateur}
+\jurymember{4}{Test NOM}{Titre, Établissement}{Examinateur}
+\jurymember{5}{Emmanuel BARILLOT}{Institut Curie, INSERM, Mines ParisTech, PSL}{Directeur de thèse}
+\jurymember{6}{Aurélien LATOUCHE}{Institut Curie, Cnam}{Directeur de thèse}
+\jurymember{7}{Laurence CALZONE}{Institut Curie, INSERM, Mines ParisTech, PSL}{Co-encadrante de thèse}
+% \jurymember{9}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
+% \jurymember{10}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
+
+\frabstract{
+  Cuius acerbitati uxor grave accesserat incentivum,
+  germanitate Augusti turgida supra modum, quam Hannibaliano
+  regi fratris filio antehac Constantinus iunxerat pater,
+  Megaera quaedam mortalis, inflammatrix saevientis adsidua,
+  humani cruoris avida nihil mitius quam maritus; qui paulatim
+  eruditiores facti processu temporis ad nocendum per
+  clandestinos versutosque rumigerulos conpertis leviter
+  addere quaedam male suetos falsa et placentia sibi
+  discentes, adfectati regni vel artium nefandarum calumnias
+  insontibus adfligebant.
+
+}
+
+\enabstract{
+  Verum ad istam omnem orationem brevis est defensio. Nam
+  quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit
+  primum ipsius pudore, deinde etiam patris diligentia
+  disciplinaque munita. Qui ut huic virilem togam dedit nihil
+  dicam hoc loco de me; tantum sit, quantum vos existimatis;
+  hoc dicam, hunc a patre continuo ad me esse deductum; nemo
+  hunc M. Caelium in illo aetatis flore vidit nisi aut cum
+  patre aut mecum aut in M. Crassi castissima domo, cum
+  artibus honestissimis erudiretur.
+
+}
+
+\frkeywords{ Caesar licentia post honoratis haec adhibens urbium
+  honoratis nullum Caesar.}
+\enkeywords{ Delatus delatus nominatus
+  onere aut trahebatur quod tenus et bonorum.}

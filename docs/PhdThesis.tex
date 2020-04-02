@@ -23,12 +23,52 @@
 }{}
 \usepackage[unicode=true]{hyperref}
 \hypersetup{
-            pdftitle={This is my title},
+            pdftitle={From mechanistic modelling of cancer to clinical interpretation and impact evaluation},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{plainnat}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -58,6 +98,10 @@
 \let\oldsubparagraph\subparagraph
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Start preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{booktabs}
 \usepackage{amsthm}
 \usepackage{./cover/psl-cover} % specifies the path to the cover page template
@@ -68,6 +112,103 @@
 %  \thm@postskip=\thm@preskip
 %}
 %\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add a lettrine to the very first character of the content %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{lettrine} % supports various dropped capitals styles
+
+\newcommand{\initial}[1]{
+	\lettrine[lines=3,lhang=0.33,nindent=0em]{
+		\color{gray}
+     		{\textsc{#1}}}{}}
+     		
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Insert an empty page %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{afterpage} % executes command after the next page break
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    % \addtocounter{page}{-1}% % uncomment to increase page counter
+    \newpage
+    }
+
+\newcommand{\clearemptydoublepage}{\newpage{\thispagestyle{empty}\cleardoublepage}}
+
+%%%%%%%%%%%%%%%%%%
+% Epigraph style %
+%%%%%%%%%%%%%%%%%%
+
+\usepackage{epigraph} % provides commands to assist in the typesetting of a single epigraph
+
+\setlength\epigraphwidth{1\textwidth}
+\setlength\epigraphrule{0pt} % no line between
+\setlength\beforeepigraphskip{1\baselineskip} % space before and after epigraph
+\setlength\afterepigraphskip{2\baselineskip}
+\renewcommand*{\textflush}{flushright}
+\renewcommand*{\epigraphsize}{\normalsize\itshape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting
+%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{calc} % simple arithmetics in latex commands
+\usepackage{soul} % hyphenation for letterspacing, underlining, etc.
+
+\makeatletter
+\newlength\dlf@normtxtw
+\setlength\dlf@normtxtw{\textwidth}
+\newsavebox{\feline@chapter}
+\newcommand\feline@chapter@marker[1][4cm]{%
+	\sbox\feline@chapter{%
+		\resizebox{!}{#1}{\fboxsep=1pt%
+			\colorbox{gray}{\color{white}\thechapter}%
+		}}%
+		\rotatebox{90}{%
+			\resizebox{%
+				\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}%
+			{!}{\scshape\so\@chapapp}}\quad%
+		\raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
+}
+
+\newcommand\feline@chm[1][4cm]{%
+	\sbox\feline@chapter{\feline@chapter@marker[#1]}%
+	\makebox[0pt][c]{% aka \rlap
+		\makebox[1cm][r]{\usebox\feline@chapter}%
+	}}
+
+\makechapterstyle{daleifmodif}{
+\renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so}
+\renewcommand\chaptitlefont{\normalfont\Large\bfseries\scshape}
+\renewcommand\chapternamenum{} \renewcommand\printchaptername{}
+\renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par}
+\renewcommand\afterchapternum{\par\vskip\midchapskip}
+\renewcommand\printchaptertitle[1]{\color{gray}\chaptitlefont\raggedleft
+  \renewcommand\chaptername{Chapter}
+  ##1\par}
+}
+
+\makeatother
+\chapterstyle{daleifmodif}
+
+% The pages should be numbered consecutively at the bottom centre of the page
+\makepagestyle{myvf}
+\makeoddfoot{myvf}{}{\thepage}{}
+\makeevenfoot{myvf}{}{\thepage}{}
+\makeheadrule{myvf}{\textwidth}{\normalrulethickness}
+\makeevenhead{myvf}{\small\textsc{\leftmark}}{}{}
+\makeoddhead{myvf}{}{}{\small\textsc{\rightmark}}
+\pagestyle{myvf}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define cover page settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{My title}
 
@@ -88,8 +229,11 @@
 
 \jurymember{1}{Test NOM}{Titre, Établissement}{Président}
 \jurymember{2}{Test NOM}{Titre, Établissement}{Rapporteur}
+\jurymember{3}{Test NOM}{Titre, Établissement}{Examinateur}
 \jurymember{4}{Test NOM}{Titre, Établissement}{Examinateur}
-\jurymember{8}{Test NOM}{Titre, Établissement}{Directeur de thèse}
+\jurymember{5}{Emmanuel BARILLOT}{Institut Curie, INSERM, Mines ParisTech, PSL}{Directeur de thèse}
+\jurymember{6}{Aurélien LATOUCHE}{Institut Curie, Cnam}{Directeur de thèse}
+\jurymember{7}{Laurence CALZONE}{Institut Curie, INSERM, Mines ParisTech, PSL}{Co-encadrante de thèse}
 % \jurymember{9}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
 % \jurymember{10}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
 
@@ -111,7 +255,7 @@
   Verum ad istam omnem orationem brevis est defensio. Nam
   quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit
   primum ipsius pudore, deinde etiam patris diligentia
-  disciplinaque munita. Qui ut huic virilem togam dedit≈°nihil
+  disciplinaque munita. Qui ut huic virilem togam dedit nihil
   dicam hoc loco de me; tantum sit, quantum vos existimatis;
   hoc dicam, hunc a patre continuo ad me esse deductum; nemo
   hunc M. Caelium in illo aetatis flore vidit nisi aut cum
@@ -124,20 +268,148 @@
   honoratis nullum Caesar.}
 \enkeywords{ Delatus delatus nominatus
   onere aut trahebatur quod tenus et bonorum.}
+  
+\pagenumbering{roman}
 
-\title{This is my title}
-\date{}
+\title{From mechanistic modelling of cancer to clinical interpretation and
+impact evaluation}
+\date{15/09/2020}
 
 \begin{document}
 \maketitle
 
-{
-\setcounter{tocdepth}{1}
-\tableofcontents
-}
-\chapter{First header}\label{first-header}
+\chapter*{Abstract}
+
+\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed
+do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+\vspace{\baselineskip}
+
+\textbf{Key-words}:
+
+\chapter*{Résumé}
+
+\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed
+do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+officia deserunt mollit anim id est laborum
+
+\vspace{\baselineskip}
+
+\textbf{Mots-clés}:
+
+\afterpage{\blankpage}
+
+\chapter*{Acknowledgements}
+
+\initial{M}any persons to thanks. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+\clearemptydoublepage
+
+\renewcommand{\contentsname}{Table of contents}
+
+\maxtocdepth{subsection}
+
+\tableofcontents*
+\addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Page}\par\nobreak}
+\newpage
+
+\listoftables
+\addtocontents{lot}{\par\nobreak\textbf{{\scshape Table} \hfill Page}\par\nobreak}
+\newpage
+
+\listoffigures
+\addtocontents{lof}{\par\nobreak\textbf{{\scshape Figure} \hfill Page}\par\nobreak}
+\newpage
+
+\blankpage
+
+\pagenumbering{arabic}
+
+\part{Introduction}\label{part-introduction}
+
+\chapter{What is a model}\label{what-is-a-model}
+
+\epigraph{"Inner speech is nothing but speech to oneself"}{Sokolov, A. N. (1972)}
+
+\initial{T}his is a test
+
+\section{Abc}\label{abc}
+
+Bla bla is
+
+\includegraphics{01-Models_files/figure-latex/figure_test-1.pdf}
+
+\section{Cde}\label{cde}
+
+Let's try an external figure
+
+\includegraphics{01-Models_files/figure-latex/figure_ext-1.pdf}
+
+\chapter{What is cancer}\label{what-is-cancer}
 
 This is a test
+
+\section{Abc}\label{abc-1}
+
+Bla bla
+
+\includegraphics{02-Cancer_files/figure-latex/figure_test-1.pdf}
+
+\chapter{Test part}\label{test}
+
+This is a test
+
+\section{Abc}\label{abc-2}
+
+Bla bla ref \citet{MBMH19} and \citep{MBMH19}.
+
+But in \citet{BMTBC19} we have the Figure \ref{fig:nice-fig} as
+referenced in Chapter \ref{test}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{10-Test_files/figure-latex/nice-fig-1} 
+
+}
+
+\caption{Here is a nice figure!}\label{fig:nice-fig}
+\end{figure}
+
+And an external figure \ref{fig:test}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{cover/pictures/back-bg} 
+
+}
+
+\caption{Example pic}\label{fig:test}
+\end{figure}
 
 \bibliography{bib/thesis.bib}
 

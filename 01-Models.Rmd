@@ -1,0 +1,29 @@
+# (PART) Introduction {-}
+
+# What is a model
+
+\epigraph{"Inner speech is nothing but speech to oneself"}{Sokolov, A. N. (1972)}
+
+```{r smallChapDecon, results="asis", echo = FALSE}
+if(knitr::is_html_output()){
+cat("T")
+}
+```
+
+\initial{T}his is a test
+
+## Abc
+
+Bla bla is 
+
+```{r figure_test, message=FALSE, warning=FALSE,echo=FALSE}
+hist(rnorm(1000))
+```
+
+## Cde
+
+Let's try an external figure
+
+```{r figure_ext, message=FALSE, warning=FALSE,echo=FALSE}
+hist(rnorm(1000))
+```

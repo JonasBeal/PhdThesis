@@ -1,3 +1,9 @@
 [
-["index.html", "This is my title Chapter 1 First header", " This is my title Chapter 1 First header This is a test "]
+["index.html", "From mechanistic modelling of cancer to clinical interpretation and impact evaluation PhD Thesis", " From mechanistic modelling of cancer to clinical interpretation and impact evaluation 15/09/2020 PhD Thesis by Jonas Béal Supervised by Emmanuel Barillot, Laurence Calzone and Aurélien Latouche "],
+["summary.html", "Summary", " Summary English abstract. "],
+["resumé.html", "Resumé", " Resumé Résumé en français. "],
+["acknowledgements.html", "Acknowledgements", " Acknowledgements I would like to thank my supervisors … Jury… Lab… Others… "],
+["what-is-a-model.html", "Chapter 1 What is a model 1.1 Abc 1.2 Cde", " Chapter 1 What is a model T his is a test 1.1 Abc Bla bla is 1.2 Cde Let’s try an external figure "],
+["what-is-cancer.html", "Chapter 2 What is cancer 2.1 Abc", " Chapter 2 What is cancer This is a test 2.1 Abc Bla bla "],
+["test.html", "Chapter 3 Test part 3.1 Abc", " Chapter 3 Test part This is a test 3.1 Abc Bla bla ref Miskovic et al. (2019) and (Miskovic et al. 2019). But in Béal et al. (2019) we have the Figure 3.1 as referenced in Chapter 3 par(mar = c(4, 4, .1, .1)) plot(pressure, type = &#39;b&#39;, pch = 19) Figure 3.1: Here is a nice figure! And an external figure 3.2 Figure 3.2: Example pic "]
 ]
