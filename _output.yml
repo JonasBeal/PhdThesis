@@ -9,24 +9,26 @@ bookdown::gitbook: # generating the gitbook (html) version of the thesis
   # split_by: chapter # "none" creates only one html file
   config:
     toc:
+      before: |
+        <li><a href="./">PhD Thesis Jonas Béal</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank"> Powered by bookdown </a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
       collapse: none # section / subsection
       scroll_highlight: yes
     #edit: https://github.com/JonasBeal/PhdThesis/edit/master/%s
     search: yes
     download: null # only pdf by default
-    highlight: pygments
+    #highlight: pygments
 
 bookdown::pdf_book: # generating the pdf version of the thesis
-  #includes:
-  #  in_header: latex/preamble.tex # defines style and latex options
+  includes:
+    in_header: latex/preamble.tex # defines style and latex options
+    #before_body: latex/before_body.tex
   #  before_body: latex/before_body.tex # defines cover page
   latex_engine: xelatex # options are pdflatex, xelatex, or lualatex
-  citation_package: none # natbib or biblatex - needs to be "none" (using pandoc-citeproc) in order to use the csl file
+  citation_package: natbib # natbib or biblatex - needs to be "none" (using pandoc-citeproc) in order to use the csl file
   keep_tex: true # keeps the .tex file
   toc_appendix: true # adds the appendix part to the table of contents
-  dev: "cairo_pdf" # plotting device
-  toc: false # deactivates default table of contents
-  highlight: pygments # code highlighting style
+  #toc: false # deactivates default table of contents
+  #highlight: pygments # code highlighting style
   #pandoc_args: ["--csl", "./csl/apa6.csl"] # specifies the .csl (citation style) file

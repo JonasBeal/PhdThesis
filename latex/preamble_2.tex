@@ -1,0 +1,285 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Loading (other) relevant packages %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[latin1]{inputenc} % special characters with pdflatex
+%\usepackage[utf8]{inputenc} % special characters with pdflatex
+%\inputencoding{latin1} % special characters with pdflatex
+
+\usepackage{fontspec} % special characters (e.g., accents) with xelatex or lualatex
+\usepackage{pdflscape} % figures in landscape mode
+\usepackage{tikz} % creating graphic elements
+\usepackage{lscape} % figures or tables in landscape mode
+\usepackage{indentfirst} % indents first pragraph after section header
+\usepackage{float} % improves the interface for defining floating objects (e.g., figures or tables)
+\usepackage[flushleft]{threeparttable} % allows for three part tables with a specified notes section
+\usepackage[fulladjust]{marginnote} % provides the \marginnote command
+\usepackage{tcolorbox} % provides environment for colored boxes
+\usepackage{pdfpages} % simplifies the inclusion of PDF documents
+
+\usetikzlibrary{intersections} % used to determine lines intersections
+\tcbuselibrary{listings,breakable} % ...
+
+\usepackage{pifont} % provides commands for pi fonts (e.g., dingbats, symbol)
+\usepackage{graphicx} % provides optionnal arguments to the \includegraphics command
+\usepackage{geometry} % provides an easy and flexible user interface to customize page layout
+\usepackage{longtable} % allows writing tables that extend on several pages
+\usepackage{supertabular} % the predecessor of the longtable package
+\usepackage{scrextend} % uses components of KOMA-Script
+\usepackage{tabularx} % defines the tabularx environment
+\usepackage{lscape} % modifies the margins and rotates the page contents but not the page number.
+\usepackage{tabu} % provides flexible latex table environment (e.g., long table)
+\usepackage{array} % an extended implementation of the array and tabular environments
+\usepackage{subfig} % provides support for the manipulation and reference of small or ‘sub’ figures and tables within a single figure or table environment
+\usepackage{stackrel,amssymb}
+\usepackage{textcomp} % provides many text symbols
+\usepackage{setspace} % provides support for setting the spacing between lines
+\usepackage{microtype} % makes better looking pdf
+\usepackage{booktabs,caption,fixltx2e} % ...
+\usepackage[none]{hyphenat} % removes hyphenation
+\usepackage{./cover/psl-cover} % specifies the path to the cover page template
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Below is the by-default configuration of bookdown-demo            %
+% https://github.com/rstudio/bookdown-demo/blob/master/preamble.tex %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Remove default title %
+% https://stackoverflow.com/questions/45963505/coverpage-and-copyright-notice-before-title-in-r-bookdown
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\let\oldmaketitle\maketitle
+%\AtBeginDocument{\let\maketitle\relax}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add a lettrine to the very first character of the content %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%M
+
+\usepackage{lettrine} % supports various dropped capitals styles
+
+\newcommand{\initial}[1]{
+	\lettrine[lines=3,lhang=0.33,nindent=0em]{
+		\color{gray}
+     		{\textsc{#1}}}{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format of the page (block, header, margins, etc.)         %
+% https://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Sets the "real" paper size (already set by a4paper class option)
+% \setstocksize{11in}{8.5in}
+
+% Trimmed paper size (trimmed on the left and right)
+% \settrimmedsize{11in}{8.5in}{*}
+
+% Sets the \headheight and \footskip parameters (respectively)
+\setheadfoot{\onelineskip}{2\onelineskip}
+
+% Sets space between header and block
+\setheaderspaces{*}{2\onelineskip}{*}
+
+% Spine and trim page margins from main typeblock (left and right margins if oneside)
+\setlrmarginsandblock{25mm}{25mm}{*}
+
+% Top and bottom page margins from main typeblock
+\setulmarginsandblock{25mm}{*}{1}
+
+% Applies and enforces the layout
+\checkandfixthelayout
+
+% Ensures single spacing between sentences
+\frenchspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter style (taken and slightly modified from Lars Madsen Memoir Chapter) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts
+% -------------------------------------------------------
+% Best LaTeX fonts: https://r2src.github.io/top10fonts/
+% https://www.quora.com/Which-is-a-good-font-choice-for-writing-a-PhD-thesis-I-have-provisionally-chosen-CharterITC-but-I-am-not-sure-about-it-I-think-the-best-way-to-go-is-a-serif-font-but-I-dont-want-a-classic-look-but-something-more-updated
+%https://tex.stackexchange.com/questions/59702/suggest-a-nice-font-family-for-my-basic-latex-template-text-and-math/59706
+% https://www.overleaf.com/learn/latex/Font_typefaces
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{libertine} % nice font that works with the \oe. Breaks the cover page though.
+%\usepackage{mathpazo} % using the Palatino font (nice font but does not work with the \oe and breaks cover page)
+%\usepackage{palatino} % nice font but does not work with the \oe... and no math support
+%\usepackage{fouriernc} % font with math support: New Century Schoolbook (nice font but does not work with the \oe...)
+%\usepackage{charter} % using the Charter font (nice font but does not work with the \oe...)
+
+\usepackage{fourier} % using the Utopia font (nice font but does not work with the \oe...)
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting
+%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{calc} % simple arithmetics in latex commands
+\usepackage{soul} % hyphenation for letterspacing, underlining, etc.
+
+\makeatletter
+\newlength\dlf@normtxtw
+\setlength\dlf@normtxtw{\textwidth}
+\newsavebox{\feline@chapter}
+\newcommand\feline@chapter@marker[1][4cm]{%
+	\sbox\feline@chapter{%
+		\resizebox{!}{#1}{\fboxsep=1pt%
+			\colorbox{gray}{\color{white}\thechapter}%
+		}}%
+		\rotatebox{90}{%
+			\resizebox{%
+				\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}%
+			{!}{\scshape\so\@chapapp}}\quad%
+		\raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
+}
+
+\newcommand\feline@chm[1][4cm]{%
+	\sbox\feline@chapter{\feline@chapter@marker[#1]}%
+	\makebox[0pt][c]{% aka \rlap
+		\makebox[1cm][r]{\usebox\feline@chapter}%
+	}}
+
+\makechapterstyle{daleifmodif}{
+\renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so}
+\renewcommand\chaptitlefont{\normalfont\Large\bfseries\scshape}
+\renewcommand\chapternamenum{} \renewcommand\printchaptername{}
+\renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par}
+\renewcommand\afterchapternum{\par\vskip\midchapskip}
+\renewcommand\printchaptertitle[1]{\color{gray}\chaptitlefont\raggedleft
+  \renewcommand\chaptername{Chapter}
+  ##1\par}
+}
+
+\makeatother
+\chapterstyle{daleifmodif}
+
+% The pages should be numbered consecutively at the bottom centre of the page
+\makepagestyle{myvf}
+\makeoddfoot{myvf}{}{\thepage}{}
+\makeevenfoot{myvf}{}{\thepage}{}
+\makeheadrule{myvf}{\textwidth}{\normalrulethickness}
+\makeevenhead{myvf}{\small\textsc{\leftmark}}{}{}
+\makeoddhead{myvf}{}{}{\small\textsc{\rightmark}}
+\pagestyle{myvf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create summary box to put at the end of each chapter %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtcolorbox[]{summary}[2][]{fonttitle=\bfseries,title=#2,#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create explanation Box environment %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox[auto counter, number within = chapter, number freestyle = {\noexpand\thechapter.\noexpand\arabic{\tcbcounter}}]{mybox}[2][]{%
+    enhanced,
+    fonttitle = \bfseries,
+    title = Box~\thetcbcounter: #2,
+    #1
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Get the number of current chapter %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\getcurrentref[1]{
+ \ifnumequal{\value{#1}}{0}
+  {??}
+  {\the\value{#1}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Insert an empty page %
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{afterpage} % executes command after the next page break
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    % \addtocounter{page}{-1}% % uncomment to increase page counter
+    \newpage
+    }
+
+\newcommand{\clearemptydoublepage}{\newpage{\thispagestyle{empty}\cleardoublepage}}
+
+%%%%%%%%%%%%%%%%%%
+% Epigraph style %
+%%%%%%%%%%%%%%%%%%
+
+\usepackage{epigraph} % provides commands to assist in the typesetting of a single epigraph
+
+\setlength\epigraphwidth{1\textwidth}
+\setlength\epigraphrule{0pt} % no line between
+\setlength\beforeepigraphskip{1\baselineskip} % space before and after epigraph
+\setlength\afterepigraphskip{2\baselineskip}
+\renewcommand*{\textflush}{flushright}
+\renewcommand*{\epigraphsize}{\normalsize\itshape}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Break url in LOFs %
+%%%%%%%%%%%%%%%%%%%%%
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref} % extensive support for hypertext in latex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fixing landscape tables %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% solution from https://github.com/crsh/papaja/issues/287
+
+% Manuscript styling
+\usepackage{csquotes} % provides advanced facilities for inline and display quotations.
+\usepackage{upgreek} % provides the upright Greek letters from the Euler or Adobe Symbol fonts
+\captionsetup{font=singlespacing,justification=justified}
+
+% Table formatting
+% \usepackage{longtable} % allows writing tables that extend on several pages
+% \usepackage{lscape} % figures or tables in landscape mode
+% \usepackage[counterclockwise]{rotating} % Landscape page setup for large tables
+\usepackage{multirow}	% table styling
+\usepackage{tabularx}	% control column width
+\usepackage[flushleft]{threeparttable} % allows for three part tables with a specified notes section
+\usepackage{threeparttablex} % lets threeparttable work with longtable
+
+% Create new environments so endfloat can handle them
+% \newenvironment{ltable}
+%   {\begin{landscape}\begin{center}\begin{threeparttable}}
+%   {\end{threeparttable}\end{center}\end{landscape}}
+\newenvironment{lltable}{\begin{landscape}\begin{center}\begin{ThreePartTable}}{\end{ThreePartTable}\end{center}\end{landscape}}
+
+% Enables adjusting longtable caption width to table width
+% Solution found at http://golatex.de/longtable-mit-caption-so-breit-wie-die-tabelle-t15767.html
+\makeatletter
+\newcommand\LastLTentrywidth{1em}
+\newlength\longtablewidth
+\setlength{\longtablewidth}{1in}
+\newcommand{\getlongtablewidth}{\begingroup \ifcsname LT@\roman{LT@tables}\endcsname \global\longtablewidth=0pt \renewcommand{\LT@entry}[2]{\global\advance\longtablewidth by ##2\relax\gdef\LastLTentrywidth{##2}}\@nameuse{LT@\roman{LT@tables}} \fi \endgroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% My (APA6) caption style %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{caption} % provides many ways to customise captions in floating environments
+\captionsetup[figure]{labelsep=period,labelfont={it,normalsize},textfont={normalsize}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Removing extra vertical blank spaces between paragraphs %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\raggedbottom
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Command used in the manual list of abbreviations %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\nomenclature[2]{#1 & #2 \\}
