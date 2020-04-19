@@ -33,3 +33,4 @@ And an external figure \@ref(fig:test)
 
 \caption{Example pic}(\#fig:test)
 \end{figure}
+

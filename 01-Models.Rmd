@@ -2,15 +2,26 @@
 
 # What is a model
 
-\epigraph{"Inner speech is nothing but speech to oneself"}{Sokolov, A. N. (1972)}
 
-```{r smallChapDecon, results="asis", echo = FALSE}
-if(knitr::is_html_output()){
-cat("T")
-}
+
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\epigraph{"Inner speech is nothing but speech to oneself"}{Sokolov, A. N. (1972)}')
 ```
 
-\initial{T}his is a test
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\initial{T}his is a test')
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output(
+  '>"If it weren\'t for my lawyer, I\'d still be in prison"
+  >Sokolov, A. N. (1972)')
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output('This is a test')
+```
+
 
 ## Abc
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  2 APR 2020 19:19
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  17 APR 2020 17:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1631,7 +1631,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [2]
 File: 01-Models_files/figure-latex/figure_test-1.pdf Graphic file (type QTm)
 <use  "01-Models_files/figure-latex/figure_test-1.pdf" >
-Overfull \hbox (18.01814pt too wide) in paragraph at lines 358--359
+Overfull \hbox (18.01262pt too wide) in paragraph at lines 358--359
 [][] 
  []
 
@@ -1643,70 +1643,79 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 File: 01-Models_files/figure-latex/figure_ext-1.pdf Graphic file (type QTm)
 <use  "01-Models_files/figure-latex/figure_ext-1.pdf" >
-Overfull \hbox (18.01262pt too wide) in paragraph at lines 364--365
+Overfull \hbox (18.01814pt too wide) in paragraph at lines 364--365
 [][] 
  []
 
 [4]
-File: 02-Cancer_files/figure-latex/figure_test-1.pdf Graphic file (type QTm)
-<use  "02-Cancer_files/figure-latex/figure_test-1.pdf" >
-Overfull \hbox (18.01262pt too wide) in paragraph at lines 374--375
+Overfull \hbox (21.00813pt too wide) in paragraph at lines 379--448
 [][] 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 [5
 
-] [6
+]
+Overfull \hbox (112.10411pt too wide) in paragraph at lines 453--522
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[6] [7] [8
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 387.
+Package xcolor Warning: Incompatible color definition on input line 534.
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 389.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 536.
 
-Package xcolor Warning: Incompatible color definition on input line 392.
+Package xcolor Warning: Incompatible color definition on input line 539.
 
 
-Package xcolor Warning: Incompatible color definition on input line 392.
+Package xcolor Warning: Incompatible color definition on input line 539.
 
 File: 10-Test_files/figure-latex/nice-fig-1.pdf Graphic file (type QTm)
 <use  "10-Test_files/figure-latex/nice-fig-1.pdf" >
 File: cover/pictures/back-bg.png Graphic file (type QTm)
-<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [7] [8]) [9
+<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [9] [10]) [11
 
-] [10
+] [12
 
 
-] [11]
+] [13]
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 416.
+(Font)              scaled to size 9.14278pt on input line 563.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 416--416
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 563--563
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 416.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 563.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 416.
+(Font)              <11> on input line 563.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 416.
+(Font)              <7.69997> on input line 563.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 416.
+(Font)              <5.5> on input line 563.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 416--416
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 416--416
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 563--563
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 416--416
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 563--563
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 563--563
 [][] 
  []
 
@@ -1719,23 +1728,23 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 416--416
 \tf@lof=\write9
 \openout9 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
-[12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 563.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 563.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 416.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 416.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 563.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 563.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 35420 strings out of 493005
- 664911 string characters out of 6134597
- 784564 words of memory out of 5000000
- 38858 multiletter control sequences out of 15000+600000
- 48961 words of font info for 107 fonts, out of 8000000 for 9000
+ 35423 strings out of 493005
+ 664944 string characters out of 6134597
+ 816566 words of memory out of 5000000
+ 38860 multiletter control sequences out of 15000+600000
+ 48969 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,14n,120p,10407b,963s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PhdThesis.pdf (24 pages).
+Output written on PhdThesis.pdf (26 pages).

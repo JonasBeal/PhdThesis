@@ -18,3 +18,4 @@ And an external figure \@ref(fig:test)
 ```{r test, echo=FALSE, out.width = "45%", fig.cap = "Example pic", fig.align='center'}
 knitr::include_graphics("cover/pictures/back-bg.png")
 ```
+
