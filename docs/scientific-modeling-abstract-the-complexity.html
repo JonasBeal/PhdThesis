@@ -21,6 +21,7 @@
   <meta name="twitter:description" content="This is my PhD thesis." />
   
 
+<meta name="author" content="" />
 
 
 
@@ -51,41 +52,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -110,9 +136,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="part"><span><b>I Cells and their models</b></span></li>
 <li class="chapter" data-level="1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html"><i class="fa fa-check"></i><b>1</b> Scientific modeling: abstract the complexity</a><ul>
-<li class="chapter" data-level="1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#what-is-a-model"><i class="fa fa-check"></i><b>1.1</b> What is a model?</a></li>
-<li class="chapter" data-level="1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#statistical-modeling"><i class="fa fa-check"></i><b>1.2</b> Statistical modeling</a></li>
-<li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#mechanistic-modeling"><i class="fa fa-check"></i><b>1.3</b> Mechanistic modeling</a></li>
+<li class="chapter" data-level="1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#what-is-a-model"><i class="fa fa-check"></i><b>1.1</b> What is a model?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#in-your-own-words"><i class="fa fa-check"></i><b>1.1.1</b> In your own words</a></li>
+<li class="chapter" data-level="1.1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#material-or-formal"><i class="fa fa-check"></i><b>1.1.2</b> Material or formal</a></li>
+<li class="chapter" data-level="1.1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#back-to-cancer"><i class="fa fa-check"></i><b>1.1.3</b> Back to cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#an-ideal-world"><i class="fa fa-check"></i><b>1.2</b> An ideal world</a></li>
+<li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#statistical-or-mechanistic-modeling"><i class="fa fa-check"></i><b>1.3</b> Statistical or mechanistic modeling</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="what-is-cancer.html"><a href="what-is-cancer.html"><i class="fa fa-check"></i><b>2</b> What is cancer</a><ul>
 <li class="chapter" data-level="2.1" data-path="what-is-cancer.html"><a href="what-is-cancer.html#abc"><i class="fa fa-check"></i><b>2.1</b> Abc</a></li>
@@ -143,7 +173,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="scientific-modeling-abstract-the-complexity" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Scientific modeling: abstract the complexity</h1>
 <blockquote>
-<p>“Ce qui est simple est toujours faux. Ce qui ne l’est pas est inutilisable.” Paul Valéry (Mauvaises pensées et autres, 1942)</p>
+<p><em>Ce qui est simple est toujours faux. Ce qui ne l’est pas est inutilisable.</em><br/>
+Paul Valéry (Mauvaises pensées et autres, 1942)</p>
 </blockquote>
 <p>The notion of modeling is embedded in science, to the point that it has sometimes been used to define the very nature of scientific research. What is called a model can, however, correspond to very different realities which need to be defined before addressing the object of this thesis which will consist, if one wants to be mischievous, in analyzing models with other models. This semantic elucidation is all the more necessary as this thesis is interdisciplinary, suspended between systems biology and biostatistics. In order to convince the reader of the need for such a preamble, he is invited to ask a statistician and a biologist how they would define what a model is.</p>
 <div class="figure" style="text-align: center"><span id="fig:orrery"></span>
@@ -155,34 +186,78 @@ Figure 1.1: <strong>A scientist and his model.</strong> Joseph Wright of Derby, 
 
 <div id="what-is-a-model" class="section level2">
 <h2><span class="header-section-number">1.1</span> What is a model?</h2>
-<p>A model is first of all an ambiguous object and a polysemous word.Among the many meanings proposed by the dictionary <a href="#fig:visualThesaurus"><strong>??</strong></a>, several even find echoes in scientific practice. It is sometimes a question of the physical representation of an object, often on a reduced scale, and sometimes of a theoretical description intended to facilitate the understanding of the way in which a system works, or even sometimes an ideal to achieve <span class="citation">(Collins <a href="test.html#ref-dictionnarymodel">2020</a>)</span>.</p>
+<!-- Generic intro -->
+<div id="in-your-own-words" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> In your own words</h3>
+<p>A model is first of all an ambiguous object and a polysemous word. It therefore seems necessary to start with a semantic study. Among the many meanings and synonymous proposed by the dictionary (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:visual-thesaurus">1.2</a>), while some definitions are more related to art, several find echoes in scientific practice. It is sometimes a question of the physical representation of an object, often on a reduced scale as in Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:orrery">1.1</a>, and sometimes of a theoretical description intended to facilitate the understanding of the way in which a system works <span class="citation">(Collins <a href="test.html#ref-dictionnarymodel">2020</a>)</span>. It is even sometimes an ideal to be reached and therefore an ambitious prospect for an introduction.</p>
 <div class="figure" style="text-align: center"><span id="fig:visual-thesaurus"></span>
-<img src="fig/visualThesaurus.pdf" alt="Network visualization of model thesaurus entries. Generated with the ‘Visual Thesaurus’ ressource" width="90%" />
+<img src="fig/visualThesaurus.png" alt="Network visualization of model thesaurus entries. Generated with the ‘Visual Thesaurus’ ressource" width="90%" />
 <p class="caption">
 Figure 1.2: <strong>Network visualization of <em>model</em> thesaurus entries.</strong> Generated with the <a href="https://www.visualthesaurus.com">‘Visual Thesaurus’</a> ressource
 </p>
 </div>
 
-<p>Different conceptions between scientists but common patterns <span class="citation">(Bailer-Jones <a href="test.html#ref-bailer2002scientists">2002</a>)</span>: models provide insights about the topic under investigation, often at a cost of simplification. Not required to be right but should be valid (depends on the objective). May be able to predict or at least to test.</p>
-<p>Pubmed tree</p>
-<p>Material/physical models (from orrery to drosophila) Formal/theoretical models</p>
-<p>“No substantial part of the universe is so simple that it can be grasped and controlled without abstraction. Abstraction consists in replacing the part of the universe under consideration by a model of similar but simpler structure. Models, formal and intellectual on the one hand, or material on the other, are thus a central necessity of scientific procedure.” <a href="https://www.nemenmanlab.org/~ilya/images/9/99/Rosenblueth-wiener-1945.pdf" class="uri">https://www.nemenmanlab.org/~ilya/images/9/99/Rosenblueth-wiener-1945.pdf</a></p>
-<p>Philosophy <span class="citation">(Frigg and Hartmann <a href="test.html#ref-frigg2006models">2020</a>)</span></p>
-<p>Galilean idealization with reality distortion But even toy models for salient features</p>
-<p>Historically physical models</p>
+<!-- For scientists -->
+<p>The narrower perspective of the scientist does not reduce the completeness of the dictionary’s description to an unambiguous object <span class="citation">(Bailer-Jones <a href="test.html#ref-bailer2002scientists">2002</a>)</span>. In an attempt to approach these mult-faceted objects that are the models, Daniela Bailer-Jones interviewed different scientists and asked them the same question: what is a model? Across the different profiles and fields of study, the answers vary but some patterns begin to emerge (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:interviews">1.3</a>). A model must capture the essence of the phenomenon being studied. Because it eludes, voluntarily or not, many details or complexity, it is by nature a simplification of the phenomenon. These limitations may restrict its validity to certain cases or suspend it to the fulfilment of some hypotheses. They are not necessarily predictive, but they must be able to generate new hypotheses, be tested and possibly questioned. Finally, and fundamentally, they must provide insights about the object of study and contribute to its understanding.</p>
+<div class="figure" style="text-align: center"><span id="fig:interviews"></span>
+<img src="01-Models_files/figure-html/interviews-1.png" alt="Scientists talk about their models: words cloud. Cloud of words summarizing the lexical fields used by scientists to talk about their models in dedicated interviews (Bailer-Jones 2002)." width="90%" />
+<p class="caption">
+Figure 1.3: <strong>Scientists talk about their models: words cloud.</strong> Cloud of words summarizing the lexical fields used by scientists to talk about their models in dedicated interviews <span class="citation">(Bailer-Jones <a href="test.html#ref-bailer2002scientists">2002</a>)</span>.
+</p>
+</div>
+
+<p>These definitions circumscribe the <em>model</em> object, its use and its objectives, but they do not in any way describe its nature. And for good reason, because even if we agree on the described contours, the biodiversity of the models remains overwhelming for taxonomists:</p>
+<blockquote>
+<p><em>Probing models, phenomenological models, computational models, developmental models, explanatory models, impoverished models, testing models, idealized models, theoretical models, scale models, heuristic models, caricature models, exploratory models, didactic models, fantasy models, minimal models, toy models, imaginary models, mathematical models, mechanistic models, substitute models, iconic models, formal models, analogue models, and instrumental models are but some of the notions that are used to categorize models.</em><br/>
+<span class="citation">(Frigg and Hartmann <a href="test.html#ref-frigg2020models">2020</a>)</span></p>
+</blockquote>
+</div>
+<div id="material-or-formal" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Material or formal</h3>
+<p>Without claiming to be exhaustive, we can make a first simple dichotomy between physical/material and formal/intellectual models <span class="citation">(Rosenblueth and Wiener <a href="test.html#ref-rosenblueth1945role">1945</a>)</span>. The former consist in replacing the object of study by another object, just as physical but nevertheless simpler or better known. These may be models involving a change of scale such as the simple miniature replica placed in a wind tunnel, or the metal double helix model used by Watson and Crick to visualize DNA. In all these cases the model allows to visualize the object of study to manipulate it and play with it to better understand or explain, just like the scientist with his orrery (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:orrery">1.1</a>). In the case of biology, we will think mainly of model organisms such as drosophila, zebrafish or mice, for example. We then benefit from the relative simplicity of their genomes, a shorter time scale or ethical differences, usually to elucidate mechanisms of interest in humans. Correspondence between the target system and its model can sometimes be more conceptual, such as that ones relying on mechanical–electrical analogies: a mechanical system (e.g. a spring-mass system) can sometimes be represented by an electric network (e.g. a RLC circuit).</p>
+<p>The model is then no longer simply a mimetic replica but is based on an intellectual equivalence: we are gradually moving into the realm of formal models. these are of a more symbolic nature and they represent the orgiginal system with a set of logical or mathematical terms, describing the main driving forces with similar structural properties. Historically these models have often been expressed by sets of mathematical equations or relationships. Increasingly, these have been implemented by computer. Despite their sometimes less analytical and more numerical nature, many so-called computational models could also belong to this category of formal models.</p>
+<p>play also</p>
+</div>
+<div id="back-to-cancer" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Back to cancer</h3>
+<p>As we get closer and closer to the subject of our study, and in order to illustrate these definitions more concretely, we can take an interest in the meaning of the word <em>model</em> in the context of cancer research. For this, we restrict our corpus to articles responding to the “cancer model” search in the Pubmed article database. Among these, we look at the occurrences of the word <em>model</em> and the sentences in which it is included. This cancer-related context of model is represented as a tree in Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:pubmed-tree">1.4</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:pubmed-tree"></span>
+<img src="fig/pubmed-tree.png" alt="Tree visualization of model semantic context in cancer-related literature Generated with the ‘PubTrees’ tool by Ed Sperr, and based on most relevant PubMed entries for “cancer model” search." width="90%" />
+<p class="caption">
+Figure 1.4: <strong>Tree visualization of <em>model</em> semantic context in cancer-related literature</strong> Generated with the <a href="https://esperr.github.io/pub-trees/">‘PubTrees’</a> tool by Ed Sperr, and based on most relevant PubMed entries for “cancer model” search.
+</p>
+</div>
+
+<p>In vivo, in vitro, in silico</p>
+</div>
+</div>
+<div id="an-ideal-world" class="section level2">
+<h2><span class="header-section-number">1.2</span> An ideal world</h2>
+<p>Before illustrating these definitions with a few examples, it is important to highlight one of the most important points already introduced in a concise manner by Valéry at the beginning of this chapter. Models are simplified representations of reality and by extension they are always wrong to a certain extent.</p>
+<blockquote>
+<p><em>No substantial part of the universe is so simple that it can be grasped and controlled without abstraction. Abstraction consists in replacing the part of the universe under consideration by a model of similar but simpler structure. Models, formal and intellectual on the one hand, or material on the other, are thus a central necessity of scientific procedure.</em><br/>
+<span class="citation">(Rosenblueth and Wiener <a href="test.html#ref-rosenblueth1945role">1945</a>)</span></p>
+</blockquote>
+<p><a href="https://www.nemenmanlab.org/~ilya/images/9/99/Rosenblueth-wiener-1945.pdf" class="uri">https://www.nemenmanlab.org/~ilya/images/9/99/Rosenblueth-wiener-1945.pdf</a></p>
+<p>Philosophy <span class="citation">(Frigg and Hartmann <a href="test.html#ref-frigg2020models">2020</a>)</span></p>
+<p>Galilean idealization with reality distortion
+But even toy models for salient features</p>
 <p>Then mathematics as a language</p>
 <p>Statistical models with a priori knowledge</p>
-<p>In vivo, in vitro, in silico,</p>
+<p>Mechanistic to explain observation –&gt; epicycle Ptolémée</p>
 </div>
-<div id="statistical-modeling" class="section level2">
-<h2><span class="header-section-number">1.2</span> Statistical modeling</h2>
+<div id="statistical-or-mechanistic-modeling" class="section level2">
+<h2><span class="header-section-number">1.3</span> Statistical or mechanistic modeling</h2>
 <p>Within formal models -&gt; 2 kinds</p>
 <p><span class="citation">(Baker et al. <a href="test.html#ref-baker2018mechanistic">2018</a>)</span></p>
 <p><a href="https://gosilico.com/technology/mechanistic-vs-statistical-models/" class="uri">https://gosilico.com/technology/mechanistic-vs-statistical-models/</a></p>
+<p>Mechanistic already answer the “how” –&gt; causality inside
+Breiman –&gt; Inside the box</p>
+<p><a href="https://theartofmodelling.wordpress.com/2012/02/19/mechanistic-models-what-is-the-value-of-understanding/" class="uri">https://theartofmodelling.wordpress.com/2012/02/19/mechanistic-models-what-is-the-value-of-understanding/</a></p>
+<p>Example with data, stat and mech for Lotka-Volterra
+<a href="https://mc-stan.org/users/documentation/case-studies/lotka-volterra-predator-prey.html" class="uri">https://mc-stan.org/users/documentation/case-studies/lotka-volterra-predator-prey.html</a>
+<a href="http://www2.nau.edu/lrm22/lessons/predator_prey/predator_prey.html" class="uri">http://www2.nau.edu/lrm22/lessons/predator_prey/predator_prey.html</a></p>
 <p><img src="01-Models_files/figure-html/figure_ext-1.png" width="672" /></p>
-</div>
-<div id="mechanistic-modeling" class="section level2">
-<h2><span class="header-section-number">1.3</span> Mechanistic modeling</h2>
 
 </div>
 </div>
@@ -236,7 +311,7 @@ gitbook.start({
 },
 "download": ["PhdThesis.pdf"],
 "toc": {
-"collapse": "none",
+"collapse": "section",
 "scroll_highlight": true
 },
 "search": true

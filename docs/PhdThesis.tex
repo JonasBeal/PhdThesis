@@ -1,3 +1,6 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
 \documentclass[a4paper,12pt,twoside,onecolumn,openright,final,oldfontcommands]{memoir}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -6,29 +9,30 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage{microtype}
+\usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage[unicode=true]{hyperref}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
 \hypersetup{
             pdftitle={From mechanistic modelling of cancer to clinical interpretation and impact evaluation},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{plainnat}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -38,38 +42,40 @@
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\ImportTok}[1]{{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
-\newcommand{\BuiltInTok}[1]{{#1}}
-\newcommand{\ExtensionTok}[1]{{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\NormalTok}[1]{{#1}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -79,12 +85,6 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -98,6 +98,12 @@
 \let\oldsubparagraph\subparagraph
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Start preamble
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -270,9 +276,10 @@
   onere aut trahebatur quod tenus et bonorum.}
   
 \pagenumbering{roman}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
 
-\title{From mechanistic modelling of cancer to clinical interpretation and
-impact evaluation}
+\title{From mechanistic modelling of cancer to clinical interpretation and impact evaluation}
 \date{15/09/2020}
 
 \begin{document}
@@ -280,14 +287,9 @@ impact evaluation}
 
 \chapter*{Abstract}
 
-\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed
-do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat.
+\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 \vspace{\baselineskip}
 
@@ -295,14 +297,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 \chapter*{Résumé}
 
-\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed
-do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-officia deserunt mollit anim id est laborum
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 \vspace{\baselineskip}
 
@@ -312,19 +309,13 @@ officia deserunt mollit anim id est laborum
 
 \chapter*{Acknowledgements}
 
-\initial{M}any persons to thanks. Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\initial{M}any persons to thanks. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 \clearemptydoublepage
 
 \renewcommand{\contentsname}{Table of contents}
-
 \maxtocdepth{subsection}
 
 \tableofcontents*
@@ -343,25 +334,38 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 \pagenumbering{arabic}
 
-\part{Cells and their
-models}\label{part-cells-and-their-models}
+\hypertarget{part-cells-and-their-models}{%
+\part{Cells and their models}\label{part-cells-and-their-models}}
 
-\chapter{Scientific modeling: abstract the
-complexity}\label{scientific-modeling-abstract-the-complexity}
+\hypertarget{scientific-modeling-abstract-the-complexity}{%
+\chapter{Scientific modeling: abstract the complexity}\label{scientific-modeling-abstract-the-complexity}}
 
 \epigraph{"Ce qui est simple est toujours faux. Ce qui ne l'est pas est inutilisable."}{Paul Valéry (Mauvaises pensées et autres, 1942)}
 
-\initial{T}he notion of modeling is embedded in science, to the point
-that it has sometimes been used to define the very nature of scientific
-research. What is called a model can, however, correspond to very
-different realities which need to be defined before addressing the
-object of this thesis which will consist, if one wants to be
-mischievous, in analyzing models with other models. This semantic
-elucidation is all the more necessary as this thesis is
-interdisciplinary, suspended between systems biology and biostatistics.
-In order to convince the reader of the need for such a preamble, he is
-invited to ask a statistician and a systems biologist the question how
-they would define what a model is.
+\initial{T}he notion of modeling is embedded in science, to the point that it has sometimes been used to define the very nature of scientific research. What is called a model can, however, correspond to very different realities which need to be defined before addressing the object of this thesis which will consist, if one wants to be mischievous, in analyzing models with other models. This semantic elucidation is all the more necessary as this thesis is interdisciplinary, suspended between systems biology and biostatistics. In order to convince the reader of the need for such a preamble, he is invited to ask a statistician and a systems biologist the question how they would define what a model is.
+
+\begin{verbatim}
+## [[1]]
+## [1] TRUE
+## 
+## [[2]]
+## [1] TRUE
+## 
+## [[3]]
+## [1] TRUE
+## 
+## [[4]]
+## [1] TRUE
+## 
+## [[5]]
+## [1] TRUE
+## 
+## [[6]]
+## [1] TRUE
+## 
+## [[7]]
+## [1] TRUE
+\end{verbatim}
 
 \begin{figure}
 
@@ -369,26 +373,15 @@ they would define what a model is.
 
 }
 
-\caption[A scientist and his model]{\textbf{A scientist and his model.} Joseph Wright
-of Derby, \emph{A Philosopher Giving a Lecture at the Orrery (in which a
-lamp is put in place of the sun)}, c. 1763-65, oil on canvas, Derby
-Museums and Art Gallery}\label{fig:orrery}
+\caption[A scientist and his model]{\textbf{A scientist and his model.} Joseph Wright of Derby, \emph{A Philosopher Giving a Lecture at the Orrery (in which a lamp is put in place of the sun)}, c. 1763-65, oil on canvas, Derby Museums and Art Gallery}\label{fig:orrery}
 \end{figure}
 
 
 
+\hypertarget{what-is-a-model}{%
+\section{What is a model?}\label{what-is-a-model}}
 
-
-
-\section{What is a model?}\label{what-is-a-model}
-
-A model is first of all an ambiguous object and a polysemous word.Among
-the many meanings proposed by the dictionary \ref{fig:visualThesaurus},
-several even find echoes in scientific practice. It is sometimes a
-question of the physical representation of an object, often on a reduced
-scale, and sometimes of a theoretical description intended to facilitate
-the understanding of the way in which a system works, or even sometimes
-an ideal to achieve \citep{dictionnarymodel}.
+A model is first of all an ambiguous object and a polysemous word. It therefore seems necessary to start with a semantic study. Among the many meanings and synonymous proposed by the dictionary \ref{fig:visual-thesaurus}, while some definitions are more related to art, several find echoes in scientific practice. It is sometimes a question of the physical representation of an object, often on a reduced scale \ref{fig:orrery}, and sometimes of a theoretical description intended to facilitate the understanding of the way in which a system works \citep{dictionnarymodel}. It is even sometimes an ideal to be reached and therefore an ambitious prospect for an introduction.
 
 \begin{figure}
 
@@ -396,38 +389,36 @@ an ideal to achieve \citep{dictionnarymodel}.
 
 }
 
-\caption[Network visualization of *model* thesaurus entries]{\textbf{Network visualization of
-\emph{model} thesaurus entries.} Generated with the
-\href{https://www.visualthesaurus.com}{`Visual Thesaurus'} ressource}\label{fig:visual-thesaurus}
+\caption[Network visualization of *model* thesaurus entries]{\textbf{Network visualization of \emph{model} thesaurus entries.} Generated with the \href{https://www.visualthesaurus.com}{`Visual Thesaurus'} ressource}\label{fig:visual-thesaurus}
 \end{figure}
 
 
 
+The narrower perspective of the scientist does not reduce the completeness of the dictionary's description to an unambiguous object \citep{bailer2002scientists}. In an attempt to approach these mult-faceted objects that are the models, Daniela Bailer-Jones interviewed different scientists and asked them the same question: what is a model? Across the different profiles and fields of study, the answers vary but some patterns begin to emerge \ref{fig:interviews}. A model must capture the essence of the phenomenon being studied. Because it eludes, voluntarily or not, many details or complexity, it is by nature a simplification of the phenomenon. These limitations may restrict its validity to certain cases or suspend it to the fulfilment of some hypotheses. They are not necessarily predictive, but they must be able to generate new hypotheses, be tested and possibly questioned. Finally, and fundamentally, they must provide insights about the object of study and contribute to its understanding.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{01-Models_files/figure-latex/interviews-1} 
+
+}
+
+\caption[Scientists talk about their models: words cloud.]{\textbf{Scientists talk about their models: words cloud.} Cloud of words summarizing the lexical fields used by scientists to talk about their models in dedicated interviews \citep{bailer2002scientists}.}\label{fig:interviews}
+\end{figure}
 
 
-Different conceptions between scientists but common patterns
-\citep{bailer2002scientists}: models provide insights about the topic
-under investigation, often at a cost of simplification. Not required to
-be right but should be valid (depends on the objective). May be able to
-predict or at least to test.
 
 Pubmed tree
 
-Material/physical models (from orrery to drosophila) Formal/theoretical
-models
+Material/physical models (from orrery to drosophila)
+Formal/theoretical models
 
-``No substantial part of the universe is so simple that it can be
-grasped and controlled without abstraction. Abstraction consists in
-replacing the part of the universe under consideration by a model of
-similar but simpler structure. Models, formal and intellectual on the
-one hand, or material on the other, are thus a central necessity of
-scientific procedure.''
+``No substantial part of the universe is so simple that it can be grasped and controlled without abstraction. Abstraction consists in replacing the part of the universe under consideration by a model of similar but simpler structure. Models, formal and intellectual on the one hand, or material on the other, are thus a central necessity of scientific procedure.''
 \url{https://www.nemenmanlab.org/~ilya/images/9/99/Rosenblueth-wiener-1945.pdf}
 
-Philosophy \citep{frigg2006models}
+Philosophy \citep{frigg2020models}
 
-Galilean idealization with reality distortion But even toy models for
-salient features
+Galilean idealization with reality distortion
+But even toy models for salient features
 
 Historically physical models
 
@@ -437,7 +428,10 @@ Statistical models with a priori knowledge
 
 In vivo, in vitro, in silico,
 
-\section{Statistical modeling}\label{statistical-modeling}
+Mechanistic to explain observation --\textgreater{} epicycle Ptolémée
+
+\hypertarget{statistical-modeling}{%
+\section{Statistical modeling}\label{statistical-modeling}}
 
 Within formal models -\textgreater{} 2 kinds
 
@@ -445,15 +439,27 @@ Within formal models -\textgreater{} 2 kinds
 
 \url{https://gosilico.com/technology/mechanistic-vs-statistical-models/}
 
+Mechanistic already answer the ``how'' --\textgreater{} causality inside
+Breiman --\textgreater{} Inside the box
+
+\url{https://theartofmodelling.wordpress.com/2012/02/19/mechanistic-models-what-is-the-value-of-understanding/}
+
+Example with data, stat and mech for Lotka-Volterra
+\url{https://mc-stan.org/users/documentation/case-studies/lotka-volterra-predator-prey.html}
+\url{http://www2.nau.edu/lrm22/lessons/predator_prey/predator_prey.html}
+
 \includegraphics{01-Models_files/figure-latex/figure_ext-1.pdf}
 
-\section{Mechanistic modeling}\label{mechanistic-modeling}
+\hypertarget{mechanistic-modeling}{%
+\section{Mechanistic modeling}\label{mechanistic-modeling}}
 
-\chapter{What is cancer}\label{what-is-cancer}
+\hypertarget{what-is-cancer}{%
+\chapter{What is cancer}\label{what-is-cancer}}
 
 This is a test
 
-\section{Abc}\label{abc}
+\hypertarget{abc}{%
+\section{Abc}\label{abc}}
 
 Bla bla
 
@@ -606,20 +612,21 @@ Volvo 142E & 21.4 & 4 & 121.0 & 109 & 4.11 & 2.780 & 18.60 & 1 & 1 & 4 & 2\\
 \hline
 \end{tabular}
 
-\chapter{Test part}\label{test}
+\hypertarget{test}{%
+\chapter{Test part}\label{test}}
 
 This is a test
 
-\section{Abc}\label{abc-1}
+\hypertarget{abc-1}{%
+\section{Abc}\label{abc-1}}
 
 Bla bla ref \citet{MBMH19} and \citep{MBMH19}.
 
-But in \citet{BMTBC19} we have the Figure \ref{fig:nice-fig} as
-referenced in Chapter \ref{test}
+But in \citet{BMTBC19} we have the Figure \ref{fig:nice-fig} as referenced in Chapter \ref{test}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{.1}\NormalTok{, }\FloatTok{.1}\NormalTok{))}
 \KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
