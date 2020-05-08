@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.4.30)  7 MAY 2020 16:37
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.4.30)  8 MAY 2020 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1889,145 +1889,154 @@ LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
 ) [7] (./PhdThesis.lot) [8] (./PhdThesis.lof) [9] [10] [1
 
 ] [2]
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 347
-.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmtt.fd
-File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [3
+File: fig/orrery.jpg Graphic file (type QTm)
+<use  "fig/orrery.jpg" > [3
 
 ]
-File: fig/orrery.jpg Graphic file (type QTm)
-<use  "fig/orrery.jpg" >
+File: fig/visualThesaurus.png Graphic file (type QTm)
+<use  "fig/visualThesaurus.png" >
+Underfull \vbox (badness 4366) has occurred while \output is active []
+
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 385.
+(in both cases you will find help in the memoir manual). on input line 378.
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [4]
-File: fig/visualThesaurus.pdf Graphic file (type QTm)
-<use  "fig/visualThesaurus.pdf" > [5]
 File: 01-Models_files/figure-latex/interviews-1.pdf Graphic file (type QTm)
-<use  "01-Models_files/figure-latex/interviews-1.pdf" >
+<use  "01-Models_files/figure-latex/interviews-1.pdf" > [5]
+File: 01-Models_files/figure-latex/planets-1.pdf Graphic file (type QTm)
+<use  "01-Models_files/figure-latex/planets-1.pdf" >
+Underfull \vbox (badness 1983) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 445--446
+[6] [7]
+File: fig/pubmed-tree.png Graphic file (type QTm)
+<use  "fig/pubmed-tree.png" >
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
 [][]$[][][][][] [] [] [] [][][][][][][][][][][][][][][][][] [] [][][][][][][][]
 [] [] [][][] [] [][][][] [] [][] [] [][] [] [][][][][][][][][][][] [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--450
+Underfull \hbox (badness 10000) in paragraph at lines 449--452
 [][][] [] [][][][][] [] [][][][][][][][][][][][][] [] [][][][] [][] [][][][][][
 ][] [] [][][][][] [][] [][][][][][][][] [][] [][][][][][][][] [][] [][][][] [] 
 [][][][]$[]
  []
 
-File: 01-Models_files/figure-latex/figure_ext-1.pdf Graphic file (type QTm)
-<use  "01-Models_files/figure-latex/figure_ext-1.pdf" >
-Overfull \hbox (17.63744pt too wide) in paragraph at lines 451--452
-[][] 
- []
-
-[7] [8
-
-]
-LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 471.
-LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 471.
-LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 471.
-
-Overfull \hbox (20.63295pt too wide) in paragraph at lines 471--540
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 [9]
-Overfull \hbox (111.72893pt too wide) in paragraph at lines 545--614
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [10] [11] [12
 
 ]
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 493
+.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmtt.fd
+File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 498.
+LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 8.00012pt on input line 498.
+LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.99988pt on input line 498.
 
-Package xcolor Warning: Incompatible color definition on input line 627.
+Overfull \hbox (20.63295pt too wide) in paragraph at lines 498--567
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[13]
+Overfull \hbox (111.72893pt too wide) in paragraph at lines 572--641
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[14] [15] [16
+
+]
+
+Package xcolor Warning: Incompatible color definition on input line 654.
 
 LaTeX Font Info:    Font shape `EU1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `EU1/lmtt/b/n' tried instead on input line 629.
+(Font)              Font shape `EU1/lmtt/b/n' tried instead on input line 656.
 
-Package xcolor Warning: Incompatible color definition on input line 632.
+Package xcolor Warning: Incompatible color definition on input line 659.
 
 
-Package xcolor Warning: Incompatible color definition on input line 632.
+Package xcolor Warning: Incompatible color definition on input line 659.
 
 File: 10-Test_files/figure-latex/nice-fig-1.pdf Graphic file (type QTm)
 <use  "10-Test_files/figure-latex/nice-fig-1.pdf" >
 File: cover/pictures/back-bg.png Graphic file (type QTm)
-<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [13] [14])
+<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [17] [18] [19
+
+])
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 656.
+(in both cases you will find help in the memoir manual). on input line 683.
 
-[15
-
-] [16
+[20] [21
 
 
-] [17]
+]
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `EU1/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 656.
+(Font)              scaled to size 9.14278pt on input line 683.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 656--656
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 683--683
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 656.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.0pt on input line 656.
+(Font)              scaled to size 11.0pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 7.69997pt on input line 656.
+(Font)              scaled to size 7.69997pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 5.5pt on input line 656.
+(Font)              scaled to size 5.5pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.00017pt on input line 656.
+(Font)              scaled to size 11.00017pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.70007pt on input line 656.
+(Font)              scaled to size 7.70007pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.50008pt on input line 656.
+(Font)              scaled to size 5.50008pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.99983pt on input line 656.
+(Font)              scaled to size 10.99983pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.69984pt on input line 656.
+(Font)              scaled to size 7.69984pt on input line 683.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.49991pt on input line 656.
+(Font)              scaled to size 5.49991pt on input line 683.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 656--656
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 656--656
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 683--683
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 656--656
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 683--683
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 683--683
 [][] 
  []
 
@@ -2040,24 +2049,24 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 656--656
 \tf@lof=\write9
 \openout9 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 656.
-[18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 656.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 683.
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 683.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 656.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 656.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 683.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 683.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 656.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 683.
  ) 
 Here is how much of TeX's memory you used:
- 42182 strings out of 493591
- 767321 string characters out of 6143546
- 926121 words of memory out of 5000000
- 44976 multiletter control sequences out of 15000+600000
- 17960 words of font info for 138 fonts, out of 8000000 for 9000
+ 42214 strings out of 493591
+ 768142 string characters out of 6143546
+ 926929 words of memory out of 5000000
+ 45004 multiletter control sequences out of 15000+600000
+ 17976 words of font info for 140 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  75i,14n,110p,10418b,967s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PhdThesis.pdf (30 pages).
+Output written on PhdThesis.pdf (34 pages).
