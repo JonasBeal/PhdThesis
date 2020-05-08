@@ -122,9 +122,24 @@ Another way to classify cancer models may be to group them into the following ca
 
 ## Statistics or mechanistic {#stat-mech}
 
-Within formal models -> 2 kinds
+A rather frequent metaphor is to compare formal models to black boxes that take in input $X$ predictors, or independent variables, and output response variable(s) $Y$, also named dependent variables. The models then split into two categories depending on the answer to the question: are you modeling the inside of the box or not (Figure \ref(fig:boxes)) ?
 
-[@baker2018mechanistic]
+### The inside of the box
+
+The purpose of this section is to present in a schematic, and therefore somewhat caricatural, manner the two competing formal modeling approaches that will be used in this thesis and that we will call mechanistic modeling and statistical modeling. The two categories are not perfectly exclusive and rather form the two ends of a spectrum. The definitions and classification of some examples is therefore still partly personal and arbitrary. 
+
+```{r boxes, echo=FALSE, out.width = "60%", fig.cap ='(ref:boxes-caption)', fig.scap="Tree visualization of *model* semantic context in cancer-related literature", fig.align='center'}
+knitr::include_graphics("fig/boxes.png")
+```
+(ref:boxes-caption) **Different modeling strategies.** (A) Data generation from predictors $X$ to response $Y$ in the natural phenomenon. (B) Mechanistic modeling defining mechanisms of data generation inside the box. (C) Statistical modeling finding the function $f$ that gives the best predictions. (Adapted from [@breiman2001statistical]).
+
+Assuming the unambiguous nature of the predictors and outputs we can imagine that the natural process consists in defining the result Y from the inputs X according to a function of a completely unknown form (Figure \ref(fig:boxes)A). The first modeling, that we will call mechanistic, consists in building the box by imitating what we think is the process of data generation.
+
+[@breiman2001statistical]
+
+3 flavours depending on the level of constraints
+
+And what about biology? [@baker2018mechanistic]
 
 https://gosilico.com/technology/mechanistic-vs-statistical-models/
 
@@ -133,6 +148,7 @@ Breiman --> Inside the box
 
 https://theartofmodelling.wordpress.com/2012/02/19/mechanistic-models-what-is-the-value-of-understanding/
 
+### A tale of prey and predators
 
 Example with data, stat and mech for Lotka-Volterra 
 https://mc-stan.org/users/documentation/case-studies/lotka-volterra-predator-prey.html

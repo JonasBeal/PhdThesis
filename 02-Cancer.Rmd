@@ -1,33 +1,43 @@
-# What is cancer
+# Cancer as deregulation of complex machinery
 
-This is a test
-
-## Abc
-
-Bla bla
-
-```{r, setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-options(knitr.table.format = function() {
-  if (knitr::is_latex_output()) 'latex' else 'pandoc'
-})
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}')
 ```
 
-The LaTeX environment `tiny` is only generated for LaTeX output.
-
-```{r, include=knitr::is_latex_output()}
-knitr::asis_output('\n\n\\begin{tiny}')
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output(
+  '>*All happy families are alike; each unhappy family is unhappy in its own way.*<br/>
+  >Leo Tolstoy (Anna Karenina, 1877)')
 ```
 
-```{r}
-knitr::kable(mtcars)
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\initial{T}he notion of modeling is embedded in science, to the point that it has sometimes been used to define the very nature of scientific research.')
 ```
 
-```{r, include=knitr::is_latex_output()}
-knitr::asis_output('\\end{tiny}\n\n')
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output('The notion of modeling is embedded in science, to the point that it has sometimes been used to define the very nature of scientific research')
 ```
 
-By comparison, below is the table with the normal font size.
+```{r 2_packages, echo=FALSE, warning=FALSE, message=FALSE,}
+invisible(lapply(X =  c("tidyverse", "magrittr", "textreadr", "ggplot2", "ggwordcloud", "ggpubr", "tm", "cowplot", "magick"),
+       FUN = require,
+       character.only = TRUE))
+
+knitr::opts_chunk$set(
+  cache = TRUE, echo = FALSE, warning = FALSE, message = FALSE,
+  out.width = "90%",
+  fig.pos = "ht",
+  fig.align = "center"
+  )
+```
+
+## Cancer from a distance: epidemiology and main figures
+
+## Basic molecular biology
+
+## High-throughput data and multi-omics
+
+## From genetic to network disease
 
 ```{r}
 knitr::kable(mtcars)
