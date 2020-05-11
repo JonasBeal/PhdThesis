@@ -18,7 +18,7 @@ knitr::asis_output('\\initial{T}he notion of modeling is embedded in science, to
 knitr::asis_output('The notion of modeling is embedded in science, to the point that it has sometimes been used to define the very nature of scientific research')
 ```
 
-```{r 2_packages, echo=FALSE, warning=FALSE, message=FALSE,}
+```{r 2_packages, echo=FALSE, warning=FALSE, message=FALSE}
 invisible(lapply(X =  c("tidyverse", "magrittr", "textreadr", "ggplot2", "ggwordcloud", "ggpubr", "tm", "cowplot", "magick"),
        FUN = require,
        character.only = TRUE))
@@ -39,6 +39,6 @@ knitr::opts_chunk$set(
 
 ## From genetic to network disease
 
-```{r}
+```{r, eval=FALSE}
 knitr::kable(mtcars)
 ```

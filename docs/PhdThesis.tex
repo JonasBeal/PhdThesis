@@ -270,6 +270,20 @@
   onere aut trahebatur quod tenus et bonorum.}
   
 \pagenumbering{roman}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 
 \title{From mechanistic modelling of cancer to clinical interpretation and
 impact evaluation}
@@ -457,7 +471,8 @@ models, caricature models, exploratory models, didactic models, fantasy
 models, minimal models, toy models, imaginary models, mathematical
 models, mechanistic models, substitute models, iconic models, formal
 models, analogue models, and instrumental models are but some of the
-notions that are used to categorize models.} \citep{frigg2020models}
+notions that are used to categorize models.}\\
+\citep{frigg2020models}
 \end{quote}
 
 \subsection{Physical world and world of
@@ -605,22 +620,210 @@ beforehand.
 
 \section{Statistics or mechanistic}\label{stat-mech}
 
----are you modeling the inside of the box or not? For
+A rather frequent metaphor is to compare formal models to black boxes
+that take in input \(X\) predictors, or independent variables, and
+output response variable(s) \(Y\), also named dependent variables. The
+models then split into two categories (Figure \ref{fig:boxes}) depending
+on the answer to the question: are you modeling the inside of the box or
+not?
 
-Within formal models -\textgreater{} 2 kinds
+\subsection{The inside of the box}\label{the-inside-of-the-box}
 
-\citep{baker2018mechanistic}
+The purpose of this section is to present in a schematic, and therefore
+somewhat caricatural, manner the two competing formal modeling
+approaches that will be used in this thesis and that we will call
+mechanistic modeling and statistical modeling. Assuming the unambiguous
+nature of the predictors and outputs we can imagine that the natural
+process consists in defining the result Y from the inputs X according to
+a function of a completely unknown form (Figure \ref{fig:boxes}A).
 
-\url{https://gosilico.com/technology/mechanistic-vs-statistical-models/}
+\begin{figure}[ht]
 
-Mechanistic already answer the ``how'' --\textgreater{} causality inside
-Breiman --\textgreater{} Inside the box
+{\centering \includegraphics[width=0.6\linewidth]{fig/boxes} 
 
-\url{https://theartofmodelling.wordpress.com/2012/02/19/mechanistic-models-what-is-the-value-of-understanding/}
+}
+
+\caption[Different modeling strategies.]{\textbf{Different modeling strategies.} (A) Data
+generation from predictors \(X\) to response \(Y\) in the natural
+phenomenon. (B) Mechanistic modeling defining mechanisms of data
+generation inside the box. (C) Statistical modeling finding the function
+\(f\) that gives the best predictions (adapted from
+\citet{breiman2001statistical}).}\label{fig:boxes}
+\end{figure}
+
+
+
+
+
+
+
+
+The first modeling approach, that we will call mechanistic, consists in
+building the box by imitating what we think is the process of data
+generation (Figure \ref{fig:boxes}B). This integration of a priori
+knowledge can take different forms. In this thesis it will often come
+back to presupposing certain relations between entities according to
+what is known about their behaviour. \(X_1\) which acts on \(X_3\) may
+correspond to the action of one biological entity on another, supposedly
+unidirectional; just as the joint action of \(X_2\) and \(X_3\) may
+reflect a known synergy in the expression of genes or the action of
+proteins. Mathematically this is expressed here with a perfectly
+deterministic model defined a priori. All in all, in a purely
+mechanistic approach, the nature of the relations between entities
+should be linked to biological processes and the parameters in the model
+all have biological definitions in such a way that it could even be
+considered to measure them.
+
+The second approach, often called statistical modeling or machine
+learning, does not necessarily seek to reproduce the natural process of
+data generation but to find the function allowing the best prediction of
+\(Y\) from \(X\) (Figure \ref{fig:boxes}C). Pushed to the limit, they
+are ``idealized version of the data we gain from immediate observation''
+\citep{frigg2020models}, thus providing a phenomenological description.
+The methods and algorithms used are then intended to be sufficiently
+flexible and to make the fewest possible assumptions about the
+relationships between variables or the distribution of data. Without
+listing them exhaustively, the approaches such as boosting
+\citep{buhlmann2007boosting}, support vector machines
+\citep{cortes1995support} or random forests \citep{breiman2001random},
+which will sometimes be mentioned in this thesis, fall into this
+category which contains many others \citep{hastie2009elements}.
+
+Several discrepancies result from this difference in nature, some of
+which are summarized in the Table \ref{tab:mechstat}. In a somewhat
+schematic way, we can say that the mechanistic model first asks the
+question of \emph{how} and then looks at the result for the output. The
+notion of causality is intrinsic to the definition of the model.
+Conversely, the statistical model first tries to approach the Y and then
+possibly analyses what can be deduced from it, regarding the importance
+of the variables or their relationships in a \emph{post hoc} approach
+\citep[\citet{manica2019toward}]{ishwaran2007variable}. The causality is
+then not a by-product of the algorithm and must be evaluated according
+to dedicated frameworks \citep{hernan2020causal}. The greater
+flexibility of statistical methods makes it possible to better accept
+the heterogeneity of the variables, but this is generally done at the
+cost of a larger number of parameters and therefore requires more data.
+Moreover, we can contrast the inductive capability of statistical models
+able to use already generated data to identify patterns in it.
+Conversely, mechanistic models are more deductive in the sense that they
+can theoretically allow to extrapolate beyond the original data or
+knowledge used to build the model \citep{baker2018mechanistic}. Finally,
+the most relevant way of assessing the value or adequacy of these models
+may be quite different. A statistical model is measured by its ability
+to predict output in a validation dataset different from the one used to
+train its parameters. The mechanistic model will also be evaluated on
+its capacity to approach the data but also to order, to give a meaning.
+If its pure predictive performance is generally inferior, how can the
+value of understanding be assessed? This question will be one of the
+threads of the dissertation.
+
+\begin{table}
+
+\caption{\label{tab:mechstat}\textbf{Some pros and cons for mechanistic and
+statistical modeling} (adapted from \citet{baker2018mechanistic})}
+\centering
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{15em}||>{\raggedright\arraybackslash}p{15em}}
+\hline
+\rowcolor[HTML]{808080}  \textcolor{white}{\textbf{Mechanistic modeling}} & \textcolor{white}{\textbf{Statistical modeling}}\\
+\hline
+\multicolumn{2}{l}{\textbf{Definition}}\\
+\hline
+\hspace{1em}seeks to establish a mechanistic relationship between inputs and outputs & seeks to establish statistical relationships between inputs and outputs\\
+\hline
+\multicolumn{2}{l}{\textbf{Pros and cons}}\\
+\hline
+\hspace{1em}presupposes and investigates causal links between the variables & looks for patterns and establishes correlations between variables\\
+\hline
+\hspace{1em}capable of handling small datasets & requires large datasets\\
+\hline
+\hspace{1em}once validated, can be used as a predictive tool in new situations possibly difficult to access through experimentation & can only make predictions that relate to patterns within the data supplied\\
+\hline
+\hspace{1em}difficult to accurately incorporate information from multiple space and time scales due to constrained specifications & can tackle problems with multiple space and time scales thanks to flexible specifications\\
+\hline
+\hspace{1em}evaluated on closeness to data and ability to make sense of it & evaluated based on predictive performance\\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+Mechanistic and statistical models are not perfectly exclusive and
+rather form the two ends of a spectrum. The definitions and
+classification of some examples is therefore still partly personal and
+arbitrary. For instance, the example in \ref{fig:boxes}B can be
+transformed into a model with a more ambiguous status:
+
+\[logit(P[Y=1])=\beta_1X_1 + \beta_{23}X_2X_3\]
+
+The logistic model shown in Figure \ref{fig:boxes}B is deliberately
+ambiguous. It is a logistic model which it is therefore natural to
+define as a statistical model. The definition of the interaction between
+\(X_2\) and \(X_3\) denotes a mechanistic presupposition. The very
+choice of a logistic and therefore parametric model could result from a
+knowledge of the phenomenon even if in practice it is often a default
+choice for a binary output. Finally, the nature of the parameters
+\(\beta_{1}\) and \(\beta_{23}\) is likely to change the interpretation
+of the model. If they are deduced from the data and therefore optimized
+to fit Y as well as possible, one will think of a statistical model
+whose specification is nevertheless based on knowledge of the
+phenomenon. On the other hand, one could imagine that these parameters
+are taken from the literature, biochemical or other data. The model will
+then be more mechanistic. The boundary between these models is further
+blurred by the different possibilities of combining these approaches and
+making them complementary
+\citep{baker2018mechanistic, salvucci2019machine}, we will come back to
+this later.
+
+\subsection{A tale of prey and
+predators}\label{a-tale-of-prey-and-predators}
+
+The following is a final general illustration of the concepts introduced
+with respect to statistical and mechanistic models through a famous and
+characteristic example: the Lotka-Volterra model of interactions between
+prey and predators. This model was thus, like many students, my first
+encounter with what could be called mathematical biology. A detailed
+description of their context and historical formulation can be found in
+original articles \citep{lotka1925principles, volterra1926fluctuations}
+or dedicated reviews \citep{knuuttila2017modelling} that we summarize
+here.
+
+The general objective is to understand the evolution of the populations
+of a species of prey and its predator, reasonably isolated from outside
+intervention. Here we will use Canada lynx (\emph{Lynx canadensis}) and
+snowshow hare (\emph{Lepus americanus}) populations for which an
+illustrative data set exists \citep{hewitt1917conservation}. In fact,
+commercial records listing the quantities of furs sold by trappers to
+the Canadian Hudson Bay Company may represent a proxy for the
+populations of these two species. Denoting the population of lynx
+\(L(t)\) and the population of hare \(H(t)\) we can deinfe the following
+system of differential equations:
+
+\[\dfrac{dH}{dt}=a_1H-a_2HT\]
+
+\[\dfrac{dL}{dt}=-b_1L+b_2HL\]
+
+with all coefficients \(a_1, a_2, b_1, b_2 >0\). \(a_1H\) represents the
+growth rate of the hare population (prey), i.e.~the population grows in
+proportion to its own population. The main losses of hares are due to
+predation by lynx, as represented with a negative coefficient in the
+\(-a_2HT\) term. It is therefore assumed that a fixed percentage of
+prey-predator encounters will result in the death of the prey.
+Conversely, it is assumed that the growth of the lynx population depends
+primarily on the availability of food for all lynxes, summarized in the
+\(b_2HL\) term. In the absence of hares, the lynx population decreases
+exponentially, as denoted by the coefficient \(-b_1L\). It is thus noted
+that in the absence of predators, prey increases exponentially, while in
+the absence of prey, predators would decline in the same way.
 
 Example with data, stat and mech for Lotka-Volterra
 \url{https://mc-stan.org/users/documentation/case-studies/lotka-volterra-predator-prey.html}
 \url{http://www2.nau.edu/lrm22/lessons/predator_prey/predator_prey.html}
+
+
+
+
+\citep{flake1998computational} \citep{knuuttila2017modelling}
 
 \section{Simplicity is the ultimate
 sophistication}\label{simplicity-is-the-ultimate-sophistication}
@@ -640,7 +843,8 @@ grasped and controlled without abstraction. Abstraction consists in
 replacing the part of the universe under consideration by a model of
 similar but simpler structure. Models, formal and intellectual on the
 one hand, or material on the other, are thus a central necessity of
-scientific procedure.} \citep{rosenblueth1945role}
+scientific procedure.}\\
+\citep{rosenblueth1945role}
 \end{quote}
 
 Therefore, a model exists only because we are not able to deal directly
@@ -693,180 +897,45 @@ it could be replied with Lewis Carrol words\footnote{More concisely, in
 \begin{quote}
 \emph{``That's another thing we've learned from your Nation,'' said Mein
 Herr, ``map-making. But we've carried it much further than you. What do
-you consider the largest map that would be really useful?'' ``About six
-inches to the mile.'' ``Only six inches!'' exclaimed Mein Herr. ``We
-very soon got to six yards to the mile. Then we tried a hundred yards to
-the mile. And then came the grandest idea of all! We actually made a map
-of the country, on the scale of a mile to the mile!'' ``Have you used it
-much?'' I enquired. ``It has never been spread out, yet,'' said Mein
-Herr: ``the farmers objected: they said it would cover the whole
-country, and shut out the sunlight! So we now use the country itself, as
-its own map, and I assure you it does nearly as well.'' Lewis Carroll,
-}Sylvie and Bruno* (1893)
+you consider the largest map that would be really useful?''\\
+``About six inches to the mile.''\\
+``Only six inches!'' exclaimed Mein Herr. ``We very soon got to six
+yards to the mile. Then we tried a hundred yards to the mile. And then
+came the grandest idea of all! We actually made a map of the country, on
+the scale of a mile to the mile!''\\
+``Have you used it much?'' I enquired.\\
+``It has never been spread out, yet,'' said Mein Herr: ``the farmers
+objected: they said it would cover the whole country, and shut out the
+sunlight! So we now use the country itself, as its own map, and I assure
+you it does nearly as well.''\\
+Lewis Carroll, }Sylvie and Bruno* (1893)
 \end{quote}
 
-\chapter{What is cancer}\label{what-is-cancer}
+\chapter{Cancer as deregulation of complex
+machinery}\label{cancer-as-deregulation-of-complex-machinery}
 
-This is a test
+\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}
 
-\section{Abc}\label{abc}
+\initial{T}he notion of modeling is embedded in science, to the point
+that it has sometimes been used to define the very nature of scientific
+research.
 
-Bla bla
+\section{Cancer from a distance: epidemiology and main
+figures}\label{cancer-from-a-distance-epidemiology-and-main-figures}
 
-The LaTeX environment \texttt{tiny} is only generated for LaTeX output.
+\section{Basic molecular biology}\label{basic-molecular-biology}
 
-\begin{tiny}
+\section{High-throughput data and
+multi-omics}\label{high-throughput-data-and-multi-omics}
 
-
-\begin{tabular}{l|r|r|r|r|r|r|r|r|r|r|r}
-\hline
-  & mpg & cyl & disp & hp & drat & wt & qsec & vs & am & gear & carb\\
-\hline
-Mazda RX4 & 21.0 & 6 & 160.0 & 110 & 3.90 & 2.620 & 16.46 & 0 & 1 & 4 & 4\\
-\hline
-Mazda RX4 Wag & 21.0 & 6 & 160.0 & 110 & 3.90 & 2.875 & 17.02 & 0 & 1 & 4 & 4\\
-\hline
-Datsun 710 & 22.8 & 4 & 108.0 & 93 & 3.85 & 2.320 & 18.61 & 1 & 1 & 4 & 1\\
-\hline
-Hornet 4 Drive & 21.4 & 6 & 258.0 & 110 & 3.08 & 3.215 & 19.44 & 1 & 0 & 3 & 1\\
-\hline
-Hornet Sportabout & 18.7 & 8 & 360.0 & 175 & 3.15 & 3.440 & 17.02 & 0 & 0 & 3 & 2\\
-\hline
-Valiant & 18.1 & 6 & 225.0 & 105 & 2.76 & 3.460 & 20.22 & 1 & 0 & 3 & 1\\
-\hline
-Duster 360 & 14.3 & 8 & 360.0 & 245 & 3.21 & 3.570 & 15.84 & 0 & 0 & 3 & 4\\
-\hline
-Merc 240D & 24.4 & 4 & 146.7 & 62 & 3.69 & 3.190 & 20.00 & 1 & 0 & 4 & 2\\
-\hline
-Merc 230 & 22.8 & 4 & 140.8 & 95 & 3.92 & 3.150 & 22.90 & 1 & 0 & 4 & 2\\
-\hline
-Merc 280 & 19.2 & 6 & 167.6 & 123 & 3.92 & 3.440 & 18.30 & 1 & 0 & 4 & 4\\
-\hline
-Merc 280C & 17.8 & 6 & 167.6 & 123 & 3.92 & 3.440 & 18.90 & 1 & 0 & 4 & 4\\
-\hline
-Merc 450SE & 16.4 & 8 & 275.8 & 180 & 3.07 & 4.070 & 17.40 & 0 & 0 & 3 & 3\\
-\hline
-Merc 450SL & 17.3 & 8 & 275.8 & 180 & 3.07 & 3.730 & 17.60 & 0 & 0 & 3 & 3\\
-\hline
-Merc 450SLC & 15.2 & 8 & 275.8 & 180 & 3.07 & 3.780 & 18.00 & 0 & 0 & 3 & 3\\
-\hline
-Cadillac Fleetwood & 10.4 & 8 & 472.0 & 205 & 2.93 & 5.250 & 17.98 & 0 & 0 & 3 & 4\\
-\hline
-Lincoln Continental & 10.4 & 8 & 460.0 & 215 & 3.00 & 5.424 & 17.82 & 0 & 0 & 3 & 4\\
-\hline
-Chrysler Imperial & 14.7 & 8 & 440.0 & 230 & 3.23 & 5.345 & 17.42 & 0 & 0 & 3 & 4\\
-\hline
-Fiat 128 & 32.4 & 4 & 78.7 & 66 & 4.08 & 2.200 & 19.47 & 1 & 1 & 4 & 1\\
-\hline
-Honda Civic & 30.4 & 4 & 75.7 & 52 & 4.93 & 1.615 & 18.52 & 1 & 1 & 4 & 2\\
-\hline
-Toyota Corolla & 33.9 & 4 & 71.1 & 65 & 4.22 & 1.835 & 19.90 & 1 & 1 & 4 & 1\\
-\hline
-Toyota Corona & 21.5 & 4 & 120.1 & 97 & 3.70 & 2.465 & 20.01 & 1 & 0 & 3 & 1\\
-\hline
-Dodge Challenger & 15.5 & 8 & 318.0 & 150 & 2.76 & 3.520 & 16.87 & 0 & 0 & 3 & 2\\
-\hline
-AMC Javelin & 15.2 & 8 & 304.0 & 150 & 3.15 & 3.435 & 17.30 & 0 & 0 & 3 & 2\\
-\hline
-Camaro Z28 & 13.3 & 8 & 350.0 & 245 & 3.73 & 3.840 & 15.41 & 0 & 0 & 3 & 4\\
-\hline
-Pontiac Firebird & 19.2 & 8 & 400.0 & 175 & 3.08 & 3.845 & 17.05 & 0 & 0 & 3 & 2\\
-\hline
-Fiat X1-9 & 27.3 & 4 & 79.0 & 66 & 4.08 & 1.935 & 18.90 & 1 & 1 & 4 & 1\\
-\hline
-Porsche 914-2 & 26.0 & 4 & 120.3 & 91 & 4.43 & 2.140 & 16.70 & 0 & 1 & 5 & 2\\
-\hline
-Lotus Europa & 30.4 & 4 & 95.1 & 113 & 3.77 & 1.513 & 16.90 & 1 & 1 & 5 & 2\\
-\hline
-Ford Pantera L & 15.8 & 8 & 351.0 & 264 & 4.22 & 3.170 & 14.50 & 0 & 1 & 5 & 4\\
-\hline
-Ferrari Dino & 19.7 & 6 & 145.0 & 175 & 3.62 & 2.770 & 15.50 & 0 & 1 & 5 & 6\\
-\hline
-Maserati Bora & 15.0 & 8 & 301.0 & 335 & 3.54 & 3.570 & 14.60 & 0 & 1 & 5 & 8\\
-\hline
-Volvo 142E & 21.4 & 4 & 121.0 & 109 & 4.11 & 2.780 & 18.60 & 1 & 1 & 4 & 2\\
-\hline
-\end{tabular}
-
-\end{tiny}
-
-By comparison, below is the table with the normal font size.
-
-\begin{tabular}{l|r|r|r|r|r|r|r|r|r|r|r}
-\hline
-  & mpg & cyl & disp & hp & drat & wt & qsec & vs & am & gear & carb\\
-\hline
-Mazda RX4 & 21.0 & 6 & 160.0 & 110 & 3.90 & 2.620 & 16.46 & 0 & 1 & 4 & 4\\
-\hline
-Mazda RX4 Wag & 21.0 & 6 & 160.0 & 110 & 3.90 & 2.875 & 17.02 & 0 & 1 & 4 & 4\\
-\hline
-Datsun 710 & 22.8 & 4 & 108.0 & 93 & 3.85 & 2.320 & 18.61 & 1 & 1 & 4 & 1\\
-\hline
-Hornet 4 Drive & 21.4 & 6 & 258.0 & 110 & 3.08 & 3.215 & 19.44 & 1 & 0 & 3 & 1\\
-\hline
-Hornet Sportabout & 18.7 & 8 & 360.0 & 175 & 3.15 & 3.440 & 17.02 & 0 & 0 & 3 & 2\\
-\hline
-Valiant & 18.1 & 6 & 225.0 & 105 & 2.76 & 3.460 & 20.22 & 1 & 0 & 3 & 1\\
-\hline
-Duster 360 & 14.3 & 8 & 360.0 & 245 & 3.21 & 3.570 & 15.84 & 0 & 0 & 3 & 4\\
-\hline
-Merc 240D & 24.4 & 4 & 146.7 & 62 & 3.69 & 3.190 & 20.00 & 1 & 0 & 4 & 2\\
-\hline
-Merc 230 & 22.8 & 4 & 140.8 & 95 & 3.92 & 3.150 & 22.90 & 1 & 0 & 4 & 2\\
-\hline
-Merc 280 & 19.2 & 6 & 167.6 & 123 & 3.92 & 3.440 & 18.30 & 1 & 0 & 4 & 4\\
-\hline
-Merc 280C & 17.8 & 6 & 167.6 & 123 & 3.92 & 3.440 & 18.90 & 1 & 0 & 4 & 4\\
-\hline
-Merc 450SE & 16.4 & 8 & 275.8 & 180 & 3.07 & 4.070 & 17.40 & 0 & 0 & 3 & 3\\
-\hline
-Merc 450SL & 17.3 & 8 & 275.8 & 180 & 3.07 & 3.730 & 17.60 & 0 & 0 & 3 & 3\\
-\hline
-Merc 450SLC & 15.2 & 8 & 275.8 & 180 & 3.07 & 3.780 & 18.00 & 0 & 0 & 3 & 3\\
-\hline
-Cadillac Fleetwood & 10.4 & 8 & 472.0 & 205 & 2.93 & 5.250 & 17.98 & 0 & 0 & 3 & 4\\
-\hline
-Lincoln Continental & 10.4 & 8 & 460.0 & 215 & 3.00 & 5.424 & 17.82 & 0 & 0 & 3 & 4\\
-\hline
-Chrysler Imperial & 14.7 & 8 & 440.0 & 230 & 3.23 & 5.345 & 17.42 & 0 & 0 & 3 & 4\\
-\hline
-Fiat 128 & 32.4 & 4 & 78.7 & 66 & 4.08 & 2.200 & 19.47 & 1 & 1 & 4 & 1\\
-\hline
-Honda Civic & 30.4 & 4 & 75.7 & 52 & 4.93 & 1.615 & 18.52 & 1 & 1 & 4 & 2\\
-\hline
-Toyota Corolla & 33.9 & 4 & 71.1 & 65 & 4.22 & 1.835 & 19.90 & 1 & 1 & 4 & 1\\
-\hline
-Toyota Corona & 21.5 & 4 & 120.1 & 97 & 3.70 & 2.465 & 20.01 & 1 & 0 & 3 & 1\\
-\hline
-Dodge Challenger & 15.5 & 8 & 318.0 & 150 & 2.76 & 3.520 & 16.87 & 0 & 0 & 3 & 2\\
-\hline
-AMC Javelin & 15.2 & 8 & 304.0 & 150 & 3.15 & 3.435 & 17.30 & 0 & 0 & 3 & 2\\
-\hline
-Camaro Z28 & 13.3 & 8 & 350.0 & 245 & 3.73 & 3.840 & 15.41 & 0 & 0 & 3 & 4\\
-\hline
-Pontiac Firebird & 19.2 & 8 & 400.0 & 175 & 3.08 & 3.845 & 17.05 & 0 & 0 & 3 & 2\\
-\hline
-Fiat X1-9 & 27.3 & 4 & 79.0 & 66 & 4.08 & 1.935 & 18.90 & 1 & 1 & 4 & 1\\
-\hline
-Porsche 914-2 & 26.0 & 4 & 120.3 & 91 & 4.43 & 2.140 & 16.70 & 0 & 1 & 5 & 2\\
-\hline
-Lotus Europa & 30.4 & 4 & 95.1 & 113 & 3.77 & 1.513 & 16.90 & 1 & 1 & 5 & 2\\
-\hline
-Ford Pantera L & 15.8 & 8 & 351.0 & 264 & 4.22 & 3.170 & 14.50 & 0 & 1 & 5 & 4\\
-\hline
-Ferrari Dino & 19.7 & 6 & 145.0 & 175 & 3.62 & 2.770 & 15.50 & 0 & 1 & 5 & 6\\
-\hline
-Maserati Bora & 15.0 & 8 & 301.0 & 335 & 3.54 & 3.570 & 14.60 & 0 & 1 & 5 & 8\\
-\hline
-Volvo 142E & 21.4 & 4 & 121.0 & 109 & 4.11 & 2.780 & 18.60 & 1 & 1 & 4 & 2\\
-\hline
-\end{tabular}
+\section{From genetic to network
+disease}\label{from-genetic-to-network-disease}
 
 \chapter{Test part}\label{test}
 
 This is a test
 
-\section{Abc}\label{abc-1}
+\section{Abc}\label{abc}
 
 Bla bla ref \citet{MBMH19} and \citep{MBMH19}.
 

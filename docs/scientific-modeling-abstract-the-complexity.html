@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -153,7 +154,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="scientific-modeling-abstract-the-complexity" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Scientific modeling: abstract the complexity</h1>
 <blockquote>
-<p><em>Ce qui est simple est toujours faux. Ce qui ne l’est pas est inutilisable.</em><br/> Paul Valéry (Mauvaises pensées et autres, 1942)</p>
+<p><em>Ce qui est simple est toujours faux. Ce qui ne l’est pas est inutilisable.</em><br />
+Paul Valéry (Mauvaises pensées et autres, 1942)</p>
 </blockquote>
 <p>The notion of modeling is embedded in science, to the point that it has sometimes been used to define the very nature of scientific research. What is called a model can, however, correspond to very different realities which need to be defined before addressing the object of this thesis which will consist, if one wants to be mischievous, in analyzing models with other models. This semantic elucidation is all the more necessary as this thesis is interdisciplinary, suspended between systems biology and biostatistics. In order to convince the reader of the need for such a preamble, he is invited to ask a statistician and a biologist how they would define what a model is.</p>
 <div class="figure" style="text-align: center"><span id="fig:orrery"></span>
@@ -187,7 +189,8 @@ Figure 1.3: <strong>Scientists talk about their models: words cloud.</strong> Cl
 
 <p>These definitions circumscribe the <em>model</em> object, its use and its objectives, but they do not in any way describe its nature. And for good reason, because even if we agree on the described contours, the biodiversity of the models remains overwhelming for taxonomists:</p>
 <blockquote>
-<p><em>Probing models, phenomenological models, computational models, developmental models, explanatory models, impoverished models, testing models, idealized models, theoretical models, scale models, heuristic models, caricature models, exploratory models, didactic models, fantasy models, minimal models, toy models, imaginary models, mathematical models, mechanistic models, substitute models, iconic models, formal models, analogue models, and instrumental models are but some of the notions that are used to categorize models.</em><br/> <span class="citation">(Frigg and Hartmann <a href="#ref-frigg2020models">2020</a>)</span></p>
+<p><em>Probing models, phenomenological models, computational models, developmental models, explanatory models, impoverished models, testing models, idealized models, theoretical models, scale models, heuristic models, caricature models, exploratory models, didactic models, fantasy models, minimal models, toy models, imaginary models, mathematical models, mechanistic models, substitute models, iconic models, formal models, analogue models, and instrumental models are but some of the notions that are used to categorize models.</em><br />
+<span class="citation">(Frigg and Hartmann <a href="#ref-frigg2020models">2020</a>)</span></p>
 </blockquote>
 </div>
 <div id="physical-world-and-world-of-ideas" class="section level3">
@@ -200,7 +203,7 @@ Figure 1.4: <strong>Orrery, planets and models</strong>. Physical models of plan
 </p>
 </div>
 
-<p>The model is then no longer simply a mimetic replica but is based on an intellectual equivalence: we are gradually moving into the realm of formal models <span class="citation">(Rosenblueth and Wiener <a href="#ref-rosenblueth1945role">1945</a>)</span>. These are of a more symbolic nature and they represent the original system with a set of logical or mathematical terms, describing the main driving forces or similar structural properties as geometrical models of planetary motions summarized by Kepler in Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:planets">1.4</a>C. Historically these models have often been expressed by sets of mathematical equations or relationships. Increasingly, these have been implemented by computer. Despite their sometimes less analytical and more numerical nature, many so-called computational models could also belong to this category of formal models. There are then many formalisms, discrete or continuous, deterministic or stochastic, based on differential equations or Boolean algebra <span class="citation">(A. C. Fowler, Fowler, and Fowler <a href="#ref-fowler1997mathematical">1997</a>)</span>. Despite their more abstract nature, they offer similar scientific services: it is possible to play with their parameters, specifications or boundary conditions in order to better understand the phenomenon. One can also imagine these formal models from a different perspective, which starts from the data in a bottom-up approach instead of starting from the phenomenon in a top-down analysis. These models will then often be called statistical models or models of data<span class="citation">(Frigg and Hartmann <a href="#ref-frigg2020models">2020</a>)</span>. This distinction will be further clarified in section <a href="scientific-modeling-abstract-the-complexity.html#stat-mech">1.2</a>.</p>
+<p>The model is then no longer simply a mimetic replica but is based on an intellectual equivalence: we are gradually moving into the realm of formal models <span class="citation">(Rosenblueth and Wiener <a href="#ref-rosenblueth1945role">1945</a>)</span>. These are of a more symbolic nature and they represent the original system with a set of logical or mathematical terms, describing the main driving forces or similar structural properties as geometrical models of planetary motions summarized by Kepler in Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:planets">1.4</a>C. Historically these models have often been expressed by sets of mathematical equations or relationships. Increasingly, these have been implemented by computer. Despite their sometimes less analytical and more numerical nature, many so-called computational models could also belong to this category of formal models. There are then many formalisms, discrete or continuous, deterministic or stochastic, based on differential equations or Boolean algebra <span class="citation">(Fowler, Fowler, and Fowler <a href="#ref-fowler1997mathematical">1997</a>)</span>. Despite their more abstract nature, they offer similar scientific services: it is possible to play with their parameters, specifications or boundary conditions in order to better understand the phenomenon. One can also imagine these formal models from a different perspective, which starts from the data in a bottom-up approach instead of starting from the phenomenon in a top-down analysis. These models will then often be called statistical models or models of data<span class="citation">(Frigg and Hartmann <a href="#ref-frigg2020models">2020</a>)</span>. This distinction will be further clarified in section <a href="scientific-modeling-abstract-the-complexity.html#stat-mech">1.2</a>.</p>
 <p>To summarize and continue a little longer with the astronomical metaphor, the study of a particularly complex system (the solar system) can be broken down into a variety of different models. Physical and mechanical models such as armillary spheres (<a href="scientific-modeling-abstract-the-complexity.html#fig:planets">1.4</a>A and B), which make it possible to touch the object of study. Moreover, we can observe the evolution of models which, when confronted with data, have progressed from a geocentric to a heliocentric representation to get closer to the current state of knowledge. Sometimes, models with more formal representations are used to give substance to ideas and hypotheses (<a href="scientific-modeling-abstract-the-complexity.html#fig:planets">1.4</a>C). One of the most conceptual forms is then the mathematical language and one can thus consider that the different models find their culmination in Kepler’s equations about orbits, areas and periods that describe the elliptical motion of the planets. We refer to them today as Kepler’s laws. The model has become a law and therefore a paragon of mathematical modeling <span class="citation">(Wan <a href="#ref-wan2018mathematical">2018</a>)</span>.</p>
 </div>
 <div id="preview-about-cancer-models" class="section level3">
@@ -218,25 +221,118 @@ Figure 1.5: <strong>Tree visualization of <em>model</em> semantic context in can
 </div>
 <div id="stat-mech" class="section level2">
 <h2><span class="header-section-number">1.2</span> Statistics or mechanistic</h2>
+<p>A rather frequent metaphor is to compare formal models to black boxes that take in input <span class="math inline">\(X\)</span> predictors, or independent variables, and output response variable(s) <span class="math inline">\(Y\)</span>, also named dependent variables. The models then split into two categories (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>) depending on the answer to the question: are you modeling the inside of the box or not?</p>
 <div id="the-inside-of-the-box" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> The inside of the box</h3>
-<p>—are you modeling the inside of the box or not? For</p>
-<p>Within formal models -&gt; 2 kinds</p>
-<p><span class="citation">(Baker et al. <a href="#ref-baker2018mechanistic">2018</a>)</span></p>
-<p><a href="https://gosilico.com/technology/mechanistic-vs-statistical-models/" class="uri">https://gosilico.com/technology/mechanistic-vs-statistical-models/</a></p>
-<p>Mechanistic already answer the “how” –&gt; causality inside Breiman –&gt; Inside the box</p>
-<p><a href="https://theartofmodelling.wordpress.com/2012/02/19/mechanistic-models-what-is-the-value-of-understanding/" class="uri">https://theartofmodelling.wordpress.com/2012/02/19/mechanistic-models-what-is-the-value-of-understanding/</a></p>
+<p>The purpose of this section is to present in a schematic, and therefore somewhat caricatural, manner the two competing formal modeling approaches that will be used in this thesis and that we will call mechanistic modeling and statistical modeling. Assuming the unambiguous nature of the predictors and outputs we can imagine that the natural process consists in defining the result Y from the inputs X according to a function of a completely unknown form (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>A).</p>
+<div class="figure" style="text-align: center"><span id="fig:boxes"></span>
+<img src="fig/boxes.png" alt="Different modeling strategies. (A) Data generation from predictors \(X\) to response \(Y\) in the natural phenomenon. (B) Mechanistic modeling defining mechanisms of data generation inside the box. (C) Statistical modeling finding the function \(f\) that gives the best predictions (adapted from Breiman (2001b))." width="60%" />
+<p class="caption">
+Figure 1.6: <strong>Different modeling strategies.</strong> (A) Data generation from predictors <span class="math inline">\(X\)</span> to response <span class="math inline">\(Y\)</span> in the natural phenomenon. (B) Mechanistic modeling defining mechanisms of data generation inside the box. (C) Statistical modeling finding the function <span class="math inline">\(f\)</span> that gives the best predictions (adapted from <span class="citation">Breiman (<a href="#ref-breiman2001statistical">2001</a><a href="#ref-breiman2001statistical">b</a>)</span>).
+</p>
+</div>
+
+<p>The first modeling approach, that we will call mechanistic, consists in building the box by imitating what we think is the process of data generation (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>B). This integration of a priori knowledge can take different forms. In this thesis it will often come back to presupposing certain relations between entities according to what is known about their behaviour. <span class="math inline">\(X_1\)</span> which acts on <span class="math inline">\(X_3\)</span> may correspond to the action of one biological entity on another, supposedly unidirectional; just as the joint action of <span class="math inline">\(X_2\)</span> and <span class="math inline">\(X_3\)</span> may reflect a known synergy in the expression of genes or the action of proteins. Mathematically this is expressed here with a perfectly deterministic model defined a priori. All in all, in a purely mechanistic approach, the nature of the relations between entities should be linked to biological processes and the parameters in the model all have biological definitions in such a way that it could even be considered to measure them.</p>
+<p>The second approach, often called statistical modeling or machine learning, does not necessarily seek to reproduce the natural process of data generation but to find the function allowing the best prediction of <span class="math inline">\(Y\)</span> from <span class="math inline">\(X\)</span> (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>C). Pushed to the limit, they are “idealized version of the data we gain from immediate observation” <span class="citation">(Frigg and Hartmann <a href="#ref-frigg2020models">2020</a>)</span>, thus providing a phenomenological description. The methods and algorithms used are then intended to be sufficiently flexible and to make the fewest possible assumptions about the relationships between variables or the distribution of data. Without listing them exhaustively, the approaches such as boosting <span class="citation">(Bühlmann and Hothorn <a href="#ref-buhlmann2007boosting">2007</a>)</span>, support vector machines <span class="citation">(Cortes and Vapnik <a href="#ref-cortes1995support">1995</a>)</span> or random forests <span class="citation">(Breiman <a href="#ref-breiman2001random">2001</a><a href="#ref-breiman2001random">a</a>)</span>, which will sometimes be mentioned in this thesis, fall into this category which contains many others <span class="citation">(Hastie, Tibshirani, and Friedman <a href="#ref-hastie2009elements">2009</a>)</span>.</p>
+<p>Several discrepancies result from this difference in nature, some of which are summarized in the Table <a href="scientific-modeling-abstract-the-complexity.html#tab:mechstat">1.1</a>. In a somewhat schematic way, we can say that the mechanistic model first asks the question of <em>how</em> and then looks at the result for the output. The notion of causality is intrinsic to the definition of the model. Conversely, the statistical model first tries to approach the Y and then possibly analyses what can be deduced from it, regarding the importance of the variables or their relationships in a <em>post hoc</em> approach <span class="citation">(Ishwaran <a href="#ref-ishwaran2007variable">2007</a>,<span class="citation">Manica et al. (<a href="#ref-manica2019toward">2019</a>)</span>)</span>. The causality is then not a by-product of the algorithm and must be evaluated according to dedicated frameworks <span class="citation">(Hernán and Robins <a href="#ref-hernan2020causal">2020</a>)</span>. The greater flexibility of statistical methods makes it possible to better accept the heterogeneity of the variables, but this is generally done at the cost of a larger number of parameters and therefore requires more data. Moreover, we can contrast the inductive capability of statistical models able to use already generated data to identify patterns in it. Conversely, mechanistic models are more deductive in the sense that they can theoretically allow to extrapolate beyond the original data or knowledge used to build the model <span class="citation">(Baker et al. <a href="#ref-baker2018mechanistic">2018</a>)</span>. Finally, the most relevant way of assessing the value or adequacy of these models may be quite different. A statistical model is measured by its ability to predict output in a validation dataset different from the one used to train its parameters. The mechanistic model will also be evaluated on its capacity to approach the data but also to order, to give a meaning. If its pure predictive performance is generally inferior, how can the value of understanding be assessed? This question will be one of the threads of the dissertation.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:mechstat">Table 1.1: </span><strong>Some pros and cons for mechanistic and statistical modeling</strong> (adapted from <span class="citation">Baker et al. (<a href="#ref-baker2018mechanistic">2018</a>)</span>)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;">
+Mechanistic modeling
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;">
+Statistical modeling
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="1">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>Definition</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:1px solid; padding-left: 2em;" indentlevel="1">
+seeks to establish a mechanistic relationship between inputs and outputs
+</td>
+<td style="text-align:left;">
+seeks to establish statistical relationships between inputs and outputs
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>Pros and cons</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:1px solid; padding-left: 2em;" indentlevel="1">
+presupposes and investigates causal links between the variables
+</td>
+<td style="text-align:left;">
+looks for patterns and establishes correlations between variables
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:1px solid; padding-left: 2em;" indentlevel="1">
+capable of handling small datasets
+</td>
+<td style="text-align:left;">
+requires large datasets
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:1px solid; padding-left: 2em;" indentlevel="1">
+once validated, can be used as a predictive tool in new situations possibly difficult to access through experimentation
+</td>
+<td style="text-align:left;">
+can only make predictions that relate to patterns within the data supplied
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:1px solid; padding-left: 2em;" indentlevel="1">
+difficult to accurately incorporate information from multiple space and time scales due to constrained specifications
+</td>
+<td style="text-align:left;">
+can tackle problems with multiple space and time scales thanks to flexible specifications
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:1px solid; padding-left: 2em;" indentlevel="1">
+evaluated on closeness to data and ability to make sense of it
+</td>
+<td style="text-align:left;">
+evaluated based on predictive performance
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Mechanistic and statistical models are not perfectly exclusive and rather form the two ends of a spectrum. The definitions and classification of some examples is therefore still partly personal and arbitrary. For instance, the example in <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>B can be transformed into a model with a more ambiguous status:</p>
+<p><span class="math display">\[logit(P[Y=1])=\beta_1X_1 + \beta_{23}X_2X_3\]</span></p>
+<p>The logistic model shown in Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>B is deliberately ambiguous. It is a logistic model which it is therefore natural to define as a statistical model. The definition of the interaction between <span class="math inline">\(X_2\)</span> and <span class="math inline">\(X_3\)</span> denotes a mechanistic presupposition. The very choice of a logistic and therefore parametric model could result from a knowledge of the phenomenon even if in practice it is often a default choice for a binary output. Finally, the nature of the parameters <span class="math inline">\(\beta_{1}\)</span> and <span class="math inline">\(\beta_{23}\)</span> is likely to change the interpretation of the model. If they are deduced from the data and therefore optimized to fit Y as well as possible, one will think of a statistical model whose specification is nevertheless based on knowledge of the phenomenon. On the other hand, one could imagine that these parameters are taken from the literature, biochemical or other data. The model will then be more mechanistic. The boundary between these models is further blurred by the different possibilities of combining these approaches and making them complementary <span class="citation">(Baker et al. <a href="#ref-baker2018mechanistic">2018</a>; Salvucci et al. <a href="#ref-salvucci2019machine">2019</a>)</span>, we will come back to this later.</p>
 </div>
 <div id="a-tale-of-prey-and-predators" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> A tale of prey and predators</h3>
+<p>The following is a final general illustration of the concepts introduced with respect to statistical and mechanistic models through a famous and characteristic example: the Lotka-Volterra model of interactions between prey and predators. This model was thus, like many students, my first encounter with what could be called mathematical biology. A detailed description of their context and historical formulation can be found in original articles <span class="citation">(Lotka <a href="#ref-lotka1925principles">1925</a>; Volterra <a href="#ref-volterra1926fluctuations">1926</a>)</span> or dedicated reviews <span class="citation">(Knuuttila and Loettgers <a href="#ref-knuuttila2017modelling">2017</a>)</span> that we summarize here.</p>
+<p>The general objective is to understand the evolution of the populations of a species of prey and its predator, reasonably isolated from outside intervention. Here we will use Canada lynx (<em>Lynx canadensis</em>) and snowshow hare (<em>Lepus americanus</em>) populations for which an illustrative data set exists <span class="citation">(Hewitt <a href="#ref-hewitt1917conservation">1917</a>)</span>. In fact, commercial records listing the quantities of furs sold by trappers to the Canadian Hudson Bay Company may represent a proxy for the populations of these two species. Denoting the population of lynx <span class="math inline">\(L(t)\)</span> and the population of hare <span class="math inline">\(H(t)\)</span> we can deinfe the following system of differential equations:</p>
+<p><span class="math display">\[\dfrac{dH}{dt}=a_1H-a_2HT\]</span></p>
+<p><span class="math display">\[\dfrac{dL}{dt}=-b_1L+b_2HL\]</span></p>
+<p>with all coefficients <span class="math inline">\(a_1, a_2, b_1, b_2 &gt;0\)</span>. <span class="math inline">\(a_1H\)</span> represents the growth rate of the hare population (prey), i.e. the population grows in proportion to its own population. The main losses of hares are due to predation by lynx, as represented with a negative coefficient in the <span class="math inline">\(-a_2HT\)</span> term. It is therefore assumed that a fixed percentage of prey-predator encounters will result in the death of the prey. Conversely, it is assumed that the growth of the lynx population depends primarily on the availability of food for all lynxes, summarized in the <span class="math inline">\(b_2HL\)</span> term. In the absence of hares, the lynx population decreases exponentially, as denoted by the coefficient <span class="math inline">\(-b_1L\)</span>. It is thus noted that in the absence of predators, prey increases exponentially, while in the absence of prey, predators would decline in the same way.</p>
 <p>Example with data, stat and mech for Lotka-Volterra <a href="https://mc-stan.org/users/documentation/case-studies/lotka-volterra-predator-prey.html" class="uri">https://mc-stan.org/users/documentation/case-studies/lotka-volterra-predator-prey.html</a> <a href="http://www2.nau.edu/lrm22/lessons/predator_prey/predator_prey.html" class="uri">http://www2.nau.edu/lrm22/lessons/predator_prey/predator_prey.html</a></p>
+
+<p><span class="citation">(Flake <a href="#ref-flake1998computational">1998</a>)</span> <span class="citation">(Knuuttila and Loettgers <a href="#ref-knuuttila2017modelling">2017</a>)</span></p>
 </div>
 </div>
 <div id="simplicity-is-the-ultimate-sophistication" class="section level2">
 <h2><span class="header-section-number">1.3</span> Simplicity is the ultimate sophistication</h2>
 <p>To conclude this modeling introduction, it is important to highlight one of the most important points already introduced in a concise manner by Valéry at the beginning of this chapter. Whatever its nature, a model is a simplified representation of reality and by extension is always wrong to a certain extent. This is a generally well-accepted fact, but it is crucial to understand the implications for the modeller. This simplification is not a collateral effect but an intrinsic feature of any model:</p>
 <blockquote>
-<p><em>No substantial part of the universe is so simple that it can be grasped and controlled without abstraction. Abstraction consists in replacing the part of the universe under consideration by a model of similar but simpler structure. Models, formal and intellectual on the one hand, or material on the other, are thus a central necessity of scientific procedure.</em><br/> <span class="citation">(Rosenblueth and Wiener <a href="#ref-rosenblueth1945role">1945</a>)</span></p>
+<p><em>No substantial part of the universe is so simple that it can be grasped and controlled without abstraction. Abstraction consists in replacing the part of the universe under consideration by a model of similar but simpler structure. Models, formal and intellectual on the one hand, or material on the other, are thus a central necessity of scientific procedure.</em><br />
+<span class="citation">(Rosenblueth and Wiener <a href="#ref-rosenblueth1945role">1945</a>)</span></p>
 </blockquote>
 <p>Therefore, a model exists only because we are not able to deal directly with the phenomenon and simplification is a necessity to make it more tractable <span class="citation">(Potochnik <a href="#ref-potochnik2017idealization">2017</a>)</span>. This simplification appeared many times in the studies of frictionless planes or theoretically isolated systems, in a totally deliberate strategy. However, this idealization can be viewed in several ways [weisberg2007three]. One of them, called Aristotelian or minimal idealization, is to eliminate all the properties of an object that we think are not relevant to the problem in question. This amounts to lying by omission or making assumptions of insignificance by focusing on key causal factors only <span class="citation">(Frigg and Hartmann <a href="#ref-frigg2020models">2020</a>)</span>. We therefore refer to the <em>a priori</em> idea that we have of the phenomenon. The other idealization, called Galilean, is to deliberately distort the theory to make it tractable as explicited by Galileo himself:</p>
 <blockquote>
@@ -245,7 +341,12 @@ Figure 1.5: <strong>Tree visualization of <em>model</em> semantic context in can
 <p>This fairly pragmatic approach should make it possible to evolve iteratively, reducing distortions as and when possible. We will have the opportunity to come back to the idealizations made in the course of the cancer models but it is already possible to give some orientations. The experimenter who seeks to study cancer using cell lines or animal models is clearly part of Galileo’s lineage. The mathematical or <em>in silico</em> modeler has a more balanced profile. The design of qualitative mechanistic models based on prior knowledge, which is the core of the second part of the thesis, is more akin to minimal idealization, which seeks to highlight the salient features of a system. This pragmatism consisting in creating computationnaly-tractable models is also quite widespread, particularly in highly dimensional statistical approaches.</p>
 <p>Because of the complexity of the phenomena, simplification is therefore a necessity. The objective then should not necessarily be to make the model more complex, but to match its level of simplification with its assumptions and objectives. Faced with the temptation of the author of the model, or his reviewer, to always extend and complicate the model, it could be replied with Lewis Carrol words<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>:</p>
 <blockquote>
-<p><em>“That’s another thing we’ve learned from your Nation,” said Mein Herr, “map-making. But we’ve carried it much further than you. What do you consider the largest map that would be really useful?”<br/> “About six inches to the mile.”<br/> “Only six inches!” exclaimed Mein Herr. “We very soon got to six yards to the mile. Then we tried a hundred yards to the mile. And then came the grandest idea of all! We actually made a map of the country, on the scale of a mile to the mile!”<br/> “Have you used it much?” I enquired.<br/> “It has never been spread out, yet,” said Mein Herr: “the farmers objected: they said it would cover the whole country, and shut out the sunlight! So we now use the country itself, as its own map, and I assure you it does nearly as well.”<br/> Lewis Carroll, </em>Sylvie and Bruno* (1893)</p>
+<p><em>“That’s another thing we’ve learned from your Nation,” said Mein Herr, “map-making. But we’ve carried it much further than you. What do you consider the largest map that would be really useful?”<br />
+“About six inches to the mile.”<br />
+“Only six inches!” exclaimed Mein Herr. “We very soon got to six yards to the mile. Then we tried a hundred yards to the mile. And then came the grandest idea of all! We actually made a map of the country, on the scale of a mile to the mile!”<br />
+“Have you used it much?” I enquired.<br />
+“It has never been spread out, yet,” said Mein Herr: “the farmers objected: they said it would cover the whole country, and shut out the sunlight! So we now use the country itself, as its own map, and I assure you it does nearly as well.”<br />
+Lewis Carroll, </em>Sylvie and Bruno* (1893)</p>
 </blockquote>
 
 </div>
@@ -258,11 +359,26 @@ Figure 1.5: <strong>Tree visualization of <em>model</em> semantic context in can
 <div id="ref-baker2018mechanistic">
 <p>Baker, Ruth E, Jose-Maria Pena, Jayaratnam Jayamohan, and Antoine Jérusalem. 2018. “Mechanistic Models Versus Machine Learning, a Fight Worth Fighting for the Biological Community?” <em>Biology Letters</em> 14 (5). The Royal Society: 20170660.</p>
 </div>
+<div id="ref-breiman2001random">
+<p>Breiman, Leo. 2001a. “Random Forests.” <em>Machine Learning</em> 45 (1). Springer: 5–32.</p>
+</div>
+<div id="ref-breiman2001statistical">
+<p>Breiman, Leo. 2001b. “Statistical Modeling: The Two Cultures (with Comments and a Rejoinder by the Author).” <em>Statistical Science</em> 16 (3). Institute of Mathematical Statistics: 199–231.</p>
+</div>
+<div id="ref-buhlmann2007boosting">
+<p>Bühlmann, Peter, and Torsten Hothorn. 2007. “Boosting Algorithms: Regularization, Prediction and Model Fitting.” <em>Statistical Science</em> 22 (4). Institute of Mathematical Statistics: 477–505.</p>
+</div>
 <div id="ref-dictionnarymodel">
 <p>Collins. 2020. <em>The Collins English Dictionary</em>. HarperCollins. <a href="https://www.collinsdictionary.com/dictionary/english/model" class="uri">https://www.collinsdictionary.com/dictionary/english/model</a>.</p>
 </div>
+<div id="ref-cortes1995support">
+<p>Cortes, Corinna, and Vladimir Vapnik. 1995. “Support-Vector Networks.” <em>Machine Learning</em> 20 (3). Springer: 273–97.</p>
+</div>
 <div id="ref-deisboeck2009silico">
 <p>Deisboeck, Thomas S, Le Zhang, Jeongah Yoon, and Jose Costa. 2009. “In Silico Cancer Modeling: Is It Ready for Prime Time?” <em>Nature Clinical Practice Oncology</em> 6 (1). Nature Publishing Group: 34–42.</p>
+</div>
+<div id="ref-flake1998computational">
+<p>Flake, Gary William. 1998. <em>The Computational Beauty of Nature: Computer Explorations of Fractals, Chaos, Complex Systems, and Adaptation</em>. MIT press.</p>
 </div>
 <div id="ref-fowler1997mathematical">
 <p>Fowler, Andrew Cadle, Anna C Fowler, and AC Fowler. 1997. <em>Mathematical Models in the Applied Sciences</em>. Vol. 17. Cambridge University Press.</p>
@@ -270,11 +386,38 @@ Figure 1.5: <strong>Tree visualization of <em>model</em> semantic context in can
 <div id="ref-frigg2020models">
 <p>Frigg, Roman, and Stephan Hartmann. 2020. “Models in Science.” In <em>The Stanford Encyclopedia of Philosophy</em>, edited by Edward N. Zalta, Spring 2020. <a href="https://plato.stanford.edu/archives/spr2020/entries/models-science/" class="uri">https://plato.stanford.edu/archives/spr2020/entries/models-science/</a>; Metaphysics Research Lab, Stanford University.</p>
 </div>
+<div id="ref-hastie2009elements">
+<p>Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. <em>The Elements of Statistical Learning: Data Mining, Inference, and Prediction</em>. Springer Science &amp; Business Media.</p>
+</div>
+<div id="ref-hernan2020causal">
+<p>Hernán, MA, and JM Robins. 2020. “Causal Inference: What If.” <em>Boca Raton: Chapman &amp; Hill/CRC</em>.</p>
+</div>
+<div id="ref-hewitt1917conservation">
+<p>Hewitt, C Gordon. 1917. “Conservation of Wild Life in Canada.” Nature Publishing Group.</p>
+</div>
+<div id="ref-ishwaran2007variable">
+<p>Ishwaran, Hemant. 2007. “Variable Importance in Binary Regression Trees and Forests.” <em>Electronic Journal of Statistics</em> 1. The Institute of Mathematical Statistics; the Bernoulli Society: 519–37.</p>
+</div>
+<div id="ref-knuuttila2017modelling">
+<p>Knuuttila, Tarja, and Andrea Loettgers. 2017. “Modelling as Indirect Representation? The Lotka–Volterra Model Revisited.” <em>The British Journal for the Philosophy of Science</em> 68 (4). Oxford University Press: 1007–36.</p>
+</div>
+<div id="ref-lotka1925principles">
+<p>Lotka, AJ. 1925. “Principles of Physical Biology.” <em>Baltimore: Waverly</em>.</p>
+</div>
+<div id="ref-manica2019toward">
+<p>Manica, Matteo, Ali Oskooei, Jannis Born, Vigneshwari Subramanian, Julio Sáez-Rodríguez, and María Rodríguez Martínez. 2019. “Toward Explainable Anticancer Compound Sensitivity Prediction via Multimodal Attention-Based Convolutional Encoders.” <em>Molecular Pharmaceutics</em>. ACS Publications.</p>
+</div>
 <div id="ref-potochnik2017idealization">
 <p>Potochnik, Angela. 2017. <em>Idealization and the Aims of Science</em>. University of Chicago Press.</p>
 </div>
 <div id="ref-rosenblueth1945role">
 <p>Rosenblueth, Arturo, and Norbert Wiener. 1945. “The Role of Models in Science.” <em>Philosophy of Science</em> 12 (4). Williams; Wilkins Co.: 316–21.</p>
+</div>
+<div id="ref-salvucci2019machine">
+<p>Salvucci, Manuela, Arman Rahman, Alexa J Resler, Girish M Udupi, Deborah A McNamara, Elaine W Kay, Pierre Laurent-Puig, et al. 2019. “A Machine Learning Platform to Optimize the Translation of Personalized Network Models to the Clinic.” <em>JCO Clinical Cancer Informatics</em> 3. American Society of Clinical Oncology: 1–17.</p>
+</div>
+<div id="ref-volterra1926fluctuations">
+<p>Volterra, Vito. 1926. “Fluctuations in the Abundance of a Species Considered Mathematically.” Nature Publishing Group.</p>
 </div>
 <div id="ref-wan2018mathematical">
 <p>Wan, Frederick YM. 2018. <em>Mathematical Models and Their Analysis</em>. Vol. 79. SIAM.</p>
@@ -344,6 +487,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
