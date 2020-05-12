@@ -1,5 +1,5 @@
 --- 
-title: From mechanistic modelling of cancer to clinical interpretation and impact evaluation
+title: From mechanistic modeling of cancer to clinical interpretation and impact evaluation
 author: "" # defined in _output.yml
 date: "15/09/2020" # defined in _output.yml
 site: bookdown::bookdown_site

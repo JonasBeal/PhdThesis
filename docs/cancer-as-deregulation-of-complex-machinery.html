@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Cancer as deregulation of complex machinery | From mechanistic modelling of cancer to clinical interpretation and impact evaluation</title>
+  <title>Chapter 2 Cancer as deregulation of complex machinery | From mechanistic modeling of cancer to clinical interpretation and impact evaluation</title>
   <meta name="description" content="This is my PhD thesis." />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Cancer as deregulation of complex machinery | From mechanistic modelling of cancer to clinical interpretation and impact evaluation" />
+  <meta property="og:title" content="Chapter 2 Cancer as deregulation of complex machinery | From mechanistic modeling of cancer to clinical interpretation and impact evaluation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Cancer as deregulation of complex machinery | From mechanistic modelling of cancer to clinical interpretation and impact evaluation" />
+  <meta name="twitter:title" content="Chapter 2 Cancer as deregulation of complex machinery | From mechanistic modeling of cancer to clinical interpretation and impact evaluation" />
   
   <meta name="twitter:description" content="This is my PhD thesis." />
   
@@ -123,10 +123,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#simplicity-is-the-ultimate-sophistication"><i class="fa fa-check"></i><b>1.3</b> Simplicity is the ultimate sophistication</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html"><i class="fa fa-check"></i><b>2</b> Cancer as deregulation of complex machinery</a><ul>
-<li class="chapter" data-level="2.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#cancer-from-a-distance-epidemiology-and-main-figures"><i class="fa fa-check"></i><b>2.1</b> Cancer from a distance: epidemiology and main figures</a></li>
-<li class="chapter" data-level="2.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#basic-molecular-biology"><i class="fa fa-check"></i><b>2.2</b> Basic molecular biology</a></li>
-<li class="chapter" data-level="2.3" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#high-throughput-data-and-multi-omics"><i class="fa fa-check"></i><b>2.3</b> High-throughput data and multi-omics</a></li>
-<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.4</b> From genetic to network disease</a></li>
+<li class="chapter" data-level="2.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#what-is-cancer"><i class="fa fa-check"></i><b>2.1</b> What is cancer?</a></li>
+<li class="chapter" data-level="2.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#cancer-from-a-distance-epidemiology-and-main-figures"><i class="fa fa-check"></i><b>2.2</b> Cancer from a distance: epidemiology and main figures</a></li>
+<li class="chapter" data-level="2.3" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#basic-molecular-biology"><i class="fa fa-check"></i><b>2.3</b> Basic molecular biology</a></li>
+<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#high-throughput-data-and-multi-omics"><i class="fa fa-check"></i><b>2.4</b> High-throughput data and multi-omics</a></li>
+<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> From genetic to network disease</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>3</b> Test part</a><ul>
 <li class="chapter" data-level="3.1" data-path="test.html"><a href="test.html#abc"><i class="fa fa-check"></i><b>3.1</b> Abc</a></li>
@@ -143,7 +144,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">From mechanistic modelling of cancer to clinical interpretation and impact evaluation</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">From mechanistic modeling of cancer to clinical interpretation and impact evaluation</a>
           </h1>
         </div>
 
@@ -156,19 +157,71 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <blockquote>
 <p><em>All happy families are alike; each unhappy family is unhappy in its own way.</em><br/> Leo Tolstoy (Anna Karenina, 1877)</p>
 </blockquote>
-<p>The notion of modeling is embedded in science, to the point that it has sometimes been used to define the very nature of scientific research</p>
+<p>Armed with all these models, whether statistical or mechanistic, we are going to look at a particularly complex system that fully justifies their use: cancer. Since the first chapter recalled how important prior knowledge of the phenomenon under study is for designing models, whatever their nature, this chapter will briefly summarize some of the most important characteristics of this disease before returning to the models themselves in the next chapter. Without aiming for exhaustiveness, and after an epidemiological and statistical description, we will focus on the most useful information for the modeller, i.e. the underlying biological mechanisms and available data.</p>
+<div class="figure" style="text-align: center"><span id="fig:bath"></span>
+<img src="fig/bath.jpg" alt="Cancer is an old disease Rembrandt, Bathsheba at Her Bath, c. 1654, oil on canvas, Louvre Museum, Paris" width="90%" />
+<p class="caption">
+Figure 2.1: <strong>Cancer is an old disease</strong> Rembrandt, <em>Bathsheba at Her Bath</em>, c. 1654, oil on canvas, Louvre Museum, Paris
+</p>
+</div>
+
+<div id="what-is-cancer" class="section level2">
+<h2><span class="header-section-number">2.1</span> What is cancer?</h2>
+<p>Cancer can be described as a group of diseases characterized by uncontrolled cell divisions and growth which can spread to surrounding tissues. Descriptions of this disease, and essentially associated solid tumours, have been found as far back as ancient Egyptian documents, at least 1600 BC and we know from the first century A.D. with Aulus Celsus that it is better to remove the tumors and this as soon as possible <span class="citation">(Hajdu <a href="#ref-hajdu2011note">2011</a><a href="#ref-hajdu2011note">a</a>)</span>. Progress will accelerate during the Renaissance with the renewed interest in medicine, and anatomy in particular, which will advance the knowledge of tumour pathology and surgery <span class="citation">(Hajdu <a href="#ref-hajdu2011note2">2011</a><a href="#ref-hajdu2011note2">b</a>)</span>. The progress of anatomical knowledge has also left brilliant testimonies in the field of painting, which make the renown of the Renaissance today. The precision of these artists’ traits has also allowed some retrospective medical analyses, some of them going so far as to identify the signs of a tumour in certain subjects <span class="citation">(Bianucci et al. <a href="#ref-bianucci2018earliest">2018</a>)</span>. Such is the bluish stain on the left breast of the Bathsheba painted by Rembrandt (Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:bath">2.1</a>) which has been subject to controversial interpretations, sometimes described as an example of “skin discolouration, distortion of symmetry with axillary fullness and peau d’orange” <span class="citation">(Braithwaite and Shugg <a href="#ref-braithwaite1983rembrandt">1983</a>)</span> and sometimes spared by photonic and computationnal analyses <span class="citation">(Heijblom et al. <a href="#ref-heijblom2014monte">2014</a>)</span>. The mechanisms of the disease only began to be elucidated with the appearance of the microscope in the 19th century, which revealed its cellular origin <span class="citation">(Hajdu <a href="#ref-hajdu2012note">2012</a>)</span>.</p>
+</div>
 <div id="cancer-from-a-distance-epidemiology-and-main-figures" class="section level2">
-<h2><span class="header-section-number">2.1</span> Cancer from a distance: epidemiology and main figures</h2>
+<h2><span class="header-section-number">2.2</span> Cancer from a distance: epidemiology and main figures</h2>
+<p><span class="citation">(Braithwaite and Shugg <a href="#ref-braithwaite1983rembrandt">1983</a>)</span></p>
+<p><span class="citation">(Bianucci et al. <a href="#ref-bianucci2018earliest">2018</a>)</span></p>
+<p><span class="citation">(Bray et al. <a href="#ref-bray2018global">2018</a>)</span> <span class="citation">(Jemal et al. <a href="#ref-jemal2017annual">2017</a>)</span> <a href="https://dataatomic.com/r/ggplot2-waffle/" class="uri">https://dataatomic.com/r/ggplot2-waffle/</a> <span class="citation">(Liu et al. <a href="#ref-liu2018integrated">2018</a>)</span></p>
 </div>
 <div id="basic-molecular-biology" class="section level2">
-<h2><span class="header-section-number">2.2</span> Basic molecular biology</h2>
+<h2><span class="header-section-number">2.3</span> Basic molecular biology</h2>
+<p><span class="citation">(Weinberg and Weinberg <a href="#ref-weinberg2013biology">2013</a>)</span></p>
 </div>
 <div id="high-throughput-data-and-multi-omics" class="section level2">
-<h2><span class="header-section-number">2.3</span> High-throughput data and multi-omics</h2>
+<h2><span class="header-section-number">2.4</span> High-throughput data and multi-omics</h2>
 </div>
 <div id="from-genetic-to-network-disease" class="section level2">
-<h2><span class="header-section-number">2.4</span> From genetic to network disease</h2>
+<h2><span class="header-section-number">2.5</span> From genetic to network disease</h2>
+<p><span class="citation">(Sanchez-Vega et al. <a href="#ref-sanchez2018oncogenic">2018</a>)</span></p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-bianucci2018earliest">
+<p>Bianucci, Raffaella, Antonio Perciaccante, Philippe Charlier, Otto Appenzeller, and Donatella Lippi. 2018. “Earliest Evidence of Malignant Breast Cancer in Renaissance Paintings.” <em>The Lancet Oncology</em> 19 (2). Elsevier: 166–67.</p>
+</div>
+<div id="ref-braithwaite1983rembrandt">
+<p>Braithwaite, Peter Allen, and Dace Shugg. 1983. “Rembrandt’s Bathsheba: The Dark Shadow of the Left Breast.” <em>Annals of the Royal College of Surgeons of England</em> 65 (5). Royal College of Surgeons of England: 337.</p>
+</div>
+<div id="ref-bray2018global">
+<p>Bray, Freddie, Jacques Ferlay, Isabelle Soerjomataram, Rebecca L Siegel, Lindsey A Torre, and Ahmedin Jemal. 2018. “Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.” <em>CA: A Cancer Journal for Clinicians</em> 68 (6). Wiley Online Library: 394–424.</p>
+</div>
+<div id="ref-hajdu2011note">
+<p>Hajdu, Steven I. 2011a. “A Note from History: Landmarks in History of Cancer, Part 1.” <em>Cancer</em> 117 (5). Wiley Online Library: 1097–1102.</p>
+</div>
+<div id="ref-hajdu2011note2">
+<p>Hajdu, Steven I. 2011b. “A Note from History: Landmarks in History of Cancer, Part 2.” <em>Cancer</em> 117 (12). Wiley Online Library: 2811–20.</p>
+</div>
+<div id="ref-hajdu2012note">
+<p>Hajdu, Steven I. 2012. “A Note from History: Landmarks in History of Cancer, Part 3.” <em>Cancer</em> 118 (4). Wiley Online Library: 1155–68.</p>
+</div>
+<div id="ref-heijblom2014monte">
+<p>Heijblom, Michelle, Linda M Meijer, Ton G van Leeuwen, Wiendelt Steenbergen, and Srirang Manohar. 2014. “Monte Carlo Simulations Shed Light on Bathsheba’s Suspect Breast.” <em>Journal of Biophotonics</em> 7 (5). Wiley Online Library: 323–31.</p>
+</div>
+<div id="ref-jemal2017annual">
+<p>Jemal, Ahmedin, Elizabeth M Ward, Christopher J Johnson, Kathleen A Cronin, Jiemin Ma, A Blythe Ryerson, Angela Mariotto, et al. 2017. “Annual Report to the Nation on the Status of Cancer, 1975–2014, Featuring Survival.” <em>JNCI: Journal of the National Cancer Institute</em> 109 (9). Oxford University Press: djx030.</p>
+</div>
+<div id="ref-liu2018integrated">
+<p>Liu, Jianfang, Tara Lichtenberg, Katherine A Hoadley, Laila M Poisson, Alexander J Lazar, Andrew D Cherniack, Albert J Kovatich, et al. 2018. “An Integrated Tcga Pan-Cancer Clinical Data Resource to Drive High-Quality Survival Outcome Analytics.” <em>Cell</em> 173 (2). Elsevier: 400–416.</p>
+</div>
+<div id="ref-sanchez2018oncogenic">
+<p>Sanchez-Vega, Francisco, Marco Mina, Joshua Armenia, Walid K Chatila, Augustin Luna, Konnor C La, Sofia Dimitriadoy, et al. 2018. “Oncogenic Signaling Pathways in the Cancer Genome Atlas.” <em>Cell</em> 173 (2). Elsevier: 321–37.</p>
+</div>
+<div id="ref-weinberg2013biology">
+<p>Weinberg, Robert A, and Robert A Weinberg. 2013. <em>The Biology of Cancer</em>. Garland science.</p>
 </div>
 </div>
             </section>
