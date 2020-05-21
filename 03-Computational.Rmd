@@ -11,11 +11,11 @@ knitr::asis_output(
 ```
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\initial{A}rmed ')
+knitr::asis_output('\\initial{T}he previous chapter identified the need to organize cancer knowledge and data. The integration of biological knowledge, particularly in the form of networks, is a first step in this direction. The deepening of knowledge, however, requires the ability to manipulate objects even more, to experiment, to dissect their behaviour in an infinite number of situations, such as the astronomer with his orrery or physicians with their old anatomical models (Figure \@ref(fig:anatomy)). Is it then possible to create mechanistic models of cancer in the same way?')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
-knitr::asis_output('Armed with.')
+knitr::asis_output('The previous chapter identified the need to organize cancer knowledge and data. The integration of biological knowledge, particularly in the form of networks, is a first step in this direction. The deepening of knowledge, however, requires the ability to manipulate objects even more, to experiment, to dissect their behaviour in an infinite number of situations, such as the astronomer with his orrery or physicians with their old anatomical models (Figure \@ref(fig:anatomy)). Is it then possible to create mechanistic models of cancer in the same way?')
 ```
 
 
@@ -37,12 +37,13 @@ knitr::include_graphics("fig/anatomy.jpg")
 ```
 (ref:anatomy-caption) **Dissecting disease using non-computational models.**  Rembrandt, *The Anatomy Lesson of Dr Nicolaes Tulp*, 1634, oil on canvas, Mauritshuis museum, The Hague
 
-Different kinds of models: scales --> focus to signaling. We will model a cell
+## Diversity and expansion of mechanistic models of cancer
+
+Timeline of mathematics and cancer [@byrne2010dissecting]
+Integrative and scales. Many mathematical models are cell-based [@anderson2008integrative]
 
 Many reviews
-Timeline of mathematics and cancer [@byrne2010dissecting]. Mainly focused on angiogenesis, carconigenesis and tumour growth. Different formalisms depending on scales review [@bellomo2008foundations]. Focus on cellular scale and bigger.
-
-Integrative and scales. Many mathematical models are cell-based [@anderson2008integrative]
+. Mainly focused on angiogenesis, carconigenesis and tumour growth. Different formalisms depending on scales review [@bellomo2008foundations]. Focus on cellular scale and bigger.
 
 PKPD and regimens [@barbolosi2016computational]
 
@@ -50,25 +51,33 @@ Tumour growth [@benzekry2014classical]
 
 review [@altrock2015mathematics]
 
+PubMed trends
 
-## Features of complex systems: emergence, non-linearity, feedback
+Different kinds of models: scales --> focus to signaling. We will model a cell
+
+## Focus on molecular signaling
+
+With two main formalisms: ODE and logical
+[@le2015quantitative]
+
+
+## Theory --> Features of complex systems: emergence, non-linearity, feedback
 
 critical transitions in multiple fields [@trefois2015critical]
 bistable and switches [@markevich2004signaling]
 emergence [@helikar2008emergent]
-
-## Need for integrated approaches
+tyson ode examples breast [@tyson2011dynamic] and general [@tyson2003sniffers]
 
 network and complex elements. Examples of loops [@kitano2002computational] [@kitano2002systems]
-prior knowledge [@ferranti2017value]
 
-## Various formalisms and objectives
 
-[@le2015quantitative]
-tyson ode examples breast [@tyson2011dynamic] and general [@tyson2003sniffers]
+## Applications --> impact of data
+
 Boris Kholodenko
-
 With data also [@bouhaddou2018mechanistic]
+
+
+
 
 
 Cancer systems biology can be understood as the study of how perturbations of
