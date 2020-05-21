@@ -1020,7 +1020,7 @@ modeller, i.e.~the underlying biological mechanisms and available data.
 
 }
 
-\caption[Cancer is an old disease]{\textbf{Cancer is an old disease} Rembrandt,
+\caption[Cancer is an old disease]{\textbf{Cancer is an old disease.} Rembrandt,
 \emph{Bathsheba at Her Bath}, c. 1654, oil on canvas, Louvre Museum,
 Paris}\label{fig:bath}
 \end{figure}
@@ -1212,7 +1212,7 @@ first stated Francis Crick \citep{crick1970central}.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{fig/central-dogma} 
+{\centering \includegraphics[width=0.8\linewidth]{fig/central-dogma} 
 
 }
 
@@ -1332,10 +1332,13 @@ technological revolution.
 
 \section{The new era of genomics}\label{the-new-era-of-genomics}
 
+\subsection{From sequencing to multi-omics
+data}\label{from-sequencing-to-multi-omics-data}
+
 In 2001, the first sequencing of the human genome symbolized the
 beginning of a new era, that of what will become high-throughput
 genomics \citep{lander2001initial, venter2001sequence}. From the end of
-the 19th century, biological data started to accumulate at an
+the 20th century, biological data started to accumulate at an
 ever-increasing rate \citep{reuter2015high}, feeding and accelerating
 cancer research in particular
 \citep{stratton2009cancer, meyerson2010advances}. The ability to
@@ -1343,26 +1346,30 @@ sequence the human genome as a whole, for an ever-increasing number of
 individuals, has enabled less biased and more systematic studies of the
 causes of cancer \citep{lander2011initial}. The number of genes
 associated with cancer increased drastically and some very important
-genes such as BRAF of PIK3CA are identified
+genes such as BRAF of PIK3CA have been identified
 \citep{davies2002mutations, samuels2004high}. Progress also extended to
 the gene expression data. Gene-expression arrays have made an important
-contribution by providing access to transcriptomic data, i.e.~what has
-been transcribed from DNA and is therefore one step further in terms of
-biological information. This information has made it possible to refine
-the classification of cancers, which until now has been done mainly
-according to the tumour site \citep{perou1999distinctive}. Breast
-cancers are thus divided into subtypes with different combinations of
-molecular markers that facilitate the understanding of clinical
-behavior. One step further, we also note the appearance of prognostic
-gene signatures such as gene expression patterns correlated with the
-survival of patients \citep{van2002gene}. This revolution was then
-extended to other types of data such as proteins (proteomics),
-reversible modifications of DNA or DNA-associated proteins
-(epigenomics), metabolites (metabolomics) and others, each representing
-a perspective that can complement the others to better understand
-biological mechanisms, particularly in the case of diseases
-\citep{hasin2017multi}. We have thus entered the era of multiomics data
-\citep{vucic2012translating}.
+contribution by providing access to transcriptomic data (RNA), i.e.~what
+has been transcribed from DNA and is therefore one step further in terms
+of biological information. This information has made it possible to
+further explore the differences betwween normal and tumour cells
+\citep{perou1999distinctive}, or even to refine the classification of
+cancers, which until now has been done mainly according to the tumour
+site. Breast cancers are thus divided into subtypes with different
+combinations of molecular markers that facilitate the understanding of
+clinical behavior \citep{perou2000molecular}. One step further, we also
+note the appearance of prognostic gene signatures such as gene
+expression patterns correlated with the survival of patients
+\citep{van2002gene}. This revolution was then extended to other types of
+data such as proteins (proteomics), reversible modifications of DNA or
+DNA-associated proteins (epigenomics), metabolites (metabolomics) and
+others, each representing a perspective that can complement the others
+to better understand biological mechanisms, particularly in the case of
+diseases \citep{hasin2017multi}. We have thus entered the era of
+multiomics data \citep{vucic2012translating}.
+
+\subsection{State-of-the art of cancer
+data}\label{state-of-the-art-of-cancer-data}
 
 With respect to cancer in particular, this wealth of data is
 particularly represented by a whole series of studies conducted by The
@@ -1399,12 +1406,57 @@ types as summaried in Pan-cancer analyses from TCGA data. Reprinted from
 
 
 
-\section{From genetic to network
-disease}\label{from-genetic-to-network-disease}
+However, the diversity of data available for cancer research extends far
+beyond this, both in terms of technology and type of data. This may be
+data from model organisms such as mice or tumours of human origin but
+made more suitable for experimentation. In the latter category, it is
+crucial to mention the huge amount of data available on cell lines,
+extracted from human tumours and transformed to be studied in culture.
+It is then possible to go beyond descriptive data and vary the
+experimental conditions in order to study the responses of these cells
+to perturbations and to enrich our knowledge. It is therefore possible
+to know the response to more than 100 drugs of about 700 cell lines
+\citep{yang2012genomics}. The richness of these data, coupled with the
+omic profiling of each cell line, enables to study the determinants of
+response to treatment with unprecedented scope
+\citep{iorio2016landscape}. More recently, but following a similar
+logic, other types of inhibition screenings have been proposed based on
+a more specific technique called CRISPR-Cas9
+\citep{behan2019prioritization}. The simplicity of the cell lines in
+relation to the original tumours makes all these studies possible but
+sometimes hinders the clinical application of the knowledge acquired.
+For this reason, other types of biological models have been developed,
+including patient-derived xenografts (PDX) which is an implant of human
+tumours in mice to maintain the existence of a certain tumour
+microenvironment \citep{hidalgo2014patient}, while maintaining drug
+screening possibilities \citep{gao2015high}. These two types of data,
+cell lines and PDX, have been used in this thesis, in addition to TCGA
+patient data, thus justifying the limitation of this presentation, which
+could otherwise be extended to other types of biological models.
+Similarly, other technologies are becoming increasingly important in the
+generation of cancer data, such as single-cell sequencing
+\citep{navin2015first}, but will not be used in this work.
+
+\section{Data and beyond: from genetic to network
+disease}\label{data-and-beyond-from-genetic-to-network-disease}
 
 All that remains to be done now is to make sense of all these data, to
-organize it. This is already partly the case in the Figure
-\ref{fig:tcga} since genetic alterations are grouped by pathway. A
+organize it, because understanding does not flow directly from the
+abundance of data and the ability to produce the data may have been
+outpaced by the ability to analyze it \citep{stadler2014cancer}. A
+striking example is that of the prognostic signatures mentioned above.
+The many signatures or lists of genes proposed, even for the same cancer
+type, share relatively few genes, are difficult to interpret and their
+efficiency is sometimes poorly reproducible \citep{domany2014using}.
+Even more surprisingly, most signatures composed of randomly selected
+genes were also found to be associated with patient survival
+\citep{venet2011most}. One of the main avenues for improving the
+interpretability of the data is the integration of the prior knowledge
+we have of the phenomena, and in this case of cancer
+\citep{domany2014using}.
+
+This is already the case in Figure \ref{fig:tcga} since genetic
+alterations have been grouped in several categories called pathways. A
 pathway is group of biological entities, and associated chemical
 reactions, working together to control a specific cell function like
 apoptosis or cell division. The meaning of these groupings derives quite
@@ -1418,11 +1470,12 @@ like alterations of cell cycle or angiogenesis for
 instance\citep{jones2008core}. While the data inform us about the
 underlying biology, their analysis benefits in return from the a priori
 knowledge of the relationships between the different proteins and how
-they contribute to the various functions. Increasingly, the variables
-are not interpreted separately but in relation to each other. This is
-reflected in the emergence of more and more resources to summarize and
-represent signaling pathways and associated networks such as SIGNOR
-\citep{perfetto2016signor}, OmniPath \citep{turei2016omnipath} or ACSN
+they contribute to the various functions. Increasingly, the biological
+variables are not interpreted separately but in relation to each other
+\citep{barabasi2004network}. This is reflected in the emergence of more
+and more resources to summarize and represent signaling pathways and
+associated networks such as SIGNOR \citep{perfetto2016signor}, OmniPath
+\citep{turei2016omnipath} or the Atlas of Cancer Signaling Network
 \citep{kuperstein2015atlas}. Like other diseases, cancer then goes from
 a genetic disease to a network disease \citep{del2010diseases} and one
 can study how all kinds of genetic alterations affect the wiring of
@@ -1430,7 +1483,7 @@ these networks and modify the cellular functions leading to the
 previously described cancer hallmarks as depicted schmatically in Figure
 \ref{fig:circuit}. In short, the richness of the data did not make it
 less necessary to use a priori knowledge in order to make the analyses
-more interpretable and more robust \citep{domany2014using}.
+more interpretable and more robust .
 
 \begin{figure}
 
@@ -1478,6 +1531,70 @@ TCGA data. Reprinted from \citet{sanchez2018oncogenic}.}\label{fig:pathways}
 
 
 
+
+\chapter{Computational modeling of cancer: from complex disease to
+systems
+biology}\label{computational-modeling-of-cancer-from-complex-disease-to-systems-biology}
+
+\epigraph{"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."}{George Whitesides}
+
+\initial{A}rmed
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/anatomy} 
+
+}
+
+\caption[Cancer is an old disease]{\textbf{Dissecting disease using non-computational
+models.} Rembrandt, \emph{The Anatomy Lesson of Dr Nicolaes Tulp}, 1634,
+oil on canvas, Mauritshuis museum, The Hague}\label{fig:anatomy}
+\end{figure}
+
+
+
+
+
+Different kinds of models: scales --\textgreater{} focus to signaling.
+We will model a cell
+
+Many reviews Timeline of mathematics and cancer
+\citep{byrne2010dissecting}. Mainly focused on angiogenesis,
+carconigenesis and tumour growth. Different formalisms depending on
+scales review \citep{bellomo2008foundations}. Focus on cellular scale
+and bigger.
+
+Integrative and scales. Many mathematical models are cell-based
+\citep{anderson2008integrative}
+
+PKPD and regimens \citep{barbolosi2016computational}
+
+Tumour growth \citep{benzekry2014classical}
+
+review \citep{altrock2015mathematics}
+
+\section{Features of complex systems: emergence, non-linearity,
+feedback}\label{features-of-complex-systems-emergence-non-linearity-feedback}
+
+critical transitions in multiple fields \citep{trefois2015critical}
+bistable and switches \citep{markevich2004signaling} emergence
+\citep{helikar2008emergent}
+
+\section{Need for integrated
+approaches}\label{need-for-integrated-approaches}
+
+network and complex elements. Examples of loops
+\citep{kitano2002computational} \citep{kitano2002systems} prior
+knowledge \citep{ferranti2017value}
+
+\section{Various formalisms and
+objectives}\label{various-formalisms-and-objectives}
+
+\citep{le2015quantitative} tyson ode examples breast
+\citep{tyson2011dynamic} and general \citep{tyson2003sniffers} Boris
+Kholodenko
+
+With data also \citep{bouhaddou2018mechanistic}
 
 Cancer systems biology can be understood as the study of how
 perturbations of the normal and healthy genome leads to tumorigenesis.

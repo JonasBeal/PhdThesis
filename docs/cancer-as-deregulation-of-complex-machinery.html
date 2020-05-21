@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="scientific-modeling-abstract-the-complexity.html"/>
-<link rel="next" href="test.html"/>
+<link rel="next" href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -129,11 +129,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.3.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#central-dogma-and-core-principles"><i class="fa fa-check"></i><b>2.3.1</b> Central dogma and core principles</a></li>
 <li class="chapter" data-level="2.3.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#a-rogue-machinery"><i class="fa fa-check"></i><b>2.3.2</b> A rogue machinery</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#the-new-era-of-genomics"><i class="fa fa-check"></i><b>2.4</b> The new era of genomics</a></li>
-<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> From genetic to network disease</a></li>
+<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#the-new-era-of-genomics"><i class="fa fa-check"></i><b>2.4</b> The new era of genomics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-sequencing-to-multi-omics-data"><i class="fa fa-check"></i><b>2.4.1</b> From sequencing to multi-omics data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#state-of-the-art-of-cancer-data"><i class="fa fa-check"></i><b>2.4.2</b> State-of-the art of cancer data</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>3</b> Test part</a><ul>
-<li class="chapter" data-level="3.1" data-path="test.html"><a href="test.html#abc"><i class="fa fa-check"></i><b>3.1</b> Abc</a></li>
+<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#data-and-beyond-from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> Data and beyond: from genetic to network disease</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><i class="fa fa-check"></i><b>3</b> Computational modeling of cancer: from complex disease to systems biology</a><ul>
+<li class="chapter" data-level="3.1" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#features-of-complex-systems-emergence-non-linearity-feedback"><i class="fa fa-check"></i><b>3.1</b> Features of complex systems: emergence, non-linearity, feedback</a></li>
+<li class="chapter" data-level="3.2" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#need-for-integrated-approaches"><i class="fa fa-check"></i><b>3.2</b> Need for integrated approaches</a></li>
+<li class="chapter" data-level="3.3" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#various-formalisms-and-objectives"><i class="fa fa-check"></i><b>3.3</b> Various formalisms and objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>4</b> Test part</a><ul>
+<li class="chapter" data-level="4.1" data-path="test.html"><a href="test.html#abc"><i class="fa fa-check"></i><b>4.1</b> Abc</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -162,9 +170,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </blockquote>
 <p>Armed with all these models, whether statistical or mechanistic, we are going to look at a particularly complex system that fully justifies their use: cancer. Since the first chapter recalled how important prior knowledge of the phenomenon under study is for designing models, whatever their nature, this chapter will briefly summarize some of the most important characteristics of this disease before returning to the models themselves in the next chapter. Without aiming for exhaustiveness, and after an epidemiological and statistical description, we will focus on the most useful information for the modeller, i.e. the underlying biological mechanisms and available data.</p>
 <div class="figure" style="text-align: center"><span id="fig:bath"></span>
-<img src="fig/bath.jpg" alt="Cancer is an old disease Rembrandt, Bathsheba at Her Bath, c. 1654, oil on canvas, Louvre Museum, Paris" width="90%" />
+<img src="fig/bath.jpg" alt="Cancer is an old disease. Rembrandt, Bathsheba at Her Bath, c. 1654, oil on canvas, Louvre Museum, Paris" width="90%" />
 <p class="caption">
-Figure 2.1: <strong>Cancer is an old disease</strong> Rembrandt, <em>Bathsheba at Her Bath</em>, c. 1654, oil on canvas, Louvre Museum, Paris
+Figure 2.1: <strong>Cancer is an old disease.</strong> Rembrandt, <em>Bathsheba at Her Bath</em>, c. 1654, oil on canvas, Louvre Museum, Paris
 </p>
 </div>
 
@@ -199,7 +207,7 @@ Figure 2.3: <strong>Incidence, mortility and survival per cancer types</strong>.
 <h3><span class="header-section-number">2.3.1</span> Central dogma and core principles</h3>
 <p>Some of the principles that govern biology can be described at the level of one of its simplest elements, the cell. Let us consider for the moment a perfectly healthy cell. It must ensure a certain number of functions necessary for its survival and, if necessary, for its division/reproduction. These functions are encoded in its genetic information in the form of DNA, which is a priori stable and shared by the different cells since it is defined at the level of the individual. Most biological functions, however, are not performed by DNA itself which remains in the nucleus of the cell. The DNA is thus transcribed into RNA, another nucleic acid which, in addition to performing some biological functions, becomes the support of the genetic information in the cell. The RNA is then itself translated into new molecules composed of long chains of amino acid residues and called proteins. They are the ones that execute most of the numerous cellular functions: DNA replication, physical structuring of the cell, molecule transport within the cell etc. A rather simplistic but fruitful way to understand this functioning is to consider it as a progressive transfer of biological information from DNA to proteins, which has sometimes been summarized as the central dogma of the molecular biology (<a href="cancer-as-deregulation-of-complex-machinery.html#fig:central-dogma">2.4</a>) first stated Francis Crick <span class="citation">(Crick <a href="#ref-crick1970central">1970</a>)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:central-dogma"></span>
-<img src="fig/central-dogma.png" alt="Central dogma of molecular biology. Schematic representation of the information flow within the cell, from DNA to proteins through RNA, more precisely described in this video (Image credit Genome Research Limited)." width="90%" />
+<img src="fig/central-dogma.png" alt="Central dogma of molecular biology. Schematic representation of the information flow within the cell, from DNA to proteins through RNA, more precisely described in this video (Image credit Genome Research Limited)." width="80%" />
 <p class="caption">
 Figure 2.4: <strong>Central dogma of molecular biology.</strong> Schematic representation of the information flow within the cell, from DNA to proteins through RNA, more precisely described in this <a href="https://www.youtube.com/watch?v=J3HVVi2k2No">video</a> (Image credit <em>Genome Research Limited</em>).
 </p>
@@ -227,7 +235,12 @@ Figure 2.5: <strong>Hallmarks of cancer.</strong> The different biological capab
 </div>
 <div id="the-new-era-of-genomics" class="section level2">
 <h2><span class="header-section-number">2.4</span> The new era of genomics</h2>
-<p>In 2001, the first sequencing of the human genome symbolized the beginning of a new era, that of what will become high-throughput genomics <span class="citation">(Lander et al. <a href="#ref-lander2001initial">2001</a>; Venter et al. <a href="#ref-venter2001sequence">2001</a>)</span>. From the end of the 19th century, biological data started to accumulate at an ever-increasing rate <span class="citation">(Reuter, Spacek, and Snyder <a href="#ref-reuter2015high">2015</a>)</span>, feeding and accelerating cancer research in particular <span class="citation">(Stratton, Campbell, and Futreal <a href="#ref-stratton2009cancer">2009</a>; Meyerson, Gabriel, and Getz <a href="#ref-meyerson2010advances">2010</a>)</span>. The ability to sequence the human genome as a whole, for an ever-increasing number of individuals, has enabled less biased and more systematic studies of the causes of cancer <span class="citation">(Lander <a href="#ref-lander2011initial">2011</a>)</span>. The number of genes associated with cancer increased drastically and some very important genes such as BRAF of PIK3CA are identified <span class="citation">(Davies et al. <a href="#ref-davies2002mutations">2002</a>; Samuels et al. <a href="#ref-samuels2004high">2004</a>)</span>. Progress also extended to the gene expression data. Gene-expression arrays have made an important contribution by providing access to transcriptomic data, i.e. what has been transcribed from DNA and is therefore one step further in terms of biological information. This information has made it possible to refine the classification of cancers, which until now has been done mainly according to the tumour site <span class="citation">(Perou et al. <a href="#ref-perou1999distinctive">1999</a>)</span>. Breast cancers are thus divided into subtypes with different combinations of molecular markers that facilitate the understanding of clinical behavior. One step further, we also note the appearance of prognostic gene signatures such as gene expression patterns correlated with the survival of patients <span class="citation">(Van’t Veer et al. <a href="#ref-van2002gene">2002</a>)</span>. This revolution was then extended to other types of data such as proteins (proteomics), reversible modifications of DNA or DNA-associated proteins (epigenomics), metabolites (metabolomics) and others, each representing a perspective that can complement the others to better understand biological mechanisms, particularly in the case of diseases <span class="citation">(Hasin, Seldin, and Lusis <a href="#ref-hasin2017multi">2017</a>)</span>. We have thus entered the era of multiomics data <span class="citation">(Vucic et al. <a href="#ref-vucic2012translating">2012</a>)</span>.</p>
+<div id="from-sequencing-to-multi-omics-data" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> From sequencing to multi-omics data</h3>
+<p>In 2001, the first sequencing of the human genome symbolized the beginning of a new era, that of what will become high-throughput genomics <span class="citation">(Lander et al. <a href="#ref-lander2001initial">2001</a>; Venter et al. <a href="#ref-venter2001sequence">2001</a>)</span>. From the end of the 20th century, biological data started to accumulate at an ever-increasing rate <span class="citation">(Reuter, Spacek, and Snyder <a href="#ref-reuter2015high">2015</a>)</span>, feeding and accelerating cancer research in particular <span class="citation">(Stratton, Campbell, and Futreal <a href="#ref-stratton2009cancer">2009</a>; Meyerson, Gabriel, and Getz <a href="#ref-meyerson2010advances">2010</a>)</span>. The ability to sequence the human genome as a whole, for an ever-increasing number of individuals, has enabled less biased and more systematic studies of the causes of cancer <span class="citation">(Lander <a href="#ref-lander2011initial">2011</a>)</span>. The number of genes associated with cancer increased drastically and some very important genes such as BRAF of PIK3CA have been identified <span class="citation">(Davies et al. <a href="#ref-davies2002mutations">2002</a>; Samuels et al. <a href="#ref-samuels2004high">2004</a>)</span>. Progress also extended to the gene expression data. Gene-expression arrays have made an important contribution by providing access to transcriptomic data (RNA), i.e. what has been transcribed from DNA and is therefore one step further in terms of biological information. This information has made it possible to further explore the differences betwween normal and tumour cells <span class="citation">(Perou et al. <a href="#ref-perou1999distinctive">1999</a>)</span>, or even to refine the classification of cancers, which until now has been done mainly according to the tumour site. Breast cancers are thus divided into subtypes with different combinations of molecular markers that facilitate the understanding of clinical behavior <span class="citation">(Perou et al. <a href="#ref-perou2000molecular">2000</a>)</span>. One step further, we also note the appearance of prognostic gene signatures such as gene expression patterns correlated with the survival of patients <span class="citation">(Van’t Veer et al. <a href="#ref-van2002gene">2002</a>)</span>. This revolution was then extended to other types of data such as proteins (proteomics), reversible modifications of DNA or DNA-associated proteins (epigenomics), metabolites (metabolomics) and others, each representing a perspective that can complement the others to better understand biological mechanisms, particularly in the case of diseases <span class="citation">(Hasin, Seldin, and Lusis <a href="#ref-hasin2017multi">2017</a>)</span>. We have thus entered the era of multiomics data <span class="citation">(Vucic et al. <a href="#ref-vucic2012translating">2012</a>)</span>.</p>
+</div>
+<div id="state-of-the-art-of-cancer-data" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> State-of-the art of cancer data</h3>
 <p>With respect to cancer in particular, this wealth of data is particularly represented by a whole series of studies conducted by The Cancer Genome Atlas (TCGA) consortium started in 2008 <span class="citation">(Network and others <a href="#ref-cancer2008comprehensive">2008</a>)</span>. Cohorts of several hundred patients are thus sequenced over the years for different types of cancer <span class="citation">(Network and others <a href="#ref-cancer2012comprehensive">2012</a>)</span>, resulting today in a total of 11,000 tumors from 33 of the most prevalent forms of cancer <span class="citation">(Ding et al. <a href="#ref-ding2018perspective">2018</a>)</span>. Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:tcga">2.6</a> provides a partial but striking overview of the depth of data available under this program. We can see the frequencies of alterations of certain groups of genes for a list of cancer types, making it possible to visualize the disparities already anticipated in section <a href="cancer-as-deregulation-of-complex-machinery.html#epidemio">2.2</a> based on patient survival. There are indeed important differences between the organs but also between the different subtypes associated with the same organ. And this representation only corresponds to one layer of data, that of genetic alterations. It could be used for transcriptomic, epigenomic or proteomic data, thus giving rise to an incredibly complex photography.</p>
 <div class="figure" style="text-align: center"><span id="fig:tcga"></span>
 <img src="fig/tcga.jpg" alt="Genetic alterations frequencies for cancer types from TCGA data. Frequencies of alteration per pahway and tumour types as summaried in Pan-cancer analyses from TCGA data. Reprinted from Sanchez-Vega et al. (2018)." width="90%" />
@@ -236,10 +249,13 @@ Figure 2.6: <strong>Genetic alterations frequencies for cancer types from TCGA d
 </p>
 </div>
 
+<p>However, the diversity of data available for cancer research extends far beyond this, both in terms of technology and type of data. This may be data from model organisms such as mice or tumours of human origin but made more suitable for experimentation. In the latter category, it is crucial to mention the huge amount of data available on cell lines, extracted from human tumours and transformed to be studied in culture. It is then possible to go beyond descriptive data and vary the experimental conditions in order to study the responses of these cells to perturbations and to enrich our knowledge. It is therefore possible to know the response to more than 100 drugs of about 700 cell lines <span class="citation">(Yang et al. <a href="#ref-yang2012genomics">2012</a>)</span>. The richness of these data, coupled with the omic profiling of each cell line, enables to study the determinants of response to treatment with unprecedented scope <span class="citation">(Iorio et al. <a href="#ref-iorio2016landscape">2016</a>)</span>. More recently, but following a similar logic, other types of inhibition screenings have been proposed based on a more specific technique called CRISPR-Cas9 <span class="citation">(Behan et al. <a href="#ref-behan2019prioritization">2019</a>)</span>. The simplicity of the cell lines in relation to the original tumours makes all these studies possible but sometimes hinders the clinical application of the knowledge acquired. For this reason, other types of biological models have been developed, including patient-derived xenografts (PDX) which is an implant of human tumours in mice to maintain the existence of a certain tumour microenvironment <span class="citation">(Hidalgo et al. <a href="#ref-hidalgo2014patient">2014</a>)</span>, while maintaining drug screening possibilities <span class="citation">(Gao et al. <a href="#ref-gao2015high">2015</a>)</span>. These two types of data, cell lines and PDX, have been used in this thesis, in addition to TCGA patient data, thus justifying the limitation of this presentation, which could otherwise be extended to other types of biological models. Similarly, other technologies are becoming increasingly important in the generation of cancer data, such as single-cell sequencing <span class="citation">(Navin <a href="#ref-navin2015first">2015</a>)</span>, but will not be used in this work.</p>
 </div>
-<div id="from-genetic-to-network-disease" class="section level2">
-<h2><span class="header-section-number">2.5</span> From genetic to network disease</h2>
-<p>All that remains to be done now is to make sense of all these data, to organize it. This is already partly the case in the Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:tcga">2.6</a> since genetic alterations are grouped by pathway. A pathway is group of biological entities, and associated chemical reactions, working together to control a specific cell function like apoptosis or cell division. The meaning of these groupings derives quite simply from the description of hallmarks. Indeed, if the aim of these cells is to inactivate each of these protective functions, then it is relevant to think not by gene but by function. Inactivating only one of the genes associated with the function may therefore be sufficient and it is no longer necessary to inactivate the others. Numerous alterations in a large number of genes result often in few key impaired pathways, like alterations of cell cycle or angiogenesis for instance<span class="citation">(Jones et al. <a href="#ref-jones2008core">2008</a>)</span>. While the data inform us about the underlying biology, their analysis benefits in return from the a priori knowledge of the relationships between the different proteins and how they contribute to the various functions. Increasingly, the variables are not interpreted separately but in relation to each other. This is reflected in the emergence of more and more resources to summarize and represent signaling pathways and associated networks such as SIGNOR <span class="citation">(Perfetto et al. <a href="#ref-perfetto2016signor">2016</a>)</span>, OmniPath <span class="citation">(Türei, Korcsmáros, and Saez-Rodriguez <a href="#ref-turei2016omnipath">2016</a>)</span> or ACSN <span class="citation">(Kuperstein et al. <a href="#ref-kuperstein2015atlas">2015</a>)</span>. Like other diseases, cancer then goes from a genetic disease to a network disease <span class="citation">(Del Sol et al. <a href="#ref-del2010diseases">2010</a>)</span> and one can study how all kinds of genetic alterations affect the wiring of these networks and modify the cellular functions leading to the previously described cancer hallmarks as depicted schmatically in Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:circuit">2.7</a>. In short, the richness of the data did not make it less necessary to use a priori knowledge in order to make the analyses more interpretable and more robust <span class="citation">(Domany <a href="#ref-domany2014using">2014</a>)</span>.</p>
+</div>
+<div id="data-and-beyond-from-genetic-to-network-disease" class="section level2">
+<h2><span class="header-section-number">2.5</span> Data and beyond: from genetic to network disease</h2>
+<p>All that remains to be done now is to make sense of all these data, to organize it, because understanding does not flow directly from the abundance of data and the ability to produce the data may have been outpaced by the ability to analyze it <span class="citation">(Stadler et al. <a href="#ref-stadler2014cancer">2014</a>)</span>. A striking example is that of the prognostic signatures mentioned above. The many signatures or lists of genes proposed, even for the same cancer type, share relatively few genes, are difficult to interpret and their efficiency is sometimes poorly reproducible <span class="citation">(Domany <a href="#ref-domany2014using">2014</a>)</span>. Even more surprisingly, most signatures composed of randomly selected genes were also found to be associated with patient survival <span class="citation">(Venet et al. <a href="#ref-venet2011most">2011</a>)</span>. One of the main avenues for improving the interpretability of the data is the integration of the prior knowledge we have of the phenomena, and in this case of cancer <span class="citation">(Domany <a href="#ref-domany2014using">2014</a>)</span>.</p>
+<p>This is already the case in Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:tcga">2.6</a> since genetic alterations have been grouped in several categories called pathways. A pathway is group of biological entities, and associated chemical reactions, working together to control a specific cell function like apoptosis or cell division. The meaning of these groupings derives quite simply from the description of hallmarks. Indeed, if the aim of these cells is to inactivate each of these protective functions, then it is relevant to think not by gene but by function. Inactivating only one of the genes associated with the function may therefore be sufficient and it is no longer necessary to inactivate the others. Numerous alterations in a large number of genes result often in few key impaired pathways, like alterations of cell cycle or angiogenesis for instance<span class="citation">(Jones et al. <a href="#ref-jones2008core">2008</a>)</span>. While the data inform us about the underlying biology, their analysis benefits in return from the a priori knowledge of the relationships between the different proteins and how they contribute to the various functions. Increasingly, the biological variables are not interpreted separately but in relation to each other <span class="citation">(Barabasi and Oltvai <a href="#ref-barabasi2004network">2004</a>)</span>. This is reflected in the emergence of more and more resources to summarize and represent signaling pathways and associated networks such as SIGNOR <span class="citation">(Perfetto et al. <a href="#ref-perfetto2016signor">2016</a>)</span>, OmniPath <span class="citation">(Türei, Korcsmáros, and Saez-Rodriguez <a href="#ref-turei2016omnipath">2016</a>)</span> or the Atlas of Cancer Signaling Network <span class="citation">(Kuperstein et al. <a href="#ref-kuperstein2015atlas">2015</a>)</span>. Like other diseases, cancer then goes from a genetic disease to a network disease <span class="citation">(Del Sol et al. <a href="#ref-del2010diseases">2010</a>)</span> and one can study how all kinds of genetic alterations affect the wiring of these networks and modify the cellular functions leading to the previously described cancer hallmarks as depicted schmatically in Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:circuit">2.7</a>. In short, the richness of the data did not make it less necessary to use a priori knowledge in order to make the analyses more interpretable and more robust .</p>
 <div class="figure" style="text-align: center"><span id="fig:circuit"></span>
 <img src="fig/circuit.jpg" alt="Simplistic representation of cellular circuitry. Normal cellular circuit sand sub-circuits (identified by colours) can be reprogrammed to regulate hallmark capabilities within cancer cells. Reprinted from Hanahan and Weinberg (2011)." width="90%" />
 <p class="caption">
@@ -255,7 +271,6 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 </p>
 </div>
 
-<p>Cancer systems biology can be understood as the study of how perturbations of the normal and healthy genome leads to tumorigenesis. This interdisciplinary fields combine mathematics, statistics, physics, and molecular biology in order to decipher or to begin to understand the effect of these alterations [16]. The cell can be seen as a system composed of genes, proteins, small molecules, enzymes, etc. which interact and are involved in many different intertwined signalling pathways. Cancer is characterised by an accumulation of genetic and epigenetic alterations and regulatory networks, which deregulate the molecular machinery of normal cells. Cancer is often referred to as a network disease [1], because the genes that are mutated or altered affect or even rewire the original network leading to different outcomes [17]. An alteration of one of these genes may have an impact or not on the cellular fate; the outcome is often unpredictable and unexpected.</p>
 
 </div>
 </div>
@@ -263,6 +278,12 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 <div id="refs" class="references">
 <div id="ref-alberts2007molecular">
 <p>Alberts, Bruce, Alexander Johnson, Julian Lewis, Martin Raff, Keith Roberts, and Peter Walter. 2007. “Molecular Biology of the Cell. Garland Science.” <em>New York</em> 1392.</p>
+</div>
+<div id="ref-barabasi2004network">
+<p>Barabasi, Albert-Laszlo, and Zoltan N Oltvai. 2004. “Network Biology: Understanding the Cell’s Functional Organization.” <em>Nature Reviews Genetics</em> 5 (2). Nature Publishing Group: 101–13.</p>
+</div>
+<div id="ref-behan2019prioritization">
+<p>Behan, Fiona M, Francesco Iorio, Gabriele Picco, Emanuel Gonçalves, Charlotte M Beaver, Giorgia Migliardi, Rita Santos, et al. 2019. “Prioritization of Cancer Therapeutic Targets Using Crispr–Cas9 Screens.” <em>Nature</em> 568 (7753). Nature Publishing Group: 511.</p>
 </div>
 <div id="ref-bianucci2018earliest">
 <p>Bianucci, Raffaella, Antonio Perciaccante, Philippe Charlier, Otto Appenzeller, and Donatella Lippi. 2018. “Earliest Evidence of Malignant Breast Cancer in Renaissance Paintings.” <em>The Lancet Oncology</em> 19 (2). Elsevier: 166–67.</p>
@@ -293,6 +314,9 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 </div>
 <div id="ref-dulbecco1986turning">
 <p>Dulbecco, Renato. 1986. “A Turning Point in Cancer Research: Sequencing the Human Genome.” <em>Science</em> 231. American Association for the Advancement of Science: 1055–7.</p>
+</div>
+<div id="ref-gao2015high">
+<p>Gao, Hui, Joshua M Korn, Stéphane Ferretti, John E Monahan, Youzhen Wang, Mallika Singh, Chao Zhang, et al. 2015. “High-Throughput Screening Using Patient-Derived Tumor Xenografts to Predict Clinical Trial Drug Response.” <em>Nature Medicine</em> 21 (11). Nature Publishing Group: 1318.</p>
 </div>
 <div id="ref-hahn1999creation">
 <p>Hahn, William C, Christopher M Counter, Ante S Lundberg, Roderick L Beijersbergen, Mary W Brooks, and Robert A Weinberg. 1999. “Creation of Human Tumour Cells with Defined Genetic Elements.” <em>Nature</em> 400 (6743). Nature Publishing Group: 464–68.</p>
@@ -327,6 +351,12 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 <div id="ref-heijblom2014monte">
 <p>Heijblom, Michelle, Linda M Meijer, Ton G van Leeuwen, Wiendelt Steenbergen, and Srirang Manohar. 2014. “Monte Carlo Simulations Shed Light on Bathsheba’s Suspect Breast.” <em>Journal of Biophotonics</em> 7 (5). Wiley Online Library: 323–31.</p>
 </div>
+<div id="ref-hidalgo2014patient">
+<p>Hidalgo, Manuel, Frederic Amant, Andrew V Biankin, Eva Budinská, Annette T Byrne, Carlos Caldas, Robert B Clarke, et al. 2014. “Patient-Derived Xenograft Models: An Emerging Platform for Translational Cancer Research.” <em>Cancer Discovery</em> 4 (9). AACR: 998–1013.</p>
+</div>
+<div id="ref-iorio2016landscape">
+<p>Iorio, Francesco, Theo A Knijnenburg, Daniel J Vis, Graham R Bignell, Michael P Menden, Michael Schubert, Nanne Aben, et al. 2016. “A Landscape of Pharmacogenomic Interactions in Cancer.” <em>Cell</em> 166 (3). Elsevier: 740–54.</p>
+</div>
 <div id="ref-jemal2017annual">
 <p>Jemal, Ahmedin, Elizabeth M Ward, Christopher J Johnson, Kathleen A Cronin, Jiemin Ma, A Blythe Ryerson, Angela Mariotto, et al. 2017. “Annual Report to the Nation on the Status of Cancer, 1975–2014, Featuring Survival.” <em>JNCI: Journal of the National Cancer Institute</em> 109 (9). Oxford University Press: djx030.</p>
 </div>
@@ -348,6 +378,9 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 <div id="ref-meyerson2010advances">
 <p>Meyerson, Matthew, Stacey Gabriel, and Gad Getz. 2010. “Advances in Understanding Cancer Genomes Through Second-Generation Sequencing.” <em>Nature Reviews Genetics</em> 11 (10). Nature Publishing Group: 685–96.</p>
 </div>
+<div id="ref-navin2015first">
+<p>Navin, Nicholas E. 2015. “The First Five Years of Single-Cell Cancer Genomics and Beyond.” <em>Genome Research</em> 25 (10). Cold Spring Harbor Lab: 1499–1507.</p>
+</div>
 <div id="ref-cancer2008comprehensive">
 <p>Network, Cancer Genome Atlas Research, and others. 2008. “Comprehensive Genomic Characterization Defines Human Glioblastoma Genes and Core Pathways.” <em>Nature</em> 455 (7216). Nature Publishing Group: 1061.</p>
 </div>
@@ -363,6 +396,9 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 <div id="ref-perou1999distinctive">
 <p>Perou, Charles M, Stefanie S Jeffrey, Matt Van De Rijn, Christian A Rees, Michael B Eisen, Douglas T Ross, Alexander Pergamenschikov, et al. 1999. “Distinctive Gene Expression Patterns in Human Mammary Epithelial Cells and Breast Cancers.” <em>Proceedings of the National Academy of Sciences</em> 96 (16). National Acad Sciences: 9212–7.</p>
 </div>
+<div id="ref-perou2000molecular">
+<p>Perou, Charles M, Therese Sørlie, Michael B Eisen, Matt Van De Rijn, Stefanie S Jeffrey, Christian A Rees, Jonathan R Pollack, et al. 2000. “Molecular Portraits of Human Breast Tumours.” <em>Nature</em> 406 (6797). Nature Publishing Group: 747–52.</p>
+</div>
 <div id="ref-reddy1982point">
 <p>Reddy, E Premkumar, Roberta K Reynolds, Eugenio Santos, and Mariano Barbacid. 1982. “A Point Mutation Is Responsible for the Acquisition of Transforming Properties by the T24 Human Bladder Carcinoma Oncogene.” <em>Nature</em> 300 (5888). Nature Publishing Group: 149–52.</p>
 </div>
@@ -374,6 +410,9 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 </div>
 <div id="ref-sanchez2018oncogenic">
 <p>Sanchez-Vega, Francisco, Marco Mina, Joshua Armenia, Walid K Chatila, Augustin Luna, Konnor C La, Sofia Dimitriadoy, et al. 2018. “Oncogenic Signaling Pathways in the Cancer Genome Atlas.” <em>Cell</em> 173 (2). Elsevier: 321–37.</p>
+</div>
+<div id="ref-stadler2014cancer">
+<p>Stadler, Zsofia K, Kasmintan A Schrader, Joseph Vijai, Mark E Robson, and Kenneth Offit. 2014. “Cancer Genomics and Inherited Risk.” <em>Journal of Clinical Oncology</em> 32 (7). American Society of Clinical Oncology: 687.</p>
 </div>
 <div id="ref-stratton2009cancer">
 <p>Stratton, Michael R, Peter J Campbell, and P Andrew Futreal. 2009. “The Cancer Genome.” <em>Nature</em> 458 (7239). Nature Publishing Group: 719–24.</p>
@@ -390,6 +429,9 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 <div id="ref-van2002gene">
 <p>Van’t Veer, Laura J, Hongyue Dai, Marc J Van De Vijver, Yudong D He, Augustinus AM Hart, Mao Mao, Hans L Peterse, et al. 2002. “Gene Expression Profiling Predicts Clinical Outcome of Breast Cancer.” <em>Nature</em> 415 (6871). Nature Publishing Group: 530–36.</p>
 </div>
+<div id="ref-venet2011most">
+<p>Venet, David, Jacques E Dumont, Vincent Detours, and others. 2011. “Most Random Gene Expression Signatures Are Significantly Associated with Breast Cancer Outcome.” <em>PLoS Comput Biol</em> 7 (10): e1002240.</p>
+</div>
 <div id="ref-venter2001sequence">
 <p>Venter, J Craig, Mark D Adams, Eugene W Myers, Peter W Li, Richard J Mural, Granger G Sutton, Hamilton O Smith, et al. 2001. “The Sequence of the Human Genome.” <em>Science</em> 291 (5507). American Association for the Advancement of Science: 1304–51.</p>
 </div>
@@ -402,6 +444,9 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
 <div id="ref-weinberg2013biology">
 <p>Weinberg, Robert A. 2013. <em>The Biology of Cancer</em>. Garland science.</p>
 </div>
+<div id="ref-yang2012genomics">
+<p>Yang, Wanjuan, Jorge Soares, Patricia Greninger, Elena J Edelman, Howard Lightfoot, Simon Forbes, Nidhi Bindal, et al. 2012. “Genomics of Drug Sensitivity in Cancer (Gdsc): A Resource for Therapeutic Biomarker Discovery in Cancer Cells.” <em>Nucleic Acids Research</em> 41 (D1). Oxford University Press: D955–D961.</p>
+</div>
 </div>
             </section>
 
@@ -409,7 +454,7 @@ Figure 2.8: <strong>Genetic alterations frequencies from TCGA data mapped on a s
         </div>
       </div>
 <a href="scientific-modeling-abstract-the-complexity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -451,7 +496,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["PhdThesis.pdf"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
