@@ -136,9 +136,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#data-and-beyond-from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> Data and beyond: from genetic to network disease</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><i class="fa fa-check"></i><b>3</b> Computational modeling of cancer: from complex disease to systems biology</a><ul>
-<li class="chapter" data-level="3.1" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#features-of-complex-systems-emergence-non-linearity-feedback"><i class="fa fa-check"></i><b>3.1</b> Features of complex systems: emergence, non-linearity, feedback</a></li>
-<li class="chapter" data-level="3.2" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#need-for-integrated-approaches"><i class="fa fa-check"></i><b>3.2</b> Need for integrated approaches</a></li>
-<li class="chapter" data-level="3.3" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#various-formalisms-and-objectives"><i class="fa fa-check"></i><b>3.3</b> Various formalisms and objectives</a></li>
+<li class="chapter" data-level="3.1" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#diversity-and-expansion-of-mechanistic-models-of-cancer"><i class="fa fa-check"></i><b>3.1</b> Diversity and expansion of mechanistic models of cancer</a></li>
+<li class="chapter" data-level="3.2" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#focus-on-molecular-signaling"><i class="fa fa-check"></i><b>3.2</b> Focus on molecular signaling</a></li>
+<li class="chapter" data-level="3.3" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#theory-features-of-complex-systems-emergence-non-linearity-feedback"><i class="fa fa-check"></i><b>3.3</b> Theory –&gt; Features of complex systems: emergence, non-linearity, feedback</a></li>
+<li class="chapter" data-level="3.4" data-path="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#applications-impact-of-data"><i class="fa fa-check"></i><b>3.4</b> Applications –&gt; impact of data</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>4</b> Test part</a><ul>
 <li class="chapter" data-level="4.1" data-path="test.html"><a href="test.html#abc"><i class="fa fa-check"></i><b>4.1</b> Abc</a></li>
@@ -168,7 +169,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <blockquote>
 <p><em>“How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it… How could a chemical sludge become a rose, even with billions of years to try.”.</em><br/> George Whitesides</p>
 </blockquote>
-<p>Armed with.</p>
+<p>The previous chapter identified the need to organize cancer knowledge and data. The integration of biological knowledge, particularly in the form of networks, is a first step in this direction. The deepening of knowledge, however, requires the ability to manipulate objects even more, to experiment, to dissect their behaviour in an infinite number of situations, such as the astronomer with his orrery or physicians with their old anatomical models (Figure <a href="computational-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:anatomy">3.1</a>). Is it then possible to create mechanistic models of cancer in the same way?</p>
 <div class="figure" style="text-align: center"><span id="fig:anatomy"></span>
 <img src="fig/anatomy.jpg" alt="Dissecting disease using non-computational models. Rembrandt, The Anatomy Lesson of Dr Nicolaes Tulp, 1634, oil on canvas, Mauritshuis museum, The Hague" width="90%" />
 <p class="caption">
@@ -176,24 +177,29 @@ Figure 3.1: <strong>Dissecting disease using non-computational models.</strong> 
 </p>
 </div>
 
-<p>Different kinds of models: scales –&gt; focus to signaling. We will model a cell</p>
-<p>Many reviews Timeline of mathematics and cancer <span class="citation">(Byrne <a href="#ref-byrne2010dissecting">2010</a>)</span>. Mainly focused on angiogenesis, carconigenesis and tumour growth. Different formalisms depending on scales review <span class="citation">(Bellomo, Li, and Maini <a href="#ref-bellomo2008foundations">2008</a>)</span>. Focus on cellular scale and bigger.</p>
-<p>Integrative and scales. Many mathematical models are cell-based <span class="citation">(Anderson and Quaranta <a href="#ref-anderson2008integrative">2008</a>)</span></p>
+<div id="diversity-and-expansion-of-mechanistic-models-of-cancer" class="section level2">
+<h2><span class="header-section-number">3.1</span> Diversity and expansion of mechanistic models of cancer</h2>
+<p>Modeling cancer is not a new idea. While methods and terminologies may have changed, there are nevertheless traces of modelling as early as the 1950s. We then speak rather of mathematical modelling with a meaning that is nevertheless intermediate between what we have defined as mechanistic models and statistical models. Armitage and Doll thus theorized the initiation of tumorigenesis by biologically justifying their mathematical expressions <span class="citation">(Armitage and Doll <a href="#ref-armitage1954age">1954</a>)</span> <span class="citation">(Knudson <a href="#ref-knudson1971mutation">1971</a>)</span></p>
+<p>Timeline of mathematics and cancer <span class="citation">(Byrne <a href="#ref-byrne2010dissecting">2010</a>)</span> Integrative and scales. Many mathematical models are cell-based <span class="citation">(Anderson and Quaranta <a href="#ref-anderson2008integrative">2008</a>)</span></p>
+<p>Many reviews . Mainly focused on angiogenesis, carconigenesis and tumour growth. Different formalisms depending on scales review <span class="citation">(Bellomo, Li, and Maini <a href="#ref-bellomo2008foundations">2008</a>)</span>. Focus on cellular scale and bigger.</p>
 <p>PKPD and regimens <span class="citation">(Barbolosi et al. <a href="#ref-barbolosi2016computational">2016</a>)</span></p>
 <p>Tumour growth <span class="citation">(Benzekry et al. <a href="#ref-benzekry2014classical">2014</a>)</span></p>
 <p>review <span class="citation">(Altrock, Liu, and Michor <a href="#ref-altrock2015mathematics">2015</a>)</span></p>
-<div id="features-of-complex-systems-emergence-non-linearity-feedback" class="section level2">
-<h2><span class="header-section-number">3.1</span> Features of complex systems: emergence, non-linearity, feedback</h2>
-<p>critical transitions in multiple fields <span class="citation">(Trefois et al. <a href="#ref-trefois2015critical">2015</a>)</span> bistable and switches <span class="citation">(Markevich, Hoek, and Kholodenko <a href="#ref-markevich2004signaling">2004</a>)</span> emergence <span class="citation">(Helikar et al. <a href="#ref-helikar2008emergent">2008</a>)</span></p>
+<p>PubMed trends</p>
+<p>Different kinds of models: scales –&gt; focus to signaling. We will model a cell</p>
 </div>
-<div id="need-for-integrated-approaches" class="section level2">
-<h2><span class="header-section-number">3.2</span> Need for integrated approaches</h2>
-<p>network and complex elements. Examples of loops <span class="citation">(Kitano <a href="#ref-kitano2002computational">2002</a><a href="#ref-kitano2002computational">a</a>)</span> <span class="citation">(Kitano <a href="#ref-kitano2002systems">2002</a><a href="#ref-kitano2002systems">b</a>)</span> prior knowledge <span class="citation">(Ferranti, Krane, and Craft <a href="#ref-ferranti2017value">2017</a>)</span></p>
+<div id="focus-on-molecular-signaling" class="section level2">
+<h2><span class="header-section-number">3.2</span> Focus on molecular signaling</h2>
+<p>With two main formalisms: ODE and logical <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span></p>
 </div>
-<div id="various-formalisms-and-objectives" class="section level2">
-<h2><span class="header-section-number">3.3</span> Various formalisms and objectives</h2>
-<p><span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span> tyson ode examples breast <span class="citation">(Tyson et al. <a href="#ref-tyson2011dynamic">2011</a>)</span> and general <span class="citation">(Tyson, Chen, and Novak <a href="#ref-tyson2003sniffers">2003</a>)</span> Boris Kholodenko</p>
-<p>With data also <span class="citation">(Bouhaddou et al. <a href="#ref-bouhaddou2018mechanistic">2018</a>)</span></p>
+<div id="theory-features-of-complex-systems-emergence-non-linearity-feedback" class="section level2">
+<h2><span class="header-section-number">3.3</span> Theory –&gt; Features of complex systems: emergence, non-linearity, feedback</h2>
+<p>critical transitions in multiple fields <span class="citation">(Trefois et al. <a href="#ref-trefois2015critical">2015</a>)</span> bistable and switches <span class="citation">(Markevich, Hoek, and Kholodenko <a href="#ref-markevich2004signaling">2004</a>)</span> emergence <span class="citation">(Helikar et al. <a href="#ref-helikar2008emergent">2008</a>)</span> tyson ode examples breast <span class="citation">(Tyson et al. <a href="#ref-tyson2011dynamic">2011</a>)</span> and general <span class="citation">(Tyson, Chen, and Novak <a href="#ref-tyson2003sniffers">2003</a>)</span></p>
+<p>network and complex elements. Examples of loops <span class="citation">(Kitano <a href="#ref-kitano2002computational">2002</a><a href="#ref-kitano2002computational">a</a>)</span> <span class="citation">(Kitano <a href="#ref-kitano2002systems">2002</a><a href="#ref-kitano2002systems">b</a>)</span></p>
+</div>
+<div id="applications-impact-of-data" class="section level2">
+<h2><span class="header-section-number">3.4</span> Applications –&gt; impact of data</h2>
+<p>Boris Kholodenko With data also <span class="citation">(Bouhaddou et al. <a href="#ref-bouhaddou2018mechanistic">2018</a>)</span></p>
 <p>Cancer systems biology can be understood as the study of how perturbations of the normal and healthy genome leads to tumorigenesis. This interdisciplinary fields combine mathematics, statistics, physics, and molecular biology in order to decipher or to begin to understand the effect of these alterations [16]. The cell can be seen as a system composed of genes, proteins, small molecules, enzymes, etc. which interact and are involved in many different intertwined signalling pathways. Cancer is characterised by an accumulation of genetic and epigenetic alterations and regulatory networks, which deregulate the molecular machinery of normal cells. Cancer is often referred to as a network disease [1], because the genes that are mutated or altered affect or even rewire the original network leading to different outcomes [17]. An alteration of one of these genes may have an impact or not on the cellular fate; the outcome is often unpredictable and unexpected.</p>
 
 </div>
@@ -205,6 +211,9 @@ Figure 3.1: <strong>Dissecting disease using non-computational models.</strong> 
 </div>
 <div id="ref-anderson2008integrative">
 <p>Anderson, Alexander RA, and Vito Quaranta. 2008. “Integrative Mathematical Oncology.” <em>Nature Reviews Cancer</em> 8 (3). Nature Publishing Group: 227–34.</p>
+</div>
+<div id="ref-armitage1954age">
+<p>Armitage, Peter, and Richard Doll. 1954. “The Age Distribution of Cancer and a Multi-Stage Theory of Carcinogenesis.” <em>British Journal of Cancer</em> 8 (1). Nature Publishing Group: 1.</p>
 </div>
 <div id="ref-barbolosi2016computational">
 <p>Barbolosi, Dominique, Joseph Ciccolini, Bruno Lacarelle, Fabrice Barlési, and Nicolas André. 2016. “Computational Oncology—mathematical Modelling of Drug Regimens for Precision Medicine.” <em>Nature Reviews Clinical Oncology</em> 13 (4). Nature Publishing Group: 242.</p>
@@ -221,9 +230,6 @@ Figure 3.1: <strong>Dissecting disease using non-computational models.</strong> 
 <div id="ref-byrne2010dissecting">
 <p>Byrne, Helen M. 2010. “Dissecting Cancer Through Mathematics: From the Cell to the Animal Model.” <em>Nature Reviews Cancer</em> 10 (3). Nature Publishing Group: 221–30.</p>
 </div>
-<div id="ref-ferranti2017value">
-<p>Ferranti, Dana, David Krane, and David Craft. 2017. “The Value of Prior Knowledge in Machine Learning of Complex Network Systems.” <em>Bioinformatics</em> 33 (22). Oxford University Press: 3610–8.</p>
-</div>
 <div id="ref-helikar2008emergent">
 <p>Helikar, Tomáš, John Konvalina, Jack Heidel, and Jim A Rogers. 2008. “Emergent Decision-Making in Biological Signal Transduction Networks.” <em>Proceedings of the National Academy of Sciences</em> 105 (6). National Acad Sciences: 1913–8.</p>
 </div>
@@ -232,6 +238,9 @@ Figure 3.1: <strong>Dissecting disease using non-computational models.</strong> 
 </div>
 <div id="ref-kitano2002systems">
 <p>Kitano, Hiroaki. 2002b. “Systems Biology: A Brief Overview.” <em>Science</em> 295 (5560). American Association for the Advancement of Science: 1662–4.</p>
+</div>
+<div id="ref-knudson1971mutation">
+<p>Knudson, Alfred G. 1971. “Mutation and Cancer: Statistical Study of Retinoblastoma.” <em>Proceedings of the National Academy of Sciences</em> 68 (4). National Acad Sciences: 820–23.</p>
 </div>
 <div id="ref-le2015quantitative">
 <p>Le Novere, Nicolas. 2015. “Quantitative and Logic Modelling of Molecular and Gene Networks.” <em>Nature Reviews Genetics</em> 16 (3). Nature Publishing Group: 146–58.</p>
