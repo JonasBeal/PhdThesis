@@ -21,7 +21,7 @@
 \end{figure}
 (ref:anatomy-caption) **Dissecting a biological phenomenon using a non-computational model.**  Rembrandt, *The Anatomy Lesson of Dr Nicolaes Tulp*, 1634, oil on canvas, Mauritshuis museum, The Hague
 
-## Diversity and expansion of mechanistic models of cancer
+## Introducing the diversity of mechanistic models of cancer
 
 Modeling cancer is not a new idea. And the diversity of biological phenomena at work in cancer has given rise to an equally important diversity of models and formalisms, which we seek here to give a brief overview in order to better identify the specific models that we will focus on later. One way to order this diversity is to consider the scales of these models (Figure \@ref(fig:multiscale)). Indeed, cancer can be read at different levels, from the molecular level of DNA and proteins, to the cellular level, to the level of tissues and the organism [@anderson2008integrative]. Models have been proposed at all these scales, using different formalisms [@bellomo2008foundations] and answering different questions.  
   
@@ -48,24 +48,13 @@ Finally, at an even smaller scale, it is possible to model the molecular network
 
 ## Cell circuitry and the need for cancer systems biology
 
-[@hornberg2006cancer]
-[@kreeger2010cancer]
+Most biological systems, and certainly cells, fall into the category of complex systems. These are systems made up of many interacting elements. While these systems can be found in many different scientific fields, the cell as a complex system is characterized by the diversity and multifunctionality of its constituent elements (genes, proteins, small molecules, enzymes), which nevertheless contribute to organized and a priori non-chaotic behaviour [@kitano2002computational]. Thus, the role of a protein such as the p53 tumour suppressor can only be understood by taking into account the interplay between its relationships with transcription factors and biochemical modifications of the molecule itself [@kitano2002computational]. In a cell, as in any complex system, the multiplication of components and interactions can make the response or behaviour of the system unexpected or unpredictable. Non-linear responses, such as abrupt changes in the state of a system, called critical transitions, can be observed in response to a moderate change in the signal [@trefois2015critical]. Generally speaking, it is possible to observe emergent behaviours, i.e. behaviours of the system as a whole that were not trivially deducible from the individual behaviours of its components. This has been documented, through experiments and simulations, in the study of cell signalling pathways and the resulting biological decisions [@bhalla1999emergent; @helikar2008emergent]. These considerations have thus given rise to system-level or holistic approaches that aim to integrate data and knowledge into more comprehensive representations, often called **systems biology**.  
+  
 
-With data [@de2002modeling]
-
-Figure \@ref(fig:pathways)
-
-## Mechanistic models of molecular signaling
-
-### Common elements to capture the complexity
-
-### Different formalisms for different applications
-
-With two main formalisms: ODE and logical
-[@le2015quantitative]
-[@de2002modeling]
-
-Data impact and plot 
+What is true for the cell in general is just as true for cancer in particular. Understanding the intertwining of signaling pathways is necessary to study their contributions to different cancer hallmarks, as shown in Figure \@ref(fig:circuit). The concepts described above can thus be transposed to cancer systems biology [@hornberg2006cancer; @kreeger2010cancer; @barillot2012computational]. Indeed, it is often a question of understanding or predicting the impact of perturbations on cellular networks. Understanding how a single genetic mutation disrupts and reprograms networks, or even predicting the responses triggered by a drug on a presumably promising molecular target, makes little sense without integrated approaches. In addition, Cancers are characterized by the accumulation of numerous mutations and alterations over time that must be considered concomitantly. These points of view of biologists and modellers reinforce the observation already made in the previous chapter of cancer as a network disease, as a system disease (Figure \@ref(fig:pathways)).  
+  
+Finally, to conclude this general presentation, it is important to understand that while small molecular network modeling is not recent, the rise and multiplication of wide range systems biology approaches is very much related to the production of biological data [@de2002modeling]. The last few decades have seen the emergence of high-throughput data that have made it possible to identify and link hundreds of genes or proteins involved in cancer. Exploring the interaction and back and forth between these models and the data they use or predict is therefore of utmost importance. In addition, the now massive amount of data has also imposed mathematical or computational approaches as central to managing this profusion. Thus, Figure \@ref(fig:pubmed) shows that while the number of scientific articles devoted to cancer has increased drastically since the 1950s (panel A), the proportion of these same articles mentioning *models*, *networks* or *computational* approaches has also increased (panel B), illustrating a change in paradigms.  
+  
 
 \begin{figure}
 
@@ -75,18 +64,39 @@ Data impact and plot
 
 \caption[PubMed trends in cancer studies.]{(ref:pubmed-caption)}(\#fig:pubmed)
 \end{figure}
-(ref:pubmed-caption) **PubMed trends in cancer studies.** 
+(ref:pubmed-caption) **PubMed trends in cancer studies.** (A) PubMed articles with the word *Cancer* in either title or abstract from 1950 to 2019. (B) Proportion of the *Cancer* articles with additional keywords expressed as PubMed logical queries.
 
+## Mechanistic models of molecular signaling
 
-## Cancer systems biology: exemples of complex features
+Once the context has been defined, both biologically and methodologically, it is possible to begin the exploration of the models that will constitute the core of this thesis: the **mechanistic models of molecular networks** and signaling pathways. Before describing and illustrating some of the existing mathematical formalisms, it is possible to describe the common fundamental elements of this family of approaches.
 
+### Common elements to capture the complexity
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{fig/cycle} 
+
+}
+
+\caption[Modeling a biological network: an iterative and cyclical process]{(ref:cycle-caption)}(\#fig:cycle)
+\end{figure}
+(ref:cycle-caption) **Modeling a biological network: an iterative and cyclical process.** [@beal2020modelisation]
+
+Networks in action
+
+### Different formalisms for different applications
+
+With two main formalisms: ODE and logical
+[@le2015quantitative]
+[@de2002modeling]
+
+### Some examples of complex features
 
 
 Theory --> Features of complex systems: emergence, non-linearity, feedback
 
-critical transitions in multiple fields [@trefois2015critical]
 bistable and switches [@markevich2004signaling]
-emergence [@helikar2008emergent]
+
 tyson ode examples breast [@tyson2011dynamic] and general [@tyson2003sniffers]
 
 network and complex elements. Examples of loops [@kitano2002computational] [@kitano2002systems]
@@ -102,15 +112,3 @@ Details Fey
 
 
 
-Cancer systems biology can be understood as the study of how perturbations of
-the normal and healthy genome leads to tumorigenesis. This interdisciplinary fields
-combine mathematics, statistics, physics, and molecular biology in order to decipher
-or to begin to understand the effect of these alterations [16].
-The cell can be seen as a system composed of genes, proteins, small molecules,
-enzymes, etc. which interact and are involved in many different intertwined signalling
-pathways. Cancer is characterised by an accumulation of genetic and epigenetic
-alterations and regulatory networks, which deregulate the molecular machinery
-of normal cells. Cancer is often referred to as a network disease [1], because the
-genes that are mutated or altered affect or even rewire the original network leading
-to different outcomes [17]. An alteration of one of these genes may have an impact
-or not on the cellular fate; the outcome is often unpredictable and unexpected.

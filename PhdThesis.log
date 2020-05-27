@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  26 MAY 2020 19:45
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  27 MAY 2020 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1865,18 +1865,11 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 ]
 File: fig/anatomy.jpg Graphic file (type QTm)
-<use  "fig/anatomy.jpg" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[35]
-
-Class memoir Warning: The material used in the headers is too large
-(43.49998pt) for the given head height (14.5pt), it is recommended to
-either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 1615.
+<use  "fig/anatomy.jpg" > [35]
+Underfull \vbox (badness 1796) has occurred while \output is active []
 
 
-Overfull \vbox (28.99998pt too high) has occurred while \output is active []
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [36]
 File: fig/multiscale.png Graphic file (type QTm)
@@ -1887,87 +1880,95 @@ Underfull \vbox (badness 2426) has occurred while \output is active []
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [37]
-Overfull \vbox (28.99998pt too high) has occurred while \output is active []
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [38]
-File: 03-Computational_files/figure-latex/pubmed-1.pdf Graphic file (type QTm)
-<use  "03-Computational_files/figure-latex/pubmed-1.pdf" > [39]
-Overfull \vbox (28.99998pt too high) has occurred while \output is active []
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[39]
+File: 03-Mechanistic_files/figure-latex/pubmed-1.pdf Graphic file (type QTm)
+<use  "03-Mechanistic_files/figure-latex/pubmed-1.pdf" >
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [40]
+File: fig/cycle.png Graphic file (type QTm)
+<use  "fig/cycle.png" > [41]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-Package xcolor Warning: Incompatible color definition on input line 1760.
+[42]
+
+Package xcolor Warning: Incompatible color definition on input line 1844.
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1762.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 1846.
 
-Package xcolor Warning: Incompatible color definition on input line 1765.
+Package xcolor Warning: Incompatible color definition on input line 1849.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1765.
+Package xcolor Warning: Incompatible color definition on input line 1849.
 
 File: 10-Test_files/figure-latex/nice-fig-1.pdf Graphic file (type QTm)
 <use  "10-Test_files/figure-latex/nice-fig-1.pdf" >
 File: cover/pictures/back-bg.png Graphic file (type QTm)
-<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [41
+<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [43
 
-] [42] [43
+] [44] [45
 
 ]
-Underfull \hbox (badness 1038) in paragraph at lines 98--103
+Underfull \hbox (badness 1038) in paragraph at lines 105--110
 []\TU/lmr/m/n/12 Sébastien Benzekry, Clare Lamont, Afshin Beheshti, Amanda Trac
 z,
  []
 
-[44] [45] [46] [47] [48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 586--593
+[46] [47] [48] [49] [50] [51] [52]
+Underfull \hbox (badness 10000) in paragraph at lines 606--613
 []\TU/lmr/m/n/12 Livia Perfetto, Leonardo Briganti, Alberto Calderone, Andrea
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 586--593
+Underfull \hbox (badness 2772) in paragraph at lines 606--613
 \TU/lmr/m/n/12 Cerquone Perpetuini, Marta Iannuccelli, Francesca Langone, Lu-
  []
 
-[50] [51] [52])
+[53] [54])
 
 Class memoir Warning: The material used in the headers is too large
-(43.49998pt) for the given head height (14.5pt), it is recommended to
+(28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 1789.
+(in both cases you will find help in the memoir manual). on input line 1873.
 
-[53] [54
+[55] [56
 
 
-] [55]
+] [57]
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 1789.
+(Font)              scaled to size 9.14278pt on input line 1873.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 1789--1789
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 1873--1873
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 1789.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 1873.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 1789.
+(Font)              <11> on input line 1873.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 1789.
+(Font)              <7.69997> on input line 1873.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 1789.
+(Font)              <5.5> on input line 1873.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 1789--1789
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 1789--1789
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 1873--1873
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 1789--1789
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 1873--1873
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 1873--1873
 [][] 
  []
 
@@ -1980,23 +1981,23 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 1789--1789
 \tf@lof=\write9
 \openout9 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1789.
-[56]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1789.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1873.
+[58]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1873.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1789.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1789.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1873.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1873.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 37151 strings out of 493005
- 694385 string characters out of 6134597
- 836652 words of memory out of 5000000
- 40509 multiletter control sequences out of 15000+600000
+ 37163 strings out of 493005
+ 694617 string characters out of 6134597
+ 836563 words of memory out of 5000000
+ 40520 multiletter control sequences out of 15000+600000
  49091 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,15n,120p,10407b,963s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PhdThesis.pdf (69 pages).
+Output written on PhdThesis.pdf (71 pages).
