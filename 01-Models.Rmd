@@ -148,18 +148,18 @@ Several discrepancies result from this difference in nature, some of which are s
 ```{r mechstat, echo=FALSE, out.width = "90%",fig.align='center'}
 
 text_tbl <- data.frame(
-  `Mechanistic modeling` = c("seeks to establish a mechanistic relationship between inputs and outputs",
-                             "presupposes and investigates causal links between the variables",
-                             "capable of handling small datasets",
-                             "once validated, can be used as a predictive tool in new situations possibly difficult to access through experimentation ",
-                             "difficult to accurately incorporate information from multiple space and time scales due to constrained specifications",
-                             "evaluated on closeness to data and ability to make sense of it"),
-  `Statistical modeling` = c("seeks to establish statistical relationships between inputs and outputs",
-                             "looks for patterns and establishes correlations between variables",
-                             "requires large datasets",
-                             "can only make predictions that relate to patterns within the data supplied",
-                             "can tackle problems with multiple space and time scales thanks to flexible specifications",
-                             "evaluated based on predictive performance"),
+  `Mechanistic modeling` = c("Seeks to establish a mechanistic relationship between inputs and outputs",
+                             "Presupposes and investigates causal links between the variables",
+                             "Capable of handling small datasets",
+                             "Once validated, can be used as a predictive tool in new situations possibly difficult to access through experimentation ",
+                             "Difficult to accurately incorporate information from multiple space and time scales due to constrained specifications",
+                             "Evaluated on closeness to data and ability to make sense of it"),
+  `Statistical modeling` = c("Seeks to establish statistical relationships between inputs and outputs",
+                             "Looks for patterns and establishes correlations between variables",
+                             "Requires large datasets",
+                             "Can only make predictions that relate to patterns within the data supplied",
+                             "Can tackle problems with multiple space and time scales thanks to flexible specifications",
+                             "Evaluated based on predictive performance"),
 check.names = FALSE, stringsAsFactors = FALSE)
 
 if (is_html_output()){
@@ -175,7 +175,7 @@ if (is_html_output()){
     kable_styling(bootstrap_options = "striped", full_width = F) %>%
     column_spec(1, border_right = T, width = "15em") %>%
     column_spec(2, width = "15em") %>%
-    row_spec(0, bold = T, color = "white", background = "#808080")%>%
+    row_spec(0, bold = T, color = "white", background = "#808080", align = 'c')%>%
     pack_rows("Definition", 1, 1) %>%
     pack_rows("Pros and cons", 2, 6)
 }

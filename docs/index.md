@@ -23,5 +23,28 @@ description: "This is my PhD thesis."
 
 
 
+# PhD Thesis{-}
+by [Jonas Béal](http://jonasbeal.github.io)
 
+Supervised by Emmanuel Barillot, Laurence Calzone and Aurélien Latouche
+
+# Summary {-}
+
+English abstract.
+
+
+# Resumé {-}
+
+Résumé en français.
+
+
+# Acknowledgements {-}
+
+I would like to thank my supervisors ...
+
+Jury...
+
+Lab...
+
+Others...
 

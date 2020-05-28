@@ -143,7 +143,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.3.2" data-path="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#different-formalisms-for-different-applications"><i class="fa fa-check"></i><b>3.3.2</b> Different formalisms for different applications</a></li>
 <li class="chapter" data-level="3.3.3" data-path="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#some-examples-of-complex-features"><i class="fa fa-check"></i><b>3.3.3</b> Some examples of complex features</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#applications-impact-of-data-clincal-impact"><i class="fa fa-check"></i><b>3.4</b> Applications –&gt; impact of data // Clincal impact</a></li>
+<li class="chapter" data-level="3.4" data-path="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#from-mechanistic-models-to-clinical-impact"><i class="fa fa-check"></i><b>3.4</b> From mechanistic models to clinical impact?</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html"><a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#prognostic-models"><i class="fa fa-check"></i><b>3.4.1</b> Prognostic models</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>4</b> Test part</a><ul>
 <li class="chapter" data-level="4.1" data-path="test.html"><a href="test.html#abc"><i class="fa fa-check"></i><b>4.1</b> Abc</a></li>
@@ -192,14 +194,14 @@ Figure 3.2: <strong>The different scales of cancer modeling.</strong> Cancer can
 </p>
 </div>
 
-<p>Taking it down a step further, it is also possible to model cancer at the cellular level, for example by looking at the clonal evolution of the cancer <span class="citation">(Altrock, Liu, and Michor <a href="#ref-altrock2015mathematics">2015</a>)</span>. The aim is then to understand the impact of the processes of mutation, selection, expansion and cohabitation of different populatons of cells, at specifc rates. The accumulation of a mutation in a population of cells can thus be studied <span class="citation">(Bozic et al. <a href="#ref-bozic2010accumulation">2010</a>)</span>. Modeling at the cellular level is well suited to the study of interactions between cells, between cancer cells and their environment or with the immune system. Similar to other kinds of studies of population dynamics, formalisms based on differential equations are quite common, some conceptually analogous to the Lotka Volerra system presented in section <a href="scientific-modeling-abstract-the-complexity.html#lotkasection">1.2.2</a> <span class="citation">(Bellomo, Li, and Maini <a href="#ref-bellomo2008foundations">2008</a>)</span>; but there are many other methods such partial differential equations or agent-based modeling <span class="citation">(Letort et al. <a href="#ref-letort2019physiboss">2019</a>)</span>.</p>
+<p>Taking it down a step further, it is also possible to model cancer at the cellular level, for example by looking at the clonal evolution of the cancer <span class="citation">(Altrock, Liu, and Michor <a href="#ref-altrock2015mathematics">2015</a>)</span>. The aim is then to understand the impact of the processes of mutation, selection, expansion and cohabitation of different populatons of cells, at specifc rates. The accumulation of a mutation in a population of cells can thus be studied <span class="citation">(Bozic et al. <a href="#ref-bozic2010accumulation">2010</a>)</span>. Modeling at the cellular level is well suited to the study of interactions between cells, between cancer cells and their environment or with the immune system. Similar to other kinds of studies of population dynamics, formalisms based on differential equations are quite common <span class="citation">(Bellomo, Li, and Maini <a href="#ref-bellomo2008foundations">2008</a>)</span>; but there are many other methods such partial differential equations or agent-based modeling <span class="citation">(Letort et al. <a href="#ref-letort2019physiboss">2019</a>)</span>.</p>
 <p>Finally, at an even smaller scale, it is possible to model the molecular networks at work in cells <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span>. The aim is then to simulate mathematically how the different genes and molecules regulate each other, transmit information and, in the case of cancer, end up being deregulated <span class="citation">(Calzone et al. <a href="#ref-calzone2010mathematical">2010</a>; Flobak et al. <a href="#ref-flobak2015discovery">2015</a>)</span>. These models will be the subject of the thesis and will therefore be defined more precisely and used to detail the concepts and tools of systems biology in the following sections. It can already be noted that while these models can integrate the most fundamental biological mechanisms of living organisms, one of the most burning questions is whether it is possible to link them to the larger scales that are clinically more interesting (tissues, organs etc.). Can these models tell us about the molecular nature of cancer? About patient survival? Their response to treatment? These questions apply to all of the above models, whatever their scales (Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:multiscale">3.2</a>), but are more difficult to answer for models defines at molecular scale that are further from the clinical data of interest. The aim of this thesis is to provide potential answers to these questions. One of the ways of approaching these issues has been to propose multi-scale models, which are nevertheless very complex <span class="citation">(Anderson and Quaranta <a href="#ref-anderson2008integrative">2008</a>; Powathil, Swat, and Chaplain <a href="#ref-powathil2015systems">2015</a>)</span>. We will focus here on the use of models defined almost exclusively at the molecular scale, which is assumed to be prominent, to study what can be inferred on the larger scales.</p>
 </div>
 <div id="cell-circuitry-and-the-need-for-cancer-systems-biology" class="section level2">
 <h2><span class="header-section-number">3.2</span> Cell circuitry and the need for cancer systems biology</h2>
-<p>Most biological systems, and certainly cells, fall into the category of complex systems. These are systems made up of many interacting elements. While these systems can be found in many different scientific fields, the cell as a complex system is characterized by the diversity and multifunctionality of its constituent elements (genes, proteins, small molecules, enzymes), which nevertheless contribute to organized and a priori non-chaotic behaviour <span class="citation">(Kitano <a href="#ref-kitano2002computational">2002</a><a href="#ref-kitano2002computational">a</a>)</span>. Thus, the role of a protein such as the p53 tumour suppressor can only be understood by taking into account the interplay between its relationships with transcription factors and biochemical modifications of the molecule itself <span class="citation">(Kitano <a href="#ref-kitano2002computational">2002</a><a href="#ref-kitano2002computational">a</a>)</span>. In a cell, as in any complex system, the multiplication of components and interactions can make the response or behaviour of the system unexpected or unpredictable. Non-linear responses, such as abrupt changes in the state of a system, called critical transitions, can be observed in response to a moderate change in the signal <span class="citation">(Trefois et al. <a href="#ref-trefois2015critical">2015</a>)</span>. Generally speaking, it is possible to observe emergent behaviours, i.e. behaviours of the system as a whole that were not trivially deducible from the individual behaviours of its components. This has been documented, through experiments and simulations, in the study of cell signalling pathways and the resulting biological decisions <span class="citation">(Bhalla and Iyengar <a href="#ref-bhalla1999emergent">1999</a>; Helikar et al. <a href="#ref-helikar2008emergent">2008</a>)</span>. These considerations have thus given rise to system-level or holistic approaches that aim to integrate data and knowledge into more comprehensive representations, often called <strong>systems biology</strong>.</p>
+<p>Most biological systems, and certainly cells, fall into the category of complex systems. These are systems made up of many interacting elements. While these systems can be found in many different scientific fields, the cell as a complex system is characterized by the diversity and multifunctionality of its constituent elements (genes, proteins, small molecules, enzymes), which nevertheless contribute to organized and a priori non-chaotic behaviour <span class="citation">(Kitano <a href="#ref-kitano2002computational">2002</a>)</span>. Thus, the role of a protein such as the p53 tumour suppressor can only be understood by taking into account the interplay between its relationships with transcription factors and biochemical modifications of the molecule itself <span class="citation">(Kitano <a href="#ref-kitano2002computational">2002</a>)</span>. In a cell, as in any complex system, the multiplication of components and interactions can make the response or behaviour of the system unexpected or unpredictable. Non-linear responses, such as abrupt changes in the state of a system, called critical transitions, can be observed in response to a moderate change in the signal <span class="citation">(Trefois et al. <a href="#ref-trefois2015critical">2015</a>)</span>. Generally speaking, it is possible to observe emergent behaviours, i.e. behaviours of the system as a whole that were not trivially deducible from the individual behaviours of its components. This has been documented, through experiments and simulations, in the study of cell signalling pathways and the resulting biological decisions <span class="citation">(Bhalla and Iyengar <a href="#ref-bhalla1999emergent">1999</a>; Helikar et al. <a href="#ref-helikar2008emergent">2008</a>)</span>. These considerations have thus given rise to system-level or holistic approaches that aim to integrate data and knowledge into more comprehensive representations, often called <strong>systems biology</strong>.</p>
 <p>What is true for the cell in general is just as true for cancer in particular. Understanding the intertwining of signaling pathways is necessary to study their contributions to different cancer hallmarks, as shown in Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:circuit">2.7</a>. The concepts described above can thus be transposed to cancer systems biology <span class="citation">(Hornberg et al. <a href="#ref-hornberg2006cancer">2006</a>; Kreeger and Lauffenburger <a href="#ref-kreeger2010cancer">2010</a>; Barillot et al. <a href="#ref-barillot2012computational">2012</a>)</span>. Indeed, it is often a question of understanding or predicting the impact of perturbations on cellular networks. Understanding how a single genetic mutation disrupts and reprograms networks, or even predicting the responses triggered by a drug on a presumably promising molecular target, makes little sense without integrated approaches. In addition, Cancers are characterized by the accumulation of numerous mutations and alterations over time that must be considered concomitantly. These points of view of biologists and modellers reinforce the observation already made in the previous chapter of cancer as a network disease, as a system disease (Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:pathways">2.8</a>).</p>
-<p>Finally, to conclude this general presentation, it is important to understand that while small molecular network modeling is not recent, the rise and multiplication of wide range systems biology approaches is very much related to the production of biological data <span class="citation">(De Jong <a href="#ref-de2002modeling">2002</a>)</span>. The last few decades have seen the emergence of high-throughput data that have made it possible to identify and link hundreds of genes or proteins involved in cancer. Exploring the interaction and back and forth between these models and the data they use or predict is therefore of utmost importance. In addition, the now massive amount of data has also imposed mathematical or computational approaches as central to managing this profusion. Thus, Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:pubmed">3.3</a> shows that while the number of scientific articles devoted to cancer has increased drastically since the 1950s (panel A), the proportion of these same articles mentioning <em>models</em>, <em>networks</em> or <em>computational</em> approaches has also increased (panel B), illustrating a change in paradigms.</p>
+<p>Finally, to conclude this general presentation, it is important to understand that while small molecular network modeling is not recent, the rise and multiplication of wide range systems biology approaches is very much related to the production of biological data <span class="citation">(De Jong <a href="#ref-de2002modeling">2002</a>)</span>. The last few decades have seen the emergence of high-throughput data that have made it possible to identify and link hundreds of genes or proteins involved in cancer. Exploring the interaction and back and forth between these models and the data they use or predict is therefore of utmost importance. In addition, the now massive amount of data has also imposed mathematical or computational approaches as central to managing this profusion and more and more modeling approaches are focused on data integration or inference <span class="citation">(Fröhlich et al. <a href="#ref-frohlich2018efficient">2018</a>; Bouhaddou et al. <a href="#ref-bouhaddou2018mechanistic">2018</a>)</span>More generally, Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:pubmed">3.3</a> shows that while the number of scientific articles devoted to cancer has increased drastically since the 1950s (panel A), the proportion of these same articles mentioning <em>models</em>, <em>networks</em> or <em>computational</em> approaches has also increased (panel B), illustrating a change in paradigms.</p>
 <div class="figure" style="text-align: center"><span id="fig:pubmed"></span>
 <img src="03-Mechanistic_files/figure-html/pubmed-1.png" alt="PubMed trends in cancer studies. (A) PubMed articles with the word Cancer in either title or abstract from 1950 to 2019. (B) Proportion of the Cancer articles with additional keywords expressed as PubMed logical queries." width="90%" />
 <p class="caption">
@@ -210,40 +212,131 @@ Figure 3.3: <strong>PubMed trends in cancer studies.</strong> (A) PubMed article
 </div>
 <div id="mechanistic-models-of-molecular-signaling" class="section level2">
 <h2><span class="header-section-number">3.3</span> Mechanistic models of molecular signaling</h2>
-<p>Once the context has been defined, both biologically and methodologically, it is possible to begin the exploration of the models that will constitute the core of this thesis: the <strong>mechanistic models of molecular networks</strong> and signaling pathways. Before describing and illustrating some of the existing mathematical formalisms, it is possible to describe the common fundamental elements of this family of approaches.</p>
+<p>Once the context has been defined, both biologically and methodologically, it is possible to begin the exploration of the models that will constitute the core of this thesis: the <strong>mechanistic models of molecular networks</strong> and signaling pathways. Before describing and illustrating some of the existing mathematical formalisms, it is possible to describe the common fundamental elements of this family of approaches. The simplest is a network of undirected interaction between entities, which therefore only establishes relationships and not causal mechanisms.</p>
 <div id="networks-and-data" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Networks and data</h3>
-<p>The first step is to identify the relevant biological entities from a question or system of interest (e.g. tumor suppressor genes, signaling cascades of proteins) and then to model their interactions, the regulatory relationships that link them. At this stage the model can generally be represented by a network but this word can cover different realities</p>
-<p>Once the structure of the model has been defined, it is possible to refine certain parameters according to the chosen mathematical formalism. Finally, the model is often confronted with new data to check its consistency with the biological behaviour studied or possibly make new predictions. The use of biological data can occur at each of these stages and it is important to understand and distinguish between the possible methods and the expected contributions. The first steps prove to be very largely common to the different modelling formalisms and thus constitute a very general framework for reflection that we will however illustrate as much as possible by logical modelling approaches.</p>
+<p>The first step is to identify the relevant biological entities from a question or system of interest (e.g. tumor suppressor genes, signaling cascades of proteins) and then to model their interactions, the regulatory relationships that link them. At this stage the model can generally be represented by a network but this word can cover different realities <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span>. The simplest network just represents undirected interactions between entities, which therefore only establishes relationships and not causal mechanisms. But modeling requires more precise definitions, in particular concerning the direction of the interaction (is it A that acts on B or the opposite) and its nature (type of chemical reaction, activation/inhibition etc.). This is usually summarized as activity flows (or influence diagrams) with activation and inhibition arrows as in Figure <a href="cancer-as-deregulation-of-complex-machinery.html#fig:circuit">2.7</a> or Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:toyraf">3.5</a>A. These arrows emphasize the transormation of static networks into dynamic objects that can be manipulated and interpreted mechanistically. This work can be taken further by writing bipartite graphs, known as process descriptions, which explicitly show the different states of each variable (first type of nodes), depending on their phosphorylation sate for instance, and the reactions that link them (second type of nodes) as in Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:toyraf">3.5</a>B. A more precise description of these different representations and their meanings can be found in <span class="citation">Le Novere (<a href="#ref-le2015quantitative">2015</a>)</span>. Once the network structure of the model has been defined, it is possible write the corresponding mathematical formalism and potentially to refine certain parameters. Finally, the model is often confronted with new data to check its consistency with the biological behaviour studied or possibly make new predictions.</p>
+<p>However, all these steps are not linear and sequential, but rather iterative and cyclical. This modeling cycle, with back and forth to the data, is not specific to molecular network models, but it is possible to specify it in this case (Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:cycle">3.4</a>). The names of the key players involved in the question of interest are thus first extracted from adapted data or from the literature. A first mathematical translation of the relationships between the entities is then proposed before verifying the compatibility of this model with the observations, whether qualitative or quantitative. If the compatibility is not good, we come back to the definition or the parameterization of the model. If compatibility is correct, the model can be used to make new predictions or study phenomena that go beyond the initial data set. Ideally, these predictions will be tested afterwards. This cyclic approach with two successive checks is analogous to the use of validation and test data in the evaluation of most learning algorithms. This analogy can sometimes be masked by the qualitative nature of the predictions or by the lack of explicit fitting of the parameters.</p>
 <div class="figure" style="text-align: center"><span id="fig:cycle"></span>
-<img src="fig/cycle.png" alt="Modeling a biological network: an iterative and cyclical process. Reprinted from (Béal, Rémy, and Calzone 2020). A simpler version of this cycle is described in [le2015quantitative]." width="60%" />
+<img src="fig/cycle.png" alt="Modeling a biological network: an iterative and cyclical process. Reprinted from (Béal, Rémy, and Calzone 2020). A different and simpler version of this cycle is described in (Le Novere 2015)." width="70%" />
 <p class="caption">
-Figure 3.4: <strong>Modeling a biological network: an iterative and cyclical process.</strong> Reprinted from <span class="citation">(Béal, Rémy, and Calzone <a href="#ref-beal2020modelisation">2020</a>)</span>. A simpler version of this cycle is described in [le2015quantitative].
+Figure 3.4: <strong>Modeling a biological network: an iterative and cyclical process.</strong> Reprinted from <span class="citation">(Béal, Rémy, and Calzone <a href="#ref-beal2020modelisation">2020</a>)</span>. A different and simpler version of this cycle is described in <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span>.
 </p>
 </div>
 
-<p>Networks in action</p>
 </div>
 <div id="different-formalisms-for-different-applications" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Different formalisms for different applications</h3>
-<p>With two main formalisms: ODE and logical <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span> <span class="citation">(De Jong <a href="#ref-de2002modeling">2002</a>)</span></p>
+<p>Beyond these similarities in the construction and representation of models, the precise mathematical formalism that underlies them varies according to the type of question and the data <span class="citation">(De Jong <a href="#ref-de2002modeling">2002</a>)</span>. For the sake of simplicity, and without exhaustiveness, we propose to divide into quantitative and qualitative formalisms which will be essentially illustrated respectively by <strong>ordinary differential equation (ODE)</strong> models and <strong>logical (or Boolean) models</strong> for which a graphical and schematic comparison is proposed in Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:toyraf">3.5</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:toyraf"></span>
+<img src="fig/toyraf.png" alt="Schematic example of logical and ODE modeling around MAPK signaling. (A) Activity flow diagram of a small part of MAPK signaling, each node representing a gene or protein, with an example of logical rule for MEK node for the corresponding logical model. (B) Process description of the same diagram with BRAF and CRAF merged in RAF for the sake of simplicity; each square representing a reaction and the correspondong rate; an example differential equation is provided for the phosphorylated (active) form of MEK." width="90%" />
+<p class="caption">
+Figure 3.5: <strong>Schematic example of logical and ODE modeling around MAPK signaling.</strong> (A) Activity flow diagram of a small part of MAPK signaling, each node representing a gene or protein, with an example of logical rule for MEK node for the corresponding logical model. (B) Process description of the same diagram with BRAF and CRAF merged in RAF for the sake of simplicity; each square representing a reaction and the correspondong rate; an example differential equation is provided for the phosphorylated (active) form of MEK.
+</p>
+</div>
+
+<p>One of the most frequent approaches is the use of chemical kinetics equations to construct ODE systems which are a fairly natural translation of the process descritpion networks described in the previous section <span class="citation">(Polynikis, Hogan, and Bernardo <a href="#ref-polynikis2009comparing">2009</a>)</span>. Each biological interaction is treated as a reaction governed by the law of mass action and, under certain hypotheses, as a differential equation; the set of reactions in the system then generates a set of differential equations with coupled variables, in an analogous way to the Lotka Volterra system presented in section <a href="scientific-modeling-abstract-the-complexity.html#lotkasection">1.2.2</a>. Thus the variables generally represent quantities of molecular species, for example concentrations of RNA or proteins, and the stoichiometric coefficients and reaction rates are used to define the system parameters. Approximations are sometimes made to simplify the equations, for example by assuming that they can be written as Michaelis Menten’s enzymatic reactions, which have a simple and well known behaviour. However, the theoretical accuracy of quantitative models has a cost since each differential equation requires parameters, such as reaction constants or initial conditions, to which the system is very sensitive <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span>. The biochemical interpretation of the parameters sometimes allow to find their value in the literature, if the reactions are well characterized, even if possible variations in a given biological or physical context are often unknown. Since knowledge of the values of these parameters is often limited or even non-existent, it may require a very large volume of data (including time series) to fit the many missing parameters which can be difficult if the number of parameters is large <span class="citation">(Villaverde and Banga <a href="#ref-villaverde2014reverse">2014</a>)</span>. However, recent work has demonstrated the feasibility and scalability of this type of inference with sufficiently rich data. <span class="citation">(Fröhlich et al. <a href="#ref-frohlich2018efficient">2018</a>)</span></p>
+<p>At the same time, more qualitative approaches to modeling biological networks have been proposed with discrete variables linked together by rules expressed as logical statements <span class="citation">(Abou-Jaoudé et al. <a href="#ref-abou2016logical">2016</a>)</span>. These models are both more abstract since variables do not have a direct biological interpretation (e.g. concentration of a species) but are more versatile since they can unify different biological realities under the same formalism (e.g. activation of a gene or phosphorlation of a protein). The discrete nature of the variables can then be seen as an asymptotic case of the sigmoidal (e.g. Hill function) relationships often found in biology <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>)</span>. The step function thus obtained can keep a natural interpretation in the context of biological phenomena: genes activated or not, protein present or absent etc. Similarly, interactions between species are not quantified but are based on a qualitative statements (e.g. A will be active if B and C are active), drastically reducing the number of parameters. If the theoretical interest of this formalism to study biological mechanisms was proposed quite early <span class="citation">(Kauffman <a href="#ref-kauffman1969homeostasis">1969</a>; Thomas <a href="#ref-thomas1973boolean">1973</a>)</span>, many concrete applications have also been developed over the years, particularly in cancer research <span class="citation">(Saez-Rodriguez et al. <a href="#ref-saez2011comparing">2011</a>; Remy et al. <a href="#ref-remy2015modeling">2015</a>)</span>. This <strong>logical formalism will constitute the core of the work presented in Part II</strong>, where it will therefore be discussed in greater detail.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:odelogic">Table 3.1: </span><strong>Features of quantitative and qualitative modeling applied to biological molecular networks</strong> (adapted from <span class="citation">Le Novere (<a href="#ref-le2015quantitative">2015</a>)</span>)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;">
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;">
+Quantitative modeling
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;">
+Qualitative modeling
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;">
+Example formalism
+</td>
+<td style="text-align:left;">
+Ordinary differential equation (ODE) models
+</td>
+<td style="text-align:left;">
+Logical models
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;">
+Type of variables
+</td>
+<td style="text-align:left;">
+Direct translation of biological quantities, usually continuous
+</td>
+<td style="text-align:left;">
+Abstract representation of activity levels, usually discrete
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;">
+Objective
+</td>
+<td style="text-align:left;">
+Quantitatively accurate and temporal simulation of an experimental phenomenon
+</td>
+<td style="text-align:left;">
+Coarse-grained simulation of qualitative phenotypes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;">
+Advantages
+</td>
+<td style="text-align:left;">
+Direct confrontation with experimental data; precise; linear representation of time
+</td>
+<td style="text-align:left;">
+Faster design; easy translation of literature-based assertions; simulation of perturbations
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;">
+Drawbacks
+</td>
+<td style="text-align:left;">
+Difficulty determining or fitting parameters
+</td>
+<td style="text-align:left;">
+More difficult to link to data; lower precision
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>These two formalisms, which are among the most frequent for modelling biological networks, share many similarities, in particular the propensity to be built according to bottom-up strategies based on knowledge of the elementary parts of the model, i.e. biological entities and reactions. However, they differ in their implementation and objectives, one aiming at the most accurate representation possible, the other seeking to capture the essence of the system’s dynamics in a parsimonious way (Table <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#tab:odelogic">3.1</a>). The opposition is not irrevocable, as illustrated by the numerous hybrid formalisms that lie within the spectrum delimited by these two extremes such as fuzzy logic or discrete-time differential equations <span class="citation">(Le Novere <a href="#ref-le2015quantitative">2015</a>; Calzone, Barillot, and Zinovyev <a href="#ref-calzone2018logical">2018</a>)</span>. To conclude, a comparison between the two approaches applied to the same problem is proposed by <span class="citation">Calzone, Barillot, and Zinovyev (<a href="#ref-calzone2018logical">2018</a>)</span>, studying the epithelio-mesenchymal transition (EMT, a biological process involved in cancer), to illustrate in concrete terms their complementarity.</p>
 </div>
 <div id="some-examples-of-complex-features" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> Some examples of complex features</h3>
-<p>Theory –&gt; Features of complex systems: emergence, non-linearity, feedback</p>
-<p>bistable and switches <span class="citation">(Markevich, Hoek, and Kholodenko <a href="#ref-markevich2004signaling">2004</a>)</span></p>
-<p>tyson ode examples breast <span class="citation">(Tyson et al. <a href="#ref-tyson2011dynamic">2011</a>)</span> and general <span class="citation">(Tyson, Chen, and Novak <a href="#ref-tyson2003sniffers">2003</a>)</span></p>
-<p>network and complex elements. Examples of loops <span class="citation">(Kitano <a href="#ref-kitano2002computational">2002</a><a href="#ref-kitano2002computational">a</a>)</span> <span class="citation">(Kitano <a href="#ref-kitano2002systems">2002</a><a href="#ref-kitano2002systems">b</a>)</span></p>
+<p>With the help of these models, both qualitative and quantitative, many complex behaviours have been identified. Benefiting from the knowledge accumulated in the study of dynamic systems, a whole zoo of patterns with complex and non-intuitive behaviours such as non-linearities have been highlighted <span class="citation">(Tyson, Chen, and Novak <a href="#ref-tyson2003sniffers">2003</a>)</span>. The MAPK pathway, coarsely described in Figure <a href="mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology.html#fig:toyraf">3.5</a>, and often simplified as a rather unidirectional cascade, shows switch or bistability behaviors generated by the complexity of its multiple phosphorylation sites <span class="citation">(Markevich, Hoek, and Kholodenko <a href="#ref-markevich2004signaling">2004</a>)</span>. These models have also been put at the service of understanding cancer and the erroneous decision-making by cells resulting from impaired signaling pathways. Thus <span class="citation">Tyson et al. (<a href="#ref-tyson2011dynamic">2011</a>)</span> summarize superbly well the complexity that can be hidden in the dynamics of smallest molecular networks as soon as they contain more than two entites and crossed regulations or feedback loops. Logical models have also made it possible to better dissect some complex phenomena at play in the cell such as emergent behaviours <span class="citation">(Helikar et al. <a href="#ref-helikar2008emergent">2008</a>)</span> or mechanisms behind mutation patterns in cancer <span class="citation">(Remy et al. <a href="#ref-remy2015modeling">2015</a>)</span>.</p>
 </div>
 </div>
-<div id="applications-impact-of-data-clincal-impact" class="section level2">
-<h2><span class="header-section-number">3.4</span> Applications –&gt; impact of data // Clincal impact</h2>
-<p>Boris Kholodenko With data also <span class="citation">(Bouhaddou et al. <a href="#ref-bouhaddou2018mechanistic">2018</a>)</span> Details Fey</p>
+<div id="from-mechanistic-models-to-clinical-impact" class="section level2">
+<h2><span class="header-section-number">3.4</span> From mechanistic models to clinical impact?</h2>
+<p><span class="citation">(Oldenhuis et al. <a href="#ref-oldenhuis2008prognostic">2008</a>)</span></p>
+<div id="prognostic-models" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Prognostic models</h3>
+<p>2 types of models 2 types of data, either prognosis (on patients) or response to treatment (validated on cell lines)</p>
+<p>Khan logical pronostic <span class="citation">(Khan et al. <a href="#ref-khan2017unraveling">2017</a>)</span> Logical treatment<span class="citation">(Zañudo, Scaltriti, and Albert <a href="#ref-zanudo2017network">2017</a>)</span> Details Fey <span class="citation">(Fey et al. <a href="#ref-fey2015signaling">2015</a>)</span> First Prehn <span class="citation">(Hector et al. <a href="#ref-hector2012clinical">2012</a>)</span> <span class="citation">(Salvucci et al. <a href="#ref-salvucci2017stepwise">2017</a>)</span> <span class="citation">(Fröhlich et al. <a href="#ref-frohlich2018efficient">2018</a>)</span> logic drugs <span class="citation">(Knijnenburg et al. <a href="#ref-knijnenburg2016logic">2016</a>)</span></p>
+<p>Other formalisms for drugs <span class="citation">(Jastrzebski et al. <a href="#ref-jastrzebski2018integrative">2018</a>)</span> and anctivity flows for pronostic <span class="citation">(Hidalgo et al. <a href="#ref-hidalgo2017high">2017</a>)</span></p>
+<p>plus machine learning <span class="citation">(Salvucci et al. <a href="#ref-salvucci2019machine">2019</a>)</span></p>
 
+</div>
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-abou2016logical">
+<p>Abou-Jaoudé, Wassim, Pauline Traynard, Pedro T Monteiro, Julio Saez-Rodriguez, Tomáš Helikar, Denis Thieffry, and Claudine Chaouiya. 2016. “Logical Modeling and Dynamical Analysis of Cellular Networks.” <em>Frontiers in Genetics</em> 7. Frontiers: 94.</p>
+</div>
 <div id="ref-altrock2015mathematics">
 <p>Altrock, Philipp M, Lin L Liu, and Franziska Michor. 2015. “The Mathematics of Cancer: Integrating Quantitative Models.” <em>Nature Reviews Cancer</em> 15 (12). Nature Publishing Group: 730–45.</p>
 </div>
@@ -283,26 +376,50 @@ Figure 3.4: <strong>Modeling a biological network: an iterative and cyclical pro
 <div id="ref-byrne2010dissecting">
 <p>Byrne, Helen M. 2010. “Dissecting Cancer Through Mathematics: From the Cell to the Animal Model.” <em>Nature Reviews Cancer</em> 10 (3). Nature Publishing Group: 221–30.</p>
 </div>
+<div id="ref-calzone2018logical">
+<p>Calzone, Laurence, Emmanuel Barillot, and Andrei Zinovyev. 2018. “Logical Versus Kinetic Modeling of Biological Networks: Applications in Cancer Research.” <em>Current Opinion in Chemical Engineering</em> 21. Elsevier: 22–31.</p>
+</div>
 <div id="ref-calzone2010mathematical">
 <p>Calzone, Laurence, Laurent Tournier, Simon Fourquet, Denis Thieffry, Boris Zhivotovsky, Emmanuel Barillot, and Andrei Zinovyev. 2010. “Mathematical Modelling of Cell-Fate Decision in Response to Death Receptor Engagement.” <em>PLoS Computational Biology</em> 6 (3). Public Library of Science.</p>
 </div>
 <div id="ref-de2002modeling">
 <p>De Jong, Hidde. 2002. “Modeling and Simulation of Genetic Regulatory Systems: A Literature Review.” <em>Journal of Computational Biology</em> 9 (1). Mary Ann Liebert, Inc.: 67–103.</p>
 </div>
+<div id="ref-fey2015signaling">
+<p>Fey, Dirk, Melinda Halasz, Daniel Dreidax, Sean P Kennedy, Jordan F Hastings, Nora Rauch, Amaya Garcia Munoz, et al. 2015. “Signaling Pathway Models as Biomarkers: Patient-Specific Simulations of Jnk Activity Predict the Survival of Neuroblastoma Patients.” <em>Sci. Signal.</em> 8 (408). American Association for the Advancement of Science: ra130–ra130.</p>
+</div>
 <div id="ref-flobak2015discovery">
 <p>Flobak, Åsmund, Anaïs Baudot, Elisabeth Remy, Liv Thommesen, Denis Thieffry, Martin Kuiper, and Astrid Lægreid. 2015. “Discovery of Drug Synergies in Gastric Cancer Cells Predicted by Logical Modeling.” <em>PLoS Computational Biology</em> 11 (8). Public Library of Science.</p>
+</div>
+<div id="ref-frohlich2018efficient">
+<p>Fröhlich, Fabian, Thomas Kessler, Daniel Weindl, Alexey Shadrin, Leonard Schmiester, Hendrik Hache, Artur Muradyan, et al. 2018. “Efficient Parameter Estimation Enables the Prediction of Drug Response Using a Mechanistic Pan-Cancer Pathway Model.” <em>Cell Systems</em> 7 (6). Elsevier: 567–79.</p>
+</div>
+<div id="ref-hector2012clinical">
+<p>Hector, Suzanne, Markus Rehm, Jasmin Schmid, Joan Kehoe, Niamh McCawley, Patrick Dicker, Frank Murray, et al. 2012. “Clinical Application of a Systems Model of Apoptosis Execution for the Prediction of Colorectal Cancer Therapy Responses and Personalisation of Therapy.” <em>Gut</em> 61 (5). BMJ Publishing Group: 725–33.</p>
 </div>
 <div id="ref-helikar2008emergent">
 <p>Helikar, Tomáš, John Konvalina, Jack Heidel, and Jim A Rogers. 2008. “Emergent Decision-Making in Biological Signal Transduction Networks.” <em>Proceedings of the National Academy of Sciences</em> 105 (6). National Acad Sciences: 1913–8.</p>
 </div>
+<div id="ref-hidalgo2017high">
+<p>Hidalgo, Marta R, Cankut Cubuk, Alicia Amadoz, Francisco Salavert, José Carbonell-Caballero, and Joaquin Dopazo. 2017. “High Throughput Estimation of Functional Cell Activities Reveals Disease Mechanisms and Predicts Relevant Clinical Outcomes.” <em>Oncotarget</em> 8 (3). Impact Journals, LLC: 5160.</p>
+</div>
 <div id="ref-hornberg2006cancer">
 <p>Hornberg, Jorrit J, Frank J Bruggeman, Hans V Westerhoff, and Jan Lankelma. 2006. “Cancer: A Systems Biology Disease.” <em>Biosystems</em> 83 (2-3). Elsevier: 81–90.</p>
 </div>
-<div id="ref-kitano2002computational">
-<p>Kitano, Hiroaki. 2002a. “Computational Systems Biology.” <em>Nature</em> 420 (6912). Nature Publishing Group: 206–10.</p>
+<div id="ref-jastrzebski2018integrative">
+<p>Jastrzebski, Katarzyna, Bram Thijssen, Roelof JC Kluin, Klaas de Lint, Ian J Majewski, Roderick L Beijersbergen, and Lodewyk FA Wessels. 2018. “Integrative Modeling Identifies Key Determinants of Inhibitor Sensitivity in Breast Cancer Cell Lines.” <em>Cancer Research</em> 78 (15). AACR: 4396–4410.</p>
 </div>
-<div id="ref-kitano2002systems">
-<p>Kitano, Hiroaki. 2002b. “Systems Biology: A Brief Overview.” <em>Science</em> 295 (5560). American Association for the Advancement of Science: 1662–4.</p>
+<div id="ref-kauffman1969homeostasis">
+<p>Kauffman, Stuart. 1969. “Homeostasis and Differentiation in Random Genetic Control Networks.” <em>Nature</em> 224 (5215). Springer: 177–78.</p>
+</div>
+<div id="ref-khan2017unraveling">
+<p>Khan, Faiz M, Stephan Marquardt, Shailendra K Gupta, Susanne Knoll, Ulf Schmitz, Alf Spitschak, David Engelmann, Julio Vera, Olaf Wolkenhauer, and Brigitte M Pützer. 2017. “Unraveling a Tumor Type-Specific Regulatory Core Underlying E2f1-Mediated Epithelial-Mesenchymal Transition to Predict Receptor Protein Signatures.” <em>Nature Communications</em> 8 (1). Nature Publishing Group: 1–15.</p>
+</div>
+<div id="ref-kitano2002computational">
+<p>Kitano, Hiroaki. 2002. “Computational Systems Biology.” <em>Nature</em> 420 (6912). Nature Publishing Group: 206–10.</p>
+</div>
+<div id="ref-knijnenburg2016logic">
+<p>Knijnenburg, Theo A, Gunnar W Klau, Francesco Iorio, Mathew J Garnett, Ultan McDermott, Ilya Shmulevich, and Lodewyk FA Wessels. 2016. “Logic Models to Predict Continuous Outputs Based on Binary Inputs with an Application to Personalized Cancer Therapy.” <em>Scientific Reports</em> 6 (1). Nature Publishing Group: 1–14.</p>
 </div>
 <div id="ref-knudson1971mutation">
 <p>Knudson, Alfred G. 1971. “Mutation and Cancer: Statistical Study of Retinoblastoma.” <em>Proceedings of the National Academy of Sciences</em> 68 (4). National Acad Sciences: 820–23.</p>
@@ -322,11 +439,32 @@ Figure 3.4: <strong>Modeling a biological network: an iterative and cyclical pro
 <div id="ref-nicolo2020machine">
 <p>Nicolò, Chiara, Cynthia Périer, Melanie Prague, Carine Bellera, Gaëtan MacGrogan, Olivier Saut, and Sébastien Benzekry. 2020. “Machine Learning and Mechanistic Modeling for Prediction of Metastatic Relapse in Early-Stage Breast Cancer.” <em>JCO Clinical Cancer Informatics</em> 4. American Society of Clinical Oncology: 259–74.</p>
 </div>
+<div id="ref-oldenhuis2008prognostic">
+<p>Oldenhuis, CNAM, SF Oosting, JA Gietema, and EGE De Vries. 2008. “Prognostic Versus Predictive Value of Biomarkers in Oncology.” <em>European Journal of Cancer</em> 44 (7). Elsevier: 946–53.</p>
+</div>
+<div id="ref-polynikis2009comparing">
+<p>Polynikis, Athanasios, SJ Hogan, and Mario di Bernardo. 2009. “Comparing Different Ode Modelling Approaches for Gene Regulatory Networks.” <em>Journal of Theoretical Biology</em> 261 (4). Elsevier: 511–30.</p>
+</div>
 <div id="ref-powathil2015systems">
 <p>Powathil, Gibin G, Maciej Swat, and Mark AJ Chaplain. 2015. “Systems Oncology: Towards Patient-Specific Treatment Regimes Informed by Multiscale Mathematical Modelling.” In <em>Seminars in Cancer Biology</em>, 30:13–20. Elsevier.</p>
 </div>
+<div id="ref-remy2015modeling">
+<p>Remy, Elisabeth, Sandra Rebouissou, Claudine Chaouiya, Andrei Zinovyev, François Radvanyi, and Laurence Calzone. 2015. “A Modeling Approach to Explain Mutually Exclusive and Co-Occurring Genetic Alterations in Bladder Tumorigenesis.” <em>Cancer Research</em> 75 (19). AACR: 4042–52.</p>
+</div>
+<div id="ref-saez2011comparing">
+<p>Saez-Rodriguez, Julio, Leonidas G Alexopoulos, MingSheng Zhang, Melody K Morris, Douglas A Lauffenburger, and Peter K Sorger. 2011. “Comparing Signaling Networks Between Normal and Transformed Hepatocytes Using Discrete Logical Models.” <em>Cancer Research</em> 71 (16). AACR: 5400–5411.</p>
+</div>
+<div id="ref-salvucci2019machine">
+<p>Salvucci, Manuela, Arman Rahman, Alexa J Resler, Girish M Udupi, Deborah A McNamara, Elaine W Kay, Pierre Laurent-Puig, et al. 2019. “A Machine Learning Platform to Optimize the Translation of Personalized Network Models to the Clinic.” <em>JCO Clinical Cancer Informatics</em> 3. American Society of Clinical Oncology: 1–17.</p>
+</div>
+<div id="ref-salvucci2017stepwise">
+<p>Salvucci, Manuela, Maximilian L Würstle, Clare Morgan, Sarah Curry, Mattia Cremona, Andreas U Lindner, Orna Bacon, et al. 2017. “A Stepwise Integrated Approach to Personalized Risk Predictions in Stage Iii Colorectal Cancer.” <em>Clinical Cancer Research</em> 23 (5). AACR: 1200–1212.</p>
+</div>
 <div id="ref-swanson2003virtual">
 <p>Swanson, Kristin R, Carly Bridge, JD Murray, and Ellsworth C Alvord Jr. 2003. “Virtual and Real Brain Tumors: Using Mathematical Modeling to Quantify Glioma Growth and Invasion.” <em>Journal of the Neurological Sciences</em> 216 (1). Elsevier: 1–10.</p>
+</div>
+<div id="ref-thomas1973boolean">
+<p>Thomas, René. 1973. “Boolean Formalization of Genetic Control Circuits.” <em>Journal of Theoretical Biology</em> 42 (3). Elsevier: 563–85.</p>
 </div>
 <div id="ref-trefois2015critical">
 <p>Trefois, Christophe, Paul MA Antony, Jorge Goncalves, Alexander Skupin, and Rudi Balling. 2015. “Critical Transitions in Chronic Disease: Transferring Concepts from Ecology to Systems Medicine.” <em>Current Opinion in Biotechnology</em> 34. Elsevier: 48–55.</p>
@@ -336,6 +474,12 @@ Figure 3.4: <strong>Modeling a biological network: an iterative and cyclical pro
 </div>
 <div id="ref-tyson2003sniffers">
 <p>Tyson, John J, Katherine C Chen, and Bela Novak. 2003. “Sniffers, Buzzers, Toggles and Blinkers: Dynamics of Regulatory and Signaling Pathways in the Cell.” <em>Current Opinion in Cell Biology</em> 15 (2). Elsevier: 221–31.</p>
+</div>
+<div id="ref-villaverde2014reverse">
+<p>Villaverde, Alejandro F, and Julio R Banga. 2014. “Reverse Engineering and Identification in Systems Biology: Strategies, Perspectives and Challenges.” <em>Journal of the Royal Society Interface</em> 11 (91). The Royal Society: 20130505.</p>
+</div>
+<div id="ref-zanudo2017network">
+<p>Zañudo, Jorge Gómez Tejeda, Maurizio Scaltriti, and Réka Albert. 2017. “A Network Modeling Approach to Elucidate Drug Resistance Mechanisms and Predict Combinatorial Drug Treatments in Breast Cancer.” <em>Cancer Convergence</em> 1 (1). Springer: 5.</p>
 </div>
 </div>
             </section>
