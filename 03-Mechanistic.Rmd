@@ -174,10 +174,10 @@ if (is_html_output()){
 } else if (is_latex_output()){
   kable(text_tbl, caption = '(ref:odelogic-caption)') %>%
     kable_styling(bootstrap_options = "striped", full_width = F) %>%
-    row_spec(0, bold = T, color = "white", background = "#808080", align = 'center') %>%
-    column_spec(1, bold = T, border_right = T, color = "white", background = "#808080", width = "6em") %>%
-    column_spec(2, width = "6em") %>%
-    column_spec(3, width = "6em")
+    row_spec(0, bold = T, color = "white", background = "#808080", align = 'c') %>%
+    column_spec(1, bold = T, border_right = T, color = "white", background = "#808080", width = "6em") #%>%
+    #column_spec(2, width = "6em") #%>%
+    #column_spec(3, width = "6em")
 }
 
 ```
@@ -192,7 +192,7 @@ With the help of these models, both qualitative and quantitative, many complex b
 
 ## From mechanistic models to clinical impact?
 
-[@oldenhuis2008prognostic]
+Mechanistic models have therefore undeniably led to a better understanding of the complex molecular machinery of signalling pathways. But beyond the interest that this understanding represents, do these models also have a clinical utility? In other words, **are they of clinical or only scientific value?** Throughout this thesis, the clinical value of mechanical models will often be analyzed by analogy to that of biomarkers. Throughout this thesis, the clinical value of mechanical models will often be analyzed by analogy to that of biomarkers. Biomarkers are defined as measurable indicators of patient status or disease progression, such as prostate-specific antigen (PSA) for prostate cancer screening or BRCA1 mutation for brast cancer risk [@henry2012cancer]. [@oldenhuis2008prognostic]
 
 ### Prognostic models
 

@@ -14,15 +14,23 @@ par(mar = c(4, 4, .1, .1))
 plot(pressure, type = 'b', pch = 19)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="10-Test_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">(\#fig:nice-fig)Here is a nice figure!</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{10-Test_files/figure-latex/nice-fig-1} 
+
+}
+
+\caption{Here is a nice figure!}(\#fig:nice-fig)
+\end{figure}
 
 And an external figure \@ref(fig:test)
 
-<div class="figure" style="text-align: center">
-<img src="cover/pictures/back-bg.png" alt="Example pic" width="45%" />
-<p class="caption">(\#fig:test)Example pic</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{cover/pictures/back-bg} 
+
+}
+
+\caption{Example pic}(\#fig:test)
+\end{figure}
 

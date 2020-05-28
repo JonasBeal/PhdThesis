@@ -1,21 +1,24 @@
 # Cancer as deregulation of complex machinery
 
-
-
->*All happy families are alike; each unhappy family is unhappy in its own way.*<br/>
-  >Leo Tolstoy (Anna Karenina, 1877)
+\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}
 
 
 
-Armed with all these models, whether statistical or mechanistic, we are going to look at a particularly complex system that fully justifies their use: cancer. Since the first chapter recalled how important prior knowledge of the phenomenon under study is for designing models, whatever their nature, this chapter will briefly summarize some of the most important characteristics of this disease before returning to the models themselves in the next chapter. Without aiming for exhaustiveness, and after an epidemiological and statistical description, we will focus on the most useful information for the modeller, i.e. the underlying biological mechanisms and available data.
+\initial{A}rmed with all these models, whether statistical or mechanistic, we are going to look at a particularly complex system that fully justifies their use: cancer. Since the first chapter recalled how important prior knowledge of the phenomenon under study is for designing models, whatever their nature, this chapter will briefly summarize some of the most important characteristics of this disease before returning to the models themselves in the next chapter. Without aiming for exhaustiveness, and after an epidemiological and statistical description, we will focus on the most useful information for the modeller, i.e. the underlying biological mechanisms and available data.
 
 
 
 
-<div class="figure" style="text-align: center">
-<img src="fig/bath.jpg" alt="(ref:bath-caption)" width="90%" />
-<p class="caption">(\#fig:bath)(ref:bath-caption)</p>
-</div>
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/bath} 
+
+}
+
+\caption[Cancer is an old disease]{(ref:bath-caption)}(\#fig:bath)
+\end{figure}
 (ref:bath-caption) **Cancer is an old disease.**  Rembrandt, *Bathsheba at Her Bath*, c. 1654, oil on canvas, Louvre Museum, Paris
 
 ## What is cancer?
@@ -28,19 +31,27 @@ One of the ways to read this brief history of cancer is to see that theoretical 
 
 Before going down to the molecular level, it is important to detail some figures and trends in the epidemiology of cancer today. Following the description in the previous section, cancer is first and foremost defined as a disease. Considered to be a unique disease, it caused 18.1 million new cancer cases and 9.6 million cancer deaths in 2018 according to the Global Cancer Observatory affiliated to World Health Organization [@bray2018global]. However, these aggregated data conceal disparities of various kinds. The first one is geographical. Indeed, mortality figures make cancer one of the leading causes of premature death in most countries of the world but its importance relative to other causes of death is even greater in the more developed countries (Figure \@ref(fig:globocan-map)). All in all, cancer is the first or second cause of premature death in almost 100 countries worldwide [@bray2018global]. These differences call for careful consideration of the impact of population age structures and health-related covariates.
 
-<div class="figure" style="text-align: center">
-<img src="fig/globocan-map.jpg" alt="(ref:globocan-map-caption)" width="90%" />
-<p class="caption">(\#fig:globocan-map)(ref:globocan-map-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/globocan-map} 
+
+}
+
+\caption[World map and national rankings of cancer as a cause of premature death]{(ref:globocan-map-caption)}(\#fig:globocan-map)
+\end{figure}
 (ref:globocan-map-caption) **World map and national rankings of cancer as a cause of premature death.** Classification of cancer as a cause of death before the age of 70, based on data for the year 2015. Original Figure, data and methods from @bray2018global.
 
 A second disparity lies in the different types of cancer. If we classify tumours solely according to their location, i.e. the organ affected first, we already obtain very wide differences. First of all, the incidence varies considerably (Figure \@ref(fig:cancer-tissues)A)). Cancers do not occur randomly anywhere in the body and certain environments or cell types appear to be more favourable [@tomasetti2015variation]. Mortality is also highly variable but is not directly inferred from incidence. Not all types of cancer have the same prognosis (Figure \@ref(fig:cancer-tissues)A and B) and survival rates [@liu2018integrated]. Although breast cancer is much more common than lung cancer, it causes fewer deaths because its prognosis is, on average, much better. The mechanisms at work in the emergence of cancer are therefore not necessarily the same as those that will govern its evolution or its response to treatment. And still on the response to treatment, Figure \@ref(fig:cancer-tissues)B highlights another disparity: not only are the survival prognosis associated with each cancer very different, but the evolution (and generally the improvement) of these prognoses has been very uneven over the last few decades. This means that theoretical and therapeutic advances have not been applied to all types of cancer with the same success. It is one more indication of the diversity of biological mechanisms at work, which make it impossible to find a panacea, and which, on the contrary, encourage us to carefully consider the particularities of each tumour, both to understand them and to treat them. Under a generic name and in spite of common characteristics, the cancers thus appear as extremely heterogeneous. And to understand the sources of this heterogeneity, it will be necessary to place ourselves on a much smaller scale.  
   
 
-<div class="figure" style="text-align: center">
-<img src="02-Cancer_files/figure-html/cancer-tissues-1.png" alt="(ref:cancer-tissues-caption)" width="90%" />
-<p class="caption">(\#fig:cancer-tissues)(ref:cancer-tissues-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{02-Cancer_files/figure-latex/cancer-tissues-1} 
+
+}
+
+\caption[Incidence, mortility and survival per cancer types]{(ref:cancer-tissues-caption)}(\#fig:cancer-tissues)
+\end{figure}
 (ref:cancer-tissues-caption) **Incidence, mortility and survival per cancer types**. (A) World incidence and mortality for the 19 most frequent cancer types in 2018, expressed age-standardized rates (adjusted age structure based on world population); data retrieved from [Global Cancer Observatory](https://gco.iarc.fr/today/home). (B) Evolution of 5-years relative survival for the same cancer types based on US data from SEER registries in 1975-1977 and 2006-2012; data retrieved from @jemal2017annual.
 
 ## Basic molecular biology and cancer {#molecular-biology}
@@ -52,10 +63,14 @@ If it is not possible an ddesirable to summarize here the state of knowledge abo
 Some of the principles that govern biology can be described at the level of one of its simplest elements, the cell. Let us consider for the moment a perfectly healthy cell.  It must ensure a certain number of functions necessary for its survival and, if necessary, for its division/reproduction. These functions are encoded in its genetic information in the form of DNA, which is a priori stable and shared by the different cells since it is defined at the level of the individual. Most biological functions, however, are not performed by DNA itself which remains in the nucleus of the cell. The DNA is thus transcribed into RNA, another nucleic acid which, in addition to performing some biological functions, becomes the support of the genetic information in the cell. The RNA is then itself translated into new molecules composed of long chains of amino acid residues and called proteins. They are the ones that execute most of the numerous cellular functions: DNA replication, physical structuring of the cell, molecule transport within the cell etc. A rather simplistic but fruitful way to understand this functioning is to consider it as a progressive transfer of biological information from DNA to proteins, which has sometimes been summarized as the central dogma of the molecular biology (\@ref(fig:central-dogma)) first stated Francis Crick [@crick1970central].  
   
 
-<div class="figure" style="text-align: center">
-<img src="fig/central-dogma.png" alt="(ref:central-dogma-caption)" width="80%" />
-<p class="caption">(\#fig:central-dogma)(ref:central-dogma-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{fig/central-dogma} 
+
+}
+
+\caption[Central dogma of molecular biology]{(ref:central-dogma-caption)}(\#fig:central-dogma)
+\end{figure}
 (ref:central-dogma-caption) **Central dogma of molecular biology.** Schematic representation of the information flow within the cell, from DNA to proteins through RNA, more precisely described in this [video](https://www.youtube.com/watch?v=J3HVVi2k2No) (Image credit *Genome Research Limited*).  
   
 However, many changes would be necessary to clarify this scheme. The uni-directional nature was questioned early on. And above all, a large number of regulations interact with and disrupt this master plan. The genes are not always all transcribed, or at least not at variable intensities, interrupting or modulating the chain upstream. These switches in the transcript of genes can be proteins, called transcription factors. After a gene transcription, its expression can still be regulated at various stages. RNAs, too, can be degraded more or less rapidly. RNAs can be reshaped in their structure by a process called splicing, which varies the genetic information they carry. Finally, proteins are subject to all kinds of modifications referred to as post-translational, which can change the chemical nature of certain groups or modify the three-dimensional structure of the whole protein. For instance, some proteins perform their function only if a specific amino acid residue is phosphorylated. In addition, these modifications can be transmitted between proteins, further complicating the flow of information. All these possibilities of regulation play an absolutely essential role in the life of the cell by allowing it to adapt to different contexts and situations. From the same genetic material, a cell of the eye and a cell of the heart can thus perform different functions. In the same way, the same cell subjected to different stimuli at different times can provide different responses because these molecular stimuli induce a regulation of its programme. But these regulatory mechanisms can be corrupted.
@@ -69,10 +84,14 @@ With the above knowledge we can now return to the definition of cancer as an unc
 
 However, cancer is not a Mendelian disease for which it would be sufficient to identify the one and only gene responsible for deregulation. Indeed, the cell has many protective mechanisms. For example, if a genetic mutation appears in the DNA, it has a very high chance of being repaired by dedicated mechanisms. And if it is not repaired, other mechanisms will take over to trigger the programmed death of the cell, called apoptosis, before it can proliferate wildly. So a cancer cell is probably a cell that has learned to resist this cell death. Similarly, in order to generate excessive growth, a cell will need to be able to replicate itself many, many times. However, there are pieces of sequences on chromosomes called telomeres that help to limit the number of times each cell can replicate. A cancer cell will therefore have to manage to bypass this protection. Thus we can schematically define the properties that must be acquired by the cancereous cells in order to truly deviate the machinery. In an influential article, these properties were summarized in six hallmarks (Figure \@ref(fig:hallmarks)) which are: resisting cell death, enabling replicatve immortality, sustaning proliferative signaling, evading growth suppressors, activating invasion and inducing angiogenesis [@hanahan2000hallmarks]. Two new ones were subsequently added in the light of advances in knowledge [@hanahan2011hallmarks]: deregulating cancer energetics and avoiding immne destruction. The acquisition of these capacities generally requires genetic mutations and is therefore favoured by an underlying genome instability.  
   
-<div class="figure" style="text-align: center">
-<img src="fig/hallmarks.jpg" alt="(ref:hallmarks-caption)" width="90%" />
-<p class="caption">(\#fig:hallmarks)(ref:hallmarks-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/hallmarks} 
+
+}
+
+\caption[Hallmarks of cancer]{(ref:hallmarks-caption)}(\#fig:hallmarks)
+\end{figure}
 (ref:hallmarks-caption) **Hallmarks of cancer.** The different biological capabilities acquired by cancer cells, as described in @hanahan2000hallmarks. Reprinted from @hanahan2011hallmarks.
 
 Each of these characteristics constitutes a research program in its own right. And for each one there are genetic Alteratoins. These are tissue-specific or not, specific to a hallmark or common to several of them [@hanahan2000hallmarks]. In any case, cancer can only result from different joint alterations that invalidate several protective mechanisms at the same time. This is often part of a multi-step process of hallmark acquisition that has been experimentally documented in some specific cases [@hahn1999creation] or more recently inferred from genome-wide data for human patients [@tomasetti2015only]. In summary, it appears that in order to study the functioning of cancer cells it is necessary to look at several mechanisms and to be able to consider them not separately but together, in as many different patients as possible. This ambitious programme has been made possible by a technological revolution.
@@ -89,10 +108,14 @@ In 2001, the first sequencing of the human genome symbolized the beginning of a 
 
 With respect to cancer in particular, this wealth of data is particularly represented by a whole series of studies conducted by The Cancer Genome Atlas (TCGA) consortium started in 2008 [@cancer2008comprehensive]. Cohorts of several hundred patients are thus sequenced over the years for different types of cancer [@cancer2012comprehensive], resulting today in a total of 11,000 tumors from 33 of the most prevalent forms of cancer [@ding2018perspective]. Figure \@ref(fig:tcga) provides a partial but striking overview of the depth of data available under this program. We can see the frequencies of alterations of certain groups of genes for a list of cancer types, making it possible to visualize the disparities already anticipated in section \@ref(epidemio) based on patient survival. There are indeed important differences between the organs but also between the different subtypes associated with the same organ. And this representation only corresponds to one layer of data, that of genetic alterations. It could be used for transcriptomic, epigenomic or proteomic data, thus giving rise to an incredibly complex photography.
 
-<div class="figure" style="text-align: center">
-<img src="fig/tcga.jpg" alt="(ref:tcga-caption)" width="90%" />
-<p class="caption">(\#fig:tcga)(ref:tcga-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/tcga} 
+
+}
+
+\caption[Genetic alterations frequencies for cancer types from TCGA data]{(ref:tcga-caption)}(\#fig:tcga)
+\end{figure}
 (ref:tcga-caption) **Genetic alterations frequencies for cancer types from TCGA data.** Frequencies of alteration per pahway and tumour types as summaried in Pan-cancer analyses from TCGA data. Reprinted from @sanchez2018oncogenic.
 
 However, the diversity of data available for cancer research extends far beyond this, both in terms of technology and type of data. This may be data from model organisms such as mice or tumours of human origin but made more suitable for experimentation. In the latter category, it is crucial to mention the huge amount of data available on cell lines, extracted from human tumours and transformed to be studied in culture. It is then possible to go beyond descriptive data and vary the experimental conditions in order to study the responses of these cells to perturbations and to enrich our knowledge. It is therefore possible to know the response to more than 100 drugs of about 700 cell lines [@yang2012genomics]. The richness of these data, coupled with the omic profiling of each cell line, enables to study the determinants of response to treatment with unprecedented scope [@iorio2016landscape]. More recently, but following a similar logic, other types of inhibition screenings have been proposed based on a more specific technique called CRISPR-Cas9 [@behan2019prioritization]. The simplicity of the cell lines in relation to the original tumours makes all these studies possible but sometimes hinders the clinical application of the knowledge acquired. For this reason, other types of biological models have been developed, including patient-derived xenografts (PDX) which is an implant of human tumours in mice to maintain the existence of a certain tumour microenvironment [@hidalgo2014patient], while maintaining drug screening possibilities [@gao2015high]. These two types of data, cell lines and PDX, have been used in this thesis, in addition to TCGA patient data, thus justifying the limitation of this presentation, which could otherwise be extended to other types of biological models. Similarly, other technologies are becoming increasingly important in the generation of cancer data, such as single-cell sequencing [@navin2015first], but will not be used in this work.
@@ -106,17 +129,25 @@ All that remains to be done now is to make sense of all these data, to organize 
 This *a priori* knowledge is in fact already present in Figure \@ref(fig:tcga) since genetic alterations have been grouped in several categories called pathways. A pathway is group of biological entities, and associated chemical reactions, working together to control a specific cell function like apoptosis or cell division. The interest of these groupings maybe understood based on the description of hallmarks. Indeed, if the "aim"" of a cancer cell is to inactivate each of the protective functions, then it is more relevant to think not by gene but by function. Inactivating only one of the genes associated with the function may be sufficient and it is no longer necessary to inactivate the others. Numerous alterations in a large number of genes result often in few key impaired pathways, like alterations of cell cycle or angiogenesis for instance [@jones2008core]. It is therefore possible to improve the stability and interpretability of analyses by moving from the gene scale to the pathway scale [@drier2013pathway]. More generally, the integration of biological knowledge often leads to improved performance in various cancer-related prediction tasks, either through the selection of variables or by taking into account the structure of the variables [@bilal2013improving; ferranti2017value]. Increasingly, the biological variables are not interpreted separately but in relation to each other [@barabasi2004network]. This is reflected in the emergence of more and more resources to summarize and represent signaling pathways and associated networks such as SIGNOR [@perfetto2016signor], OmniPath [@turei2016omnipath] or the Atlas of Cancer Signaling Network [@kuperstein2015atlas]. Like other diseases, cancer then goes from a genetic disease to a network disease [@del2010diseases] and one can study how all kinds of genetic alterations affect the wiring of these networks [@pawson2007oncogenic], and modify the cellular functions leading to the previously described cancer hallmarks as depicted schmatically in Figure \@ref(fig:circuit). In short, the richness of the data did not make it less necessary to use *a priori* knowledge in order to make the analyses more interpretable and more robust.
 
 
-<div class="figure" style="text-align: center">
-<img src="fig/circuit.jpg" alt="(ref:circuit-caption)" width="90%" />
-<p class="caption">(\#fig:circuit)(ref:circuit-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/circuit} 
+
+}
+
+\caption[Simplistic representation of cellular circuit and pathways]{(ref:circuit-caption)}(\#fig:circuit)
+\end{figure}
 (ref:circuit-caption) **Simplistic representation of cellular circuitry.** Normal cellular circuit sand sub-circuits (identified by colours) can be reprogrammed to regulate hallmark capabilities within cancer cells. Reprinted from @hanahan2011hallmarks.
 
 The final step, to obtain one of the most complete and integrated visions of cancer biology, is then to integrate omics knowledge with knowledge about the structure of pathways to try to understand in detail how their combinations can lead to so many cancers that are both similar and different. An example of such a representation is given by mapping the TCGA data about genetic alterations, presented in Figure \@ref(fig:tcga), on a representation of the different pathways showing not only their internal organization but also their cross-talk [@sanchez2018oncogenic]. This representation is proposed in Figure \@ref(fig:pathways) and is the most recent view of the kind of tools and data available to the modeller who wants to dissect more deeply the mechanisms at work. 
 
 
-<div class="figure" style="text-align: center">
-<img src="fig/pathways.jpg" alt="(ref:pathways-caption)" width="90%" />
-<p class="caption">(\#fig:pathways)(ref:pathways-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/pathways} 
+
+}
+
+\caption[Genetic alterations frequencies from TCGA data mapped on a schematic signaling network]{(ref:pathways-caption)}(\#fig:pathways)
+\end{figure}
 (ref:pathways-caption) **Genetic alterations frequencies from TCGA data mapped on a schematic signaling network.** Frequencies of alteration per pahway and tumour types as summaried in Pan-cancer analyses from TCGA data. Reprinted from @sanchez2018oncogenic.

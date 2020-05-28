@@ -1,21 +1,24 @@
 # Mechanistic modeling of cancer: from complex disease to systems biology
 
-
-
->*"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."*<br/>
-  >George Whitesides
+\epigraph{"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."}{George Whitesides}
 
 
 
-The previous chapter identified the need to organize cancer knowledge and data. The integration of biological knowledge, particularly in the form of networks, is a first step in this direction. The deepening of knowledge, however, requires the ability to manipulate objects even more, to experiment, to dissect their behaviour in an infinite number of situations, such as the astronomer with his orrery or physicians with their old anatomical models (Figure \@ref(fig:anatomy)). Is it then possible to create mechanistic models of cancer in the same way?
+\initial{T}he previous chapter identified the need to organize cancer knowledge and data. The integration of biological knowledge, particularly in the form of networks, is a first step in this direction. The deepening of knowledge, however, requires the ability to manipulate objects even more, to experiment, to dissect their behaviour in an infinite number of situations, such as the astronomer with his orrery or physicians with their old anatomical models (Figure \@ref(fig:anatomy)). Is it then possible to create mechanistic models of cancer in the same way?
 
 
 
 
-<div class="figure" style="text-align: center">
-<img src="fig/anatomy.jpg" alt="(ref:anatomy-caption)" width="90%" />
-<p class="caption">(\#fig:anatomy)(ref:anatomy-caption)</p>
-</div>
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/anatomy} 
+
+}
+
+\caption[Dissecting a biological phenomenon using a non-computational model]{(ref:anatomy-caption)}(\#fig:anatomy)
+\end{figure}
 (ref:anatomy-caption) **Dissecting a biological phenomenon using a non-computational model.**  Rembrandt, *The Anatomy Lesson of Dr Nicolaes Tulp*, 1634, oil on canvas, Mauritshuis museum, The Hague
 
 ## Introducing the diversity of mechanistic models of cancer
@@ -27,10 +30,14 @@ Consistent with the evolution of knowledge and data, the early models were at th
 of tumours. The integration of more advanced knowledge as well as the progressive refinement of mathematical formalisms has nevertheless allowed these models to proliferate while gaining in interpretability, with for instance mechanistic models of metastatic relapse [@nicolo2020machine]. Always on a macroscopic scale, the study of tumor growth has also been the playground of many mathematicians [@araujo2004history; byrne2010dissecting], even predicting invasion or response to surgical treatments using spatial modeling [@swanson2003virtual]. This line of research is still quite active today and provides a mathematical basis for comparison with tumour experimental growth [@benzekry2014classical].  
   
 
-<div class="figure" style="text-align: center">
-<img src="fig/multiscale.png" alt="(ref:multiscale-caption)" width="90%" />
-<p class="caption">(\#fig:multiscale)(ref:multiscale-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/multiscale} 
+
+}
+
+\caption[The different scales of cancer modeling]{(ref:multiscale-caption)}(\#fig:multiscale)
+\end{figure}
 (ref:multiscale-caption) **The different scales of cancer modeling.** Cancer can be approached at different scales, from molecules to organs, using different data (dark blue), but often with the direct or indirect objective of contributing to the study of clinically interpretable phenomena (yellow boxes), in particular by studying the influence of anticancer agents (pale blue). Reprinted from @barbolosi2016computational.
 
 
@@ -49,10 +56,14 @@ What is true for the cell in general is just as true for cancer in particular. U
 Finally, to conclude this general presentation, it is important to understand that while small molecular network modeling is not recent, the rise and multiplication of wide range systems biology approaches is very much related to the production of biological data [@de2002modeling]. The last few decades have seen the emergence of high-throughput data that have made it possible to identify and link hundreds of genes or proteins involved in cancer. Exploring the interaction and back and forth between these models and the data they use or predict is therefore of utmost importance. In addition, the now massive amount of data has also imposed mathematical or computational approaches as central to managing this profusion and more and more modeling approaches are focused on data integration or inference [@frohlich2018efficient; @bouhaddou2018mechanistic]More generally, Figure \@ref(fig:pubmed) shows that while the number of scientific articles devoted to cancer has increased drastically since the 1950s (panel A), the proportion of these same articles mentioning *models*, *networks* or *computational* approaches has also increased (panel B), illustrating a change in paradigms.  
   
 
-<div class="figure" style="text-align: center">
-<img src="03-Mechanistic_files/figure-html/pubmed-1.png" alt="(ref:pubmed-caption)" width="90%" />
-<p class="caption">(\#fig:pubmed)(ref:pubmed-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{03-Mechanistic_files/figure-latex/pubmed-1} 
+
+}
+
+\caption[PubMed trends in cancer studies.]{(ref:pubmed-caption)}(\#fig:pubmed)
+\end{figure}
 (ref:pubmed-caption) **PubMed trends in cancer studies.** (A) PubMed articles with the word *Cancer* in either title or abstract from 1950 to 2019. (B) Proportion of the *Cancer* articles with additional keywords expressed as PubMed logical queries.
 
 ## Mechanistic models of molecular signaling
@@ -66,20 +77,28 @@ The first step is to identify the relevant biological entities from a question o
 
 However, all these steps are not linear and sequential, but rather iterative and cyclical. This modeling cycle, with back and forth to the data, is not specific to molecular network models, but it is possible to specify it in this case (Figure \@ref(fig:cycle)). The names of the key players involved in the question of interest are thus first extracted from adapted data or from the literature. A first mathematical translation of the relationships between the entities is then proposed before verifying the compatibility of this model with the observations, whether qualitative or quantitative. If the compatibility is not good, we come back to the definition or the parameterization of the model. If compatibility is correct, the model can be used to make new predictions or study phenomena that go beyond the initial data set. Ideally, these predictions will be tested afterwards. This cyclic approach with two successive checks is analogous to the use of validation and test data in the evaluation of most learning algorithms. This analogy can sometimes be masked by the qualitative nature of the predictions or by the lack of explicit fitting of the parameters.
 
-<div class="figure" style="text-align: center">
-<img src="fig/cycle.png" alt="(ref:cycle-caption)" width="70%" />
-<p class="caption">(\#fig:cycle)(ref:cycle-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{fig/cycle} 
+
+}
+
+\caption[Modeling a biological network: an iterative and cyclical process]{(ref:cycle-caption)}(\#fig:cycle)
+\end{figure}
 (ref:cycle-caption) **Modeling a biological network: an iterative and cyclical process.** Reprinted from [@beal2020modelisation]. A different and simpler version of this cycle is described in [@le2015quantitative].
 
 ### Different formalisms for different applications
 
 Beyond these similarities in the construction and representation of models, the precise mathematical formalism that underlies them varies according to the type of question and the data [@de2002modeling]. For the sake of simplicity, and without exhaustiveness, we propose to divide into quantitative and qualitative formalisms which will be essentially illustrated respectively by **ordinary differential equation (ODE)** models and **logical (or Boolean) models** for which a graphical and schematic comparison is proposed in Figure \@ref(fig:toyraf).  
 
-<div class="figure" style="text-align: center">
-<img src="fig/toyraf.png" alt="(ref:toyraf-caption)" width="90%" />
-<p class="caption">(\#fig:toyraf)(ref:toyraf-caption)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/toyraf} 
+
+}
+
+\caption[Schematic example of logical and ODE modeling around MAPK signaling]{(ref:toyraf-caption)}(\#fig:toyraf)
+\end{figure}
 (ref:toyraf-caption) **Schematic example of logical and ODE modeling around MAPK signaling.** (A) Activity flow diagram of a small part of MAPK signaling, each node representing a gene or protein, with an example of logical rule for MEK node for the corresponding logical model. (B) Process description of the same diagram with BRAF and CRAF merged in RAF for the sake of simplicity; each square representing a reaction and the correspondong rate; an example differential equation is provided for the phosphorylated (active) form of MEK.
 
 One of the most frequent approaches is the use of chemical kinetics equations to construct ODE systems which are a fairly natural translation of the process descritpion networks described in the previous section [@polynikis2009comparing]. Each biological interaction is treated as a reaction governed by the law of mass action and, under certain hypotheses, as a differential equation; the set of reactions in the system then generates a set of differential equations with coupled variables, in an analogous way to the Lotka Volterra system presented in section \@ref(lotkasection). Thus the variables generally represent quantities of molecular species, for example concentrations of RNA or proteins, and the stoichiometric coefficients and reaction rates are used to define the system parameters. Approximations are sometimes made to simplify the equations, for example by assuming that they can be written as Michaelis Menten's enzymatic reactions, which have a simple and well known behaviour. However, the theoretical accuracy of quantitative models has a cost since each differential equation requires parameters, such as reaction constants or initial conditions, to which the system is very sensitive [@le2015quantitative]. The biochemical interpretation of the parameters sometimes allow to find their value in the literature, if the reactions are well characterized, even if possible variations in a given biological or physical context are often unknown. Since knowledge of the values of these parameters  is often limited or even non-existent, it may require a very large volume of data (including time series) to fit the many missing parameters which can be difficult if the number of parameters is large [@villaverde2014reverse]. However, recent work has demonstrated the feasibility and scalability of this type of inference with sufficiently rich data. [@frohlich2018efficient]  
@@ -88,43 +107,26 @@ One of the most frequent approaches is the use of chemical kinetics equations to
 At the same time, more qualitative approaches to modeling biological networks have been proposed with discrete variables linked together by rules expressed as logical statements [@abou2016logical]. These models are both more abstract since variables do not have a direct biological interpretation (e.g. concentration of a species) but are more versatile since they can unify different biological realities under the same formalism (e.g. activation of a gene or phosphorlation of a protein). The discrete nature of the variables can then be seen as an asymptotic case of the sigmoidal (e.g. Hill function) relationships often found in biology [@le2015quantitative]. The step function thus obtained can keep a natural interpretation in the context of biological phenomena: genes activated or not, protein present or absent etc. Similarly, interactions between species are not quantified but are based on a qualitative statements (e.g. A will be active if B and C are active), drastically reducing the number of parameters. If the theoretical interest of this formalism to study biological mechanisms was proposed quite early [@kauffman1969homeostasis; @thomas1973boolean], many concrete applications have also been developed over the years, particularly in cancer research [@saez2011comparing; @remy2015modeling]. This **logical formalism will constitute the core of the work presented in Part II**, where it will therefore be discussed in greater detail.  
   
 
-<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:odelogic)(ref:odelogic-caption)</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;">   </th>
-   <th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;"> Quantitative modeling </th>
-   <th style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;text-align: center;"> Qualitative modeling </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;"> Example formalism </td>
-   <td style="text-align:left;"> Ordinary differential equation (ODE) models </td>
-   <td style="text-align:left;"> Logical models </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;"> Type of variables </td>
-   <td style="text-align:left;"> Direct translation of biological quantities, usually continuous </td>
-   <td style="text-align:left;"> Abstract representation of activity levels, usually discrete </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;"> Objective </td>
-   <td style="text-align:left;"> Quantitatively accurate and temporal simulation of an experimental phenomenon </td>
-   <td style="text-align:left;"> Coarse-grained simulation of qualitative phenotypes </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;"> Advantages </td>
-   <td style="text-align:left;"> Direct confrontation with experimental data; precise; linear representation of time </td>
-   <td style="text-align:left;"> Faster design; easy translation of literature-based assertions; simulation of perturbations </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #808080 !important;border-right:1px solid;"> Drawbacks </td>
-   <td style="text-align:left;"> Difficulty determining or fitting parameters </td>
-   <td style="text-align:left;"> More difficult to link to data; lower precision </td>
-  </tr>
-</tbody>
-</table>
+\begin{table}
+
+\caption{(\#tab:odelogic)(ref:odelogic-caption)}
+\centering
+\begin{tabular}[t]{>{\bfseries\raggedright\arraybackslash\leavevmode\color{white}\columncolor[HTML]{808080}}p{6em}||l|l}
+\hline
+\rowcolor[HTML]{808080}  \multicolumn{1}{c}{\textcolor{white}{\textbf{ }}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Quantitative modeling}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Qualitative modeling}}}\\
+\hline
+Example formalism & Ordinary differential equation (ODE) models & Logical models\\
+\hline
+Type of variables & Direct translation of biological quantities, usually continuous & Abstract representation of activity levels, usually discrete\\
+\hline
+Objective & Quantitatively accurate and temporal simulation of an experimental phenomenon & Coarse-grained simulation of qualitative phenotypes\\
+\hline
+Advantages & Direct confrontation with experimental data; precise; linear representation of time & Faster design; easy translation of literature-based assertions; simulation of perturbations\\
+\hline
+Drawbacks & Difficulty determining or fitting parameters & More difficult to link to data; lower precision\\
+\hline
+\end{tabular}
+\end{table}
 (ref:odelogic-caption) **Features of quantitative and qualitative modeling applied to biological molecular networks** (adapted from @le2015quantitative)
 
 These two formalisms, which are among the most frequent for modelling biological networks, share many similarities, in particular the propensity to be built according to bottom-up strategies based on knowledge of the elementary parts of the model, i.e. biological entities and reactions. However, they differ in their implementation and objectives, one aiming at the most accurate representation possible, the other seeking to capture the essence of the system's dynamics in a parsimonious way (Table \@ref(tab:odelogic)). The opposition is not irrevocable, as illustrated by the numerous hybrid formalisms that lie within the spectrum delimited by these two extremes such as fuzzy logic or discrete-time differential equations [@le2015quantitative; @calzone2018logical]. To conclude, a comparison between the two approaches applied to the same problem is proposed by @calzone2018logical, studying the epithelio-mesenchymal transition (EMT, a biological process involved in cancer), to illustrate in concrete terms their complementarity.
@@ -136,7 +138,7 @@ With the help of these models, both qualitative and quantitative, many complex b
 
 ## From mechanistic models to clinical impact?
 
-[@oldenhuis2008prognostic]
+Mechanistic models have therefore undeniably led to a better understanding of the complex molecular machinery of signalling pathways. But beyond the interest that this understanding represents, do these models also have a clinical utility? In other words, **are they of clinical or only scientific value?** Throughout this thesis, the clinical value of mechanical models will often be analyzed by analogy to that of biomarkers. Throughout this thesis, the clinical value of mechanical models will often be analyzed by analogy to that of biomarkers. Biomarkers are defined as measurable indicators of patient status or disease progression, such as prostate-specific antigen (PSA) for prostate cancer screening or BRCA1 mutation for brast cancer risk [@henry2012cancer]. [@oldenhuis2008prognostic]
 
 ### Prognostic models
 
