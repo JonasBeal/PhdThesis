@@ -23,7 +23,7 @@
 }{}
 \usepackage[unicode=true]{hyperref}
 \hypersetup{
-            pdftitle={From mechanistic modeling of cancer to clinical interpretation and impact evaluation},
+            pdftitle={From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -220,14 +220,14 @@
 \institute{l'Institut Curie}
 \doctoralschool{Complexité du Vivant}{515}
 \specialty{Génomique}
-\date{15 septembre 2020}
+\date{23 septembre 2020}
 
 %% cotutelle
 % \entitle{Thesis Subject in English}
 % \otherinstitute{CEA Saclay}
 % \logootherinstitute{logo-institute}
 
-\jurymember{1}{Test NOM}{Titre, Établissement}{Président}
+\jurymember{1}{Test NOM}{Titre, Établissement}{Rapporteur}
 \jurymember{2}{Test NOM}{Titre, Établissement}{Rapporteur}
 \jurymember{3}{Test NOM}{Titre, Établissement}{Examinateur}
 \jurymember{4}{Test NOM}{Titre, Établissement}{Examinateur}
@@ -238,36 +238,29 @@
 % \jurymember{10}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
 
 \frabstract{
-  Cuius acerbitati uxor grave accesserat incentivum,
-  germanitate Augusti turgida supra modum, quam Hannibaliano
-  regi fratris filio antehac Constantinus iunxerat pater,
-  Megaera quaedam mortalis, inflammatrix saevientis adsidua,
-  humani cruoris avida nihil mitius quam maritus; qui paulatim
-  eruditiores facti processu temporis ad nocendum per
-  clandestinos versutosque rumigerulos conpertis leviter
-  addere quaedam male suetos falsa et placentia sibi
-  discentes, adfectati regni vel artium nefandarum calumnias
-  insontibus adfligebant.
+  Au delà de ses mécanismes génétiques, le cancer peut-être compris comme une maladie de réseaux qui résulte souvent de l’interaction entre différentes perturbations dans un réseau de régulation cellulaire.  La dynamique de ces réseaux et des voies de signalisation associées est complexe et requiert des approches intégrées. Une d’entre elles est la conception de modèles dits mécanistiques qui traduisent mathématiquement la connaissance biologique des réseaux afin de pouvoir simuler le fonctionnement moléculaire des cancers informatiquement. Ces modèles ne traduisent cependant que les mécanismes généraux à l’oeuvre dans certains cancers en particulier.
+
+Cette thèse propose en premier lieu de définir des modèles mécanistiques personnalisés de cancer. Un modèle générique est  d’abord défini dans un formalisme logique (ou Booléen), avant d’utiliser les données omiques (mutations, ARN, protéines) de patients ou de lignées cellulaires afin de rendre le modèle spécifique à chacun. Ces modèles personnalisés peuvent ensuite être confrontés aux données cliniques de patients pour vérifier leur validité. Le cas de la réponse clinique aux traitements est exploré en particulier dans cette thèse. La représentation explicite des mécanismes moléculaires par ces modèles permet en effet de simuler l’effet de différents traitements suivant leur mode d’action et de vérifier si la sensibilité d’un patient à un traitement est bien prédite par le modèle personnalisé correspondant. Un exemple concernant la réponse aux inhibiteurs de BRAF dans les mélanomes et cancers colorectaux est ainsi proposé.
+
+La confrontation des modèles mécanistiques de cancer, ceux présentés dans cette thèse et d’autres, aux données cliniques incite par ailleurs à évaluer rigoureusement leurs éventuels bénéfices dans la cadre d’une utilisation médicale. La quantification et l’interprétation de la valeur de certains modèles à visée pronostique est brièvement présentée avant de se focaliser sur le cas particulier des modèles capables de sélectionner le meilleur traitement pour chaque patient en fonction des ses caractéristiques moléculaires. Un cadre théorique est proposé pour étendre les méthodes d’inférence causale à l’évaluation de tels algorithmes de médecine de précision. Une illustration est fournie à l’aide de données simulées et de xénogreffes dérivées de  patients
+
+L’ensemble des méthodes et applications décrites tracent donc un chemin, de la conception de modèles mécanistiques de cancer à leur évaluation grâce à des modèles statistiques émulant des essais cliniques.
 
 }
 
 \enabstract{
-  Verum ad istam omnem orationem brevis est defensio. Nam
-  quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit
-  primum ipsius pudore, deinde etiam patris diligentia
-  disciplinaque munita. Qui ut huic virilem togam dedit nihil
-  dicam hoc loco de me; tantum sit, quantum vos existimatis;
-  hoc dicam, hunc a patre continuo ad me esse deductum; nemo
-  hunc M. Caelium in illo aetatis flore vidit nisi aut cum
-  patre aut mecum aut in M. Crassi castissima domo, cum
-  artibus honestissimis erudiretur.
+  Beyond its genetic mechanisms, cancer can be understood as a network disease that often results from the interaction between different perturbations in a cellular regulatory network.  The dynamics of these networks and associated signaling pathways are complex and require integrated approaches. One approach is to design mechanistic models that translate the biological knowledge of networks in mathematical terms to simulate the molecular features of cancers in a computer-readable form. However, these models only reflect the general mechanisms at work in cancers.
+
+This thesis proposes to define personalized mechanistic models of cancer. A generic model is first defined in a logical (or Boolean) formalism, before using omics data (mutations, RNA, proteins) from patients or cell lines in order to make the model specific to each one profile. These personalized models can then be compared with the clinical data of patients in order to validate them. The response to treatment is investigated in particular in this thesis. The explicit representation of the molecular mechanisms by these models allows to simulate the effect of different treatments according to their targets and to verify if the sensitivity of a patient to a drug is well predicted by the corresponding personalized model. An example concerning the response to BRAF inhibitors in melanomas and colorectal cancers is thus presented.
+
+The comparison of mechanistic models of cancer, those presented in this thesis and others, with clinical data also encourages a rigorous evaluation of their possible benefits in the context of medical use. The quantification and interpretation of the value of certain prognostic models is briefly presented before focusing on the particular case of models able to recommend the best treatment for each patient according to his molecular profile. A theoretical framework is defined to extend causal inference methods to the evaluation of such precision medicine algorithms. An illustration is provided using simulated data and patient derived xenografts.
+
+All the methods and applications put forward a possible path from the design of mechanistic models of cancer to their evaluation using statistical models emulating clinical trials.
 
 }
 
-\frkeywords{ Caesar licentia post honoratis haec adhibens urbium
-  honoratis nullum Caesar.}
-\enkeywords{ Delatus delatus nominatus
-  onere aut trahebatur quod tenus et bonorum.}
+\frkeywords{ Modélisation, Cancer, Modèle mécanistique, Biostatistiques, Inférence causale, Médecine de précision.}
+\enkeywords{ Modeling, Cancer, Mechanistic model, Biostatistics, Causal inference, Precision medicine.}
   
 \pagenumbering{roman}
 \usepackage{booktabs}
@@ -285,42 +278,108 @@
 \usepackage{makecell}
 \usepackage{xcolor}
 
-\title{From mechanistic modeling of cancer to clinical interpretation and
-impact evaluation}
-\date{15/09/2020}
+\title{From the mechanistic modeling of signaling pathways in cancer to the
+interpretation of models and their contributions: clinical applications
+and statistical evaluation}
+\date{23/09/2020}
 
 \begin{document}
 \maketitle
 
 \chapter*{Abstract}
 
-\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed
-do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat.
+\initial{B}eyond its genetic mechanisms, cancer can be understood as a
+network disease that often results from the interaction between
+different perturbations in a cellular regulatory network. The dynamics
+of these networks and associated signaling pathways are complex and
+require integrated approaches. One approach is to design mechanistic
+models that translate the biological knowledge of networks in
+mathematical terms to simulate the molecular features of cancers in a
+computer-readable form. However, these models only reflect the general
+mechanisms at work in cancers.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+This thesis proposes to define personalized mechanistic models of
+cancer. A generic model is first defined in a logical (or Boolean)
+formalism, before using omics data (mutations, RNA, proteins) from
+patients or cell lines in order to make the model specific to each one
+profile. These personalized models can then be compared with the
+clinical data of patients in order to validate them. The response to
+treatment is investigated in particular in this thesis. The explicit
+representation of the molecular mechanisms by these models allows to
+simulate the effect of different treatments according to their targets
+and to verify if the sensitivity of a patient to a drug is well
+predicted by the corresponding personalized model. An example concerning
+the response to BRAF inhibitors in melanomas and colorectal cancers is
+thus presented.
+
+The comparison of mechanistic models of cancer, those presented in this
+thesis and others, with clinical data also encourages a rigorous
+evaluation of their possible benefits in the context of medical use. The
+quantification and interpretation of the value of certain prognostic
+models is briefly presented before focusing on the particular case of
+models able to recommend the best treatment for each patient according
+to his molecular profile. A theoretical framework is defined to extend
+causal inference methods to the evaluation of such precision medicine
+algorithms. An illustration is provided using simulated data and patient
+derived xenografts.
+
+All the methods and applications put forward a possible path from the
+design of mechanistic models of cancer to their evaluation using
+statistical models emulating clinical trials.
 
 \vspace{\baselineskip}
 
-\textbf{Key-words}:
+\textbf{Key-words}: Modeling, Cancer, Mechanistic model, Biostatistics,
+Causal inference, Precision medicine
 
 \chapter*{Résumé}
 
-\initial{L}orem ipsum dolor sit amet, consectetur adipiscing elit, sed
-do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\initial{A}u delà de ses mécanismes génétiques, le cancer peut-être
+compris comme une maladie de réseaux qui résulte souvent de
+l'interaction entre différentes perturbations dans un réseau de
+régulation cellulaire. La dynamique de ces réseaux et des voies de
+signalisation associées est complexe et requiert des approches
+intégrées. Une d'entre elles est la conception de modèles dits
+mécanistiques qui traduisent mathématiquement la connaissance biologique
+des réseaux afin de pouvoir simuler le fonctionnement moléculaire des
+cancers informatiquement. Ces modèles ne traduisent cependant que les
+mécanismes généraux à l'oeuvre dans certains cancers en particulier.
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-officia deserunt mollit anim id est laborum
+Cette thèse propose en premier lieu de définir des modèles mécanistiques
+personnalisés de cancer. Un modèle générique est d'abord défini dans un
+formalisme logique (ou Booléen), avant d'utiliser les données omiques
+(mutations, ARN, protéines) de patients ou de lignées cellulaires afin
+de rendre le modèle spécifique à chacun. Ces modèles personnalisés
+peuvent ensuite être confrontés aux données cliniques de patients pour
+vérifier leur validité. Le cas de la réponse clinique aux traitements
+est exploré en particulier dans cette thèse. La représentation explicite
+des mécanismes moléculaires par ces modèles permet en effet de simuler
+l'effet de différents traitements suivant leur mode d'action et de
+vérifier si la sensibilité d'un patient à un traitement est bien prédite
+par le modèle personnalisé correspondant. Un exemple concernant la
+réponse aux inhibiteurs de BRAF dans les mélanomes et cancers
+colorectaux est ainsi proposé.
+
+La confrontation des modèles mécanistiques de cancer, ceux présentés
+dans cette thèse et d'autres, aux données cliniques incite par ailleurs
+à évaluer rigoureusement leurs éventuels bénéfices dans la cadre d'une
+utilisation médicale. La quantification et l'interprétation de la valeur
+de certains modèles à visée pronostique est brièvement présentée avant
+de se focaliser sur le cas particulier des modèles capables de
+sélectionner le meilleur traitement pour chaque patient en fonction des
+ses caractéristiques moléculaires. Un cadre théorique est proposé pour
+étendre les méthodes d'inférence causale à l'évaluation de tels
+algorithmes de médecine de précision. Une illustration est fournie à
+l'aide de données simulées et de xénogreffes dérivées de patients.
+
+L'ensemble des méthodes et applications décrites tracent donc un chemin,
+de la conception de modèles mécanistiques de cancer à leur évaluation
+grâce à des modèles statistiques émulant des essais cliniques.
 
 \vspace{\baselineskip}
 
-\textbf{Mots-clés}:
+\textbf{Mots-clés}: Modélisation, Cancer, Modèle mécanistique,
+Biostatistiques, Inférence causale, Médecine de précision
 
 \afterpage{\blankpage}
 
@@ -334,6 +393,36 @@ exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
 dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+\clearemptydoublepage
+
+\chapter*{Preface}
+
+\initial{T}he present thesis is structured in three parts, each
+subdivided into three chapters. Since the whole thesis is about cancer
+modeling, the first part aims at defining the type of model to be
+referred to, and in particular models that will be called mechanistic,
+as well as the object of the modeling, i.e.~the molecular networks
+involved in cancer. So the first part answers the question: \textbf{what
+is a cancer model and what is its purpose?}
+
+The second part will be devoted to the methods developed during this
+thesis to transform qualitative models of molecular networks, known as
+logic models, into personalized models that can be interpreted
+clinically. In short, \textbf{how can a mathematical representation of
+biological knowledge be transformed into a tool that contributes to the
+understanding of the clinical manifestations of cancer?}
+
+Finally, the third and last part will look at how the clinical relevance
+of all the above-mentioned models can be rigorously evaluated, both in
+their ability to predict the evolution of the disease and in their
+ability to recommend the most appropriate treatments for each patient.
+\textbf{How to quantify and interpret the value of the clinical
+information delivered by these models?}
+
+Moreover, this thesis also exists in an online version that allows to
+take advantage of the interactivity of some graphs and applications:
+\url{https://jonasbeal.github.io/thesis/}.
 
 \clearemptydoublepage
 
@@ -374,8 +463,8 @@ mischievous, in analyzing models with other models. This semantic
 elucidation is all the more necessary as this thesis is
 interdisciplinary, suspended between systems biology and biostatistics.
 In order to convince the reader of the need for such a preamble, he is
-invited to ask a statistician and a systems biologist the question how
-they would define what a model is.
+invited to ask a statistician and a biologist how they would define what
+a model is.
 
 \begin{figure}
 
@@ -427,7 +516,7 @@ to be reached and therefore an ambitious prospect for an introduction.
 The narrower perspective of the scientist does not reduce the
 completeness of the dictionary's description to an unambiguous object
 \citep{bailer2002scientists}. In an attempt to approach these
-mult-faceted objects that are the models, Daniela Bailer-Jones
+multi-faceted objects that are the models, Daniela Bailer-Jones
 interviewed different scientists and asked them the same question: what
 is a model? Across the different profiles and fields of study, the
 answers vary but some patterns begin to emerge (Figure
@@ -438,8 +527,8 @@ phenomenon. These limitations may restrict its validity to certain cases
 or suspend it to the fulfilment of some hypotheses. They are not
 necessarily predictive, but they must be able to generate new
 hypotheses, be tested and possibly questioned. Finally, and
-fundamentally, they must provide insights about the object of study and
-contribute to its understanding.
+fundamentally, they \textbf{must provide insights about the object of
+study and contribute to its understanding}.
 
 \begin{figure}
 
@@ -449,8 +538,8 @@ contribute to its understanding.
 
 \caption[Scientists talk about their models: words cloud.]{\textbf{Scientists talk about their models:
 words cloud.} Cloud of words summarizing the lexical fields used by
-scientists to talk about their models in dedicated interviews
-\citep{bailer2002scientists}.}\label{fig:interviews}
+scientists to talk about their models in dedicated interviews reported
+by \citet{bailer2002scientists}.}\label{fig:interviews}
 \end{figure}
 
 
@@ -478,25 +567,25 @@ notions that are used to categorize models.}\\
 \subsection{Physical world and world of
 ideas}\label{physical-world-and-world-of-ideas}
 
-Without claiming to be exhaustive, we can make a first simple dichotomy
-between physical/material and formal/intellectual models
+Without claiming to be exhaustive, we can make a \textbf{first simple
+dichotomy between physical/material and formal/intellectual models}
 \citep{rosenblueth1945role}. The former consist in replacing the object
 of study by another object, just as physical but nevertheless simpler or
 better known. These may be models involving a change of scale such as
 the simple miniature replica placed in a wind tunnel, or the metal
 double helix model used by Watson and Crick to visualize DNA. In all
 these cases the model allows to visualize the object of study (Figure
-\ref{fig:planets} A and B) to manipulate it and play with it to better
-understand or explain, just like the scientist with his orrery (Figure
-\ref{fig:orrery}). In the case of biology, we will think mainly of model
-organisms such as drosophila, zebrafish or mice, for example. We then
-benefit from the relative simplicity of their genomes, a shorter time
-scale or ethical differences, usually to elucidate mechanisms of
-interest in humans. Correspondence between the target system and its
-model can sometimes be more conceptual, such as that ones relying on
-mechanical--electrical analogies: a mechanical system (e.g.~a
+\ref{fig:planets} A and B), to manipulate it and play with it to better
+understand or explain a phenomenon, just like the scientist with his
+orrery (Figure \ref{fig:orrery}). In the case of biology, there are
+mainly model organisms such as drosophila, zebrafish or mice, for
+example. We then benefit from the relative simplicity of their genomes,
+a shorter time scale or ethical differences, usually to elucidate
+mechanisms of interest in humans. Correspondence between the target
+system and its model can sometimes be more conceptual, such as that ones
+relying on mechanical--electrical analogies: a mechanical system (e.g.~a
 spring-mass system) can sometimes be represented by an electric network
-(e.g.~a RLC circuit).
+(e.g.~a RLC circuit with a resistor, a capacitor and an inductor).
 
 \begin{figure}
 
@@ -530,9 +619,9 @@ Nova}}, 1609)}\label{fig:planets}
 The model is then no longer simply a mimetic replica but is based on an
 intellectual equivalence: we are gradually moving into the realm of
 formal models \citep{rosenblueth1945role}. These are of a more symbolic
-nature and they represent the original system with a set of logical or
-mathematical terms, describing the main driving forces or similar
-structural properties as geometrical models of planetary motions
+nature and they \textbf{represent the original system with a set of
+logical or mathematical terms}, describing the main driving forces or
+similar structural properties as geometrical models of planetary motions
 summarized by Kepler in Figure \ref{fig:planets}C. Historically these
 models have often been expressed by sets of mathematical equations or
 relationships. Increasingly, these have been implemented by computer.
@@ -547,25 +636,25 @@ better understand the phenomenon. One can also imagine these formal
 models from a different perspective, which starts from the data in a
 bottom-up approach instead of starting from the phenomenon in a top-down
 analysis. These models will then often be called statistical models or
-models of data\citep{frigg2020models}. This distinction will be further
+models of data \citep{frigg2020models}. This distinction will be further
 clarified in section \ref{stat-mech}.
 
 To summarize and continue a little longer with the astronomical
 metaphor, the study of a particularly complex system (the solar system)
 can be broken down into a variety of different models. Physical and
-mechanical models such as armillary spheres (\ref{fig:planets}A and B),
-which make it possible to touch the object of study. Moreover, we can
+mechanical models such as armillary spheres (\ref{fig:planets}A and B)
+make it possible to touch the object of study. In addition, we can
 observe the evolution of models which, when confronted with data, have
 progressed from a geocentric to a heliocentric representation to get
 closer to the current state of knowledge. Sometimes, models with more
 formal representations are used to give substance to ideas and
 hypotheses (\ref{fig:planets}C). One of the most conceptual forms is
 then the mathematical language and one can thus consider that the
-different models find their culmination in Kepler's equations about
-orbits, areas and periods that describe the elliptical motion of the
-planets. We refer to them today as Kepler's laws. The model has become a
-law and therefore a paragon of mathematical modeling
-\citep{wan2018mathematical}.
+previously mentioned astronomical models find their culmination in
+Kepler's equations about orbits, areas and periods that describe the
+elliptical motion of the planets. We refer to them today as Kepler's
+laws. The model has become a law and therefore a paragon of mathematical
+modeling \citep{wan2018mathematical}.
 
 \subsection{Preview about cancer
 models}\label{preview-about-cancer-models}
@@ -573,18 +662,18 @@ models}\label{preview-about-cancer-models}
 As we get closer to the subject of our study, and in order to illustrate
 these definitions more concretely, we can take an interest in the
 meaning of the word \emph{model} in the context of cancer research. For
-this, we restrict our corpus to articles responding to the ``cancer
-model'' search in the Pubmed article database. Among these, we look at
-the occurrences of the word \emph{model} and the sentences in which it
-is included. This cancer-related context of model is represented as a
-tree in Figure \ref{fig:pubmed-tree}. Some of the distinctions already
-mentioned can be found here. The \emph{mouse} and \emph{xenograft}
-models, which will be discussed later in this thesis, represent some of
-the most common physical models in cancer studies. These are animal
-models in which the occurrence and mechanisms of cancer, usually induced
-by the experimenter, are studied. On the other hand, \emph{prediction},
-\emph{prognostic} or \emph{risk score} models refer to formal models and
-borrow from statistical language.
+this, we restrict our corpus to scientific articles found when searching
+for ``cancer model'' in the PubMed article database. Among these, we
+look at the occurrences of the word \emph{model} and the sentences in
+which it is included. This cancer-related context of model is
+represented as a tree in Figure \ref{fig:pubmed-tree}. Some of the
+distinctions already mentioned can be found here. The \emph{mouse} and
+\emph{xenograft} models, which will be discussed later in this thesis,
+represent some of the most common physical models in cancer studies.
+These are animal models in which the occurrence and mechanisms of
+cancer, usually induced by the biologist, are studied. On the other
+hand, \emph{prediction}, \emph{prognostic} or \emph{risk score} models
+refer to formal models and borrow from statistical language.
 
 \begin{figure}
 
@@ -606,17 +695,17 @@ and based on most relevant PubMed entries for ``cancer model'' search.}\label{fi
 Another way to classify cancer models may be to group them into the
 following categories: \emph{in vivo}, \emph{in vitro} and \emph{in
 silico}. The first two clearly belong to the physical models but one
-uses whole living organisms (a human tumour implanted in an
+uses whole living organisms (e.g.~a human tumour implanted in an
 immunodeficient mouse) and the other separates the living from its
-organism in order to place it in a controlled environment (tumour cells
-in growth medium in a Petri dish). \textbf{In the thesis, data from both
-\emph{in vivo} and \emph{in vitro} models will be used. However, unless
-otherwise stated, a model will always refer to a representation \emph{in
-silico}.} This third category, however, contains a very wide variety of
-models \citep{deisboeck2009silico}, to which we will come back in
-chapter @ref(computational\_cancer). A final ambiguity about the nature
-of the formal models used in this thesis needs to be clarified
-beforehand.
+organism in order to place it in a controlled environment (e.g.~tumour
+cells in growth medium in a Petri dish). \textbf{In the thesis, data
+from both \emph{in vivo} and \emph{in vitro} models will be used.
+However, unless otherwise stated, a model will always refer to a
+representation \emph{in silico}.} This third category, however, contains
+a very wide variety of models \citep{deisboeck2009silico}, to which we
+will come back in chapter \ref{mechanistic-cancer}. A final ambiguity
+about the nature of the formal models used in this thesis needs to be
+clarified beforehand.
 
 \section{Statistics or mechanistic}\label{stat-mech}
 
@@ -647,8 +736,8 @@ a function of a completely unknown form (Figure \ref{fig:boxes}A).
 generation from predictors \(X\) to response \(Y\) in the natural
 phenomenon. (B) Mechanistic modeling defining mechanisms of data
 generation inside the box. (C) Statistical modeling finding the function
-\(f\) that gives the best predictions (adapted from
-\citet{breiman2001statistical}).}\label{fig:boxes}
+\(f\) that gives the best predictions. Aadapted from
+\citet{breiman2001statistical}.}\label{fig:boxes}
 \end{figure}
 
 
@@ -659,70 +748,75 @@ generation inside the box. (C) Statistical modeling finding the function
 
 
 The first modeling approach, that we will call \textbf{mechanistic},
-consists in building the box by imitating what we think is the process
-of data generation (Figure \ref{fig:boxes}B). This integration of a
-priori knowledge can take different forms. In this thesis it will often
-come back to presupposing certain relations between entities according
-to what is known about their behaviour. \(X_1\) which acts on \(X_3\)
-may correspond to the action of one biological entity on another,
-supposedly unidirectional; just as the joint action of \(X_2\) and
-\(X_3\) may reflect a known synergy in the expression of genes or the
-action of proteins. Mathematically this is expressed here with a
+consists in \textbf{building the box by imitating what we think is the
+process of data generation} (Figure \ref{fig:boxes}B). This integration
+of a priori knowledge can take different forms. In this thesis it will
+often come back to presupposing certain relations between entities
+according to what is known about their behaviour. \(X_1\) which acts on
+\(X_3\) may correspond to the action of one biological entity on
+another, supposedly unidirectional; just as the joint action of \(X_2\)
+and \(X_3\) may reflect a known synergy in the expression of genes or
+the action of proteins. Mathematically this is expressed here with a
 perfectly deterministic model defined a priori. All in all, in a purely
 mechanistic approach, the nature of the relations between entities
 should be linked to biological processes and the parameters in the model
 all have biological definitions in such a way that it could even be
-considered to measure them directly. In some fields of literature these
-models are sometimes called mathematical models because they propose a
+considered to measure them directly. For example, the coefficient \(2\)
+multiplying \(X_2X_3\) can correspond to a stoichiometric coefficient or
+a reaction constant which have a theoretical justification or are
+accessible by experimentation. In some fields of literature these models
+are sometimes called mathematical models because they propose a
 mathematical translation of a phenomenon, which does not start from the
-data in a bottom-up approach but rather from a top-down theortical
-framework. In this thesis we will adhere to the mechanistic model name,
-which is more transparent and less ambiguous compared to other
+data in a bottom-up approach but rather from a top-down theoretical
+framework. In this thesis we will adhere to the \emph{mechanistic model}
+name, which is more transparent and less ambiguous compared to other
 approaches also based on mathematics, without necessarily the other
 characteristics described above.
 
-The second approach, often called \textbf{statistical modeling} or
-machine learning, does not necessarily seek to reproduce the natural
-process of data generation but to find the function allowing the best
-prediction of \(Y\) from \(X\) (Figure \ref{fig:boxes}C). Pushed to the
+The second approach, often called \textbf{statistical modeling}, or
+sometimes machine learning depending on the precise context and
+objective, does not necessarily seek to reproduce the natural process of
+data generation but to \textbf{find the function allowing the best
+prediction of \(Y\) from \(X\)} (Figure \ref{fig:boxes}C). Pushed to the
 limit, they are ``idealized version of the data we gain from immediate
 observation'' \citep{frigg2020models}, thus providing a phenomenological
 description. The methods and algorithms used are then intended to be
 sufficiently flexible and to make the fewest possible assumptions about
 the relationships between variables or the distribution of data. Without
-listing them exhaustively, the approaches such as boosting
-\citep{buhlmann2007boosting}, support vector machines
-\citep{cortes1995support} or random forests \citep{breiman2001random},
-which will sometimes be mentioned in this thesis, fall into this
-category which contains many others \citep{hastie2009elements}.
+listing them exhaustively, the approaches such as support vector
+machines \citep{cortes1995support} or random forests
+\citep{breiman2001random}, which will sometimes be mentioned in this
+thesis, fall into this category which contains many others
+\citep{hastie2009elements}.
 
-Several discrepancies result from this difference in nature, some of
-which are summarized in the Table \ref{tab:mechstat}. In a somewhat
-schematic way, we can say that the mechanistic model first asks the
-question of \emph{how} and then looks at the result for the output. The
-notion of causality is intrinsic to the definition of the model.
-Conversely, the statistical model first tries to approach the Y and then
-possibly analyses what can be deduced from it, regarding the importance
-of the variables or their relationships in a \emph{post hoc} approach
-\citep[\citet{manica2019toward}]{ishwaran2007variable}. The causality is
-then not a by-product of the algorithm and must be evaluated according
-to dedicated frameworks \citep{hernan2020causal}. The greater
-flexibility of statistical methods makes it possible to better accept
-the heterogeneity of the variables, but this is generally done at the
-cost of a larger number of parameters and therefore requires more data.
-Moreover, we can contrast the inductive capability of statistical models
-able to use already generated data to identify patterns in it.
-Conversely, mechanistic models are more deductive in the sense that they
-can theoretically allow to extrapolate beyond the original data or
-knowledge used to build the model \citep{baker2018mechanistic}. Finally,
-the most relevant way of assessing the value or adequacy of these models
-may be quite different. A statistical model is measured by its ability
-to predict output in a validation dataset different from the one used to
+Several discrepancies result from this difference in nature between
+mechanistic and statistical models, some of which are summarized in the
+Table \ref{tab:mechstat}. In a somewhat schematic way, we can say that
+the mechanistic model first asks the question of \emph{how} and then
+looks at the result for the output. The \textbf{notion of causality is
+intrinsic to the definition of the model}. Conversely, the statistical
+model first tries to approach the Y and then possibly analyses what can
+be deduced from it, regarding the importance of the variables or their
+relationships in a \emph{post hoc} approach
+\citep{ishwaran2007variable, manica2019toward}. The causality is then
+not a by-product of the algorithm and must be evaluated with dedicated
+frameworks \citep{hernan2020causal}. The greater flexibility of
+statistical methods makes it possible to better accept the heterogeneity
+of the variables, but this is generally done at the cost of a larger
+number of parameters and therefore requires more data. Moreover,
+statistical models can be considered as inductive, since they are able
+to use already generated data to identify patterns in it. Conversely,
+mechanistic models are more deductive in the sense that they can
+theoretically allow to extrapolate beyond the original data or knowledge
+used to build the model \citep{baker2018mechanistic}. Finally, the most
+relevant way of assessing the value or adequacy of these models may be
+quite different. A statistical model is measured by its ability to
+predict output in a validation dataset different from the one used to
 train its parameters. The mechanistic model will also be evaluated on
-its capacity to approach the data but also to order, to give a meaning.
-If its pure predictive performance is generally inferior, how can the
-value of understanding be assessed? This question will be one of the
-threads of the dissertation.
+its capacity to approach the data but also to order it, to give a
+meaning. If its pure predictive performance is generally inferior,
+\textbf{how can the value of understanding be assessed?} This question
+will be one of the threads of the dissertation.
 
 \begin{table}
 
@@ -763,23 +857,22 @@ transformed into a model with a more ambiguous status:
 
 \[logit(P[Y=1])=\beta_1X_1 + \beta_{23}X_2X_3\]
 
-The logistic model shown in Figure \ref{fig:boxes}B is deliberately
-ambiguous. It is a logistic model which is therefore natural defined as
-a statistical model. The definition of the interaction between \(X_2\)
-and \(X_3\) denotes a mechanistic presupposition. The very choice of a
-logistic and therefore parametric model could result from a knowledge of
-the phenomenon even if in practice it is often a default choice for a
-binary output. Finally, the nature of the parameters \(\beta_{1}\) and
-\(\beta_{23}\) is likely to change the interpretation of the model. If
-they are deduced from the data and therefore optimized to fit Y as well
-as possible, one will think of a statistical model whose specification
-is nevertheless based on knowledge of the phenomenon. On the other hand,
-one could imagine that these parameters are taken from the literature,
-biochemical or other data. The model will then be more mechanistic. The
-boundary between these models is further blurred by the different
-possibilities of combining these approaches and making them
-complementary \citep{baker2018mechanistic, salvucci2019machine}, we will
-come back to this later.
+This model is deliberately ambiguous. As a logistic model, it is
+therefore naturally defined as a statistical model. But the definition
+of the interaction between \(X_2\) and \(X_3\) denotes a mechanistic
+presupposition. The very choice of a logistic and therefore parametric
+model could also result from a knowledge of the phenomenon, even if in
+practice it is often a default choice for a binary output. Finally, the
+nature of the parameters \(\beta_{1}\) and \(\beta_{23}\) is likely to
+change the interpretation of the model. If they are deduced from the
+data and therefore optimized to fit Y as well as possible, one will
+think of a statistical model whose specification is nevertheless based
+on knowledge of the phenomenon. On the other hand, one could imagine
+that these parameters are taken from the biochemistry literature or
+other data. The model will then be more mechanistic. The boundary
+between these models is further blurred by the different possibilities
+of combining these approaches and making them complementary
+\citep{baker2018mechanistic, salvucci2019machine}.
 
 \subsection{A tale of prey and predators}\label{lotkasection}
 
@@ -829,12 +922,12 @@ prey-predator encounters will result in the death of the prey.
 Conversely, it is assumed that the growth of the lynx population depends
 primarily on the availability of food for all lynxes, summarized in the
 \(b_2HL\) term. In the absence of hares, the lynx population decreases,
-as denoted by the coefficient \(-b_1L\). Here we find some of the
-important characteristics of a mechanistic model. The equations are
-based on a priori knowledge or assumptions about the structure of the
-problem and the parameters of the model can be interpreted. \(a_1\), for
-example, could correspond to the frequency of litters among hares and
-the number of offspring per litter.
+as denoted by the coefficient \(-b_1L\). Important features of
+mechanistic models are illustrated here: the equations are based on a
+priori knowledge or assumptions about the structure of the problem and
+the parameters of the model can be interpreted. \(a_1\), for example,
+could correspond to the frequency of litters among hares and the number
+of offspring per litter.
 
 \begin{figure}
 
@@ -863,8 +956,8 @@ theoretically be possible: to propose values based on the interpretation
 of the parameters and ecological knowledge, or to fit the model to the
 data in order to find the best parameters. For the sake of simplicity,
 and because this example has only a pedagogical value in this
-presentation, we propose to determine them roughly using the following
-Taylor-based approximation:
+presentation, we propose to determine them approximately using the
+following Taylor-based approximation:
 
 \[\dfrac{1}{y(t)} \dfrac{dy}{dt} \simeq \dfrac{1}{y(t)} \dfrac{y(t+1)-y(t-1)}{2}\]
 
@@ -894,11 +987,11 @@ will be extremely difficult to establish without strong hypotheses such
 as those of the mechanistic model. On the other hand, if populations in
 later years had to be predicted as accurately as possible, it is likely
 that a sufficiently well-trained statistical model would perform better.
-Finally, and this is a fundamental difference, the mechanical model
-makes it possible to test cases or hypotheses that go beyond the scope
-of the data. Quite simply, by playing with the variables or parameters
-of the model, we can predict the exponential decrease of predators in
-the absence of prey and the exponential growth of prey in the absence of
+Finally, and this is a fundamental difference, the mechanistic model
+enables to test cases or hypotheses that go beyond the scope of the
+data. Quite simply, by playing with the variables or parameters of the
+model, we can predict the exponential decrease of predators in the
+absence of prey and the exponential growth of prey in the absence of
 prey. More generally, it is also possible to study analytically or
 numerically the bifurcation points of the system in order to determine
 the families of behaviours according to the relative values of the
@@ -916,12 +1009,12 @@ sophistication}\label{simplicity-is-the-ultimate-sophistication}
 
 Before concluding this modeling introduction, it is important to
 highlight one of the most important points already introduced in a
-concise manner by Valéry at the beginning of this chapter. Whatever its
-nature, a model is always a simplified representation of reality and by
-extension is always wrong to a certain extent. This is a generally
-well-accepted fact, but it is crucial to understand the implications for
-the modeller. This simplification is not a collateral effect but an
-intrinsic feature of any model:
+concise manner by the poet Paul Valéry at the beginning of this chapter.
+Whatever its nature, a model is always a simplified representation of
+reality and by extension is always wrong to a certain extent. This is a
+generally well-accepted fact, but it is crucial to understand the
+implications for the modeller. This simplification is not a collateral
+effect but an intrinsic feature of any model:
 
 \begin{quote}
 \emph{No substantial part of the universe is so simple that it can be
@@ -968,24 +1061,24 @@ importance of simplifying the model.
 
 We will have the opportunity to come back to the idealizations made in
 the course of the cancer models but it is already possible to give some
-orientations. The experimenter who seeks to study cancer using cell
-lines or animal models is clearly part of Galileo's lineage. The
-mathematical or \emph{in silico} modeler has a more balanced profile.
-The design of qualitative mechanistic models based on prior knowledge,
-which is the core of the second part of the thesis, is more akin to
-minimal idealization, which seeks to highlight the salient features of a
-system. This pragmatism consisting in creating computationnaly-tractable
-models is also quite widespread, particularly in highly dimensional
-statistical approaches.
+orientations. The biologist who seeks to study cancer using cell lines
+or animal models is clearly part of Galileo's lineage. The mathematical
+or \emph{in silico} modeler has a more balanced profile. The design of
+qualitative mechanistic models based on prior knowledge, which is the
+core of the second part of the thesis, is more akin to minimal
+idealization, which seeks to highlight the salient features of a system.
+But the Galilean pragmatism consisting in creating
+computationnaly-tractable models is also quite widespread, particularly
+in highly dimensional statistical approaches.
 
 Because of the complexity of the phenomena, simplification is therefore
 a necessity. The objective then should not necessarily be to make the
 model more complex, but to match its level of simplification with its
 assumptions and objectives. Faced with the temptation of the author of
 the model, or his reviewer, to always extend and complicate the model,
-it could be replied with Lewis Carrol words\footnote{More concisely, in
-  \citep{rosenblueth1945role}, ``best material model for a cat is
-  another cat, or preferably the same cat.''}:
+it could be replied with Lewis Carrol words\footnote{More concisely
+  stated by \citet{rosenblueth1945role}: ``best material model for a cat
+  is another cat, or preferably the same cat.''}:
 
 \begin{quote}
 \emph{``That's another thing we've learned from your Nation,'' said Mein
@@ -1544,7 +1637,7 @@ TCGA data. Reprinted from \citet{sanchez2018oncogenic}.}\label{fig:pathways}
 
 
 \chapter{Mechanistic modeling of cancer: from complex disease to systems
-biology}\label{mechanistic-modeling-of-cancer-from-complex-disease-to-systems-biology}
+biology}\label{mechanistic-cancer}
 
 \epigraph{"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."}{George Whitesides}
 
@@ -1930,7 +2023,7 @@ in Part II}, where it will therefore be discussed in greater detail.
 modeling applied to biological molecular networks} (adapted from
 \citet{le2015quantitative})}
 \centering
-\begin{tabular}[t]{>{\bfseries\raggedright\arraybackslash\leavevmode\color{white}\columncolor[HTML]{808080}}p{6em}||l|l}
+\begin{tabular}[t]{>{\bfseries\raggedright\arraybackslash}p{6em}||>{\raggedright\arraybackslash}p{12em}|>{\raggedright\arraybackslash}p{12em}}
 \hline
 \rowcolor[HTML]{808080}  \multicolumn{1}{c}{\textcolor{white}{\textbf{ }}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Quantitative modeling}}} & \multicolumn{1}{c}{\textcolor{white}{\textbf{Qualitative modeling}}}\\
 \hline
@@ -1997,29 +2090,189 @@ Mechanistic models have therefore undeniably led to a better
 understanding of the complex molecular machinery of signalling pathways.
 But beyond the interest that this understanding represents, do these
 models also have a clinical utility? In other words, \textbf{are they of
-clinical or only scientific value?} Throughout this thesis, the clinical
-value of mechanical models will often be analyzed by analogy to that of
-biomarkers. Throughout this thesis, the clinical value of mechanical
-models will often be analyzed by analogy to that of biomarkers.
-Biomarkers are defined as measurable indicators of patient status or
-disease progression, such as prostate-specific antigen (PSA) for
-prostate cancer screening or BRCA1 mutation for brast cancer risk
-\citep{henry2012cancer}. \citep{oldenhuis2008prognostic}
+clinical or only scientific value?}
+
+\subsection{A new class of biomarkers}\label{a-new-class-of-biomarkers}
+
+Throughout this thesis, the clinical value of mechanical models will
+often be analyzed by analogy to that of biomarkers. Throughout this
+thesis, the clinical value of mechanical models will often be analyzed
+by analogy to that of biomarkers. Biomarkers are usually defined as
+measurable indicators of patient status or disease progression, such as
+prostate-specific antigen (PSA) for prostate cancer screening or BRCA1
+mutation for breast cancer risk \citep{henry2012cancer}. Biomarkers also
+encompass multivariate signatures that identify more complex patterns
+with clinical significance. Taking the logic even further, it was
+therefore proposed that mechanistic models, which also reveal complex
+molecular behaviours, could be considered as biomarkers, capturing
+perhaps even dynamic information \citep{fey2015signaling}.
+
+Like oncology biomarkers, the models will be divided into two categories
+according to their clinical objectives: \textbf{prognostic models and
+predictive models} \citep{oldenhuis2008prognostic}. Prognostic
+biomarkers and models are those that provide information on the
+evolution of cancer independently of treatment. They are therefore
+generally confronted with survival or relapse data. The protein Ki-67
+for example, encoded by the MKI67 gene, is known to be indicative of the
+level of proliferation and high levels of expression are thus associated
+with a poorer prognosis in many cancers \citep{sawyers2008cancer}.
+Predictive biomarkers and models, on the other hand, give an indication
+of the effect of a therapeutic strategy. The simplest example, but not
+the only one, concerns biomarkers that are themselves the target of
+treatment: treatments based on monoclonal antibodies directed against
+HER2 receptors in breast cancer are only effective if the HER2 receptor
+has been detected in the patient \citep{sawyers2008cancer}. Without
+attempting to be exhaustive, some logical and ODE models, with either
+prognostic or predictive claims, will be described.
 
 \subsection{Prognostic models}\label{prognostic-models}
 
-2 types of models 2 types of data, either prognosis (on patients) or
-response to treatment (validated on cell lines)
+One of the first mechanical models of cell signalling to have been
+explicitly presented as a prognostic biomarker is the one proposed by
+\citet{fey2015signaling} and describing c-Jun N-terminal kinase (JNK)
+pathway in neuroblastoma cells. A summary of the study is provided in
+Figure \ref{fig:fey}). The model is an ODE translation of the process
+description network of Figure \ref{fig:fey})A, further determined and
+calibrated with molecular biology experimental data obtained using
+neuroblastoma cell lines. We thus observe the non-linear switch-like
+dynamics of JNK activation as a function of cellular stress (Figure
+\ref{fig:fey})B). The precise characteristics of this sgmoidal response
+can, however, vary from one individual to another as captured by the
+network output descriptors \(A\), \(K_{50}\) and \(H\). Fey et al.
+proposed to perform neuroblastoma patient--specific simulations of the
+model, using patient gene expressions for ZAK, MKK4, MKK7, JNK and AKT
+genes to specify the initial conditions of the ODE system. Since JNK
+activation induces cell death through apoptosis, the patient-specific
+\(A\), \(K_{50}\) and \(H\) derived from patient-specifc models are then
+analyzed as prognostic biomarkers (Figure \ref{fig:fey})C). Readers are
+invited to refer to the original article for details on model
+calibration or binarization of network descriptors
+\citep{fey2015signaling}. The authors also showed that in the absence of
+positive feedback from \(JNK^{**}\) to \(^PMKK7\), an important
+component of non-linearity, the prognostic value is drastically
+decreased. All in all, this pipeline from ODE model to survival curves,
+thus provides a paradigmatic example of the clinical interpretation of
+mechanistic models of molecular networks that will be reused in later
+chapters for illustration purposes. Other ODE models following a similar
+rationale have been proposed by the same group for colorectal cancer
+\citep{hector2012clinical, salvucci2017stepwise} or glioblastoma
+{[}\citet{murphy2013activation}; salvucci2019system{]}. Machine learning
+approaches have also been proposed to ease the clinical implementation
+of this kind of prognostic models by dealing with the potential lack of
+patient data needed to personalize them \citep{salvucci2019machine}.
 
-Khan logical pronostic \citep{khan2017unraveling} Logical
-treatment\citep{zanudo2017network} Details Fey \citep{fey2015signaling}
-First Prehn \citep{hector2012clinical} \citep{salvucci2017stepwise}
-\citep{frohlich2018efficient} logic drugs \citep{knijnenburg2016logic}
+\begin{figure}
 
-Other formalisms for drugs \citep{jastrzebski2018integrative} and
-anctivity flows for pronostic \citep{hidalgo2017high}
+{\centering \includegraphics[width=0.9\linewidth]{fig/fey} 
 
-plus machine learning \citep{salvucci2019machine}
+}
+
+\caption[Schematic example of logical and ODE modeling around MAPK signaling]{\textbf{Mechanistic modeling of JNK pathway and
+survival of neuroblastima patients, as described by
+\citet{fey2015signaling}.} (A) Schematic representation, as a process
+description, for the ODE model of JNK pathway. (B) Response curve
+(phosphorylated JNK) as a function of the input stimulus (Stress) and
+characterization of the corresponding sigmoidal function with maximal
+amplitude \(A\), Hill exponent \(H\) and activation threshold
+\(K_{50}\). (C) Survival curves for neuroblastoma patients based on
+binarized \(A\), \(K_{50}\) and \(H\); binarization thresholds having
+been defined based on optimization screening on calibration cohort.}\label{fig:fey}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+On the logic modeling side, there are also studies including prognostic
+value validation. Thus, \citet{khan2017unraveling} proposed two logical
+models of epitelio-mesenchymal transition (EMT) in bladder and breast
+cancers. These models are inferred from prior mechanisms knowledge and
+data analysis with particular attention to potential feedback loops.
+Using these models, it is possible to study the behaviour of them for
+all combinations of model inputs (growth factors and receptor proteins)
+and derive subsequent signatures for good or bad prognosis. These
+signatures are later validated with cohorts of patients. In this case,
+the mechanistic model does not seek to capture a dynamic behavior but to
+facilitate and make understandable the exploration of combinations of
+input signals that grow exponentially with the number of inputs
+considered. Other formalisms, called pathway activity analysis and
+following the same activity flows principles (Figure \ref{fig:toyraf}A),
+have been analysed in the light of their prognostic value. Their greater
+flexibility enables the direct use of networks of several hundred or
+thousands of genes, such as those present in the KEGG database
+\citep{kanehisa2012kegg}. The benefit of mechanistic modeling is then to
+organize high-dimensional data and to facilitate the \emph{a posteriori}
+analysis of the results.
+
+\subsection{Predictive models}\label{predictive-models}
+
+But the explicit representation of biological entities in mechanistic
+models makes them particularly suitable for the study of well-defined
+perturbations such as drug effects. Indeed, by assuming that the
+mechanism of action of a drug is at least partially known, it is
+possible to integrate this mechanism into the model if it contains the
+target of the drug (Figure \ref{fig:netdrug}). One can therefore
+simulate the effect of one drug or even compare several. These
+strategies have already been implemented in a qualitative way with logic
+models used to explain resistance to certain treatments of breast cancer
+\citep{zanudo2017network} or even highlight the synergy of certain
+combinations of treatments in gastric cancer
+\citep{flobak2015discovery}. The value of these models, however, is more
+scientific than clinical in that they focus on a single cell line or a
+restricted group of cell lines. The possibility to personalize the
+predictions or recommendations for different molecular profiles of cell
+lines or patients is therefore not obvious. Still within the context of
+logical formalism, \citet{knijnenburg2016logic} proposed a broader
+approach: if their model needs to be trained, it can nevertheless
+provide an analytical framework for several hundred cell lines, while
+remaining within the scope of the training data to ensure the validity
+of predictions.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/netdrug} 
+
+}
+
+\caption[Network model of oncogenic signal transduction in ER+ breast cancer, including some drugs and their targets]{\textbf{Network model of oncogenic signal
+transduction in ER+ breast cancer, including some drugs and their
+targets.} Reprinted from \citet{zanudo2017network}.}\label{fig:netdrug}
+\end{figure}
+
+
+
+
+
+Conceptually comparable strategies can be found on the side of
+differential equations where large mechanical models of cell signalling
+are also trained to predict the response to different treatments
+\citep{bouhaddou2018mechanistic, frohlich2018efficient}. A calibrated
+model can then predict the response to a combination of treatments not
+tested in the training data, thereby proving the ability of mechanistic
+models to extend their predictive value beyond the data
+\citep{frohlich2018efficient}. As with prognostic models, mechanical
+approaches other than logical formalisms and ODEs have been proposed and
+validated \citep{jastrzebski2018integrative}. What can be learned from
+these predictive models is that they require significant training data
+to be able to go beyond qualitative predictions and dissect treatment
+response mechanisms of many cell lines simultaneously. For obvious
+practical and ethical reasons, the validation of these models is for the
+moment limited to preclinical data since they require data for many
+uncertain therapeutic interventions.
+
+This first bridge between mechanistic models of cell signalling and
+clinical applications concludes this introductory part. The next part
+will be devoted to the definition of new methods to establish this
+connection based on logical formalism, before the third part proposes a
+more statistical evaluation of the prognostic and predictive values of
+the models presented in the previous parts.
 
 \chapter{Test part}\label{test}
 

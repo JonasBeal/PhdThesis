@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  28 MAY 2020 22:56
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  29 MAY 2020 20:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1564,32 +1564,32 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 ) (./PhdThesis.aux)
 \openout1 = `PhdThesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 292.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 292.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 286.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 286.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 292.
-LaTeX Font Info:    ... okay on input line 292.
-LaTeX Info: Redefining \microtypecontext on input line 292.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 286.
+LaTeX Font Info:    ... okay on input line 286.
+LaTeX Info: Redefining \microtypecontext on input line 286.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1601,7 +1601,7 @@ File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
 \AtBeginShipoutBox=\box83
-Package hyperref Info: Link coloring OFF on input line 292.
+Package hyperref Info: Link coloring OFF on input line 286.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1611,22 +1611,22 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 292.
-LaTeX Info: Redefining \ref on input line 292.
-LaTeX Info: Redefining \pageref on input line 292.
-LaTeX Info: Redefining \nameref on input line 292.
+LaTeX Info: Redefining \nameref on input line 286.
+LaTeX Info: Redefining \ref on input line 286.
+LaTeX Info: Redefining \pageref on input line 286.
+LaTeX Info: Redefining \nameref on input line 286.
 (./PhdThesis.out) (./PhdThesis.out)
 \@outlinefile=\write6
 \openout6 = `PhdThesis.out'.
 
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.97394pt on input line 293.
+(Font)              scaled to size 9.97394pt on input line 287.
 File: ./cover/pictures/front-bg.jpg Graphic file (type QTm)
 <use  "./cover/pictures/front-bg.jpg" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 11.63626pt on input line 293.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 293.
+(Font)              scaled to size 11.63626pt on input line 287.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 287.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1635,55 +1635,55 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 293.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 287.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 293
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 287
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 293
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 287
 .
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 293.
+(Font)              <12> on input line 287.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 293.
+(Font)              <8> on input line 287.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 293.
-LaTeX Font Info:    Try loading font information for U+msa on input line 293.
+(Font)              <6> on input line 287.
+LaTeX Font Info:    Try loading font information for U+msa on input line 287.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 293.
+LaTeX Font Info:    Try loading font information for U+msb on input line 287.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 14.9609pt on input line 293.
+(Font)              scaled to size 14.9609pt on input line 287.
 LaTeX Font Info:    Font shape `TU/Arial(0)/bx/n' will be
-(Font)              scaled to size 14.9609pt on input line 293.
+(Font)              scaled to size 14.9609pt on input line 287.
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 13.29858pt on input line 293.
+(Font)              scaled to size 13.29858pt on input line 287.
 LaTeX Font Info:    Font shape `TU/Arial(0)/bx/n' will be
-(Font)              scaled to size 13.29858pt on input line 293.
+(Font)              scaled to size 13.29858pt on input line 287.
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 6.64929pt on input line 293.
+(Font)              scaled to size 6.64929pt on input line 287.
 LaTeX Font Info:    Font shape `TU/Arial(0)/bx/n' will be
-(Font)              scaled to size 11.63626pt on input line 293.
+(Font)              scaled to size 11.63626pt on input line 287.
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 7.48045pt on input line 293.
+(Font)              scaled to size 7.48045pt on input line 287.
 
-Overfull \hbox (4.69267pt too wide) in paragraph at lines 293--293
+Overfull \hbox (4.69267pt too wide) in paragraph at lines 287--287
 []  []
  []
 
@@ -1695,16 +1695,26 @@ File: ./cover/pictures/logo-institute.png Graphic file (type QTm)
 ]
 
 LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
-(Font)              using `TU/lmr/bx/n' instead on input line 295.
+(Font)              using `TU/lmr/bx/n' instead on input line 289.
 
 [1
 
 
-] [2
+]
+Underfull \hbox (badness 1009) in paragraph at lines 332--334
+[]\TU/lmr/bx/n/12 Key-words\TU/lmr/m/n/12 : Modeling, Cancer, Mechanistic model
+, Biostatistics,
+ []
 
-] [3] [4
+[2] [3
 
-] [5] [6
+] [4] [5
+
+] [6] [7] [8
+
+] [9
+
+] [10
 
 ] (./PhdThesis.toc
 
@@ -1718,12 +1728,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 4.
-[7]) [8] (./PhdThesis.lot
+[11]) [12] (./PhdThesis.lot
 Underfull \hbox (badness 2443) in paragraph at lines 6--6
  [][] [][]\TU/lmr/bx/sc/12 Features of quantitative and qualitative modeling 
  []
 
-) [9] (./PhdThesis.lof) [10] [11] [1
+) [13] (./PhdThesis.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[14]) [15] [16] [1
 
 ] [2]
 File: fig/orrery.jpg Graphic file (type QTm)
@@ -1738,7 +1751,7 @@ Underfull \vbox (badness 4366) has occurred while \output is active []
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 443.
+(in both cases you will find help in the memoir manual). on input line 532.
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
@@ -1746,7 +1759,7 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [4]
 File: 01-Models_files/figure-latex/interviews-1.pdf Graphic file (type QTm)
 <use  "01-Models_files/figure-latex/interviews-1.pdf" >
-Underfull \hbox (badness 1852) in paragraph at lines 474--476
+Underfull \hbox (badness 1852) in paragraph at lines 563--565
 \TU/lmr/m/it/12 models, substitute models, iconic models, formal models,
  []
 
@@ -1758,39 +1771,27 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [6] [7]
 File: fig/pubmed-tree.png Graphic file (type QTm)
 <use  "fig/pubmed-tree.png" >
-Underfull \vbox (badness 4846) has occurred while \output is active []
-
-
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [8]
 File: fig/boxes.png Graphic file (type QTm)
 <use  "fig/boxes.png" > [9]
-Underfull \vbox (badness 6428) has occurred while \output is active []
+Underfull \vbox (badness 6445) has occurred while \output is active []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [10]
-Overfull \hbox (3.79999pt too wide) in paragraph at lines 732--753
+Overfull \hbox (3.79999pt too wide) in paragraph at lines 826--847
  [][] 
  []
 
-
-Underfull \vbox (badness 1406) has occurred while \output is active []
-
 [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [12] [13]
 File: 01-Models_files/figure-latex/lotka-1.pdf Graphic file (type QTm)
 <use  "01-Models_files/figure-latex/lotka-1.pdf" >
-Underfull \vbox (badness 5050) has occurred while \output is active []
-
-
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [14] [15]
@@ -1909,34 +1910,56 @@ File: fig/toyraf.png Graphic file (type QTm)
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [42] [43]
-Overfull \hbox (605.7121pt too wide) in paragraph at lines 1933--1948
+Overfull \hbox (16.19998pt too wide) in paragraph at lines 2026--2041
  [][] 
  []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[44] [45]
+[44]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[45]
+Underfull \vbox (badness 1983) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [46]
+File: fig/fey.png Graphic file (type QTm)
+<use  "fig/fey.png" >
+Underfull \vbox (badness 3635) has occurred while \output is active []
 
-Package xcolor Warning: Incompatible color definition on input line 2035.
+[47]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[48]
+File: fig/netdrug.png Graphic file (type QTm)
+<use  "fig/netdrug.png" > [49]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[50]
+
+Package xcolor Warning: Incompatible color definition on input line 2288.
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2037.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2290.
 
-Package xcolor Warning: Incompatible color definition on input line 2040.
+Package xcolor Warning: Incompatible color definition on input line 2293.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2040.
+Package xcolor Warning: Incompatible color definition on input line 2293.
 
 File: 10-Test_files/figure-latex/nice-fig-1.pdf Graphic file (type QTm)
 <use  "10-Test_files/figure-latex/nice-fig-1.pdf" >
 File: cover/pictures/back-bg.png Graphic file (type QTm)
-<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [47
+<use  "cover/pictures/back-bg.png" > (./PhdThesis.bbl [51
 
-] [48] [49
+] [52] [53
 
 ]
 Underfull \hbox (badness 1038) in paragraph at lines 113--118
@@ -1944,61 +1967,61 @@ Underfull \hbox (badness 1038) in paragraph at lines 113--118
 z,
  []
 
-[50] [51] [52] [53] [54] [55] [56] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 695--702
+[54] [55] [56] [57] [58] [59] [60] [61]
+Underfull \hbox (badness 10000) in paragraph at lines 699--706
 []\TU/lmr/m/n/12 Livia Perfetto, Leonardo Briganti, Alberto Calderone, Andrea
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 695--702
+Underfull \hbox (badness 2772) in paragraph at lines 699--706
 \TU/lmr/m/n/12 Cerquone Perpetuini, Marta Iannuccelli, Francesca Langone, Lu-
  []
 
-[58]
-Underfull \hbox (badness 3482) in paragraph at lines 770--775
+[62]
+Underfull \hbox (badness 3482) in paragraph at lines 774--779
 []\TU/lmr/m/n/12 Julio Saez-Rodriguez, Leonidas G Alexopoulos, MingSheng Zhang,
 
  []
 
-[59] [60])
+[63] [64])
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 2064.
+(in both cases you will find help in the memoir manual). on input line 2317.
 
-[61] [62
+[65] [66
 
 
-] [63]
+] [67]
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 2064.
+(Font)              scaled to size 9.14278pt on input line 2317.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 2064--2064
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 2317--2317
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 2064.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 2317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 2064.
+(Font)              <11> on input line 2317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 2064.
+(Font)              <7.69997> on input line 2317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 2064.
+(Font)              <5.5> on input line 2317.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 2064--2064
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 2064--2064
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 2317--2317
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 2064--2064
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 2317--2317
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 2317--2317
 [][] 
  []
 
@@ -2011,23 +2034,23 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 2064--2064
 \tf@lof=\write9
 \openout9 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2064.
-[64]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2064.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2317.
+[68]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2317.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2064.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2064.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2317.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2317.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 37223 strings out of 493005
- 696154 string characters out of 6134597
- 838713 words of memory out of 5000000
- 40579 multiletter control sequences out of 15000+600000
+ 37234 strings out of 493005
+ 696292 string characters out of 6134597
+ 844206 words of memory out of 5000000
+ 40588 multiletter control sequences out of 15000+600000
  49091 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,15n,120p,10407b,963s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PhdThesis.pdf (77 pages).
+Output written on PhdThesis.pdf (86 pages).

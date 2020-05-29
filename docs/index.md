@@ -1,7 +1,7 @@
 --- 
-title: From mechanistic modeling of cancer to clinical interpretation and impact evaluation
+title: 'From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation'
 author: "" # defined in _output.yml
-date: "15/09/2020" # defined in _output.yml
+date: "23/09/2020" # defined in _output.yml
 site: bookdown::bookdown_site
 
 documentclass: memoir # using the memoir package
