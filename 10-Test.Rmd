@@ -2,20 +2,7 @@
 
 This is a test
 
-## Abc
+## Test
 
-Bla bla ref @MBMH19 and [@MBMH19].
 
-But in @BMTBC19 we have the Figure \@ref(fig:nice-fig) as referenced in Chapter \@ref(test)
-
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
-
-And an external figure \@ref(fig:test)
-
-```{r test, echo=FALSE, out.width = "45%", fig.cap = "Example pic", fig.align='center'}
-knitr::include_graphics("cover/pictures/back-bg.png")
-```
 

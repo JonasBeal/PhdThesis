@@ -51,43 +51,6 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -151,7 +114,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>4</b> Test part</a><ul>
-<li class="chapter" data-level="4.1" data-path="test.html"><a href="test.html#abc"><i class="fa fa-check"></i><b>4.1</b> Abc</a></li>
+<li class="chapter" data-level="4.1" data-path="test.html"><a href="test.html#test"><i class="fa fa-check"></i><b>4.1</b> Test</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -176,25 +139,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="test" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Test part</h1>
 <p>This is a test</p>
-<div id="abc" class="section level2">
-<h2><span class="header-section-number">4.1</span> Abc</h2>
-<p>Bla bla ref <span class="citation">Miskovic et al. (<a href="#ref-MBMH19">2019</a>)</span> and <span class="citation">(Miskovic et al. <a href="#ref-MBMH19">2019</a>)</span>.</p>
-<p>But in <span class="citation">Béal et al. (<a href="#ref-BMTBC19">2019</a>)</span> we have the Figure <a href="test.html#fig:nice-fig">4.1</a> as referenced in Chapter <a href="test.html#test">4</a></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))
-<span class="kw">plot</span>(pressure, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">pch =</span> <span class="dv">19</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:nice-fig"></span>
-<img src="10-Test_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">
-Figure 4.1: Here is a nice figure!
-</p>
-</div>
-<p>And an external figure <a href="test.html#fig:test">4.2</a></p>
-<div class="figure" style="text-align: center"><span id="fig:test"></span>
-<img src="cover/pictures/back-bg.png" alt="Example pic" width="45%" />
-<p class="caption">
-Figure 4.2: Example pic
-</p>
-</div>
+<div id="test" class="section level2">
+<h2><span class="header-section-number">4.1</span> Test</h2>
 
 <div id="refs" class="references">
 <div>
@@ -238,9 +184,6 @@ Figure 4.2: Example pic
 </div>
 <div>
 <p>Benzekry, Sébastien, Clare Lamont, Afshin Beheshti, Amanda Tracz, John ML Ebos, Lynn Hlatky, and Philip Hahnfeldt. 2014. “Classical Mathematical Models for Description and Prediction of Experimental Tumor Growth.” <em>PLoS Comput Biol</em> 10 (8). Public Library of Science: e1003800.</p>
-</div>
-<div>
-<p>Béal, Jonas, Arnau Montagud, Pauline Traynard, Emmanuel Barillot, and Laurence Calzone. 2019. “Personalization of Logical Models With Multi-Omics Data Allows Clinical Stratification of Patients.” <em>Frontiers in Physiology</em>. Frontiers Media S.A. doi:<a href="https://doi.org/10.3389/fphys.2018.01965">10.3389/fphys.2018.01965</a>.</p>
 </div>
 <div>
 <p>Béal, Jonas, Elizabeth Rémy, and Laurence Calzone. 2020. “Modélisation Logique et Données Omiques : De La Construction Des Modèles à La Médecine Personnalisée.” In <em>Approche Symbolique de La Modélisation et de L’analyse Des Systèmes Biologiques</em>, edited by Elisabeth Rémy and Cédric Lhoussaine. ISTE.</p>
@@ -316,6 +259,9 @@ Figure 4.2: Example pic
 </div>
 <div>
 <p>Dulbecco, Renato. 1986. “A Turning Point in Cancer Research: Sequencing the Human Genome.” <em>Science</em> 231. American Association for the Advancement of Science: 1055–7.</p>
+</div>
+<div>
+<p>Ferranti, Dana, David Krane, and David Craft. 2017. “The Value of Prior Knowledge in Machine Learning of Complex Network Systems.” <em>Bioinformatics</em> 33 (22). Oxford University Press: 3610–8.</p>
 </div>
 <div>
 <p>Fey, Dirk, Melinda Halasz, Daniel Dreidax, Sean P Kennedy, Jordan F Hastings, Nora Rauch, Amaya Garcia Munoz, et al. 2015. “Signaling Pathway Models as Biomarkers: Patient-Specific Simulations of Jnk Activity Predict the Survival of Neuroblastoma Patients.” <em>Sci. Signal.</em> 8 (408). American Association for the Advancement of Science: ra130–ra130.</p>
@@ -465,9 +411,6 @@ Figure 4.2: Example pic
 <p>Meyerson, Matthew, Stacey Gabriel, and Gad Getz. 2010. “Advances in Understanding Cancer Genomes Through Second-Generation Sequencing.” <em>Nature Reviews Genetics</em> 11 (10). Nature Publishing Group: 685–96.</p>
 </div>
 <div>
-<p>Miskovic, Ljubisa, Jonas Béal, Michael Moret, and Vassily Hatzimanikatis. 2019. “Uncertainty reduction in biochemical kinetic models: Enforcing desired model properties.” <em>PLoS Computational Biology</em>. Public Library of Science. doi:<a href="https://doi.org/10.1371/journal.pcbi.1007242">10.1371/journal.pcbi.1007242</a>.</p>
-</div>
-<div>
 <p>Murphy, Á C, Birgit Weyhenmeyer, Jasmin Schmid, Seán M Kilbride, Markus Rehm, Heinrich J Huber, C Senft, et al. 2013. “Activation of Executioner Caspases Is a Predictor of Progression-Free Survival in Glioblastoma Patients: A Systems Medicine Approach.” <em>Cell Death &amp; Disease</em> 4 (5). Nature Publishing Group: e629–e629.</p>
 </div>
 <div>
@@ -611,15 +554,6 @@ Figure 4.2: Example pic
 
 
 
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-BMTBC19">
-<p>Béal, Jonas, Arnau Montagud, Pauline Traynard, Emmanuel Barillot, and Laurence Calzone. 2019. “Personalization of Logical Models With Multi-Omics Data Allows Clinical Stratification of Patients.” <em>Frontiers in Physiology</em>. Frontiers Media S.A. doi:<a href="https://doi.org/10.3389/fphys.2018.01965">10.3389/fphys.2018.01965</a>.</p>
-</div>
-<div id="ref-MBMH19">
-<p>Miskovic, Ljubisa, Jonas Béal, Michael Moret, and Vassily Hatzimanikatis. 2019. “Uncertainty reduction in biochemical kinetic models: Enforcing desired model properties.” <em>PLoS Computational Biology</em>. Public Library of Science. doi:<a href="https://doi.org/10.1371/journal.pcbi.1007242">10.1371/journal.pcbi.1007242</a>.</p>
-</div>
-</div>
             </section>
 
           </div>

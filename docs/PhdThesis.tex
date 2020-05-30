@@ -29,46 +29,6 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{plainnat}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
-\newcommand{\ImportTok}[1]{{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
-\newcommand{\BuiltInTok}[1]{{#1}}
-\newcommand{\ExtensionTok}[1]{{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\NormalTok}[1]{{#1}}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -821,7 +781,7 @@ will be one of the threads of the dissertation.
 \begin{table}
 
 \caption{\label{tab:mechstat}\textbf{Some pros and cons for mechanistic and
-statistical modeling} (adapted from \citet{baker2018mechanistic})}
+statistical modeling}. Adapted from \citet{baker2018mechanistic}.}
 \centering
 \begin{tabular}[t]{>{\raggedright\arraybackslash}p{15em}||>{\raggedright\arraybackslash}p{15em}}
 \hline
@@ -987,10 +947,10 @@ will be extremely difficult to establish without strong hypotheses such
 as those of the mechanistic model. On the other hand, if populations in
 later years had to be predicted as accurately as possible, it is likely
 that a sufficiently well-trained statistical model would perform better.
-Finally, and this is a fundamental difference, the mechanistic model
-enables to test cases or hypotheses that go beyond the scope of the
-data. Quite simply, by playing with the variables or parameters of the
-model, we can predict the exponential decrease of predators in the
+Finally, and this is a fundamental difference, the \textbf{mechanistic
+model enables to test cases or hypotheses that go beyond the scope of
+the data}. Quite simply, by playing with the variables or parameters of
+the model, we can predict the exponential decrease of predators in the
 absence of prey and the exponential growth of prey in the absence of
 prey. More generally, it is also possible to study analytically or
 numerically the bifurcation points of the system in order to determine
@@ -1010,11 +970,11 @@ sophistication}\label{simplicity-is-the-ultimate-sophistication}
 Before concluding this modeling introduction, it is important to
 highlight one of the most important points already introduced in a
 concise manner by the poet Paul Valéry at the beginning of this chapter.
-Whatever its nature, a model is always a simplified representation of
-reality and by extension is always wrong to a certain extent. This is a
-generally well-accepted fact, but it is crucial to understand the
-implications for the modeller. This simplification is not a collateral
-effect but an intrinsic feature of any model:
+\textbf{Whatever its nature, a model is always a simplified
+representation of reality and by extension is always wrong to a certain
+extent}. This is a generally well-accepted fact, but it is crucial to
+understand the implications for the modeller. This simplification is not
+a collateral effect but an intrinsic feature of any model:
 
 \begin{quote}
 \emph{No substantial part of the universe is so simple that it can be
@@ -1073,12 +1033,12 @@ in highly dimensional statistical approaches.
 
 Because of the complexity of the phenomena, simplification is therefore
 a necessity. The objective then should not necessarily be to make the
-model more complex, but to match its level of simplification with its
-assumptions and objectives. Faced with the temptation of the author of
-the model, or his reviewer, to always extend and complicate the model,
-it could be replied with Lewis Carrol words\footnote{More concisely
-  stated by \citet{rosenblueth1945role}: ``best material model for a cat
-  is another cat, or preferably the same cat.''}:
+model more complex, but to \textbf{match its level of simplification
+with its assumptions and objectives}. Faced with the temptation of the
+author of the model, or his reviewer, to always extend and complicate
+the model, it could be replied with Lewis Carrol words\footnote{More
+  concisely stated by \citet{rosenblueth1945role}: ``best material model
+  for a cat is another cat, or preferably the same cat.''}:
 
 \begin{quote}
 \emph{``That's another thing we've learned from your Nation,'' said Mein
@@ -1103,13 +1063,13 @@ machinery}\label{cancer-as-deregulation-of-complex-machinery}
 \epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}
 
 \initial{A}rmed with all these models, whether statistical or
-mechanistic, we are going to look at a particularly complex system that
-fully justifies their use: cancer. Since the first chapter recalled how
-important prior knowledge of the phenomenon under study is for designing
-models, whatever their nature, this chapter will briefly summarize some
-of the most important characteristics of this disease before returning
-to the models themselves in the next chapter. Without aiming for
-exhaustiveness, and after an epidemiological and statistical
+mechanistic, we are going to look at cancer, a particularly complex
+system that fully justifies their use. Since the first chapter recalled
+how important prior knowledge of the phenomenon under study is for
+designing models, whatever their nature, this chapter will briefly
+summarize some of the most important characteristics of this disease
+before returning to the models themselves in the next chapter. Without
+aiming for exhaustiveness, and after an epidemiological and statistical
 description, we will focus on the most useful information for the
 modeller, i.e.~the underlying biological mechanisms and available data.
 
@@ -1131,36 +1091,36 @@ Paris}\label{fig:bath}
 \section{What is cancer?}\label{what-is-cancer}
 
 Cancer can be described as a group of diseases characterized by
-uncontrolled cell divisions and growth which can spread to surrounding
-tissues. Descriptions of this disease, and essentially associated solid
-tumours, have been found as far back as ancient Egyptian documents, at
-least 1600 BC and we know from the first century A.D. with Aulus Celsus
-that it is better to remove the tumors and this as soon as possible
-\citep{hajdu2011note}. Progress will accelerate during the Renaissance
-with the renewed interest in medicine, and anatomy in particular, which
-will advance the knowledge of tumour pathology and surgery
-\citep{hajdu2011note2}. The progress of anatomical knowledge has also
-left brilliant testimonies in the field of painting, which make the
-renown of the Renaissance today. The precision of these artists' traits
-has also allowed some retrospective medical analyses, some of them going
-so far as to identify the signs of a tumour in certain subjects
-\citep{bianucci2018earliest}. Such is the bluish stain on the left
-breast of the Bathsheba painted by Rembrandt (Figure \ref{fig:bath})
-which has been subject to controversial interpretations, sometimes
-described as an example of ``skin discolouration, distortion of symmetry
-with axillary fullness and peau d'orange''
-\citep{braithwaite1983rembrandt} and sometimes spared by photonic and
-computationnal analyses \citep{heijblom2014monte}. The mechanisms of the
-disease only began to be elucidated with the appearance of the
-microscope in the 19th century, which revealed its cellular origin
-\citep{hajdu2012note}. The classification and description of cancers is
-then gradually refined and the first non-surgical treatments appear with
-the discovery of ionising radiation by the Curies
-\citep{hajdu2012note2}. The 20th century is then the century of
-understanding the causes of cancer
+\textbf{uncontrolled cell divisions and growth which can spread to
+surrounding tissues}. Descriptions of this disease, especially when
+associated with solid tumours, have been found as far back as ancient
+Egyptian documents, at least 1600 BC and we know from the first century
+A.D. with Aulus Celsus that it is better to remove the tumors and this
+as soon as possible \citep{hajdu2011note}. Progress will accelerate
+during the Renaissance with the renewed interest in medicine, and
+anatomy in particular, which will advance the knowledge of tumour
+pathology and surgery \citep{hajdu2011note2}. The progress of anatomical
+knowledge has also left brilliant testimonies in the field of painting,
+which make the renown of the Renaissance today. The precision of these
+artists' traits has also allowed some retrospective medical analyses,
+some of them going so far as to identify the signs of a tumour in some
+of the subjects of these paintings \citep{bianucci2018earliest}. Such is
+the bluish stain on the left breast of the Bathsheba painted by
+Rembrandt (Figure \ref{fig:bath}) which has been subject to
+controversial interpretations, sometimes described as an example of
+``skin discolouration, distortion of symmetry with axillary fullness and
+peau d'orange'' \citep{braithwaite1983rembrandt} and sometimes spared by
+photonic and computationnal analyses \citep{heijblom2014monte}. The
+mechanisms of the disease only began to be elucidated with the
+appearance of the microscope in the 19th century, which revealed its
+cellular origin \citep{hajdu2012note}. The classification and
+description of cancers is then gradually refined and the first
+non-surgical treatments appear with the discovery of ionising radiation
+by the Curies \citep{hajdu2012note2}. The 20th century is then the
+century of understanding the causes of cancer
 \citep{hajdu2013note, hajdu2013note2}. Some environmental exposures are
 characterized as asbestos or tobacco. Finally, the biological mechanisms
-become clearer with the identification of tmour-causing viruses and
+become clearer with the identification of tumour-causing viruses and
 especially with the discovery of DNA \citep{watson1953molecular}. The
 foundations of our current understanding of cancer date back to this
 period, which marks the beginning of the molecular biology of cancer. It
@@ -1175,15 +1135,15 @@ progressed slowly but surely, and this in the absence of an
 understanding of the mechanisms of cancer. Conversely, the theoretical
 progress of the last century has not always led to parallel medical
 progress, except on certain specific points. The interaction between the
-two is therefore not always obvious. The transformation of fundamental
-knowledge into medical and clinical impact is therefore of particular
-importance. This is what is called \emph{translational medicine}, the
-aim of which is to go from laboratory bench to bedside
-\citep{cohrs2015translational}. It is, modestly, in this perspective
-that the mechanistic models of cancer that will receive particular
-attention in this thesis are placed. Their objective is to integrate
-biological knowledge, or at least a synthesis this knowledge, in order
-to transform it into with a relevant clinical information.
+two is therefore not always obvious. The \textbf{transformation of
+fundamental knowledge into medical and clinical impact is therefore of
+particular importance}. This is what is called \emph{translational
+medicine}, the aim of which is to go from laboratory bench to bedside
+\citep{cohrs2015translational}. It is in this perspective that we will
+analyze the mechanistic models studied in this thesis. Their objective
+is to integrate biological knowledge, or at least a synthesis this
+knowledge, in order to transform it into a relevant clinical
+information.
 
 \section{Cancer from a distance: epidemiology and main
 figures}\label{epidemio}
@@ -1242,13 +1202,14 @@ cancer very different, but the evolution (and generally the improvement)
 of these prognoses has been very uneven over the last few decades. This
 means that theoretical and therapeutic advances have not been applied to
 all types of cancer with the same success. It is one more indication of
-the diversity of biological mechanisms at work, which make it impossible
-to find a panacea, and which, on the contrary, encourage us to carefully
-consider the particularities of each tumour, both to understand them and
-to treat them. Under a generic name and in spite of common
-characteristics, the cancers thus appear as extremely heterogeneous. And
-to understand the sources of this heterogeneity, it will be necessary to
-place ourselves on a much smaller scale.
+the \textbf{diversity of cancer mechanisms in different tissues and
+biological contexts}, which make it impossible to find a panacea, and
+which, on the contrary, encourage us to carefully consider the
+particularities of each tumour, both to understand them and to treat
+them. Under a generic name and in spite of common characteristics, the
+cancers thus appear as extremely heterogeneous. And to understand the
+sources of this heterogeneity, it is necessary to consider the disease
+on a smaller scale.
 
 \begin{figure}
 
@@ -1256,9 +1217,9 @@ place ourselves on a much smaller scale.
 
 }
 
-\caption[Incidence, mortility and survival per cancer types]{\textbf{Incidence, mortility and survival
+\caption[Incidence, mortality and survival per cancer types]{\textbf{Incidence, mortality and survival
 per cancer types}. (A) World incidence and mortality for the 19 most
-frequent cancer types in 2018, expressed age-standardized rates
+frequent cancer types in 2018, expressed with age-standardized rates
 (adjusted age structure based on world population); data retrieved from
 \href{https://gco.iarc.fr/today/home}{Global Cancer Observatory}. (B)
 Evolution of 5-years relative survival for the same cancer types based
@@ -1277,7 +1238,7 @@ retrieved from \citet{jemal2017annual}.}\label{fig:cancer-tissues}
 
 \section{Basic molecular biology and cancer}\label{molecular-biology}
 
-If it is not possible an ddesirable to summarize here the state of
+If it is not possible and desirable to summarize here the state of
 knowledge about the biology of cancer, we are going to give a very
 partial vision focused on the main elements used in this thesis, thus
 aiming to make it a self-sufficient document. The details necessary for
@@ -1289,25 +1250,26 @@ textbooks such as \citet{alberts2007molecular} and
 principles}\label{central-dogma-and-core-principles}
 
 Some of the principles that govern biology can be described at the level
-of one of its simplest elements, the cell. Let us consider for the
-moment a perfectly healthy cell. It must ensure a certain number of
-functions necessary for its survival and, if necessary, for its
+of one of its simplest element, the cell. Let us consider for the moment
+a perfectly healthy cell. It must ensure a certain number of functions
+necessary for its survival and, if necessary, for its
 division/reproduction. These functions are encoded in its genetic
-information in the form of DNA, which is a priori stable and shared by
-the different cells since it is defined at the level of the individual.
-Most biological functions, however, are not performed by DNA itself
-which remains in the nucleus of the cell. The DNA is thus transcribed
-into RNA, another nucleic acid which, in addition to performing some
+information in the form of DNA, which is stable and shared by the
+different cells since it is defined at the level of the individual. Most
+biological functions, however, are not performed by DNA itself which
+remains in the nucleus of the cell. The DNA is thus transcribed into
+RNA, another nucleic acid which, in addition to performing some
 biological functions, becomes the support of the genetic information in
 the cell. The RNA is then itself translated into new molecules composed
 of long chains of amino acid residues and called proteins. They are the
 ones that execute most of the numerous cellular functions: DNA
 replication, physical structuring of the cell, molecule transport within
 the cell etc. A rather simplistic but fruitful way to understand this
-functioning is to consider it as a progressive transfer of biological
-information from DNA to proteins, which has sometimes been summarized as
-the central dogma of the molecular biology (\ref{fig:central-dogma})
-first stated Francis Crick \citep{crick1970central}.
+functioning is to consider it as a \textbf{progressive transfer of
+biological information from DNA to proteins}, which has sometimes been
+summarized as the central dogma of the molecular biology
+(\ref{fig:central-dogma}), first stated Francis Crick
+\citep{crick1970central}.
 
 \begin{figure}
 
@@ -1328,14 +1290,14 @@ DNA to proteins through RNA, more precisely described in this
 
 
 
-However, many changes would be necessary to clarify this scheme. The
-uni-directional nature was questioned early on. And above all, a large
+However, many changes would be necessary to clarify this scheme and the
+uni-directional nature was questioned early on. Above all, a large
 number of regulations interact with and disrupt this master plan. The
-genes are not always all transcribed, or at least not at variable
-intensities, interrupting or modulating the chain upstream. These
-switches in the transcript of genes can be proteins, called
+genes are not always all transcribed, or at least not at constant
+intensities, interrupting or varying the chain upstream. This modulation
+in the transcription of genes can be induced by proteins, called
 transcription factors. After a gene transcription, its expression can
-still be regulated at various stages. RNAs, too, can be degraded more or
+still be regulated at various stages. RNAs can also be degraded more or
 less rapidly. RNAs can be reshaped in their structure by a process
 called splicing, which varies the genetic information they carry.
 Finally, proteins are subject to all kinds of modifications referred to
@@ -1344,13 +1306,13 @@ groups or modify the three-dimensional structure of the whole protein.
 For instance, some proteins perform their function only if a specific
 amino acid residue is phosphorylated. In addition, these modifications
 can be transmitted between proteins, further complicating the flow of
-information. All these possibilities of regulation play an absolutely
-essential role in the life of the cell by allowing it to adapt to
-different contexts and situations. From the same genetic material, a
-cell of the eye and a cell of the heart can thus perform different
-functions. In the same way, the same cell subjected to different stimuli
-at different times can provide different responses because these
-molecular stimuli induce a regulation of its programme. But these
+information. \textbf{All these possibilities of regulation play an
+absolutely essential role in the life of the cell by allowing it to
+adapt to different contexts and situations}. From the same genetic
+material, a cell of the eye and a cell of the heart can thus perform
+different functions. Similarly, the same cell subjected to different
+stimuli at different times can provide different responses because these
+molecular stimuli trigger a regulation of its programme. But all these
 regulatory mechanisms can be corrupted.
 
 \subsection{A rogue machinery}\label{a-rogue-machinery}
@@ -1363,8 +1325,8 @@ reproduction, that are no longer regulated as they should be and are out
 of control. Experiments on different model organisms have gradually
 identified genetic mutations as a major source of these deregulations
 \citep[\citet{reddy1982point}]{nowell1976clonal} until cancer was
-clearly considered as a genetic disease making Renato Dulbecco, Nobel
-Laureate in Medicine for his work on oncoviruses, say:
+clearly considered as a \textbf{genetic disease} making Renato Dulbecco,
+Nobel Laureate in Medicine for his work on oncoviruses, say:
 
 \begin{quote}
 \emph{If we wish to learn more about cancer, we must now concentrate on
@@ -1381,7 +1343,7 @@ repaired, other mechanisms will take over to trigger the programmed
 death of the cell, called apoptosis, before it can proliferate wildly.
 So a cancer cell is probably a cell that has learned to resist this cell
 death. Similarly, in order to generate excessive growth, a cell will
-need to be able to replicate itself many, many times. However, there are
+need to be able to replicate itself many times. However, there are
 pieces of sequences on chromosomes called telomeres that help to limit
 the number of times each cell can replicate. A cancer cell will
 therefore have to manage to bypass this protection. Thus we can
@@ -1394,8 +1356,8 @@ growth suppressors, activating invasion and inducing angiogenesis
 \citep{hanahan2000hallmarks}. Two new ones were subsequently added in
 the light of advances in knowledge \citep{hanahan2011hallmarks}:
 deregulating cancer energetics and avoiding immne destruction. The
-acquisition of these capacities generally requires genetic mutations and
-is therefore favoured by an underlying genome instability.
+acquisition of these capacities generally requires many genetic
+mutations and is therefore favoured by an underlying genome instability.
 
 \begin{figure}
 
@@ -1414,20 +1376,21 @@ biological capabilities acquired by cancer cells, as described in
 
 
 
-Each of these characteristics constitutes a research program in its own
-right. And for each one there are genetic Alteratoins. These are
-tissue-specific or not, specific to a hallmark or common to several of
-them \citep{hanahan2000hallmarks}. In any case, cancer can only result
-from different joint alterations that invalidate several protective
-mechanisms at the same time. This is often part of a multi-step process
-of hallmark acquisition that has been experimentally documented in some
-specific cases \citep{hahn1999creation} or more recently inferred from
-genome-wide data for human patients \citep{tomasetti2015only}. In
-summary, it appears that in order to study the functioning of cancer
-cells it is necessary to look at several mechanisms and to be able to
-consider them not separately but together, in as many different patients
-as possible. This ambitious programme has been made possible by a
-technological revolution.
+Each of these characteristics, or hallmarks, constitutes a research
+program in its own right. And for each one there are genetic
+alterations. These are tissue-specific or not, specific to a hallmark or
+common to several of them \citep{hanahan2000hallmarks}. In any case,
+\textbf{cancer can only result from the combination of different
+alterations that invalidate several protective mechanisms} at the same
+time. This is often part of a multi-step process of hallmark acquisition
+that has been experimentally documented in some specific cases
+\citep{hahn1999creation} or more recently inferred from genome-wide data
+for human patients \citep{tomasetti2015only}. In summary, it appears
+that in order to study the functioning of cancer cells it is necessary
+to look at several mechanisms and to be able to consider them not
+separately but together, in as many different patients as possible. This
+ambitious programme has been made possible by a technological
+revolution.
 
 \section{The new era of genomics}\label{the-new-era-of-genomics}
 
@@ -1435,15 +1398,15 @@ technological revolution.
 data}\label{from-sequencing-to-multi-omics-data}
 
 In 2001, the first sequencing of the human genome symbolized the
-beginning of a new era, that of what will become high-throughput
-genomics \citep{lander2001initial, venter2001sequence}. From the end of
+beginning of a new era, that of what will become \textbf{high-throughput
+genomics} \citep{lander2001initial, venter2001sequence}. From the end of
 the 20th century, biological data started to accumulate at an
 ever-increasing rate \citep{reuter2015high}, feeding and accelerating
 cancer research in particular
 \citep{stratton2009cancer, meyerson2010advances}. The ability to
 sequence the human genome as a whole, for an ever-increasing number of
-individuals, has enabled less biased and more systematic studies of the
-causes of cancer \citep{lander2011initial}. The number of genes
+individuals, has enabled \textbf{less biased and more systematic studies
+of the causes of cancer} \citep{lander2011initial}. The number of genes
 associated with cancer increased drastically and some very important
 genes such as BRAF of PIK3CA have been identified
 \citep{davies2002mutations, samuels2004high}. Progress also extended to
@@ -1465,14 +1428,14 @@ DNA-associated proteins (epigenomics), metabolites (metabolomics) and
 others, each representing a perspective that can complement the others
 to better understand biological mechanisms, particularly in the case of
 diseases \citep{hasin2017multi}. We have thus entered the era of
-multiomics data \citep{vucic2012translating}.
+multi-omics data \citep{vucic2012translating}.
 
 \subsection{State-of-the art of cancer
 data}\label{state-of-the-art-of-cancer-data}
 
 With respect to cancer in particular, this wealth of data is
-particularly represented by a whole series of studies conducted by The
-Cancer Genome Atlas (TCGA) consortium started in 2008
+particularly represented by a family of \textbf{studies conducted by The
+Cancer Genome Atlas (TCGA) consortium}, started in 2008
 \citep{cancer2008comprehensive}. Cohorts of several hundred patients are
 thus sequenced over the years for different types of cancer
 \citep{cancer2012comprehensive}, resulting today in a total of 11,000
@@ -1507,17 +1470,17 @@ types as summaried in Pan-cancer analyses from TCGA data. Reprinted from
 
 However, the diversity of data available for cancer research extends far
 beyond this, both in terms of technology and type of data. This may be
-data from model organisms such as mice or tumours of human origin but
-made more suitable for experimentation. In the latter category, it is
-crucial to mention the huge amount of data available on cell lines,
+data from model organisms such as mice or tumours of human origin made
+more suitable for experimentation. In the latter category, it is crucial
+to mention the \textbf{huge amount of data available on cell lines},
 extracted from human tumours and transformed to be studied in culture.
 It is then possible to go beyond descriptive data and vary the
 experimental conditions in order to study the responses of these cells
-to perturbations and to enrich our knowledge. It is therefore possible
-to know the response to more than 100 drugs of about 700 cell lines
-\citep{yang2012genomics}. The richness of these data, coupled with the
-omic profiling of each cell line, enables to study the determinants of
-response to treatment with unprecedented scope
+to perturbations and to enrich our knowledge. This provides an
+opportunity to know the response to more than 100 drugs of about 700
+cell lines \citep{yang2012genomics}. The richness of these data, coupled
+with the omic profiling of each cell line, enables to study the
+determinants of response to treatment with unprecedented scope
 \citep{iorio2016landscape}. More recently, but following a similar
 logic, other types of inhibition screenings have been proposed based on
 a more specific technique called CRISPR-Cas9
@@ -1540,8 +1503,8 @@ generation of cancer data, such as single-cell sequencing
 disease}\label{data-and-beyond-from-genetic-to-network-disease}
 
 All that remains to be done now is to make sense of all these data, to
-organize it, because understanding does not flow directly from the
-abundance of data and the ability to produce the data may have been
+organize it, because \textbf{cancer understanding does not flow directly
+from the abundance of data}, and the ability to produce it may have been
 outpaced by the ability to analyze it \citep{stadler2014cancer}. A
 striking example is that of the prognostic signatures mentioned above.
 The many signatures or lists of genes proposed, even for the same cancer
@@ -1550,44 +1513,9 @@ efficiency is sometimes poorly reproducible \citep{domany2014using}.
 Even more surprisingly, most signatures composed of randomly selected
 genes were also found to be associated with patient survival
 \citep{venet2011most}. One of the main avenues for improving the
-interpretability of the data is the integration of the prior knowledge
-we have of the phenomena, and in this case of cancer
+interpretability of the data is the \textbf{integration of the prior
+knowledge} we have of the phenomena, especially in the case of cancer
 \citep{domany2014using}.
-
-This \emph{a priori} knowledge is in fact already present in Figure
-\ref{fig:tcga} since genetic alterations have been grouped in several
-categories called pathways. A pathway is group of biological entities,
-and associated chemical reactions, working together to control a
-specific cell function like apoptosis or cell division. The interest of
-these groupings maybe understood based on the description of hallmarks.
-Indeed, if the ``aim''" of a cancer cell is to inactivate each of the
-protective functions, then it is more relevant to think not by gene but
-by function. Inactivating only one of the genes associated with the
-function may be sufficient and it is no longer necessary to inactivate
-the others. Numerous alterations in a large number of genes result often
-in few key impaired pathways, like alterations of cell cycle or
-angiogenesis for instance \citep{jones2008core}. It is therefore
-possible to improve the stability and interpretability of analyses by
-moving from the gene scale to the pathway scale
-\citep{drier2013pathway}. More generally, the integration of biological
-knowledge often leads to improved performance in various cancer-related
-prediction tasks, either through the selection of variables or by taking
-into account the structure of the variables
-{[}\citet{bilal2013improving}; ferranti2017value{]}. Increasingly, the
-biological variables are not interpreted separately but in relation to
-each other \citep{barabasi2004network}. This is reflected in the
-emergence of more and more resources to summarize and represent
-signaling pathways and associated networks such as SIGNOR
-\citep{perfetto2016signor}, OmniPath \citep{turei2016omnipath} or the
-Atlas of Cancer Signaling Network \citep{kuperstein2015atlas}. Like
-other diseases, cancer then goes from a genetic disease to a network
-disease \citep{del2010diseases} and one can study how all kinds of
-genetic alterations affect the wiring of these networks
-\citep{pawson2007oncogenic}, and modify the cellular functions leading
-to the previously described cancer hallmarks as depicted schmatically in
-Figure \ref{fig:circuit}. In short, the richness of the data did not
-make it less necessary to use \emph{a priori} knowledge in order to make
-the analyses more interpretable and more robust.
 
 \begin{figure}
 
@@ -1606,18 +1534,40 @@ cancer cells. Reprinted from \citet{hanahan2011hallmarks}.}\label{fig:circuit}
 
 
 
-The final step, to obtain one of the most complete and integrated
-visions of cancer biology, is then to integrate omics knowledge with
-knowledge about the structure of pathways to try to understand in detail
-how their combinations can lead to so many cancers that are both similar
-and different. An example of such a representation is given by mapping
-the TCGA data about genetic alterations, presented in Figure
-\ref{fig:tcga}, on a representation of the different pathways showing
-not only their internal organization but also their cross-talk
-\citep{sanchez2018oncogenic}. This representation is proposed in Figure
-\ref{fig:pathways} and is the most recent view of the kind of tools and
-data available to the modeller who wants to dissect more deeply the
-mechanisms at work.
+This \emph{a priori} knowledge is in fact already present in Figure
+\ref{fig:tcga} since genetic alterations have been grouped in several
+categories called pathways. A pathway is group of biological entities,
+and associated chemical reactions, working together to control a
+specific cell function like apoptosis or cell division. The interest of
+these groupings may be understood based on the description of hallmarks.
+Indeed, if the ``aim'' of a cancer cell is to inactivate each of the
+protective functions, then it is more relevant to think not by gene but
+by function. Inactivating only one of the genes associated with the
+function may be sufficient and it is no longer necessary to inactivate
+the others. Numerous alterations in a large number of genes in various
+patients result often in the same key impaired pathways, like
+alterations of cell cycle or angiogenesis for instance
+\citep{jones2008core}. It is therefore possible to improve the stability
+and interpretability of analyses by moving \textbf{from the gene scale
+to the pathway scale} \citep{drier2013pathway}. More generally, the
+integration of biological knowledge often leads to improved performance
+in various cancer-related prediction tasks, either through the selection
+of variables or by taking into account the structure of the variables
+\citep{bilal2013improving, ferranti2017value}. Increasingly, the
+biological variables are not interpreted separately but in relation to
+each other \citep{barabasi2004network}. This is reflected in the
+emergence of more and more resources to summarize and represent
+signaling pathways and associated networks such as SIGNOR
+\citep{perfetto2016signor}, OmniPath \citep{turei2016omnipath} or the
+Atlas of Cancer Signaling Network \citep{kuperstein2015atlas}. Like
+other diseases, cancer then goes \textbf{from a genetic disease to a
+network disease} \citep{del2010diseases} and one can study how all kinds
+of genetic alterations affect the wiring of these networks
+\citep{pawson2007oncogenic}, and modify the cellular functions leading
+to the previously described cancer hallmarks as depicted schmatically in
+Figure \ref{fig:circuit}. In short, the richness of the data did not
+make it less necessary to use prior knowledge in order to make the
+analyses more interpretable and more robust.
 
 \begin{figure}
 
@@ -1627,7 +1577,7 @@ mechanisms at work.
 
 \caption[Genetic alterations frequencies from TCGA data mapped on a schematic signaling network]{\textbf{Genetic alterations frequencies from TCGA
 data mapped on a schematic signaling network.} Frequencies of alteration
-per pahway and tumour types as summaried in Pan-cancer analyses from
+per pathway and tumour types as summarized in Pan-cancer analyses from
 TCGA data. Reprinted from \citet{sanchez2018oncogenic}.}\label{fig:pathways}
 \end{figure}
 
@@ -1635,6 +1585,19 @@ TCGA data. Reprinted from \citet{sanchez2018oncogenic}.}\label{fig:pathways}
 
 
 
+
+The final step, to obtain one of the most complete and integrated
+visions of cancer biology, is then to integrate omics knowledge with
+knowledge about the structure of pathways to try to understand in detail
+how their combinations can lead to so many cancers that are both similar
+and different. An example of such a representation is given by mapping
+the TCGA data about genetic alterations, presented in Figure
+\ref{fig:tcga}, on a representation of the different pathways showing
+not only their internal organization but also their cross-talk
+\citep{sanchez2018oncogenic}. This representation is proposed in Figure
+\ref{fig:pathways} and is one the most recent and comprehensive view of
+the kind of tools and data available to the modeller who wants to
+dissect more deeply the mechanisms involved in cancer.
 
 \chapter{Mechanistic modeling of cancer: from complex disease to systems
 biology}\label{mechanistic-cancer}
@@ -1670,30 +1633,31 @@ Nicolaes Tulp}, 1634, oil on canvas, Mauritshuis museum, The Hague}\label{fig:an
 cancer}\label{introducing-the-diversity-of-mechanistic-models-of-cancer}
 
 Modeling cancer is not a new idea. And the diversity of biological
-phenomena at work in cancer has given rise to an equally important
+phenomena involved in cancer has given rise to an equally important
 diversity of models and formalisms, which we seek here to give a brief
 overview in order to better identify the specific models that we will
 focus on later. One way to order this diversity is to consider the
-scales of these models (Figure \ref{fig:multiscale}). Indeed, cancer can
-be read at different levels, from the molecular level of DNA and
-proteins, to the cellular level, to the level of tissues and the
-organism \citep{anderson2008integrative}. Models have been proposed at
+scales of these models (Figure \ref{fig:multiscale}). Indeed,
+\textbf{cancer can be read at different levels, from the molecular level
+of DNA and proteins, to the cellular level, to the level of tissues and
+organisms} \citep{anderson2008integrative}. Models have been proposed at
 all these scales, using different formalisms
 \citep{bellomo2008foundations} and answering different questions.
 
 Consistent with the evolution of knowledge and data, the early models
-were at the macroscopic level. While methods and terminologies may have
-changed, there are nevertheless traces of these models as early as the
-1950s. We then speak rather of mathematical modeling with a meaning that
-is nevertheless intermediate between what we have defined as mechanistic
-models and statistical models \citep{byrne2010dissecting}. First, the
-initiation of tumorigenesis was theorized with biologically-supported
-mathematical expressions in order to make sense of cancer incidence
-statistics \citep[\citet{knudson1971mutation}]{armitage1954age}. These
-models, however, remained relatively descriptive in that they did not
-shed any particular light on the biological mechanisms involved and
-focused on gross characteristics of tumours. The integration of more
-advanced knowledge as well as the progressive refinement of mathematical
+were at the \textbf{macroscopic level}. While methods and terminologies
+may have changed, there are nevertheless traces of these models as early
+as the 1950s. We then speak rather of mathematical modeling with a
+meaning that is nevertheless intermediate between what we have defined
+as mechanistic models and statistical models
+\citep{byrne2010dissecting}. First, the initiation of tumorigenesis was
+theorized with biologically-supported mathematical expressions in order
+to make sense of cancer incidence statistics
+\citep[\citet{knudson1971mutation}]{armitage1954age}. These models,
+however, remained relatively descriptive in that they did not shed any
+particular light on the biological mechanisms involved and focused on
+gross characteristics of tumours. The integration of more advanced
+knowledge as well as the progressive refinement of mathematical
 formalisms has nevertheless allowed these models to proliferate while
 gaining in interpretability, with for instance mechanistic models of
 metastatic relapse \citep{nicolo2020machine}. Always on a macroscopic
@@ -1729,10 +1693,10 @@ influence of anticancer agents (pale blue). Reprinted from
 
 
 Taking it down a step further, it is also possible to model cancer at
-the cellular level, for example by looking at the clonal evolution of
-the cancer \citep{altrock2015mathematics}. The aim is then to understand
-the impact of the processes of mutation, selection, expansion and
-cohabitation of different populatons of cells, at specifc rates. The
+the \textbf{cellular level}, for example by looking at the clonal
+evolution of cancer \citep{altrock2015mathematics}. The aim is then to
+understand the impact of the processes of mutation, selection, expansion
+and cohabitation of different populatons of cells, at specifc rates. The
 accumulation of a mutation in a population of cells can thus be studied
 \citep{bozic2010accumulation}. Modeling at the cellular level is well
 suited to the study of interactions between cells, between cancer cells
@@ -1742,22 +1706,22 @@ equations are quite common \citep{bellomo2008foundations}; but there are
 many other methods such partial differential equations or agent-based
 modeling \citep{letort2019physiboss}.
 
-Finally, at an even smaller scale, it is possible to model the molecular
-networks at work in cells \citep{le2015quantitative}. The aim is then to
-simulate mathematically how the different genes and molecules regulate
-each other, transmit information and, in the case of cancer, end up
-being deregulated \citep{calzone2010mathematical, flobak2015discovery}.
-These models will be the subject of the thesis and will therefore be
-defined more precisely and used to detail the concepts and tools of
-systems biology in the following sections. It can already be noted that
-while these models can integrate the most fundamental biological
-mechanisms of living organisms, one of the most burning questions is
-whether it is possible to link them to the larger scales that are
-clinically more interesting (tissues, organs etc.). Can these models
-tell us about the molecular nature of cancer? About patient survival?
-Their response to treatment? These questions apply to all of the above
-models, whatever their scales (Figure \ref{fig:multiscale}), but are
-more difficult to answer for models defines at molecular scale that are
+Finally, at an even smaller scale, it is possible to model the
+\textbf{molecular networks} at work in cells \citep{le2015quantitative}.
+The aim is then to simulate mathematically how the different genes and
+molecules regulate each other, transmit information and, in the case of
+cancer, end up being deregulated \citep{calzone2010mathematical}. These
+models will be the subject of the thesis and will therefore be defined
+more precisely and used to detail the concepts and tools of systems
+biology in the following sections. It can already be noted that while
+these models can integrate the most fundamental biological mechanisms of
+living organisms, one of the most burning questions is whether it is
+possible to link them to the larger scales that are clinically more
+interesting (tissues, organs etc.). Can these models tell us something
+about the molecular nature of cancer? About patient survival? Their
+response to treatment? These questions apply to all of the above models,
+whatever their scales (Figure \ref{fig:multiscale}), but are more
+difficult to answer for models defined at molecular scale that are
 further from the clinical data of interest. The aim of this thesis is to
 provide potential answers to these questions. One of the ways of
 approaching these issues has been to propose multi-scale models, which
@@ -1771,14 +1735,14 @@ larger scales.
 biology}\label{cell-circuitry-and-the-need-for-cancer-systems-biology}
 
 Most biological systems, and certainly cells, fall into the category of
-complex systems. These are systems made up of many interacting elements.
-While these systems can be found in many different scientific fields,
-the cell as a complex system is characterized by the diversity and
-multifunctionality of its constituent elements (genes, proteins, small
-molecules, enzymes), which nevertheless contribute to organized and a
-priori non-chaotic behaviour \citep{kitano2002computational}. Thus, the
-role of a protein such as the p53 tumour suppressor can only be
-understood by taking into account the interplay between its
+\textbf{complex systems}. These are systems made up of many interacting
+elements. While these systems can be found in many different scientific
+fields, the cell as a complex system is characterized by the diversity
+and multifunctionality of its constituent elements (genes, proteins,
+small molecules, enzymes), which nevertheless contribute to organized
+and a priori non-chaotic behaviour \citep{kitano2002computational}.
+Thus, the role of a protein such as the p53 tumour suppressor can only
+be understood by taking into account the interplay between its
 relationships with transcription factors and biochemical modifications
 of the molecule itself \citep{kitano2002computational}. In a cell, as in
 any complex system, the multiplication of components and interactions
@@ -1786,28 +1750,28 @@ can make the response or behaviour of the system unexpected or
 unpredictable. Non-linear responses, such as abrupt changes in the state
 of a system, called critical transitions, can be observed in response to
 a moderate change in the signal \citep{trefois2015critical}. Generally
-speaking, it is possible to observe emergent behaviours, i.e.~behaviours
-of the system as a whole that were not trivially deducible from the
-individual behaviours of its components. This has been documented,
-through experiments and simulations, in the study of cell signalling
-pathways and the resulting biological decisions
+speaking, it is possible to observe \textbf{emergent behaviours},
+i.e.~behaviours of the system as a whole that were not trivially
+deducible from the individual behaviours of its components. This has
+been documented, through experiments and simulations, in the study of
+cell signalling pathways and the resulting biological decisions
 \citep{bhalla1999emergent, helikar2008emergent}. These considerations
-have thus given rise to system-level or holistic approaches that aim to
-integrate data and knowledge into more comprehensive representations,
-often called \textbf{systems biology}.
+have thus given rise to \textbf{system-level or holistic approaches that
+aim to integrate data and knowledge into more comprehensive
+representations, often called systems biology}.
 
 What is true for the cell in general is just as true for cancer in
 particular. Understanding the intertwining of signaling pathways is
 necessary to study their contributions to different cancer hallmarks, as
 shown in Figure \ref{fig:circuit}. The concepts described above can thus
-be transposed to cancer systems biology
+be transposed to \textbf{cancer systems biology}
 \citep{hornberg2006cancer, kreeger2010cancer, barillot2012computational}.
 Indeed, it is often a question of understanding or predicting the impact
 of perturbations on cellular networks. Understanding how a single
 genetic mutation disrupts and reprograms networks, or even predicting
 the responses triggered by a drug on a presumably promising molecular
 target, makes little sense without integrated approaches. In addition,
-Cancers are characterized by the accumulation of numerous mutations and
+cancers are characterized by the accumulation of numerous mutations and
 alterations over time that must be considered concomitantly. These
 points of view of biologists and modellers reinforce the observation
 already made in the previous chapter of cancer as a network disease, as
@@ -1822,13 +1786,13 @@ high-throughput data that have made it possible to identify and link
 hundreds of genes or proteins involved in cancer. Exploring the
 interaction and back and forth between these models and the data they
 use or predict is therefore of utmost importance. In addition, the now
-massive amount of data has also imposed mathematical or computational
-approaches as central to managing this profusion and more and more
-modeling approaches are focused on data integration or inference
-\citep{frohlich2018efficient, bouhaddou2018mechanistic}More generally,
-Figure \ref{fig:pubmed} shows that while the number of scientific
-articles devoted to cancer has increased drastically since the 1950s
-(panel A), the proportion of these same articles mentioning
+** massive amount of data has also imposed mathematical or computational
+approaches as a central element in the management of this profusion**
+and more and more modeling approaches are focused on data integration or
+inference \citep{frohlich2018efficient, bouhaddou2018mechanistic}. More
+generally, Figure \ref{fig:pubmed} shows that while the number of
+scientific articles devoted to cancer has increased drastically since
+the 1950s (panel A), the proportion of these same articles mentioning
 \emph{models}, \emph{networks} or \emph{computational} approaches has
 also increased (panel B), illustrating a change in paradigms.
 
@@ -1858,9 +1822,7 @@ that will constitute the core of this thesis: the \textbf{mechanistic
 models of molecular networks} and signaling pathways. Before describing
 and illustrating some of the existing mathematical formalisms, it is
 possible to describe the common fundamental elements of this family of
-approaches. The simplest is a network of undirected interaction between
-entities, which therefore only establishes relationships and not causal
-mechanisms.
+approaches.
 
 \subsection{Networks and data}\label{networks-and-data}
 
@@ -1875,40 +1837,41 @@ only establishes relationships and not causal mechanisms. But modeling
 requires more precise definitions, in particular concerning the
 direction of the interaction (is it A that acts on B or the opposite)
 and its nature (type of chemical reaction, activation/inhibition etc.).
-This is usually summarized as activity flows (or influence diagrams)
-with activation and inhibition arrows as in Figure \ref{fig:circuit} or
-Figure \ref{fig:toyraf}A. These arrows emphasize the transormation of
-static networks into dynamic objects that can be manipulated and
-interpreted mechanistically. This work can be taken further by writing
-bipartite graphs, known as process descriptions, which explicitly show
-the different states of each variable (first type of nodes), depending
-on their phosphorylation sate for instance, and the reactions that link
-them (second type of nodes) as in Figure \ref{fig:toyraf}B. A more
-precise description of these different representations and their
-meanings can be found in \citet{le2015quantitative}. Once the network
-structure of the model has been defined, it is possible write the
-corresponding mathematical formalism and potentially to refine certain
-parameters. Finally, the model is often confronted with new data to
-check its consistency with the biological behaviour studied or possibly
-make new predictions.
+This is usually summarized as \textbf{activity flows (or influence
+diagrams) with activation and inhibition arrows} as in Figure
+\ref{fig:circuit} or Figure \ref{fig:toyraf}A. These arrows emphasize
+the transormation of static networks into dynamic objects that can be
+manipulated and interpreted mechanistically. This work can be taken
+further by writing bipartite graphs, known as process descriptions,
+which explicitly show the different states of each variable (first type
+of nodes), depending on their phosphorylation sate for instance, and the
+reactions that link them (second type of nodes) as in Figure
+\ref{fig:toyraf}B. A more precise description of these different
+representations and their meanings can be found in
+\citet{le2015quantitative}. \textbf{Once the network structure of the
+model has been defined, it is possible write the corresponding
+mathematical formalism} and potentially to refine certain parameters.
+Finally, the model is often confronted with new data to check its
+consistency with the biological behaviour studied or possibly make new
+predictions.
 
 However, all these steps are not linear and sequential, but rather
-iterative and cyclical. This modeling cycle, with back and forth to the
-data, is not specific to molecular network models, but it is possible to
-specify it in this case (Figure \ref{fig:cycle}). The names of the key
-players involved in the question of interest are thus first extracted
-from adapted data or from the literature. A first mathematical
-translation of the relationships between the entities is then proposed
-before verifying the compatibility of this model with the observations,
-whether qualitative or quantitative. If the compatibility is not good,
-we come back to the definition or the parameterization of the model. If
-compatibility is correct, the model can be used to make new predictions
-or study phenomena that go beyond the initial data set. Ideally, these
-predictions will be tested afterwards. This cyclic approach with two
-successive checks is analogous to the use of validation and test data in
-the evaluation of most learning algorithms. This analogy can sometimes
-be masked by the qualitative nature of the predictions or by the lack of
-explicit fitting of the parameters.
+iterative and cyclical. This \textbf{modeling cycle}, with back and
+forth to the data, is not specific to molecular network models, but it
+is possible to specify it in this case (Figure \ref{fig:cycle}). The
+names of the key players involved in the question of interest are thus
+first extracted from adapted data or from the literature. A first
+mathematical translation of the relationships between the entities is
+then proposed before verifying the compatibility of this model with the
+observations, whether qualitative or quantitative. If the compatibility
+is not good, we come back to the definition or the parameterization of
+the model. If compatibility is correct, the model can be used to make
+new predictions or study phenomena that go beyond the initial data set.
+Ideally, these predictions will be tested afterwards. This cyclic
+approach with two successive checks is analogous to the use of
+validation and test data in the evaluation of most learning algorithms.
+This analogy can sometimes be masked by the qualitative nature of the
+predictions or by the lack of explicit fitting of the parameters.
 
 \begin{figure}
 
@@ -1965,23 +1928,24 @@ provided for the phosphorylated (active) form of MEK.}\label{fig:toyraf}
 
 
 
-One of the most frequent approaches is the use of chemical kinetics
-equations to construct ODE systems which are a fairly natural
-translation of the process descritpion networks described in the
+One of the most frequent approaches is the use of \textbf{chemical
+kinetics} equations to construct ODE systems which are a fairly natural
+translation of the process descritption networks described in the
 previous section \citep{polynikis2009comparing}. Each biological
 interaction is treated as a reaction governed by the law of mass action
-and, under certain hypotheses, as a differential equation; the set of
-reactions in the system then generates a set of differential equations
-with coupled variables, in an analogous way to the Lotka Volterra system
-presented in section \ref{lotkasection}. Thus the variables generally
-represent quantities of molecular species, for example concentrations of
-RNA or proteins, and the stoichiometric coefficients and reaction rates
-are used to define the system parameters. Approximations are sometimes
-made to simplify the equations, for example by assuming that they can be
-written as Michaelis Menten's enzymatic reactions, which have a simple
-and well known behaviour. However, the theoretical accuracy of
-quantitative models has a cost since each differential equation requires
-parameters, such as reaction constants or initial conditions, to which
+and, under certain hypotheses, as a differential equation (Figure
+\ref{fig:toyraf}B); the set of reactions in the system then generates a
+set of differential equations with coupled variables, in an analogous
+way to the Lotka Volterra system presented in section
+\ref{lotkasection}. Thus the variables generally represent quantities of
+molecular species, for example concentrations of RNA or proteins, and
+the stoichiometric coefficients and reaction rates are used to define
+the system parameters. Approximations are sometimes made to simplify the
+equations, for example by assuming that they can be written as
+Michaelis-Menten's enzymatic reactions, which have a simple and well
+known behaviour. However, the theoretical accuracy of quantitative
+models has a cost since \textbf{each differential equation requires
+parameters}, such as reaction constants or initial conditions, to which
 the system is very sensitive \citep{le2015quantitative}. The biochemical
 interpretation of the parameters sometimes allow to find their value in
 the literature, if the reactions are well characterized, even if
@@ -1992,7 +1956,7 @@ limited or even non-existent, it may require a very large volume of data
 difficult if the number of parameters is large
 \citep{villaverde2014reverse}. However, recent work has demonstrated the
 feasibility and scalability of this type of inference with sufficiently
-rich data. \citep{frohlich2018efficient}
+rich data \citep{frohlich2018efficient}.
 
 At the same time, more qualitative approaches to modeling biological
 networks have been proposed with discrete variables linked together by
@@ -2008,9 +1972,9 @@ thus obtained can keep a natural interpretation in the context of
 biological phenomena: genes activated or not, protein present or absent
 etc. Similarly, interactions between species are not quantified but are
 based on a qualitative statements (e.g.~A will be active if B and C are
-active), drastically reducing the number of parameters. If the
-theoretical interest of this formalism to study biological mechanisms
-was proposed quite early
+active), drastically reducing the number of parameters (Figure
+\ref{fig:toyraf}A). If the theoretical interest of this formalism to
+study biological mechanisms was proposed quite early
 \citep{kauffman1969homeostasis, thomas1973boolean}, many concrete
 applications have also been developed over the years, particularly in
 cancer research \citep{saez2011comparing, remy2015modeling}. This
@@ -2049,12 +2013,12 @@ biological networks, share many similarities, in particular the
 propensity to be built according to bottom-up strategies based on
 knowledge of the elementary parts of the model, i.e.~biological entities
 and reactions. However, they differ in their implementation and
-objectives, one aiming at the most accurate representation possible, the
-other seeking to capture the essence of the system's dynamics in a
-parsimonious way (Table \ref{tab:odelogic}). The opposition is not
-irrevocable, as illustrated by the numerous hybrid formalisms that lie
-within the spectrum delimited by these two extremes such as fuzzy logic
-or discrete-time differential equations
+objectives, \textbf{one aiming at the most accurate representation
+possible, the other seeking to capture the essence of the system's
+dynamics in a parsimonious way} (Table \ref{tab:odelogic}). The
+opposition is not irrevocable, as illustrated by the numerous hybrid
+formalisms that lie within the spectrum delimited by these two extremes
+such as fuzzy logic or discrete-time differential equations
 \citep{le2015quantitative, calzone2018logical}. To conclude, a
 comparison between the two approaches applied to the same problem is
 proposed by \citet{calzone2018logical}, studying the
@@ -2074,7 +2038,7 @@ unidirectional cascade, shows switch or bistability behaviors generated
 by the complexity of its multiple phosphorylation sites
 \citep{markevich2004signaling}. These models have also been put at the
 service of understanding cancer and the erroneous decision-making by
-cells resulting from impaired signaling pathways. Thus
+cells resulting from impaired signaling pathways. Thus,
 \citet{tyson2011dynamic} summarize superbly well the complexity that can
 be hidden in the dynamics of smallest molecular networks as soon as they
 contain more than two entites and crossed regulations or feedback loops.
@@ -2151,15 +2115,16 @@ calibration or binarization of network descriptors
 positive feedback from \(JNK^{**}\) to \(^PMKK7\), an important
 component of non-linearity, the prognostic value is drastically
 decreased. All in all, this pipeline from ODE model to survival curves,
-thus provides a paradigmatic example of the clinical interpretation of
-mechanistic models of molecular networks that will be reused in later
-chapters for illustration purposes. Other ODE models following a similar
-rationale have been proposed by the same group for colorectal cancer
-\citep{hector2012clinical, salvucci2017stepwise} or glioblastoma
-{[}\citet{murphy2013activation}; salvucci2019system{]}. Machine learning
-approaches have also been proposed to ease the clinical implementation
-of this kind of prognostic models by dealing with the potential lack of
-patient data needed to personalize them \citep{salvucci2019machine}.
+thus provides a \textbf{paradigmatic example of the clinical
+interpretation of mechanistic models of molecular networks} that will be
+reused in later chapters for illustration purposes. Other ODE models
+following a similar rationale have been proposed by the same group for
+colorectal cancer \citep{hector2012clinical, salvucci2017stepwise} or
+glioblastoma {[}\citet{murphy2013activation}; salvucci2019system{]}.
+Machine learning approaches have also been proposed to ease the clinical
+implementation of this kind of prognostic models by dealing with the
+potential lack of patient data needed to personalize them
+\citep{salvucci2019machine}.
 
 \begin{figure}
 
@@ -2190,40 +2155,40 @@ been defined based on optimization screening on calibration cohort.}\label{fig:f
 
 
 
-On the logic modeling side, there are also studies including prognostic
-value validation. Thus, \citet{khan2017unraveling} proposed two logical
-models of epitelio-mesenchymal transition (EMT) in bladder and breast
-cancers. These models are inferred from prior mechanisms knowledge and
-data analysis with particular attention to potential feedback loops.
-Using these models, it is possible to study the behaviour of them for
-all combinations of model inputs (growth factors and receptor proteins)
-and derive subsequent signatures for good or bad prognosis. These
-signatures are later validated with cohorts of patients. In this case,
-the mechanistic model does not seek to capture a dynamic behavior but to
-facilitate and make understandable the exploration of combinations of
-input signals that grow exponentially with the number of inputs
-considered. Other formalisms, called pathway activity analysis and
-following the same activity flows principles (Figure \ref{fig:toyraf}A),
-have been analysed in the light of their prognostic value. Their greater
-flexibility enables the direct use of networks of several hundred or
-thousands of genes, such as those present in the KEGG database
-\citep{kanehisa2012kegg}. The benefit of mechanistic modeling is then to
-organize high-dimensional data and to facilitate the \emph{a posteriori}
-analysis of the results.
+On the logical modeling side, there are also studies including
+prognostic value validation. Thus, \citet{khan2017unraveling} proposed
+two logical models of epitelio-mesenchymal transition (EMT) in bladder
+and breast cancers. These models are inferred from prior mechanisms
+knowledge and data analysis with particular attention to potential
+feedback loops. Using these models, it is possible to study the
+behaviour of them for all combinations of model inputs (growth factors
+and receptor proteins) and derive subsequent signatures for good or bad
+prognosis. These signatures are later validated with cohorts of
+patients. In this case, the mechanistic model does not seek to capture a
+dynamic behavior but to facilitate and \textbf{make understandable the
+exploration of combinations of input signals that grow exponentially
+with the number of inputs considered}. Other formalisms, called pathway
+activity analysis and following the same activity flows principles
+(Figure \ref{fig:toyraf}A), have been analysed in the light of their
+prognostic value. Their greater flexibility enables the direct use of
+networks of several hundred or thousands of genes, such as those present
+in the KEGG database \citep{kanehisa2012kegg}. The benefit of
+mechanistic modeling is then to organize high-dimensional data and to
+facilitate the \emph{a posteriori} analysis of the results.
 
 \subsection{Predictive models}\label{predictive-models}
 
 But the explicit representation of biological entities in mechanistic
-models makes them particularly suitable for the study of well-defined
-perturbations such as drug effects. Indeed, by assuming that the
-mechanism of action of a drug is at least partially known, it is
-possible to integrate this mechanism into the model if it contains the
-target of the drug (Figure \ref{fig:netdrug}). One can therefore
+models makes them particularly \textbf{suitable for the study of
+well-defined perturbations such as drug effects}. Indeed, by assuming
+that the mechanism of action of a drug is at least partially known, it
+is possible to integrate this mechanism into the model if it contains
+the target of the drug (Figure \ref{fig:netdrug}). One can therefore
 simulate the effect of one drug or even compare several. These
-strategies have already been implemented in a qualitative way with logic
-models used to explain resistance to certain treatments of breast cancer
-\citep{zanudo2017network} or even highlight the synergy of certain
-combinations of treatments in gastric cancer
+strategies have already been implemented in a qualitative way with
+logical models used to explain resistance to certain treatments of
+breast cancer \citep{zanudo2017network} or even highlight the synergy of
+certain combinations of treatments in gastric cancer
 \citep{flobak2015discovery}. The value of these models, however, is more
 scientific than clinical in that they focus on a single cell line or a
 restricted group of cell lines. The possibility to personalize the
@@ -2260,12 +2225,12 @@ models to extend their predictive value beyond the data
 \citep{frohlich2018efficient}. As with prognostic models, mechanical
 approaches other than logical formalisms and ODEs have been proposed and
 validated \citep{jastrzebski2018integrative}. What can be learned from
-these predictive models is that they require significant training data
-to be able to go beyond qualitative predictions and dissect treatment
-response mechanisms of many cell lines simultaneously. For obvious
-practical and ethical reasons, the validation of these models is for the
-moment limited to preclinical data since they require data for many
-uncertain therapeutic interventions.
+these predictive models is that they require \textbf{significant
+training data to be able to go beyond qualitative predictions and
+dissect treatment response mechanisms of many cell lines
+simultaneously}. For obvious practical and ethical reasons, the
+validation of these models is for the moment limited to preclinical data
+since they require data for many uncertain therapeutic interventions.
 
 This first bridge between mechanistic models of cell signalling and
 clinical applications concludes this introductory part. The next part
@@ -2278,39 +2243,7 @@ the models presented in the previous parts.
 
 This is a test
 
-\section{Abc}\label{abc}
-
-Bla bla ref \citet{MBMH19} and \citep{MBMH19}.
-
-But in \citet{BMTBC19} we have the Figure \ref{fig:nice-fig} as
-referenced in Chapter \ref{test}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{10-Test_files/figure-latex/nice-fig-1} 
-
-}
-
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
-
-And an external figure \ref{fig:test}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{cover/pictures/back-bg} 
-
-}
-
-\caption{Example pic}\label{fig:test}
-\end{figure}
+\section{Test}\label{test}
 
 \bibliography{bib/thesis.bib}
 

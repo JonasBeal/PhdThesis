@@ -51,43 +51,6 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -151,7 +114,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i><b>4</b> Test part</a><ul>
-<li class="chapter" data-level="4.1" data-path="test.html"><a href="test.html#abc"><i class="fa fa-check"></i><b>4.1</b> Abc</a></li>
+<li class="chapter" data-level="4.1" data-path="test.html"><a href="test.html#test"><i class="fa fa-check"></i><b>4.1</b> Test</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -200,7 +163,6 @@ Figure 1.2: <strong>Network visualization of <em>model</em> thesaurus entries.</
 </p>
 </div>
 
-<!-- For scientists -->
 <p>The narrower perspective of the scientist does not reduce the completeness of the dictionary’s description to an unambiguous object <span class="citation">(Bailer-Jones <a href="#ref-bailer2002scientists">2002</a>)</span>. In an attempt to approach these multi-faceted objects that are the models, Daniela Bailer-Jones interviewed different scientists and asked them the same question: what is a model? Across the different profiles and fields of study, the answers vary but some patterns begin to emerge (Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:interviews">1.3</a>). A model must capture the essence of the phenomenon being studied. Because it eludes, voluntarily or not, many details or complexity, it is by nature a simplification of the phenomenon. These limitations may restrict its validity to certain cases or suspend it to the fulfilment of some hypotheses. They are not necessarily predictive, but they must be able to generate new hypotheses, be tested and possibly questioned. Finally, and fundamentally, they <strong>must provide insights about the object of study and contribute to its understanding</strong>.</p>
 <div class="figure" style="text-align: center"><span id="fig:interviews"></span>
 <img src="01-Models_files/figure-html/interviews-1.png" alt="Scientists talk about their models: words cloud. Cloud of words summarizing the lexical fields used by scientists to talk about their models in dedicated interviews reported by Bailer-Jones (2002)." width="90%" />
@@ -259,7 +221,7 @@ Figure 1.6: <strong>Different modeling strategies.</strong> (A) Data generation 
 <p>Several discrepancies result from this difference in nature between mechanistic and statistical models, some of which are summarized in the Table <a href="scientific-modeling-abstract-the-complexity.html#tab:mechstat">1.1</a>. In a somewhat schematic way, we can say that the mechanistic model first asks the question of <em>how</em> and then looks at the result for the output. The <strong>notion of causality is intrinsic to the definition of the model</strong>. Conversely, the statistical model first tries to approach the Y and then possibly analyses what can be deduced from it, regarding the importance of the variables or their relationships in a <em>post hoc</em> approach <span class="citation">(Ishwaran <a href="#ref-ishwaran2007variable">2007</a>; Manica et al. <a href="#ref-manica2019toward">2019</a>)</span>. The causality is then not a by-product of the algorithm and must be evaluated with dedicated frameworks <span class="citation">(Hernán and Robins <a href="#ref-hernan2020causal">2020</a>)</span>. The greater flexibility of statistical methods makes it possible to better accept the heterogeneity of the variables, but this is generally done at the cost of a larger number of parameters and therefore requires more data. Moreover, statistical models can be considered as inductive, since they are able to use already generated data to identify patterns in it. Conversely, mechanistic models are more deductive in the sense that they can theoretically allow to extrapolate beyond the original data or knowledge used to build the model <span class="citation">(Baker et al. <a href="#ref-baker2018mechanistic">2018</a>)</span>. Finally, the most relevant way of assessing the value or adequacy of these models may be quite different. A statistical model is measured by its ability to predict output in a validation dataset different from the one used to train its parameters. The mechanistic model will also be evaluated on its capacity to approach the data but also to order it, to give a meaning. If its pure predictive performance is generally inferior, <strong>how can the value of understanding be assessed?</strong> This question will be one of the threads of the dissertation.</p>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:mechstat">Table 1.1: </span><strong>Some pros and cons for mechanistic and statistical modeling</strong> (adapted from <span class="citation">Baker et al. (<a href="#ref-baker2018mechanistic">2018</a>)</span>)
+<span id="tab:mechstat">Table 1.1: </span><strong>Some pros and cons for mechanistic and statistical modeling</strong>. Adapted from <span class="citation">Baker et al. (<a href="#ref-baker2018mechanistic">2018</a>)</span>.
 </caption>
 <thead>
 <tr>
@@ -354,12 +316,12 @@ Figure 1.7: <strong>Some analyses around Lotka-Volterra model of a prey-predator
 <p>This being said, the structure of the model having been defined a priori, it remains to determine its parameters. Two options would theoretically be possible: to propose values based on the interpretation of the parameters and ecological knowledge, or to fit the model to the data in order to find the best parameters. For the sake of simplicity, and because this example has only a pedagogical value in this presentation, we propose to determine them approximately using the following Taylor-based approximation:</p>
 <p><span class="math display">\[\dfrac{1}{y(t)} \dfrac{dy}{dt} \simeq \dfrac{1}{y(t)} \dfrac{y(t+1)-y(t-1)}{2}\]</span></p>
 <p>By applying this approximation to the two equations of the differential system and plotting the corresponding linear regressions (Figures <a href="scientific-modeling-abstract-the-complexity.html#fig:lotka">1.7</a>B and C), we can obtain an evaluation of the parameters such as <span class="math inline">\(a_1=0.82\)</span>, <span class="math inline">\(a_2=0.0298\)</span>, <span class="math inline">\(b_1=0.509\)</span>, <span class="math inline">\(b_2=0.0129\)</span>. By matching the initial conditions to the data, the differential system can then be fully determined and solved numerically (Figures <a href="scientific-modeling-abstract-the-complexity.html#fig:lotka">1.7</a>D). Comparison of data and modeling provides a good illustration of the virtues and weaknesses of a mechanistic model. Firstly, based on explicit and interpretable hypotheses, the model was able to recover the cyclical behaviour and dependencies between the two species: the increase in the lynx population always seems to be preceded by the increase in the hare population. However, the amplitude of the oscillations and their periods are not exactly those observed in the data. This may be related to approximations in the evaluation of parameters, random variation in the data or, of course, simplifications or errors in the structure of the model itself.</p>
-<p>Besides, if one tries to carry out a statistical modeling of these data, it is very likely that it is possible to approach the curve of populations evolution much closer, especially for the hares. But should it be expressed simply as a function of time or should a joint modeling be proposed? The nature of the causal link between prey and predators will be extremely difficult to establish without strong hypotheses such as those of the mechanistic model. On the other hand, if populations in later years had to be predicted as accurately as possible, it is likely that a sufficiently well-trained statistical model would perform better. Finally, and this is a fundamental difference, the mechanistic model enables to test cases or hypotheses that go beyond the scope of the data. Quite simply, by playing with the variables or parameters of the model, we can predict the exponential decrease of predators in the absence of prey and the exponential growth of prey in the absence of prey. More generally, it is also possible to study analytically or numerically the bifurcation points of the system in order to determine the families of behaviours according to the relative values of the parameters <span class="citation">(Flake <a href="#ref-flake1998computational">1998</a>)</span>. It is not possible to infer these new or hypothetical behaviours directly from the data o of the statistical model. This is theoretically possible on the basis of the mechanistic model, provided that it is sufficiently relevant and that its operating hypotheses cover the cases under investigation. Now that the value of mechanistic models has been illustrated in a fairly theoretical example, all that remains is to explore in the next chapters how they can be built and used in the context of cancer.</p>
+<p>Besides, if one tries to carry out a statistical modeling of these data, it is very likely that it is possible to approach the curve of populations evolution much closer, especially for the hares. But should it be expressed simply as a function of time or should a joint modeling be proposed? The nature of the causal link between prey and predators will be extremely difficult to establish without strong hypotheses such as those of the mechanistic model. On the other hand, if populations in later years had to be predicted as accurately as possible, it is likely that a sufficiently well-trained statistical model would perform better. Finally, and this is a fundamental difference, the <strong>mechanistic model enables to test cases or hypotheses that go beyond the scope of the data</strong>. Quite simply, by playing with the variables or parameters of the model, we can predict the exponential decrease of predators in the absence of prey and the exponential growth of prey in the absence of prey. More generally, it is also possible to study analytically or numerically the bifurcation points of the system in order to determine the families of behaviours according to the relative values of the parameters <span class="citation">(Flake <a href="#ref-flake1998computational">1998</a>)</span>. It is not possible to infer these new or hypothetical behaviours directly from the data o of the statistical model. This is theoretically possible on the basis of the mechanistic model, provided that it is sufficiently relevant and that its operating hypotheses cover the cases under investigation. Now that the value of mechanistic models has been illustrated in a fairly theoretical example, all that remains is to explore in the next chapters how they can be built and used in the context of cancer.</p>
 </div>
 </div>
 <div id="simplicity-is-the-ultimate-sophistication" class="section level2">
 <h2><span class="header-section-number">1.3</span> Simplicity is the ultimate sophistication</h2>
-<p>Before concluding this modeling introduction, it is important to highlight one of the most important points already introduced in a concise manner by the poet Paul Valéry at the beginning of this chapter. Whatever its nature, a model is always a simplified representation of reality and by extension is always wrong to a certain extent. This is a generally well-accepted fact, but it is crucial to understand the implications for the modeller. This simplification is not a collateral effect but an intrinsic feature of any model:</p>
+<p>Before concluding this modeling introduction, it is important to highlight one of the most important points already introduced in a concise manner by the poet Paul Valéry at the beginning of this chapter. <strong>Whatever its nature, a model is always a simplified representation of reality and by extension is always wrong to a certain extent</strong>. This is a generally well-accepted fact, but it is crucial to understand the implications for the modeller. This simplification is not a collateral effect but an intrinsic feature of any model:</p>
 <blockquote>
 <p><em>No substantial part of the universe is so simple that it can be grasped and controlled without abstraction. Abstraction consists in replacing the part of the universe under consideration by a model of similar but simpler structure. Models, formal and intellectual on the one hand, or material on the other, are thus a central necessity of scientific procedure.</em><br />
 <span class="citation">(Rosenblueth and Wiener <a href="#ref-rosenblueth1945role">1945</a>)</span></p>
@@ -370,7 +332,7 @@ Figure 1.7: <strong>Some analyses around Lotka-Volterra model of a prey-predator
 </blockquote>
 <p>This fairly pragmatic approach should make it possible to evolve iteratively, reducing distortions as and when possible. This could involve the addition of other species or human intervention into the Lotka-Volterra system described above. A three-species Lotka-Volterra model can however become chaotic <span class="citation">(Flake <a href="#ref-flake1998computational">1998</a>)</span>, and therefore extremely difficult to use and interpret, thus underlining the importance of simplifying the model.</p>
 <p>We will have the opportunity to come back to the idealizations made in the course of the cancer models but it is already possible to give some orientations. The biologist who seeks to study cancer using cell lines or animal models is clearly part of Galileo’s lineage. The mathematical or <em>in silico</em> modeler has a more balanced profile. The design of qualitative mechanistic models based on prior knowledge, which is the core of the second part of the thesis, is more akin to minimal idealization, which seeks to highlight the salient features of a system. But the Galilean pragmatism consisting in creating computationnaly-tractable models is also quite widespread, particularly in highly dimensional statistical approaches.</p>
-<p>Because of the complexity of the phenomena, simplification is therefore a necessity. The objective then should not necessarily be to make the model more complex, but to match its level of simplification with its assumptions and objectives. Faced with the temptation of the author of the model, or his reviewer, to always extend and complicate the model, it could be replied with Lewis Carrol words<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>:</p>
+<p>Because of the complexity of the phenomena, simplification is therefore a necessity. The objective then should not necessarily be to make the model more complex, but to <strong>match its level of simplification with its assumptions and objectives</strong>. Faced with the temptation of the author of the model, or his reviewer, to always extend and complicate the model, it could be replied with Lewis Carrol words<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>:</p>
 <blockquote>
 <p><em>“That’s another thing we’ve learned from your Nation,” said Mein Herr, “map-making. But we’ve carried it much further than you. What do you consider the largest map that would be really useful?”</em><br />
 <em>“About six inches to the mile.”</em><br />
