@@ -17,7 +17,7 @@ bookdown::gitbook: # generating the gitbook (html) version of the thesis
       scroll_highlight: yes
     #edit: https://github.com/JonasBeal/PhdThesis/edit/master/%s
     search: yes
-    download: null # only pdf by default
+    download: pdf # only pdf by default
     #highlight: pygments
 
 bookdown::pdf_book: # generating the pdf version of the thesis
