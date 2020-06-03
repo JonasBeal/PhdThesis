@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Logical modeling principles and data integration | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</title>
+  <meta name="description" content="This is my PhD thesis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Logical modeling principles and data integration | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is my PhD thesis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Logical modeling principles and data integration | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  
+  <meta name="twitter:description" content="This is my PhD thesis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mechanistic-cancer.html"/>
+<link rel="next" href="personalization-of-logical-models-methods-and-prognostic-validation.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Jonas BÉAL</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>PhD Thesis</a></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="resumé.html"><a href="resumé.html"><i class="fa fa-check"></i>Resumé</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Cells and their models</b></span></li>
+<li class="chapter" data-level="1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html"><i class="fa fa-check"></i><b>1</b> Scientific modeling: abstract the complexity</a><ul>
+<li class="chapter" data-level="1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#what-is-a-model"><i class="fa fa-check"></i><b>1.1</b> What is a model?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#in-your-own-words"><i class="fa fa-check"></i><b>1.1.1</b> In your own words</a></li>
+<li class="chapter" data-level="1.1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#physical-world-and-world-of-ideas"><i class="fa fa-check"></i><b>1.1.2</b> Physical world and world of ideas</a></li>
+<li class="chapter" data-level="1.1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#preview-about-cancer-models"><i class="fa fa-check"></i><b>1.1.3</b> Preview about cancer models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#stat-mech"><i class="fa fa-check"></i><b>1.2</b> Statistics or mechanistic</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#the-inside-of-the-box"><i class="fa fa-check"></i><b>1.2.1</b> The inside of the box</a></li>
+<li class="chapter" data-level="1.2.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#lotkasection"><i class="fa fa-check"></i><b>1.2.2</b> A tale of prey and predators</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#simplicity-is-the-ultimate-sophistication"><i class="fa fa-check"></i><b>1.3</b> Simplicity is the ultimate sophistication</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html"><i class="fa fa-check"></i><b>2</b> Cancer as deregulation of complex machinery</a><ul>
+<li class="chapter" data-level="2.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#what-is-cancer"><i class="fa fa-check"></i><b>2.1</b> What is cancer?</a></li>
+<li class="chapter" data-level="2.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#epidemio"><i class="fa fa-check"></i><b>2.2</b> Cancer from a distance: epidemiology and main figures</a></li>
+<li class="chapter" data-level="2.3" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#molecular-biology"><i class="fa fa-check"></i><b>2.3</b> Basic molecular biology and cancer</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#central-dogma-and-core-principles"><i class="fa fa-check"></i><b>2.3.1</b> Central dogma and core principles</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#a-rogue-machinery"><i class="fa fa-check"></i><b>2.3.2</b> A rogue machinery</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#the-new-era-of-genomics"><i class="fa fa-check"></i><b>2.4</b> The new era of genomics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-sequencing-to-multi-omics-data"><i class="fa fa-check"></i><b>2.4.1</b> From sequencing to multi-omics data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#state-of-the-art-of-cancer-data"><i class="fa fa-check"></i><b>2.4.2</b> State-of-the art of cancer data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#data-and-beyond-from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> Data and beyond: from genetic to network disease</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html"><i class="fa fa-check"></i><b>3</b> Mechanistic modeling of cancer: from complex disease to systems biology</a><ul>
+<li class="chapter" data-level="3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#introducing-the-diversity-of-mechanistic-models-of-cancer"><i class="fa fa-check"></i><b>3.1</b> Introducing the diversity of mechanistic models of cancer</a></li>
+<li class="chapter" data-level="3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#cell-circuitry-and-the-need-for-cancer-systems-biology"><i class="fa fa-check"></i><b>3.2</b> Cell circuitry and the need for cancer systems biology</a></li>
+<li class="chapter" data-level="3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#mechanistic-models-of-molecular-signaling"><i class="fa fa-check"></i><b>3.3</b> Mechanistic models of molecular signaling</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#networks-and-data"><i class="fa fa-check"></i><b>3.3.1</b> Networks and data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#different-formalisms-for-different-applications"><i class="fa fa-check"></i><b>3.3.2</b> Different formalisms for different applications</a></li>
+<li class="chapter" data-level="3.3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#some-examples-of-complex-features"><i class="fa fa-check"></i><b>3.3.3</b> Some examples of complex features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#from-mechanistic-models-to-clinical-impact"><i class="fa fa-check"></i><b>3.4</b> From mechanistic models to clinical impact?</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#a-new-class-of-biomarkers"><i class="fa fa-check"></i><b>3.4.1</b> A new class of biomarkers</a></li>
+<li class="chapter" data-level="3.4.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#prognostic-models"><i class="fa fa-check"></i><b>3.4.2</b> Prognostic models</a></li>
+<li class="chapter" data-level="3.4.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#predictive-models"><i class="fa fa-check"></i><b>3.4.3</b> Predictive models</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Personalized logical models of cancer</b></span></li>
+<li class="chapter" data-level="4" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html"><i class="fa fa-check"></i><b>4</b> Logical modeling principles and data integration</a><ul>
+<li class="chapter" data-level="4.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-modeling-paradigms-for-qualitative-description"><i class="fa fa-check"></i><b>4.1</b> Logical modeling paradigms for qualitative description</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#regulatory-graph-and-logical-rules"><i class="fa fa-check"></i><b>4.1.1</b> Regulatory graph and logical rules</a></li>
+<li class="chapter" data-level="4.1.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#state-transition-graph-and-updates"><i class="fa fa-check"></i><b>4.1.2</b> State transition graph and updates</a></li>
+<li class="chapter" data-level="4.1.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#tools-for-logical-modeling"><i class="fa fa-check"></i><b>4.1.3</b> Tools for logical modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#maboss-section"><i class="fa fa-check"></i><b>4.2</b> The MaBoSS framework for logical modeling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#gillespie-algorithm"><i class="fa fa-check"></i><b>4.2.1</b> Gillespie algorithm</a></li>
+<li class="chapter" data-level="4.2.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#a-stochastic-exploration-of-model-behaviours"><i class="fa fa-check"></i><b>4.2.2</b> A stochastic exploration of model behaviours</a></li>
+<li class="chapter" data-level="4.2.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#from-theoretical-models-to-data-models"><i class="fa fa-check"></i><b>4.2.3</b> From theoretical models to data models?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#data-integration-and-semi-quantitative-logical-modeling"><i class="fa fa-check"></i><b>4.3</b> Data integration and semi-quantitative logical modeling</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#data-to-prepare-the-model"><i class="fa fa-check"></i><b>4.3.1</b> Data to prepare the model</a></li>
+<li class="chapter" data-level="4.3.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#data-to-define-the-rules"><i class="fa fa-check"></i><b>4.3.2</b> Data to define the rules</a></li>
+<li class="chapter" data-level="4.3.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#data-to-validate-the-model"><i class="fa fa-check"></i><b>4.3.3</b> Data to validate the model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="personalization-of-logical-models-methods-and-prognostic-validation.html"><a href="personalization-of-logical-models-methods-and-prognostic-validation.html"><i class="fa fa-check"></i><b>5</b> Personalization of logical models: methods and prognostic validation</a><ul>
+<li class="chapter" data-level="5.1" data-path="personalization-of-logical-models-methods-and-prognostic-validation.html"><a href="personalization-of-logical-models-methods-and-prognostic-validation.html#from-one-generic-model-to-data-specific-models-with-profile-mthod"><i class="fa fa-check"></i><b>5.1</b> From one generic model to data-specific models with PROFILE mthod</a></li>
+<li class="chapter" data-level="5.2" data-path="personalization-of-logical-models-methods-and-prognostic-validation.html"><a href="personalization-of-logical-models-methods-and-prognostic-validation.html#an-integration-tool-for-high-dimensional-data-in-cell-lines"><i class="fa fa-check"></i><b>5.2</b> An integration tool for high-dimensional data in cell lines</a></li>
+<li class="chapter" data-level="5.3" data-path="personalization-of-logical-models-methods-and-prognostic-validation.html"><a href="personalization-of-logical-models-methods-and-prognostic-validation.html#an-uncertain-validation-with-patient-data"><i class="fa fa-check"></i><b>5.3</b> An uncertain validation with patient data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html"><i class="fa fa-check"></i><b>6</b> Personalized logical models to study an interpret drug response</a><ul>
+<li class="chapter" data-level="6.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#one-step-further-with-drugs"><i class="fa fa-check"></i><b>6.1</b> One step further with drugs</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#methods"><i class="fa fa-check"></i><b>6.1.1</b> Methods</a></li>
+<li class="chapter" data-level="6.1.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#brute-force"><i class="fa fa-check"></i><b>6.1.2</b> Brute force</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#a-case-study-on-braf-in-melanoma-and-colorectal-cancers"><i class="fa fa-check"></i><b>6.2</b> A case study on BRAF in melanoma and colorectal cancers</a></li>
+<li class="chapter" data-level="6.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#limitations-and-perspectives-illustrated-by-a-prostate-cancer-study"><i class="fa fa-check"></i><b>6.3</b> Limitations and perspectives illustrated by a prostate cancer study</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="about-logical-models.html"><a href="about-logical-models.html"><i class="fa fa-check"></i><b>A</b> About logical models</a><ul>
+<li class="chapter" data-level="A.1" data-path="about-logical-models.html"><a href="about-logical-models.html#descritption-of-logical-models-used-in-this-thesis"><i class="fa fa-check"></i><b>A.1</b> Descritption of logical models used in this thesis</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-causality.html"><a href="about-causality.html"><i class="fa fa-check"></i><b>B</b> About causality</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-causality.html"><a href="about-causality.html#theoretical-fraework"><i class="fa fa-check"></i><b>B.1</b> Theoretical fraework</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="logical-modeling-principles-and-data-integration" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Logical modeling principles and data integration</h1>
+<blockquote>
+<p><em>Je suis l’halluciné de la forêt des Nombres.<br />
+Ils me fixent, avec leurs yeux de leurs problèmes ;<br />
+Ils sont, pour éternellement rester : les mêmes.<br />
+Primordiaux et définis,<br />
+Ils tiennent le monde entre leurs infinis ;<br />
+Ils expliquent le fond et l’essence des choses,<br />
+Puisqu’à travers les temps planent leurs causes.</em><br />
+Émile Verhaeren (Les nombres)</p>
+</blockquote>
+<p>Another way of ordering the diversity of mechanistic models presented above is to consider their relationship to biological data. Those that make little use of these data are essentially theoretical scope models that describe the general functioning of signaling pathways and associated systems <span class="citation">(Calzone et al. <a href="#ref-calzone2010mathematical">2010</a>)</span>. Other models propose more quantitative models but require much more data, either experimental data generated for the occasion or the use of databases to fit the parameters. In the latter case, the necessary data is usually perturbation data: How does my system react to this or that inhibition or activation? For a single cell line this already corresponds to a large amount of data <span class="citation">(Razzaq et al. <a href="#ref-razzaq2018computational">2018</a>)</span>. And if we want to extend these approaches to many cell lines the amount of data becomes massive <span class="citation">(Fröhlich et al. <a href="#ref-frohlich2018efficient">2018</a>)</span>. For patient-specific models, access to this perturbation data is even more difficult.</p>
+<p>Between theoretical models that are not very demanding in terms of data but not very applicable clinically and models with a clinical focus but very demanding in terms of data, an intermediate alternative is missing. <strong>Can patient-specific mechanistic models be developed that would provide qualitative clinical interpretation with a small amount of data, accessible even in patients?</strong> In this part, a middle way will be described to answer positively to this question. This methodology will be based on a historically qualitative mathematical formalism already presented in the previous chapter under the name of logical modelling.</p>
+<div id="publications" class="section level4 unnumbered">
+<h4>Publications</h4>
+<p>This chapter presents the theoretical bases of logical modeling and the tools used thereafter. It does not present any original work but refers to the synthesis and analyses of logical modeling as described in <span class="citation">Béal et al. (<a href="#ref-beal2019personalization">2019</a>)</span> and <span class="citation">Béal, Rémy, and Calzone (<a href="#ref-beal2020modelisation">2020</a>)</span>.</p>
+</div>
+<div id="logical-modeling-paradigms-for-qualitative-description" class="section level2">
+<h2><span class="header-section-number">4.1</span> Logical modeling paradigms for qualitative description</h2>
+<p>Mathematical models serve as tools to answer a biological question in a formal way, to detect blind spots and thus better understand a system, to organize, into a consensual and compact manner, information dispersed in different articles. In the light of this definition, logical formalism (also called Boolean) may seem one of the closest to natural language in that it <strong>can translate quite directly the statements present in the literature</strong> such as “protein A activates protein B” or “the expression of gene C requires the joint presence of factors D and E”. Indeed, shortly after the first descriptions of control circuits by <span class="citation">Jacob and Monod (<a href="#ref-jacob1961genetic">1961</a>)</span>, the interest of logical models to describe biological systems was put forward by <span class="citation">Kauffman (<a href="#ref-kauffman1969homeostasis">1969</a>)</span> and <span class="citation">Thomas (<a href="#ref-thomas1973boolean">1973</a>)</span>. Since then, studies have multiplied <span class="citation">(Thomas and d’Ari <a href="#ref-thomas1990biological">1990</a>)</span>, varying the fields of biological applications and also the mathematical and computational implementations <span class="citation">(Naldi, Hernandez, Levy, et al. <a href="#ref-naldi2018colomoto">2018</a>)</span>. The two subsections below summarize the characteristics common to most of the logical formalisms, before detailing the implementation chosen in this thesis in section <a href="logical-modeling-principles-and-data-integration.html#maboss-section">4.2</a>.</p>
+<div id="regulatory-graph-and-logical-rules" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Regulatory graph and logical rules</h3>
+<p>A logical model is based on a network called <strong>regulatory graph</strong> (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:logical">4.1</a>), where each node represents a component (e.g. genes, proteins, complexes, phenotypes or processes), and is associated with discrete levels of activity (<span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, or more when justified). The use of a discrete formalism in molecular network modeling relies on the highly non-linear nature of regulation, and thus on the existence of a regulatory threshold. Assuming that each variable represents a level of expression: it will take the value <span class="math inline">\(0\)</span> if the level of expression of the entity is below the regulation threshold, i.e. insufficient to carry out the regulation; and the value <span class="math inline">\(1\)</span> if it is above the threshold and regulation is possible. In other words, the control threshold discretizes the state space, here the expression levels. It is therefore possible to distinguish several thresholds for the same variable, corresponding to distinct controls that do not take place at the same expression levels. The variable is then multivalued. This extension greatly enriches the formalism, because it allows to distinguish situations that are qualitatively different and that would be confused with boolean variables. In the continuation of this thesis, we will consider by default that the activity levels are binary, <span class="math inline">\(0\)</span> corresponding to an inactive entity and <span class="math inline">\(1\)</span> to an active entity.</p>
+<p>The edges of this regulatory graph correspond to influences, either positive or negative, which illustrate the possible interactions between two entities. Positive edges can represent the formation of active complexes, mediation of synthesis, catalysis, etc. and they will be later depicted as green arrows (<span class="math inline">\(\leftarrow\)</span>). Negative edges on the othe rhand can represent inhibition of synthesis, degradation, inhibiting (de)phosphorylation, etc. and they will be depicted as red turnstile (<span class="math inline">\(\vdash\)</span>).</p>
+<div class="figure" style="text-align: center"><span id="fig:logical"></span>
+<img src="fig/logical.png" alt="A simple example of a logical model. Regulatory graph on the left with positive (green) and negative regulations (red); a set of possible corresponding logical rules on the right." width="50%" />
+<p class="caption">
+Figure 4.1: <strong>A simple example of a logical model.</strong> Regulatory graph on the left with positive (green) and negative regulations (red); a set of possible corresponding logical rules on the right.
+</p>
+</div>
+
+<p>Then, each node of the regulatory graph has a corresponding Boolean variable associated to it. The variables can take two values: <span class="math inline">\(0\)</span> for absent or inactive (OFF), and <span class="math inline">\(1\)</span> for present or active (ON). These variables change their value according to a logical rule assigned to them. The state of a variable will thus depend on its logical rule, which is based on logical statements, i.e., on a function of the node regulators linked with logical connectors AND (<span class="math inline">\(\&amp;\)</span>), OR (<span class="math inline">\(|\)</span>) and NOT (<span class="math inline">\(!\)</span>). These operators can account for what is known about the biology behind these edges. If two input nodes are needed for the activation of the target node, they will be linked by an AND gate; to list different means of activation of a node, an OR gate will be used. For negative influences, a NOT gate will be utilized. Thus for each node, a logical rule is associated. The rules corresponding to the toy model in Figure <a href="logical-modeling-principles-and-data-integration.html#fig:logical">4.1</a> could be interpreted literally like this: A is acivated to 1 if B is active; B is updated to 1 in the absence of A and the presence/activity of C; C is an input of the model and therefore not regulated. It can be noted that the logical rules cannot be deduced only from the regulatory graph, which can be less precise and ambiguous. One could thus imagine that B is activated if C is, OR if A is not, thus changing the behavior of the model.</p>
+</div>
+<div id="state-transition-graph-and-updates" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> State transition graph and updates</h3>
+<p>In a Boolean framework, the variables associated to each node can take two values, either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>. We define a model state as a vector of all node states. All the possible transitions from any model state to another are dependent on the set of logical rules that define the model. These transitions can be viewed into a graph called a <strong>state transition graph</strong> (STG), where nodes are model states and edges are the transitions from one model state to another. STG nodes will be later depicted with rounded squares instead of circles in order to emphasize the difference with regulatory graphs. That way, trajectories from an initial condition to all the final states can be determined. In a model with <span class="math inline">\(n\)</span> nodes, the state transition graph can contain up to <span class="math inline">\(2^n\)</span> model state nodes; thus, if <span class="math inline">\(n\)</span> is too big, the construction and the visualization of the graph becomes difficult.</p>
+<div class="figure" style="text-align: center"><span id="fig:synchronous"></span>
+<img src="fig/synchronous.png" alt="State transition graph and synchronous updates. Stable state (A) and limit cycle (B) attractors obtained for the example logical model with synchronous updates (all possible updates simultaneously). Figures above/below STG edges correspond to the number of nodes updated in each transition." width="90%" />
+<p class="caption">
+Figure 4.2: <strong>State transition graph and synchronous updates.</strong> Stable state (A) and limit cycle (B) attractors obtained for the example logical model with synchronous updates (all possible updates simultaneously). Figures above/below STG edges correspond to the number of nodes updated in each transition.
+</p>
+</div>
+
+<p>Based the simple logical model of Figure <a href="logical-modeling-principles-and-data-integration.html#fig:logical">4.1</a> it is nevertheless possible to represent the STG comprehensively. The idea for this is to start from a state of the system and track the successive states defined by the logical rules and the corresponding updates. The first strategy to construct this STG is to change simultaneously at each time step all the variables that can be changed (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:synchronous">4.2</a>). This method is referred to as a <strong>synchronous updating strategy</strong>. In the second method, referred to as a <strong>asynchronous updating strategy</strong>, variables are changed one at a time (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:asynchronous">4.3</a>) and therefore each state has as many successors as there are components whose state must be changed according to logical rules (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:asynchronous">4.3</a>A). The latter asynchronous method will be used exclusively in the work presented thereafter</p>
+<div class="figure" style="text-align: center"><span id="fig:asynchronous"></span>
+<img src="fig/asynchronous.png" alt="State transition graph and asynchronous updates. Stable state (A) and limit cycle (B) attractors obtained for the example logical model with asynchronous updates (one update at a time). Figures above/below STG edges correspond to the number of nodes updated in each transition." width="90%" />
+<p class="caption">
+Figure 4.3: <strong>State transition graph and asynchronous updates.</strong> Stable state (A) and limit cycle (B) attractors obtained for the example logical model with asynchronous updates (one update at a time). Figures above/below STG edges correspond to the number of nodes updated in each transition.
+</p>
+</div>
+
+<p>We then define attractors of the model as long-term asymptotic behaviors of the system. Two types of attractors are identified: stable states, when the system has reached a model state whose successor in the transition graph is itself; and cyclic attractors, when trajectories in the transition graph lead to a group of model states that are cycling. For both synchronous and asynchronous updating strategies, the toy model shows the existence of <strong>two types of attractors: a stable steady state and a limit cycle</strong>, depending on the initial value of <span class="math inline">\(C\)</span>. There are two disconnected components of the state transition graph for this example that correspond to the two possible values for the input <span class="math inline">\(C\)</span>. If <span class="math inline">\(C\)</span> is initially equal to 0 (inactive), then there exists only one stable state: <span class="math inline">\(A=B=C=0\)</span>. All the trajectories in the state transition graph lead to only one model state. If <span class="math inline">\(C\)</span> is initially equal to 1, then the attractor is a limit cycle. The path in the state transition graph cycles for any initial model state of this connected component. Note that for the asynchronous and synchronous graphs, the precise paths or limit cycles may vary. To conclude, it is important to emphasize and illustrate the characteristics of asynchronous updates in this toy example. In Figure <a href="logical-modeling-principles-and-data-integration.html#fig:asynchronous">4.3</a>A, the transition from the initial state (<span class="math inline">\(A=C=0;B=1\)</span>) suggests two distinct possibilities, so it is necessary to <strong>define additional rules or heuristics to choose between possible transitions</strong>. We will come back to this by specifying the logical modeling implementation chosen in this thesis in section <a href="logical-modeling-principles-and-data-integration.html#maboss-section">4.2</a>.</p>
+</div>
+<div id="tools-for-logical-modeling" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Tools for logical modeling</h3>
+<p>Numerous tools have been developed to build logical models and study the dynamics of the systems under inverstigation, each with its own specificity. They allow, for example, to represent reglation networks; to edit, modify or infer logical rules; to identify stable states; to reduce models; to visualize graphs of synchronous or asynchronous transitions. Some also allow to integrate temporal data; to discretize expression data; to simulate the model stochastically or to integrate delays; to identify existing models, etc. Among them, we can cite GINsim <span class="citation">(Naldi, Hernandez, Abou-Jaoudé, et al. <a href="#ref-naldi2018logical">2018</a>)</span>, BoolNet <span class="citation">(Müssel, Hopfensitz, and Kestler <a href="#ref-mussel2010boolnet">2010</a>)</span>, pyBoolNet <span class="citation">(Klarner, Streck, and Siebert <a href="#ref-klarner2016pyboolnet">2016</a>)</span>, BooleanNet <span class="citation">(Albert et al. <a href="#ref-albert2008boolean">2008</a>)</span>, CellCollective <span class="citation">(Helikar et al. <a href="#ref-helikar2012cell">2012</a>)</span>, bioLQM <span class="citation">(Naldi <a href="#ref-naldi2018biolqm">2018</a>)</span>, MaBoSS <span class="citation">(Stoll et al. <a href="#ref-stoll2012continuous">2012</a>; Stoll et al. <a href="#ref-stoll2017maboss">2017</a>)</span>, PINT <span class="citation">(Paulevé <a href="#ref-Pint">2017</a>)</span>, CaspoTS <span class="citation">(Ostrowski et al. <a href="#ref-ostrowskiboolean2016">2016</a>)</span>, or CellNOptR <span class="citation">(Terfve et al. <a href="#ref-terfvecellnoptr2012">2012</a>)</span>. A detailed discussion and comparison of these tools is presented in an article incorporating many of these approaches. The interaction between all these tools, their interoperability and complementarity are highlighted in the form of a notebook jupyter <span class="citation">(Naldi, Hernandez, Levy, et al. <a href="#ref-naldi2018colomoto">2018</a>)</span>.</p>
+</div>
+</div>
+<div id="maboss-section" class="section level2">
+<h2><span class="header-section-number">4.2</span> The MaBoSS framework for logical modeling</h2>
+<p>In the present study, all simulations have been performed with MaBoSS, a <strong>Ma</strong>rkovian <strong>Bo</strong>olean <strong>S</strong>tochastic <strong>S</strong>imulator whose design is summarized in Figure <a href="logical-modeling-principles-and-data-integration.html#fig:maboss">4.4</a> and precisely described by <span class="citation">(<span class="citeproc-not-found" data-reference-id="stoll_continuous_2012"><strong>???</strong></span>)</span> and <span class="citation">(<span class="citeproc-not-found" data-reference-id="stoll_maboss_2017"><strong>???</strong></span>)</span>. This framework is based on an asynchronous update scheme combined with a continuous time feature obtained with Gillespie algorithm <span class="citation">(Gillespie <a href="#ref-gillespie_general_1976">1976</a>)</span>, allowing simulations to be continuous in time despite the discrete nature of logical modeling.</p>
+<div class="figure" style="text-align: center"><span id="fig:maboss"></span>
+<img src="fig/maboss.png" alt="Main principles of MaBoSS simulation framework and Gillespie algorithm. (A) A logical model with regulatory graph, logical rules and transition rates. (B) A coresponding state transition graph with two possible transitions in asynchronous update for a given initial state; each transition has an associated probability. (C) Random selection of a specific transition and time by the Gillespie algorithm from two uniform random variables. (D)" width="90%" />
+<p class="caption">
+Figure 4.4: <strong>Main principles of MaBoSS simulation framework and Gillespie algorithm.</strong> (A) A logical model with regulatory graph, logical rules and transition rates. (B) A coresponding state transition graph with two possible transitions in asynchronous update for a given initial state; each transition has an associated probability. (C) Random selection of a specific transition and time by the Gillespie algorithm from two uniform random variables. (D)
+</p>
+</div>
+
+<div id="gillespie-algorithm" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Gillespie algorithm</h3>
+<p>Gillespie algorithm provides a stochastic way to choose a specific transition among several possible ones and to infer a corresponding time for this transition. Thus, MaBoSS computation results in one stochastic trajectory as a function of time. To achieve this, transition rates seen as qualitative activation or inactivation rates, must be specified for each node (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:maboss">4.4</a>A). They can be set either all to the same value by default, in the absence of any indication, or in various levels reflecting different orders of magnitude: post-translational modifications are quicker than transcriptions for instance. They can also be used to vary speeds depending on inputs or even to adapt multi-valued logical mechanisms in a binary framework <span class="citation">(<span class="citeproc-not-found" data-reference-id="stoll_continuous_2012"><strong>???</strong></span>)</span>. These transition rates are translated as transition probabilities in order to determine the actual transition (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:maboss">4.4</a>B). Indeed, the probability for each possible transition to be chosen for the next update is the ratio of its transition rate to the sum of rates of all possible transitions. Higher rates correspond to transitions that will take place with greater probability, or in other words more quickly.</p>
+<p>Thus at each update, the Gillespie algorithm performs the procedure described in Figure <a href="logical-modeling-principles-and-data-integration.html#fig:maboss">4.4</a>C. Two uniform random variables <span class="math inline">\(u\)</span> and <span class="math inline">\(u&#39;\)</span> are drawn and used respectively to select the transition among the different possibilities (with <span class="math inline">\(u\)</span>) and to infer the corresponding time (with <span class="math inline">\(u&#39;\)</span>). Based on the described formula, time <span class="math inline">\(\delta t\)</span> follows an exponential law whose average is equal to the inverse of the sum of all possible transition rates (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:maboss">4.4</a>C). In present work, except otherwise stated, all transition states will be initially assigned to 1.</p>
+</div>
+<div id="a-stochastic-exploration-of-model-behaviours" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> A stochastic exploration of model behaviours</h3>
+<p>Since MaBoSS computes stochastic trajectories, it is relevant to compute several trajectories in order to get an insight of the average behavior by generating a population of stochastic trajectories over the asynchronous state transition graph (Figure <a href="logical-modeling-principles-and-data-integration.html#fig:maboss">4.4</a>D). The aggregation of stochastic trajectories can also be interpreted as a description of an heterogeneous population. In fact, in all the examples in next chapters, all simulations have consisted on thousands of computed trajectories. The larger the model, the larger the space of possibilities and the more trajectories are required to explore it. Since several trajectories are simulated, initial values of each node can be defined with a continuous value between 0 and 1 representing the probability for the node to be defined to 1 for each new trajectory. For instance, a node with a 0.6 initial condition will be set to <span class="math inline">\(1\)</span> in <span class="math inline">\(60\%\)</span> of simulated trajectories and to <span class="math inline">\(0\)</span> in <span class="math inline">\(40\%\)</span> of the cases.</p>
+<p>In the present work, we will focus on the “asymptotic”&quot; state of these simulations instead of transient dynamics and we will call <strong>node scores</strong> the asymptotic agregated score obtained by averaging all trajectories at a given final time point. The simulation time should be chosen carefully to ensure that the asymptotic state is achieved, and the term “final state” may be considered as safer. Indeed, asymptotic states are more closely related to logical model attractors than transient dynamics and are therefore less dependent on updating stochasticity and more biologically meaningful <span class="citation">(Huang, Ernberg, and Kauffman <a href="#ref-huang2009cancer">2009</a>)</span>.</p>
+<p>All in all this modeling framework is at the intersection of logical modeling and continuous dynamic modeling. If the definition of time remains rather abstract and difficult to interpret experimentally, the stochastic exploration of trajectories makes it possible to refine the purely binary interpretation of the variables.</p>
+</div>
+<div id="from-theoretical-models-to-data-models" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> From theoretical models to data models?</h3>
+<p>To sum up, logical formalism makes it possible to design fairly quickly and easily models that reflect a priori knowledge of the phenomena being studied. Thus, they allow answering questions for which there is little information on the precise mechanisms involved in a disease or when there is a lack of data related to the expression of genes or the quantity of key proteins, or on the speed of certain processes. Logical models confirm that a network is a good illustration of the underlying biological question. However, in order to propose a patient-specific mechanistic approach, it seems crucial to use the biological data available. How is this possible in a formalism that is by definition quite abstract?</p>
+</div>
+</div>
+<div id="data-integration-and-semi-quantitative-logical-modeling" class="section level2">
+<h2><span class="header-section-number">4.3</span> Data integration and semi-quantitative logical modeling</h2>
+<p>The use of biological data to support modelling is now widespread. However, it can occur at different stages of the modelling cycle described in Figure <a href="mechanistic-cancer.html#fig:cycle">3.4</a></p>
+<div id="data-to-prepare-the-model" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Data to prepare the model</h3>
+</div>
+<div id="data-to-define-the-rules" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Data to define the rules</h3>
+</div>
+<div id="data-to-validate-the-model" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Data to validate the model</h3>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-albert2008boolean">
+<p>Albert, István, Juilee Thakar, Song Li, Ranran Zhang, and Réka Albert. 2008. “Boolean Network Simulations for Life Scientists.” <em>Source Code for Biology and Medicine</em> 3 (1). BioMed Central: 16.</p>
+</div>
+<div id="ref-beal2019personalization">
+<p>Béal, Jonas, Arnau Montagud, Pauline Traynard, Emmanuel Barillot, and Laurence Calzone. 2019. “Personalization of Logical Models With Multi-Omics Data Allows Clinical Stratification of Patients.” <em>Frontiers in Physiology</em>. Frontiers Media S.A. doi:<a href="https://doi.org/10.3389/fphys.2018.01965">10.3389/fphys.2018.01965</a>.</p>
+</div>
+<div id="ref-beal2020modelisation">
+<p>Béal, Jonas, Elizabeth Rémy, and Laurence Calzone. 2020. “Modélisation Logique et Données Omiques : De La Construction Des Modèles à La Médecine Personnalisée.” In <em>Approche Symbolique de La Modélisation et de L’analyse Des Systèmes Biologiques</em>, edited by Elisabeth Rémy and Cédric Lhoussaine. ISTE.</p>
+</div>
+<div id="ref-calzone2010mathematical">
+<p>Calzone, Laurence, Laurent Tournier, Simon Fourquet, Denis Thieffry, Boris Zhivotovsky, Emmanuel Barillot, and Andrei Zinovyev. 2010. “Mathematical Modelling of Cell-Fate Decision in Response to Death Receptor Engagement.” <em>PLoS Computational Biology</em> 6 (3). Public Library of Science.</p>
+</div>
+<div id="ref-frohlich2018efficient">
+<p>Fröhlich, Fabian, Thomas Kessler, Daniel Weindl, Alexey Shadrin, Leonard Schmiester, Hendrik Hache, Artur Muradyan, et al. 2018. “Efficient Parameter Estimation Enables the Prediction of Drug Response Using a Mechanistic Pan-Cancer Pathway Model.” <em>Cell Systems</em> 7 (6). Elsevier: 567–79.</p>
+</div>
+<div id="ref-gillespie_general_1976">
+<p>Gillespie, Daniel T. 1976. “A General Method for Numerically Simulating the Stochastic Time Evolution of Coupled Chemical Reactions.” <em>Journal of Computational Physics</em> 22 (4): 403–34. doi:<a href="https://doi.org/10.1016/0021-9991(76)90041-3">10.1016/0021-9991(76)90041-3</a>.</p>
+</div>
+<div id="ref-helikar2012cell">
+<p>Helikar, Tomáš, Bryan Kowal, Sean McClenathan, Mitchell Bruckner, Thaine Rowley, Alex Madrahimov, Ben Wicks, Manish Shrestha, Kahani Limbu, and Jim A Rogers. 2012. “The Cell Collective: Toward an Open and Collaborative Approach to Systems Biology.” <em>BMC Systems Biology</em> 6 (1). BioMed Central: 96.</p>
+</div>
+<div id="ref-huang2009cancer">
+<p>Huang, Sui, Ingemar Ernberg, and Stuart Kauffman. 2009. “Cancer Attractors: A Systems View of Tumors from a Gene Network Dynamics and Developmental Perspective” 20 (7). Elsevier: 869–76.</p>
+</div>
+<div id="ref-jacob1961genetic">
+<p>Jacob, François, and Jacques Monod. 1961. “Genetic Regulatory Mechanisms in the Synthesis of Proteins.” <em>Journal of Molecular Biology</em> 3 (3). Elsevier: 318–56.</p>
+</div>
+<div id="ref-kauffman1969homeostasis">
+<p>Kauffman, Stuart. 1969. “Homeostasis and Differentiation in Random Genetic Control Networks.” <em>Nature</em> 224 (5215). Springer: 177–78.</p>
+</div>
+<div id="ref-klarner2016pyboolnet">
+<p>Klarner, Hannes, Adam Streck, and Heike Siebert. 2016. “PyBoolNet: A Python Package for the Generation, Analysis and Visualization of Boolean Networks.” <em>Bioinformatics</em> 33 (5). Oxford University Press: 770–72.</p>
+</div>
+<div id="ref-mussel2010boolnet">
+<p>Müssel, Christoph, Martin Hopfensitz, and Hans A Kestler. 2010. “BoolNet?an R Package for Generation, Reconstruction and Analysis of Boolean Networks.” <em>Bioinformatics</em> 26 (10). Oxford University Press: 1378–80.</p>
+</div>
+<div id="ref-naldi2018biolqm">
+<p>Naldi, Aurélien. 2018. “BioLQM: A Java Toolkit for the Manipulation and Conversion of Logical Qualitative Models of Biological Networks.” <em>Frontiers in Physiology</em> 9. Frontiers: 1605.</p>
+</div>
+<div id="ref-naldi2018logical">
+<p>Naldi, Aurélien, Céline Hernandez, Wassim Abou-Jaoudé, Pedro T Monteiro, Claudine Chaouiya, and Denis Thieffry. 2018. “Logical Modeling and Analysis of Cellular Regulatory Networks with Ginsim 3.0.” <em>Frontiers in Physiology</em> 9. Frontiers Media SA.</p>
+</div>
+<div id="ref-naldi2018colomoto">
+<p>Naldi, Aurélien, Céline Hernandez, Nicolas Levy, Gautier Stoll, Pedro T Monteiro, Claudine Chaouiya, Tomáš Helikar, et al. 2018. “The Colomoto Interactive Notebook: Accessible and Reproducible Computational Analyses for Qualitative Biological Networks.” <em>Frontiers in Physiology</em> 9. Frontiers: 680.</p>
+</div>
+<div id="ref-ostrowskiboolean2016">
+<p>Ostrowski, M., L. Paulevé, T. Schaub, A. Siegel, and C. Guziolowski. 2016. “Boolean Network Identification from Perturbation Time Series Data Combining Dynamics Abstraction and Logic Programming.” <em>Biosystems</em>, Selected papers from the Computational Methods in Systems Biology 2015 conference, 149 (November): 139–53. doi:<a href="https://doi.org/10.1016/j.biosystems.2016.07.009">10.1016/j.biosystems.2016.07.009</a>.</p>
+</div>
+<div id="ref-Pint">
+<p>Paulevé, Loïc. 2017. “Pint: A Static Analyzer for Transient Dynamics of Qualitative Networks with IPython Interface.” In <em>CMSB 2017 - 15th conference on Computational Methods for Systems Biology</em>, 10545:370–16. Lecture Notes in Computer Science. Springer. doi:<a href="https://doi.org/10.1007/978-3-319-67471-1\_20">10.1007/978-3-319-67471-1\_20</a>.</p>
+</div>
+<div id="ref-razzaq2018computational">
+<p>Razzaq, Misbah, Loïc Paulevé, Anne Siegel, Julio Saez-Rodriguez, Jérémie Bourdon, and Carito Guziolowski. 2018. “Computational Discovery of Dynamic Cell Line Specific Boolean Networks from Multiplex Time-Course Data.” <em>PLoS Computational Biology</em> 14 (10). Public Library of Science: e1006538.</p>
+</div>
+<div id="ref-stoll2017maboss">
+<p>Stoll, Gautier, Barthélémy Caron, Eric Viara, Aurélien Dugourd, Andrei Zinovyev, Aurélien Naldi, Guido Kroemer, Emmanuel Barillot, and Laurence Calzone. 2017. “MaBoSS 2.0: An Environment for Stochastic Boolean Modeling.” <em>Bioinformatics</em> 33 (14). Oxford University Press: 2226–8.</p>
+</div>
+<div id="ref-stoll2012continuous">
+<p>Stoll, Gautier, Eric Viara, Emmanuel Barillot, and Laurence Calzone. 2012. “Continuous Time Boolean Modeling for Biological Signaling: Application of Gillespie Algorithm.” <em>BMC Systems Biology</em> 6 (1). BioMed Central: 116.</p>
+</div>
+<div id="ref-terfvecellnoptr2012">
+<p>Terfve, Camille, Thomas Cokelaer, David Henriques, Aidan MacNamara, Emanuel Goncalves, Melody K. Morris, Martijn van Iersel, Douglas A. Lauffenburger, and Julio Saez-Rodriguez. 2012. “CellNOptR: A Flexible Toolkit to Train Protein Signaling Networks to Data Using Multiple Logic Formalisms.” <em>BMC Systems Biology</em> 6 (1): 133. doi:<a href="https://doi.org/10.1186/1752-0509-6-133">10.1186/1752-0509-6-133</a>.</p>
+</div>
+<div id="ref-thomas1973boolean">
+<p>Thomas, René. 1973. “Boolean Formalization of Genetic Control Circuits.” <em>Journal of Theoretical Biology</em> 42 (3). Elsevier: 563–85.</p>
+</div>
+<div id="ref-thomas1990biological">
+<p>Thomas, René, and Richard d’Ari. 1990. <em>Biological Feedback</em>. CRC press.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mechanistic-cancer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="personalization-of-logical-models-methods-and-prognostic-validation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PhdThesis.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

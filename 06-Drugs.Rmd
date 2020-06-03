@@ -1,0 +1,47 @@
+
+# Personalized logical models to study an interpret drug response
+
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\epigraph{"TBD."}{?}')
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output(
+  '>*TBD*  
+  >?')
+```
+
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\initial{T}he notion of modeling')
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output('The notion of modeling.')
+```
+
+```{r 6_packages, echo=FALSE, warning=FALSE, message=FALSE}
+invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra"),
+       FUN = require,
+       character.only = TRUE))
+
+knitr::opts_chunk$set(
+  cache = TRUE, echo = FALSE, warning = FALSE, message = FALSE,
+  out.width = "90%",
+  #fig.pos = "ht",
+  fig.align = "center"
+  )
+```
+
+## One step further with drugs
+
+### Methods
+
+### Brute force
+
+## A case study on BRAF in melanoma and colorectal cancers
+
+## Limitations and perspectives illustrated by a prostate cancer study
+
+A model is first of all an ambiguous object and a polysemous word. It therefore seems necessary to start with a semantic study. Among the many 
+
+
