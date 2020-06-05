@@ -88,10 +88,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Text box
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor}
 \usepackage{tcolorbox}
-\newtcolorbox{textbox}{
-  colback=gray,
-  colframe=black,
+\newtcolorbox{summarybox}{
+  colback=lightgray,
+  colframe=teal,
   coltext=black,
   boxsep=5pt,
   arc=4pt}
@@ -254,6 +255,7 @@ interpretation of models and their contributions: clinical applications
 and statistical evaluation}
 \date{23/09/2020}
 
+\let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \maketitle
 
@@ -1071,7 +1073,7 @@ Lewis Carroll, \emph{Sylvie and Bruno} (1893)
 \chapter{Cancer as deregulation of complex
 machinery}\label{cancer-as-deregulation-of-complex-machinery}
 
-\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}
+\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka)}
 
 \initial{A}rmed with all these models, whether statistical or
 mechanistic, we are going to look at cancer, a particularly complex
@@ -2275,8 +2277,8 @@ presented above is to consider their relationship to biological data.
 Those that make little use of these data are essentially theoretical
 scope models that describe the general functioning of signaling pathways
 and associated systems \citep{calzone2010mathematical}. Other models
-propose more quantitative models but require much more data, either
-experimental data generated for the occasion or the use of databases to
+propose more quantitative models but require much more data, either from
+databases or experimental data generated for this purpose in order to
 fit the parameters. In the latter case, the necessary data is usually
 perturbation data: How does my system react to this or that inhibition
 or activation? For a single cell line this already corresponds to a
@@ -2293,8 +2295,11 @@ provide qualitative clinical interpretation with a small amount of data,
 accessible even in patients?} In this part, a middle way will be
 described to answer positively to this question. This methodology will
 be based on a historically qualitative mathematical formalism already
-presented in the previous chapter under the name of logical modelling.
+presented in the previous chapter under the name of logical modeling.
+Logical modeling in general will be detailed in this chapter before
+describing an original customized approach in the next two chapters.
 
+\BeginKnitrBlock{summarybox}
 \subsubsection*{Publications}\label{publications}
 \addcontentsline{toc}{subsubsection}{Publications}
 
@@ -2302,6 +2307,7 @@ This chapter presents the theoretical bases of logical modeling and the
 tools used thereafter. It does not present any original work but refers
 to the synthesis and analyses of logical modeling as described in
 \citet{beal2019personalization} and \citet{beal2020modelisation}.
+\EndKnitrBlock{summarybox}
 
 \section{Logical modeling paradigms for qualitative
 description}\label{logical-modeling-paradigms-for-qualitative-description}
@@ -2506,12 +2512,11 @@ delays; to identify existing models, etc. Among them, we can cite GINsim
 \citep{klarner2016pyboolnet}, BooleanNet \citep{albert2008boolean},
 CellCollective \citep{helikar2012cell}, bioLQM \citep{naldi2018biolqm},
 MaBoSS \citep{stoll2012continuous, stoll2017maboss}, PINT \citep{Pint},
-CaspoTS \citep{ostrowskiboolean2016}, or CellNOptR
-\citep{terfvecellnoptr2012}. A detailed discussion and comparison of
-these tools is presented in an article incorporating many of these
-approaches. The interaction between all these tools, their
-interoperability and complementarity are highlighted in the form of a
-notebook jupyter \citep{naldi2018colomoto}.
+CaspoTS \citep{ostrowski2016boolean}, or CellNOptR
+\citep{terfve2012cellnoptr}. The interaction between all these tools,
+their interoperability and complementarity are highlighted in the form
+of a notebook jupyter \citep{naldi2018colomoto}, and some of them are
+mentioned in section \ref{logical-data-ssection}.
 
 \section{The MaBoSS framework for logical
 modeling}\label{maboss-section}
@@ -2519,16 +2524,16 @@ modeling}\label{maboss-section}
 In the present study, all simulations have been performed with MaBoSS, a
 \textbf{Ma}rkovian \textbf{Bo}olean \textbf{S}tochastic
 \textbf{S}imulator whose design is summarized in Figure \ref{fig:maboss}
-and precisely described by \citet{stoll_continuous_2012} and
-\citet{stoll_maboss_2017}. This framework is based on an asynchronous
+and precisely described by \citet{stoll2012continuous} and
+\citet{stoll2017maboss}. This framework is based on an asynchronous
 update scheme combined with a continuous time feature obtained with
-Gillespie algorithm \citep{gillespie_general_1976}, allowing simulations
+Gillespie algorithm \citep{gillespie1976general}, allowing simulations
 to be continuous in time despite the discrete nature of logical
 modeling.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{fig/maboss} 
+{\centering \includegraphics[width=1\linewidth]{fig/maboss} 
 
 }
 
@@ -2538,8 +2543,14 @@ graph, logical rules and transition rates. (B) A coresponding state
 transition graph with two possible transitions in asynchronous update
 for a given initial state; each transition has an associated
 probability. (C) Random selection of a specific transition and time by
-the Gillespie algorithm from two uniform random variables. (D)}\label{fig:maboss}
+the Gillespie algorithm from two uniform random variables. (D) Schematic
+representation of a logical model simulation with MaBoSS: average
+trajectory obtained from the mean of many individual stochastic
+trajectories.}\label{fig:maboss}
 \end{figure}
+
+
+
 
 
 
@@ -2562,7 +2573,7 @@ levels reflecting different orders of magnitude: post-translational
 modifications are quicker than transcriptions for instance. They can
 also be used to vary speeds depending on inputs or even to adapt
 multi-valued logical mechanisms in a binary framework
-\citep{stoll_continuous_2012}. These transition rates are translated as
+\citep{stoll2012continuous}. These transition rates are translated as
 transition probabilities in order to determine the actual transition
 (Figure \ref{fig:maboss}B). Indeed, the probability for each possible
 transition to be chosen for the next update is the ratio of its
@@ -2631,37 +2642,437 @@ available. How is this possible in a formalism that is by definition
 quite abstract?
 
 \section{Data integration and semi-quantitative logical
-modeling}\label{data-integration-and-semi-quantitative-logical-modeling}
+modeling}\label{logical-data-ssection}
 
-The use of biological data to support modelling is now widespread.
-However, it can occur at different stages of the modelling cycle
-described in Figure \ref{fig:cycle}
+The higher level of abstraction of the logical formalism sometimes makes
+the necessary back and forth between theoretical modeling and
+experimental or clinical data less easy. However, many theoretical
+approaches have been developed over the years to enable this dialogue at
+all stages, from the construction to the validation of a logical model,
+as summarized in Figure \ref{fig:logical-data}. This section summarizes
+some of these approaches to show how the use of biological data enriches
+logical models and brings them closer to clinical applications in
+precision medicine and in order to better contextualize the original
+approach presented in the following chapter. It should be noted that the
+methods presented below are all applicable to logic models, and
+illustrated with such examples where possible. However, some methods are
+not specific to this formalism and can be applied to other models.
 
-\subsection{Data to prepare the model}\label{data-to-prepare-the-model}
+\begin{figure}
 
-\subsection{Data to define the rules}\label{data-to-define-the-rules}
+{\centering \includegraphics[width=0.9\linewidth]{fig/logical-data} 
 
-\subsection{Data to validate the
-model}\label{data-to-validate-the-model}
+}
 
-\chapter{Personalization of logical models: methods and prognostic
-validation}\label{personalization-of-logical-models-methods-and-prognostic-validation}
+\caption[Main principles of MaBoSS simulation framework and Gillespie algorithm]{\textbf{Data integration in logical
+modeling.} The main types of data used are shown on the left; the
+essential steps of the logical modeling are shown linearly on the right.}\label{fig:logical-data}
+\end{figure}
 
-\epigraph{"TBD."}{?}
 
-\initial{T}he notion of modeling
+
+
+
+\subsection{Build the regulatory
+graph}\label{build-the-regulatory-graph}
+
+Faced with a biological question (Figure \ref{fig:logical-data}, first
+step), it is crucial to identify the main actors in the process in order
+to define the outline of the model (Figure \ref{fig:logical-data},
+second step). A first approach relies on the existing scientific
+literature on the topic: which biological species and which interactions
+have been identified as relevant to my problem? In a more automatic way,
+it is possible to extract information from different databases in order
+to establish a first list of biological entities and interactions
+associated with a biological phenomenon or even a gene of interest
+\citep[\citet{perfetto2016signor}]{kanehisa2012kegg}. As an example,
+starting from the study of E2F1 gene as the hub of many regulatory
+mechanisms, \citet{khan2017unraveling} have reconstructed a dense
+network of interactions in the vicinity of E2F1, which will be used for
+the construction of their subsequent model. The main difficulty here is
+to choose and select the relevant biological information adapted to the
+context of the model to be created, depending for example on the type of
+cancer studied or the desired level of precision.
+
+But if the literature can be considered as processed data, it is also
+possible to use directly experimental data related to the problem under
+study. Key actors of biological processes identified by statistical
+analysis, such as differentially expressed genes or the most frequently
+mutated genes in a patient cohort, are selected and used as a starting
+point for the construction of the model \citep{remy2015modeling}. More
+comprehensive approaches can use differential analysis tools on
+signaling pathways, rather than individual genes, to choose the relevant
+processes to include by contrasting different groups of patients based
+on their grades, metstatic status, resistance to treatments etc.
+\citep[\citet{montagud2017conceptual}]{martignetti2016roma}. Similarly,
+the study of regulatory networks involving transcription factors may
+justify the use of ChIP-seq data to identify possible new
+transcriptional regulations not previously listed
+\citep{collombet2017logical}.
+
+Once the main actors have been identified, it is necessary to infer the
+links between them (Figure \ref{fig:logical-data}, third and fourth
+step). However, starting from a list of genes and proteins of interest,
+how can we ensure that the regulatory relationships are complete and
+relevant? While a careful reading of the literature can provide locally
+interesting information, the use of omics data is also a resource that
+can be declined to different levels of precision. The major interest of
+these methods, assuming that the data are adequate and sufficiently
+massive, is to be able to extract information as large as the dataset,
+potentially on hundreds of entities, and above all specific to the
+object of study: a cancer subtype or a particular cell line can thus
+generate their own interaction network \citep{lefebvre2010human}.
+Inference methods extract biological knowledge hidden in large
+databases, summarize it and represent it via networks. Many methods
+construct coexpression networks, which are non-oriented graphs, with
+different metrics and methods \citep{margolin2006aracne, vert2007new}.
+Other approaches seek to infer causal relations between components,
+allowing the reconstruction of directed graphs where the links between
+entities are oriented, and sometimes even signed as activating or
+inhibiting regulations. These methods often make use of time series
+\citep{hill2016inferring} or perturbation data
+\citep{meinshausen2016methods}, but also more recently from
+observational data \citep{verny2017learning}. The information extracted
+from the data is then directly readable in the form of activity flows as
+described in the SBGN standards \citep{novere2009systems}, thus
+providing a representation adapted to the construction of qualitative
+and a fortiori logical models \citep{le2015quantitative}. Closer to the
+objective of defining logical models, certain methods allow the study
+and inference of co-regulation expressed with logical operators
+\citep{elatili2007corn}, thus facilitating the passage from the
+definition of an interaction network to the construction of a true
+logical model.
+
+\subsection{Define the logical rules}\label{define-the-logical-rules}
+
+Precision must then be taken further by defining the logical rules that
+complete the network (Figure \ref{fig:logical-data}, fifth step). The
+first source of aggregated data to define logical rules is the
+scientific literature. The modeller looks for the state of knowledge on
+a given regulatory mechanism and translates it into a logical rule,
+according to the desired level of precision. For example, it has been
+observed that the protein kinase AKT can stabilize the oncogene MDM2 by
+phosphorylation, which leads to the degradation of p53 by forming a
+complex with it: this example can be translated by a simple inhibition
+relationship of AKT on p53 if this level of precision is considered
+sufficient or else intermediate species such as MDM2 can be used
+\citep{cohen2015mathematical}. Then, the effect of inhibition must be
+defined: can MDM2 alone inhibit p53 or does the presence of other
+activators outweigh this effect? This kind of considerations allows to
+define the logical combinations between the different inputs of a
+network node. In some cases, experimental data can be used to answer
+such questions: is a single activator sufficient or is the presence of
+all activators necessary? Which of the activator or inhibitor prevails
+in the case of simultaneous presence? While this information is often
+found in the literature, one should generate one's own experimental data
+to ensure an answer tailored to the study context, using a variety of
+experimental molecular biology techniques. For example, in order to
+elucidate the relationship between Foxo1 and Cebpa in a model of
+differentiation of myeloid and lymphoid cells,
+\citet{collombet2017logical} first established the physical relationship
+between these species by ChIP-seq before determining the nature of this
+relationship using an ectopic expression experiment of Foxo1 in
+macrophage cells.
+
+Other, more global approaches have been developed in recent years,
+driven by the influx of data from high-throughput sequencing techniques.
+Based on this rich and complex data, it has become possible to infer
+entire logical models, with precisely defined rules and interactions
+\citep{ostrowski2016boolean}. The algorithms CellNOpt
+\citep{terfve2012cellnoptr} and caspo \citep{videla2017caspo} provide
+two examples of these approaches, and more recently the SCNS tool
+described a graphical interface to infer logical models from single cell
+data \citep{woodhouse2018scns}. This model-inference goes beyond simpler
+structure-inference by defining the logical rules but it is generally
+based on a predefined topological structure to which time series or
+perturbation data are added. These data provide access to the response
+dynamics of a system. By questioning the way the system reacts, these
+data are therefore richer than a snapshot and thus facilitate the
+transition from correlation to causality, and thus the inference of
+logical rules. In practice, the use of proteomic or phospho-proteomic
+data is often recommended because these data account for the activity of
+the protein and are in fact the closest to the cellular response:
+\citep{ostrowski2016boolean, terfve2012cellnoptr, terfve2015largescale}.
+In spite of the richness of this type of data, model inference is
+sometimes still an under-determined problem that can lead to a large
+number of models with different logical equally compatible with the
+data. In such situations, it is then a matter of choosing the model on
+the basis of biological relevance criteria or of accepting to use
+families of models instead of limiting oneself to a single model
+\citep{videla2017caspo}. In all cases, constructing logical rules
+directly from data specific to the problem can make it possible to
+obtain logical rules that are also specific to the context or the system
+under study \citep{saezrodriguez2011comparing}. For example, the
+inference of logical models specific to one or some cancer cell lines is
+a powerful tool to study their particularities
+\citep{razzaq2018computational}.
+
+\subsection{Validate the model}\label{validate-the-model}
+
+Finally, the data can be used to validate the biological or clinical
+relevance of the models (Figure \ref{fig:logical-data}, sixth step).
+Compared to a system of differential equations, logical modelling has
+the particularity of being more abstract and therefore less directly
+reliable to an experimental reality for its validation. A system of
+differential equations can be compared to the chemical kinetics of the
+biological system under study. Compared to continuous formalisms, the
+dynamics of logic model simulation is more delicate to take into account
+but it is possible to verify it qualitatively, for example by validating
+the cyclic nature of activation trajectories for a model simulating the
+cell cycle \citep{faure2006dynamical} or cellular decisions as a
+function of the activation signal \citep{calzone2010mathematical}. A
+second, more frequent approach consists in looking at the model's steady
+states and associating them with physiological conditions
+\citep[\citet{cohen2015mathematical}]{weinstein2017network}. Finally, a
+third strategy focuses on the asymptotic state reached during the
+stochastic simulation of the model(s), a state representing a mixture of
+the different steady states according to the probability that the model
+has of reaching them.
+
+In many models, to facilitate the analysis, nodes representing
+phenotypes have been added as ``read-out'' of the activity of certain
+entities. Thus, if a model includes a node named \emph{Proliferation},
+it will then be simpler to draw interpretations from the simulations
+performed with the model that will be linked to experimental
+observations of tumor growth or cell proliferation
+\citep{grieco2013integrative, steinway2015combinatorial}. To validate
+these models, the activity of phenotypes, when forcing some node
+activity to \(0\) or \(1\), is compared with the results of gene
+mutations reported in experiments carried out on mice or cell lines
+\citep{faure2006dynamical, cohen2015mathematical}. Another similar
+method for validating the relevance of a logic model is based on the
+analysis of the effects of different therapeutic molecules. The
+mechanistic nature of logic modeling makes it relatively easy to
+simulate the effect of these molecules. It is possible to simulate the
+effect of an inhibitory molecule by forcing the activity of its target
+to 0 and to compare with data
+\citep{zanudo2017network, iorio2016landscape, knijnenburg2016logic}.
+
+Beyond validation, some studies have predicted new therapeutic targets
+based on logical models, for instance by pointing out weaknesses in the
+topology of a regulatory system \citep{sahin2009modeling}. Taking
+advantage of the ease of modeling and multiplying combinations of
+therapeutic molecules, logical modeling has also proved fruitful in
+predicting the best therapeutic combinations and their synergies, in the
+context of gastric cancers for example \citep{flobak2015discovery}.
+Experimental confirmation of the predictions resulting from the modeling
+is then the ultimate stage in the validation of a logic model,
+completing the fruitful round trip between models and data.
+
+\chapter{Personalization of logical models: method and prognostic
+validation}\label{personalization-of-logical-models-method-and-prognostic-validation}
+
+\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}
+
+\initial{N}ow that logical modeling has been introduced in detail, it is
+possible to come back to the question that structures this part and to
+refine it. \textbf{Is it possible to use routine omics data to obtain
+logical models that provide qualitative clinical interpretation?}. We
+thus propose a sequential approach, separating the model construction
+process from the integration of biological data. A generic logical model
+is first built, based on the literature knowledge, and the data are then
+used to specify the model. Indeed, the model as defined from the
+literature is often generic in the sense that it summarizes the state of
+knowledge on a probably heterogeneous pathology or population. Assuming
+that this general regulatory scheme provides a relevant framework for
+the system, it may then be relevant to use more precise omics data to
+impose biologically sourced constraints on the model: inactivation of a
+gene in a patient, activation of a protein or a signalling pathway by
+overexpression or phosphorylation, etc. This approach, called
+\textbf{PROFILE}, allows the integration of both discrete (mutations)
+and continuous data (RNA expression levels, proteins) based on the
+MaBoSS software, and leads to specific models of a cell line or a
+patient.
+
+\BeginKnitrBlock{summarybox}
+\subsubsection*{Publications}\label{publications-1}
+\addcontentsline{toc}{subsubsection}{Publications}
+
+This chapter presents the method developed during the thesis to
+personlize logical models, i.e.~generate patient-specific models from a
+single generic one. The description of the method and analyses on
+patient data from TCGA have been comprehensively described in
+\citet{beal2019personalization} and briefly summarized in
+\citet{beal2020personalized}. Analyses on cell lines and PDX data are
+unpublished.
+\EndKnitrBlock{summarybox}
 
 \section{From one generic model to data-specific models with PROFILE
-mthod}\label{from-one-generic-model-to-data-specific-models-with-profile-mthod}
+method}\label{from-one-generic-model-to-data-specific-models-with-profile-method}
+
+The PROFILE method is summarized in Figure \ref{fig:PROFILE-abstract}
+and the different steps are successively described in the following
+subsections.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{fig/PROFILE-abstract} 
+
+}
+
+\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{Graphical abstract of PROFILE
+method to personalize logical models with omics data.} On the one hand
+(upper left), a generic logical model, in a MaBoSS format is derived
+from literature knowledge to serve as the starting-point. On the other
+hand (upper right), omics data are gathered (e.g., genome and
+transcriptome) as data frames, and processed through functional
+inference methods (for already discrete genome data) or
+binarization/normalization (for continuous expression data). The
+resulting patient profiles are used to perform model personalization,
+i.e.~adapt the generic model with patient data. The merging of the
+generic model with the patient profiles creates a personalized MaBoSS
+model per patient. Then, biological or clinical relevance of these
+patient-specific models can be assessed.}\label{fig:PROFILE-abstract}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Gathering knowledge and
+data}\label{gathering-knowledge-and-data}
+
+The first steps are therefore to build a logical model adapted to the
+biological question (Figure \ref{fig:PROFILE-abstract}, upper left) and
+to collect omics data that will be used to personalize the model (Figure
+\ref{fig:PROFILE-abstract}, upper right). The construction of the model
+can be based on literature or data (see previous chapter). In the latter
+case, the data used to build the model will preferably be distinct from
+those used to personalize the model.
+
+\subsubsection{A generic logical model of cancer
+pathways}\label{a-generic-logical-model-of-cancer-pathways}
+
+In this chapter, which is essentially methodological in nature, we will
+use a published logical model of cancer pathways to illustrate our
+PROFILE methodology. It is based on a regulatory network summarizing
+several key players and pathways involved in cancer mechanisms: RTKs,
+PI3K/AKT, WNT/\(\beta\)-catenin, TGF-\(\beta\)/Smads, Rb, HIF-1, p53 and
+ATM/ATR \citep{fumia2013boolean}. The later analyses will be mainly
+focused on two read-out nodes, \emph{Proliferation} and
+\emph{Apoptosis}. Based on the model's logical rules
+\emph{Proliferation} node is activated by any of the cyclins (CyclinA,
+CyclinB, CyclinD, and CyclinE) and is, thus, an indicator of cyclin
+activity as an abstraction and simplification of the cell cycle
+behavior. \emph{Apoptosis} node is regulated by Caspase 8 and Caspase 9.
+The generic model of Fumiã and Martins (2013) contains 98 nodes and 254
+edges. Further details and visual representation are provided in section
+\ref{appendix-fumia} and Figure \ref{fig:Fumia}. Model files are
+available in MaBoSS format in a dedicated
+\href{https://github.com/sysbio-curie/PROFILE/tree/master/Models/Fumia2013}{GitHub
+repository}.
+
+\subsubsection{Cancer data}\label{cancer-data}
+
+In order to showcase the method, breast-cancer patient data are gathered
+from METABRIC studies \citep{curtis2012genomic, pereira2016somatic}.
+1904 patients have data for both mutations, copy number alterations, RNA
+expression and clinical status (e.g relapse, survival). This number
+rises to 2504 patients if we only look at the mutations. Additional
+analyses were also performed based on the smaller and clinically less
+complete TCGA breast cancer data \citep{cancer2012comprehensive}. These
+are detailed in \citet{beal2019personalization} but not included in this
+thesis.
+
+\subsection{Adapting patient profiles to a logical
+model}\label{adapting-patient-profiles-to-a-logical-model}
+
+Before describing precisely the methodologies for using the data to
+generate patent-specific models, it is important to understand that
+these data will need to be transformed. This is the transformation of
+raw omics data into processed profiles that can be used directly in
+logical modeling.
+
+\subsubsection{Functional inference of discrete
+data}\label{functional-inference-of-discrete-data}
+
+Since the logical formalism is itself discrete, the integration of
+discrete data is more straightforward. The most natural idea, used in
+many previous works, is to interpret the effect of these alterations and
+to encode it discreetly in the model. For instance, a deleterious
+mutation is integrated into the model by setting the corresponding node
+to \(0\) and ignoring the logical rule associated to it. For activating
+mutation, the node is set to \(1\). The main obstacle is therefore to
+estimate the functional impact of the alterations in order to translate
+them as well as possible in the model.
+
+For mutations, based on the variant classification provided by the data,
+inactivating mutations (nonsense, frame-shift insertions or deletions
+and mutation in splice or translation start sites) are assumed to
+correspond to loss of function mutations and therefore the corresponding
+nodes of the model are forced to \(0\). Then, missense mutations are
+matched with OncoKB database \citep{chakravarty2017oncokb}: for each
+mutation present in the database, an effect is assessed (gain or loss of
+function assigned to \(1\) and \(0\), respectively) with a corresponding
+confidence based on expert and literature knowledge. Mutations targeting
+oncogenes (resp. tumor-suppressor genes), as defined in the 2020+ driver
+gene prediction method \citep{tokheim2016evaluating}, are assumed to be
+gain of function mutations (resp. loss of function) and therefore
+assigned to \(1\) (resp. \(0\)). To rule potential passenger mutations
+out, each assignment requires that the effect of the mutation has been
+identified as significant by predictive software based on protein
+structure such as SIFT \citep{kumar2009predicting} or PolyPhen
+\citep{adzhubei2010method}.
+
+For integration of copy number alterations, we use the discrete
+estimation of gain and loss of copies from GISTIC algorithm processing
+\citep{mermel2011gistic}. The loss of both alleles of a gene (labelled
+-2) can thus be interpreted as a 0. Conversely, a significant gain of
+copies (labelled +2) denotes a gene that tends to be more highly
+expressed although the interpretation is more uncertain.
+
+\subsubsection{Normalization of continuous
+data}\label{normalization-of-continuous-data}
+
+The integration of continuous data, such as RNA expression levels, in
+logical modeling is more difficult. The stochastic framework of MaBoSS
+provides however some possibilities. The main continuous mechanistic
+parameters of MaBoSS are the initial conditions of each node (its
+initial probability of being activated among the set of simulated
+stochastic trajectories) and the transition rates associated with the
+nodes (its probability to have its transition performed in an
+asynchronous update). In order to facilitate the use of continuous data
+through one of these two possibilities, we propose to transform them so
+that the values are continuous between 0 and 1, what we will refer to
+hereafter as normalized data. It is assumed that these continuous data
+can be good proxies of activity, 0 corresponding to a very low level of
+activity of the biological entity and 1 to a very high level. This
+assumption will have to be explained and justified each time: high level
+of expression of an RNA or significant phosphorylation of a protein
+interpreted as continuous markers of an important biological activity
+for example.
+
+One of the assumptions of our analysis is that the interpretation of
+continuous data can only be relative and not absolute. It is indeed
+difficult to define an absolute threshold of RNA level at which a gene
+will be considered as activated. This may depend on contexts,
+technologies or even the way in which the data have been processed. On
+the other hand, it is possible to estimate that a gene is over-expressed
+for a patient compared to a cohort of interest. In contrast, the effect
+of a mutation can be estimated more independently. Thus, the continuous
+data will be normalized for the whole cohort studied, for each gene
+individually. In order to retain biological information as much as
+possible, distribution patterns are identified and normalized in
+different ways.
+
+\subsection{Personalizing logical models with patient
+data}\label{personalizing-logical-models-with-patient-data}
 
 \section{An integration tool for high-dimensional data in cell
 lines}\label{an-integration-tool-for-high-dimensional-data-in-cell-lines}
 
 \section{An uncertain validation with patient
 data}\label{an-uncertain-validation-with-patient-data}
-
-A model is first of all an ambiguous object and a polysemous word. It
-therefore seems necessary to start with a semantic study. Among the many
 
 \chapter{Personalized logical models to study an interpret drug
 response}\label{personalized-logical-models-to-study-an-interpret-drug-response}
@@ -2688,10 +3099,50 @@ therefore seems necessary to start with a semantic study. Among the many
 \appendix \addcontentsline{toc}{chapter}{\appendixname}
 
 
+\chapter{About datasets}\label{about-datasets}
+
+\section{Cell lines}\label{cell-lines}
+
+\section{Patient-derived xenografts}\label{patient-derived-xenografts}
+
+\section{Patients}\label{patients}
+
 \chapter{About logical models}\label{about-logical-models}
 
-\section{Descritption of logical models used in this
-thesis}\label{descritption-of-logical-models-used-in-this-thesis}
+\section{Description of logical models used in this
+thesis}\label{description-of-logical-models-used-in-this-thesis}
+
+\subsection{Generic logical model of cancer
+pathways}\label{appendix-fumia}
+
+For this thesis, a published Boolean model from \citep{fumia2013boolean}
+has been used to illustrate our PROFILE methodology. This regulatory
+network summarizes several key players and pathways involved in cancer
+mechanisms such as RTKs, PI3K/AKT, WNT/\(\beta\)-catenin,
+TGF-\(\beta\)/Smads, Rb, HIF-1, p53 and ATM/ATR. An input node
+\emph{Acidosis} has been added, along with an output node
+\emph{Proliferation} used as a readout for the activity of any of the
+cyclins (\emph{CyclinA}, \emph{CyclinB}, \emph{CyclinD} and
+\emph{CyclinE}). This slightly extended model contains 98 nodes and 254
+edges and its inputs are \emph{Acidosis}, \emph{Nutrients}, \emph{Growth
+Factors} (GFs), \emph{Hypoxia}, \emph{TNFalpha}, \emph{ROS},
+\emph{PTEN}, \emph{p14ARF}, \emph{GLI}, \emph{FOXO}, \emph{APC} and
+\emph{MAX}. Its outputs are \emph{Proliferation}, \emph{Apoptosis},
+\emph{DNA\_repair}, \emph{DNA\_damage}, \emph{VEGF},
+\emph{Lactic\_acid}, \emph{GSH}, \emph{GLUT1} and \emph{COX412}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{fig/Fumia2013} 
+
+}
+
+\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINSIM representation of the logical model
+described in \citet{fumia2013boolean}.}}\label{fig:Fumia}
+\end{figure}
+
+
+
 
 \chapter{About causality}\label{about-causality}
 

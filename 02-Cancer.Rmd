@@ -1,13 +1,13 @@
 # Cancer as deregulation of complex machinery
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}')
+knitr::asis_output('\\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka)}')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
 knitr::asis_output(
-  '>*All happy families are alike; each unhappy family is unhappy in its own way.*<br/>
-  >Leo Tolstoy (Anna Karenina, 1877)')
+  '>*Does not the entireness of the complex hint at the perfection of the simple?*  
+   >Edgar Allan Poe (Eureka)')
 ```
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}

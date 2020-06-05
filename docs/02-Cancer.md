@@ -1,6 +1,6 @@
 # Cancer as deregulation of complex machinery
 
-\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}
+\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka)}
 
 
 
