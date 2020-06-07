@@ -19,7 +19,7 @@
 
 ## A case study on BRAF in melanoma and colorectal cancers
 
-## Limitations and perspectives illustrated by a prostate cancer study
+## Limitations and perspectives illustrated by a prostate cancer study {#prostate-model}
 
 A model is first of all an ambiguous object and a polysemous word. It therefore seems necessary to start with a semantic study. Among the many 
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  5 JUN 2020 20:03
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  7 JUN 2020 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1998,109 +1998,135 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [72]
+File: 05-Personalized_files/figure-latex/ERG-1.pdf Graphic file (type QTm)
+<use  "05-Personalized_files/figure-latex/ERG-1.pdf" >
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [73]
+Underfull \vbox (badness 1009) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [74]
+File: fig/bimodality.png Graphic file (type QTm)
+<use  "fig/bimodality.png" >
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[75]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[76]
+File: fig/logical-processing.png Graphic file (type QTm)
+<use  "fig/logical-processing.png" >
+
+LaTeX Warning: Reference `PROFILE-abstract' on page 77 undefined on input line 
+3236.
+
+
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[77]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[78]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[75
+[79
 
 ]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[76] [77
-
-] [78
-
-]
-File: fig/Fumia2013.png Graphic file (type QTm)
-<use  "fig/Fumia2013.png" > [79] [80] [81
+[80] [81
 
 ] [82
 
-] (./PhdThesis.bbl [83] [84
+]
+File: fig/Fumia2013.png Graphic file (type QTm)
+<use  "fig/Fumia2013.png" > [83] [84] [85
 
-] [85]
+] [86
+
+] (./PhdThesis.bbl [87] [88
+
+] [89]
 Underfull \hbox (badness 1038) in paragraph at lines 139--144
 []\TU/lmr/m/n/12 Sébastien Benzekry, Clare Lamont, Afshin Beheshti, Amanda Trac
 z,
  []
 
-[86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97]
-Underfull \hbox (badness 10000) in paragraph at lines 1032--1039
+[90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102]
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1048
 []\TU/lmr/m/n/12 Livia Perfetto, Leonardo Briganti, Alberto Calderone, Andrea
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 1032--1039
+Underfull \hbox (badness 2772) in paragraph at lines 1041--1048
 \TU/lmr/m/n/12 Cerquone Perpetuini, Marta Iannuccelli, Francesca Langone, Lu-
  []
 
-[98] [99]
-Underfull \hbox (badness 3482) in paragraph at lines 1116--1122
+[103]
+Underfull \hbox (badness 3482) in paragraph at lines 1125--1131
 []\TU/lmr/m/n/12 Julio Saez-Rodriguez, Leonidas G Alexopoulos, MingSheng Zhang,
 
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 1125--1134
+Underfull \hbox (badness 2726) in paragraph at lines 1134--1143
 []\TU/lmr/m/n/12 Julio Saez-Rodriguez, Leonidas G. Alexopoulos, MingSheng Zhang
 ,
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 1137--1143
+Underfull \hbox (badness 2027) in paragraph at lines 1146--1152
 []\TU/lmr/m/n/12 Özgür Sahin, Holger Fröhlich, Christian Löbke, Ulrike Korf, Sa
 ra
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 1137--1143
+Underfull \hbox (badness 1622) in paragraph at lines 1146--1152
 \TU/lmr/m/n/12 Burmester, Meher Majety, Jens Mattern, Ingo Schupp, Claudine
  []
 
-[100] [101] [102] [103])
+[104] [105] [106] [107])
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 3161.
+(in both cases you will find help in the memoir manual). on input line 3330.
 
-[104] [105
+[108] [109
 
 
 ]
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 3161.
+(Font)              scaled to size 9.14278pt on input line 3330.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 3161--3161
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 3330--3330
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 3161.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 3330.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 3161.
+(Font)              <11> on input line 3330.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 3161.
+(Font)              <7.69997> on input line 3330.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 3161.
+(Font)              <5.5> on input line 3330.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 3161--3161
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 3161--3161
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 3330--3330
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 3161--3161
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 3330--3330
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 3330--3330
 [][] 
  []
 
@@ -2113,23 +2139,26 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 3161--3161
 \tf@lof=\write10
 \openout10 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3161.
-[106]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3161.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3330.
+[110]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3330.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3161.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3161.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3330.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3330.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 38550 strings out of 493005
- 735033 string characters out of 6134597
- 892505 words of memory out of 5000000
- 41912 multiletter control sequences out of 15000+600000
+ 38570 strings out of 493005
+ 735441 string characters out of 6134597
+ 895119 words of memory out of 5000000
+ 41928 multiletter control sequences out of 15000+600000
  49075 words of font info for 109 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,15n,120p,10407b,969s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PhdThesis.pdf (125 pages).
+Output written on PhdThesis.pdf (129 pages).
