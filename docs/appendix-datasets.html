@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A About datasets | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</title>
+  <meta name="description" content="This is my PhD thesis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A About datasets | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is my PhD thesis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A About datasets | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  
+  <meta name="twitter:description" content="This is my PhD thesis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="personalized-logical-models-to-study-an-interpret-drug-response.html"/>
+<link rel="next" href="about-logical-models.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Jonas BÉAL</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>PhD Thesis</a></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="resumé.html"><a href="resumé.html"><i class="fa fa-check"></i>Resumé</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Cells and their models</b></span></li>
+<li class="chapter" data-level="1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html"><i class="fa fa-check"></i><b>1</b> Scientific modeling: abstract the complexity</a><ul>
+<li class="chapter" data-level="1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#what-is-a-model"><i class="fa fa-check"></i><b>1.1</b> What is a model?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#in-your-own-words"><i class="fa fa-check"></i><b>1.1.1</b> In your own words</a></li>
+<li class="chapter" data-level="1.1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#physical-world-and-world-of-ideas"><i class="fa fa-check"></i><b>1.1.2</b> Physical world and world of ideas</a></li>
+<li class="chapter" data-level="1.1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#preview-about-cancer-models"><i class="fa fa-check"></i><b>1.1.3</b> Preview about cancer models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#stat-mech"><i class="fa fa-check"></i><b>1.2</b> Statistics or mechanistic</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#the-inside-of-the-box"><i class="fa fa-check"></i><b>1.2.1</b> The inside of the box</a></li>
+<li class="chapter" data-level="1.2.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#lotkasection"><i class="fa fa-check"></i><b>1.2.2</b> A tale of prey and predators</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#simplicity-is-the-ultimate-sophistication"><i class="fa fa-check"></i><b>1.3</b> Simplicity is the ultimate sophistication</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html"><i class="fa fa-check"></i><b>2</b> Cancer as deregulation of complex machinery</a><ul>
+<li class="chapter" data-level="2.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#what-is-cancer"><i class="fa fa-check"></i><b>2.1</b> What is cancer?</a></li>
+<li class="chapter" data-level="2.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#epidemio"><i class="fa fa-check"></i><b>2.2</b> Cancer from a distance: epidemiology and main figures</a></li>
+<li class="chapter" data-level="2.3" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#molecular-biology"><i class="fa fa-check"></i><b>2.3</b> Basic molecular biology and cancer</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#central-dogma-and-core-principles"><i class="fa fa-check"></i><b>2.3.1</b> Central dogma and core principles</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#a-rogue-machinery"><i class="fa fa-check"></i><b>2.3.2</b> A rogue machinery</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#the-new-era-of-genomics"><i class="fa fa-check"></i><b>2.4</b> The new era of genomics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-sequencing-to-multi-omics-data"><i class="fa fa-check"></i><b>2.4.1</b> From sequencing to multi-omics data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#state-of-the-art-of-cancer-data"><i class="fa fa-check"></i><b>2.4.2</b> State-of-the art of cancer data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#data-and-beyond-from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> Data and beyond: from genetic to network disease</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html"><i class="fa fa-check"></i><b>3</b> Mechanistic modeling of cancer: from complex disease to systems biology</a><ul>
+<li class="chapter" data-level="3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#introducing-the-diversity-of-mechanistic-models-of-cancer"><i class="fa fa-check"></i><b>3.1</b> Introducing the diversity of mechanistic models of cancer</a></li>
+<li class="chapter" data-level="3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#cell-circuitry-and-the-need-for-cancer-systems-biology"><i class="fa fa-check"></i><b>3.2</b> Cell circuitry and the need for cancer systems biology</a></li>
+<li class="chapter" data-level="3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#mechanistic-models-of-molecular-signaling"><i class="fa fa-check"></i><b>3.3</b> Mechanistic models of molecular signaling</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#networks-and-data"><i class="fa fa-check"></i><b>3.3.1</b> Networks and data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#different-formalisms-for-different-applications"><i class="fa fa-check"></i><b>3.3.2</b> Different formalisms for different applications</a></li>
+<li class="chapter" data-level="3.3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#some-examples-of-complex-features"><i class="fa fa-check"></i><b>3.3.3</b> Some examples of complex features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#from-mechanistic-models-to-clinical-impact"><i class="fa fa-check"></i><b>3.4</b> From mechanistic models to clinical impact?</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#a-new-class-of-biomarkers"><i class="fa fa-check"></i><b>3.4.1</b> A new class of biomarkers</a></li>
+<li class="chapter" data-level="3.4.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#prognostic-models"><i class="fa fa-check"></i><b>3.4.2</b> Prognostic models</a></li>
+<li class="chapter" data-level="3.4.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#predictive-models"><i class="fa fa-check"></i><b>3.4.3</b> Predictive models</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Personalized logical models of cancer</b></span></li>
+<li class="chapter" data-level="4" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html"><i class="fa fa-check"></i><b>4</b> Logical modeling principles and data integration</a><ul>
+<li class="chapter" data-level="4.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-modeling-paradigms-for-qualitative-description"><i class="fa fa-check"></i><b>4.1</b> Logical modeling paradigms for qualitative description</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#regulatory-graph-and-logical-rules"><i class="fa fa-check"></i><b>4.1.1</b> Regulatory graph and logical rules</a></li>
+<li class="chapter" data-level="4.1.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#state-transition-graph-and-updates"><i class="fa fa-check"></i><b>4.1.2</b> State transition graph and updates</a></li>
+<li class="chapter" data-level="4.1.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#tools-for-logical-modeling"><i class="fa fa-check"></i><b>4.1.3</b> Tools for logical modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#maboss-section"><i class="fa fa-check"></i><b>4.2</b> The MaBoSS framework for logical modeling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#gillespie-algorithm"><i class="fa fa-check"></i><b>4.2.1</b> Gillespie algorithm</a></li>
+<li class="chapter" data-level="4.2.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#a-stochastic-exploration-of-model-behaviours"><i class="fa fa-check"></i><b>4.2.2</b> A stochastic exploration of model behaviours</a></li>
+<li class="chapter" data-level="4.2.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#from-theoretical-models-to-data-models"><i class="fa fa-check"></i><b>4.2.3</b> From theoretical models to data models?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-data-ssection"><i class="fa fa-check"></i><b>4.3</b> Data integration and semi-quantitative logical modeling</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#build-the-regulatory-graph"><i class="fa fa-check"></i><b>4.3.1</b> Build the regulatory graph</a></li>
+<li class="chapter" data-level="4.3.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#define-the-logical-rules"><i class="fa fa-check"></i><b>4.3.2</b> Define the logical rules</a></li>
+<li class="chapter" data-level="4.3.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#validate-the-model"><i class="fa fa-check"></i><b>4.3.3</b> Validate the model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html"><i class="fa fa-check"></i><b>5</b> Personalization of logical models: method and prognostic validation</a><ul>
+<li class="chapter" data-level="5.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#from-one-generic-model-to-data-specific-models-with-profile-method"><i class="fa fa-check"></i><b>5.1</b> From one generic model to data-specific models with PROFILE method</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#gathering-knowledge-and-data"><i class="fa fa-check"></i><b>5.1.1</b> Gathering knowledge and data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#adapting-patient-profiles-to-a-logical-model"><i class="fa fa-check"></i><b>5.1.2</b> Adapting patient profiles to a logical model</a></li>
+<li class="chapter" data-level="5.1.3" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#personalizing-logical-models-with-patient"><i class="fa fa-check"></i><b>5.1.3</b> Personalizing logical models with patient</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#PROFILE-CL"><i class="fa fa-check"></i><b>5.2</b> An integration tool for high-dimensional data in cell lines</a></li>
+<li class="chapter" data-level="5.3" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#an-uncertain-validation-with-patient-data"><i class="fa fa-check"></i><b>5.3</b> An uncertain validation with patient data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html"><i class="fa fa-check"></i><b>6</b> Personalized logical models to study an interpret drug response</a><ul>
+<li class="chapter" data-level="6.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#one-step-further-with-drugs"><i class="fa fa-check"></i><b>6.1</b> One step further with drugs</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#methods"><i class="fa fa-check"></i><b>6.1.1</b> Methods</a></li>
+<li class="chapter" data-level="6.1.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#brute-force"><i class="fa fa-check"></i><b>6.1.2</b> Brute force</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#a-case-study-on-braf-in-melanoma-and-colorectal-cancers"><i class="fa fa-check"></i><b>6.2</b> A case study on BRAF in melanoma and colorectal cancers</a></li>
+<li class="chapter" data-level="6.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#prostate-model"><i class="fa fa-check"></i><b>6.3</b> Limitations and perspectives illustrated by a prostate cancer study</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-datasets.html"><a href="appendix-datasets.html"><i class="fa fa-check"></i><b>A</b> About datasets</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-cl"><i class="fa fa-check"></i><b>A.1</b> Cell lines</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#omics-profiles"><i class="fa fa-check"></i><b>A.1.1</b> Omics profiles</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#drug-screenings"><i class="fa fa-check"></i><b>A.1.2</b> Drug screenings</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#crispr-cas9-screening"><i class="fa fa-check"></i><b>A.1.3</b> CRISPR-Cas9 screening</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#patient-derived-xenografts"><i class="fa fa-check"></i><b>A.2</b> Patient-derived xenografts</a></li>
+<li class="chapter" data-level="A.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-datasets-patients"><i class="fa fa-check"></i><b>A.3</b> Patients</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#metabric"><i class="fa fa-check"></i><b>A.3.1</b> METABRIC</a></li>
+<li class="chapter" data-level="A.3.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#tcga-breast-cancer"><i class="fa fa-check"></i><b>A.3.2</b> TCGA: Breast cancer</a></li>
+<li class="chapter" data-level="A.3.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#tcga-prostate-cancer"><i class="fa fa-check"></i><b>A.3.3</b> TCGA: Prostate cancer</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-logical-models.html"><a href="about-logical-models.html"><i class="fa fa-check"></i><b>B</b> About logical models</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-fumia"><i class="fa fa-check"></i><b>B.1</b> Generic logical model of cancer pathways</a></li>
+<li class="chapter" data-level="B.2" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-pantolini"><i class="fa fa-check"></i><b>B.2</b> Logical model of BRAF pathways in melanoma and colorectal cancer</a></li>
+<li class="chapter" data-level="B.3" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-montagud"><i class="fa fa-check"></i><b>B.3</b> Logical model of prostate cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="about-causality.html"><a href="about-causality.html"><i class="fa fa-check"></i><b>C</b> About causality</a><ul>
+<li class="chapter" data-level="C.1" data-path="about-causality.html"><a href="about-causality.html#theoretical-framework"><i class="fa fa-check"></i><b>C.1</b> Theoretical framework</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix-datasets" class="section level1">
+<h1><span class="header-section-number">A</span> About datasets</h1>
+<div id="appendix-cl" class="section level2">
+<h2><span class="header-section-number">A.1</span> Cell lines</h2>
+<p>Several analyses in previous chapters are based on data derived from cell lines. Among the different databases, the ones used in the thesis are briefly described below. Please refer to corresponding references for additional details.</p>
+<div id="omics-profiles" class="section level3">
+<h3><span class="header-section-number">A.1.1</span> Omics profiles</h3>
+<p>The omics profiles of cancer cell lines have been downloaded from Cell Model Passports <span class="citation">(Meer et al. <a href="#ref-van2019cell">2019</a>)</span> containing genotypic and phenotypic information about more than 1000 cell lines. Among the available data used in this thesis are the exome sequencing, copy number variations and RNA-sequencing.</p>
+</div>
+<div id="drug-screenings" class="section level3">
+<h3><span class="header-section-number">A.1.2</span> Drug screenings</h3>
+<p>Information about response to treatments is retrieved from Genomics of Drug Sensitivity in Cancer Database (GDSC, <span class="citation">Yang et al. (<a href="#ref-yang2012genomics">2012</a>)</span>). In order to allow detailed analyses at the level of cancer types, we will restrict ourselves here to tissues represented by at least 20 cell lines and highlighted in dark grey in Figure <a href="appendix-datasets.html#fig:GDSC">A.1</a>A. Most of the 663 cell lines in this subcohort have a complete profile with all omics data (mutations, CNA and expression) and drug responses. However, not all cell lines have necessarily been tested for all drugs.</p>
+<div class="figure" style="text-align: center"><span id="fig:GDSC"></span>
+<img src="10-Appendix_files/figure-html/GDSC-1.png" alt="Distribution of cancer types and data types in GDSC-associated dataset. (A) Distribution of cell lines per cancer types, highlighting the ones selected in this thesis with more than 20 cell lines. (B) Availibility of data for the 663 selected cell lines in 17 different cancer types." width="90%" />
+<p class="caption">
+Figure A.1: <strong>Distribution of cancer types and data types in GDSC-associated dataset.</strong> (A) Distribution of cell lines per cancer types, highlighting the ones selected in this thesis with more than 20 cell lines. (B) Availibility of data for the 663 selected cell lines in 17 different cancer types.
+</p>
+</div>
+
+<p>The cell lines are treated with increasing concentration of drugs and the viability of the cell line relative to untreated control is measured. The dose-response relative viability curve is fitted and then used to compute the half maximal inhibitory concentration (<span class="math inline">\(IC_{50}\)</span>) and the area under the dose-response curve (AUC) <span class="citation">(Vis et al. <a href="#ref-vis2016multilevel">2016</a>)</span>, both being represented in Figure. Since the <span class="math inline">\(IC_{50}\)</span> values are often extrapolated outside the concentration range actually tested, we will focus on the AUC metric for all validation with drug screening data. AUC is a value between 0 and 1: values close to 1 mean that the relative viability has not been decreased, and lower values correspond to increased sensitivity to inhibitions. In cases where the ranges of concentrations tested for different drugs vary, comparison of their AUC values does not have a simple and straightforward interpretation.</p>
+<div class="figure" style="text-align: center"><span id="fig:AUC"></span>
+<img src="fig/AUC.png" alt="Drug screening metrics in cell lines. Based on a tested drug concentration range, \(IC_{50}\) and area under the dose-response curve (AUC) can be computed. For a given drug, red AUC corresponds to a more sensitive cell line than blue AUC." width="50%" />
+<p class="caption">
+Figure A.2: <strong>Drug screening metrics in cell lines.</strong> Based on a tested drug concentration range, <span class="math inline">\(IC_{50}\)</span> and area under the dose-response curve (AUC) can be computed. For a given drug, red AUC corresponds to a more sensitive cell line than blue AUC.
+</p>
+</div>
+
+</div>
+<div id="crispr-cas9-screening" class="section level3">
+<h3><span class="header-section-number">A.1.3</span> CRISPR-Cas9 screening</h3>
+<p>On top the previous drug response characterization, some CRISPR-Cas9 screenings have been performed on cancer cell lines. Very basically, this involves using single-guide RNAs (sgRNAs) to direct the targeted inhibition of certain genes. Conceptually, screening is not very different from drug screening since it allows the sensitivity of cell lines to the inhibition of certain targets to be studied. However, this technology makes it possible to target many more different genes since it is based on RNA guide synthesis and not on the existence of drugs with an affinity for the target of interest. Schematically, sreening is therefore broader (thousands of genes), less biased (any gene can be targeted a priori) and more precise (much lower off-target effect).</p>
+<p>Among the various databases available, the ones used in this thesis have been downloaded from Cell Model Passports and come from Sanger Institute <span class="citation">(Behan et al. <a href="#ref-behan2019prioritization">2019</a>)</span> and Broad Institute <span class="citation">(Meyers et al. <a href="#ref-meyers2017computational">2017</a>)</span>. Both databases present CRISPR inhibition results for thousands of genes for a few hundred cell lines among those presented in the previous section. The Sanger dataset for instance includes 324 cell lines, and 238 in common with the subcohort previously described in the previous section and in Figure <a href="appendix-datasets.html#fig:GDSC">A.1</a>.</p>
+<p>Among the different metrics, the examples presented in this thesis will focus on scaled Bayesian factors to assess the effect of CRISPR targeting of genes. These scores are computed based on the fold change distribution of sgRNA <span class="citation">(Hart and Moffat <a href="#ref-hart2016bagel">2016</a>)</span>. The highest values indicate that the targeted gene is essential to the cell fitness.</p>
+</div>
+</div>
+<div id="patient-derived-xenografts" class="section level2">
+<h2><span class="header-section-number">A.2</span> Patient-derived xenografts</h2>
+<p>Distributions and some figures</p>
+</div>
+<div id="appendix-datasets-patients" class="section level2">
+<h2><span class="header-section-number">A.3</span> Patients</h2>
+<div id="metabric" class="section level3">
+<h3><span class="header-section-number">A.3.1</span> METABRIC</h3>
+<p>METABRIC dataset is large breast cancer dataset with around 2000 patients. Mutations, CNA, expression (transcriptomics micro-array) and clinical data are available for a majority of patients (Figure <a href="appendix-datasets.html#fig:METABRIC">A.3</a>A), with 1904 patients for whom all the data is available. One of the particular features of these data is to propose a very long clinical follow-up, over more than 10 years (Figure <a href="appendix-datasets.html#fig:METABRIC">A.3</a>B).</p>
+<div class="figure" style="text-align: center"><span id="fig:METABRIC"></span>
+<img src="10-Appendix_files/figure-html/METABRIC-1.png" alt="Available omics and survival in METABRIC Breast Cancer dataset. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram. (B) Overall survival probability for all patients with clinical follow-up, stratified per breast cancer PAM50 subtype; administrative censoring at 180 months." width="90%" />
+<p class="caption">
+Figure A.3: <strong>Available omics and survival in METABRIC Breast Cancer dataset</strong>. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram. (B) Overall survival probability for all patients with clinical follow-up, stratified per breast cancer PAM50 subtype; administrative censoring at 180 months.
+</p>
+</div>
+
+</div>
+<div id="tcga-breast-cancer" class="section level3">
+<h3><span class="header-section-number">A.3.2</span> TCGA: Breast cancer</h3>
+<p>Another reference database for breast cancer is the one from the TCGA consortium <span class="citation">(Network and others <a href="#ref-cancer2012comprehensive">2012</a>)</span>. The cohort is smaller than METABRIC and its clinical follow-up is more limited. In contrast, the omics data are more comprehensive and include RNA sequencing and relative quantification ofsproteins with RPPA technology (Figure <a href="appendix-datasets.html#fig:TCGA-bp">A.4</a>A).</p>
+<div class="figure" style="text-align: center"><span id="fig:TCGA-bp"></span>
+<img src="10-Appendix_files/figure-html/TCGA-bp-1.png" alt="Available omics for TCGA Breast and Prostate cancer. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma) study." width="70%" />
+<p class="caption">
+Figure A.4: <strong>Available omics for TCGA Breast and Prostate cancer</strong>. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma) study.
+</p>
+</div>
+
+</div>
+<div id="tcga-prostate-cancer" class="section level3">
+<h3><span class="header-section-number">A.3.3</span> TCGA: Prostate cancer</h3>
+<p>Similarly, for prostate cancer, reference can be made to data from the TCGA study <span class="citation">(Abeshouse et al. <a href="#ref-abeshouse2015molecular">2015</a>)</span>, which has the same type of data but for a smaller number of patients than the breast cancer (Figure <a href="appendix-datasets.html#fig:TCGA-bp">A.4</a>B).</p>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-abeshouse2015molecular">
+<p>Abeshouse, Adam, Jaeil Ahn, Rehan Akbani, Adrian Ally, Samirkumar Amin, Christopher D Andry, Matti Annala, et al. 2015. “The Molecular Taxonomy of Primary Prostate Cancer.” <em>Cell</em> 163 (4). Elsevier: 1011–25.</p>
+</div>
+<div id="ref-behan2019prioritization">
+<p>Behan, Fiona M, Francesco Iorio, Gabriele Picco, Emanuel Gonçalves, Charlotte M Beaver, Giorgia Migliardi, Rita Santos, et al. 2019. “Prioritization of Cancer Therapeutic Targets Using Crispr–Cas9 Screens.” <em>Nature</em> 568 (7753). Nature Publishing Group: 511.</p>
+</div>
+<div id="ref-hart2016bagel">
+<p>Hart, Traver, and Jason Moffat. 2016. “BAGEL: A Computational Framework for Identifying Essential Genes from Pooled Library Screens.” <em>BMC Bioinformatics</em> 17 (1). Springer: 164.</p>
+</div>
+<div id="ref-van2019cell">
+<p>Meer, Dieudonne van der, Syd Barthorpe, Wanjuan Yang, Howard Lightfoot, Caitlin Hall, James Gilbert, Hayley E Francies, and Mathew J Garnett. 2019. “Cell Model Passports—a Hub for Clinical, Genetic and Functional Datasets of Preclinical Cancer Models.” <em>Nucleic Acids Research</em> 47 (D1). Oxford University Press: D923–D929.</p>
+</div>
+<div id="ref-meyers2017computational">
+<p>Meyers, Robin M, Jordan G Bryan, James M McFarland, Barbara A Weir, Ann E Sizemore, Han Xu, Neekesh V Dharia, et al. 2017. “Computational Correction of Copy Number Effect Improves Specificity of Crispr–Cas9 Essentiality Screens in Cancer Cells.” <em>Nature Genetics</em> 49 (12). Nature Publishing Group: 1779–84.</p>
+</div>
+<div id="ref-cancer2012comprehensive">
+<p>Network, Cancer Genome Atlas, and others. 2012. “Comprehensive Molecular Portraits of Human Breast Tumours.” <em>Nature</em> 490 (7418). Nature Publishing Group: 61.</p>
+</div>
+<div id="ref-vis2016multilevel">
+<p>Vis, Daniel J, Lorenzo Bombardelli, Howard Lightfoot, Francesco Iorio, Mathew J Garnett, and Lodewyk FA Wessels. 2016. “Multilevel Models Improve Precision and Speed of Ic50 Estimates.” <em>Pharmacogenomics</em> 17 (7). Future Medicine: 691–700.</p>
+</div>
+<div id="ref-yang2012genomics">
+<p>Yang, Wanjuan, Jorge Soares, Patricia Greninger, Elena J Edelman, Howard Lightfoot, Simon Forbes, Nidhi Bindal, et al. 2012. “Genomics of Drug Sensitivity in Cancer (Gdsc): A Resource for Therapeutic Biomarker Discovery in Cancer Cells.” <em>Nucleic Acids Research</em> 41 (D1). Oxford University Press: D955–D961.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="personalized-logical-models-to-study-an-interpret-drug-response.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="about-logical-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PhdThesis.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

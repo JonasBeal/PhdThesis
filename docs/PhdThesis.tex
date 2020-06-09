@@ -2972,7 +2972,8 @@ available in MaBoSS format in a dedicated
 \href{https://github.com/sysbio-curie/PROFILE/tree/master/Models/Fumia2013}{GitHub
 repository}.
 
-\subsubsection{Cancer data}\label{cancer-data}
+\subsubsection{Cancer data to feed the
+models}\label{cancer-data-to-feed-the-models}
 
 In order to showcase the method, breast-cancer patient data are gathered
 from METABRIC studies \citep{curtis2012genomic, pereira2016somatic}.
@@ -2982,7 +2983,17 @@ rises to 2504 patients if we only look at the mutations. Additional
 analyses were also performed based on the smaller and clinically less
 complete TCGA breast cancer data \citep{cancer2012comprehensive}. These
 are detailed in \citet{beal2019personalization} but not included in this
-thesis.
+thesis. A more comprehensive description of these two databases can be
+found in section \ref{appendix-datasets-patients}.
+
+In addition to these examples proposed in the original article, an
+application to cell line data is proposed in section \ref{PROFILE-CL} to
+link to the next chapters. \ref{appendix-cl} In all cases, samples and
+cell lines will sometimes be referred to as patients for the sake of
+simplicity.
+
+Details on the different datasets can be found in the appendix, section
+\ref{appendix-datasets}.
 
 \subsection{Adapting patient profiles to a logical
 model}\label{adapting-patient-profiles-to-a-logical-model}
@@ -3233,12 +3244,116 @@ the specification of a logical model with data from a given patient:
 each patient has a personalized model tailored to his/her data, so that
 all personalized models are different specifications of the same logical
 model, using data from different patients (Figure
-\ref{PROFILE-abstract}). Based on MaBoSS formalism and the processed
+\ref{fig:PROFILE-abstract}). Based on MaBoSS formalism and the processed
 patient data, there are several possibilities to personalize a generic
-logical model with patient data as represented in
+logical model with patient data. One possibility to have
+patient-specific models is to force the value of the variables
+corresponding to the altered genes in a given patient, i.e.,constraining
+some model nodes to an inactive (\(0\)) or active (\(1\)) state (Figure
+\ref{fig:logical-personalization}A). In order to constrain a node to 0
+(resp. 1), the initial value of the node is set to 0 (resp. 1) and
+\(k_{0\rightarrow 1}\) (resp. \(k_{1\rightarrow 0}\)) to 0 to force the
+node to maintain its defined state. For instance, the effect of a p53
+inactivating mutation can be modeled by setting the node TP53 in the
+model and its initial condition to 0 and ignoring the logical rule of
+TP53 variable. These modifications are referred to as node activity in
+the logical model. Because of the type of data used, this
+personalization method is referred to as \textbf{discrete
+personalization}. It has also been called \emph{strict node variants} in
+\citet{beal2019personalization} because this data integration overwrites
+the logical rules.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/logical-personalization} 
+
+}
+
+\caption[Methods for personalization of logical models]{\textbf{Methods for
+personalization of logical models.} (A) Personalization with discrete
+data, such as mutations, with some nodes forced to \(0\) based on loss
+of function alteration (left) or \(1\) based on gain of
+function/constitutive activation (right). (B) Personalization with
+continuous data used to define the initial conditions of nodes and to
+influence the transitions rates and the subsequent probabilities of
+transition in asynchronous updates.}\label{fig:logical-personalization}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+Another possible strategy is to modify the initial conditions of the
+variables of the altered genes according to the results of the
+normalization. These initial conditions can capture different
+environmental and genetic conditions. Nevertheless, in the course of the
+simulation, these variables will be prone to be updated depending on
+their logical rules. Finally, as MaBoSS uses Gillespie algorithm to
+explore the STG, data can be mapped to the transition rates of this
+algorithm. In the simplest case, all transition rates of the model are
+set to \(1\), meaning that all possible transitions are equally
+probable. Alternatively, it is possible to separate the speed of
+processes by setting the transition rates to different values to account
+for what is known about the reactions: more probable reactions will have
+a larger transition rate than less probable reactions
+\citep{stoll2012continuous}. For this, different orders of magnitude for
+these values can be used. They are set according to the activation
+status of the node (derived from normalized values) and an amplification
+factor \(F\), designed to generate a higher relative difference in the
+transition rates, and are therefore defined for each node \(i\) and
+sample \(j\):
+
+\[k^{0\rightarrow1}_{i,j}=F^{2(X^{norm}_{i,j}-0.5)}\]
+\[k^{1\rightarrow0}_{i,j}=\dfrac{1}{k^{0\rightarrow1}_{i,j}}\] Thus, if
+a gene has a value of \(1\) based on its RNA profile,
+\(k_{0\rightarrow1}\) (resp. \(k_{1\rightarrow0}\)) will be \(10^2\)
+(resp. \(10^{-2}\)) with an amplification factor of \(100\). This
+amplification factor is therefore a hyper-parameter of the method. Very
+low values will have no impact while higher values will make some
+transitions almost impossible and the method will then approach the
+discrete personalization described above. Some quantitative
+illustrations of the influence of \(F\) are provided in
+\citet{beal2019personalization}. The integration of continuous data
+through the initial conditions of the nodes and the transition rates are
+combined to form a second personalization method called
+\textbf{continuous personalization} and described in Figure
+\ref{fig:logical-personalization}B. This method has also been called
+\emph{soft node variants} to emphasize its difference with
+discrete/strict personalization: it may influence the trajectories in
+the solution state space leading to a change in probabilities of the
+resulting stable state but it does not overwrite the logical rules. To
+illustrate a little more explicitly the impact of continuous
+personalization, if a given node has a normalized value of \(0.8\) after
+data processing (based on proteins levels for instance), it will be
+initialized as \(1\) in 80\% of the stochastic trajectories, its
+transition rate \(k_{0\rightarrow1}\) will be increased (favoring its
+activation) and its transition rate \(k_{1\rightarrow0}\) will be
+decreased (hampering its inactivation). These changes increase the
+probability that this node will remain in an activated state close to
+the one inferred from the patient's data, while maintaining the validity
+of its logical rule. Thus, continuous personalization appears as a
+smoother way to shape logical models' simulations based on patient data.
+In summary, different types of data can be used, with different
+integration methods. Note that it is quite natural to use genetic
+alterations (mutations, CNA) to specify definitive changes in models
+(such as those of discrete personalization) since this corresponds to
+biological reality. Conversely, continuous alterations in expression or
+phosphorylation are subject to modification and regulation, thus
+justifying their interpretation in a less strong and definitive way
+(such as continuous personalization). Finally, it follows from these
+definitions that there are different strategies for personalizing a
+logical model since discrete and continuous personalizations can each
+use different types of data; and moreover, these two strategies can be
+combined. The relative merits of the different personalization
+strategies will be discussed below.
 
 \section{An integration tool for high-dimensional data in cell
-lines}\label{an-integration-tool-for-high-dimensional-data-in-cell-lines}
+lines}\label{PROFILE-CL}
 
 \section{An uncertain validation with patient
 data}\label{an-uncertain-validation-with-patient-data}
@@ -3268,21 +3383,191 @@ therefore seems necessary to start with a semantic study. Among the many
 \appendix \addcontentsline{toc}{chapter}{\appendixname}
 
 
-\chapter{About datasets}\label{about-datasets}
+\chapter{About datasets}\label{appendix-datasets}
 
-\section{Cell lines}\label{cell-lines}
+\section{Cell lines}\label{appendix-cl}
+
+Several analyses in previous chapters are based on data derived from
+cell lines. Among the different databases, the ones used in the thesis
+are briefly described below. Please refer to corresponding references
+for additional details.
+
+\subsection{Omics profiles}\label{omics-profiles}
+
+The omics profiles of cancer cell lines have been downloaded from Cell
+Model Passports \citep{van2019cell} containing genotypic and phenotypic
+information about more than 1000 cell lines. Among the available data
+used in this thesis are the exome sequencing, copy number variations and
+RNA-sequencing.
+
+\subsection{Drug screenings}\label{drug-screenings}
+
+Information about response to treatments is retrieved from Genomics of
+Drug Sensitivity in Cancer Database (GDSC, \citet{yang2012genomics}). In
+order to allow detailed analyses at the level of cancer types, we will
+restrict ourselves here to tissues represented by at least 20 cell lines
+and highlighted in dark grey in Figure \ref{fig:GDSC}A. Most of the 663
+cell lines in this subcohort have a complete profile with all omics data
+(mutations, CNA and expression) and drug responses. However, not all
+cell lines have necessarily been tested for all drugs.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{10-Appendix_files/figure-latex/GDSC-1} 
+
+}
+
+\caption[Distribution of cancer types and data types in GDSC-associated dataset]{\textbf{Distribution of cancer types and data types
+in GDSC-associated dataset.} (A) Distribution of cell lines per cancer
+types, highlighting the ones selected in this thesis with more than 20
+cell lines. (B) Availibility of data for the 663 selected cell lines in
+17 different cancer types.}\label{fig:GDSC}
+\end{figure}
+
+
+
+
+
+
+
+The cell lines are treated with increasing concentration of drugs and
+the viability of the cell line relative to untreated control is
+measured. The dose-response relative viability curve is fitted and then
+used to compute the half maximal inhibitory concentration (\(IC_{50}\))
+and the area under the dose-response curve (AUC)
+\citep{vis2016multilevel}, both being represented in Figure. Since the
+\(IC_{50}\) values are often extrapolated outside the concentration
+range actually tested, we will focus on the AUC metric for all
+validation with drug screening data. AUC is a value between 0 and 1:
+values close to 1 mean that the relative viability has not been
+decreased, and lower values correspond to increased sensitivity to
+inhibitions. In cases where the ranges of concentrations tested for
+different drugs vary, comparison of their AUC values does not have a
+simple and straightforward interpretation.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{fig/AUC} 
+
+}
+
+\caption[Drug screening metrics in cell lines]{\textbf{Drug screening metrics in cell lines.} Based
+on a tested drug concentration range, \(IC_{50}\) and area under the
+dose-response curve (AUC) can be computed. For a given drug, red AUC
+corresponds to a more sensitive cell line than blue AUC.}\label{fig:AUC}
+\end{figure}
+
+
+
+
+
+
+\subsection{CRISPR-Cas9 screening}\label{crispr-cas9-screening}
+
+On top the previous drug response characterization, some CRISPR-Cas9
+screenings have been performed on cancer cell lines. Very basically,
+this involves using single-guide RNAs (sgRNAs) to direct the targeted
+inhibition of certain genes. Conceptually, screening is not very
+different from drug screening since it allows the sensitivity of cell
+lines to the inhibition of certain targets to be studied. However, this
+technology makes it possible to target many more different genes since
+it is based on RNA guide synthesis and not on the existence of drugs
+with an affinity for the target of interest. Schematically, sreening is
+therefore broader (thousands of genes), less biased (any gene can be
+targeted a priori) and more precise (much lower off-target effect).
+
+Among the various databases available, the ones used in this thesis have
+been downloaded from Cell Model Passports and come from Sanger Institute
+\citep{behan2019prioritization} and Broad Institute
+\citep{meyers2017computational}. Both databases present CRISPR
+inhibition results for thousands of genes for a few hundred cell lines
+among those presented in the previous section. The Sanger dataset for
+instance includes 324 cell lines, and 238 in common with the subcohort
+previously described in the previous section and in Figure
+\ref{fig:GDSC}.
+
+Among the different metrics, the examples presented in this thesis will
+focus on scaled Bayesian factors to assess the effect of CRISPR
+targeting of genes. These scores are computed based on the fold change
+distribution of sgRNA \citep{hart2016bagel}. The highest values indicate
+that the targeted gene is essential to the cell fitness.
 
 \section{Patient-derived xenografts}\label{patient-derived-xenografts}
 
-\section{Patients}\label{patients}
+Distributions and some figures
+
+\section{Patients}\label{appendix-datasets-patients}
+
+\subsection{METABRIC}\label{metabric}
+
+METABRIC dataset is large breast cancer dataset with around 2000
+patients. Mutations, CNA, expression (transcriptomics micro-array) and
+clinical data are available for a majority of patients (Figure
+\ref{fig:METABRIC}A), with 1904 patients for whom all the data is
+available. One of the particular features of these data is to propose a
+very long clinical follow-up, over more than 10 years (Figure
+\ref{fig:METABRIC}B).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{10-Appendix_files/figure-latex/METABRIC-1} 
+
+}
+
+\caption[Available omics and survival in METABRIC Breast Cancer dataset]{\textbf{Available omics and survival in METABRIC
+Breast Cancer dataset}. (A) Number of patients for each omics type and
+their combinations, depicted as a Venn diagram. (B) Overall survival
+probability for all patients with clinical follow-up, stratified per
+breast cancer PAM50 subtype; administrative censoring at 180 months.}\label{fig:METABRIC}
+\end{figure}
+
+
+
+
+
+
+
+\subsection{TCGA: Breast cancer}\label{tcga-breast-cancer}
+
+Another reference database for breast cancer is the one from the TCGA
+consortium \citep{cancer2012comprehensive}. The cohort is smaller than
+METABRIC and its clinical follow-up is more limited. In contrast, the
+omics data are more comprehensive and include RNA sequencing and
+relative quantification ofsproteins with RPPA technology (Figure
+\ref{fig:TCGA-bp}A).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{10-Appendix_files/figure-latex/TCGA-bp-1} 
+
+}
+
+\caption[Available omics and survival in METABRIC Breast Cancer dataset]{\textbf{Available omics for TCGA Breast and
+Prostate cancer}. (A) Number of patients for each omics type and their
+combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive
+Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma)
+study.}\label{fig:TCGA-bp}
+\end{figure}
+
+
+
+
+
+
+
+\subsection{TCGA: Prostate cancer}\label{tcga-prostate-cancer}
+
+Similarly, for prostate cancer, reference can be made to data from the
+TCGA study \citep{abeshouse2015molecular}, which has the same type of
+data but for a smaller number of patients than the breast cancer (Figure
+\ref{fig:TCGA-bp}B).
 
 \chapter{About logical models}\label{about-logical-models}
 
-\section{Description of logical models used in this
-thesis}\label{description-of-logical-models-used-in-this-thesis}
+Several logical models of cancer are used in this thesis and some
+additional descriptive elements about them are given below.
 
-\subsection{Generic logical model of cancer
-pathways}\label{appendix-fumia}
+\section{Generic logical model of cancer pathways}\label{appendix-fumia}
 
 For this thesis, a published Boolean model from \citep{fumia2013boolean}
 has been used to illustrate our PROFILE methodology. This regulatory
@@ -3313,9 +3598,14 @@ described in \citet{fumia2013boolean}.}}\label{fig:Fumia}
 
 
 
+\section{Logical model of BRAF pathways in melanoma and colorectal
+cancer}\label{appendix-pantolini}
+
+\section{Logical model of prostate cancer}\label{appendix-montagud}
+
 \chapter{About causality}\label{about-causality}
 
-\section{Theoretical fraework}\label{theoretical-fraework}
+\section{Theoretical framework}\label{theoretical-framework}
 
 \chapter*{References}\label{references}
 \addcontentsline{toc}{chapter}{References}
