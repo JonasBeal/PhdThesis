@@ -12,11 +12,11 @@ knitr::asis_output(
 ```
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\initial{T}he notion of modeling')
+knitr::asis_output('\\initial{H}istorically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments [@flobak2015discovery; @jastrzebski2018integrative]. Indeed, biological entities, many of which are prospective therapeutic targets, are explicitly represented in the model, making it possible to simulate their inhibition. This is what will be presented in this chapter using the personalized logical models described above. Can they be used to study the response of biological systems to perturbations, in this case the response of cell lines to gene or protein inhibitions? Compared to the numerous statistical models designed to predict the sensitivity of cell lines to treatements, what information do these personalized mechanistic models provide?')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
-knitr::asis_output('The notion of modeling.')
+knitr::asis_output('Historically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments [@flobak2015discovery; @jastrzebski2018integrative]. Indeed, biological entities, many of which are prospective therapeutic targets, are explicitly represented in the model, making it possible to simulate their inhibition. This is what will be presented in this chapter using the personalized logical models described above. Can they be used to study the response of biological systems to perturbations, in this case the response of cell lines to gene or protein inhibitions? Compared to the numerous statistical models designed to predict the sensitivity of cell lines to treatements, what information do these personalized mechanistic models provide?')
 ```
 
 ```{r 6_packages, echo=FALSE, warning=FALSE, message=FALSE}
@@ -31,25 +31,39 @@ knitr::opts_chunk$set(
   fig.align = "center"
   )
 ```
+  
+
 
 ```{block2, type='summarybox', echo = TRUE}
 
 #### Publications {-}
 
-This chapter extends the method presented in the previous chapter to investigate drug response with personalized logical models. The first application to cell lines of all cancer types was presented orally at ISMB2020 in Basel but is not published. The example concerning BRAF in melanomas and colorectal cancers is under revision and the corresponding pre-print is available as @beal2020personalized. Finally, the work on prostate cancer presented in a third section has also been submitted.
+This chapter extends the method presented in the previous chapter to investigate drug response with personalized logical models. The first application to cell lines of all cancer types was presented orally at ISMB2020 in Basel but is not published. The example concerning BRAF in melanomas and colorectal cancers is under review and the corresponding pre-print is available as @beal2020personalized. Finally, the work on prostate cancer presented in a third section has also been submitted.
 
 ```
 
 ## One step further with drugs
 
-### Methods
+One of the main clinical consequences of the underlying molecular complexity of cancers is the divergent response to treatment, even for a priori similar tumours. In the light of high-throughput sequencing data, the mechanisms governing these responses are somewhat better understood, for patients and especially for model organisms such as cell lines [@heiser2012subtype; garnett2012systematic]. Beyond a few simple cases, the multiplicity of response biomarkers once again calls for holistic approaches.
 
-### Brute force
 
-## A case study on BRAF in melanoma and colorectal cancers
+### Modeling response to cancer treatments 
+
+To study these observed differences in drug response in various cancers, some approaches based on mathematical modelling were developed to explore the complexity of differential drug sensitivities. A number of machine learning-based methods for predicting sensitivities have been proposed \cite{costello2014community}, either without particular constraints or with varying degrees of prior knowledge; but they do not provide a mechanistic understanding of the response. Some other approaches focused on the description of the processes that might influence the response by integrating knowledge of the signalling pathways and their mechanisms and translated it into a mathematical model \cite{eduati2017drug,jastrzebski2018integrative,frohlich2018efficient}. The first step of this approach implies the construction of a network recapitulating knowledge of the interactions between selected biological entities (driver genes but also key genes of signalling pathways), extracted from the literature or from public pathway databases, or directly inferred from data \cite{verny2017causalnetworks}. This static representation of the mechanisms is then translated into a dynamical mathematical model with the goal to not only understand the observed differences \cite{jastrzebski2018integrative} but also to predict means to revert unexpected behaviours.\newline
+
+One way to address issues related to patient response to treatments is to fit these mechanistic models to the available data, and to train them on high-throughput cell-line specific perturbation data \cite{eduati2017drug,jastrzebski2018integrative,klinger2013network}. These mechanistic models are then easier to interpret with regard to the main drivers of drug response. They also enable the \emph{in silico} simulations of new designs such as combinations of drugs not present in the initial training data \cite{frohlich2018efficient}.\newline
+
+However, these mechanistic models contain many parameters that need to be fitted or extracted from the literature. Some parsimonious mathematical formalisms have been developed to make up for the absence of either rich perturbation data to train the models or fully quantified kinetic or molecular data to derive the parameters directly from literature. One of these approaches is the logical modelling, which uses discrete variables governed by logical rules. Its explicit syntax facilitates the interpretation of mechanisms and drug response \cite{zanudo2017network,iorio2016landscape} and despite its simplicity, semi-quantitative analyses have already been performed on complex systems \cite{stoll2017maboss} for both cancer applications \cite{zanudo2017network,remy2015modeling} and drug response studies \cite{knijnenburg2016logic, eduati2020patient}, and have proved their efficacy \cite{cohen2015metastasis,collombet2017}. \newline
+
+The nature of this formalism has shown its relevance in cases where the model is not automatically trained on data but simply constructed from literature or pathway databases and where biological experiments focus on a particular cell line \cite{flobak2015discovery}. We propose here a pipeline based on logical modelling and able to go from the formulation of a biological question to the validation of a mathematical model on pre-clinical data, in this case a set of cell lines (Fig~\ref{GA}), and the subsequent interpretation of potential resistance mechanisms. The application of the mechanistic model to different cell lines is therefore done without any training of parameters but only on the basis of the automatic integration and interpretation of their omic features.
+
+### An application of personalized logical models
+
+### A pan-cancer attempt
+
+## Case study on BRAF in melanoma and colorectal cancers
 
 ## Limitations and perspectives illustrated by a prostate cancer study {#prostate-model}
 
-A model is first of all an ambiguous object and a polysemous word. It therefore seems necessary to start with a semantic study. Among the many 
 
 

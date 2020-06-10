@@ -93,7 +93,7 @@ Distributions and some figures
 
 ### METABRIC
 
-METABRIC dataset is large breast cancer dataset with around 2000 patients. Mutations, CNA, expression (transcriptomics micro-array) and clinical data are available for a majority of patients (Figure \@ref(fig:METABRIC)A), with 1904 patients for whom all the data is available. One of the  particular features of these data is to propose a very long clinical follow-up, over more than 10 years (Figure \@ref(fig:METABRIC)B).
+METABRIC dataset is large breast cancer dataset with more than 2000 patients [@pereira2016somatic]. Mutations, CNA, expression (transcriptomics micro-array) and clinical data are available for a majority of patients (Figure \@ref(fig:METABRIC)A), with 1904 patients for whom all the data is available. One of the  particular features of these data is to propose a very long clinical follow-up, over more than 10 years (Figure \@ref(fig:METABRIC)B).
 
 ```{r METABRIC, echo=FALSE, out.width = "90%", fig.cap='(ref:METABRIC-caption)', fig.scap='Available omics and survival in METABRIC Breast Cancer dataset', fig.align='center', fig.height=5, fig.width=8}
 #data types
@@ -103,11 +103,10 @@ plot_A <- eulerr::venn(METABRIC_list) %>% plot
 #Clin data
 time_limit <- 180
 META_clin <- readRDS("data/appendix/META_clin.rds") %>%
-  mutate(OS_STATUS=if_else(OS_STATUS=="LIVING", 0, 1))  %>%
-  mutate(OS_STATUS=if_else(OS_MONTHS<time_limit & OS_STATUS==1,1,0),
+  mutate(Status=if_else(OS_MONTHS<time_limit & Status==1,1,0),
          OS_MONTHS=if_else(OS_MONTHS>time_limit,time_limit,OS_MONTHS)) %>%
   filter(PAM50!="NC")
-KM <- survfit(Surv(OS_MONTHS,OS_STATUS)~PAM50,
+KM <- survfit(Surv(OS_MONTHS,Status)~PAM50,
                   data=META_clin)
 plot_B <- ggsurvplot(KM,
            palette=paletteer_d("ggsci::light_uchicago")[c(1, 3:6, 9)],

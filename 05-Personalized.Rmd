@@ -22,7 +22,7 @@ knitr::asis_output('Now that logical modeling has been introduced in detail, it 
 ```
 
 ```{r 5_packages, echo=FALSE, warning=FALSE, message=FALSE}
-invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra"),
+invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra", "survival", "survminer"),
        FUN = require,
        character.only = TRUE))
 
@@ -38,7 +38,7 @@ knitr::opts_chunk$set(
 
 #### Publications {-}
 
-This chapter presents the method developed during the thesis to personlize logical models, i.e. generate patient-specific models from a single generic one. The description of the method and analyses on patient data from TCGA have been comprehensively described in @beal2019personalization and briefly summarized in @beal2020personalized. Analyses on cell lines and PDX data are unpublished.
+This chapter presents the method developed during the thesis to personlize logical models, i.e. generate patient-specific models from a single generic one. The description of the method and analyses on patient data from TCGA have been comprehensively described in @beal2019personalization and briefly summarized in @beal2020personalized. Analyses on cell lines are unpublished.
 ```
 
 ## From one generic model to data-specific models with PROFILE method
@@ -86,7 +86,7 @@ For integration of copy number alterations, we use the discrete estimation of ga
 
 The integration of continuous data, such as RNA expression levels, in logical modeling is more difficult. The stochastic framework of MaBoSS provides however some possibilities. The main continuous mechanistic parameters of MaBoSS are the initial conditions of each node (its initial probability of being activated among the set of simulated stochastic trajectories) and the transition rates associated with the nodes (its probability to have its transition performed in an asynchronous update). In order to facilitate the use of continuous data through one of these two possibilities, we propose to transform them so that the values are continuous between 0 and 1, what we will refer to hereafter as normalized data. It is assumed that these continuous data can be good proxies of activity, 0 corresponding to a very low level of activity of the biological entity and 1 to a very high level. This assumption will have to be explained and justified each time: high level of expression of an RNA or significant phosphorylation of a protein interpreted as continuous markers of an important biological activity for example.  
   
-```{r ERG, echo=FALSE, out.width = "40%", fig.cap='(ref:ERG-caption)', fig.scap='Bimodal distribution of ERG gene in TCGA prostate cancer cohort', fig.align='center'}
+```{r ERG, echo=FALSE, fig.align='center', fig.cap='(ref:ERG-caption)', fig.height=3, fig.scap='Bimodal distribution of ERG gene in TCGA prostate cancer cohort', fig.width=5, out.width="60%"}
 plot_data_ERG <- readRDS("data/personalized/plot_data_ERG.rds")
 
 ggplot(plot_data_ERG, aes(x=ERG, group=Status, fill=Status)) +
@@ -110,7 +110,7 @@ $$BI=[\pi(1-\pi)]^{1/2}\delta$$
 
 where $\pi$ is the proportion of observations in the first component. In PROFILE, BI is computed using the R package *mclust*. Finally, the kurtosis method corresponds to a descriptor of the shape of the distribution, of its tailedness, or non-Gaussianity. A negative kurtosis distribution, especially, defines platykurtic (flattened) distributions, and potentially bimodal distributions. It has been proposed as a tool to identify small outliers subgroups or major subdivisions (Teschendorff et al., 2006). In our case, we focus on negative kurtosis distributions to rule out non-relevant bimodal distributions composed of a major mode and a very small outliers’ group or a single outlier. Although dip test, BI and negative kurtosis criteria emerge as similar tools in the sense that they select genes whose values can be clustered in two distinct groups of comparable size, we choose to combine them in order to correct their respective limits and increase the robustness of our method. For that, we consider that all three conditions (Dip test, Bimodality Index and kurtosis) must be fulfilled in order for a gene to be considered as bimodal. The thresholds of each test are inspired by those advocated in the papers presenting the tools individually. Dip test is a statistical test to which the classical 0.05 threshold has been chosen. In the article describing BI, authors explored a cut-off range between 1.1 and 1.5 and we chose 1.5 for the present work. Regarding kurtosis, the usual cut-off is 0, but since this criterion does not directly target bimodality, this criterion has been relaxed to $K < 1$. Several examples of the relative differences and complementarities between these criteria can be seen in Figure \@ref(fig:bimodality).
 
-```{r bimodality, echo=FALSE, out.width = "90%", fig.cap='(ref:bimodality-caption)', fig.scap='Bimodality criteria and their combinations', fig.align='center'}
+```{r bimodality, echo=FALSE, out.width = "80%", fig.cap='(ref:bimodality-caption)', fig.scap='Bimodality criteria and their combinations', fig.align='center'}
 knitr::include_graphics("fig/bimodality.png")
 ```
 (ref:bimodality-caption) **Bimodality criteria and their combinations.** Examples of gene expression distributions for the different combinations of bimodality criteria: Dip test, Bimodality Index (BI) and kurtosis (K). Plots are organized in a Venn diagram.  
@@ -154,35 +154,215 @@ difference in the transition rates, and are therefore defined for each node $i$ 
 
 $$k^{0\rightarrow1}_{i,j}=F^{2(X^{norm}_{i,j}-0.5)}$$
 $$k^{1\rightarrow0}_{i,j}=\dfrac{1}{k^{0\rightarrow1}_{i,j}}$$
-Thus, if a gene has a value of $1$ based on its RNA profile, $k_{0\rightarrow1}$ (resp. $k_{1\rightarrow0}$) will be $10^2$ (resp. $10^{-2}$) with an amplification factor of $100$. This amplification factor is therefore a hyper-parameter of the method. Very low values will have no impact while higher values will make some transitions almost impossible and the method will then approach the discrete personalization described above. Some quantitative illustrations of the influence of $F$ are provided in @beal2019personalization. The integration of continuous data through the initial conditions of the nodes and the transition rates are combined to form a second personalization method called **continuous personalization** and described in Figure \@ref(fig:logical-personalization)B. This method has also been called *soft node variants* to emphasize its difference with discrete/strict personalization: it may influence the trajectories in the solution state space leading to a change in probabilities of the resulting stable state but it does not overwrite the logical rules. To illustrate a little more explicitly the impact of continuous personalization, if a given node has a normalized value of $0.8$ after data processing (based on proteins levels for instance), it will be initialized as $1$ in 80% of the stochastic trajectories, its transition rate $k_{0\rightarrow1}$ will be increased (favoring its activation) and its transition rate $k_{1\rightarrow0}$ will be decreased (hampering its inactivation). These changes increase the probability that this node will remain in an activated state close to the one inferred from the patient’s data, while maintaining the validity of its logical rule. Thus, continuous personalization appears as a smoother way to shape logical models’ simulations based on patient data. In summary, different types of data can be used, with different integration methods. Note that it is quite natural to use genetic alterations (mutations, CNA) to specify definitive changes in models (such as those of discrete personalization) since this corresponds to biological reality. Conversely, continuous alterations in expression or phosphorylation are subject to modification and regulation, thus justifying their interpretation in a less strong and definitive way (such as continuous personalization). Finally, it follows from these definitions that there are different strategies for personalizing a logical model since discrete and continuous personalizations can each use different types of data; and moreover, these two strategies can be combined. The relative merits of the different personalization strategies will be discussed below.
+Thus, if a gene has a value of $1$ based on its RNA profile, $k_{0\rightarrow1}$ (resp. $k_{1\rightarrow0}$) will be $10^2$ (resp. $10^{-2}$) with an amplification factor of $100$. This amplification factor is therefore a hyper-parameter of the method. Very low values will have no impact while higher values will make some transitions almost impossible and the method will then approach the discrete personalization described above. Some quantitative illustrations of the influence of $F$ are provided in @beal2019personalization. The integration of continuous data through the initial conditions of the nodes and the transition rates are combined to form a second personalization method called **continuous personalization** and described in Figure \@ref(fig:logical-personalization)B. This method has also been called *soft node variants* to emphasize its difference with discrete/strict personalization: it may influence the trajectories in the solution state space leading to a change in probabilities of the resulting stable state but it does not overwrite the logical rules. To illustrate a little more explicitly the impact of continuous personalization, if a given node has a normalized value of $0.8$ after data processing (based on proteins levels for instance), it will be initialized as $1$ in 80% of the stochastic trajectories, its transition rate $k_{0\rightarrow1}$ will be increased (favoring its activation) and its transition rate $k_{1\rightarrow0}$ will be decreased (hampering its inactivation). These changes increase the probability that this node will remain in an activated state close to the one inferred from the patient’s data, while maintaining the validity of its logical rule. Thus, continuous personalization appears as a smoother way to shape logical models’ simulations based on patient data. In summary, different types of data can be used, with different integration methods. Note that it is quite natural to use genetic alterations (mutations, CNA) to specify definitive changes in models (such as those of discrete personalization) since this corresponds to biological reality. Conversely, continuous alterations in expression or phosphorylation are subject to modification and regulation, thus justifying their interpretation in a less strong and definitive way (such as continuous personalization). Finally, it follows from these definitions that there are different strategies for personalizing a logical model since discrete and continuous personalizations can each use different types of data; and moreover, these two strategies can be combined. **Except otherwise stated, mutations (resp. RNA or protein) will always be integrated using discrete (resp. continuous)  personalization and the joint integration of both types of data will therefore combine both methods.** The relative merits of the different personalization strategies will be discussed below.
 
-## An integration tool for high-dimensional data in cell lines {#PROFILE-CL}
+## An integration tool for high-dimensional data?
 
-```{r PROFILE-CL, echo=FALSE, out.width = "40%", fig.cap='(ref:PROFILE-CL-caption)', fig.scap='Test', fig.align='center'}
-plot_data_GDSC_noDrug <- readRDS("data/personalized/plot_data_GDSC_noDrug.rds")
+Once the method has been defined, it is imperative to study its validity and possible limitations. This comes down to answering the question: do personalized models capture a biological reality, and in our case do they discriminate between different types of cancer?
+
+### Biological relevance in cell lines {#PROFILE-CL}
+
+These questions can be addressed using cell line data. Using the logical model of cancer pathways from @fumia2013boolean, it is possible to study the 663 cell lines from different types of tumors by integrating their processed omics profiles to the generic logical model to obtain as many personalized models. If we focus on the read-out of *Proliferation*, one of the easiest to interpret, there are several ways to study its relevance. For each cell line and each personalization strategy (and corresponding data type) we can define a personalized model and derive the asymptotic value the *Proliferation* node, called *Proliferation* score. This score is therefore a priori different for all cell lines that present a different molecular profile. For the whole population of cell lines, this score can be confronted with other markers of proliferation such as the levels of Ki67 [@miller2018ki67], here replaced as an example by the RNA levels of the corresponding MKI67 gene. It can then be observed that the simulated *Proliferation* indicator, derived from the personalized models, correlates positively with the biomarker, but only when RNA has been used in the personalization (Figure \@ref(fig:PROFILE-CL)A). The correlation makes qualitative sense, but the heterogeneity appears to be very large and most of the variability is not captured by the models. This heterogeneity is also visible by focusing on some types of cancer (Figure \@ref(fig:PROFILE-CL)B). Thus this kind of comparison only validates the models' ability to retrieve a RNA biomarker (not used in personalization) when they themselves integrate other RNA data. It is also consistent that scores from models personalized with mutations only have less uniform distributions due to the discrete nature of the data and the many identical profiles: many cell lines are not distinguishable by mutations only.
+
+```{r PROFILE-CL, echo=FALSE, out.width = "90%", fig.cap='(ref:PROFILE-CL-caption)', fig.scap='Validation of personalized *Proliferation* scores in cell lines', fig.align='center', fig.height=8, fig.width=7}
+plot_data_GDSC_noDrug <- readRDS("data/personalized/plot_data_GDSC_noDrug.rds") %>%
+  mutate(SimCase = case_when(
+    SimCase=="mut" ~ "Mutations",
+    SimCase=="mut_RNArb" ~ "Mutations & RNA",
+    SimCase=="RNArb" ~ "RNA"
+  ) %>% factor(levels=c("Mutations", "RNA", "Mutations & RNA")))
 
 plot_A <- ggplot(plot_data_GDSC_noDrug, aes(x=Proliferation, y=MKI67)) +
-  geom_point(alpha=0.5) +
+  geom_point(alpha=0.2) +
   facet_grid(.~SimCase) +
   geom_smooth(method='lm', formula= y~x) +
   stat_cor() +
-  theme_pubclean()
+  theme_pubclean() +
+  theme(axis.title.x = element_blank(),
+        title = element_text(size=10)) +
+  scale_x_continuous(breaks = c(0.2, 0.5, 1)) +
+  labs(y="MKI67\n(Prolif. biomarker)",
+       title = "663 cancer cell lines from Cell Model Passports")
 
-plot_B <- filter(plot_data_GDSC_noDrug, TCGA_label %in% c('BRCA', 'LUAD', 'COAD/READ')) %>%
+plot_B <- filter(plot_data_GDSC_noDrug, TCGA_label %in% c('BRCA', 'LUAD')) %>%
   ggplot(aes(x=Proliferation, y=MKI67)) +
   geom_point(alpha=0.5) +
   facet_grid(TCGA_label~SimCase) +
   geom_smooth(method='lm', formula= y~x) +
   stat_cor() +
-  theme_pubclean()
+  theme_pubclean() +
+  theme(axis.title.x = element_blank(),
+        title = element_text(size=10)) +
+  scale_x_continuous(breaks = c(0, 0.5, 1)) +
+  labs(y="MKI67\n(Prolif. biomarker)",
+       title = "114 breast and lung cancer cell lines (BRCA and LUAD)")
 
-(plot_A / plot_B) +
-  plot_layout(nrow = 2, heights = c(1,2)) +
+plot_C <- ggplot(plot_data_GDSC_noDrug, aes(x=Proliferation, y=Doubling_NCI60)) +
+  geom_point(alpha=0.5) +
+  facet_grid(.~SimCase) +
+  geom_smooth(method='lm', formula= y~x) +
+  stat_cor() +
+  theme_pubclean() +
+  theme(title = element_text(size=10)) +
+   scale_x_continuous(breaks = c(0, 0.5, 1)) +
+  labs(x="Proliferation scores from personalized models",
+       y="Doubling times",
+       title = "60 cell lines from NCI60")
+
+(plot_A / plot_B / plot_C) +
+  plot_layout(nrow = 3, heights = c(1,2,1)) +
   plot_annotation(tag_levels = 'A')
 ```
-(ref:PROFILE-CL-caption) **Test.** 
+(ref:PROFILE-CL-caption) **Validation of personalized *Proliferation* scores in cell lines.** (A) Comparison with MKI67 proliferation biomarker for all cancer cell lines. (B) Same with breast (BRCA) and lung (LUAD) cancer only. (C) Comparison with doubling times in a subset of 60 cell lines.  
+  
 
-## An uncertain validation with patient data
+It is possible to go one step further by comparing these personalized *Proliferation* scores with the doubling time of the cell lines, i.e the time it takes for the cell line population to double. A cell line described as proliferative (high *Proliferation* score) should thus have a low doubling time. This can be observed qualitatively by using a subgroup of cell lines for which this information is available (Figure \@ref(fig:PROFILE-CL)C). These correlations are not significant and once again summarize a large heterogeneity. Predicting doubling times is, however, a rather difficult task, even with the help of more flexible machine learning methods [@kurilov2020assessment].
+
+### Validation with patient data
+
+```{r PROFILE-METABRIC-Grade, echo=FALSE, out.width = "90%", fig.cap='(ref:PROFILE-METABRIC-Grade-caption)', fig.scap='Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort', fig.align='center', fig.height=5, fig.width=7}
+
+data_survival_mut<- readRDS("data/personalized/data_survival_mut.rds") %>%
+  mutate(SimCase="Mutations") 
+
+data_survival_RNA <- readRDS("data/personalized/data_survival_RNA.rds") %>%
+  mutate(SimCase="RNA")
+
+data_survival_mutRNA <- readRDS("data/personalized/data_survival_mutRNA.rds") %>%
+  mutate(SimCase="Mutations & RNA")
+
+data_survival <- bind_rows(data_survival_mut, data_survival_RNA, data_survival_mutRNA) %>%
+  mutate(GRADE=as.numeric(GRADE) %>% factor(levels=c("1", "2", "3")),
+         SimCase=factor(SimCase, levels=c("Mutations", "RNA", "Mutations & RNA"))) %>%
+  pivot_longer(cols=c("Proliferation", "Apoptosis"),
+               names_to = "Node", values_to="Score")
 
 
+
+filter(data_survival, !is.na(GRADE)) %>%
+  left_join(group_by(., GRADE, SimCase, Node) %>% summarise(N=n())) %>%
+  mutate(GRADE=paste0(GRADE, "\n(n=", N, ")")) %>%
+  ggplot(aes(x=GRADE, y=Score)) +
+  geom_boxplot(aes(fill=GRADE), show.legend = FALSE) +
+  facet_grid(Node~SimCase, scales = "free", space = "free") +
+  theme_pubclean() +
+  scale_fill_manual(values = c("1\n(n=165)"="#EBCB8BFF", "1\n(n=169)"="#EBCB8BFF", "2\n(n=740)"="#D08770FF", "2\n(n=771)"="#D08770FF", "3\n(n=927)"="#BF616AFF", "3\n(n=952)"="#BF616AFF")) +
+  labs(x="Tumor grade",
+       y="Node score")
+
+ # t <- group_by(data_survival, Node, SimCase) %>%
+ #   summarise(JTinc=jonckheere.test(Score, as.numeric(GRADE),
+ #                                alternative = "increasing")$p.value,
+ #             JTdec=jonckheere.test(Score, as.numeric(GRADE),
+ #                                alternative = "decreasing")$p.value) %>%
+ #   mutate(JT=if_else(Node=="Proliferation", JTinc, JTdec))
+
+```
+(ref:PROFILE-METABRIC-Grade-caption) **Comparaison of personalized scores with tumour grades for breast cancer patients in METABRIC cohort.** Comparisons are provided for different personalization strategies (with mutations and/or RNA) and two different model nodes (*Proliferation* and *Apoptosis*). 
+
+By analogy with the validations proposed for other mechanistic models [@fey2015signaling], it is also possible to evaluate the prognostic value of personalized logical models on patient data.  It is also possible to reproduce with patient data analyses of the same type as those previously performed with the MKI67 biomarker, as was done in @beal2019personalization, but we focus here on the more clinical applications of the personalized mechanistic models. For example, when studying breast cancer patients in the METABRIC cohort, *Proliferation* and *Apoptosis* scores differ according to tumour grade. The more advanced tumours (grade 3) are associated with higher *Proliferation* scores and lower *Apoptosis* scores (Figure \@ref(fig:PROFILE-METABRIC-Grade)).  This is in line with the natural interpretation that could be given since proliferation is by definition a sign of cancer progression while apoptosis, a programmed death of defective cells, is on the contrary a protective mechanism. While these trends are monotonous and clearly significant for the third strategy using both mutations and RNA ($p<10^{-12}$ with Jonckheere–Terpstra test for ordered differences among classes, for both nodes), this is not the case when the two types of data are used separately: mutations (resp. RNA) are not sufficient to personalize *Proliferation* (resp. *Apoptosis*) scores in a meaningful way. The personalisation method therefore seems to be able to combine discrete and continuous data in such a way that some of the biological information is preserved.  
+  
+
+```{r PROFILE-METABRIC-Cox, echo=FALSE, fig.align='center', fig.cap='(ref:PROFILE-METABRIC-Cox-caption)', fig.scap='Hazard ratios for *Proliferation* and *Apoptosis* in a survival Cox model in METABRIC cohort', out.width="90%", fig.height=2, fig.width=7}
+
+time_limit <- 120
+fit <- coxph(Surv(OS_MONTHS, Status) ~ Proliferation + Apoptosis,
+            data =  mutate(data_survival_mutRNA,
+                           Status=if_else(OS_MONTHS<time_limit & Status==1,1,0),
+         OS_MONTHS=if_else(OS_MONTHS>time_limit,time_limit,OS_MONTHS)))
+ggforest(fit)
+```
+(ref:PROFILE-METABRIC-Cox-caption) **Hazard ratios for *Proliferation* and *Apoptosis* in a survival Cox model in METABRIC cohort.** Higher *Proliferation* (resp. *Apoptosis*) scores correspond to higher (resp. lower) probabilities of death.
+
+This comparison to clinical data can be extended to patient survival data in the same cohort. If we focus on the strategy integrating both mutations and RNA, we observe that in a Cox model of survival, *Proliferation* is significantly associated with a higher risk of event while *Apoptosis* is associated with a lower risk, which is again consistent (Figure \@ref(fig:PROFILE-METABRIC-Cox)). In a more schematic and visual way, it is possible to transform these continuous *Proliferation* and *Apoptosis* scores into binary indicators (using medians) and observe their impact on survival, as has been done in previously mentioned studies [@fey2015signaling; @salvucci2019system]. We then observe the same behaviour for the two personalized scores (Figure \@ref(fig:PROFILE-METABRIC-Survival)A and B). Interestingly, if we combine the indicators to create groups that are expected to be of very bad prognosis (high *Proliferation*, low *Apoptosis*) or of very good prognosis (low *Proliferation*, high *Apoptosis*), we further discriminate patients and confirm the qualitatively meaningful interpretation of the personalized scores. It should be noted that the clinical validations presented here remain voluntarily simple and quite close to those proposed in similar articles. Discussions and statistical developments will be proposed in Part III.
+
+```{r PROFILE-METABRIC-Survival, echo=FALSE, out.width = "90%", fig.cap='(ref:PROFILE-METABRIC-Survival-caption)', fig.scap='Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort', fig.align='center', fig.height=6, fig.width=10}
+
+
+
+time_limit <- 120
+fit <- coxph(Surv(OS_MONTHS, Status) ~ Proliferation + Apoptosis,
+            data =  mutate(data_survival_mutRNA,
+                           Status=if_else(OS_MONTHS<time_limit & Status==1,1,0),
+         OS_MONTHS=if_else(OS_MONTHS>time_limit,time_limit,OS_MONTHS)))
+plot_forest <- ggforest(fit)
+
+
+data_plot <- mutate(data_survival_mutRNA,
+                    Apoptosis=if_else(Apoptosis>median(Apoptosis), 1, 0),
+                    Proliferation=if_else(Proliferation>median(Proliferation), 1, 0),
+                    Models=case_when(
+                      Proliferation==1 & Apoptosis==0 ~
+                        "High risk\n(high Prolif. & low Apop.)",
+                      Proliferation==0 & Apoptosis==1 ~
+                        "Low risk\n(low Prolif. & high Apop.)",
+                      TRUE ~ "Medium risk\n(mixed scores)"
+                    ) %>%
+                      factor(levels=c("Low risk\n(low Prolif. & high Apop.)","Medium risk\n(mixed scores)","High risk\n(high Prolif. & low Apop.)"))) %>%
+  mutate(Status=if_else(OS_MONTHS<time_limit & Status==1,1,0),
+         OS_MONTHS=if_else(OS_MONTHS>time_limit,time_limit,OS_MONTHS))
+
+
+
+fit_bin_all <- survfit(Surv(OS_MONTHS, Status) ~ Models,
+             data = data_plot)
+Surv_All <- ggsurvplot(fit_bin_all,
+           palette = c("#A3BE8CFF", "#AF967DFF", "#BF616AFF"),
+           conf.int = T, pval = T, pval.method = T,
+           pval.method.coord=c(0.4,0.75), pval.coord=c(0.4,0.65),
+           risk.table = T, risk.table.y.text = FALSE,
+           ggtheme = theme_pubclean(),
+           ylim=c(0.5,1),
+           xlab="Time (in months)",
+           ylab="Survival probability",
+           break.time.by=30,
+           fontsize=4)
+
+fit_bin_p <- survfit(Surv(OS_MONTHS, Status) ~ `Prolif.`,
+                       data = mutate(data_plot,
+                                     Proliferation = if_else(Proliferation==0, "Low", "High") %>%
+                                       factor(levels=c("Low", "High"))) %>%
+                       rename(`Prolif.`=Proliferation))
+Surv_P <- ggsurvplot(fit_bin_p,
+           palette = c("#C8AF96FF", "#967D7DFF"),
+           conf.int = T, pval = T, pval.method = T,
+           pval.method.coord=c(0.4,0.75), pval.coord=c(0.4,0.65),
+           #risk.table = T, risk.table.y.text = FALSE,
+           ggtheme = theme_pubclean(),
+           ylim=c(0.5,1),
+           xlab="Time (in months)",
+           ylab="Survival probability",
+           break.time.by=30,
+           fontsize=4)
+
+fit_bin_a <- survfit(Surv(OS_MONTHS, Status) ~ `Apop.`,
+                       data = mutate(data_plot,
+                                     Apoptosis = if_else(Apoptosis==0, "Low", "High") %>%
+                                       factor(levels=c("Low", "High"))) %>%
+                       rename(`Apop.`=Apoptosis))
+Surv_A <- ggsurvplot(fit_bin_a,
+           palette = c("#C8AF96FF", "#967D7DFF"),
+           conf.int = T, pval = T, pval.method = T,
+           pval.method.coord=c(0.4,0.75), pval.coord=c(0.4,0.65),
+           #risk.table = T, risk.table.y.text = FALSE,
+           ggtheme = theme_pubclean(),
+           ylim=c(0.5,1),
+           xlab="Time (in months)",
+           ylab="Survival probability",
+           break.time.by=30,
+           fontsize=4)
+
+((Surv_P$plot / Surv_A$plot) |
+  ((Surv_All$plot + theme(axis.title.x = element_blank()) + guides(color=guide_legend(nrow=2,byrow=TRUE))) / Surv_All$table) +
+    plot_layout(heights = c(6,1))) +
+  plot_layout(widths = c(2,3)) +
+  plot_annotation(tag_levels = 'A')
+
+
+```
+(ref:PROFILE-METABRIC-Survival-caption) **Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort.** (A) Survival curve for overall survival stratified with *Proliferation* scores from personalized models integrating mutations and RNA; scores have binarized based on median and survival censored at 120 months. (B) Same with *Apoptosis* scores. (C) Survival curve stratified with combinations of *Proliferation* and *Apoptosis* scores, based on the same thresholds, and the corresponding number of patients at risk (D).
+
+### Perspectives
+
+In summary, this kind of application of personalized models allows the integration of quite heterogeneous and moderately dimensional biological data in a constrained framework that orders the relationships between variables and guides interpretations. Comparison with external biological or clinical data then makes it possible to verify the absence of major contradictions in the definition of the model. However, the interest of these mechanistic approaches in this type of task appears as quite moderate compared to statistical models. The qualitative aspect is not necessarily compensated here by the integration of knowledge into the structure of the model, especially in examples that use an extremely broad logical model, which has not been specifically designed for the problems to which it is applied. It is then necessary to study the application of these personalized models to more suitable problems, in which the explicitly mechanistic nature of the models can be exploited, for instance the response to perturbations.
 

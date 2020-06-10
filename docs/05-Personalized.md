@@ -16,7 +16,7 @@
 \BeginKnitrBlock{summarybox}<div class="summarybox">
 #### Publications {-}
 
-This chapter presents the method developed during the thesis to personlize logical models, i.e. generate patient-specific models from a single generic one. The description of the method and analyses on patient data from TCGA have been comprehensively described in @beal2019personalization and briefly summarized in @beal2020personalized. Analyses on cell lines and PDX data are unpublished.</div>\EndKnitrBlock{summarybox}
+This chapter presents the method developed during the thesis to personlize logical models, i.e. generate patient-specific models from a single generic one. The description of the method and analyses on patient data from TCGA have been comprehensively described in @beal2019personalization and briefly summarized in @beal2020personalized. Analyses on cell lines are unpublished.</div>\EndKnitrBlock{summarybox}
 
 ## From one generic model to data-specific models with PROFILE method
 
@@ -70,7 +70,7 @@ The integration of continuous data, such as RNA expression levels, in logical mo
   
 \begin{figure}
 
-{\centering \includegraphics[width=0.4\linewidth]{05-Personalized_files/figure-latex/ERG-1} 
+{\centering \includegraphics[width=0.6\linewidth]{05-Personalized_files/figure-latex/ERG-1} 
 
 }
 
@@ -90,7 +90,7 @@ where $\pi$ is the proportion of observations in the first component. In PROFILE
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{fig/bimodality} 
+{\centering \includegraphics[width=0.8\linewidth]{fig/bimodality} 
 
 }
 
@@ -147,11 +147,67 @@ difference in the transition rates, and are therefore defined for each node $i$ 
 
 $$k^{0\rightarrow1}_{i,j}=F^{2(X^{norm}_{i,j}-0.5)}$$
 $$k^{1\rightarrow0}_{i,j}=\dfrac{1}{k^{0\rightarrow1}_{i,j}}$$
-Thus, if a gene has a value of $1$ based on its RNA profile, $k_{0\rightarrow1}$ (resp. $k_{1\rightarrow0}$) will be $10^2$ (resp. $10^{-2}$) with an amplification factor of $100$. This amplification factor is therefore a hyper-parameter of the method. Very low values will have no impact while higher values will make some transitions almost impossible and the method will then approach the discrete personalization described above. Some quantitative illustrations of the influence of $F$ are provided in @beal2019personalization. The integration of continuous data through the initial conditions of the nodes and the transition rates are combined to form a second personalization method called **continuous personalization** and described in Figure \@ref(fig:logical-personalization)B. This method has also been called *soft node variants* to emphasize its difference with discrete/strict personalization: it may influence the trajectories in the solution state space leading to a change in probabilities of the resulting stable state but it does not overwrite the logical rules. To illustrate a little more explicitly the impact of continuous personalization, if a given node has a normalized value of $0.8$ after data processing (based on proteins levels for instance), it will be initialized as $1$ in 80% of the stochastic trajectories, its transition rate $k_{0\rightarrow1}$ will be increased (favoring its activation) and its transition rate $k_{1\rightarrow0}$ will be decreased (hampering its inactivation). These changes increase the probability that this node will remain in an activated state close to the one inferred from the patient’s data, while maintaining the validity of its logical rule. Thus, continuous personalization appears as a smoother way to shape logical models’ simulations based on patient data. In summary, different types of data can be used, with different integration methods. Note that it is quite natural to use genetic alterations (mutations, CNA) to specify definitive changes in models (such as those of discrete personalization) since this corresponds to biological reality. Conversely, continuous alterations in expression or phosphorylation are subject to modification and regulation, thus justifying their interpretation in a less strong and definitive way (such as continuous personalization). Finally, it follows from these definitions that there are different strategies for personalizing a logical model since discrete and continuous personalizations can each use different types of data; and moreover, these two strategies can be combined. The relative merits of the different personalization strategies will be discussed below.
+Thus, if a gene has a value of $1$ based on its RNA profile, $k_{0\rightarrow1}$ (resp. $k_{1\rightarrow0}$) will be $10^2$ (resp. $10^{-2}$) with an amplification factor of $100$. This amplification factor is therefore a hyper-parameter of the method. Very low values will have no impact while higher values will make some transitions almost impossible and the method will then approach the discrete personalization described above. Some quantitative illustrations of the influence of $F$ are provided in @beal2019personalization. The integration of continuous data through the initial conditions of the nodes and the transition rates are combined to form a second personalization method called **continuous personalization** and described in Figure \@ref(fig:logical-personalization)B. This method has also been called *soft node variants* to emphasize its difference with discrete/strict personalization: it may influence the trajectories in the solution state space leading to a change in probabilities of the resulting stable state but it does not overwrite the logical rules. To illustrate a little more explicitly the impact of continuous personalization, if a given node has a normalized value of $0.8$ after data processing (based on proteins levels for instance), it will be initialized as $1$ in 80% of the stochastic trajectories, its transition rate $k_{0\rightarrow1}$ will be increased (favoring its activation) and its transition rate $k_{1\rightarrow0}$ will be decreased (hampering its inactivation). These changes increase the probability that this node will remain in an activated state close to the one inferred from the patient’s data, while maintaining the validity of its logical rule. Thus, continuous personalization appears as a smoother way to shape logical models’ simulations based on patient data. In summary, different types of data can be used, with different integration methods. Note that it is quite natural to use genetic alterations (mutations, CNA) to specify definitive changes in models (such as those of discrete personalization) since this corresponds to biological reality. Conversely, continuous alterations in expression or phosphorylation are subject to modification and regulation, thus justifying their interpretation in a less strong and definitive way (such as continuous personalization). Finally, it follows from these definitions that there are different strategies for personalizing a logical model since discrete and continuous personalizations can each use different types of data; and moreover, these two strategies can be combined. **Except otherwise stated, mutations (resp. RNA or protein) will always be integrated using discrete (resp. continuous)  personalization and the joint integration of both types of data will therefore combine both methods.** The relative merits of the different personalization strategies will be discussed below.
 
-## An integration tool for high-dimensional data in cell lines {#PROFILE-CL}
+## An integration tool for high-dimensional data?
 
-## An uncertain validation with patient data
+Once the method has been defined, it is imperative to study its validity and possible limitations. This comes down to answering the question: do personalized models capture a biological reality, and in our case do they discriminate between different types of cancer?
 
+### Biological relevance in cell lines {#PROFILE-CL}
 
+These questions can be addressed using cell line data. Using the logical model of cancer pathways from @fumia2013boolean, it is possible to study the 663 cell lines from different types of tumors by integrating their processed omics profiles to the generic logical model to obtain as many personalized models. If we focus on the read-out of *Proliferation*, one of the easiest to interpret, there are several ways to study its relevance. For each cell line and each personalization strategy (and corresponding data type) we can define a personalized model and derive the asymptotic value the *Proliferation* node, called *Proliferation* score. This score is therefore a priori different for all cell lines that present a different molecular profile. For the whole population of cell lines, this score can be confronted with other markers of proliferation such as the levels of Ki67 [@miller2018ki67], here replaced as an example by the RNA levels of the corresponding MKI67 gene. It can then be observed that the simulated *Proliferation* indicator, derived from the personalized models, correlates positively with the biomarker, but only when RNA has been used in the personalization (Figure \@ref(fig:PROFILE-CL)A). The correlation makes qualitative sense, but the heterogeneity appears to be very large and most of the variability is not captured by the models. This heterogeneity is also visible by focusing on some types of cancer (Figure \@ref(fig:PROFILE-CL)B). Thus this kind of comparison only validates the models' ability to retrieve a RNA biomarker (not used in personalization) when they themselves integrate other RNA data. It is also consistent that scores from models personalized with mutations only have less uniform distributions due to the discrete nature of the data and the many identical profiles: many cell lines are not distinguishable by mutations only.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{05-Personalized_files/figure-latex/PROFILE-CL-1} 
+
+}
+
+\caption[Validation of personalized *Proliferation* scores in cell lines]{(ref:PROFILE-CL-caption)}(\#fig:PROFILE-CL)
+\end{figure}
+(ref:PROFILE-CL-caption) **Validation of personalized *Proliferation* scores in cell lines.** (A) Comparison with MKI67 proliferation biomarker for all cancer cell lines. (B) Same with breast (BRCA) and lung (LUAD) cancer only. (C) Comparison with doubling times in a subset of 60 cell lines.  
+  
+
+It is possible to go one step further by comparing these personalized *Proliferation* scores with the doubling time of the cell lines, i.e the time it takes for the cell line population to double. A cell line described as proliferative (high *Proliferation* score) should thus have a low doubling time. This can be observed qualitatively by using a subgroup of cell lines for which this information is available (Figure \@ref(fig:PROFILE-CL)C). These correlations are not significant and once again summarize a large heterogeneity. Predicting doubling times is, however, a rather difficult task, even with the help of more flexible machine learning methods [@kurilov2020assessment].
+
+### Validation with patient data
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{05-Personalized_files/figure-latex/PROFILE-METABRIC-Grade-1} 
+
+}
+
+\caption[Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort]{(ref:PROFILE-METABRIC-Grade-caption)}(\#fig:PROFILE-METABRIC-Grade)
+\end{figure}
+(ref:PROFILE-METABRIC-Grade-caption) **Comparaison of personalized scores with tumour grades for breast cancer patients in METABRIC cohort.** Comparisons are provided for different personalization strategies (with mutations and/or RNA) and two different model nodes (*Proliferation* and *Apoptosis*). 
+
+By analogy with the validations proposed for other mechanistic models [@fey2015signaling], it is also possible to evaluate the prognostic value of personalized logical models on patient data.  It is also possible to reproduce with patient data analyses of the same type as those previously performed with the MKI67 biomarker, as was done in @beal2019personalization, but we focus here on the more clinical applications of the personalized mechanistic models. For example, when studying breast cancer patients in the METABRIC cohort, *Proliferation* and *Apoptosis* scores differ according to tumour grade. The more advanced tumours (grade 3) are associated with higher *Proliferation* scores and lower *Apoptosis* scores (Figure \@ref(fig:PROFILE-METABRIC-Grade)).  This is in line with the natural interpretation that could be given since proliferation is by definition a sign of cancer progression while apoptosis, a programmed death of defective cells, is on the contrary a protective mechanism. While these trends are monotonous and clearly significant for the third strategy using both mutations and RNA ($p<10^{-12}$ with Jonckheere–Terpstra test for ordered differences among classes, for both nodes), this is not the case when the two types of data are used separately: mutations (resp. RNA) are not sufficient to personalize *Proliferation* (resp. *Apoptosis*) scores in a meaningful way. The personalisation method therefore seems to be able to combine discrete and continuous data in such a way that some of the biological information is preserved.  
+  
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{05-Personalized_files/figure-latex/PROFILE-METABRIC-Cox-1} 
+
+}
+
+\caption[Hazard ratios for *Proliferation* and *Apoptosis* in a survival Cox model in METABRIC cohort]{(ref:PROFILE-METABRIC-Cox-caption)}(\#fig:PROFILE-METABRIC-Cox)
+\end{figure}
+(ref:PROFILE-METABRIC-Cox-caption) **Hazard ratios for *Proliferation* and *Apoptosis* in a survival Cox model in METABRIC cohort.** Higher *Proliferation* (resp. *Apoptosis*) scores correspond to higher (resp. lower) probabilities of death.
+
+This comparison to clinical data can be extended to patient survival data in the same cohort. If we focus on the strategy integrating both mutations and RNA, we observe that in a Cox model of survival, *Proliferation* is significantly associated with a higher risk of event while *Apoptosis* is associated with a lower risk, which is again consistent (Figure \@ref(fig:PROFILE-METABRIC-Cox)). In a more schematic and visual way, it is possible to transform these continuous *Proliferation* and *Apoptosis* scores into binary indicators (using medians) and observe their impact on survival, as has been done in previously mentioned studies [@fey2015signaling; @salvucci2019system]. We then observe the same behaviour for the two personalized scores (Figure \@ref(fig:PROFILE-METABRIC-Survival)A and B). Interestingly, if we combine the indicators to create groups that are expected to be of very bad prognosis (high *Proliferation*, low *Apoptosis*) or of very good prognosis (low *Proliferation*, high *Apoptosis*), we further discriminate patients and confirm the qualitatively meaningful interpretation of the personalized scores. It should be noted that the clinical validations presented here remain voluntarily simple and quite close to those proposed in similar articles. Discussions and statistical developments will be proposed in Part III.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{05-Personalized_files/figure-latex/PROFILE-METABRIC-Survival-1} 
+
+}
+
+\caption[Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort]{(ref:PROFILE-METABRIC-Survival-caption)}(\#fig:PROFILE-METABRIC-Survival)
+\end{figure}
+(ref:PROFILE-METABRIC-Survival-caption) **Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort.** (A) Survival curve for overall survival stratified with *Proliferation* scores from personalized models integrating mutations and RNA; scores have binarized based on median and survival censored at 120 months. (B) Same with *Apoptosis* scores. (C) Survival curve stratified with combinations of *Proliferation* and *Apoptosis* scores, based on the same thresholds, and the corresponding number of patients at risk (D).
+
+### Perspectives
+
+In summary, this kind of application of personalized models allows the integration of quite heterogeneous and moderately dimensional biological data in a constrained framework that orders the relationships between variables and guides interpretations. Comparison with external biological or clinical data then makes it possible to verify the absence of major contradictions in the definition of the model. However, the interest of these mechanistic approaches in this type of task appears as quite moderate compared to statistical models. The qualitative aspect is not necessarily compensated here by the integration of knowledge into the structure of the model, especially in examples that use an extremely broad logical model, which has not been specifically designed for the problems to which it is applied. It is then necessary to study the application of these personalized models to more suitable problems, in which the explicitly mechanistic nature of the models can be exploited, for instance the response to perturbations.
 
