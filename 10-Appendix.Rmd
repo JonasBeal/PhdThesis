@@ -23,7 +23,7 @@ Several analyses in previous chapters are based on data derived from cell lines.
 
 The omics profiles of cancer cell lines have been downloaded from Cell Model Passports [@van2019cell] containing genotypic and phenotypic information about more than 1000 cell lines. Among the available data used in this thesis are the exome sequencing, copy number variations and RNA-sequencing.
 
-### Drug screenings
+### Drug screenings {#appendix-GDSC}
 
 Information about response to treatments is retrieved from Genomics of Drug Sensitivity in Cancer Database (GDSC, @yang2012genomics). In order to allow detailed analyses at the level of cancer types, we will restrict ourselves here to tissues represented by at least 20 cell lines and highlighted in dark grey in Figure \@ref(fig:GDSC)A. Most of the 663 cell lines in this subcohort have a complete profile with all omics data (mutations, CNA and expression) and drug responses. However, not all cell lines have necessarily been tested for all drugs.
 
@@ -75,7 +75,7 @@ knitr::include_graphics("fig/AUC.png")
 ```
 (ref:AUC-caption) **Drug screening metrics in cell lines.** Based on a tested drug concentration range, $IC_{50}$ and area under the dose-response curve (AUC) can be computed. For a given drug, red AUC corresponds to a more sensitive cell line than blue AUC.
 
-### CRISPR-Cas9 screening
+### CRISPR-Cas9 screening {#appendix-CRISPR}
 
 On top the previous drug response characterization, some CRISPR-Cas9 screenings have  been performed on cancer cell lines. Very basically, this involves using single-guide RNAs (sgRNAs) to direct the targeted inhibition of certain genes. Conceptually, screening is not very different from drug screening since it allows the sensitivity of cell lines to the inhibition of certain targets to be studied. However, this technology makes it possible to target many more different genes since it is based on RNA guide synthesis and not on the existence of drugs with an affinity for the target of interest. Schematically, sreening is therefore broader (thousands of genes), less biased (any gene can be targeted a priori) and more precise (much lower off-target effect).  
   
@@ -160,16 +160,48 @@ Several logical models of cancer are used in this thesis and some additional des
 
 ## Generic logical model of cancer pathways {#appendix-fumia}
 
-For this thesis, a published Boolean model from [@fumia2013boolean] has been used to illustrate our PROFILE methodology. This regulatory network summarizes several key players and pathways involved in cancer mechanisms such as RTKs, PI3K/AKT, WNT/$\beta$-catenin, TGF-$\beta$/Smads, Rb, HIF-1, p53 and ATM/ATR. An input node *Acidosis* has been added, along with an output node *Proliferation* used as a readout for the activity of any of the cyclins (*CyclinA*, *CyclinB*, *CyclinD* and *CyclinE*). This slightly extended model contains 98 nodes and 254 edges and its inputs are *Acidosis*, *Nutrients*, *Growth Factors* (GFs), *Hypoxia*, *TNFalpha*, *ROS*, *PTEN*, *p14ARF*, *GLI*, *FOXO*, *APC* and *MAX*. Its outputs are *Proliferation*, *Apoptosis*, *DNA_repair*, *DNA_damage*, *VEGF*, *Lactic_acid*, *GSH*, *GLUT1* and *COX412*.
+For this thesis, a published Boolean model from [@fumia2013boolean] has first been used to illustrate our PROFILE methodology. This regulatory network summarizes several key players and pathways involved in cancer mechanisms such as RTKs, PI3K/AKT, WNT/$\beta$-catenin, TGF-$\beta$/Smads, Rb, HIF-1, p53 and ATM/ATR. An input node *Acidosis* has been added, along with an output node *Proliferation* used as a readout for the activity of any of the cyclins (*CyclinA*, *CyclinB*, *CyclinD* and *CyclinE*). This slightly extended model contains 98 nodes and 254 edges and its inputs are *Acidosis*, *Nutrients*, *Growth Factors* (GFs), *Hypoxia*, *TNFalpha*, *ROS*, *PTEN*, *p14ARF*, *GLI*, *FOXO*, *APC* and *MAX*. Its outputs are *Proliferation*, *Apoptosis*, *DNA_repair*, *DNA_damage*, *VEGF*, *Lactic_acid*, *GSH*, *GLUT1* and *COX412*.
 
-```{r Fumia, echo=FALSE, out.width = "80%", fig.cap='(ref:Fumia-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
+```{r Fumia, echo=FALSE, out.width = "90%", fig.cap='(ref:Fumia-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
 knitr::include_graphics("fig/Fumia2013.png")
 ```
 (ref:Fumia-caption) **GINSIM representation of the logical model described in @fumia2013boolean.**
 
+## Extended logical model of cancer pathways {#appendix-verlingue}
+
+Another logical model of similar size and scope was also used, primarily for the study of treatment responses. This model was built by Loïc Verlingue, a medical oncologist and member of the laboratory and preliminary versions of the model are described in @verlingue2016comprehensive and @verlingue2016silico. One of the interests of this model is that it has been designed with a more clinical perspective, notably centred on the response to MTOR inhibitors. In addition, it presents more biological read-outs used for interpretation, and we will use mainly *Proliferation* (also called *G1_S* in the moel files to designate the associated stage of the cell cycle), *Apoptosis* and *Quiescence* in particular. In addition, being able to discuss and collaborate directly with the model autor has helped to avoid potential errors in use.
+
+```{r Verlingue, echo=FALSE, out.width = "90%", fig.cap='(ref:Verlingue-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
+knitr::include_graphics("fig/Verlingue.png")
+```
+(ref:Verlingue-caption) **GINSIM representation of the 'Verlingue' logical model described in @verlingue2016silico.**
+
 ## Logical model of BRAF pathways in melanoma and colorectal cancer {#appendix-pantolini}
 
+Here are some details about the regulations represented in Figure \@ref(fig:BRAF-model). The MAPK pathway encompasses three families of protein kinases: RAF, MEK, ERK. If RAF is separated into two isoforms, CRAF and BRAF, the other two families MEK and ERK are represented by a single node. When BRAF is inhibited, ERK can still be activated through CRAF, and BRAF binds to and phosphorylates MEK1 and MEK2 more efficiently than CRAF [@wellbrock2004raf], especially in his V600E/K mutated form. When PI3K/AKT pathway is activated, through the presence of the HGF (Hepatocyte Growth Factors), EGF (Epidermal Growth Factors) and FGF (Fibroblast Growth Factors) ligands, it leads to a proliferative phenotype. The activation of this pathway results in the activation of PDPK1 and mTOR, both able to phosphorylate p70 (RPS6KB1) which then promotes cell proliferation and growth [@uniprot2019uniprot]. There has been some evidence of negative regulations of these two pathways carried out by ERK itself [@lake2016negative]: phosphorylated ERK is able to prevent the SOS-GRB2 complex formation through the activation of SPRY [@edwin2009intermolecular], inhibit the EGF-dependent GAB1/PI3K association [@lehr2004identification] and down-regulate EGFR signal through phosphorylation [@lake2016negative]. The model also accounts for a negative regulation of proliferation through a pathway involving p53 activation in response to DNA damage (represented by ATM); p53 hinders proliferation through the activation of both PTEN, a PI3K inhibitor, and p21 (CDKN1A) responsible for cell cycle arrest.  
+  
+
+We hypothesize that a single network is able to discriminate between melanoma and CRC cells. These differences may come from different sources. One of them is linked to the negative feedback loop from ERK to EGFR. As mentioned previously, this feedback leads to one important difference in response to treatment between melanoma and CRC: $BRAF^{(V600E)}$ inhibition causes a rapid feedback activation of EGFR, which supports continued proliferation. This feedback is observed only in colorectal since melanoma cells express low levels of EGFR and are therefore not subject to this reactivation [@prahallad2012unresponsiveness]. Moreover, phosphorylation of SOX10 by ERK inhibits its transcription activity towards multiple target genes by interfering with the sumoylation of SOX10 at K55, which is essential for its transcriptional activity [@han2018erk]. The absence of ERK releases the activity of SOX10, which is necessary and sufficient for FOXD3 induction. FOXD3 is then able to directly activate the expression of ERBB3 at the transcriptional level, enhancing the responsiveness of melanoma cells to NRG1 (the ligand for ERBB3), and thus leading to the reactivation of both MAPK and PI3K/AKT pathways [@han2018erk]. Furthermore, it has been shown that in colorectal cells, FOXD3 inhibits EGFR signal *in vitro* [@li2017foxd3]. Interestingly, SOX10 is highly expressed in melanoma cell lines when compared to other cancer cells. In the model, we define SOX10 as an input because of the lack of information about the regulatory mechanisms controlling its activity. The different expression levels of SOX10 have been reported to play an important role in melanoma (high expression) and colorectal (low expression) cell lines. 
+  
+Besides a list of formalized biological assertions, retrieved from literature, has been used during the model building to ensure the consitency of the model with some qualitative behaviours. These assertions, listed below, are all verified when the logical model is simulated (details are available on the corresponding [GitHub repository](https://github.com/sysbio-curie/MaBoSS_test)):
+
+* BRAF inhibition causes a feedback activation of EGFR in colorectal cancer and not in melanoma [@prahallad2012unresponsiveness]
+* MEK inhibition stops ERK signal but activates the PI3K/Akt pathway and increases the activity of ERBB3 [@gopal2010basal; @lake2016negative]
+* HGF signal leads to the reactivation of the MAPK and PI3K/AKT pathways, and resistance to BRAF inhibition [@wroblewski2013bh3]
+* BRAF inhibition in melanoma activates the SOX10/FOXD3/ERBB3 axis, which mediates resistance through the activation of the PI3K/AKT pathway [@han2018erk]
+* Overexpression/mutation of CRAF results in constitutive activation of ERK and MEK also in the presence of a BRAF inhibitor [@manzano2016resistant; johannessen2010cot]
+* Early resistance to BRAF inhibition may be observed in case of PTEN loss, or mutations in PI3K or AKT [@manzano2016resistant]
+* Experiments in melanoma cell lines support combined treatment with BRAF/MEK + PI3K/AKT inhibitors to overcome resistance [@manzano2016resistant]
+* BRAF inhibition (Vemurafenib) leads to the induction of PI3K/AKT pathway and inhibition of EGFR did not block this induction [@corcoran2012egfr]
+* Induction of PI3K/AKT pathway signaling has been associated with decreased sensitivity to MAPK inhibition [@corcoran2012egfr]
+
+
 ## Logical model of prostate cancer {#appendix-montagud}
+
+```{r Montagud, echo=FALSE, out.width = "90%", fig.cap='(ref:Montagud-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
+knitr::include_graphics("fig/Montagud.png")
+```
+(ref:Montagud-caption) **GINSIM representation of the 'Montagud' logical model of prostate cancer.**
 
 # About causality
 

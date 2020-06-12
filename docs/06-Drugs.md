@@ -5,28 +5,196 @@
 
 
 
-\initial{T}he notion of modeling
+\initial{H}istorically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments [@flobak2015discovery; @jastrzebski2018integrative]. Indeed, biological entities, many of which are prospective therapeutic targets, are explicitly represented in the model, making it possible to simulate their inhibition. This is what will be presented in this chapter using the personalized logical models described above. Can they be used to study the response of biological systems to perturbations, in this case the response of cell lines to gene or protein inhibitions? Compared to the numerous statistical models designed to predict the sensitivity of cell lines to treatements, what information do these personalized mechanistic models provide?
 
 
 
+
+  
 
 
 \BeginKnitrBlock{summarybox}<div class="summarybox">
 #### Publications {-}
 
-This chapter extends the method presented in the previous chapter to investigate drug response with personalized logical models. The first application to cell lines of all cancer types was presented orally at ISMB2020 in Basel but is not published. The example concerning BRAF in melanomas and colorectal cancers is under revision and the corresponding pre-print is available as @beal2020personalized. Finally, the work on prostate cancer presented in a third section has also been submitted.
+This chapter extends the method presented in the previous chapter to investigate drug response with personalized logical models. The first application to cell lines of all cancer types was presented orally at ISMB2020 in Basel but is not published.  
+  
+The example concerning BRAF in melanomas and colorectal cancers is under review and the corresponding pre-print is available as @beal2020personalized. In this joint work, only the construction of the generic logic model was mostly carried out by collaborators and will therefore be described more succinctly.  
+  
+Finally, the work on prostate cancer presented in a third section has also been submitted. It is also a joint work, in which my participation focused on the application of the PROFILE method.
 </div>\EndKnitrBlock{summarybox}
 
 ## One step further with drugs
 
-### Methods
+One of the main clinical consequences of the underlying molecular complexity of cancers is the divergent response to treatment, even for a priori similar tumours. In the light of high-throughput sequencing data, the mechanisms governing these responses are somewhat better understood, for patients and especially for model organisms such as cell lines [@heiser2012subtype; garnett2012systematic]. Beyond a few simple cases, the multiplicity of response biomarkers once again calls for holistic approaches.
 
-### Brute force
 
-## A case study on BRAF in melanoma and colorectal cancers
+### Modeling response to cancer treatments 
+
+To study these observed differences in drug response in various cancers, some approaches based on mathematical modeling were developed to explore the complexity of differential drug sensitivities. A number of machine learning-based methods for predicting sensitivities have been proposed [@costello2014community], either without particular constraints or with varying degrees of prior knowledge; but they do not provide a mechanistic understanding of the response. Some other approaches focused on the description of the processes that might influence the response by integrating knowledge of the signaling pathways and their mechanisms and translated it into a mathematical model [@eduati2017drug; @jastrzebski2018integrative; @frohlich2018efficient]. The first step of this approach implies the construction of a network recapitulating knowledge of the interactions between selected biological entities (driver genes but also key genes of signaling pathways), extracted from the literature or from public pathway databases, or directly inferred from data [@verny2017learning]. This static representation of the mechanisms is then translated into a dynamical mathematical model with the goal to not only understand the observed differences [@jastrzebski2018integrative] but also to predict means to revert unexpected behaviours.  
+  
+
+One way to address issues related to patient response to treatments is to fit these mechanistic models to the available data, and to train them on high-throughput cell-line specific perturbation data [@eduati2017drug; @jastrzebski2018integrative; @klinger2013network]. These mechanistic models are then easier to interpret with regard to the main drivers of drug response. They also enable the *in silico* simulations of new designs such as combinations of drugs not present in the initial training data [@frohlich2018efficient]. However, these mechanistic models contain many parameters that need to be fitted or extracted from the literature. Some parsimonious mathematical formalisms have been developed to make up for the absence of either rich perturbation data to train the models or fully quantified kinetic or molecular data to derive the parameters directly from literature. One of these approaches is the logical modelling, which uses discrete variables governed by logical rules. Its explicit syntax facilitates the interpretation of mechanisms and drug response [@zanudo2017network; @iorio2016landscape] and despite its simplicity, semi-quantitative analyses have already been performed on complex systems including drug response studies [@knijnenburg2016logic; @eduati2020patient].  
+  
+
+### An application of personalized logical models
+
+But logical formalism has also shown its relevance regarding drug response in cases where the model is not automatically trained on data but simply constructed from literature or pathway databases and where biological experiments focus on a particular cell line [@flobak2015discovery]. The study is then restricted to one cell line only from which some data and parameters have been experimentally inferred. Using the PROFILE method, it is possible to generate personalized logical models associated with different cell lines and then using them to study the response to treatment. Since the models are not trained with perturbation data but simply specified/constrained by interpreting the molecular profiles, it is possible to do this with a rather limited amount of data.  
+  
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/PROFILE-drug} 
+
+}
+
+\caption[Bimodality criteria and their combinations]{(ref:PROFILE-drug-caption)}(\#fig:PROFILE-drug)
+\end{figure}
+(ref:PROFILE-drug-caption) **Schematic extension of PROFILE-personalized logical models to drug investigation.** (A) Schematic representation of a logical model of cancer molecular networks, in particular the one described in appendix \@ref(appendix-verlingue) and used in the nexte subsection. (B) Sequential pipeline for drug response investigation with PROFILE, starting from a generic logical model, then transformed into several personalized models with different molecular profiles (correspondong to several cell lines); these models are finally simulated with a defined drug inhibition. (C) A possible analysis of the predictions of personalized models obtained from the generic model described in (A); the position of the personalized models in the PCA phenotype (or read-out) space of the model is studied as well as the impact of the treatment on this position.  
+  
+
+The principles are summarized in Figure \@ref(fig:PROFILE-drug). A generic model (Figure \@ref(fig:PROFILE-drug)A) is first transformed into as many personalized models as there are cell lines with an omics profile. These persnalized models are then simulated by adding the effect of a given treatment (Figure \@ref(fig:PROFILE-drug)B). The treatments that can be studied are generally targeted inhibitors. Generally speaking, one must be able to translate the mechanism of action of the treatment into the logical model. The impact of more systemic treatments such as chemotherapy or radiotherapy is more difficult to study with these methods, in any case with most of the logical models published to date, even if in theory, precise modelling of the pathways associated with these treatments (such as DNA repair) could contribute to this.  
+  
+
+It is then possible to analyze the personalized scores for each cell line (asyptotic values of the phenotypic read-outs of the model) with or without the effect of treatment. If the model includes more than two phenotypes of interest, such as the one in Figure \@ref(fig:PROFILE-drug)A, one can visualize these behaviors in the PCA space of the personalized scores, as shown schematically in Figure \@ref(fig:PROFILE-drug)C. In this case the directions of the original phenotype features (*Proliferation*, *Apoptosis*, *Quiescence*) have been added in the PCA-transformed space in order to facilitate the interpretation of positions and drug-induced displacements. In this mock example, based on individualized models, treatment would promote a shift from proliferative to more apoptotic or quiescent behaviors, in particular in the red and green lines, which are a priori more sensitive.
+
+### A pan-cancer attempt
+
+This versatile analysis framework was first applied during this thesis to a large pan-drug and pan-cancer analysis. On the basis of generic logical models such as those previously presented (cf appendix \@ref(appendix-fumia) and \@ref(appendix-verlingue)), and in view of the abundance of available data (across cancer tissues and drugs such as in GDSC cell line dataset, cf appendix \@ref(appendix-fumia)), there were no theoretical obstacles to such an analysis. Although the simulations were carried out without any problems, the analysis nevertheless proved extremely difficult to interpret. We will highlight the various problems encountered, propose an illustration and some perspectives that led to the work presented in the following section.  
+  
+
+Based on the PROFILE methodology and GDSC data, several hundred personalized models can be obtained, each corresponding to a cell line. For each of these personalized models, several dozen of potential drugs have a mechanism of action that can be mechanistically translated into the logical model. We thus obtain tens of thousands of "personalized model/drug" pairs that correspond to experimentally evaluated drug sensitivies (cf appendix \@ref(#appendix-GDSC) for details). Firstly, the comparison of simulated and experimental data is not straightforward. As the models are qualitative, it is necessary to carry out the validation in this spirit. The idea is not to predict sensitivity quantitatively, rather to verify their relative relevance. In the first place, do we recover the cell lines that are most sensitive to a given drug? With several hundred cell lines, it is difficult to make this reflection graphically as in Figure \@ref(fig:PROFILE-drug)C. More quantitative approaches, such as correlation, would require the definition of a precise sensitivity proxy in personalized models. Should we choose the personalised *Proliferation* score obtained with drug? Or the drug-induced displacement in the mechanistic model (the drug arrows in Figure \@ref(fig:PROFILE-drug)C)? Or is a combination of phenotypes used, if so which one? As for experimental metrics, which ones to choose, and what interpretations do they allow? Whatever the choice, dose-response AUC or IC50 (see details in the appendix \@ref(appendix-GDSC)), a problem arises: can the sensitivities of a cell line to different drugs be compared? Such a comparison would allow the most clinically interesting questions of precision medicine to be asked: for a given molecular profile, can the model predict the best treatment to administer? However, AUCs are comparable for different drugs only if the concentration ranges tested are similar; and IC50s are extrapolated, sometimes well beyond the concentrations tested. Qualitative comparisons for a given drug therefore seem the most meaningful, as long as a relevant proxy in personlized models can be justified.
+
+
+Aware of these difficulties, if one decides to do a correlation analysis, for each drug, of the personalised correlation scores with experimental sensitivities, one realises that responses to certain drugs are correctly predicted when others are not correlated at all. But it is difficult to decide between two different interpretations: does this mean that correctly predicted drugs are well modelled and others are not? Or does it mean that some correlations appear to be better by chance because so many drugs have been modeled? A case study can be illustrated more precisely with the example shown in Figure \@ref(fig:PROFILE-PCA). In order to simplify the analysis presented schematically in Figure \@ref(fig:PROFILE-drug)C, the 663 cell lines were averaged by cancer type (according to [TCGA denominations](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables/tcga-study-abbreviations)) and the drug-induced shifts are all represented from the origin in the PCA space. There is evidence that the effect of the drug on personalized models (using only mutations) tends to make them less proliferative and more apoptotic/quiescent (Figure \@ref(fig:PROFILE-PCA)A). This shift is strongest for those types of cancer that are actually most sensitive to this inhibitor experimentally (i.e. low AUC), such as skin cutaneous melanomas (SKCM) in particular, and colorectal (COAD/READ) or pancreatic (PAAD) cancers to a lesser extent. The ability of personalized models to explain this difference can be explained very well by a known underlying biologic reality: the prevalence of BRAF or RAS mutations in these cancers. The three aforementioned cancers are thus very frequently mutated for one of the two genes (Figure \@ref(fig:PROFILE-PCA)B). Thus, the model translates the fact that these two genes are located just upstream of MAP2K1. It is therefore natural that an inhibition just downstream of these important mutations is particularly effective (Figure \@ref(fig:PROFILE-PCA)C). In a case such as this, the relevance of the model can be explained and justified a posteriori. The work is much more difficult in the vast majority of cases, whether the correlations are apparently good or not.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{06-Drugs_files/figure-latex/PROFILE-PCA-1} 
+
+}
+
+\caption[PROFILE-generated models and sensitivites to MAP2K1  inhibitors avergaed per cancer type]{(ref:PROFILE-PCA-caption)}(\#fig:PROFILE-PCA)
+\end{figure}
+(ref:PROFILE-PCA-caption) **PROFILE-generated models and sensitivites to MAP2K1  inhibitors avergaed per cancer type.** (A) Effects of MAP2K1 inhibitors on personalized logical models averaged per cancer types and represented in a normalized PCA space with super-imposed original phenotypes. (B) Proportion of BRAF- and RAS-mutated cell lines in some cancer types. (C) Zoom on the MAPK pathway of the logical model used.  
+  
+
+There is therefore a problem of scope. The fact that the method makes it possible to study hundreds of cell lines and dozens of drugs does not mean that it is relevant to them. The description of pathways in the model is more or less accurate. For example, a node at the model boundaries probably has many regulators missing. Is it then relevant to investigate the response of personalized models to its inhibition? It is therefore necessary to restrict the drugs studied. Similarly, even if the logical model summarizes many important pathways, it is probably unsuitable for certain cell lines or certain types of cancer with different etiologies. However, it is difficult to restrict the scope of the analysis in an unbiased way without having designed a model *de novo* for a specific purpose.  
+  
+
+For all these reasons, it was decided to leave aside this naive, broad-spectrum approach in favour of starting from a more specific biological question and constructing the appropriate logical model.
+
+
+
+## Case study on BRAF in melanoma and colorectal cancers
+
+In order to address the limitations outlined in this exploratory analysis, we propose here a pipeline based on logical modeling and able to go from the formulation of a specific biological question to the validation of a mathematical model on pre-clinical data, in this case a set of cell lines, and the subsequent interpretation of potential resistance mechanisms (Figure \@ref(fig:BRAF-GA)). As before, one of the main points of differentiation with existing mechanistic approaches, is that this framework does not rely on any training of parameters but only on the automatic integration and interpretation of omics features.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/BRAF-GA} 
+
+}
+
+\caption[BRAF modelling flowchart: from a biological question to validated personalized logical models]{(ref:BRAF-GA-caption)}(\#fig:BRAF-GA)
+\end{figure}
+(ref:BRAF-GA-caption) **BRAF modelling flowchart: from a biological question to validated personalized logical models.**
+
+### Biological and clinical context
+
+The construction of a mathematical model must be based first and foremost on a precise and specific biological problem, at the origin of the design of the model. Here, we choose to explore the different responses to treatments in diverse cancers that bear the same mutation. A well-studied example of these variations is the BRAF mutation and especially its V600E substitution. BRAF is mutated in 40 to 70% of melanoma tumours and in 10% of colorectal tumours, each time composed almost entirely of V600E mutations [@cantwell2011brafv600e]. In spite of these similarities, BRAF inhibition treatments have experienced opposite results with improved survival in patients with melanoma [@chapman2011improved] and significant resistance in colorectal cancers [@kopetz2010plx4032], suggesting drastic mechanistic differences. Some subsequent studies have proposed context-based molecular explanations, often highlighting surrounding genes or signalling pathways, such as a feedback activation of EGFR [@prahallad2012unresponsiveness] or other mechanisms [@poulikakos2011raf; sun2014reversible]. These various findings support the need for an integrative mechanistic model able to formalize and explain more systematically the differences in drug sensitivities depending on the molecular context. The purpose of the study we propose here is not to provide a comprehensive molecular description of the response but to verify that the existence and functionality of the suggested feedback loops around the signalling pathway in which BRAF is involved [@prahallad2012unresponsiveness] may be a first hint towards these differences. For a more thorough study of these cancers, we refer to other works [@eduati2017drug; @baur2020connecting; @cho2016attractor].
+
+### A logical model centred on BRAF
+
+A logical model summarizing the main molecular interactions at work in colorectal cancers and melanomas is thus built from the literature and completed with databases. As previously mentioned, the objective is to understand whether it is possible to model and explain differences in responses to BRAF inhibition in melanoma and colorectal cancer patients using the same regulatory network. The fact that the two cancers share the same network but differ from the alterations and expression of their genes constitute our prior hypothesis. The focus of this model is put on two important signalling pathways involved in the mechanisms of resistance to BRAF inhibition which are the ERK1/2 MAPK and PI3K/AKT pathways [@ursem2018emerging; @rossi2019drug]. The generic network presented in Figure \@ref(fig:BRAF-model) recapitulates the known interactions between the biological entities of the network that was first built from the literature, and then verified and completed with potential missing connections using SIGNOR database [@perfetto2016signor]. More details and references about the model can be found in appendix \@ref(appendix-pantolini). All in all, the logical model formalizes the knowledge compiled from different sources and highlights the role of SOX10, FOXD3, CRAF, PI3K, PTEN and of EGFR in resistance to anti-BRAF treatments.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/BRAF-model} 
+
+}
+
+\caption[Bimodality criteria and their combinations]{(ref:BRAF-model-caption)}(\#fig:BRAF-model)
+\end{figure}
+(ref:BRAF-model-caption) **Logical model of signaling pathways around BRAF in colorectal andmelanoma cancers.** Grey nodes represent input nodes, which may correspond to the environmental conditions. Square nodes represent multi-valued variable (MEK, ERK, p70 and Proliferation). Dark blue nodes accounts for families (several genes/entities for one node). Light blue node represents the phenotypic read-out of the model, i.e. *Proliferation*.
+
+
+Once the structure of the model was defined, and before moving on to its personalization, its consistency with the literature was checked using a model-checking procedure. Indeed, due to the complexity of the system, properly taking into account the interactions between entities does not automatically guarantee that the model will reproduce certain dynamic behaviours. An example of a biological assertion may be the reactivation of the MAPK (mitogen-activated protein kinase) pathway through EGFR signal after BRAF inhibition in colorectal cancer [@prahallad2012unresponsiveness]: it is possible to check whether a simulation of this situation with the model gives the same result. Because there are many such assertions and because it is useful to verify them as the model is built, automatic model-checking tools have been defined, based on the MaBoSS syntax and inspired by the python unittest library. More details are provided in @beal2020personalized and in a corresponding [GitHub repository](https://github.com/sysbio-curie/MaBoSS_test). The list of biological assertions used to validate the model is detailed in the appendix \@ref(appendix-pantolini).
+
+
+### Cell lines data
+
+The omics profiles of colorectal and melanoma cell lines are downloaded from Cell Model Passports portal [van2019cell]. 64 colorectal cancer (CRC) cell lines and 65 cutaneaous melanoma (CM) cell lines are listed in the database, with at least mutation or RNA-seq data (59 CM and 53 CRC with both mutations and RNA-seq data). These omics profiles are used to generate cell-line-specific logical models as described in PROFILE method (Figure \@ref(fig:PROFILE-abstract)). The prevalence of mutations and their combination for the two types of cancer can be seen in Figure \@ref(fig:BRAF-GDSC)A and is consistent with the clinical situation described above with melanomas more frequently BRAF-mutated and colorectal cancers more frequently RAS-mutated.   
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{06-Drugs_files/figure-latex/BRAF-GDSC-1} 
+
+}
+
+\caption[Descriptive analysis of cell lines for melanomas and colorectal cancers]{(ref:BRAF-GDSC-caption)}(\#fig:BRAF-GDSC)
+\end{figure}
+(ref:BRAF-GDSC-caption) **Descriptive analysis of cell lines for melanomas and colorectal cancers.** (A) Number of cell lines for the four most frequently mutated genes and their combinations (plot from UpSetR package [@conway2017upsetr]). (B) Differential sensitivities to BRAF inhibition by the drug PLX-4720 (lower panel) or by CRISPR inhibition (upper panel), depending on BRAF mutational status and cancer type. Numbers of cell lines in eache category are indicated. Note that high sensitivities correspond to low AUC and high scaled Bayesian factors.  
+  
+
+In order to validate the relevance of personalized models to explain differential sensitivities to drugs, some experimental screening datasets are used. Drug screening data are downloaded from the Genomics of Drug Sensitivity in Cancer (GDSC) dataset [@yang2012genomics] which includes two BRAF inhibitors: PLX-4720 and Dabrafenib. The cell lines are treated with increasing concentration of drugs and the viability of the cell line relative to untreated control is measured. The dose-response relative viability curve is fitted and then used to compute the area under the dose-response curve (AUC) [@vis2016multilevel]. AUC is a value between 0 and 1: values close to 1 mean that the relative viability has not been decreased, and lower values correspond to increased sensitivity to inhibitions (details in appendix \@ref(appendix-GDSC)). The results obtained with the two drugs are very strongly correlated (Pearson correlation of 0.91) and the analyses presented here will therefore focus on only one of them, PLX-4720.  
+  
+
+In a complementary way, some results of CRISPR/Cas9 screening are also downloaded from Cell Model Passports. This technology, which is described in more detail in the appendix \@ref(appendix-CRISPR), allows targeted inhibitions of certain genes. Two different datasets from Sanger Institute [@behan2019prioritization] and Broad Institute [@meyers2017computational] are available. We use scaled Bayesian factors to assess the effect of CRISPR targeting of genes. These scores are computed based on the fold change distribution of sgRNA [@hart2016bagel]. The highest values indicate that the targeted gene is essential to the cell fitness. The agreement between the two databases is good [@dempster2019agreement] but we choose to focus on the Broad database, which is more balanced in terms of the relative proportions of melanomas and colorectal cancers.  
+  
+
+Figure \@ref(fig:BRAF-GDSC)B illustrates both the relative quantities of cell lines for which drug or CRISPR screening data are available (depending on their BRAF status) as well as differences in sensitivity to BRAF inhibition. The greater sensitivity of BRAF-mutated melanomas compared to BRAF-mutated colorectal cancers is well observed for PLX-4720. However, the overlap in the distributions requires a deeper look into the data and a search for more precise explanations of the differences in sensitivity, including within each type of cancer. The finding appears to be similar for CRISPR despite a sample size that is too small; the higher average sensitivity of melanomas even extends to non-mutated BRAF.
+
+### Validation of personalized models using CRISPR/Cas9 and drug screening}
+
+The validation of personalized logical models using these screening data is done with the following rationale. First, the models are personalized using omics data from the cell lines. Then, two separate simulations are performed for each personalized model: one without the inhibition, the other by creating and activating a BRAF inhibitor to mimic the drug or CRISPR inhibition. The ratio of the *Proliferation* phenotype obtained with inhibition and without inhibition is the proxy used to be compared with the different screening metrics each of which is also standardized (AUC calculated on relative viability for drugs and Bayes factor computed from fold-changes and then scaled).
+
+### Differential sensitivities to BRAF targeting explained by personalized logical models
+
+Once the logical model consistency has been validated, personalized models are generated for each cell line by integrating their interpreted genomic features directly as model constraints or parameters. Their sensitivity to BRAF inhibition is then compared to experimentally observed sensitivities (Figure \@ref(fig:BRAF-results)). In all the following analyses, we focus on three different personalization strategies using: only mutations as discrete personalization (Figure \@ref(fig:BRAF-results)A, upper row), only RNA as continuous personalization (Figure \@ref(fig:BRAF-results)A, middle row) or mutations combined with RNA (Figure \@ref(fig:BRAF-results)A, lower row). These choices reflect first of all the following *a priori*: mutations are much more drastic and permanent changes than RNA, whose expression levels are more subject to fluctuation and regulation. The objective is also to answer the following questions: What type of data is most likely to explain the differences in responses? Is it relevant to combine them? Figure \@ref(fig:BRAF-results) shows an example of the type of analyses possible with personalized models, zooming in more and more on the details from panel A to panel C.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/BRAF-results} 
+
+}
+
+\caption[Validation of personalized models of BRAF inhibition with cell lines data]{(ref:BRAF-results-caption)}(\#fig:BRAF-results)
+\end{figure}
+(ref:BRAF-results-caption) **Validation of personalized models of BRAF inhibition with cell lines data.** (A) Pearson correlations between normalized \emph{Proliferation} scores from personalized models and experimental sensitivities to BRAF inhibition by drug or CRISPR targeting; each row corresponds to a different personalization strategy; only the values for the significant correlations are displayed.  (B) Scatter plots with non-overlapping points corresponding to correlations of panel A, with the three personalization strategies, focusing one one drug (PLX-4720) and one CRISPR dataset (Broad) only. (C) Enlargement of the scatter plot comparing model scores (personalized with mutations and RNA) and experimental sensitivity to CRISPR targeting of BRAF (left) with the corresponding table representing the omics profiles used for each cell line to explore the response mechanisms. This panel can be advantageously replaced by one of the interactive plots proposed in the provided code.
+
+The first approach consists in using only mutations as discrete personalization (Figure \@ref(fig:BRAF-results), A, upper row): the mutations identified in the dataset and that are present in the regulatory network are set to 1 for activating mutations and set to 0 for inactivating mutations. In this case, the *Proliferation* scores from personalized models significantly correlate with both BRAF drug inhibitors (PLX-4720 and Dabrafenib) and both CRISPR datasets (using Pearson correlations). Note that the opposite directions of the correlations for the drug and CRISPR datasets are due to the fact that cell lines sensitive to BRAF inhibition result in low AUCs, and high scaled Bayesian factors, respectively, and, if the models are relevant, to low standardized *Proliferation* scores. Looking more closely at the corresponding scatter plot for PLX-4720 (Figure \@ref(fig:BRAF-results)B, upper left), it can be seen that this correlation results from the model's ability to recover the highest sensitivity of the BRAF-mutated cell lines that form an undifferentiated cluster on the left side. These cell lines are indeed relatively more sensitive than non-mutated BRAF cell lines. However, the integration of mutations alone does not explain the significant differences within this subgroup (AUC between 0.55 and 0.9). A very similar behaviour can be observed when comparing model simulations with CRISPR data (Figure \@ref(fig:BRAF-results)B, upper right).  
+  
+
+Using only RNA data as continuous personalization (Figure \@ref(fig:BRAF-results)A and B, middle rows) is both less informative and more difficult to interpret. For continuous data such as RNAseq data, we normalize the expression values and set both the initial conditions and the transition rates of the model variables to the corresponding values. Correlations with experimental BRAF inhibitions appear weaker and more uncertain. The key point, however, is that the combination of mutations and RNA, as depicted in Figure \@ref(fig:BRAF-results) A and B lower rows, seems to be more relevant. This is partially true in quantitative terms but it is even easier to interpret in the corresponding scatter plots. Comparing first the Broad CRISPR scatter plots using mutations only (Figure \@ref(fig:BRAF-results)B, upper right) and using both mutations and RNA (Figure \@ref(fig:BRAF-results)B, lower right), we can observe that non-responsive cell lines (scaled Bayesian factor below 0), grouped in the lower right corner and correctly predicted using only mutations stayed in the same area: these strong mutational phenotypes have not been displaced by the addition of RNA data. Other cell lines previously considered to be of intermediate sensitivity by the model (e.g., COLO-678 or SK-MEL-2) were shifted to the right, consistent with the lack of sensitivity observed experimentally. Finally, BRAF-mutated cell lines, previously clustered in one single column on the left using only mutations (with normalized *Proliferation* scores around 0.5), have been moved in different directions. Many of the most sensitive cell lines (scaled Bayesian factor above 2) have been pushed to the left in accordance with the high sensitivities observed experimentally (e.g., HT-29 or SK-MEL-24). It is even observed that the model corrected the position of the two BRAF mutated cell lines, but whose sensitivity is experimentally low (melanoma cell line HT-144 and colorectal cell line HT-55). Only one cell line (SK-MEL-30) has seen its positioning evolve counter-intuitively as a result of the addition of RNA in the personalization strategy: relatively sensitive to the inhibition of BRAF, it has, however, seen its standardised *Proliferation* score approach 1. All in all, this contribution of RNA data results in significant correlations even when restricted to BRAF-mutated cell lines only (R=0.69, p.value=0.006).  
+  
+
+A similar analysis can be made of the impact of adding RNA data to personalization when comparing with the experimental response to PLX-4720 (Figure \@ref(fig:BRAF-results)B, upper and lower left). Most of the non-sensitive cell lines (upper right corner) have not seen the behaviour of the personalized models change with RNA addition. However, the numerous BRAF-mutated cell lines previously grouped around standardized *Proliferation* scores of 0.5, are now better differentiated and their sensitivity predicted by personalized models has generally been revised towards lower scores (i.e., higher sensitivity). Similar to the CRISPR data analysis, three sensitive cell lines have been shifted to the right and are misinterpreted by the model. As a result, the correlation restricted to BRAF-mutated cell lines is no longer significant (R=0.26, p.value=0.1).
+
+### An investigative tool
+
+These personalized models are not primarily intended to be predictive tools but rather used to reason and explore the possible mechanisms and specificities of each cell line. To continue on the previous examples, the two melanoma cell lines, HT-144 and SK-MEL-24, share the same mutational profiles but have very different sensitivities to BRAF targeting (Figure \@ref(fig:BRAF-results)C). This inconsistency is partially corrected by the addition of the RNA data, which allows the model to take into account the difference in CRAF expression between the two cell lines. In fact, CRAF is a crucial node for the network since it is necessary for the reactivation of the MAPK pathway after BRAF inhibition. Therefore, the high sensitivity of SK-MEL-24 may be explained by its low CRAF expression level, which makes the reactivation of the MAPK pathway more difficult for this cell line. Conversely, in HT-144, the high level of CRAF expression allows the signal to flow properly through this pathway even after BRAF inhibition, thus making this cell line more resistant. The importance of CRAF expression is also evident in HT-29, a CRC BRAF mutated cell line with other important mutations (PI3K activation and p53 deletion). However, it remains sensitive to treatment, due to its very low level of CRAF expression.  
+  
+
+Another interesting contribution of RNA appears in the melanoma cell line UACC-62, which is particularly sensitive to treatment. The model is able to correctly predict its response once RNA levels are integrated. In this case, the reason for sensitivity seems to be due to the low level of PDPK1, which makes it difficult to activate p70 and thus trigger the resistance linked to PI3K/AKT pathway activation. Similarly, the CRC resistant cell line, HT55, which carries only the BRAF mutation, expresses high levels of PDPK1, in addition to high levels of CRAF, supporting the idea that the presence of both MAPK and PI3K/AKT pathways may confer resistance to BRAF inhibition treatments. We can also mention a cluster of RAS mutated cell lines, usually NRAS mutated for melanomas (e.g., SK-MEL-2) and KRAS for colorectal cancers (e.g., COLO-678), which are classified by the model as resistant. Interestingly, in these cell lines, a low level of CRAF is not enough to block the signal of the MAPK pathway, which is stronger in the model because of the simulation of the RAS mutation (RAS is set to 1).  
+  
+
+Only SK-MEL-30 appears to be incorrectly classified and is observed to be more sensitive than the other cell lines with a similar mutation profile. This could be due to the fact that our network is incomplete and not able to account for some alterations responsible for this cell line sensitivity. The exploration of the mutational profile for this cell line might be a hint of The problem may also come from the fact that this cell line contains a frameshift mutation of RPS6KB2 (p70 node) not referenced in OncoKB and therefore not included in the simulation.  
+  
+The versatility of the logical formalism makes it possible to test other node inhibitions as in Figure \@ref(fig:BRAF-results-add), but remains limited by the scope of the model. Since the present model has been designed around BRAF, its regulators have been carefully selected and implemented, which is not necessarily the case for other nodes of the model. Therefore, these personalized models can be used to study how comprehensive the descriptions of the regulation of other nodes or parts of the model are. Thus, model simulations show that response trends to TP53 inhibition are consistently recovered by the model (Figure \@ref(fig:BRAF-results-add)B) but the simple regulation of p53 in the model results in coarse-grained patterns, although slightly improved by addition of RNA data. Similar analyses regarding the targeting of PIK3CA (in CRISPR data) simulated, in the model, by the inhibition of PI3K node, can be performed (Figure \@ref(fig:BRAF-results-add)C). Low correlations are an indication highlighting the insufficient regulation of the node.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{06-Drugs_files/figure-latex/BRAF-results-add-1} 
+
+}
+
+\caption[ Application of personalized models to other CRISPR targets]{(ref:BRAF-results-add-caption)}(\#fig:BRAF-results-add)
+\end{figure}
+(ref:BRAF-results-add-caption) ** Application of personalized models to other CRISPR targets.** (A) Personalization strategies using either mutations only (as discrete data) or combined with RNA (as continuous data) with their corresponding scatter plots in panels B and C. (B) Scatter plot comparing normalized *Proliferation* scores of p53 inhibition in the models with experiment sensitivity of cell lines to TP53 CRISPR inhibition, indicating p53 mutational status as interpreted in the model. Pearson correlations and the corresponding p-values are shown. (C) Similar analysis as in panel B with PI3K model node and PIK3CA CRISPR inhibition.
+
+### Comparison of the mechanistic approach with machine learning methods
 
 ## Limitations and perspectives illustrated by a prostate cancer study {#prostate-model}
 
-A model is first of all an ambiguous object and a polysemous word. It therefore seems necessary to start with a semantic study. Among the many 
 
 
