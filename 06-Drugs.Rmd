@@ -20,7 +20,7 @@ knitr::asis_output('Historically, all mechanistic models of molecular networks, 
 ```
 
 ```{r 6_packages, echo=FALSE, warning=FALSE, message=FALSE}
-invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra", "ggrepel", "UpSetR", "gghalves", "ggh4x", "latex2exp"),
+invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra", "ggrepel", "UpSetR", "gghalves", "ggh4x", "latex2exp", "plotly"),
        FUN = require,
        character.only = TRUE))
 
@@ -186,7 +186,7 @@ Once the structure of the model was defined, and before moving on to its persona
 
 The omics profiles of colorectal and melanoma cell lines are downloaded from Cell Model Passports portal [van2019cell]. 64 colorectal cancer (CRC) cell lines and 65 cutaneaous melanoma (CM) cell lines are listed in the database, with at least mutation or RNA-seq data (59 CM and 53 CRC with both mutations and RNA-seq data). These omics profiles are used to generate cell-line-specific logical models as described in PROFILE method (Figure \@ref(fig:PROFILE-abstract)). The prevalence of mutations and their combination for the two types of cancer can be seen in Figure \@ref(fig:BRAF-GDSC)A and is consistent with the clinical situation described above with melanomas more frequently BRAF-mutated and colorectal cancers more frequently RAS-mutated.   
 
-```{r BRAF-GDSC, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-GDSC-caption)', fig.scap='Descriptive analysis of cell lines for melanomas and colorectal cancers', out.width="100%", fig.height=5, fig.width=8}
+```{r BRAF-GDSC, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-GDSC-caption)', fig.scap='Descriptive analysis of cell lines for melanomas and colorectal cancers', out.width="95%", fig.height=5, fig.width=8}
 colors_types <- c(CM="#B47562FF", CRC="#332826FF")
 plot_data_upset <- readRDS("data/drugs/plot_data_upset.rds")
 plot_data_BRAF_GDSC <- readRDS("data/drugs/plot_data_BRAF_GDSC.rds")
@@ -204,7 +204,7 @@ plot_A <- upset(plot_data_upset,
 
 plot_B <- ggplot(plot_data_BRAF_GDSC, aes(x=TCGA_label, y=Value, fill=TCGA_label)) +
   geom_half_dotplot(binaxis='y',dotsize = 0.8) +
-  geom_half_boxplot() +
+  geom_half_boxplot(alpha=0.8) +
   geom_text(data = plot_data_BRAF_GDSC_label,
             aes(label=paste0("n=", Number), y=y),
             color="black") +
@@ -237,43 +237,117 @@ In a complementary way, some results of CRISPR/Cas9 screening are also downloade
 
 Figure \@ref(fig:BRAF-GDSC)B illustrates both the relative quantities of cell lines for which drug or CRISPR screening data are available (depending on their BRAF status) as well as differences in sensitivity to BRAF inhibition. The greater sensitivity of BRAF-mutated melanomas compared to BRAF-mutated colorectal cancers is well observed for PLX-4720. However, the overlap in the distributions requires a deeper look into the data and a search for more precise explanations of the differences in sensitivity, including within each type of cancer. The finding appears to be similar for CRISPR despite a sample size that is too small; the higher average sensitivity of melanomas even extends to non-mutated BRAF.
 
-### Validation of personalized models using CRISPR/Cas9 and drug screening}
+### Validation of personalized models using CRISPR/Cas9 and drug screening
 
 The validation of personalized logical models using these screening data is done with the following rationale. First, the models are personalized using omics data from the cell lines. Then, two separate simulations are performed for each personalized model: one without the inhibition, the other by creating and activating a BRAF inhibitor to mimic the drug or CRISPR inhibition. The ratio of the *Proliferation* phenotype obtained with inhibition and without inhibition is the proxy used to be compared with the different screening metrics each of which is also standardized (AUC calculated on relative viability for drugs and Bayes factor computed from fold-changes and then scaled).
 
-### Differential sensitivities to BRAF targeting explained by personalized logical models
+#### Differential sensitivities to BRAF targeting explained by personalized logical models
 
 Once the logical model consistency has been validated, personalized models are generated for each cell line by integrating their interpreted genomic features directly as model constraints or parameters. Their sensitivity to BRAF inhibition is then compared to experimentally observed sensitivities (Figure \@ref(fig:BRAF-results)). In all the following analyses, we focus on three different personalization strategies using: only mutations as discrete personalization (Figure \@ref(fig:BRAF-results)A, upper row), only RNA as continuous personalization (Figure \@ref(fig:BRAF-results)A, middle row) or mutations combined with RNA (Figure \@ref(fig:BRAF-results)A, lower row). These choices reflect first of all the following *a priori*: mutations are much more drastic and permanent changes than RNA, whose expression levels are more subject to fluctuation and regulation. The objective is also to answer the following questions: What type of data is most likely to explain the differences in responses? Is it relevant to combine them? Figure \@ref(fig:BRAF-results) shows an example of the type of analyses possible with personalized models, zooming in more and more on the details from panel A to panel C.
 
 ```{r BRAF-results, echo=FALSE, out.width = "90%", fig.cap='(ref:BRAF-results-caption)', fig.scap='Validation of personalized models of BRAF inhibition with cell lines data', fig.align='center'}
 knitr::include_graphics("fig/BRAF-results.png")
 ```
-(ref:BRAF-results-caption) **Validation of personalized models of BRAF inhibition with cell lines data.** (A) Pearson correlations between normalized \emph{Proliferation} scores from personalized models and experimental sensitivities to BRAF inhibition by drug or CRISPR targeting; each row corresponds to a different personalization strategy; only the values for the significant correlations are displayed.  (B) Scatter plots with non-overlapping points corresponding to correlations of panel A, with the three personalization strategies, focusing one one drug (PLX-4720) and one CRISPR dataset (Broad) only. (C) Enlargement of the scatter plot comparing model scores (personalized with mutations and RNA) and experimental sensitivity to CRISPR targeting of BRAF (left) with the corresponding table representing the omics profiles used for each cell line to explore the response mechanisms. This panel can be advantageously replaced by one of the interactive plots proposed in the provided code.
+(ref:BRAF-results-caption) **Validation of personalized models of BRAF inhibition with cell lines data.** (A) Pearson correlations between normalized *Proliferation* scores from personalized models and experimental sensitivities to BRAF inhibition by drug or CRISPR targeting; each row corresponds to a different personalization strategy; only the values for the significant correlations are displayed. (B) Scatter plots with non-overlapping points corresponding to correlations of panel A, with the three personalization strategies, focusing on one drug (PLX-4720) and one CRISPR dataset (Broad). (C) Enlargement of one scatter plot in B (left) with the table describing the omics profiles used for each cell line to explore the response mechanisms; interactive version in Figure \@ref(fig:BRAF-interactive) or [GitHub files](https://github.com/sysbio-curie/PROFILE_BRAF_Model/blob/master/Analysis.html).
 
 The first approach consists in using only mutations as discrete personalization (Figure \@ref(fig:BRAF-results), A, upper row): the mutations identified in the dataset and that are present in the regulatory network are set to 1 for activating mutations and set to 0 for inactivating mutations. In this case, the *Proliferation* scores from personalized models significantly correlate with both BRAF drug inhibitors (PLX-4720 and Dabrafenib) and both CRISPR datasets (using Pearson correlations). Note that the opposite directions of the correlations for the drug and CRISPR datasets are due to the fact that cell lines sensitive to BRAF inhibition result in low AUCs, and high scaled Bayesian factors, respectively, and, if the models are relevant, to low standardized *Proliferation* scores. Looking more closely at the corresponding scatter plot for PLX-4720 (Figure \@ref(fig:BRAF-results)B, upper left), it can be seen that this correlation results from the model's ability to recover the highest sensitivity of the BRAF-mutated cell lines that form an undifferentiated cluster on the left side. These cell lines are indeed relatively more sensitive than non-mutated BRAF cell lines. However, the integration of mutations alone does not explain the significant differences within this subgroup (AUC between 0.55 and 0.9). A very similar behaviour can be observed when comparing model simulations with CRISPR data (Figure \@ref(fig:BRAF-results)B, upper right).  
   
 
-Using only RNA data as continuous personalization (Figure \@ref(fig:BRAF-results)A and B, middle rows) is both less informative and more difficult to interpret. For continuous data such as RNAseq data, we normalize the expression values and set both the initial conditions and the transition rates of the model variables to the corresponding values. Correlations with experimental BRAF inhibitions appear weaker and more uncertain. The key point, however, is that the combination of mutations and RNA, as depicted in Figure \@ref(fig:BRAF-results) A and B lower rows, seems to be more relevant. This is partially true in quantitative terms but it is even easier to interpret in the corresponding scatter plots. Comparing first the Broad CRISPR scatter plots using mutations only (Figure \@ref(fig:BRAF-results)B, upper right) and using both mutations and RNA (Figure \@ref(fig:BRAF-results)B, lower right), we can observe that non-responsive cell lines (scaled Bayesian factor below 0), grouped in the lower right corner and correctly predicted using only mutations stayed in the same area: these strong mutational phenotypes have not been displaced by the addition of RNA data. Other cell lines previously considered to be of intermediate sensitivity by the model (e.g., COLO-678 or SK-MEL-2) were shifted to the right, consistent with the lack of sensitivity observed experimentally. Finally, BRAF-mutated cell lines, previously clustered in one single column on the left using only mutations (with normalized *Proliferation* scores around 0.5), have been moved in different directions. Many of the most sensitive cell lines (scaled Bayesian factor above 2) have been pushed to the left in accordance with the high sensitivities observed experimentally (e.g., HT-29 or SK-MEL-24). It is even observed that the model corrected the position of the two BRAF mutated cell lines, but whose sensitivity is experimentally low (melanoma cell line HT-144 and colorectal cell line HT-55). Only one cell line (SK-MEL-30) has seen its positioning evolve counter-intuitively as a result of the addition of RNA in the personalization strategy: relatively sensitive to the inhibition of BRAF, it has, however, seen its standardised *Proliferation* score approach 1. All in all, this contribution of RNA data results in significant correlations even when restricted to BRAF-mutated cell lines only (R=0.69, p.value=0.006).  
-  
+Using only RNA data as continuous personalization (Figure \@ref(fig:BRAF-results)A and B, middle rows) is both less informative and more difficult to interpret. For continuous data such as RNAseq data, we normalize the expression values and set both the initial conditions and the transition rates of the model variables to the corresponding values. Correlations with experimental BRAF inhibitions appear weaker and more uncertain. The key point, however, is that the combination of mutations and RNA, as depicted in Figure \@ref(fig:BRAF-results) A and B lower rows, seems to be more relevant. This is partially true in quantitative terms but it is even easier to interpret in the corresponding scatter plots (Figure \@ref(fig:BRAF-interactive)). Comparing first the Broad CRISPR scatter plots using mutations only (Figure \@ref(fig:BRAF-results)B, upper right) and using both mutations and RNA (Figure \@ref(fig:BRAF-results)B, lower right), we can observe that non-responsive cell lines (scaled Bayesian factor below 0), grouped in the lower right corner and correctly predicted using only mutations stayed in the same area: these strong mutational phenotypes have not been displaced by the addition of RNA data. Other cell lines previously considered to be of intermediate sensitivity by the model (e.g., COLO-678 or SK-MEL-2) were shifted to the right, consistent with the lack of sensitivity observed experimentally. Finally, BRAF-mutated cell lines, previously clustered in one single column on the left using only mutations (with normalized *Proliferation* scores around 0.5), have been moved in different directions. Many of the most sensitive cell lines (scaled Bayesian factor above 2) have been pushed to the left in accordance with the high sensitivities observed experimentally (e.g., HT-29 or SK-MEL-24). It is even observed that the model corrected the position of the two BRAF mutated cell lines, but whose sensitivity is experimentally low (melanoma cell line HT-144 and colorectal cell line HT-55). Only one cell line (SK-MEL-30) has seen its positioning evolve counter-intuitively as a result of the addition of RNA in the personalization strategy: relatively sensitive to the inhibition of BRAF, it has, however, seen its standardised *Proliferation* score approach 1. All in all, this contribution of RNA data results in significant correlations even when restricted to BRAF-mutated cell lines only (R=0.69, p.value=0.006).  
 
-A similar analysis can be made of the impact of adding RNA data to personalization when comparing with the experimental response to PLX-4720 (Figure \@ref(fig:BRAF-results)B, upper and lower left). Most of the non-sensitive cell lines (upper right corner) have not seen the behaviour of the personalized models change with RNA addition. However, the numerous BRAF-mutated cell lines previously grouped around standardized *Proliferation* scores of 0.5, are now better differentiated and their sensitivity predicted by personalized models has generally been revised towards lower scores (i.e., higher sensitivity). Similar to the CRISPR data analysis, three sensitive cell lines have been shifted to the right and are misinterpreted by the model. As a result, the correlation restricted to BRAF-mutated cell lines is no longer significant (R=0.26, p.value=0.1).
-
-### An investigative tool
-
-```{r BRAF-interactive, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-interactive-caption)', fig.scap=' Application of personalized models to other CRISPR targets', out.width="90%", fig.height=5, fig.width=8}
+```{r BRAF-interactive, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-interactive-caption)', fig.scap='Interactive', out.width="90%", fig.height=5, fig.width=8}
 colors_types_add <- c("p53: Loss function"="#B18147FF",
                   "p53: No mutation"="#B2AAA2FF",
                   "PI3K: Gain function"="#803B31FF",
                   "PI3K: No mutation"="#B2AAA2FF")
 
-plot_data_BRAF_add <- readRDS("data/drugs/plot_data_BRAF_add.rds")
+plot_data_BRAF_interactive <- readRDS("data/drugs/plot_data_BRAF_interactive.rds")
 
+if (is_html_output()){
+p_crispr <- ggplot(plot_data_BRAF_interactive, aes(x=Score, y=Value)) +
+  geom_point(aes(color=TCGA_label, text=Label, frame=SimCase),
+             show.legend = FALSE) +
+  #facet_grid(SimCase~.) +
+  theme_pubclean() +
+  scale_color_manual(values = colors_types)  +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5),
+        strip.background.y = element_blank(),
+        strip.text.y = element_blank(),
+        panel.border = element_rect(color = "gray30",
+                                    fill = NA, size = 0.7)) +
+  labs(#title="CRISPR: (Prolif. norm.) VS (CRISPR Broad)",
+       x="Proliferation scores from  personalized models",
+       y="CRISPR screening metric\n(scaled Bayesian factor)")
+ply_crispr <- ggplotly(p_crispr, tooltip = "text") %>%
+  animation_slider(currentvalue = list(prefix = "Personalization with ", font = list(color="black")),
+                   lenmode="fraction",
+                   len=0.5,
+                   x=0.3,
+                   y=-0.2)
 
+ply_crispr
+
+} else {
+  p_crispr <- ggplot(plot_data_BRAF_interactive, aes(x=Score, y=Value)) +
+  geom_point(aes(color=TCGA_label),
+             show.legend = TRUE) +
+  facet_grid(~SimCase) +
+  theme_pubclean() +
+  scale_color_manual(values = colors_types)  +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5),
+        strip.background.y = element_blank(),
+        strip.text.y = element_blank(),
+        panel.border = element_rect(color = "gray30",
+                                    fill = NA, size = 0.7)) +
+  labs(#title="CRISPR: (Prolif. norm.) VS (CRISPR Broad)",
+       x="Proliferation scores from  personalized models",
+       y="CRISPR screening metric\n(scaled Bayesian factor)")
+  
+  p_crispr <- select(plot_data_BRAF_interactive, -P_Rates) %>%
+    pivot_wider(names_from = SimCase, values_from = Score) %>%
+  ggplot() +
+  geom_segment(aes(x=`Mutations`, xend=`Mutations & RNA`,
+                   y=Value, yend=Value,
+                   color=TCGA_label),
+               arrow = arrow(angle = 30, length = unit(4, "mm"),
+                                ends = "last", type = "open"),
+               show.legend = TRUE, alpha=0.5) +
+  geom_point(aes(x=`Mutations`, y=Value, color=TCGA_label),
+             alpha=0.5) +
+    geom_point(aes(x=`Mutations & RNA`, y=Value, color=TCGA_label)) +
+  theme_pubclean() +
+  scale_color_manual(values = colors_types)  +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5),
+        strip.background.y = element_blank(),
+        strip.text.y = element_blank(),
+        panel.border = element_rect(color = "gray30",
+                                    fill = NA, size = 0.7)) +
+  labs(#title="CRISPR: (Prolif. norm.) VS (CRISPR Broad)",
+       x="Proliferation scores from  personalized models",
+       y="CRISPR screening metric\n(scaled Bayesian factor)")
+  
+  p_crispr
+
+}
 
 ```
-(ref:BRAF-interactive-caption) ** Application of personalized models to other CRISPR targets.** 
 
-These personalized models are not primarily intended to be predictive tools but rather used to reason and explore the possible mechanisms and specificities of each cell line. To continue on the previous examples, the two melanoma cell lines, HT-144 and SK-MEL-24, share the same mutational profiles but have very different sensitivities to BRAF targeting (Figure \@ref(fig:BRAF-results)C). This inconsistency is partially corrected by the addition of the RNA data, which allows the model to take into account the difference in CRAF expression between the two cell lines. In fact, CRAF is a crucial node for the network since it is necessary for the reactivation of the MAPK pathway after BRAF inhibition. Therefore, the high sensitivity of SK-MEL-24 may be explained by its low CRAF expression level, which makes the reactivation of the MAPK pathway more difficult for this cell line. Conversely, in HT-144, the high level of CRAF expression allows the signal to flow properly through this pathway even after BRAF inhibition, thus making this cell line more resistant. The importance of CRAF expression is also evident in HT-29, a CRC BRAF mutated cell line with other important mutations (PI3K activation and p53 deletion). However, it remains sensitive to treatment, due to its very low level of CRAF expression.  
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('(ref:BRAF-interactive-caption) **Multi-omics integration and enhanced value of RNA in addition to mutations.** For each cell line, an arrow shows the impact of adding RNA in the customization strategy. This graph is present in an interactive format in the online version of the thesis in order to give easy access to the omic profile corresponding to each point.')
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output('(ref:BRAF-interactive-caption) **Multi-omics integration and enhanced value of RNA in addition to mutations.** The successive observation of the two personalization strategies allows to visualize the impact of the RNA addition and to look at the corresponding omics sprofiles for the different points.')
+```  
+
+A similar analysis can be made of the impact of adding RNA data to personalization when comparing with the experimental response to PLX-4720 (Figure \@ref(fig:BRAF-results)B, upper and lower left). Most of the non-sensitive cell lines (upper right corner) have not seen the behaviour of the personalized models change with RNA addition. However, the numerous BRAF-mutated cell lines previously grouped around standardized *Proliferation* scores of 0.5, are now better differentiated and their sensitivity predicted by personalized models has generally been revised towards lower scores (i.e., higher sensitivity). Similar to the CRISPR data analysis, three sensitive cell lines have been shifted to the right and are misinterpreted by the model. As a result, the correlation restricted to BRAF-mutated cell lines is no longer significant (R=0.26, p.value=0.1).
+
+#### An investigative tool
+
+These personalized models are not primarily intended to be predictive tools but rather used to reason and explore the possible mechanisms and specificities of each cell line, for example by studying the molecular alterations at the origin of the observed behaviour (Figure \@ref(fig:BRAF-interactive)). To continue on the previous examples, the two melanoma cell lines, HT-144 and SK-MEL-24, share the same mutational profiles but have very different sensitivities to BRAF targeting (Figure \@ref(fig:BRAF-results)C). This inconsistency is partially corrected by the addition of the RNA data, which allows the model to take into account the difference in CRAF expression between the two cell lines. In fact, CRAF is a crucial node for the network since it is necessary for the reactivation of the MAPK pathway after BRAF inhibition. Therefore, the high sensitivity of SK-MEL-24 may be explained by its low CRAF expression level, which makes the reactivation of the MAPK pathway more difficult for this cell line. Conversely, in HT-144, the high level of CRAF expression allows the signal to flow properly through this pathway even after BRAF inhibition, thus making this cell line more resistant. The importance of CRAF expression is also evident in HT-29, a CRC BRAF mutated cell line with other important mutations (PI3K activation and p53 deletion). However, it remains sensitive to treatment, due to its very low level of CRAF expression.  
   
 
 Another interesting contribution of RNA appears in the melanoma cell line UACC-62, which is particularly sensitive to treatment. The model is able to correctly predict its response once RNA levels are integrated. In this case, the reason for sensitivity seems to be due to the low level of PDPK1, which makes it difficult to activate p70 and thus trigger the resistance linked to PI3K/AKT pathway activation. Similarly, the CRC resistant cell line, HT55, which carries only the BRAF mutation, expresses high levels of PDPK1, in addition to high levels of CRAF, supporting the idea that the presence of both MAPK and PI3K/AKT pathways may confer resistance to BRAF inhibition treatments. We can also mention a cluster of RAS mutated cell lines, usually NRAS mutated for melanomas (e.g., SK-MEL-2) and KRAS for colorectal cancers (e.g., COLO-678), which are classified by the model as resistant. Interestingly, in these cell lines, a low level of CRAF is not enough to block the signal of the MAPK pathway, which is stronger in the model because of the simulation of the RAS mutation (RAS is set to 1).  
@@ -281,9 +355,7 @@ Another interesting contribution of RNA appears in the melanoma cell line UACC-6
 
 Only SK-MEL-30 appears to be incorrectly classified and is observed to be more sensitive than the other cell lines with a similar mutation profile. This could be due to the fact that our network is incomplete and not able to account for some alterations responsible for this cell line sensitivity. The exploration of the mutational profile for this cell line might be a hint of The problem may also come from the fact that this cell line contains a frameshift mutation of RPS6KB2 (p70 node) not referenced in OncoKB and therefore not included in the simulation.  
   
-The versatility of the logical formalism makes it possible to test other node inhibitions as in Figure \@ref(fig:BRAF-results-add), but remains limited by the scope of the model. Since the present model has been designed around BRAF, its regulators have been carefully selected and implemented, which is not necessarily the case for other nodes of the model. Therefore, these personalized models can be used to study how comprehensive the descriptions of the regulation of other nodes or parts of the model are. Thus, model simulations show that response trends to TP53 inhibition are consistently recovered by the model (Figure \@ref(fig:BRAF-results-add)B) but the simple regulation of p53 in the model results in coarse-grained patterns, although slightly improved by addition of RNA data. Similar analyses regarding the targeting of PIK3CA (in CRISPR data) simulated, in the model, by the inhibition of PI3K node, can be performed (Figure \@ref(fig:BRAF-results-add)C). Low correlations are an indication highlighting the insufficient regulation of the node.
-
-```{r BRAF-results-add, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-results-add-caption)', fig.scap=' Application of personalized models to other CRISPR targets', out.width="90%", fig.height=5, fig.width=8}
+```{r BRAF-results-add, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-results-add-caption)', fig.scap='Application of personalized models to other CRISPR targets', out.width="90%", fig.height=5, fig.width=8}
 colors_types_add <- c("p53: Loss function"="#B18147FF",
                   "p53: No mutation"="#B2AAA2FF",
                   "PI3K: Gain function"="#803B31FF",
@@ -295,8 +367,8 @@ p_table_red <- select(plot_data_BRAF_add, SimCase, P_Mutants, P_Rates) %>%
    pivot_longer(starts_with("P_"), names_to="P_Method", values_to="P_Type") %>%
    distinct %>%
    mutate(Alpha_Status=if_else(P_Type==" ", 0, 1),
-         P_Method=if_else(P_Method=="P_Mutants", "Discrete", "Continuous") %>% factor(levels=c("Discrete", "Continuous")),
-         Label="Personalization method") %>%
+         P_Method=if_else(P_Method=="P_Mutants", "Disc.", "Cont.") %>% factor(levels=c("Disc.", "Cont.")),
+         Label="Personalization") %>%
    ggplot(aes(x=P_Method, y=1)) +
       geom_tile(aes(alpha=as.factor(Alpha_Status)),
                 color="black", size=0.5,fill="grey85",
@@ -321,7 +393,7 @@ p_table_red <- select(plot_data_BRAF_add, SimCase, P_Mutants, P_Rates) %>%
   facet_nested(SimCase~Label+P_Method, scales = "free", space = "free")
   
   p_crispr_p53 <- filter(plot_data_BRAF_add, Target=="p53") %>%
-    mutate(Variant="Broad CRISPR data: TP53 inhibition", Label_Void=" ") %>%
+    mutate(Variant="CRISPR inhibition: TP53", Label_Void=" ") %>%
     ggplot(aes(x=Score, y=Value)) +
     geom_label_repel(aes(label=Label_Void, fill=p53),
                      #color='',
@@ -344,15 +416,15 @@ p_table_red <- select(plot_data_BRAF_add, SimCase, P_Mutants, P_Rates) %>%
           axis.text = element_text(size = 12),
           axis.title = element_text(size = 14)) +
     labs(y="CRISPR screening metric\n(scaled Bayesian factor)",
-         #x=expression(paste("Proliferation"[BRAFinhibition]," / Proliferation"[control])),
-         x=TeX("$\\frac{Proliferation_{p53inhibited}}{Proliferation_{control}}$"),
+         x=expression(paste("Prolif"[p53inhibition]," / Prolif"[control])),
+         #x=TeX("$\\frac{Proliferation_{p53inhibited}}{Proliferation_{control}}$"),
          fill="Mutation status: ") +
     guides(fill=guide_legend(nrow=1,byrow=TRUE,
                              override.aes = aes(label = "")))
   
   
   p_crispr_PI3K <- filter(plot_data_BRAF_add, Target=="PI3K") %>%
-    mutate(Variant="Broad CRISPR data: PIK3CA inhibition", Label_Void=" ") %>%
+    mutate(Variant="CRISPR inhibition: PIK3CA", Label_Void=" ") %>%
     ggplot(aes(x=Score, y=Value)) +
     geom_label_repel(aes(label=Label_Void, fill=PI3K),
                      show.legend = TRUE,
@@ -375,8 +447,8 @@ p_table_red <- select(plot_data_BRAF_add, SimCase, P_Mutants, P_Rates) %>%
           axis.title.y = element_blank(),
           axis.text = element_text(size = 12),
           axis.title = element_text(size = 14)) +
-    labs(#x=expression(paste("Proliferation"[BRAFinhibition]," / Proliferation"[control])),
-         x=TeX("$\\frac{Proliferation_{PI3Kinhibited}}{Proliferation_{control}}$"),
+    labs(x=expression(paste("Prolif"[PI3Kinhibition]," / Prolif"[control])),
+         #x=TeX("$\\frac{Proliferation_{PI3Kinhibited}}{Proliferation_{control}}$"),
          fill="Cancer type\n(and BRAF status)") +
     guides(fill=guide_legend(nrow=1,byrow=TRUE,
                              override.aes = aes(label = "")))
@@ -387,10 +459,109 @@ p_table_red <- select(plot_data_BRAF_add, SimCase, P_Mutants, P_Rates) %>%
 
 ```
 (ref:BRAF-results-add-caption) **Application of personalized models to other CRISPR targets.** (A) Personalization strategies using either mutations only (as discrete data) or combined with RNA (as continuous data) with their corresponding scatter plots in panels B and C. (B) Scatter plot comparing normalized *Proliferation* scores of p53 inhibition in the models with experiment sensitivity of cell lines to TP53 CRISPR inhibition, indicating p53 mutational status as interpreted in the model. Pearson correlations and the corresponding p-values are shown. (C) Similar analysis as in panel B with PI3K model node and PIK3CA CRISPR inhibition.
+  
+The versatility of the logical formalism makes it possible to test other node inhibitions as in Figure \@ref(fig:BRAF-results-add), but remains limited by the scope of the model. Since the present model has been designed around BRAF, its regulators have been carefully selected and implemented, which is not necessarily the case for other nodes of the model. Therefore, these personalized models can be used to study how comprehensive the descriptions of the regulation of other nodes or parts of the model are. Thus, model simulations show that response trends to TP53 inhibition are consistently recovered by the model (Figure \@ref(fig:BRAF-results-add)B) but the simple regulation of p53 in the model results in coarse-grained patterns, although slightly improved by addition of RNA data. Similar analyses regarding the targeting of PIK3CA (in CRISPR data) simulated, in the model, by the inhibition of PI3K node, can be performed (Figure \@ref(fig:BRAF-results-add)C). Low correlations are an indication highlighting the insufficient regulation of the node.
+
 
 ### Comparison of the mechanistic approach with machine learning methods
 
-## Limitations and perspectives illustrated by a prostate cancer study {#prostate-model}
+```{r BRAF-ML, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-ML-caption)', fig.scap='Application of personalized models to other CRISPR targets', out.width="90%", fig.height=10, fig.width=8}
+
+rf_performances <- readRDS("data/drugs/rf_performances.rds")
+
+data_colors1 <- c("Mut."="#306489FF", "RNA"="#EBCB8BFF", "Mut. & RNA"="#A3BE8CFF")
+data_colors2 <- c("Mutations"="#306489FF", "RNA"="#EBCB8BFF", "Mutations & RNA"="#A3BE8CFF")
+
+p_expvar <- select(rf_performances, -Variable, -Importance) %>% distinct %>%
+  mutate(Processing=case_when(
+         Processing=="original" ~ "Original data\n(cancer and model genes)",
+         Processing=="original_red" ~ "Original data\n(model genes only)",
+         Processing=="processed" ~ "Processed data\n(model profiles)"
+       )) %>%
+  mutate(Data=case_when(
+         Data=="Mut" ~ "Mut.",
+         Data=="RNA" ~ "RNA",
+         Data=="Mut_RNA" ~ "Mut. & RNA"
+       )) %>%
+  mutate(Screening=factor(Screening, levels=c("Drug", "CRISPR")),
+         Data=factor(Data, levels=c("Mut.", "RNA", "Mut. & RNA")),
+         Label=paste0("n=", N_Var, "\np=", N_Samples)) %>%
+  ggplot(aes(x=Data, y=Exp_Var)) +
+  geom_bar(stat = "identity", aes(fill=Data)) +
+  geom_text(aes(label=Label), size=4, color="white", y=13, angle=0) +
+  scale_fill_manual(values=data_colors1) +
+  facet_grid(Screening~Processing) +
+  theme_pubclean() +
+  guides(fill=FALSE) +
+  labs(#title = "Performances of random forests for BRAF sensitivity prediction",
+       #subtitle = "(n samples and p variables per learning task)",
+       x = "Omics data used",
+       y = "% of explained variance")
+
+p_varimp <- filter(rf_performances, Screening=="Drug", Importance>0) %>%
+  mutate(Processing=case_when(
+         Processing=="original" ~ "Original data\n(cancer and model genes)",
+         Processing=="original_red" ~ "Original data\n(model genes only)",
+         Processing=="processed" ~ "Processed data\n(model profiles)"
+       )) %>%
+  mutate(Data=case_when(
+         Data=="Mut" ~ "Mutations",
+         Data=="RNA" ~ "RNA",
+         Data=="Mut_RNA" ~ "Mutations & RNA"
+       )) %>%
+  mutate(#Screening=factor(Screening, levels=c("Drug", "CRISPR")),
+         Data=factor(Data, levels=c("Mutations", "RNA", "Mutations & RNA"))) %>%
+  ggplot(aes(x=reorder(Variable, -Importance), y=Importance)) +
+  geom_bar(stat = "identity", aes(fill=Data)) +
+  scale_fill_manual(values=data_colors2) +
+  facet_grid(Data~Processing, scales = "free", space = "free") +
+  theme_pubclean() +
+  theme(axis.text.x = element_text(size=6, angle = 90)) +
+  guides(fill=FALSE) +
+  labs(#title = "Random forests for BRAF drug sensitivity - Variable importance",
+       #subtitle = "(10 best variables with positive importance for each case)",
+       x = "Variable",
+       y = "Variable importance")
+
+(p_expvar / p_varimp) +
+  plot_annotation(tag_levels = 'A')
+```
+(ref:BRAF-ML-caption) **Random forests to predict and explain sensitivity to BRAF inhibition.** (A) Performances of random forests for BRAF sensitivity prediction measured with percentage of explained variance; different learning task with unprocessed original data (thousands of genes), unprocessed original data for model-related genes only (tens of genes), and processed profiles of cell lines (tens of genes); $n$ samples and $p$ variables per learning task. (B) Variable importance for drug prediction only, with the 10 best variables with positive importance for each case.
+
+In order to provide comparison elements unbiased by prior knowledge or by the construction of the model, we performed some simple machine learning algorithms. Random forests are used as an example of a machine learning approach to compare with mechanistic models [@breiman2001random] and are implemented with *randomForestSRC* R package. Random forests can be seen as an aggregation of decision trees, each trained on a different training set formed by uniform sampling with replacement of the original cohort. Prediction performances are computed using out-of-the bag estimates for each individual (i.e, average estimate from trees that did not contain the individual in their bootstrap training sample) and summarized as percentage of variance explained by the random forest. In this case, random forests have been fitted with inputs (mutations and/or RNA data) and outputs (sensitivities to drug or CRISPR BRAF inhibition) similar to those of logical models and the corresponding predictive accuracies are reported in Figure \@ref(fig:BRAF-ML)A. The first insight concerns data processing. The percentages of variance explained by the models are similar (around 70% of explained variance for drug sensitivity prediction) in the following three cases: unprocessed original data (thousands of genes), unprocessed original data for model-related genes only (tens of genes), and processed profiles of cell lines (tens of genes). This supports the choice of a model with a small number of relevant genes, which appear to contain most of the information needed for prediction. Second, the absolute level of performance appears much lower for CRISPR (between 30 and 50%) probably suffering from the lower number of samples, especially in cases where the number of variables is the highest. This tends to reinforce the interest of mechanistic approaches that do not use any training on the data for smaller datasets, less suitable for learning. Finally, while mutations and RNA data seem to provide the same predictive power (especially for drugs), using the two together does not necessarily result in a better performance.  
+  
+
+It is also possible to compute the variable importance that assesses the contribution of variables to the overall performance. The solution adopted in this paper to measure it, and called VIMP in the package, consists in introducing random permutations between individuals for the values of a variable and quantifying the variation in performance resulting from this addition of noise. In the case of key variables for prediction, this perturbation will decrease the performance and will result in a high variable importance [@ishwaran2007variable]. Variable importance in these different random forests are reported in Figure \@ref(fig:BRAF-ML)B and are consistent with the analysis of mechanistic models. The mutational status of BRAF is definitely the most important variable followed by mutations in RAS or TP53. Concerning RNA levels, the most explanatory variables seem to be FOXD3 or PTEN, in line with logical model definition.
+
+
+## Application on prostate cancer study and challenges {#prostate-model}
+
+Before summarizing the potential and limitations of the PROFILE approaches described in this and the previous chapter, a final example may be mentioned. Indeed, another application of the PROFILE method, quite similar to the examples presented in the previous and this chapter, has been carried out on prostate cancer. Chronologically, this project was one of the first applications of the method. However, as this project was more collaborative than personal, the previous chapters have been illustrated by more exclusively personal work when they were equivalent. We will therefore only briefly mention here the differences and insights specific to this study.  
+  
+
+First, a logical model specific to prostate cancer was developed by some collaborators (Pauline Traynard and Arnau Montagud) over a long period of time, resulting in a large and comprehensive model of 146 nodes, which is described in more detail in the appendix \@ref(appendix-montagud) and Figure \@ref(fig:Montagud). Using the TCGA prostate cancer dataset (\@ref(appendix-prostate)) prognostic validation of the model was first carried out, similarly to Figure \@ref(fig:PROFILE-METABRIC-Grade), by comparing individualized scores of some phenotypes in the model (i.e. *Proliferation*) with clinical markers, in this case Gleason score, a grading system specific to prostate cancer. The qualitative evolution of the personalized *Proliferation* scores is also qualitatively validated (predicted proliferating tumors are on average of higher grade) but, despite the specificity and magnitude of the model, much of the variability is not explained.  
+  
+
+The use of cell line data was also explored using Cell Model Passports data, restricted to the 7 prostate cell lines. The size of the model then allows qualitative predictions to be made on the proliferative, apoptotic and metastatic qualities of the different lines. Except for proliferation, however, experimental validation of the relevance of these predictions is difficult using public data or the literature. But again, after these preliminary validations, the focus of the study was on treatment response with a slightly different rationale than in the previous example. Focusing on a particular cell line (LnCaP) and its corresponding personalized logical model, the idea is to simulate with the models all possible inhibitions or combinations of inhibitions in order to identify possible vulnerabilities or relevant treatment synergies. Experimental validation on the cell line was then carried out for certain genes that could be targeted depending on the existence of the treatments. The efficacy of certain inhibitions highlighted by the simulations, such as that of HSP90, was verified experimentally.
+
+
+## Limitations and perspectives
+
+The emergence of high-throughput data has made it easier to generate models for prognostic or diagnostic predictions in the field of cancer. The numerous lists of genes, biomarkers and predictors proposed have, however, often been difficult to interpret because of their sometimes uncertain clinical impact and little overlap between competing approaches [@domany2014using]. Methods that can be interpreted by design, which integrate *a priori* biological knowledge, therefore appear to be an interesting complement able to reconcile the omics data generated and the knowledge accumulated in the literature.  
+  
+
+These benefits come at the cost of having accurate expert description of the problem to provide a relevant basis to the mechanistic models. This is particularly true in this work since the personalized models all derive from the same structure of which they are partially constrained versions. It is therefore necessary to have a generic model that is both sufficiently accurate and broad enough so that the data integration allows the expression of the singularities of each cell line. If this is not the case, the learning of logical rules or the use of ensemble modelling could be favoured, usually including perturbation time-series data [@razzaq2018computational]. It should also be noted that, in the BRAF model presented here, the translation of biological knowledge into a logical rule is not necessarily deterministic and unambiguous. The choices here have been made based on the interpretation of the literature only. And the presence of certain outliers, i.e., cell lines whose behaviour is not explained by the models, may indeed result from the limitations of the model, either in its scope (important genes not integrated), or in its definition (incorrect logical rules). More global or data-driven approaches to define the model would be possible but would require different training/validation steps and different sets of data.  
+  
+
+The second key point is the omics data used. For practical reasons, we have focused on mutation and RNA data. The legitimacy of the former is not in doubt, but their interpretation is, on the other hand, a crucial point whose relevance must be systematically verified. The omission or over-interpretation of certain mutations can severely affect the behaviour of personalized models. Validation using sensitivity data provides a good indicator in this respect. However, the question is broader for RNA data: are they relevant data to be used to personalize models, i.e., can they be considered good proxies for node activity? The protein nature of many nodes in the model would encourage the use of protein level data instead, or even phosphorylation levels if they were available for these data. One perspective could even be to push personalization to the point of defining different types of data or even different personalization strategies for each node according to the knowledge of the mechanisms at work in the corresponding biological entity. A balance should then be found to allow a certain degree of automation in the code and to avoid overfitting.  
+  
+
+Despite these limitations, the results described above support the importance of combining the integration of different types of data to better explain differences in drug sensitivities. There was no doubt about this position of principle in general [@azuaje2017computational], and in particular in machine learning methods [@costello2014community, ; @aben2016tandem]. The technical implementation of these multi-omic integrations is nevertheless more difficult in mechanistic models where the relationships between the different types of data need to be more explicitly formulated [@klinger2013network]. The present work therefore reinforces the possibility and value of integrating different types of data in a mechanistic framework to improve relevance and interpretation and illustrates this by highlighting the value of RNA data in addition to mutation data in predicting the response of cell lines to BRAF inhibition. In addition, one piece of data that could be further exploited is that of the specific behaviour of the drugs or inhibitors studied, since for instance some BRAF inhibitors have affinities that vary according to mutations in the BRAF gene itself. The integration of truly precise data on the nature of the drug is nevertheless limited by logical formalism and is more often found in less constrained approaches [@manica2019toward].  
+  
+
+To conclude, we provide a comprehensive pipeline from clinical question to a validated mechanistic model which uses different types of omics data and adapts to dozens of different cell lines. This work, which is based only on the interpretation of data and not on the training of the model, continues some previous work that has already demonstrated the value of mechanistic approaches to answer questions about response to treatment, especially using dynamic data [@saez2020personalized], and sometimes about the same pathways [@klinger2013network]. In this context, our approach proves the interest of logical formalism to make use of scarce and static data facilitating application to a wide range of issues and datasets in a way that is sometimes complementary to learning-based approaches.
+
+
 
 
 

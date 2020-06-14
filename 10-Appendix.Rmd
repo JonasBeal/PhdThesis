@@ -150,7 +150,7 @@ plot_grid(plot_A, plot_B, ncol = 2,
 ```
 (ref:TCGA-bp-caption) **Available omics for TCGA Breast and Prostate cancer**. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma) study.
 
-### TCGA: Prostate cancer
+### TCGA: Prostate cancer {#appendix-prostate}
 
 Similarly, for prostate cancer, reference can be made to data from the TCGA study [@abeshouse2015molecular], which has the same type of data but for a smaller number of patients than the breast cancer (Figure \@ref(fig:TCGA-bp)B).
 
@@ -197,6 +197,9 @@ Besides a list of formalized biological assertions, retrieved from literature, h
 
 
 ## Logical model of prostate cancer {#appendix-montagud}
+
+In the context of the European project [PRECISE](https://precise-project.eu/) (Personalized Engine for Cancer Integrative Study and Evaluation), focused on the integrative study of prostate cancer, an adapted logical model has been built. This prostate cancer model is initially based on the generic structure of the Fumia model presented in section \@ref(appendix-fumia), which has been considerably enriched and extended with genes and mechanisms specific to prostate cancer such as ERG, SPOP or AR. The model contains 133 nodes and 449 edges (Figure \@ref(fig:Montagud)) and includes pathways like androgen receptor and growth factor signalling, several signaling pathways (Wnt, NFkB, PI3K/AKT, MAPK, mTOR, SHH), cell cycle, epithelial-mesenchymal transition (EMT), Apoptosis, DNA damage, etc. The model has 9 inputs (EGF, FGF, TGF beta, Nutrients, Hypoxia, Acidosis, Androgen, TNF alpha and Carcinogen presence) and 6 outputs (*Proliferation*, *Apoptosis*, *Invasion*, *Migration*, (bone) *Metastasis* and *DNA repair*).
+
 
 ```{r Montagud, echo=FALSE, out.width = "90%", fig.cap='(ref:Montagud-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
 knitr::include_graphics("fig/Montagud.png")
