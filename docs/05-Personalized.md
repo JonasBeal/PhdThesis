@@ -14,7 +14,7 @@
 
 
 \BeginKnitrBlock{summarybox}<div class="summarybox">
-#### Publications {-}
+#### Scientific content {-}
 
 This chapter presents the method developed during the thesis to personalize logical models, i.e., generate patient-specific models from a single generic one. The principles of the method and some analyses on patient data have been comprehensively described in @beal2019personalization and briefly summarized in @beal2020personalized. Analyses on cell lines are unpublished.</div>\EndKnitrBlock{summarybox}
 

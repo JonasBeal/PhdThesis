@@ -52,7 +52,7 @@ Between theoretical models that are not very demanding in terms of data but not 
 
 ```{block2, type='summarybox', echo = TRUE}
 
-#### Publications {-}
+#### Scientific content {-}
 
 This chapter presents the theoretical bases of logical modeling and the tools used thereafter. It does not present any original work but refers to the synthesis and analyses of logical modeling as described in @beal2019personalization and @beal2020modelisation.
 

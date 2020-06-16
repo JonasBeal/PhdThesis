@@ -29,7 +29,7 @@ Puisqu’à travers les temps planent leurs causes."}{Émile Verhaeren (Les nomb
 Between theoretical models that are not very demanding in terms of data but not very applicable clinically and models with a clinical focus but very demanding in terms of data, an intermediate alternative is missing. **Can patient-specific mechanistic models be developed that would provide qualitative clinical interpretation with a small amount of data, accessible even in patients?** In this part, composed of three chapters, a middle way will be described to answer positively to this question. This methodology will be based on a historically qualitative mathematical formalism already presented in the previous chapter under the name of logical modeling. Logical modeling in general will be detailed in this chapter before describing an original personalized approach in the next two chapters.
 
 \BeginKnitrBlock{summarybox}<div class="summarybox">
-#### Publications {-}
+#### Scientific content {-}
 
 This chapter presents the theoretical bases of logical modeling and the tools used thereafter. It does not present any original work but refers to the synthesis and analyses of logical modeling as described in @beal2019personalization and @beal2020modelisation.
 </div>\EndKnitrBlock{summarybox}

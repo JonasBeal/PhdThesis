@@ -397,6 +397,37 @@ Moreover, this thesis also exists in an online version that allows to
 take advantage of the interactivity of some graphs and applications:
 \url{https://jonasbeal.github.io/thesis/}.
 
+\BeginKnitrBlock{summarybox}
+\subsubsection*{Scientific content}\label{scientific-content}
+\addcontentsline{toc}{subsubsection}{Scientific content}
+
+Except for the first part, essentially introductory and based on
+scientific literature, the different chapters are based on original
+scientific work done during this thesis and mentioned at the beginning
+of each chapter in a box similar to the this one.
+
+The main articles behind this thesis are indicated below with one
+published article and two pre-prints currently under review:
+
+\begin{itemize}
+\tightlist
+\item
+  Béal, Jonas, Arnau Montagud, Pauline Traynard, Emmanuel Barillot, and
+  Laurence Calzone. ``Personalization of logical models with multi-omics
+  data allows clinical stratification of patients.'' Frontiers in
+  physiology 9 (2019): 1965.
+\item
+  Béal, Jonas, Lorenzo Pantolini, Vincent Noël, Emmanuel Barillot, and
+  Laurence Calzone. ``Personalized logical models to investigate cancer
+  response to BRAF treatments in melanomas and colorectal cancers.''
+  bioRxiv (2020).
+\item
+  Béal, Jonas, and Aurélien Latouche. ``Causal inference with multiple
+  versions of treatment and application to personalized medicine.''
+  arXiv preprint arXiv:2005.12427 (2020).
+\end{itemize}
+\EndKnitrBlock{summarybox}
+
 \clearemptydoublepage
 
 \renewcommand{\contentsname}{Table of contents}
@@ -886,21 +917,20 @@ with the following differential questions with all coefficients
 
 \[\dfrac{dL}{dt}=-b_1L+b_2HL\]
 
-\(a_1H\) represents the growth rate of the hare population (prey),
-i.e.~the population grows in proportion to the population itself
-according to usual birth modeling. The main losses of hares are due to
-predation by lynx, as represented with a negative coefficient in the
-\(-a_2HT\) term. It is therefore assumed that a fixed percentage of
-prey-predator encounters will result in the death of the prey.
-Conversely, it is assumed that the growth of the lynx population depends
-primarily on the availability of food for all lynxes, summarized in the
-\(b_2HL\) term. In the absence of hares, the lynx population decreases,
-as denoted by the coefficient \(-b_1L\). Important features of
-mechanistic models are illustrated here: the equations are based on a
-priori knowledge or assumptions about the structure of the problem and
-the parameters of the model can be interpreted. \(a_1\), for example,
-could correspond to the frequency of litters among hares and the number
-of offspring per litter.
+\(a_1H\) represents the growth rate of the hare population (prey), i.e.,
+the population grows in proportion to the population itself according to
+usual birth modeling. The main losses of hares are due to predation by
+lynx, as represented with a negative coefficient in the \(-a_2HT\) term.
+It is therefore assumed that a fixed percentage of prey-predator
+encounters will result in the death of the prey. Conversely, it is
+assumed that the growth of the lynx population depends primarily on the
+availability of food for all lynxes, summarized in the \(b_2HL\) term.
+In the absence of hares, the lynx population decreases, as denoted by
+the coefficient \(-b_1L\). Important features of mechanistic models are
+illustrated here: the equations are based on a priori knowledge or
+assumptions about the structure of the problem and the parameters of the
+model can be interpreted. \(a_1\), for example, could correspond to the
+frequency of litters among hares and the number of offspring per litter.
 
 \begin{figure}
 
@@ -1084,7 +1114,7 @@ summarize some of the most important characteristics of this disease
 before returning to the models themselves in the next chapter. Without
 aiming for exhaustiveness, and after an epidemiological and statistical
 description, we will focus on the most useful information for the
-modeller, i.e.~the underlying biological mechanisms and available data.
+modeller, i.e., the underlying biological mechanisms and available data.
 
 \begin{figure}
 
@@ -1196,7 +1226,7 @@ Original Figure, data and methods from \citet{bray2018global}.}\label{fig:globoc
 
 
 A second disparity lies in the different types of cancer. If we classify
-tumors solely according to their location, i.e.~the organ affected
+tumors solely according to their location, i.e., the organ affected
 first, we already obtain very wide differences. First of all, the
 incidence varies considerably (Figure \ref{fig:cancer-tissues}A)).
 Cancers do not occur randomly anywhere in the body and certain
@@ -1424,10 +1454,10 @@ associated with cancer increased drastically and some very important
 genes such as BRAF of PIK3CA have been identified
 \citep{davies2002mutations, samuels2004high}. Progress also extended to
 the gene expression data. Gene-expression arrays have made an important
-contribution by providing access to transcriptomic data (RNA), i.e.~what
-has been transcribed from DNA and is therefore one step further in terms
-of biological information. This information has made it possible to
-further explore the differences betwween normal and tumor cells
+contribution by providing access to transcriptomic data (RNA), i.e.,
+what has been transcribed from DNA and is therefore one step further in
+terms of biological information. This information has made it possible
+to further explore the differences betwween normal and tumor cells
 \citep{perou1999distinctive}, or even to refine the classification of
 cancers, which until now has been done mainly according to the tumor
 site. Breast cancers are thus divided into subtypes with different
@@ -1763,11 +1793,11 @@ can make the response or behaviour of the system unexpected or
 unpredictable. Non-linear responses, such as abrupt changes in the state
 of a system, called critical transitions, can be observed in response to
 a moderate change in the signal \citep{trefois2015critical}. Generally
-speaking, it is possible to observe \textbf{emergent behaviours},
-i.e.~behaviours of the system as a whole that were not trivially
-deducible from the individual behaviours of its components. This has
-been documented, through experiments and simulations, in the study of
-cell signalling pathways and the resulting biological decisions
+speaking, it is possible to observe \textbf{emergent behaviours}, i.e.,
+behaviours of the system as a whole that were not trivially deducible
+from the individual behaviours of its components. This has been
+documented, through experiments and simulations, in the study of cell
+signalling pathways and the resulting biological decisions
 \citep{bhalla1999emergent, helikar2008emergent}. These considerations
 have thus given rise to \textbf{system-level or holistic approaches that
 aim to integrate data and knowledge into more comprehensive
@@ -2024,8 +2054,8 @@ Drawbacks & Difficulty determining or fitting parameters & More difficult to lin
 These two formalisms, which are among the most frequent for modelling
 biological networks, share many similarities, in particular the
 propensity to be built according to bottom-up strategies based on
-knowledge of the elementary parts of the model, i.e.~biological entities
-and reactions. However, they differ in their implementation and
+knowledge of the elementary parts of the model, i.e., biological
+entities and reactions. However, they differ in their implementation and
 objectives, \textbf{one aiming at the most accurate representation
 possible, the other seeking to capture the essence of the system's
 dynamics in a parsimonious way} (Table \ref{tab:odelogic}). The
@@ -2301,8 +2331,8 @@ detailed in this chapter before describing an original personalized
 approach in the next two chapters.
 
 \BeginKnitrBlock{summarybox}
-\subsubsection*{Publications}\label{publications}
-\addcontentsline{toc}{subsubsection}{Publications}
+\subsubsection*{Scientific content}\label{scientific-content-1}
+\addcontentsline{toc}{subsubsection}{Scientific content}
 
 This chapter presents the theoretical bases of logical modeling and the
 tools used thereafter. It does not present any original work but refers
@@ -2885,8 +2915,8 @@ expression levels, proteins) based on the MaBoSS software, and leads to
 specific models of a cell line or a patient.
 
 \BeginKnitrBlock{summarybox}
-\subsubsection*{Publications}\label{publications-1}
-\addcontentsline{toc}{subsubsection}{Publications}
+\subsubsection*{Scientific content}\label{scientific-content-2}
+\addcontentsline{toc}{subsubsection}{Scientific content}
 
 This chapter presents the method developed during the thesis to
 personalize logical models, i.e., generate patient-specific models from
@@ -3579,8 +3609,8 @@ cell lines to treatements, what information do these personalized
 mechanistic models provide?
 
 \BeginKnitrBlock{summarybox}
-\subsubsection*{Publications}\label{publications-2}
-\addcontentsline{toc}{subsubsection}{Publications}
+\subsubsection*{Scientific content}\label{scientific-content-3}
+\addcontentsline{toc}{subsubsection}{Scientific content}
 
 This chapter extends the method presented in the previous chapter to
 investigate drug response with personalized logical models. The first
@@ -3605,7 +3635,7 @@ complexity of cancers is the divergent response to treatment, even for a
 priori similar tumors. In the light of high-throughput sequencing data,
 the mechanisms governing these responses are somewhat better understood,
 for patients and especially for model organisms such as cell lines
-{[}\citet{heiser2012subtype}; garnett2012systematic{]}. But beyond a few
+\citep{heiser2012subtype, garnett2012systematic}. But beyond a few
 simple cases, the diversity of response biomarkers once again calls for
 \textbf{holistic approaches} to unravel the underlying mechanisms.
 
@@ -3677,7 +3707,7 @@ possible to do this with a rather limited amount of data}.
 
 }
 
-\caption[Bimodality criteria and their combinations]{\textbf{Schematic extension of
+\caption[Schematic extension of PROFILE-personalized logical models to drug investigation]{\textbf{Schematic extension of
 PROFILE-personalized logical models to drug investigation.} (A)
 Schematic representation of a logical model of cancer molecular
 networks, in particular the one described in appendix
@@ -4549,6 +4579,248 @@ about response to treatment, especially using dynamic data
 interest of logical formalism to make use of scarce and static data
 facilitating application to a wide range of issues and datasets in a way
 that is sometimes complementary to learning-based approaches.
+
+\part{Statistical quantification of the clinical impact of
+models}\label{part-statistical-quantification-of-the-clinical-impact-of-models}
+
+\chapter{Clinical evidence generation and causal
+inference}\label{clinical-evidence-generation-and-causal-inference}
+
+\epigraph{"Felix qui potuit rerum cognoscere causas."}{Virgil (Georgics, 29 BC)}
+
+\initial{T}he mechanistic models of cancer presented in the previous
+section have allowed us to integrate the omics data, to make them speak
+in order to better understand the clinical characteristics of cell lines
+or patients. But beyond their undeniable intellectual and scientific
+interest, do they have a direct clinical value? Given the abundance and
+complexity of patient data available to physicians, the use of computer
+tools and mathematical models is inevitable and increasingly frequent.
+Because of their explicit representation of phenomena, mechanistic
+models can provide a more easily understood alternative for doctors or
+patients. Is it therefore desirable and relevant to use these models in
+support of medical decision making? And how can their clinical validity
+and impact be rigorously measured?
+
+Before studying mechanistic models in more detail, this chapter
+describes some general elements on how clinical evidence may be
+generated and the methods developed for this purpose. This presentation
+is intended as a pedagogical introduction to the causal inference
+methods that will be used thereafter. Many other methods can be used to
+answer similar questions, particularly by analogy to the evaluation of
+prognostic or predictive biomarkers, but they will not be discussed
+here.
+
+\BeginKnitrBlock{summarybox}
+\subsubsection*{Scientific content}\label{scientific-content-4}
+\addcontentsline{toc}{subsubsection}{Scientific content}
+
+This short chapter introduces the framework for causal inference based
+on the literature and the description of causal inference in
+\citet{beal2020causal}.
+\EndKnitrBlock{summarybox}
+
+\newcommand{\indep}{\perp \!\!\! \perp}
+
+\section{Clinical trials and observational
+data}\label{clinical-trials-and-observational-data}
+
+\subsection{Randomized clinical trials as gold
+standards}\label{randomized-clinical-trials-as-gold-standards}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/trials} 
+
+}
+
+\caption[Bimodality criteria and their combinations]{\textbf{Schematic extension of PROFILE-personalized
+logical models to drug investigat}}\label{fig:trials}
+\end{figure}
+
+
+
+
+\subsection{Dangers and opportunities of observational
+data}\label{dangers-and-opportunities-of-observational-data}
+
+\section{Causal inference to leverage
+data}\label{causal-inference-to-leverage-data}
+
+Now that we have defined what we want to estimate, we need to specify
+the method of estimation. In cases where it would be too difficult or
+too early to conduct a true clinical trial we propose methods using
+observational data to emulate them. Indeed, it is possible to derive
+estimates with a causal interpretation from observational data in the
+context of the potential outcomes framework \citep{rubin1974estimating}.
+We will first describe briefly the fundamentals of this framework..
+
+\subsection{First notations and causal
+graph}\label{first-notations-and-causal-graph}
+
+We will use \(j=1,...,N\) to index the individuals in the population.
+\(A_j\) and \(Y_j\) correspond respectively to the actual treatment
+received by individual \(j\) and the outcome. In the most simple case,
+treatment takes values in \(\mathcal{A}=\{0, 1\}\), \(1\) denoting the
+treated patients and \(0\) the control ones. \(Y_j\) corresponds to the
+patient's response to treatment. In the case of cancer it may be a
+continuous value (e.g size of tumour), a binary value (e.g status or
+event indicator), or even a time-to-event (e.g time to relapse or
+death). Only the first two cases will be discussed later. Finally, it is
+necessary to take into account the possible presence of confounders
+influencing both \(A\) and \(Y\) and denoted \(C_j\) for individual
+\(j\).
+
+\subsection{Potential outcomes
+framework}\label{potential-outcomes-framework}
+
+One standard framework to estimate causal effects relies on potential
+outcomes \citep{rubin1974estimating}. This framework is sometimes
+described as counterfactual because it defines variables like \(Y_j(a)\)
+to denote the potential outcome of individual \(j\) in case he has been
+treated by \(A=a\) which may be different from what we observe if
+\(A_j\neq a\). These counterfactual variables make it possible to write
+the causal estimands. For instance, in this context, we can easily
+compute the difference in outcome between treated patients and control
+patients: \(E[Y | A=1] - E[Y | A=0].\)
+
+However, this difference has no causal interpretation as it does not
+offer any guarantees as to the confounding factor, as an unbalanced
+distribution of \(C\) can induce biases Thus we define another estimate:
+\(E[Y(1)] - E[Y(0)].\)
+
+In this case, we compare between two ideal cohort, one in which all
+patients have been treated (possibly contrary to the fact) and one in
+which all patients have been left in the control arm (once again,
+possibly contrary to the fact). Under certain assumptions of
+consistency, positivity and conditional exchangeability, the potential
+outcomes framework allows to estimate these counterfactual variables and
+therefore infer causal estimates from observational (non-randomized)
+data \citep[\citet{hernan2020causal}]{rubin1974estimating}.
+
+\emph{Consistency} means that values of treatment under comparison
+represent well-defined interventions which themselves correspond to the
+treatments in the data:
+\(\textrm{if} \: A_j=a, \textrm{then} \: Y_j(a)=Y_j.\)
+
+\emph{Exchangeability} means that treated and control patients are
+exchangeable, i.e if the treated patients had not been treated they
+would have had the same outcomes as the controls, and conversely. Since
+we usually observe some confounders we define conditional
+exchangeability to hold if cohorts are exchangeable for same values of
+confounding \(C\). Therefore conditional exchangeability will hold if
+there are no unmeasured confounding: \(Y(a) \indep A | C.\)
+
+\emph{Positivity} assumption states that the probability of being
+administered a certain version of treatment conditional on \(C\) is
+greater than zero: \(\textrm{if} \: P[C=c] \neq 0, P[A=a | C=c] >0.\)
+Intuitively, this positivity condition is required to ensure that the
+defined counterfactual variables make sense and do not represent
+something that cannot exist.
+
+\subsection{Identification of causal
+effects}\label{identification-of-causal-effects}
+
+Different methods provide estimators to evaluate causal effect from
+observational data. Throughout the article, we will describe essentially
+one method called standardization or parametric g-formula. Details on
+other types of estimators are available in Supplementary Materials,
+sections B and C. In this simple case
+(Figure\textasciitilde{}\ref{fig2_DAG_single}), the causal effect of
+treatment \(A\) can be written with standardized means (formal proof in
+Supplementary Materials, section A):
+
+\[
+E[Y(A=1)] - E[Y(A=0)] = \sum_{c} \Big(E[Y | A=1, C=c]-E[Y | A=0, C=c]\Big) \times P[C=c].
+\]
+
+Computationally, non-parametric estimation of \(E[Y | A=a, C=c]\) is
+usually out of reach. Thus, on real-world dataset, \(E[Y | A=a, C=c]\)
+is estimated through modelling and explicit computation \(P[C=c]\) is
+replaced by its empirical estimate.
+
+\chapter{Some statistical evaluations about mechanistic models of
+cancer}\label{some-statistical-evaluations-about-mechanistic-models-of-cancer}
+
+\epigraph{"Et l'effet qui s'en va nous decouvre les causes."}{Alfred de Musset (Poésies nouvelles, 1843)}
+
+\initial{H}istorically, all mechanistic models of molecular networks,
+and logical models in particular, have been widely used to study
+response to treatments
+
+\BeginKnitrBlock{summarybox}
+\subsubsection*{Scientific content}\label{scientific-content-5}
+\addcontentsline{toc}{subsubsection}{Scientific content}
+
+This chapter extends the method presented in the previous chapter to
+investigate drug response with personalized logical models. The first
+application to cell lines of all cancer types was presented orally at
+ISMB2020 in Basel but is not published.
+\EndKnitrBlock{summarybox}
+
+\section{One step further with
+drugs}\label{one-step-further-with-drugs-1}
+
+One of the main clinical consequences of the underlying molecular
+complexity of cancers is the divergent response to treatment, even for a
+priori similar tumors. In the light of high-throughput sequencing data,
+the mechanisms governing these responses are somewhat better understood,
+for patients and especially for model organisms such as cell lines
+{[}\citet{heiser2012subtype}; garnett2012systematic{]}. But beyond a few
+simple cases, the diversity of response biomarkers once again calls for
+\textbf{holistic approaches} to unravel the underlying mechanisms.
+
+\chapter{Causal inference for precision
+medicine}\label{causal-inference-for-precision-medicine}
+
+\epigraph{"Maudit
+
+soit le père de l'épouse
+
+du forgeron qui forgea le fer de la cognée
+
+avec laquelle le bûcheron abattit le chêne
+
+dans lequel on sculpta le lit
+
+où fut engendré l'arrière-grand-père
+
+de l'homme qui conduisit la voiture
+
+dans laquelle ta mère
+
+rencontra ton père!"}{Robert Desnos (La colombe de l'arche, 1923)}
+
+\initial{H}istorically, all mechanistic models of molecular networks,
+and logical models in particular, have been widely used to study
+response to treatments
+
+\BeginKnitrBlock{summarybox}
+\subsubsection*{Scientific content}\label{scientific-content-6}
+\addcontentsline{toc}{subsubsection}{Scientific content}
+
+This chapter extends the method presented in the previous chapter to
+investigate drug response with personalized logical models. The first
+application to cell lines of all cancer types was presented orally at
+ISMB2020 in Basel but is not published.
+\EndKnitrBlock{summarybox}
+
+\section{One step further with
+drugs}\label{one-step-further-with-drugs-2}
+
+\citep{de2015pragmatic}
+
+\begin{figure}
+
+{\centering \href{http://jonasbeal.shinyapps.io/application_causal_pm/}{\includegraphics[width=0.9\linewidth]{09-Precision_files/figure-latex/Shiny-1} }
+
+}
+
+\caption[Bimodality criteria and their combinations]{\textbf{Schematic extension of PROFILE-personalized
+logical models to drug investigation.}}\label{fig:Shiny}
+\end{figure}
+
+
+
 
 \appendix \addcontentsline{toc}{chapter}{\appendixname}
 

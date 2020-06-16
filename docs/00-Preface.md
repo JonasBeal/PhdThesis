@@ -9,6 +9,19 @@ The second part will be devoted to the methods developed during this thesis to t
 Finally, the third and last part will look at how the clinical relevance of all the above-mentioned models can be rigorously evaluated, both in their ability to predict the evolution of the disease and in their ability to recommend the most appropriate treatments for each patient. **How to quantify and interpret the value of the clinical information delivered by these models?**  
   
 
-Moreover, this thesis also exists in an online version that allows to take advantage of the interactivity of some graphs and applications: \url{https://jonasbeal.github.io/thesis/}.
+Moreover, this thesis also exists in an online version that allows to take advantage of the interactivity of some graphs and applications: \url{https://jonasbeal.github.io/thesis/}.  
+  
+
+\BeginKnitrBlock{summarybox}<div class="summarybox">
+#### Scientific content {-}
+
+Except for the first part, essentially introductory and based on scientific literature, the different chapters are based on original scientific work done during this thesis and mentioned at the beginning of each chapter in a box similar to the this one.  
+  
+The main articles behind this thesis are indicated below with one published article and two pre-prints currently under review: 
+
+* Béal, Jonas, Arnau Montagud, Pauline Traynard, Emmanuel Barillot, and Laurence Calzone. "Personalization of logical models with multi-omics data allows clinical stratification of patients." Frontiers in physiology 9 (2019): 1965.
+* Béal, Jonas, Lorenzo Pantolini, Vincent Noël, Emmanuel Barillot, and Laurence Calzone. "Personalized logical models to investigate cancer response to BRAF treatments in melanomas and colorectal cancers." bioRxiv (2020).
+* Béal, Jonas, and Aurélien Latouche. "Causal inference with multiple versions of treatment and application to personalized medicine." arXiv preprint arXiv:2005.12427 (2020).
+</div>\EndKnitrBlock{summarybox}
 
 \clearemptydoublepage

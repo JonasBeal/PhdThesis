@@ -1,0 +1,68 @@
+
+# Causal inference for precision medicine
+
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\epigraph{"Maudit\n
+soit le père de l\'épouse\n
+du forgeron qui forgea le fer de la cognée\n
+avec laquelle le bûcheron abattit le chêne\n
+dans lequel on sculpta le lit\n
+où fut engendré l\'arrière-grand-père\n
+de l\'homme qui conduisit la voiture\n
+dans laquelle ta mère\n
+rencontra ton père!"}{Robert Desnos (La colombe de l\'arche, 1923)}')
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output(
+  '>*Maudit  
+  >soit le père de l\'épouse  
+  >du forgeron qui forgea le fer de la cognée  
+  >avec laquelle le bûcheron abattit le chêne  
+  >dans lequel on sculpta le lit  
+  >où fut engendré l\'arrière-grand-père  
+  >de l\'homme qui conduisit la voiture  
+  Wdans laquelle ta mère  
+  >rencontra ton père!.*<br/>
+  >Robert Desnos (La colombe de l\'arche, 1923)')
+```
+
+```{r, include=knitr::is_latex_output(), echo=FALSE}
+knitr::asis_output('\\initial{H}istorically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments')
+```
+
+```{r, include=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output('Historically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments')
+```
+
+```{r 9_packages, echo=FALSE, warning=FALSE, message=FALSE}
+invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot"),
+       FUN = require,
+       character.only = TRUE))
+
+knitr::opts_chunk$set(
+  cache = TRUE, echo = FALSE, warning = FALSE, message = FALSE,
+  out.width = "90%",
+  #fig.pos = "ht",
+  fig.align = "center"
+  )
+```
+  
+
+
+```{block2, type='summarybox', echo = TRUE}
+
+#### Scientific content {-}
+
+This chapter extends the method presented in the previous chapter to investigate drug response with personalized logical models. The first application to cell lines of all cancer types was presented orally at ISMB2020 in Basel but is not published.  
+
+```
+
+## One step further with drugs
+
+[@de2015pragmatic]
+
+```{r Shiny, echo=FALSE, out.width = "90%", fig.cap='(ref:Shiny-caption)', fig.scap='Bimodality criteria and their combinations', fig.align='center'}
+knitr::include_app('http://jonasbeal.shinyapps.io/application_causal_pm/', height = '600px')
+```
+(ref:Shiny-caption) **Schematic extension of PROFILE-personalized logical models to drug investigation.**

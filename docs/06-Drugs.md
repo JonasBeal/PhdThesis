@@ -14,7 +14,7 @@
 
 
 \BeginKnitrBlock{summarybox}<div class="summarybox">
-#### Publications {-}
+#### Scientific content {-}
 
 This chapter extends the method presented in the previous chapter to investigate drug response with personalized logical models. The first application to cell lines of all cancer types was presented orally at ISMB2020 in Basel but is not published.  
   
@@ -25,7 +25,7 @@ Finally, the work on prostate cancer presented in a third section will be submit
 
 ## One step further with drugs
 
-One of the main clinical consequences of the underlying molecular complexity of cancers is the divergent response to treatment, even for a priori similar tumors. In the light of high-throughput sequencing data, the mechanisms governing these responses are somewhat better understood, for patients and especially for model organisms such as cell lines [@heiser2012subtype; garnett2012systematic]. But beyond a few simple cases, the diversity of response biomarkers once again calls for **holistic approaches** to unravel the underlying mechanisms.
+One of the main clinical consequences of the underlying molecular complexity of cancers is the divergent response to treatment, even for a priori similar tumors. In the light of high-throughput sequencing data, the mechanisms governing these responses are somewhat better understood, for patients and especially for model organisms such as cell lines [@heiser2012subtype; @garnett2012systematic]. But beyond a few simple cases, the diversity of response biomarkers once again calls for **holistic approaches** to unravel the underlying mechanisms.
 
 
 ### Modeling response to cancer treatments 
@@ -47,7 +47,7 @@ But logical formalism has also shown its relevance regarding drug response in ca
 
 }
 
-\caption[Bimodality criteria and their combinations]{(ref:PROFILE-drug-caption)}(\#fig:PROFILE-drug)
+\caption[Schematic extension of PROFILE-personalized logical models to drug investigation]{(ref:PROFILE-drug-caption)}(\#fig:PROFILE-drug)
 \end{figure}
 (ref:PROFILE-drug-caption) **Schematic extension of PROFILE-personalized logical models to drug investigation.** (A) Schematic representation of a logical model of cancer molecular networks, in particular the one described in appendix \@ref(appendix-verlingue) and used in the nexte subsection. (B) Sequential pipeline for drug response investigation with PROFILE, starting from a generic logical model, then transformed into several personalized models with different molecular profiles (correspondong to several cell lines); these models are finally simulated with a defined drug inhibition. (C) A possible analysis of the predictions of personalized models obtained from the generic model described in (A); the position of the personalized models in the PCA phenotype (or read-out) space of the model is studied as well as the impact of the treatment on this position.  
   
