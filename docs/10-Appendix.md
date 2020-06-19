@@ -154,8 +154,24 @@ In the context of the European project [PRECISE](https://precise-project.eu/) (P
 \end{figure}
 (ref:Montagud-caption) **GINSIM representation of the 'Montagud' logical model of prostate cancer.**
 
-# About causality
+# About statistics
 
-## Theoretical framework
+## Decomposition of $R^2$ {#appendix-decomp}
 
+The decomposition of $R^2$ according to the method of @lindeman1980introduction is detailed below. The presentation is taken directly from @gromping2006relative.  
+  
+A linear model is written $y_i=\beta_0+\beta_1x_{i1}+...+\beta_px_{ip}+e_i$ and the corresponding $R^2$ is:
 
+$$R^2=\dfrac{\sum_{i=1}^{n} (\hat{y_i}-\bar{y_i})^2}{\sum_{i=1}^{n}  (y_i-\bar{y_i})^2}$$
+Additionally, we define $R^2(S)$ for a model with regressors in set S. The additional $R^2$ when adding the regressors in set $M$ to a model with the regressors in set $S$ is given as:
+
+$$seqR^2(M|S)=R^2(M\cup S)-R^2(S)$$
+
+The order of the regressors in any model is a permutation of the available regressors $x_1, ..., x_p$ and is denoted by the tuple of indices $r = (r_1, ..., r_p)$. Let $S_k(r)$ denote the set of regressors entered into the model before regressor $x_k$ in the order $r$. Then the portion of $R^2$ allocated
+to regressor $x_k$ in the order $r$ can be written as
+
+$$seqR^2(\{x_k\}|S_k(r))=R^2(\{x_k\}\cup S_k(r))-R^2(S_k(r))$$
+
+All in all, the $R^2$ allocated to $x_k$ after decomposition is:
+
+$$R^2_{decomp}(x_k)=\dfrac{1}{p!}\sum_{r\text{ permutations}}seqR^2(\{x_k\}|r)$$

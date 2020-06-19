@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Information flows in mechanistic models of cancer | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</title>
+  <meta name="description" content="This is my PhD thesis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Information flows in mechanistic models of cancer | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is my PhD thesis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Information flows in mechanistic models of cancer | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  
+  <meta name="twitter:description" content="This is my PhD thesis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="personalized-logical-models-to-study-an-interpret-drug-response.html"/>
+<link rel="next" href="clinical-evidence-generation-and-causal-inference.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Jonas BÉAL</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>PhD Thesis</a></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="resumé.html"><a href="resumé.html"><i class="fa fa-check"></i>Resumé</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Cells and their models</b></span></li>
+<li class="chapter" data-level="1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html"><i class="fa fa-check"></i><b>1</b> Scientific modeling: abstract the complexity</a><ul>
+<li class="chapter" data-level="1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#what-is-a-model"><i class="fa fa-check"></i><b>1.1</b> What is a model?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#in-your-own-words"><i class="fa fa-check"></i><b>1.1.1</b> In your own words</a></li>
+<li class="chapter" data-level="1.1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#physical-world-and-world-of-ideas"><i class="fa fa-check"></i><b>1.1.2</b> Physical world and world of ideas</a></li>
+<li class="chapter" data-level="1.1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#preview-about-cancer-models"><i class="fa fa-check"></i><b>1.1.3</b> Preview about cancer models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#stat-mech"><i class="fa fa-check"></i><b>1.2</b> Statistics or mechanistic</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#the-inside-of-the-box"><i class="fa fa-check"></i><b>1.2.1</b> The inside of the box</a></li>
+<li class="chapter" data-level="1.2.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#lotkasection"><i class="fa fa-check"></i><b>1.2.2</b> A tale of prey and predators</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#simplicity-is-the-ultimate-sophistication"><i class="fa fa-check"></i><b>1.3</b> Simplicity is the ultimate sophistication</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html"><i class="fa fa-check"></i><b>2</b> Cancer as deregulation of complex machinery</a><ul>
+<li class="chapter" data-level="2.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#what-is-cancer"><i class="fa fa-check"></i><b>2.1</b> What is cancer?</a></li>
+<li class="chapter" data-level="2.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#epidemio"><i class="fa fa-check"></i><b>2.2</b> Cancer from a distance: epidemiology and main figures</a></li>
+<li class="chapter" data-level="2.3" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#molecular-biology"><i class="fa fa-check"></i><b>2.3</b> Basic molecular biology and cancer</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#central-dogma-and-core-principles"><i class="fa fa-check"></i><b>2.3.1</b> Central dogma and core principles</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#a-rogue-machinery"><i class="fa fa-check"></i><b>2.3.2</b> A rogue machinery</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#the-new-era-of-genomics"><i class="fa fa-check"></i><b>2.4</b> The new era of genomics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-sequencing-to-multi-omics-data"><i class="fa fa-check"></i><b>2.4.1</b> From sequencing to multi-omics data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#state-of-the-art-of-cancer-data"><i class="fa fa-check"></i><b>2.4.2</b> State-of-the art of cancer data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#data-and-beyond-from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> Data and beyond: from genetic to network disease</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html"><i class="fa fa-check"></i><b>3</b> Mechanistic modeling of cancer: from complex disease to systems biology</a><ul>
+<li class="chapter" data-level="3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#introducing-the-diversity-of-mechanistic-models-of-cancer"><i class="fa fa-check"></i><b>3.1</b> Introducing the diversity of mechanistic models of cancer</a></li>
+<li class="chapter" data-level="3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#cell-circuitry-and-the-need-for-cancer-systems-biology"><i class="fa fa-check"></i><b>3.2</b> Cell circuitry and the need for cancer systems biology</a></li>
+<li class="chapter" data-level="3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#mechanistic-models-of-molecular-signaling"><i class="fa fa-check"></i><b>3.3</b> Mechanistic models of molecular signaling</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#networks-and-data"><i class="fa fa-check"></i><b>3.3.1</b> Networks and data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#different-formalisms-for-different-applications"><i class="fa fa-check"></i><b>3.3.2</b> Different formalisms for different applications</a></li>
+<li class="chapter" data-level="3.3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#some-examples-of-complex-features"><i class="fa fa-check"></i><b>3.3.3</b> Some examples of complex features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#from-mechanistic-models-to-clinical-impact"><i class="fa fa-check"></i><b>3.4</b> From mechanistic models to clinical impact?</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#a-new-class-of-biomarkers"><i class="fa fa-check"></i><b>3.4.1</b> A new class of biomarkers</a></li>
+<li class="chapter" data-level="3.4.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#prognostic"><i class="fa fa-check"></i><b>3.4.2</b> Prognostic models</a></li>
+<li class="chapter" data-level="3.4.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#predictive-models"><i class="fa fa-check"></i><b>3.4.3</b> Predictive models</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Personalized logical models of cancer</b></span></li>
+<li class="chapter" data-level="4" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html"><i class="fa fa-check"></i><b>4</b> Logical modeling principles and data integration</a><ul>
+<li class="chapter" data-level="4.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-modeling-paradigms-for-qualitative-description"><i class="fa fa-check"></i><b>4.1</b> Logical modeling paradigms for qualitative description</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#regulatory-graph-and-logical-rules"><i class="fa fa-check"></i><b>4.1.1</b> Regulatory graph and logical rules</a></li>
+<li class="chapter" data-level="4.1.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#state-transition-graph-and-updates"><i class="fa fa-check"></i><b>4.1.2</b> State transition graph and updates</a></li>
+<li class="chapter" data-level="4.1.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#tools-for-logical-modeling"><i class="fa fa-check"></i><b>4.1.3</b> Tools for logical modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#maboss-section"><i class="fa fa-check"></i><b>4.2</b> The MaBoSS framework for logical modeling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#gillespie-algorithm"><i class="fa fa-check"></i><b>4.2.1</b> Gillespie algorithm</a></li>
+<li class="chapter" data-level="4.2.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#a-stochastic-exploration-of-model-behaviours"><i class="fa fa-check"></i><b>4.2.2</b> A stochastic exploration of model behaviours</a></li>
+<li class="chapter" data-level="4.2.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#from-theoretical-models-to-data-models"><i class="fa fa-check"></i><b>4.2.3</b> From theoretical models to data models?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-data-section"><i class="fa fa-check"></i><b>4.3</b> Data integration and semi-quantitative logical modeling</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#build-the-regulatory-graph"><i class="fa fa-check"></i><b>4.3.1</b> Build the regulatory graph</a></li>
+<li class="chapter" data-level="4.3.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#define-the-logical-rules"><i class="fa fa-check"></i><b>4.3.2</b> Define the logical rules</a></li>
+<li class="chapter" data-level="4.3.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#validate-the-model"><i class="fa fa-check"></i><b>4.3.3</b> Validate the model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html"><i class="fa fa-check"></i><b>5</b> Personalization of logical models: method and prognostic validation</a><ul>
+<li class="chapter" data-level="5.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#from-one-generic-model-to-data-specific-models-with-profile-method"><i class="fa fa-check"></i><b>5.1</b> From one generic model to data-specific models with PROFILE method</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#gathering-knowledge-and-data"><i class="fa fa-check"></i><b>5.1.1</b> Gathering knowledge and data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#adapting-patient-profiles-to-a-logical-model"><i class="fa fa-check"></i><b>5.1.2</b> Adapting patient profiles to a logical model</a></li>
+<li class="chapter" data-level="5.1.3" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#personalizing-logical-models-with-patient-data"><i class="fa fa-check"></i><b>5.1.3</b> Personalizing logical models with patient data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#an-integration-tool-for-high-dimensional-data"><i class="fa fa-check"></i><b>5.2</b> An integration tool for high-dimensional data?</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#PROFILE-CL"><i class="fa fa-check"></i><b>5.2.1</b> Biological relevance in cell lines</a></li>
+<li class="chapter" data-level="5.2.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#validation-with-patient-data"><i class="fa fa-check"></i><b>5.2.2</b> Validation with patient data</a></li>
+<li class="chapter" data-level="5.2.3" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#perspectives"><i class="fa fa-check"></i><b>5.2.3</b> Perspectives</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html"><i class="fa fa-check"></i><b>6</b> Personalized logical models to study an interpret drug response</a><ul>
+<li class="chapter" data-level="6.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#one-step-further-with-drugs"><i class="fa fa-check"></i><b>6.1</b> One step further with drugs</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#modeling-response-to-cancer-treatments"><i class="fa fa-check"></i><b>6.1.1</b> Modeling response to cancer treatments</a></li>
+<li class="chapter" data-level="6.1.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#an-application-of-personalized-logical-models"><i class="fa fa-check"></i><b>6.1.2</b> An application of personalized logical models</a></li>
+<li class="chapter" data-level="6.1.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#a-pan-cancer-attempt"><i class="fa fa-check"></i><b>6.1.3</b> A pan-cancer attempt</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#case-study-on-braf-in-melanoma-and-colorectal-cancers"><i class="fa fa-check"></i><b>6.2</b> Case study on BRAF in melanoma and colorectal cancers</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#biological-and-clinical-context"><i class="fa fa-check"></i><b>6.2.1</b> Biological and clinical context</a></li>
+<li class="chapter" data-level="6.2.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#a-logical-model-centred-on-braf"><i class="fa fa-check"></i><b>6.2.2</b> A logical model centred on BRAF</a></li>
+<li class="chapter" data-level="6.2.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#cell-lines-data"><i class="fa fa-check"></i><b>6.2.3</b> Cell lines data</a></li>
+<li class="chapter" data-level="6.2.4" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#validation-of-personalized-models-using-crisprcas9-and-drug-screening"><i class="fa fa-check"></i><b>6.2.4</b> Validation of personalized models using CRISPR/Cas9 and drug screening</a></li>
+<li class="chapter" data-level="6.2.5" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#comparison-of-the-mechanistic-approach-with-machine-learning-methods"><i class="fa fa-check"></i><b>6.2.5</b> Comparison of the mechanistic approach with machine learning methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#prostate-model"><i class="fa fa-check"></i><b>6.3</b> Application on prostate cancer study and challenges</a></li>
+<li class="chapter" data-level="6.4" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#limitations-and-perspectives"><i class="fa fa-check"></i><b>6.4</b> Limitations and perspectives</a></li>
+</ul></li>
+<li class="part"><span><b>III Statistical quantification of the clinical impact of models</b></span></li>
+<li class="chapter" data-level="7" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html"><i class="fa fa-check"></i><b>7</b> Information flows in mechanistic models of cancer</a><ul>
+<li class="chapter" data-level="7.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#processing-of-biological-information"><i class="fa fa-check"></i><b>7.1</b> Processing of biological information</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#information-in-information-out"><i class="fa fa-check"></i><b>7.1.1</b> Information in, information out</a></li>
+<li class="chapter" data-level="7.1.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#emergence-of-information-in-artifical-examples"><i class="fa fa-check"></i><b>7.1.2</b> Emergence of information in artifical examples</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#reanalysis-of-mechanistic-models-of-cancer"><i class="fa fa-check"></i><b>7.2</b> Reanalysis of mechanistic models of cancer</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#ode-model-of-jnk-pathway-by-fey2015signaling"><i class="fa fa-check"></i><b>7.2.1</b> ODE model of JNK pathway by <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span></a></li>
+<li class="chapter" data-level="7.2.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#personalized-logical-models"><i class="fa fa-check"></i><b>7.2.2</b> Personalized logical models</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html"><i class="fa fa-check"></i><b>8</b> Clinical evidence generation and causal inference</a><ul>
+<li class="chapter" data-level="8.1" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#clinical-trials-and-observational-data"><i class="fa fa-check"></i><b>8.1</b> Clinical trials and observational data</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#randomized-clinical-trials-as-gold-standards"><i class="fa fa-check"></i><b>8.1.1</b> Randomized clinical trials as gold standards</a></li>
+<li class="chapter" data-level="8.1.2" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#dangers-and-opportunities-of-observational-data"><i class="fa fa-check"></i><b>8.1.2</b> Dangers and opportunities of observational data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#causal-inference-methods-to-leverage-data"><i class="fa fa-check"></i><b>8.2</b> Causal inference methods to leverage data</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#first-notations-and-causal-graph"><i class="fa fa-check"></i><b>8.2.1</b> First notations and causal graph</a></li>
+<li class="chapter" data-level="8.2.2" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#potential-outcomes-framework"><i class="fa fa-check"></i><b>8.2.2</b> Potential outcomes framework</a></li>
+<li class="chapter" data-level="8.2.3" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#identification-of-causal-effects"><i class="fa fa-check"></i><b>8.2.3</b> Identification of causal effects</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html"><i class="fa fa-check"></i><b>9</b> Causal inference for precision medicine</a><ul>
+<li class="chapter" data-level="9.1" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#one-step-further-with-drugs-1"><i class="fa fa-check"></i><b>9.1</b> One step further with drugs</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-datasets.html"><a href="appendix-datasets.html"><i class="fa fa-check"></i><b>A</b> About datasets</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-cl"><i class="fa fa-check"></i><b>A.1</b> Cell lines</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#omics-profiles"><i class="fa fa-check"></i><b>A.1.1</b> Omics profiles</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-GDSC"><i class="fa fa-check"></i><b>A.1.2</b> Drug screenings</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-CRISPR"><i class="fa fa-check"></i><b>A.1.3</b> CRISPR-Cas9 screening</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#patient-derived-xenografts"><i class="fa fa-check"></i><b>A.2</b> Patient-derived xenografts</a></li>
+<li class="chapter" data-level="A.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-datasets-patients"><i class="fa fa-check"></i><b>A.3</b> Patients</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#metabric"><i class="fa fa-check"></i><b>A.3.1</b> METABRIC</a></li>
+<li class="chapter" data-level="A.3.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#tcga-breast-cancer"><i class="fa fa-check"></i><b>A.3.2</b> TCGA: Breast cancer</a></li>
+<li class="chapter" data-level="A.3.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-prostate"><i class="fa fa-check"></i><b>A.3.3</b> TCGA: Prostate cancer</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-logical-models.html"><a href="about-logical-models.html"><i class="fa fa-check"></i><b>B</b> About logical models</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-fumia"><i class="fa fa-check"></i><b>B.1</b> Generic logical model of cancer pathways</a></li>
+<li class="chapter" data-level="B.2" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-verlingue"><i class="fa fa-check"></i><b>B.2</b> Extended logical model of cancer pathways</a></li>
+<li class="chapter" data-level="B.3" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-pantolini"><i class="fa fa-check"></i><b>B.3</b> Logical model of BRAF pathways in melanoma and colorectal cancer</a></li>
+<li class="chapter" data-level="B.4" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-montagud"><i class="fa fa-check"></i><b>B.4</b> Logical model of prostate cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="about-statistics.html"><a href="about-statistics.html"><i class="fa fa-check"></i><b>C</b> About statistics</a><ul>
+<li class="chapter" data-level="C.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-decomp"><i class="fa fa-check"></i><b>C.1</b> Decomposition of <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="information-flows-in-mechanistic-models-of-cancer" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Information flows in mechanistic models of cancer</h1>
+<blockquote>
+<p><em>Et l’effet qui s’en va nous decouvre les causes.</em><br/> Alfred de Musset (Poésies nouvelles, 1843)</p>
+</blockquote>
+<p>The mechanistic models of cancer presented in the previous section have allowed us to integrate the omics data, to make them speak in order to better understand the clinical characteristics of cell lines or patients. But beyond their undeniable intellectual and scientific interest, do they have a direct clinical value? Given the abundance and complexity of patient data available to physicians, the use of computer tools and mathematical models is inevitable and increasingly frequent. Because of their explicit representation of phenomena, mechanistic models can provide a more easily understood alternative for physicians or patients. Is it therefore desirable and relevant to use these models in support of medical decision making? And how can their clinical validity and impact be rigorously measured?</p>
+<p>First of all, the purpose of this chapter is to outline some of the limitations of the previously presented evaluations of mechanistic models. These evaluations answered the question: are the models of clinical value? We will show that an additional question could be: <strong>do mechanistic models have an added clinical value?</strong></p>
+
+<div class="summarybox">
+<h4 id="scientific-content-3" class="unnumbered">Scientific content</h4>
+<p>This chapter is relying on original unpublished content. The exploratory analyses presented below have been the basis for the following chapters</p>
+</div>
+<p></p>
+<div id="processing-of-biological-information" class="section level2">
+<h2><span class="header-section-number">7.1</span> Processing of biological information</h2>
+<p>Mechanistic models, and their outputs in particular, have so far been considered and evaluated as biomarkers. A comprehensive appreciation requires that they be seen as information processing tools.</p>
+<div id="information-in-information-out" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Information in, information out</h3>
+<p>Indeed, the mechanistic models presented in this thesis (Figures <a href="mechanistic-cancer.html#fig:fey">3.6</a>, <a href="personalization-of-logical-models-method-and-prognostic-validation.html#fig:PROFILE-METABRIC-Survival">5.9</a> and <a href="personalized-logical-models-to-study-an-interpret-drug-response.html#fig:BRAF-results">6.6</a>) can be schematically represented by Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:box-mech">7.1</a>: inputs <span class="math inline">\(X\)</span> (often omics data) are processed through a mechanistic model (here the grey box) to result in an output <span class="math inline">\(Y\)</span>. These models can thus be assimilated to a mathematical transformation, often non-linear, of <span class="math inline">\(X\)</span> in <span class="math inline">\(Y\)</span>. Thus, when validating the biological or clinical relevance of <span class="math inline">\(Y\)</span>, either by calculating a correlation with the ground truth or by using it to stratify survival curves, only the absolute value of <span class="math inline">\(Y\)</span> is checked. This is an important step and a prerequisite for a well-constructed model. On the other hand, it is not sufficient information to understand how the model works. Indeed, the inputs <span class="math inline">\(X\)</span> probably also have a predictive or clinical value. In short, measuring only the output value of the model does not necessarily reveal the model’s ability to make sense of the data it uses. At the extreme, it is conceivable that a random function of some valuable inputs could be correlated to the biological reality.</p>
+<div class="figure" style="text-align: center"><span id="fig:box-mech"></span>
+<img src="fig/box-mech.png" alt="Evaluation of a mechanistic model. Adapted from Figure 1.6." width="80%" />
+<p class="caption">
+Figure 7.1: <strong>Evaluation of a mechanistic model.</strong> Adapted from Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>.
+</p>
+</div>
+
+<p>Therefore, the question of incremental value of the model can be explained as follows: what does the output of the model represent in relation to the inputs? If we restrict ourselves to cases where the absolute biological/clinical value of <span class="math inline">\(Y\)</span> is positive, we can then identify two families of situations. We can imagine a situation where the model has improved the value of the inputs. The outputs would then have a higher value than the inputs (better biological validation etc.), or in any case a complementary value, a value not present in the inputs. This would correspond to the capture by the model of emerging or non-linar effects. In the second situation, the output does not capture emergent properties but summarizes, totally or partially, the information present in the inputs. This would correspond to a knowledge-informed dimensionality-reduction. Even in the latter case, the scientific value of the model as a tool for understanding is not necessarily questioned. The analyses presented below are simply intended to supplement the understanding of models and how they process information.</p>
+</div>
+<div id="emergence-of-information-in-artifical-examples" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Emergence of information in artifical examples</h3>
+<p>These questions can be illustrated using a very simple artificial model represented in Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:model-simulation">7.2</a>. On the one hand there are two latent biological variables called <em>Proliferation (P)</em> and <em>Apoptosis (A)</em> resulting in our biological groud truth, <em>Growth</em>. On the other hand, the modeler has access to three different random variables <span class="math inline">\(N_1\)</span>, <span class="math inline">\(N_2\)</span> and <span class="math inline">\(N_3\)</span> respectively associated with the sign of <em>P</em>, the absolute value of <em>P</em> and the value of <em>A</em>. Two mechanistic models are defined, one linear (with its output <span class="math inline">\(O_{linear}\)</span>) and one non-linear (with its output <span class="math inline">\(O_{non-linear}\)</span>). We note that the two outputs are sufficiently well defined to be correlated with <em>Growth</em> but only the non-linear model makes use of <span class="math inline">\(N_2\)</span> by multiplying it with <span class="math inline">\(N_2\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:model-simulation"></span>
+<img src="fig/model-simulation.png" alt="Evaluation of a mechanistic model. Adapted from Figure 1.6." width="80%" />
+<p class="caption">
+Figure 7.2: <strong>Evaluation of a mechanistic model.</strong> Adapted from Figure <a href="scientific-modeling-abstract-the-complexity.html#fig:boxes">1.6</a>.
+</p>
+</div>
+
+<p>The ability of models to use inputs to create or summarize information through outputs will be studied using the explained variation metric <span class="math inline">\(R^2\)</span>. If a linear model is defined as <span class="math inline">\(y_i=\beta_0+\beta_1x_i+e_i\)</span>, linear coefficients <span class="math inline">\(\beta\)</span> are estimated by minimizing the sum of squared differences between predicted and real values of <span class="math inline">\(y\)</span>. The fitted model is written <span class="math inline">\(\hat{y_i}=\hat{\beta_0}+\hat{\beta_1}x_i\)</span> and <span class="math inline">\(R^2\)</span> also called coefficient of determination is defined as:</p>
+<p><span class="math display">\[R^2=\dfrac{\sum_{i=1}^{n} (\hat{y_i}-\bar{y_i})^2}{\sum_{i=1}^{n}  (y_i-\bar{y_i})^2}\]</span></p>
+<p>Therefore <span class="math inline">\(R^2\)</span> measures the proportion of variation in <span class="math inline">\(y\)</span> that is explained by the regressors. Metrics with similar (but not identical) interpretations have been defined for logistic regressions or survival analysis <span class="citation">(Choodari-Oskooei, Royston, and Parmar <a href="#ref-choodari2012simulation">2012</a>)</span>. In the case of regressions with several variables <span class="math inline">\(x_i\)</span>, it is possible to decompose <span class="math inline">\(R^2\)</span> into different components associated with each of the variables. This decomposition is carried out here by averaging over orderings according to the method proposed by <span class="citation">Lindeman (<a href="#ref-lindeman1980introduction">1980</a>)</span> and applied in R code <span class="citation">(Grömping and others <a href="#ref-gromping2006relative">2006</a>)</span>. The precise formulas are detailed in appendix <a href="about-statistics.html#appendix-decomp">C.1</a>.</p>
+<p>Here is an example of schematic reasoning that can be carried out with <span class="math inline">\(R^2\)</span> about the two models in Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:model-simulation">7.2</a>. Using only the outputs of the models to predict <em>Growth</em>, explained variations are <span class="math inline">\(R^2_{O_{non-linear}}=0.455\)</span> and <span class="math inline">\(R^2_{O_{linear}}=0.379\)</span>. The models are thus correctly defined and partly recover the biological read-out. However, the inputs to the model also have an important predictive value since <span class="math inline">\(R^2_{N_1+N_2+N_3}=0.514\)</span>. How can we understand the relationship between these values? First, the model including the <span class="math inline">\(N_i\)</span> inputs and the output <span class="math inline">\(O\)</span> as regressors show different performances with <span class="math inline">\(R^2_{N_1+N_2+N_3+O_{linear}}=0.514\)</span> and <span class="math inline">\(R^2_{N_1+N_2+N_3+O_{non-linear}}=0.586\)</span>. This means that the <span class="math inline">\(O_{linear}\)</span> has no added value compared to the inputs. This was expected given its definition. On the other hand, <span class="math inline">\(O_{non-linear}\)</span> has allowed to extract an emergent information which improves the global prediction when combined with the inputs. We can go further in understanding by breaking down the <span class="math inline">\(R^2\)</span>. In Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:R2-artificial">7.3</a>A and B (left columns), <span class="math inline">\(R^2\)</span> of the inputs’ models are decomposed to show that <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_3\)</span> contribute most to the prediction in a linear model. By using the same strategies for decomposing the <span class="math inline">\(R_2\)</span> and calculating the incremental R2, it is also possible to decompose the <span class="math inline">\(R^2\)</span> of <span class="math inline">\(O\)</span> according to its origin: its component <span class="math inline">\(N_1\)</span> (<span class="math inline">\(0.22\)</span> in Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:R2-artificial">7.3</a>A) is the proportion of <span class="math inline">\(R^2\)</span> that is also explained by <span class="math inline">\(N_1\)</span>, so it can be interpreted as being the part of the value of <span class="math inline">\(N_1\)</span> captured by <span class="math inline">\(O\)</span>. In the non-linear case, we can see in the decomposition that <span class="math inline">\(O\)</span> also has a created component (<span class="math inline">\(0.07\)</span>), it is the non-linear component that is not shared with any of the inputs.</p>
+<div class="figure" style="text-align: center"><span id="fig:R2-artificial"></span>
+<img src="07-Evaluation_files/figure-html/R2-artificial-1.png" alt="Decomposition of \(R^2\) for inputs and output of example models. (A) Results for the non-linear model inputs and output \(O_{non-linear}\) as defined in Figure 7.2. (B) Same with the linear model." width="90%" />
+<p class="caption">
+Figure 7.3: <strong>Decomposition of <span class="math inline">\(R^2\)</span> for inputs and output of example models.</strong> (A) Results for the non-linear model inputs and output <span class="math inline">\(O_{non-linear}\)</span> as defined in Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:model-simulation">7.2</a>. (B) Same with the linear model.
+</p>
+</div>
+
+<p>In conclusion, if these two models generate meaningful outputs that are correlated with the biological read-out <em>Growth</em>, the analysis of their information processing classifies them into two different categories outlined in the previous sub-section. The linear model summarizes some of the information present in the inputs, without creating any. It can be likened to a relevant dimensionality reduction. The output of the non-linear model also fails to avoid some information losses, but at the same time it extracts new non-linear information. Thus, in combination with the inputs, it provides added value measured by the increase in total <span class="math inline">\(R^2\)</span>.</p>
+</div>
+</div>
+<div id="reanalysis-of-mechanistic-models-of-cancer" class="section level2">
+<h2><span class="header-section-number">7.2</span> Reanalysis of mechanistic models of cancer</h2>
+<p>Using the tools presented above, it is possible to deepen the analysis of some mechanistic models already presented in this thesis.</p>
+<div id="ode-model-of-jnk-pathway-by-fey2015signaling" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> ODE model of JNK pathway by <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span></h3>
+<p><a href="mechanistic-cancer.html#prognostic">3.4.2</a></p>
+<p>Survival –&gt; Royston and <span class="citation">(Choodari-Oskooei, Royston, and Parmar <a href="#ref-choodari2012simulation">2012</a>)</span></p>
+<div class="figure" style="text-align: center"><span id="fig:fey"></span>
+<img src="fig/fey.png" alt="Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by Fey et al. (2015). (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude \(A\), Hill exponent \(H\) and activation threshold \(K_{50}\). (C) Survival curves for neuroblastoma patients based on binarized \(A\), \(K_{50}\) and \(H\); binarization thresholds having been defined based on optimization screening on calibration cohort." width="90%" />
+<p class="caption">
+Figure 3.6: <strong>Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span>.</strong> (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude <span class="math inline">\(A\)</span>, Hill exponent <span class="math inline">\(H\)</span> and activation threshold <span class="math inline">\(K_{50}\)</span>. (C) Survival curves for neuroblastoma patients based on binarized <span class="math inline">\(A\)</span>, <span class="math inline">\(K_{50}\)</span> and <span class="math inline">\(H\)</span>; binarization thresholds having been defined based on optimization screening on calibration cohort.
+</p>
+</div>
+<p><strong>Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span>.</strong> (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude <span class="math inline">\(A\)</span>, Hill exponent <span class="math inline">\(H\)</span> and activation threshold <span class="math inline">\(K_{50}\)</span>. (C) Survival curves for neuroblastoma patients based on binarized <span class="math inline">\(A\)</span>, <span class="math inline">\(K_{50}\)</span> and <span class="math inline">\(H\)</span>; binarization thresholds having been defined based on optimization screening on calibration cohort. <strong>Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span>.</strong> (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude <span class="math inline">\(A\)</span>, Hill exponent <span class="math inline">\(H\)</span> and activation threshold <span class="math inline">\(K_{50}\)</span>. (C) Survival curves for neuroblastoma patients based on binarized <span class="math inline">\(A\)</span>, <span class="math inline">\(K_{50}\)</span> and <span class="math inline">\(H\)</span>; binarization thresholds having been defined based on optimization screening on calibration cohort.</p>
+<div class="figure" style="text-align: center"><span id="fig:R2-Fey"></span>
+<img src="07-Evaluation_files/figure-html/R2-Fey-1.png" alt="(ref:R2-Fey-caption)" width="90%" />
+<p class="caption">
+Figure 7.4: (ref:R2-Fey-caption)
+</p>
+</div>
+<p><strong>Decomposition of <span class="math inline">\(R^2\)</span> for inputs and output of example models.</strong> (A) Results for the non-linear model inputs and output <span class="math inline">\(O_{non-linear}\)</span> as defined in Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:model-simulation">7.2</a>. (B) Same with the linear model. <strong>Decomposition of <span class="math inline">\(R^2\)</span> for inputs and output for ODE model in <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span>.</strong> (A) Results for the non-linear model inputs and output <span class="math inline">\(O_{non-linear}\)</span> as defined in Figure <a href="information-flows-in-mechanistic-models-of-cancer.html#fig:model-simulation">7.2</a>. (B) Same with the linear model.</p>
+</div>
+<div id="personalized-logical-models" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Personalized logical models</h3>
+<div id="survival-of-breast-cancer-patients-in-metabric-cohort" class="section level4">
+<h4><span class="header-section-number">7.2.2.1</span> Survival of breast cancer patients in METABRIC cohort</h4>
+<p>Mention AIC</p>
+<p><span class="citation">(Kirk, Thorne, and Stumpf <a href="#ref-kirk2013model">2013</a>)</span></p>
+</div>
+<div id="sensitivity-to-braf-inhibition-in-melanoma-and-colorectal-cancers" class="section level4">
+<h4><span class="header-section-number">7.2.2.2</span> Sensitivity to BRAF inhibition in melanoma and colorectal cancers</h4>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-choodari2012simulation">
+<p>Choodari-Oskooei, Babak, Patrick Royston, and Mahesh KB Parmar. 2012. “A Simulation Study of Predictive Ability Measures in a Survival Model I: Explained Variation Measures.” <em>Statistics in Medicine</em> 31 (23). Wiley Online Library: 2627–43.</p>
+</div>
+<div id="ref-fey2015signaling">
+<p>Fey, Dirk, Melinda Halasz, Daniel Dreidax, Sean P Kennedy, Jordan F Hastings, Nora Rauch, Amaya Garcia Munoz, et al. 2015. “Signaling Pathway Models as Biomarkers: Patient-Specific Simulations of Jnk Activity Predict the Survival of Neuroblastoma Patients.” <em>Sci. Signal.</em> 8 (408). American Association for the Advancement of Science: ra130–ra130.</p>
+</div>
+<div id="ref-gromping2006relative">
+<p>Grömping, Ulrike, and others. 2006. “Relative Importance for Linear Regression in R: The Package Relaimpo.” <em>Journal of Statistical Software</em> 17 (1): 1–27.</p>
+</div>
+<div id="ref-kirk2013model">
+<p>Kirk, Paul, Thomas Thorne, and Michael PH Stumpf. 2013. “Model Selection in Systems and Synthetic Biology.” <em>Current Opinion in Biotechnology</em> 24 (4). Elsevier: 767–74.</p>
+</div>
+<div id="ref-lindeman1980introduction">
+<p>Lindeman, Richard Harold. 1980. <em>Introduction to Bivariate and Multivariate Analysis</em>. Glenview, Ill: Scott, Foresman.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="personalized-logical-models-to-study-an-interpret-drug-response.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="clinical-evidence-generation-and-causal-inference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PhdThesis.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
