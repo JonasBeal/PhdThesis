@@ -72,7 +72,7 @@ Here is an example of schematic reasoning that can be carried out with $R^2$ abo
 
 \caption[Decomposition of $R^2$ for inputs and output of example models]{(ref:R2-artificial-caption)}(\#fig:R2-artificial)
 \end{figure}
-(ref:R2-artificial-caption) **Decomposition of $R^2$ for inputs and output of example models.** (A) Results for the non-linear model inputs and output $O_{non-linear}$ as defined in Figure \@ref(fig:model-simulation). (B) Same with the linear model.  
+(ref:R2-artificial-caption) **Decomposition of $R^2$ for inputs and output of example models.** (A) Results for the non-linear model inputs and output $O_{non-linear}$ as defined in Figure \@ref(fig:model-simulation). (B) Same with the linear model. Colors represent the origine of $R^2$ contribution. In particular, for right colums (model$Y\sim O$), the red share represent the proportion of the $R^2$ of the output $O$ that does not come linearly from the inputs, and therefore its emerging part. 
   
 
 In conclusion, if these two models generate meaningful outputs that are correlated with the biological read-out *Growth*, the analysis of their information processing classifies them into two different categories outlined in the previous sub-section. The linear model summarizes some of the information present in the inputs, without creating any. It can be likened to a relevant dimensionality reduction. The output of the non-linear model also fails to avoid some information losses, but at the same time it extracts new non-linear information. Thus, in combination with the inputs, it provides added value measured by the increase in total $R^2$.
@@ -83,10 +83,7 @@ Using the tools presented above, it is possible to deepen the analysis of some m
 
 ### ODE model of JNK pathway by @fey2015signaling
 
-
-\@ref(prognostic)
-
-Survival --> Royston and [@choodari2012simulation]
+One of the first applications of personalized mechanistic models to cancer is the one proposed by @fey2015signaling regarding JNK pathways in patients with neuroblastomas. This work has been described in section \@ref(prognostic) and is recalled in Figure \@ref(fig:fey2). The evaluation of the mechanistic models in the original paper was performed by assessing the clinical value of the inputs (RNA levels of ZAK, MKK4, MKK7, JNK and AKT genes) and outputs ($H$, $A$ and $K_{50}$) separately by comparing them with survival data. The outputs were binarized to optimize the separation between the curves in a log-rank test. In this section we propose to quantify the value of the output in relation to those of the inputs, leaving the output continuous, using the tools described in the previous section. In the context of survival data, the $R^2$ described above is replaced by the $R^2$ defined by @royston2004new, whose properties have been validated using simulated data [@choodari2012simulation].
 
 \begin{figure}
 
@@ -94,9 +91,12 @@ Survival --> Royston and [@choodari2012simulation]
 
 }
 
-\caption[Schematic example of logical and ODE modeling around MAPK signaling]{(ref:fey-caption)}(\#fig:fey)
+\caption[Schematic example of logical and ODE modeling around MAPK signaling]{(ref:fey2-caption)}(\#fig:fey2)
 \end{figure}
-(ref:fey-caption) **Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by @fey2015signaling.** (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude $A$, Hill exponent $H$ and activation threshold $K_{50}$. (C) Survival curves for neuroblastoma patients based on binarized $A$, $K_{50}$ and $H$; binarization thresholds having been defined based on optimization screening on calibration cohort.  
+(ref:fey2-caption) **Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by @fey2015signaling.** (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude $A$, Hill exponent $H$ and activation threshold $K_{50}$. (C) Survival curves for neuroblastoma patients based on binarized $A$, $K_{50}$ and $H$; binarization thresholds having been defined based on optimization screening on calibration cohort.  
+  
+
+Thus the $R^2$ of the output $H$ is $0.39$ while that of the combined inputs is $0.60$. We can see from the decompositions that $H$ derives most of its the value from ZAK, MKK4 and AKT (Figure \@ref(fig:R2-Fey)A, left column), which were already the largest contributors in the combined evaluation of the inputs (Figure \@ref(fig:R2-Fey)A, right column). However, $H$ also includes an emerging non-linear share ($R^2=0.08$) that was not explained by the linear combination of inputs. Thus, combining $H$ with the inputs in a survival prediction model does indeed allow to observe an added value with a global $R^2$ of $0.08$. In addition, the authors in the original study stressed the importance of positive feedback from JNK to MKK7 (Figure \@ref(fig:fey2-caption)A). In its absence, we find that the value of H is almost reduced to zero, since not only its non-linear part (Figure \@ref(fig:R2-Fey), red share), but also its parts derived from inputs, disappear. Analyzing the other outputs of the model ($A$ and $K_{50}$) reveals similar but less dramatic trends underlining the importance of this feedback which allows the model to capture a clinically relevant behaviour, assimilated by the authors to the capacity of cells to trigger apoptosis in case of stress. In the case of this model, the analyses provide a better understanding of how the model works with respect to survival prediction: the outputs partly summarize clinical information already present in the inputs but also reveal relevant emerging information.
 
 \begin{figure}
 
@@ -106,9 +106,11 @@ Survival --> Royston and [@choodari2012simulation]
 
 \caption[Decomposition of $R^2$ for inputs and output for ODE model in @fey2015signaling]{(ref:R2-Fey-caption)}(\#fig:R2-Fey)
 \end{figure}
-(ref:R2-artificial-caption) **Decomposition of $R^2$ for inputs and output for ODE model in @fey2015signaling.** (A) Results for the non-linear model inputs and output $O_{non-linear}$ as defined in Figure \@ref(fig:model-simulation). (B) Same with the linear model.  
+(ref:R2-Fey-caption) **Decomposition of $R^2$ for inputs and output for ODE model in @fey2015signaling.** (A) Results for the Fey model inputs and output $H$ as defined in Figure \@ref(fig:fey2)A and B. (B) Same using the model without positive feedback between JNK and MKK7. Colors represent the origine of $R^2$ contribution. In particular, for right colums (model$Y\sim H$), the red share represent the proportion of the $R^2$ of the output $H$ that does not come linearly from the inputs, and therefore its emerging part.  
 
 ### Personalized logical models
+
+
 
 #### Survival of breast cancer patients in METABRIC cohort
 

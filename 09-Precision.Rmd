@@ -2,30 +2,15 @@
 # Causal inference for precision medicine
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\epigraph{"Maudit\n
-soit le père de l\'épouse\n
-du forgeron qui forgea le fer de la cognée\n
-avec laquelle le bûcheron abattit le chêne\n
-dans lequel on sculpta le lit\n
-où fut engendré l\'arrière-grand-père\n
-de l\'homme qui conduisit la voiture\n
-dans laquelle ta mère\n
-rencontra ton père!"}{Robert Desnos (La colombe de l\'arche, 1923)}')
+knitr::asis_output('\\epigraph{"Felix qui potuit rerum cognoscere causas."}{Virgil (Georgics, 29 BC)}')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
 knitr::asis_output(
-  '>*Maudit  
-  >soit le père de l\'épouse  
-  >du forgeron qui forgea le fer de la cognée  
-  >avec laquelle le bûcheron abattit le chêne  
-  >dans lequel on sculpta le lit  
-  >où fut engendré l\'arrière-grand-père  
-  >de l\'homme qui conduisit la voiture  
-  Wdans laquelle ta mère  
-  >rencontra ton père!.*<br/>
-  >Robert Desnos (La colombe de l\'arche, 1923)')
+  '>*Felix qui potuit rerum cognoscere causas.*<br/>
+  >Virgil (Georgics, 29 BC)')
 ```
+
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
 knitr::asis_output('\\initial{H}istorically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments')

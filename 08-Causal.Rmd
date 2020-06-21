@@ -2,24 +2,40 @@
 # Clinical evidence generation and causal inference
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\epigraph{"Felix qui potuit rerum cognoscere causas."}{Virgil (Georgics, 29 BC)}')
+knitr::asis_output('\\epigraph{"Maudit\n
+soit le père de l\'épouse\n
+du forgeron qui forgea le fer de la cognée\n
+avec laquelle le bûcheron abattit le chêne\n
+dans lequel on sculpta le lit\n
+où fut engendré l\'arrière-grand-père\n
+de l\'homme qui conduisit la voiture\n
+dans laquelle ta mère\n
+rencontra ton père!"}{Robert Desnos (La colombe de l\'arche, 1923)}')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
 knitr::asis_output(
-  '>*Felix qui potuit rerum cognoscere causas.*<br/>
-  >Virgil (Georgics, 29 BC)')
+  '>*Maudit  
+  >soit le père de l\'épouse  
+  >du forgeron qui forgea le fer de la cognée  
+  >avec laquelle le bûcheron abattit le chêne  
+  >dans lequel on sculpta le lit  
+  >où fut engendré l\'arrière-grand-père  
+  >de l\'homme qui conduisit la voiture  
+  Wdans laquelle ta mère  
+  >rencontra ton père!.*<br/>
+  >Robert Desnos (La colombe de l\'arche, 1923)')
 ```
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\initial{T}he mechanistic models of cancer presented in the previous section have allowed us to integrate the omics data, to make them speak in order to better understand the clinical characteristics of cell lines or patients. But beyond their undeniable intellectual and scientific interest, do they have a direct clinical value? Given the abundance and complexity of patient data available to physicians, the use of computer tools and mathematical models is inevitable and increasingly frequent. Because of their explicit representation of phenomena, mechanistic models can provide a more easily understood alternative for doctors or patients. Is it therefore desirable and relevant to use these models in support of medical decision making? And how can their clinical validity and impact be rigorously measured?')
+knitr::asis_output('\\initial{T}he previous chapter proposed some tools to evaluate and quantify the value of mechanistic models, and in particular their outputs, with simple statistical tools. The latter, such as $R2$, are by no means specific to medical applications. One of the particularities of mechanistic cancer models, on the other hand, is the possibility of simulating treatments that imitate therapeutic interventions. Before tackling more precise questions, this chapter will therefore introduce certain clinical or statistical methods used to evaluate the effect of different types of treatments, including drugs, on patoents. A more specific issue related to the evaluation of mechanistic models will be explored in the next chapter using these methods')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
-knitr::asis_output('The mechanistic models of cancer presented in the previous section have allowed us to integrate the omics data, to make them speak in order to better understand the clinical characteristics of cell lines or patients. But beyond their undeniable intellectual and scientific interest, do they have a direct clinical value? Given the abundance and complexity of patient data available to physicians, the use of computer tools and mathematical models is inevitable and increasingly frequent. Because of their explicit representation of phenomena, mechanistic models can provide a more easily understood alternative for physicians or patients. Is it therefore desirable and relevant to use these models in support of medical decision making? And how can their clinical validity and impact be rigorously measured?')
+knitr::asis_output('The previous chapter proposed some tools to evaluate and quantify the value of mechanistic models, and in particular their outputs, with simple statistical tools. The latter, such as $R2$, are by no means specific to medical applications. One of the particularities of mechanistic cancer models, on the other hand, is the possibility of simulating treatments that imitate therapeutic interventions. Before tackling more precise questions, this chapter will therefore introduce certain clinical or statistical methods used to evaluate the effect of different types of treatments, including drugs, on patoents. A more specific issue related to the evaluation of mechanistic models will be explored in the next chapter using these methods.')
 ```
 
-```{r 7_packages, echo=FALSE, warning=FALSE, message=FALSE}
+```{r 8_packages, echo=FALSE, warning=FALSE, message=FALSE}
 invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot"),
        FUN = require,
        character.only = TRUE))
@@ -32,7 +48,6 @@ knitr::opts_chunk$set(
   )
 ```
   
-Before studying mechanistic models in more detail, this chapter describes some general elements on how clinical evidence may be generated and the methods developed for this purpose. This presentation is intended as a pedagogical introduction to the causal inference methods that will be used thereafter. Many other methods can be used to answer similar questions, particularly by analogy to the evaluation of prognostic or predictive biomarkers, but they will not be discussed here.
 
 ```{block2, type='summarybox', echo = TRUE}
 
