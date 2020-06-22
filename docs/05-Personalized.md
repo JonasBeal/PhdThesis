@@ -170,7 +170,7 @@ These questions can be addressed using cell line data. Using the logical model o
 
 It is possible to go one step further by comparing these personalized *Proliferation* scores with the doubling time of the cell lines, i.e., the time it takes for the cell line population to double. A cell line described as proliferative (high *Proliferation* score) should thus have a low doubling time. This can be observed qualitatively by using a subgroup of cell lines for which this information is available (Figure \@ref(fig:PROFILE-CL)C). These correlations are not significant and once again summarize a large heterogeneity. Predicting doubling times is, however, a rather difficult task with poor accuracies, even with the help of more flexible machine learning low [@kurilov2020assessment].
 
-### Validation with patient data
+### Validation with patient data {#validation-METABRIC}
 
 \begin{figure}
 

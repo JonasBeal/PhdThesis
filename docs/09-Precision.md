@@ -1,23 +1,8 @@
 
 # Causal inference for precision medicine
 
-\epigraph{"Maudit
+\epigraph{"Felix qui potuit rerum cognoscere causas."}{Virgil (Georgics, 29 BC)}
 
-soit le père de l'épouse
-
-du forgeron qui forgea le fer de la cognée
-
-avec laquelle le bûcheron abattit le chêne
-
-dans lequel on sculpta le lit
-
-où fut engendré l'arrière-grand-père
-
-de l'homme qui conduisit la voiture
-
-dans laquelle ta mère
-
-rencontra ton père!"}{Robert Desnos (La colombe de l'arche, 1923)}
 
 
 
