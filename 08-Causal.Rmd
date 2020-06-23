@@ -36,7 +36,7 @@ knitr::asis_output('The previous chapter proposed some tools to evaluate and qua
 ```
 
 ```{r 8_packages, echo=FALSE, warning=FALSE, message=FALSE}
-invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "ggpmisc"),
+invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "ggpmisc", "gridExtra", "gghalves"),
        FUN = require,
        character.only = TRUE))
 
@@ -53,7 +53,7 @@ knitr::opts_chunk$set(
 
 #### Scientific content {-}
 
-This short chapter introduces the framework for causal inference based on the literature and the description of causal inference in @beal2020causal.
+This short chapter introduces the framework for causal inference based on the literature and the description of causal inference in the preprint @beal2020causal.
 
 ```
 
@@ -80,7 +80,7 @@ knitr::include_graphics("fig/trials.png")
 The problem of comparability between the two groups is reinforced when the data used does not come from a clinical trial. In the remainder of this thesis these data will be called observational data. This means that in the available data, some patients were treated with the new drug ($A=1$) and others received the reference treatment ($A=0$). However, the assignment of treatment was not decided by the observer. This assignment was therefore made according to a protocol unknown to the observer which has no guarantee that the two groups are in fact comparable.  
   
 
-The situation can be illustrated with a simple example involving a confounding variable $C$ in addition to the treatment variable $A$ and the outcome variable $Y$. If $Y$ represents tumour volume and $A$ the treatment to be evaluated, $C$ could be a biomarker of cancer agressiveness. Data have been simulated for all variables in two different settings represented in Figures \@ref(fig:causality-example) and \@ref(fig:causality-example2). In the first case (Figure \@ref(fig:causality-example)), the outcome $Y$ is positively correlated to $C$ (more agressive tumours have bigger volume) and decreased when $A=1$ (treatment decreases tumour volume). $C$ has no influence on $A$. The causal relationships between the variables and the associated coefficients used to simulate data are summarized in the directed acyclic graphs (DAG) in Figure \@ref(fig:causality-example)A. The observed relations between variables in siimulated data are shown in Figure \@ref(fig:causality-example)B, C and D. In particular, the theoretical influence of $A$ on $Y$ is apparent in the observed data.
+The situation can be illustrated with a simple example involving a confounding variable $C$ in addition to the treatment variable $A$ and the outcome variable $Y$. If $Y$ represents tumour volume and $A$ the treatment to be evaluated, $C$ could be a biomarker of cancer agressiveness. 1000 patients have been simulated for all variables in two different settings represented in Figures \@ref(fig:causality-example) and \@ref(fig:causality-example2). In the first case (Figure \@ref(fig:causality-example)), the outcome $Y$ is positively correlated to $C$ (more agressive tumours have bigger volume) and decreased when $A=1$ (treatment decreases tumour volume). $C$ has no influence on $A$. The causal relationships between the variables and the associated coefficients used to simulate data are summarized in the directed acyclic graphs (DAG) in Figure \@ref(fig:causality-example)A. The observed relations between variables in siimulated data are shown in Figure \@ref(fig:causality-example)B, C and D. In particular, the theoretical influence of $A$ on $Y$ is apparent in the observed data.
 
 
 ```{r causality-example, echo=FALSE, out.width = "90%", fig.cap='(ref:causality-example-caption)', fig.scap='Analysis on observed data without confounder', fig.align='center', fig.height=5, fig.width=8}
@@ -127,13 +127,18 @@ plot_CA <- ggplot(sim_data_noC, aes(x=C,
 diff_AY <-  round(mean(filter(sim_data_noC, A==1)$Y)-mean(filter(sim_data_noC, A==0)$Y),
                digits=2)
    
-plot_AY <- ggplot(sim_data_noC, aes(x=A, y=Y, fill=A)) +
-  geom_boxplot() +
-   theme_pubclean() +
+plot_AY <- ggplot(sim_data_noC) +
+  geom_boxplot(aes(x=A, y=Y, fill=A)) +
+  theme_pubclean() +
+  geom_text(data=group_by(sim_data_noC, A) %>%
+              summarise(S=n()),
+            aes(x=A, label=paste0("n=", S)),
+            y=-20) +
   annotate("text", x=1.5, y=12.5,
            label=paste0("E[Y|A=1]-E[Y|A=0]=", diff_AY)) +
   scale_fill_manual(values=c('0'= "#972D15FF", '1'="#02401BFF")) +
   labs(fill="A: ") +
+  ylim(c(-20, NA)) +
   theme(legend.title = element_text(face="bold"))
 
 
@@ -192,15 +197,19 @@ plot_CA <- ggplot(sim_data_C, aes(x=C,
 diff_AY <-  round(mean(filter(sim_data_C, A==1)$Y)-mean(filter(sim_data_C, A==0)$Y),
                digits=2)
    
-plot_AY <- ggplot(sim_data_C, aes(x=A, y=Y, fill=A)) +
-  geom_boxplot() +
-   theme_pubclean() +
+plot_AY <- ggplot(sim_data_C) +
+  geom_boxplot(aes(x=A, y=Y, fill=A)) +
+  theme_pubclean() +
+  geom_text(data=group_by(sim_data_C, A) %>%
+              summarise(S=n()),
+            aes(x=A, label=paste0("n=", S)),
+            y=-20) +
   annotate("text", x=1.5, y=12.5,
            label=paste0("E[Y|A=1]-E[Y|A=0]=", diff_AY)) +
   scale_fill_manual(values=c('0'= "#972D15FF", '1'="#02401BFF")) +
   labs(fill="A: ") +
+  ylim(c(-20, NA)) +
   theme(legend.title = element_text(face="bold"))
-
 
       
 p_DAG / (plot_CA + plot_CY + plot_AY) / guide_area() +
@@ -220,12 +229,8 @@ First of all, the notations used in this and the next chapter are defined as fol
   
 
 The potential outcomes framework is sometimes described as counterfactual because it defines variables like $Y_j(a)$ to denote the potential outcome of individual $j$ in case he has been treated by $A=a$ which may be different from what we observe if $A_j\neq a$. These counterfactual variables make it possible to write the causal estimands. For instance, in this context, we can easily compute the difference in outcome between treated patients and control patients (Figure \@ref(fig:causality), left part): 
-$E[Y | A=1] - E[Y | A=0].$
-
-However, this difference has no causal interpretation as it does not offer any guarantees as to the confounding factor, as an unbalanced distribution of $C$ can induce biases. Thus we define another estimate:
-$E[Y(1)] - E[Y(0)].$
-
-In this case, we compare between two ideal cohorts (Figure \@ref(fig:causality), right part), one in which all patients have been treated (possibly contrary to the fact) and one in which all patients have been left in the control arm (once again, possibly contrary to the fact).
+$E[Y | A=1] - E[Y | A=0].$ However, this difference has no causal interpretation as it does not offer any guarantees as to the confounding factor, as an unbalanced distribution of $C$ can induce biases. Thus we define another estimate:
+$E[Y(1)] - E[Y(0)].$ In this case, we compare between two ideal cohorts (Figure \@ref(fig:causality), right part), one in which all patients have been treated (possibly contrary to the fact) and one in which all patients have been left in the control arm (once again, possibly contrary to the fact).
 
 ```{r causality, echo=FALSE, out.width = "90%", fig.cap='(ref:causality-caption)', fig.scap='Association and causation', fig.align='center'}
 knitr::include_graphics("fig/causality.png")
@@ -235,9 +240,7 @@ knitr::include_graphics("fig/causality.png")
 
 ### Identification of causal effects
 
-Different methods provide estimators to evaluate causal effect from observational data. 
-
-Under certain assumptions of consistency, positivity and conditional exchangeability, the potential outcomes framework allows to estimate these counterfactual variables and therefore infer causal estimates from observational (non-randomized) data [@rubin1974estimating, @hernan2020causal]. 
+The next question is whether it is possible to estimate the counterfactual variables $Y(A)$ and under what conditions. The potential outcomes framework explicits assumptions of consistency, positivity and conditional exchangeability to estimate these counterfactual variables and therefore infer causal estimates from observational (non-randomized) data [@rubin1974estimating, @hernan2020causal]. 
 
 *Consistency* means that values of treatment under comparison represent well-defined interventions which themselves correspond to the treatments in the data:
 $\textrm{if} \: A_j=a,  \textrm{then} \: Y_j(a)=Y_j.$
@@ -247,30 +250,185 @@ $Y(a) \indep A | C.$
 
 *Positivity* assumption states that the probability of being administered a certain version of treatment conditional on $C$ is greater than zero: $\textrm{if} \: P[C=c] \neq 0, P[A=a | C=c] >0.$ Intuitively, this positivity condition is required to ensure that the defined counterfactual variables make sense and do not represent something that cannot exist.
 
+Under these three assumptions, there are different methods and estimators available to evaluate causal effects from observational data. Two of them will be described and applied to the same example as above:  the description of the example and the failure of the direct methods are recalled in Figure \@ref(fig:causality-example3)A and B and both methods are illustrated in Figure \@ref(fig:causality-example3)C, D and E.
+
 #### Standardization or parametric g-formula
 
-Throughout the article, we will describe essentially one method called standardization or parametric g-formula. Details on other types of estimators are available in Supplementary Materials, sections B and C. In the simple example depicted in Figure \@ref(fig:causality-example2), the causal effect of treatment $A$ can be written with standardized means (formal proof in Supplementary Materials, section A):
+The first method is called standardization or parametric g-formula and it is the one that will be described in more detail in this chapter and the following one. It is based on the following equations:
 
 \begin{equation*}
 \begin{aligned}
-  E[Y(a)] & = \sum_{c} E[Y(a)|c] \times P[c]&& \\
+  E[Y(a)] & = \sum_{c} E[Y(a)|c] \times P[c] \\
           & = \sum_{c} E[Y(a)|a,c] \times P[c,w]
-          &&\text{ by conditional exchangeability } Y(a) \indep A | C \\
+          &&\text{ (exchangeability } Y(a) \perp \!\!\! \perp A | C \text{ )} \\
           & = \sum_{c} E[Y|a,c] \times P[c]
-          &&\text{ by consistency for Y }
+          &&\text{ (consistency)}
 \end{aligned}
 \end{equation*}
 
-\begin{equation} 
-\begin{split}
-  E[Y(A=1)] - E[Y(A=0)] = \\ \sum_{c} \Big(E[Y | A=1, C=c]-E[Y | A=0, C=c]\Big) \times P[C=c]
-  (\#eq:stdeq)
-\end{split}
-\end{equation} 
+Thus the average effect of treatment on the entire cohort can be written with standardized means:
 
-Computationally, non-parametric estimation of $E[Y | A=a, C=c]$ is usually out of reach. Thus, on real-world dataset, $E[Y | A=a, C=c]$ is estimated through modelling and explicit computation $P[C=c]$ is replaced by its empirical estimate.
+\begin{equation}
+\begin{aligned}
+  E[Y(A=1)] - & E[Y(A=0)] = \\ 
+   \sum_{c} \Big( & E[Y | A=1, C=c]-E[Y | A=0, C=c]\Big) \times P[C=c]
+\end{aligned}
+\end{equation}
+
+
+Computationally, non-parametric estimation of $E[Y | A=a, C=c]$ is usually out of reach. Thus, on real-world dataset, $E[Y | A=a, C=c]$ is estimated through **outcome modeling** and explicit computation $P[C=c]$ is replaced by its empirical estimate. In the simple example depicted in Figure \@ref(fig:causality-example3)A, a linear model of the outcome ($Y\sim C+A$) is fitted on observed data. This model is then used to infer $E[Y | A=1, C=c]$ and $E[Y | A=0, C=c]$ for each patient with covariate $C=c$ (Figure \@ref(fig:causality-example3)C). By averaging these values over the whole cohort the confounding effect is corrected and the $E[Y(A=1)]-E[Y(A=0)]$ estimator is much closer to the true value $-5$ (Figure \@ref(fig:causality-example3)D).
+
+
+```{r causality-example3, echo=FALSE, out.width = "90%", fig.cap='(ref:causality-example3-caption)', fig.scap='Causal inference methods on a simple example', fig.align='center', fig.height=7, fig.width=8}
+# library(lava)
+# m <- lvm()
+# distribution(m, ~A) <- binomial.lvm(p=0.5)
+# regression(m, Y~A) <- -5
+# regression(m, Y~C) <- 3
+# regression(m, A~C) <- 2
+# covariance(m, ~Y) <- 10
+# 
+# set.seed(3)
+# sim_data_C <- sim(m, n = 1000) %>%
+#   mutate(A=factor(A))
+# saveRDS(sim_data_C, "sim_data_C.rds")
+
+p_DAG <- ggdraw() + draw_image("fig/DAG-simple-C.png")
+
+sim_data_C <- readRDS("data/causal/sim_data_C.rds")
+
+diff_AY <-  round(mean(filter(sim_data_C, A==1)$Y)-mean(filter(sim_data_C, A==0)$Y),
+               digits=2)
+
+plot_AY <- ggplot(sim_data_C, aes(x=A, y=Y, fill=A)) +
+  geom_half_boxplot(show.legend = FALSE, outlier.shape = NA) +
+  geom_jitter(aes(color=A, x=as.numeric(A)+0.3),
+              alpha=0.3, width = 0.2, height=0, size=1,
+              show.legend = FALSE) +
+  geom_text(data=group_by(sim_data_C, A) %>%
+              summarise(S=n()),
+            aes(x=A, label=paste0("n=", S)),
+            y=-20) +
+  theme_pubclean() +
+  annotate("text", x=1.5, y=12.5,
+           label=paste0("Obs: E[Y|A=1]-E[Y|A=0]=", diff_AY)) +
+  scale_fill_manual(values=c('0'= "#972D15FF", '1'="#02401BFF")) +
+  scale_color_manual(values=c('0'= "#972D15FF", '1'="#02401BFF")) +
+  labs(fill="A: ") +
+  ylim(c(-21, NA))
+
+fit_outcome <- lm(Y~A+C, sim_data_C)
+sim_data_C %<>% mutate(`Y(A=0)`=predict(fit_outcome,
+                                      mutate(sim_data_C, A="0")),
+                     `Y(A=1)`=predict(fit_outcome,
+                                      mutate(sim_data_C, A="1")))
+
+fit_treatment <- glm(A~C, sim_data_C,
+                     family = binomial(link = "logit"))
+
+sim_data_C %<>% mutate(W1=1/predict(fit_treatment,
+                                    type="response"),
+                       W0=1/(1-predict(fit_treatment,
+                                    type="response")),
+                       WA=if_else(A=="1", W1, W0))
+
+diff_std <-  round(mean(sim_data_C$`Y(A=1)`)-mean(sim_data_C$`Y(A=0)`), digits=2)
+plot_std_dta <- pivot_longer(sim_data_C,
+                         cols = c('Y(A=0)', 'Y(A=1)'),
+                         names_to = 'A=a',
+                         values_to= 'Y(A=a)') %>%
+  mutate(`A=a`=if_else(`A=a`=="Y(A=0)", 0, 1) %>% factor)
+plot_std <- ggplot(plot_std_dta,
+                   aes(x=`A=a`, y=`Y(A=a)`, fill=`A=a`)) +
+  geom_half_boxplot(show.legend = FALSE, outlier.shape = NA) +
+  geom_jitter(aes(color=`A=a`, x=as.numeric(`A=a`)+0.3),
+              alpha=0.3, width = 0.2, height=0, size=1,
+              show.legend = FALSE) +
+  geom_text(data = group_by(plot_std_dta, `A=a`) %>%
+              summarise(S=n()),
+            aes(x=`A=a`, label=paste0("n=", S)),
+            y=-15) +
+  theme_pubclean() +
+  annotate("text", x=1.5, y=12.5,
+           label=paste0("Std: E[Y(A=1)]-E[Y(A=0)]=", diff_std)) +
+  scale_fill_manual(values=c('0'= "#972D15FF",
+                             '1'="#02401BFF")) +
+  scale_color_manual(values=c('0'= "#972D15FF",
+                              '1'="#02401BFF")) +
+  ylim(c(-16,NA)) +
+  labs(x='A',
+       y='E[Y|a,c]')
+
+diff_ipw_tab <- mutate(sim_data_C,
+                   A=as.numeric(as.character(A))) %>%
+  group_by(A) %>% summarize(Y=mean(WA*Y)/mean(WA))
+diff_ipw <- round(diff_ipw_tab$Y[2]-diff_ipw_tab$Y[1], digits=2)
+
+plot_ipw_dta <- pivot_longer(sim_data_C,
+                         cols = c('Y(A=0)', 'Y(A=1)'),
+                         names_to = 'A=a',
+                         values_to= 'Y(A=a)')
+plot_ipw <- ggplot(sim_data_C, aes(x=A, y=Y)) +
+  geom_half_boxplot(aes(weight=WA, fill=A),
+                    show.legend = FALSE, outlier.shape = NA) +
+  geom_jitter(aes(color=A, x=as.numeric(A)+0.3, size=WA),
+              alpha=0.3, width = 0.2, height=0) +
+  geom_text(data = group_by(sim_data_C, A) %>%
+              summarise(S=n()),
+            aes(x=A, label=paste0("n=", S)),
+            show.legend = FALSE,
+            y=-15) +
+  theme_pubclean() +
+  annotate("text", x=1.5, y=12.5,
+           label=paste0("IPW: E[Y(A=1)]-E[Y(A=0)]=", diff_ipw)) +
+  scale_fill_manual(values=c('0'= "#972D15FF",
+                             '1'="#02401BFF")) +
+  scale_color_manual(values=c('0'= "#972D15FF",
+                             '1'="#02401BFF"),
+                     guide = guide_legend(direction="horizontal")) +
+  scale_size(breaks = c(2, 10, 50),
+             guide = guide_legend(direction = "horizontal")) +
+  ylim(c(-16,NA)) +
+  labs(x='A',
+       y='Weighted Y',
+       size="Weight:",
+       color="A:") +
+  theme(legend.title = element_text(face="bold"),
+        legend.position = 'bottom',
+        legend.direction = "horizontal",
+        legend.box = "horizontal")
+
+
+test <- select(sim_data_C, C, A, Y,
+               `Y(A=0)`, `Y(A=1)`, WA) %>%
+  .[c(1,10,20),] %>%
+  rename(`E[Y|A=0,c)]`=`Y(A=0)`,
+         `E[Y|A=1,c)]`=`Y(A=1)`) %>%
+tableGrob(rows = NULL) 
+
+(p_DAG + plot_AY)  / test / (plot_std + plot_ipw) / guide_area() +
+  plot_annotation(tag_levels = 'A') +
+  plot_layout(heights = c(4, 3, 4, 1), guides = 'collect') & theme(legend.box = "horizontal")
+  
+
+```
+(ref:causality-example3-caption) **Causal inference methods on a simple example.** (A) Directed acyclic graphs with causal relations between variables and parameters used to simulate data. (B) Association between $A$ and $Y$ from observed data. (C) Some simulated samples/patients with their original variables ($C$, $A$ and $Y$), variables from outcome model ($E[Y|A=0,c)]$, $E[Y|A=1,c)]$) and weights from treatment model ($W^A$). (D) Standardized causal effect of $A$ on $Y$ based on  and outcome modeling. (E) IPW causal effect of $A$ on $Y$ based on weights derived from treatment modeling; in this panel weights are taken into account in boxplots and estimations.
 
 #### Inverse probability weighting (IPW) and propensity scores
 
+Based on the same counterfactual framework, it is possible to build another class of models, called marginal structural models [@robins2000marginal], from which we derive estimators different from the standardized estimators called inverse-probability-of-treatment weighted (IPW) estimators [@cole2008constructing]. IP weighting is equivalent to creating a pseudo-population where the link between covariates and treatment is cancelled. In the case of binary treatment $A \in {0 ,1}$, weights are defined for each patient as the inverse of the probability to have received the version of treatment he or she actually received, knowing his or her covariates:
 
+$$W^A=\dfrac{1}{f[A|C]} \text{ with } f[a|c]=P[A=a|C=c],$$
+
+$f[a|c]$ being called the propensity score, *i.e.,* the probability to have received the treatment $A=a$, given the covariates $C=c$. Again, propensity scores will be estimated in later examples using a parametric model. In this case with a binary treatment $A$, a logistic **treatment model** is used ($A\sim C$) to derive the weights $W^A$ (Figure \@ref(fig:causality-example3)C). Note that propensity scores are also useful for positivity investigations since values very close to $0$ or $1$ may indicate (quasi-)violations of positivity. Under the same hypothesis of exchangeability, positivity and consistency we can derive the modified Horvitz-Thompson estimator [@horvitz1952generalization; @hernan2020causal]:
+
+\begin{equation}
+E[Y(a)]=\dfrac{\hat{E}[I(A=a)W^{A}Y]}{\hat{E}[I(A=a)W^A]},
+(\#eq:ipweq2)
+\end{equation}
+
+$I$ being the indicator function. Once again, the use of these estimators makes it possible to find the true causal effect by correcting for the influence of the confounder (Figure \@ref(fig:causality-example3)E).  
+  
+
+In summary, evaluating the effect of a treatment requires isolating its impact from that of all confounding factors. This can be done in a randomized clinical trial designed for this purpose. However, there is a great amount of other data available that may not have been generated in this rigorous framework. It is nevertheless possible to draw causal interpretations from them, under certain hypotheses, thus offering insights for the a posteriori statistical evaluation of specific therapeutic strategies.
 

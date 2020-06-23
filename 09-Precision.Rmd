@@ -13,11 +13,11 @@ knitr::asis_output(
 
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\initial{H}istorically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments')
+knitr::asis_output('\\initial{T}hroughout this manuscript, we first described the complexity of cancer mechanisms, through the diversity of genetic alterations or non-linear signaling pathways.  This complexity naturally led to the choice of systemic modelling approaches and in particular mechanistic models whose explicit nature facilitates the study of the effects of new molecular perturbations such as treatments. The simple study of the response to BRAF inhibitors has thus required the consideration of many other genes and pathways.')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
-knitr::asis_output('Historically, all mechanistic models of molecular networks, and logical models in particular, have been widely used to study response to treatments')
+knitr::asis_output('Throughout this manuscript, we first described the complexity of cancer mechanisms, through the diversity of genetic alterations or non-linear signaling pathways.  This complexity naturally led to the choice of systemic modelling approaches and in particular mechanistic models whose explicit nature facilitates the study of the effects of new molecular perturbations such as treatments. The simple study of the response to BRAF inhibitors has thus required the consideration of many other genes and pathways.')
 ```
 
 ```{r 9_packages, echo=FALSE, warning=FALSE, message=FALSE}
@@ -33,19 +33,26 @@ knitr::opts_chunk$set(
   )
 ```
   
-
+This chapter proposes to take the complexity a step further by considering different treatments. The diversity of patients' molecular profiles suggests that the best treatment is not necessarily the same for all patients: this is what is known as precision medicine. This is already a clinical reality in oncology that could be reinforced in the future by the emergence of new computational models of cancer, whether mechanistic or not. How then can we assess the relevance of these models in their ability to guide patient treatment?
 
 ```{block2, type='summarybox', echo = TRUE}
 
 #### Scientific content {-}
 
-This chapter extends the method presented in the previous chapter to investigate drug response with personalized logical models. The first application to cell lines of all cancer types was presented orally at ISMB2020 in Basel but is not published.  
+This chapter presents an extension of the causal inference framework to quantify the value of precision medicine strategies. This work is currently under revision and is available as a pre-print @beal2020causal.
 
 ```
 
-## One step further with drugs
+## Precision medicine
+
+### Clinical
 
 [@de2015pragmatic]
+
+
+### Models
+
+Mechanistic models of cancer pathways are particularly well suited to study response to treatment. Their explicit representation of genes and proteins makes it possible to simulate the effect of different therapeutic interventions. On the basis of this observation, it is possible to imagine the following situation 
 
 ```{r Shiny, echo=FALSE, out.width = "90%", fig.cap='(ref:Shiny-caption)', fig.scap='Bimodality criteria and their combinations', fig.align='center'}
 knitr::include_app('http://jonasbeal.shinyapps.io/application_causal_pm/', height = '600px')
