@@ -51,7 +51,17 @@ Among the different metrics, the examples presented in this thesis will focus on
 
 ## Patient-derived xenografts
 
-Distributions and some figures
+Another type of data exists, halfway between cell lines and patients, and that is patient-derived xenografts (PDX). Each patient tumour is divided into pieces later implanted in several immunodeficient cloned mice treated with different drugs, thus providing access to sensitivities to several different drugs for each tumour. The PDX dataset used in this thesis is the one published by @gao2015high. The original dataset contains 281 different tumours of origin (sometimes called PDX models, in the sense of a biological model) and 63 tested drugs, not all drugs having been tested for all tumours and some drugs have been tested with tissue-specific patterns (Figure \@ref(fig:PDX-appendix)). 192 of these tumours have also been characterized for their mutations, copy-number alterations and mRNA. 
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{10-Appendix_files/figure-latex/PDX-appendix-1} 
+
+}
+
+\caption[Comprehensive overview of tumours and drugs screened in PDX dataset from @gao2015high]{(ref:PDX-appendix-caption)}(\#fig:PDX-appendix)
+\end{figure}
+(ref:PDX-appendix-caption) **Comprehensive overview of tumours and drugs screened in PDX dataset from @gao2015high.**
 
 ## Patients {#appendix-datasets-patients}
 

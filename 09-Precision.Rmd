@@ -13,11 +13,11 @@ knitr::asis_output(
 
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\initial{T}hroughout this manuscript, we first described the complexity of cancer mechanisms, through the diversity of genetic alterations or non-linear signaling pathways.  This complexity naturally led to the choice of systemic modelling approaches and in particular mechanistic models whose explicit nature facilitates the study of the effects of new molecular perturbations such as treatments. The simple study of the response to BRAF inhibitors has thus required the consideration of many other genes and pathways.')
+knitr::asis_output('\\initial{T}hroughout this manuscript, we first described the complexity of cancer mechanisms, through the diversity of genetic alterations or non-linear signaling pathways. This complexity naturally led to the choice of systemic modelling approaches and in particular mechanistic models whose explicit nature facilitates the study of the effects of new molecular perturbations such as treatments. The simple study of the response to BRAF inhibitors has thus required the consideration of many other genes and pathways.')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
-knitr::asis_output('Throughout this manuscript, we first described the complexity of cancer mechanisms, through the diversity of genetic alterations or non-linear signaling pathways.  This complexity naturally led to the choice of systemic modelling approaches and in particular mechanistic models whose explicit nature facilitates the study of the effects of new molecular perturbations such as treatments. The simple study of the response to BRAF inhibitors has thus required the consideration of many other genes and pathways.')
+knitr::asis_output('Throughout this manuscript, we first described the complexity of cancer mechanisms, through the diversity of genetic alterations or non-linear signaling pathways. This complexity naturally led to the choice of systemic modelling approaches and in particular mechanistic models whose explicit nature facilitates the study of the effects of new molecular perturbations such as treatments. The simple study of the response to BRAF inhibitors has thus required the consideration of many other genes and pathways.')
 ```
 
 ```{r 9_packages, echo=FALSE, warning=FALSE, message=FALSE}
@@ -43,16 +43,100 @@ This chapter presents an extension of the causal inference framework to quantify
 
 ```
 
-## Precision medicine
 
-### Clinical
+## Precision medicine in oncology
 
+It is first important to understand what is meant by the concept of precision medicine in the treatment of cancer patients in order to place subsequent questions in a plausible clinical framework. 
+
+### An illustration with patient-derived xenografts
+
+Precision medicine is based on the diversity of treatment responses observed in different tumors. It has already been observed in previous chapters that different cell lines respond differently to a particular treatment, the BRAF inhbitors. A broader analysis of the data shows that the same is true for the vast majority of treatments. It would be possible to illustrate this using the same data from cell lines extended to other drugs. However, because of the more directly clinical impact of the issues discussed in this chapter, the analyses presented below will focus on another type of data that is closer to patient data: patient-derived xenografts (PDX).  
+  
+
+A PDX is a tumor tissue that has been removed from a patient and implanted into immunodeficient mice [@hidalgo2014patient]. Unlike cell lines, which are *in vitro* models, PDXs are *in vivo* models that allow cancer cells to evolve in a more realistic microenvironment. In the same way as for cell lines, PDX can be used for drug screening in patients who cannot be screened directly. The data used in this chapter come from a study by @gao2015high which contains several hundred tumors and more than fifty drugs. Not all drugs having been tested for all tumours and details of the drugs and types of cancer tested are available in the appendix \@ref(appendix-PDX). This dataset was generated following the "one animal per model per treatment" approach ($1 \times 1 \times 1$), the principles of which are summarized in Figure \@ref(fig:PDX-principles)A.
+
+Metric
+
+
+```{r PDX-principles, echo=FALSE, out.width = "90%", fig.cap='(ref:PDX-principles-caption)', fig.scap='Principles of PDX screening', fig.align='center'}
+knitr::include_graphics("fig/PDX.png")
+```
+(ref:PDX-principles-caption) **Principles of PDX screening.** (A) Schematic pipeline for PDX screening with tumour biopsies from one patient divided in several pieces later implanted in similar immunodeficient mice. Each mouse is then treated with a different drug; the collection of mice that have received tumour samples from the same patient but have been treated with different drugs therefore gives access to several outcomes for the same tumor of origin. (B) Corresponding counterfactual variables.  
+  
+
+In order to illustrate the diversity of response to treatment, the database is momentarily restricted to the 4 most widely tested drugs and the 180 tumours (or PDX models) that were evaluated for all four drugs. The four chosen drugs target different pathways: binimetinib (MAPK inhibitor), BKM120 (PIK inhibitor), HDM201 (MDM2 inhibitor) and LEE011 (CDK inhibitor).
+
+```{r PDX-dense, echo=FALSE, out.width = "90%", fig.cap='(ref:PDX-dense-caption)', fig.scap='Analysis on observed data without confounder', fig.align='center', fig.height=5, fig.width=8}
+
+PDX_dense <- readRDS("data/precision/PDX_clin_dense.rds")
+
+colors_tissues <- c("GC"="#800000FF", "CRC"="#FFA319FF",
+                    "PDAC"="#8A9045FF", "BRCA"="#155F83FF",
+                    "NSCLC"="#C16622FF", "CM"="#58593FFF",
+                    "Unknown"="#767676FF")
+
+plot_data_best <- PDX_dense %>%
+  group_by(PATIENT_ID, Tissue) %>%
+  arrange(PATIENT_ID, Treatment) %>%
+  summarise(Treatment=c('binimetinib', 'BKM120', 'HDM201', 'LEE011')[which.min(BestAvgResponse)])
+
+
+plot_all <- ggplot(PDX_dense, aes(x=Treatment, y=BestAvgResponse)) +
+  geom_boxplot() +
+  theme_pubclean()
+
+# plot_best <- left_join(plot_data_best, PDX_dense,
+#           by=c("PATIENT_ID", "Treatment")) %>%
+#   ggplot(aes(x=Treatment, y=BestAvgResponse)) +
+#   geom_boxplot() +
+#   theme_pubclean()
+
+
+plot_bar <- ggplot(plot_data_best, aes(x=Treatment, fill=Tissue)) +
+  geom_bar() +
+  labs(#title = "Best treatments per patient",
+       y="Number of patients for whom\nthe treatment is the most effective",
+       fill="Tissue:") +
+  theme_pubclean() +
+  scale_fill_manual(values = colors_tissues) +
+  theme(legend.title = element_text(face="bold"))
+
+(plot_all + plot_bar) / guide_area() +
+  plot_layout(heights = c(6,1), guides = 'collect') +
+  plot_annotation(tag_levels = 'A')
+  
+```
+(ref:PDX-dense-caption) **Analysis on observed data without confounder.** (A) Directed acyclic graphs
+
+### Clinical trials and treatment algorithms
+
+Precision medicine (PM) consists in assigning the most appropriate treatment to each patient according to his or her characteristics. This is, for instance, quite common in the clinical management of cancer patients where the choice of treatment is increasingly influenced by the genomic alterations of the patient [@friedman2015precision]. At the individual level, targeted treatments have provided relevant solutions for patients with specific mutations [@abou2003overview]. Putting together these various treatments, some precision medicine strategies can be defined. Based on the genomic profile of the patient, the treatment most likely to be successful is chosen. If the information available is reliable, precision medicine can thus be reduced to a treatment choice algorithm that takes as input the molecular characteristics of the patient's tumor and outputs a recommendation of treatment.
+
+Many biomarkers, associated clinical trials and treatment algorithm
 [@de2015pragmatic]
+
+```{r SHIVA, echo=FALSE, out.width = "80%", fig.cap='(ref:SHIVA-caption)', fig.scap='An example of a precision medicine treatment algorithm: the SHIVA clinical trial', fig.align='center'}
+knitr::include_graphics("fig/SHIVA_algo.png")
+```
+(ref:SHIVA-caption) **An example of a precision medicine treatment algorithm: the SHIVA clinical trial.** Specific molecular alterations and their associated treatments, as proposed in the SHIVA clinical trial by @le2015molecularly.
 
 
 ### Models
 
 Mechanistic models of cancer pathways are particularly well suited to study response to treatment. Their explicit representation of genes and proteins makes it possible to simulate the effect of different therapeutic interventions. On the basis of this observation, it is possible to imagine the following situation 
+
+## Emulating clinical trials to evaluate precision medicine algorithms
+
+## Causal inference under multiple versions of treatment
+
+## Application to simulated data
+
+## Application to PDX
+
+## Limitations and perspective
+
+
+
 
 ```{r Shiny, echo=FALSE, out.width = "90%", fig.cap='(ref:Shiny-caption)', fig.scap='Bimodality criteria and their combinations', fig.align='center'}
 knitr::include_app('http://jonasbeal.shinyapps.io/application_causal_pm/', height = '600px')

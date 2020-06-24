@@ -4981,8 +4981,8 @@ explored in the next chapter using these methods
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
 This short chapter introduces the framework for causal inference based
-on the literature and the description of causal inference in
-\citet{beal2020causal}.
+on the literature and the description of causal inference in the
+preprint \citet{beal2020causal}.
 \EndKnitrBlock{summarybox}
 
 \newcommand{\indep}{\perp \!\!\! \perp}
@@ -5165,7 +5165,7 @@ possibly contrary to the fact).
 
 }
 
-\caption[Association and causation]{\textbf{Association, causation and their
+\caption[Association, causation and their associated cohorts]{\textbf{Association, causation and their
 associated cohorts.} Assocation analyses are based on observed cohorts
 and conditional probabilities. Causation analyses are based on
 counterfactual variables and cohorts.}\label{fig:causality}
@@ -5334,24 +5334,83 @@ medicine}\label{causal-inference-for-precision-medicine}
 
 \epigraph{"Felix qui potuit rerum cognoscere causas."}{Virgil (Georgics, 29 BC)}
 
-\initial{H}istorically, all mechanistic models of molecular networks,
-and logical models in particular, have been widely used to study
-response to treatments
+\initial{T}hroughout this manuscript, we first described the complexity
+of cancer mechanisms, through the diversity of genetic alterations or
+non-linear signaling pathways. This complexity naturally led to the
+choice of systemic modelling approaches and in particular mechanistic
+models whose explicit nature facilitates the study of the effects of new
+molecular perturbations such as treatments. The simple study of the
+response to BRAF inhibitors has thus required the consideration of many
+other genes and pathways.
+
+This chapter proposes to take the complexity a step further by
+considering different treatments. The diversity of patients' molecular
+profiles suggests that the best treatment is not necessarily the same
+for all patients: this is what is known as precision medicine. This is
+already a clinical reality in oncology that could be reinforced in the
+future by the emergence of new computational models of cancer, whether
+mechanistic or not. How then can we assess the relevance of these models
+in their ability to guide patient treatment?
 
 \BeginKnitrBlock{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-6}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
-This chapter extends the method presented in the previous chapter to
-investigate drug response with personalized logical models. The first
-application to cell lines of all cancer types was presented orally at
-ISMB2020 in Basel but is not published.
+This chapter presents an extension of the causal inference framework to
+quantify the value of precision medicine strategies. This work is
+currently under revision and is available as a pre-print
+\citet{beal2020causal}.
 \EndKnitrBlock{summarybox}
 
-\section{One step further with
-drugs}\label{one-step-further-with-drugs-1}
+\section{Precision medicine in
+oncology}\label{precision-medicine-in-oncology}
 
+\subsection{Starting from pre-clinical data: patient-derived
+xenografts}\label{starting-from-pre-clinical-data-patient-derived-xenografts}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{09-Precision_files/figure-latex/PDX-dense-1} 
+
+}
+
+\caption[Analysis on observed data without confounder]{\textbf{Analysis on observed data without
+confounder.} (A) Directed acyclic graphs}\label{fig:PDX-dense}
+\end{figure}
+
+
+
+
+\subsection{Clinical trials and treatment
+algorithms}\label{clinical-trials-and-treatment-algorithms}
+
+Many biomarkers, associated clinical trials and treatment algorithm
 \citep{de2015pragmatic}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{fig/SHIVA_algo} 
+
+}
+
+\caption[An example of a precision medicine treatment algorithm: the SHIVA clinical trial]{\textbf{An example of a precision medicine treatment
+algorithm: the SHIVA clinical trial.} Specific molecular alterations and
+their associated treatments, as proposed in the SHIVA clinical trial by
+\citet{le2015molecularly}.}\label{fig:SHIVA}
+\end{figure}
+
+
+
+
+
+
+\subsection{Models}\label{models}
+
+Mechanistic models of cancer pathways are particularly well suited to
+study response to treatment. Their explicit representation of genes and
+proteins makes it possible to simulate the effect of different
+therapeutic interventions. On the basis of this observation, it is
+possible to imagine the following situation
 
 \begin{figure}
 
@@ -5480,7 +5539,31 @@ that the targeted gene is essential to the cell fitness.
 
 \section{Patient-derived xenografts}\label{patient-derived-xenografts}
 
-Distributions and some figures
+Another type of data exists, halfway between cell lines and patients,
+and that is patient-derived xenografts (PDX). Each patient tumour is
+divided into pieces later implanted in several immunodeficient cloned
+mice treated with different drugs, thus providing access to
+sensitivities to several different drugs for each tumour. The PDX
+dataset used in this thesis is the one published by \citet{gao2015high}.
+The original dataset contains 281 different tumours of origin (sometimes
+called PDX models, in the sense of a biological model) and 63 tested
+drugs, not all drugs having been tested for all tumours and some drugs
+have been tested with tissue-specific patterns (Figure
+\ref{fig:PDX-appendix}). 192 of these tumours have also been
+characterized for their mutations, copy-number alterations and mRNA.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{10-Appendix_files/figure-latex/PDX-appendix-1} 
+
+}
+
+\caption[Comprehensive overview of tumours and drugs screened in PDX dataset from @gao2015high]{\textbf{Comprehensive overview of tumours and
+drugs screened in PDX dataset from \citet{gao2015high}.}}\label{fig:PDX-appendix}
+\end{figure}
+
+
+
 
 \section{Patients}\label{appendix-datasets-patients}
 

@@ -232,7 +232,7 @@ The potential outcomes framework is sometimes described as counterfactual becaus
 $E[Y | A=1] - E[Y | A=0].$ However, this difference has no causal interpretation as it does not offer any guarantees as to the confounding factor, as an unbalanced distribution of $C$ can induce biases. Thus we define another estimate:
 $E[Y(1)] - E[Y(0)].$ In this case, we compare between two ideal cohorts (Figure \@ref(fig:causality), right part), one in which all patients have been treated (possibly contrary to the fact) and one in which all patients have been left in the control arm (once again, possibly contrary to the fact).
 
-```{r causality, echo=FALSE, out.width = "90%", fig.cap='(ref:causality-caption)', fig.scap='Association and causation', fig.align='center'}
+```{r causality, echo=FALSE, out.width = "90%", fig.cap='(ref:causality-caption)', fig.scap='Association, causation and their associated cohorts', fig.align='center'}
 knitr::include_graphics("fig/causality.png")
 ```
 (ref:causality-caption) **Association, causation and their associated cohorts.** Assocation analyses are based on observed cohorts and conditional probabilities. Causation analyses are based on counterfactual variables and cohorts.  

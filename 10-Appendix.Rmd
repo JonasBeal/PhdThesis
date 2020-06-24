@@ -1,7 +1,7 @@
 # (APPENDIX) Appendix {-}
 
 ```{r 10_packages, echo=FALSE, warning=FALSE, message=FALSE}
-invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra", "UpSetR", "eulerr", "survival", "survminer", "paletteer"),
+invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra", "UpSetR", "eulerr", "survival", "survminer", "paletteer", "ggstance"),
        FUN = require,
        character.only = TRUE))
 
@@ -85,9 +85,79 @@ Among the various databases available, the ones used in this thesis have been do
 
 Among the different metrics, the examples presented in this thesis will focus on scaled Bayesian factors to assess the effect of CRISPR targeting of genes. These scores are computed based on the fold change distribution of sgRNA [@hart2016bagel]. The highest values indicate that the targeted gene is essential to the cell fitness.
 
-## Patient-derived xenografts
+## Patient-derived xenografts {#appendix-PDX}
 
-Distributions and some figures
+Another type of data exists, halfway between cell lines and patients, and that is patient-derived xenografts (PDX). Each patient tumour is divided into pieces later implanted in several immunodeficient cloned mice treated with different drugs, thus providing access to sensitivities to several different drugs for each tumour. 
+
+### PDX data from @gao2015high
+
+The PDX dataset used in this thesis is the one published by @gao2015high. The original dataset contains 281 different tumours of origin (sometimes called PDX models, in the sense of a biological model) and 63 tested drugs, not all drugs having been tested for all tumours and some drugs have been tested with tissue-specific patterns (Figure \@ref(fig:PDX-appendix)). 192 of these tumours have also been characterized for their mutations, copy-number alterations and mRNA. 
+
+```{r PDX-appendix, echo=FALSE, out.width = "95%", fig.cap='(ref:PDX-appendix-caption)', fig.scap='Comprehensive overview of tumours and drugs screened in PDX dataset from @gao2015high', fig.align='center', fig.height=7, fig.width=8}
+
+colors_tissues <- c("GC"="#800000FF", "CRC"="#FFA319FF",
+                    "PDAC"="#8A9045FF", "BRCA"="#155F83FF",
+                    "NSCLC"="#C16622FF", "CM"="#58593FFF",
+                    "Unknown"="#767676FF")
+
+plot_data <- readRDS("data/appendix/plot_data_PDX_sparsity.rds") %>%
+  filter(Tissue!="Unknown")
+
+p_tile <- ggplot(plot_data) +
+  geom_tile(aes(x=PATIENT_ID, y=Treatment, fill=Tissue, alpha=Screened),
+            color="white") +
+  labs(#x="PDX models",
+       fill="Cancer tissues:") +
+  scale_fill_manual(values=colors_tissues) +
+  guides(alpha=FALSE) +
+  theme_pubclean() +
+  theme(axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.y = element_text(size=8),
+        legend.position = "bottom",
+        legend.title = element_text(face="bold"))
+
+p_bar <- plot_data %>%
+  group_by(Treatment) %>% summarise(S=sum(Screened)) %>%
+  ggplot() +
+  geom_barh(aes(y=Treatment, x=S),
+           stat="identity") +
+  labs(x="Number of screened PDX") +
+  theme_pubclean() +
+  theme(#axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.y = element_blank(),
+        legend.position = "right",
+        legend.title = element_text(face="bold"),
+        panel.grid.major.y = element_blank())
+  
+egg::ggarrange(p_tile, p_bar, nrow = 1,
+               widths = c(2,1)#,
+               #top = "PDX drug screening"
+               )
+
+```
+(ref:PDX-appendix-caption) **Comprehensive overview of tumours and drugs screened in PDX dataset from @gao2015high.**
+
+### PDX data and drug response metrics
+
+#### A continuous outcome
+
+The first drug response metric used in this article is called *Best Average Response*. For each combination tumour/drug, the response is determined by comparing tumor volume change at time $t$, $V_t$ to tumor volume at time $t_0$, $V_{t_0}$. Several scores are computed:
+
+$$\text{Tumour Volume Change (\%)} = \Delta Vol_t = 100\% \times \dfrac{V_t-V_{t_0}}{V_t}$$
+
+$$\text{Best Response} = min(\Delta Vol_t), t>10d$$
+
+$$\text{Average Response}_t = mean(\Delta Vol_i, 0 \leq i\leq t)$$
+
+$$\text{Best Average Response} = min(\text{Average Response}_t), t>10d$$
+
+We will mainly focus on *Best Average Response*. This metric "captures a combination of speed, strength and durability of response into a single value" *gao2015high*. Qualitatively, lower values correspond to more efficient drugs.
+
+#### A binary outcome
+
+Thresholds of *Best Response* and *Best Average Response* are also defined, inspired by RECIST criteria [@therasse2000new], in order to classify response to treatment into 4 categories: Complete Response (CR), Partial Response (PR, Stable Disease (SD) and Progressive Disease (PD). We designed a binary response status by combining the response categories (CR, PR and SD) into a single 'responder' category (1), opposed to the 'non-responders' progressive diseases (0).
 
 ## Patients {#appendix-datasets-patients}
 

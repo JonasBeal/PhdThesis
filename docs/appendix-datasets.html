@@ -188,7 +188,11 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html"><i class="fa fa-check"></i><b>9</b> Causal inference for precision medicine</a><ul>
-<li class="chapter" data-level="9.1" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#one-step-further-with-drugs-1"><i class="fa fa-check"></i><b>9.1</b> One step further with drugs</a></li>
+<li class="chapter" data-level="9.1" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#precision-medicine-in-oncology"><i class="fa fa-check"></i><b>9.1</b> Precision medicine in oncology</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#starting-from-pre-clinical-data-patient-derived-xenografts"><i class="fa fa-check"></i><b>9.1.1</b> Starting from pre-clinical data: patient-derived xenografts</a></li>
+<li class="chapter" data-level="9.1.2" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#clinical-trials-and-treatment-algorithms"><i class="fa fa-check"></i><b>9.1.2</b> Clinical trials and treatment algorithms</a></li>
+<li class="chapter" data-level="9.1.3" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#models"><i class="fa fa-check"></i><b>9.1.3</b> Models</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendix-datasets.html"><a href="appendix-datasets.html"><i class="fa fa-check"></i><b>A</b> About datasets</a><ul>
@@ -271,35 +275,42 @@ Figure A.2: <strong>Drug screening metrics in cell lines.</strong> Based on a te
 </div>
 <div id="patient-derived-xenografts" class="section level2">
 <h2><span class="header-section-number">A.2</span> Patient-derived xenografts</h2>
-<p>Distributions and some figures</p>
+<p>Another type of data exists, halfway between cell lines and patients, and that is patient-derived xenografts (PDX). Each patient tumour is divided into pieces later implanted in several immunodeficient cloned mice treated with different drugs, thus providing access to sensitivities to several different drugs for each tumour. The PDX dataset used in this thesis is the one published by <span class="citation">Gao et al. (<a href="#ref-gao2015high">2015</a>)</span>. The original dataset contains 281 different tumours of origin (sometimes called PDX models, in the sense of a biological model) and 63 tested drugs, not all drugs having been tested for all tumours and some drugs have been tested with tissue-specific patterns (Figure <a href="appendix-datasets.html#fig:PDX-appendix">A.3</a>). 192 of these tumours have also been characterized for their mutations, copy-number alterations and mRNA.</p>
+<div class="figure" style="text-align: center"><span id="fig:PDX-appendix"></span>
+<img src="10-Appendix_files/figure-html/PDX-appendix-1.png" alt="Comprehensive overview of tumours and drugs screened in PDX dataset from Gao et al. (2015)." width="90%" />
+<p class="caption">
+Figure A.3: <strong>Comprehensive overview of tumours and drugs screened in PDX dataset from <span class="citation">Gao et al. (<a href="#ref-gao2015high">2015</a>)</span>.</strong>
+</p>
+</div>
+
 </div>
 <div id="appendix-datasets-patients" class="section level2">
 <h2><span class="header-section-number">A.3</span> Patients</h2>
 <div id="metabric" class="section level3">
 <h3><span class="header-section-number">A.3.1</span> METABRIC</h3>
-<p>METABRIC dataset is large breast cancer dataset with more than 2000 patients <span class="citation">(Pereira et al. <a href="#ref-pereira2016somatic">2016</a>)</span>. Mutations, CNA, expression (transcriptomics micro-array) and clinical data are available for a majority of patients (Figure <a href="appendix-datasets.html#fig:METABRIC">A.3</a>A), with 1904 patients for whom all the data is available. One of the particular features of these data is to propose a very long clinical follow-up, over more than 10 years (Figure <a href="appendix-datasets.html#fig:METABRIC">A.3</a>B).</p>
+<p>METABRIC dataset is large breast cancer dataset with more than 2000 patients <span class="citation">(Pereira et al. <a href="#ref-pereira2016somatic">2016</a>)</span>. Mutations, CNA, expression (transcriptomics micro-array) and clinical data are available for a majority of patients (Figure <a href="appendix-datasets.html#fig:METABRIC">A.4</a>A), with 1904 patients for whom all the data is available. One of the particular features of these data is to propose a very long clinical follow-up, over more than 10 years (Figure <a href="appendix-datasets.html#fig:METABRIC">A.4</a>B).</p>
 <div class="figure" style="text-align: center"><span id="fig:METABRIC"></span>
 <img src="10-Appendix_files/figure-html/METABRIC-1.png" alt="Available omics and survival in METABRIC Breast Cancer dataset. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram. (B) Overall survival probability for all patients with clinical follow-up, stratified per breast cancer PAM50 subtype; administrative censoring at 180 months." width="90%" />
 <p class="caption">
-Figure A.3: <strong>Available omics and survival in METABRIC Breast Cancer dataset</strong>. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram. (B) Overall survival probability for all patients with clinical follow-up, stratified per breast cancer PAM50 subtype; administrative censoring at 180 months.
+Figure A.4: <strong>Available omics and survival in METABRIC Breast Cancer dataset</strong>. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram. (B) Overall survival probability for all patients with clinical follow-up, stratified per breast cancer PAM50 subtype; administrative censoring at 180 months.
 </p>
 </div>
 
 </div>
 <div id="tcga-breast-cancer" class="section level3">
 <h3><span class="header-section-number">A.3.2</span> TCGA: Breast cancer</h3>
-<p>Another reference database for breast cancer is the one from the TCGA consortium <span class="citation">(Network and others <a href="#ref-cancer2012comprehensive">2012</a>)</span>. The cohort is smaller than METABRIC and its clinical follow-up is more limited. In contrast, the omics data are more comprehensive and include RNA sequencing and relative quantification ofsproteins with RPPA technology (Figure <a href="appendix-datasets.html#fig:TCGA-bp">A.4</a>A).</p>
+<p>Another reference database for breast cancer is the one from the TCGA consortium <span class="citation">(Network and others <a href="#ref-cancer2012comprehensive">2012</a>)</span>. The cohort is smaller than METABRIC and its clinical follow-up is more limited. In contrast, the omics data are more comprehensive and include RNA sequencing and relative quantification ofsproteins with RPPA technology (Figure <a href="appendix-datasets.html#fig:TCGA-bp">A.5</a>A).</p>
 <div class="figure" style="text-align: center"><span id="fig:TCGA-bp"></span>
 <img src="10-Appendix_files/figure-html/TCGA-bp-1.png" alt="Available omics for TCGA Breast and Prostate cancer. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma) study." width="70%" />
 <p class="caption">
-Figure A.4: <strong>Available omics for TCGA Breast and Prostate cancer</strong>. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma) study.
+Figure A.5: <strong>Available omics for TCGA Breast and Prostate cancer</strong>. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma) study.
 </p>
 </div>
 
 </div>
 <div id="appendix-prostate" class="section level3">
 <h3><span class="header-section-number">A.3.3</span> TCGA: Prostate cancer</h3>
-<p>Similarly, for prostate cancer, reference can be made to data from the TCGA study <span class="citation">(Abeshouse et al. <a href="#ref-abeshouse2015molecular">2015</a>)</span>, which has the same type of data but for a smaller number of patients than the breast cancer (Figure <a href="appendix-datasets.html#fig:TCGA-bp">A.4</a>B).</p>
+<p>Similarly, for prostate cancer, reference can be made to data from the TCGA study <span class="citation">(Abeshouse et al. <a href="#ref-abeshouse2015molecular">2015</a>)</span>, which has the same type of data but for a smaller number of patients than the breast cancer (Figure <a href="appendix-datasets.html#fig:TCGA-bp">A.5</a>B).</p>
 </div>
 </div>
 </div>
@@ -310,6 +321,9 @@ Figure A.4: <strong>Available omics for TCGA Breast and Prostate cancer</strong>
 </div>
 <div id="ref-behan2019prioritization">
 <p>Behan, Fiona M, Francesco Iorio, Gabriele Picco, Emanuel Gonçalves, Charlotte M Beaver, Giorgia Migliardi, Rita Santos, et al. 2019. “Prioritization of Cancer Therapeutic Targets Using Crispr–Cas9 Screens.” <em>Nature</em> 568 (7753). Nature Publishing Group: 511.</p>
+</div>
+<div id="ref-gao2015high">
+<p>Gao, Hui, Joshua M Korn, Stéphane Ferretti, John E Monahan, Youzhen Wang, Mallika Singh, Chao Zhang, et al. 2015. “High-Throughput Screening Using Patient-Derived Tumor Xenografts to Predict Clinical Trial Drug Response.” <em>Nature Medicine</em> 21 (11). Nature Publishing Group: 1318.</p>
 </div>
 <div id="ref-hart2016bagel">
 <p>Hart, Traver, and Jason Moffat. 2016. “BAGEL: A Computational Framework for Identifying Essential Genes from Pooled Library Screens.” <em>BMC Bioinformatics</em> 17 (1). Springer: 164.</p>

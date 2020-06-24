@@ -31,7 +31,7 @@ rencontra ton père!"}{Robert Desnos (La colombe de l'arche, 1923)}
 \BeginKnitrBlock{summarybox}<div class="summarybox">
 #### Scientific content {-}
 
-This short chapter introduces the framework for causal inference based on the literature and the description of causal inference in @beal2020causal.
+This short chapter introduces the framework for causal inference based on the literature and the description of causal inference in the preprint @beal2020causal.
 </div>\EndKnitrBlock{summarybox}
 
 \newcommand{\indep}{\perp \!\!\! \perp}
@@ -107,7 +107,7 @@ $E[Y(1)] - E[Y(0)].$ In this case, we compare between two ideal cohorts (Figure 
 
 }
 
-\caption[Association and causation]{(ref:causality-caption)}(\#fig:causality)
+\caption[Association, causation and their associated cohorts]{(ref:causality-caption)}(\#fig:causality)
 \end{figure}
 (ref:causality-caption) **Association, causation and their associated cohorts.** Assocation analyses are based on observed cohorts and conditional probabilities. Causation analyses are based on counterfactual variables and cohorts.  
   
