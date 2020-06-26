@@ -5557,10 +5557,11 @@ In theory, mechanistic models seem to be suitable for this purpose since
 their explicit representation of genes and proteins makes it possible to
 simulate the effect of different therapeutic interventions. However, the
 feasibility of designing and calibrating such a model has yet to be
-demonstrated. Other types of models are being studied to provide a
-computational tool for predicting the sensitivity of cell lines to
-different treatments, in particular using deep learning methods
-\citep{manica2019toward}.
+demonstrated. Other types of models are being studied that could achieve
+these goals. For example, some recent approaches propose the use of deep
+learning to provide a computational tools for predicting the growth of
+cells \citep{ma2018using}, or even the sensitivity of cell lines to
+different treatments \citep{manica2019toward}.
 
 In short, if no computational model is sufficiently developed to date to
 replace the clinician, the emergence of this type of tool is likely in
@@ -6401,7 +6402,45 @@ not used in applications.
 \chapter*{Conclusion}\label{conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
 
-Bla bla bla
+The aim of this thesis was to trace \textbf{a path to link the
+biological knowledge of cancer to the clinical impact through
+mechanistics models}. Among the many possible orientations, it was
+chosen to take the opposite side of the data-intensive machine learning
+methods. The main approach proposed uses a qualitative logical formalism
+and \textbf{integrates the data by interpreting them} rather than by
+optimizing the parameters with respect to a particular objective. As a
+result, the resulting personalized mechanical models have proven to be
+\textbf{more of an interpretive than a predictive tool}. Their
+versatility and low data requirements nevertheless allow them to be
+applied to a wide range of questions, particularly concerning the
+response to treatments that their mechanistic nature facilitates. This
+seemingly limitless versatility can, however, prove to be a trap
+because, while all kinds of applications are theoretically possible, the
+need to rely on detailed biological knowledge and appropriate data
+limits its scope.
+
+In the case of mechanistic molecular signalling models, this
+interpretative nature of the models is confirmed by statistical
+analyses. The main value of these models is to provide an understandable
+framework for extracting relevant biological information in the context
+of current biological knowledge. The \textbf{ability of these models to
+detect emerging non-linear information is also proven, but is rarer and
+of relatively smaller magnitude}. Given the influx of biological
+knowledge and data, computational models of cancer, with various
+formalisms, are nevertheless multiplying, particularly with medical
+aims. In the context of cancer, their use to recommend personalised
+treatment for each patient is a possible horizon. The evaluation of
+these models could then become increasingly acute. This thesis proposes
+the \textbf{adaptation of causal inference methods in order to simulate
+their evaluation in clinical trials} and to come as close as possible to
+medical evaluation standards.
+
+In a word, cancer models still have a bright future ahead of them.
+Mechanistic models will continue to be attractive because of their
+ability not only to predict but, more importantly, to explain. However,
+the transparency of their mechanisms should not prevent them from being
+rigorously evaluated statistically. It is not enough for them to
+explain, they must also be well understood.
 
 \appendix \addcontentsline{toc}{chapter}{\appendixname}
 
