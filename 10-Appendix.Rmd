@@ -89,9 +89,9 @@ Among the different metrics, the examples presented in this thesis will focus on
 
 Another type of data exists, halfway between cell lines and patients, and that is patient-derived xenografts (PDX). Each patient tumour is divided into pieces later implanted in several immunodeficient cloned mice treated with different drugs, thus providing access to sensitivities to several different drugs for each tumour. 
 
-### PDX data from @gao2015high
+### Overview of PDX data from @gao2015high
 
-The PDX dataset used in this thesis is the one published by @gao2015high. The original dataset contains 281 different tumours of origin (sometimes called PDX models, in the sense of a biological model) and 63 tested drugs, not all drugs having been tested for all tumours and some drugs have been tested with tissue-specific patterns (Figure \@ref(fig:PDX-appendix)). 192 of these tumours have also been characterized for their mutations, copy-number alterations and mRNA. 
+The PDX dataset used in this thesis is the one published by @gao2015high. The original dataset contains 281 different tumours of origin (sometimes called PDX models, in the sense of a biological model) and 63 tested drugs, not all drugs having been tested for all tumours and some drugs have been tested with tissue-specific patterns (Figure \@ref(fig:PDX-appendix)). 192 of these tumours have also been characterized for their mutations, copy-number alterations and mRNA. More detailed analyses of this dataset are available in the dedicated [Github repository](https://github.com/JonasBeal/Causal_Precision_Medicine), in the file *Analysis_PDX.Rmd* and its corresponding HTML report.
 
 ```{r PDX-appendix, echo=FALSE, out.width = "95%", fig.cap='(ref:PDX-appendix-caption)', fig.scap='Comprehensive overview of tumours and drugs screened in PDX dataset from @gao2015high', fig.align='center', fig.height=7, fig.width=8}
 
@@ -139,7 +139,7 @@ egg::ggarrange(p_tile, p_bar, nrow = 1,
 ```
 (ref:PDX-appendix-caption) **Comprehensive overview of tumours and drugs screened in PDX dataset from @gao2015high.**
 
-### PDX data and drug response metrics
+### Drug response metrics
 
 #### A continuous outcome
 
@@ -297,3 +297,115 @@ $$seqR^2(\{x_k\}|S_k(r))=R^2(\{x_k\}\cup S_k(r))-R^2(S_k(r))$$
 All in all, the $R^2$ allocated to $x_k$ after decomposition is:
 
 $$R^2_{decomp}(x_k)=\dfrac{1}{p!}\sum_{r\text{ permutations}}seqR^2(\{x_k\}|r)$$
+
+## Causal inference with multiple versions of treatment
+
+This section gathers the demonstrations of the equations present in chapter \@ref(chapter-precision) when they are not present in this chapter and additional details about other estimators based on IPW and TMLE.
+
+### Overall treatment effect with multiple versions of treatment (equation \@ref(eq:overall-treatment-effect)) {#appendix-overall-treatment-effect}
+
+Here is the formal proof for equation \@ref(eq:overall-treatment-effect), mostly derived from the proof of Proposition 3 in [@vanderweele2013causal].
+
+\begingroup
+\footnotesize
+\begin{equation*}
+\begin{aligned}
+  E[ & Y(a, K^a(a))] = E[Y(a)] &&K^a \text{ actually received}\\
+                  & = \sum_{c,w} E[Y(a)|c,w] \times P[c,w]&& \\
+                  & = \sum_{c,w} E[Y(a)|a,c,w] \times P[c,w]
+                  && Y(a) \perp \!\!\! \perp A | (C,W)\\
+                  & = \sum_{c,w} E[Y(a, K^a(a))|a,c,w] \times P[c,w]&& \\
+                  & = \sum_{c,w,k^a} E[Y(a, k^a)|a,K^a(a)=k^a,c,w]\times P[K^a(a)=k^a|a,c,w] \times P[c,w] &&\\
+                  & = \sum_{c,w,k^a} E[Y(a, k^a)|a,K^a=k^a,c,w]\times P[K^a=k^a|a,c,w] \times P[c,w]
+                  &&\text{consistency K} \\
+                  & = \sum_{c,w,k^a} E[Y|a,K^a=k^a,c,w]\times P[K^a=k^a|a,c,w] \times P[c,w]
+                  &&\text{consistency Y} \\
+                  & = \sum_{c,w} E[Y|a,c,w]\times P[c,w]
+\end{aligned}
+\end{equation*}
+\endgroup
+
+Then, the overall treatment effect can be defined and computed by:
+
+$$E[Y(a, K^a(a))] - E[Y(a^*, K^{a^*}(a^*))]$$
+
+### Treatment effect with predefined distributions of versions of treatment (equation \@ref(eq:distrib-treatment-effect)) {#appendix-distrib-treatment-effect}
+
+Here is the formal proof for equation \@ref(eq:distrib-treatment-effect), partially derived from the proof of Proposition 5 in [@vanderweele2013causal].
+
+\begingroup
+\footnotesize
+\begin{equation*}
+\begin{aligned}
+  E[ & Y(a, G^a)] = \sum_{c} E[Y(a, G^a)|C=c] \times P[c]\\
+             & = \sum_{c, k^a} E[Y(a, k^a)|G^a=k^a, C=c] \times P[G^a=k^a|C=c] \times P[c]\\
+             & = \sum_{c, k^a} E[Y(a, k^a)| C=c] \times g^{k^a,c} \times P[c]
+             &&\text{since } P[G^a=k^a] = g^{k^a,c}\\
+             & = \sum_{c, k^a} E[Y(a, k^a)| A=a, K^a=k^a, C=c] \times g^{k^a,c} \times P[c] 
+             &&\text{with } Y(a,k^a) \perp \!\!\! \perp \{A,K\} | C\\
+             & = \sum_{c, k^a} E[Y| A=a, K^a=k^a, C=c] \times P[c]
+             &&\text{by consistency for Y}
+\end{aligned}
+\end{equation*}
+\endgroup
+
+### Inverse probability of treatment weighted (IPW) estimators for precision medicine {#appendix-IPW}
+
+An extension of IPW methods described in section \@ref(IPW-classic) to multi-valued treatments (only treatment $K$ with different modalities and no $A$) has already been studied and the different formulas and estimators adapted accordingly [@imbens2000role; feng2012generalized], defining in particular a generalized propensity score:
+
+$$f(k|c)=P[K=k|C=c]=E[I(k)|C=c]$$
+
+\begin{equation*}
+\text{with }
+I(k) = \left\{
+\begin{array}{ll}
+1 & \quad \text{if } K = k \\
+0 & \quad \text{otherwise}
+\end{array}
+\right.
+\end{equation*}
+
+and a subsequent estimator:
+
+$$E[Y(k)]=\dfrac{\hat{E}[I(K=k)W^{K}Y]}{\hat{E}[I(K=k)W^K]} \text{ with } W^K=\dfrac{1}{f[K|C]}$$
+
+
+
+In our precision medicine settings, to be consistent with the previously defined causal diagram (Figure \@ref(fig:DAG-multiple)), we have both $A$, binary status depending on the class of drugs, and $K$, the multinomial variable for versions of treatments, *i.e.*, the precise drug. Therefore we need to define a slightly different propensity score with joint probabilities:
+
+\begin{equation*}
+\begin{aligned}
+f(a,k|c) & =P[A=a,K=k|C=c]\\
+         & =P[K=k|A=a, C=c].P[A=a|C=c]\\
+         & =E[I(a,k)|C=c] 
+\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\text{with }
+I(a,k) = \left\{
+\begin{array}{ll}
+1 & \quad \text{if } A = a, K = k \\
+0 & \quad \text{otherwise}
+\end{array}
+\right.
+\end{equation*}
+
+From this we can deduce the estimator:
+
+$$E[Y(a, k)]=\dfrac{\hat{E}[I(A=a,K=k)W^{A,K}Y]}{\hat{E}[I(A=a,K=k)W^{A,K}]} \text{ with } W^{A,K}=\dfrac{1}{f[A,K|C]}$$
+
+In all the examples presented in this study and implemented in the code, $\mathcal{K}^{0} \cap \mathcal{K}^{1} = \emptyset$, it is therefore possible to simplify the joint probabilities since the knowledge of K automatically results in the knowledge of A allowing $P[A=a, K=k|C=c]=P[K=k|C=c]$. The above formulas with the attached probabilities are still necessary in the general case and allow for the derivation of causal effects $\text{CE}_1$, $\text{CE}_2$ and $\text{CE}_3$ previously described.
+
+### TMLE {#appendix-TMLE}
+
+Targeted maximum likelihood estimation is framework based on a doubly robust maximum-likelihood–based approach that includes a "targeting" step that optimizes the bias-variance trade-off for a defined target parameter. In particular, this method is perfectly compatible with the use of machine learning algorithms for outcome or treatment models. A detailed description of the method and its implementations can be found in @van2011targeted.  
+  
+
+The implementation proposed in this article is very similar to the one proposed in a recent tutorial concerning the application to binary processing [@luque2018targeted]. The specific characteristics of the problem of precision medicine studied here lead to modify this approach. In particular, the outcome and treatment models used in the first steps are modified in the same way as the one explained for the standardized estimators (outcome model) and for the IPW estimators (treatment model). The step of updating the estimates is done on a model similar to @luque2018targeted.  
+  
+
+The algorithm used for the models internal to the TMLE are, as much as possible, the same as those used for the standardised and IPW estimators:
+
+* For simulated data: generalized linear models in all cases except multinomial classification performed through the function \emph{multinom} in \emph{nnet} package.
+* For PDX data: random forests for all models. Use of SuperLearner [@van2007super] is made possible by simple modifications to the code but significantly slows down its execution. 

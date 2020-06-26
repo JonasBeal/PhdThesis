@@ -189,10 +189,15 @@
 </ul></li>
 <li class="chapter" data-level="9" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html"><i class="fa fa-check"></i><b>9</b> Causal inference for precision medicine</a><ul>
 <li class="chapter" data-level="9.1" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#precision-medicine-in-oncology"><i class="fa fa-check"></i><b>9.1</b> Precision medicine in oncology</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#starting-from-pre-clinical-data-patient-derived-xenografts"><i class="fa fa-check"></i><b>9.1.1</b> Starting from pre-clinical data: patient-derived xenografts</a></li>
+<li class="chapter" data-level="9.1.1" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#an-illustration-with-patient-derived-xenografts"><i class="fa fa-check"></i><b>9.1.1</b> An illustration with patient-derived xenografts</a></li>
 <li class="chapter" data-level="9.1.2" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#clinical-trials-and-treatment-algorithms"><i class="fa fa-check"></i><b>9.1.2</b> Clinical trials and treatment algorithms</a></li>
-<li class="chapter" data-level="9.1.3" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#models"><i class="fa fa-check"></i><b>9.1.3</b> Models</a></li>
+<li class="chapter" data-level="9.1.3" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#computational-models-to-assign-cancer-treatments"><i class="fa fa-check"></i><b>9.1.3</b> Computational models to assign cancer treatments</a></li>
 </ul></li>
+<li class="chapter" data-level="9.2" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#emulating-clinical-trials-to-evaluate-precision-medicine-algorithms"><i class="fa fa-check"></i><b>9.2</b> Emulating clinical trials to evaluate precision medicine algorithms</a></li>
+<li class="chapter" data-level="9.3" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#causal-inference-under-multiple-versions-of-treatment"><i class="fa fa-check"></i><b>9.3</b> Causal inference under multiple versions of treatment</a></li>
+<li class="chapter" data-level="9.4" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#application-to-simulated-data"><i class="fa fa-check"></i><b>9.4</b> Application to simulated data</a></li>
+<li class="chapter" data-level="9.5" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#application-to-pdx"><i class="fa fa-check"></i><b>9.5</b> Application to PDX</a></li>
+<li class="chapter" data-level="9.6" data-path="causal-inference-for-precision-medicine.html"><a href="causal-inference-for-precision-medicine.html#limitations-and-perspective"><i class="fa fa-check"></i><b>9.6</b> Limitations and perspective</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendix-datasets.html"><a href="appendix-datasets.html"><i class="fa fa-check"></i><b>A</b> About datasets</a><ul>
@@ -201,7 +206,10 @@
 <li class="chapter" data-level="A.1.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-GDSC"><i class="fa fa-check"></i><b>A.1.2</b> Drug screenings</a></li>
 <li class="chapter" data-level="A.1.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-CRISPR"><i class="fa fa-check"></i><b>A.1.3</b> CRISPR-Cas9 screening</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#patient-derived-xenografts"><i class="fa fa-check"></i><b>A.2</b> Patient-derived xenografts</a></li>
+<li class="chapter" data-level="A.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-PDX"><i class="fa fa-check"></i><b>A.2</b> Patient-derived xenografts</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#overview-of-pdx-data-from-gao2015high"><i class="fa fa-check"></i><b>A.2.1</b> Overview of PDX data from <span class="citation">Gao et al. (<a href="#ref-gao2015high">2015</a>)</span></a></li>
+<li class="chapter" data-level="A.2.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#drug-response-metrics"><i class="fa fa-check"></i><b>A.2.2</b> Drug response metrics</a></li>
+</ul></li>
 <li class="chapter" data-level="A.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-datasets-patients"><i class="fa fa-check"></i><b>A.3</b> Patients</a><ul>
 <li class="chapter" data-level="A.3.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#metabric"><i class="fa fa-check"></i><b>A.3.1</b> METABRIC</a></li>
 <li class="chapter" data-level="A.3.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#tcga-breast-cancer"><i class="fa fa-check"></i><b>A.3.2</b> TCGA: Breast cancer</a></li>
@@ -253,40 +261,69 @@
 <p></p>
 <div id="precision-medicine-in-oncology" class="section level2">
 <h2><span class="header-section-number">9.1</span> Precision medicine in oncology</h2>
-<div id="starting-from-pre-clinical-data-patient-derived-xenografts" class="section level3">
-<h3><span class="header-section-number">9.1.1</span> Starting from pre-clinical data: patient-derived xenografts</h3>
-<div class="figure" style="text-align: center"><span id="fig:PDX-dense"></span>
-<img src="09-Precision_files/figure-html/PDX-dense-1.png" alt="Analysis on observed data without confounder. (A) Directed acyclic graphs" width="90%" />
+<p>It is first important to understand what is meant by the concept of precision medicine in the treatment of cancer patients in order to place subsequent questions in a plausible clinical framework.</p>
+<div id="an-illustration-with-patient-derived-xenografts" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> An illustration with patient-derived xenografts</h3>
+<p>Precision medicine is based on the diversity of treatment responses observed in different tumors. It has already been observed in previous chapters that different cell lines respond differently to a particular treatment, the BRAF inhbitors. A broader analysis of the data shows that the same is true for the vast majority of treatments. It would be possible to illustrate this using the same data from cell lines extended to other drugs. However, because of the more directly clinical impact of the issues discussed in this chapter, the analyses presented below will focus on another type of data that is closer to patient data: patient-derived xenografts (PDX).</p>
+<p>A PDX is a tumor tissue that has been removed from a patient and implanted into immunodeficient mice <span class="citation">(Hidalgo et al. <a href="#ref-hidalgo2014patient">2014</a>)</span>. Unlike cell lines, which are <em>in vitro</em> models, PDXs are <em>in vivo</em> models that allow cancer cells to evolve in a more realistic microenvironment. In the same way as for cell lines, PDX can be used for drug screening in patients who cannot be screened directly. The data used in this chapter come from a study by <span class="citation">Gao et al. (<a href="#ref-gao2015high">2015</a>)</span> which contains several hundred tumors and more than fifty drugs. Not all drugs having been tested for all tumours and details of the drugs and types of cancer tested are available in the appendix <a href="appendix-datasets.html#appendix-PDX">A.2</a>. This dataset was generated following the “one animal per model per treatment” approach (<span class="math inline">\(1 \times 1 \times 1\)</span>), the principles of which are summarized in Figure <a href="causal-inference-for-precision-medicine.html#fig:PDX-principles">9.1</a>A. It should be noted that different drug response metrics are computed in the source data, two of which will be used in the analyses. The first one is continuous and called <em>Best Average Response</em> in the data, it is based on the variation of the tumor volume after treatment, the lower values (and especially negative) corresponding to better responses. The second one is originally categorical and based on a modified Response Evaluation Criteria In Solid Tumors (RECIST) criteria. It was binarized for this study so that the responders have a score of <span class="math inline">\(1\)</span> and non-responders <span class="math inline">\(0\)</span>. The details of the definition and distribution of these metrics are given in appendix <a href="appendix-datasets.html#appendix-PDX">A.2</a></p>
+<div class="figure" style="text-align: center"><span id="fig:PDX-principles"></span>
+<img src="fig/PDX.png" alt="Principles of PDX screening. (A) Schematic pipeline for PDX screening with tumour biopsies from one patient divided in several pieces later implanted in similar immunodeficient mice. Each mouse is then treated with a different drug; the collection of mice that have received tumour samples from the same patient but have been treated with different drugs therefore gives access to several outcomes for the same tumor of origin. (B) Corresponding counterfactual variables." width="90%" />
 <p class="caption">
-Figure 9.1: <strong>Analysis on observed data without confounder.</strong> (A) Directed acyclic graphs
+Figure 9.1: <strong>Principles of PDX screening.</strong> (A) Schematic pipeline for PDX screening with tumour biopsies from one patient divided in several pieces later implanted in similar immunodeficient mice. Each mouse is then treated with a different drug; the collection of mice that have received tumour samples from the same patient but have been treated with different drugs therefore gives access to several outcomes for the same tumor of origin. (B) Corresponding counterfactual variables.
+</p>
+</div>
+
+<p>In order to illustrate the diversity of response to treatment, the database is momentarily restricted to the 4 most widely tested drugs and the 180 tumours (or PDX models) that were evaluated for all four drugs. The four chosen drugs target different pathways: binimetinib (MAPK inhibitor), BKM120 (PIK inhibitor), HDM201 (MDM2 inhibitor) and LEE011 (CDK inhibitor). In Figure <a href="causal-inference-for-precision-medicine.html#fig:PDX-dense">9.2</a>A the 4 treatments show a high variability of response, with a slight advantage for BKM120 and binimetinib on average over all tumours. However, each of the treatments was found to be the most effective of the 4 for a significant proportion of patients (Figure <a href="causal-inference-for-precision-medicine.html#fig:PDX-dense">9.2</a>B), with binimetinib and BKM being the best treatment for one-third of tumours each and LEE011/HDM201 sharing the remaining one-third of tumours. It thus appears that in view of the molecular diversity of tumours and the increasing number of treatments available, it does not seem advisable, according to these preclinical data, to treat all tumours with the same gold standard treatment. Furthermore, the tissue of origin of the tumors in this example does not appear to be the main determinant of tumour preference for certain treatments.</p>
+<div class="figure" style="text-align: center"><span id="fig:PDX-dense"></span>
+<img src="09-Precision_files/figure-html/PDX-dense-1.png" alt="Differences in drug response for 4 drugs and 180 tumors a call for precision medicine. (A) Distribution of treatment response for the 4 different drugs, each with all 180 tumours. (B) Number of times each of the 4 drugs is the most effective for a given tumour, distribution by tissue of origin." width="90%" />
+<p class="caption">
+Figure 9.2: <strong>Differences in drug response for 4 drugs and 180 tumors a call for precision medicine.</strong> (A) Distribution of treatment response for the 4 different drugs, each with all 180 tumours. (B) Number of times each of the 4 drugs is the most effective for a given tumour, distribution by tissue of origin.
 </p>
 </div>
 
 </div>
 <div id="clinical-trials-and-treatment-algorithms" class="section level3">
 <h3><span class="header-section-number">9.1.2</span> Clinical trials and treatment algorithms</h3>
-<p>Many biomarkers, associated clinical trials and treatment algorithm <span class="citation">(De Gramont et al. <a href="#ref-de2015pragmatic">2015</a>)</span></p>
+<p>These remarks can be extended to patients. Thus, precision medicine (PM) consists in assigning the most appropriate treatment to each patient according to his or her characteristics, usually genomic alterations for cancer patients <span class="citation">(Friedman et al. <a href="#ref-friedman2015precision">2015</a>; De Gramont et al. <a href="#ref-de2015pragmatic">2015</a>)</span>. At the individual level, targeted treatments have provided relevant solutions for patients with specific mutations <span class="citation">(Abou-Jawde et al. <a href="#ref-abou2003overview">2003</a>)</span>. Putting together these various treatments, some precision medicine strategies can be defined. Based on the genomic profile of the patient, the treatment most likely to be successful is chosen. If the information available is reliable, precision medicine can thus be reduced to a treatment algorithm that takes as input the molecular characteristics of the patient’s tumor and outputs a recommendation of treatment. An example of such a treatment algorithm from the SHIVA clinical trial by <span class="citation">Le Tourneau et al. (<a href="#ref-le2015molecularly">2015</a>)</span> is shown in Figure <a href="causal-inference-for-precision-medicine.html#fig:SHIVA">9.3</a> where different treatments are associated with different alterations. In this case, the treatment algorithm can be considered as an aggregation of the medical knowledge accumulated on the individual biomarkers.</p>
 <div class="figure" style="text-align: center"><span id="fig:SHIVA"></span>
-<img src="fig/SHIVA_algo.png" alt="An example of a precision medicine treatment algorithm: the SHIVA clinical trial. Specific molecular alterations and their associated treatments, as proposed in the SHIVA clinical trial by Le Tourneau et al. (2015)." width="80%" />
+<img src="fig/SHIVA_algo.png" alt="An example of a precision medicine treatment algorithm: the SHIVA clinical trial. Specific molecular alterations and their associated treatments, as proposed in the SHIVA clinical trial (Le Tourneau et al. 2015)." width="80%" />
 <p class="caption">
-Figure 9.2: <strong>An example of a precision medicine treatment algorithm: the SHIVA clinical trial.</strong> Specific molecular alterations and their associated treatments, as proposed in the SHIVA clinical trial by <span class="citation">Le Tourneau et al. (<a href="#ref-le2015molecularly">2015</a>)</span>.
+Figure 9.3: <strong>An example of a precision medicine treatment algorithm: the SHIVA clinical trial.</strong> Specific molecular alterations and their associated treatments, as proposed in the SHIVA clinical trial <span class="citation">(Le Tourneau et al. <a href="#ref-le2015molecularly">2015</a>)</span>.
 </p>
 </div>
 
 </div>
-<div id="models" class="section level3">
-<h3><span class="header-section-number">9.1.3</span> Models</h3>
-<p>Mechanistic models of cancer pathways are particularly well suited to study response to treatment. Their explicit representation of genes and proteins makes it possible to simulate the effect of different therapeutic interventions. On the basis of this observation, it is possible to imagine the following situation</p>
+<div id="computational-models-to-assign-cancer-treatments" class="section level3">
+<h3><span class="header-section-number">9.1.3</span> Computational models to assign cancer treatments</h3>
+<p>But the treatment algorithm example in Figure A could be more complex. Indeed, previous chapters have stressed, for example, that being mutated for the BRAF gene is not the only predictor of response to an inhibitor of BRAF (here Vemurafenib). The same is true for most treatments that could benefit from more global and systemic analyses, taking into account more variables and their interactions. This complexity would require the use of computational methods.</p>
+<p>It is on this point that this chapter links to the previous ones. Some of the cancer models studied throughout this thesis, or their future developments, could be interpreted as treatment algorithms. Indeed, a model capable of predicting the response to a single treatment does not necessarily allow the inference of precision medicine strategies. On the other hand, a model capable of predicting a patient’s response to different treatments is also capable of indicating which one is the best. Such models would then move from systems biology to systems therapeutics <span class="citation">(Hansen and Iyengar <a href="#ref-hansen2013computation">2013</a>)</span>, taking patients’ geneomic features as inputs and outputting a treatment recommendation. In theory, mechanistic models seem to be suitable for this purpose since their explicit representation of genes and proteins makes it possible to simulate the effect of different therapeutic interventions. However, the feasibility of designing and calibrating such a model has yet to be demonstrated. Other types of models are being studied to provide a computational tool for predicting the sensitivity of cell lines to different treatments, in particular using deep learning methods <span class="citation">(Manica et al. <a href="#ref-manica2019toward">2019</a>)</span>.</p>
+<p>In short, if no computational model is sufficiently developed to date to replace the clinician, the emergence of this type of tool is likely in the medium term. This raises the question of how to assess the clinical value of the precision medicine strategies (and corresponding treatment algorithms) derived from these models. For the sake of generality, this question will be addressed more broadly in the following without reference to models as a possible source of the treatment algorithm: how to evaluate the clinical impact of a precision medicine strategy and the treatment algorithm? The methods presented will indeed be the same, whether the algorithm evaluated comes from a model or from the knowledge of clinicians as in Figure <a href="causal-inference-for-precision-medicine.html#fig:SHIVA">9.3</a>. In the spirit of this thesis, the question nevertheless finds its origin in the first hypothesis related to models.</p>
+</div>
+</div>
+<div id="emulating-clinical-trials-to-evaluate-precision-medicine-algorithms" class="section level2">
+<h2><span class="header-section-number">9.2</span> Emulating clinical trials to evaluate precision medicine algorithms</h2>
+<p>The question then arises of how to quantify the clinical benefit provided by these treatment algorithms. Some clinical trials have been proposed, demonstrating both the feasibility of collecting information about mutations <span class="citation">(Le Tourneau et al. <a href="#ref-le2015molecularly">2015</a>)</span> or RNA <span class="citation">(Rodon et al. <a href="#ref-rodon2019genomic">2019</a>)</span> in real-time and the clinical benefit that can be expected from these approaches for some patients <span class="citation">(Coyne, Takebe, and Chen <a href="#ref-coyne2017defining">2017</a>)</span>. However, the increasing abundance of genomic data and biological knowledge make it progressively easier to establish new algorithms for precision medicine, either directly based on physician knowledge or provided by computational models <span class="citation">(Hansen and Iyengar <a href="#ref-hansen2013computation">2013</a>)</span>. For practical reasons it is not possible to propose a real clinical trial for each new precision medicine algorithm or for any variants, comparing standard of care with new algorithm-based therapeutic strategies.</p>
+</div>
+<div id="causal-inference-under-multiple-versions-of-treatment" class="section level2">
+<h2><span class="header-section-number">9.3</span> Causal inference under multiple versions of treatment</h2>
+</div>
+<div id="application-to-simulated-data" class="section level2">
+<h2><span class="header-section-number">9.4</span> Application to simulated data</h2>
+</div>
+<div id="application-to-pdx" class="section level2">
+<h2><span class="header-section-number">9.5</span> Application to PDX</h2>
+</div>
+<div id="limitations-and-perspective" class="section level2">
+<h2><span class="header-section-number">9.6</span> Limitations and perspective</h2>
 <div class="figure" style="text-align: center"><span id="fig:Shiny"></span>
 <iframe src="http://jonasbeal.shinyapps.io/application_causal_pm/?showcase=0" width="90%" height="600px">
 </iframe>
 <p class="caption">
-Figure 9.3: <strong>Schematic extension of PROFILE-personalized logical models to drug investigation.</strong>
+Figure 9.4: <strong>Schematic extension of PROFILE-personalized logical models to drug investigation.</strong>
 </p>
 </div>
 
 
-</div>
 </div>
 </div>
 
@@ -294,14 +331,38 @@ Figure 9.3: <strong>Schematic extension of PROFILE-personalized logical models t
 
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-abou2003overview">
+<p>Abou-Jawde, Rony, Toni Choueiri, Carlos Alemany, and Tarek Mekhail. 2003. “An Overview of Targeted Treatments in Cancer.” <em>Clinical Therapeutics</em> 25 (8). Elsevier: 2121–37.</p>
+</div>
 <div id="ref-beal2020causal">
 <p>Béal, Jonas, and Aurélien Latouche. 2020. “Causal Inference with Multiple Versions of Treatment and Application to Personalized Medicine.” <em>ArXiv Preprint ArXiv:2005.12427</em>.</p>
+</div>
+<div id="ref-coyne2017defining">
+<p>Coyne, Geraldine O’Sullivan, Naoko Takebe, and Alice P Chen. 2017. “Defining Precision: The Precision Medicine Initiative Trials Nci-Mpact and Nci-Match.” <em>Current Problems in Cancer</em> 41 (3). Elsevier: 182–93.</p>
 </div>
 <div id="ref-de2015pragmatic">
 <p>De Gramont, Armand, Sarah Watson, Lee M Ellis, Jordi Rodón, Josep Tabernero, Aimery De Gramont, and Stanley R Hamilton. 2015. “Pragmatic Issues in Biomarker Evaluation for Targeted Therapies in Cancer.” <em>Nature Reviews Clinical Oncology</em> 12 (4). Nature Publishing Group: 197.</p>
 </div>
+<div id="ref-friedman2015precision">
+<p>Friedman, Adam A, Anthony Letai, David E Fisher, and Keith T Flaherty. 2015. “Precision Medicine for Cancer with Next-Generation Functional Diagnostics.” <em>Nature Reviews Cancer</em> 15 (12). Nature Publishing Group: 747–56.</p>
+</div>
+<div id="ref-gao2015high">
+<p>Gao, Hui, Joshua M Korn, Stéphane Ferretti, John E Monahan, Youzhen Wang, Mallika Singh, Chao Zhang, et al. 2015. “High-Throughput Screening Using Patient-Derived Tumor Xenografts to Predict Clinical Trial Drug Response.” <em>Nature Medicine</em> 21 (11). Nature Publishing Group: 1318.</p>
+</div>
+<div id="ref-hansen2013computation">
+<p>Hansen, J, and R Iyengar. 2013. “Computation as the Mechanistic Bridge Between Precision Medicine and Systems Therapeutics.” <em>Clinical Pharmacology &amp; Therapeutics</em> 93 (1). Wiley Online Library: 117–28.</p>
+</div>
+<div id="ref-hidalgo2014patient">
+<p>Hidalgo, Manuel, Frederic Amant, Andrew V Biankin, Eva Budinská, Annette T Byrne, Carlos Caldas, Robert B Clarke, et al. 2014. “Patient-Derived Xenograft Models: An Emerging Platform for Translational Cancer Research.” <em>Cancer Discovery</em> 4 (9). AACR: 998–1013.</p>
+</div>
 <div id="ref-le2015molecularly">
 <p>Le Tourneau, Christophe, Jean-Pierre Delord, Anthony Gonçalves, Céline Gavoille, Coraline Dubot, Nicolas Isambert, Mario Campone, et al. 2015. “Molecularly Targeted Therapy Based on Tumour Molecular Profiling Versus Conventional Therapy for Advanced Cancer (Shiva): A Multicentre, Open-Label, Proof-of-Concept, Randomised, Controlled Phase 2 Trial.” <em>The Lancet Oncology</em> 16 (13). Elsevier: 1324–34.</p>
+</div>
+<div id="ref-manica2019toward">
+<p>Manica, Matteo, Ali Oskooei, Jannis Born, Vigneshwari Subramanian, Julio Sáez-Rodríguez, and María Rodríguez Martínez. 2019. “Toward Explainable Anticancer Compound Sensitivity Prediction via Multimodal Attention-Based Convolutional Encoders.” <em>Molecular Pharmaceutics</em>. ACS Publications.</p>
+</div>
+<div id="ref-rodon2019genomic">
+<p>Rodon, Jordi, Jean-Charles Soria, Raanan Berger, Wilson H Miller, Eitan Rubin, Aleksandra Kugel, Apostolia Tsimberidou, et al. 2019. “Genomic and Transcriptomic Profiling Expands Precision Cancer Medicine: The Winther Trial.” <em>Nature Medicine</em> 25 (5). Nature Publishing Group: 751.</p>
 </div>
 </div>
             </section>

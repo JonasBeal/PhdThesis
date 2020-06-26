@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Causal inference for precision medicine | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</title>
+  <meta name="description" content="This is my PhD thesis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Causal inference for precision medicine | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is my PhD thesis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Causal inference for precision medicine | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  
+  <meta name="twitter:description" content="This is my PhD thesis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="clinical-evidence-generation-and-causal-inference.html"/>
+<link rel="next" href="conclusion.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Jonas BÉAL</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>PhD Thesis</a></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="resumé.html"><a href="resumé.html"><i class="fa fa-check"></i>Resumé</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Cells and their models</b></span></li>
+<li class="chapter" data-level="1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html"><i class="fa fa-check"></i><b>1</b> Scientific modeling: abstract the complexity</a><ul>
+<li class="chapter" data-level="1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#what-is-a-model"><i class="fa fa-check"></i><b>1.1</b> What is a model?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#in-your-own-words"><i class="fa fa-check"></i><b>1.1.1</b> In your own words</a></li>
+<li class="chapter" data-level="1.1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#physical-world-and-world-of-ideas"><i class="fa fa-check"></i><b>1.1.2</b> Physical world and world of ideas</a></li>
+<li class="chapter" data-level="1.1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#preview-about-cancer-models"><i class="fa fa-check"></i><b>1.1.3</b> Preview about cancer models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#stat-mech"><i class="fa fa-check"></i><b>1.2</b> Statistics or mechanistic</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#the-inside-of-the-box"><i class="fa fa-check"></i><b>1.2.1</b> The inside of the box</a></li>
+<li class="chapter" data-level="1.2.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#lotkasection"><i class="fa fa-check"></i><b>1.2.2</b> A tale of prey and predators</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#simplicity-is-the-ultimate-sophistication"><i class="fa fa-check"></i><b>1.3</b> Simplicity is the ultimate sophistication</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html"><i class="fa fa-check"></i><b>2</b> Cancer as deregulation of complex machinery</a><ul>
+<li class="chapter" data-level="2.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#what-is-cancer"><i class="fa fa-check"></i><b>2.1</b> What is cancer?</a></li>
+<li class="chapter" data-level="2.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#epidemio"><i class="fa fa-check"></i><b>2.2</b> Cancer from a distance: epidemiology and main figures</a></li>
+<li class="chapter" data-level="2.3" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#molecular-biology"><i class="fa fa-check"></i><b>2.3</b> Basic molecular biology and cancer</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#central-dogma-and-core-principles"><i class="fa fa-check"></i><b>2.3.1</b> Central dogma and core principles</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#a-rogue-machinery"><i class="fa fa-check"></i><b>2.3.2</b> A rogue machinery</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#the-new-era-of-genomics"><i class="fa fa-check"></i><b>2.4</b> The new era of genomics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-sequencing-to-multi-omics-data"><i class="fa fa-check"></i><b>2.4.1</b> From sequencing to multi-omics data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#state-of-the-art-of-cancer-data"><i class="fa fa-check"></i><b>2.4.2</b> State-of-the art of cancer data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#data-and-beyond-from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> Data and beyond: from genetic to network disease</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html"><i class="fa fa-check"></i><b>3</b> Mechanistic modeling of cancer: from complex disease to systems biology</a><ul>
+<li class="chapter" data-level="3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#introducing-the-diversity-of-mechanistic-models-of-cancer"><i class="fa fa-check"></i><b>3.1</b> Introducing the diversity of mechanistic models of cancer</a></li>
+<li class="chapter" data-level="3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#cell-circuitry-and-the-need-for-cancer-systems-biology"><i class="fa fa-check"></i><b>3.2</b> Cell circuitry and the need for cancer systems biology</a></li>
+<li class="chapter" data-level="3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#mechanistic-models-of-molecular-signaling"><i class="fa fa-check"></i><b>3.3</b> Mechanistic models of molecular signaling</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#networks-and-data"><i class="fa fa-check"></i><b>3.3.1</b> Networks and data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#different-formalisms-for-different-applications"><i class="fa fa-check"></i><b>3.3.2</b> Different formalisms for different applications</a></li>
+<li class="chapter" data-level="3.3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#some-examples-of-complex-features"><i class="fa fa-check"></i><b>3.3.3</b> Some examples of complex features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#from-mechanistic-models-to-clinical-impact"><i class="fa fa-check"></i><b>3.4</b> From mechanistic models to clinical impact?</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#a-new-class-of-biomarkers"><i class="fa fa-check"></i><b>3.4.1</b> A new class of biomarkers</a></li>
+<li class="chapter" data-level="3.4.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#prognostic"><i class="fa fa-check"></i><b>3.4.2</b> Prognostic models</a></li>
+<li class="chapter" data-level="3.4.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#predictive-models"><i class="fa fa-check"></i><b>3.4.3</b> Predictive models</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Personalized logical models of cancer</b></span></li>
+<li class="chapter" data-level="4" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html"><i class="fa fa-check"></i><b>4</b> Logical modeling principles and data integration</a><ul>
+<li class="chapter" data-level="4.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-modeling-paradigms-for-qualitative-description"><i class="fa fa-check"></i><b>4.1</b> Logical modeling paradigms for qualitative description</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#regulatory-graph-and-logical-rules"><i class="fa fa-check"></i><b>4.1.1</b> Regulatory graph and logical rules</a></li>
+<li class="chapter" data-level="4.1.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#state-transition-graph-and-updates"><i class="fa fa-check"></i><b>4.1.2</b> State transition graph and updates</a></li>
+<li class="chapter" data-level="4.1.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#tools-for-logical-modeling"><i class="fa fa-check"></i><b>4.1.3</b> Tools for logical modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#maboss-section"><i class="fa fa-check"></i><b>4.2</b> The MaBoSS framework for logical modeling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#gillespie-algorithm"><i class="fa fa-check"></i><b>4.2.1</b> Gillespie algorithm</a></li>
+<li class="chapter" data-level="4.2.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#a-stochastic-exploration-of-model-behaviours"><i class="fa fa-check"></i><b>4.2.2</b> A stochastic exploration of model behaviours</a></li>
+<li class="chapter" data-level="4.2.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#from-theoretical-models-to-data-models"><i class="fa fa-check"></i><b>4.2.3</b> From theoretical models to data models?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-data-section"><i class="fa fa-check"></i><b>4.3</b> Data integration and semi-quantitative logical modeling</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#build-the-regulatory-graph"><i class="fa fa-check"></i><b>4.3.1</b> Build the regulatory graph</a></li>
+<li class="chapter" data-level="4.3.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#define-the-logical-rules"><i class="fa fa-check"></i><b>4.3.2</b> Define the logical rules</a></li>
+<li class="chapter" data-level="4.3.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#validate-the-model"><i class="fa fa-check"></i><b>4.3.3</b> Validate the model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html"><i class="fa fa-check"></i><b>5</b> Personalization of logical models: method and prognostic validation</a><ul>
+<li class="chapter" data-level="5.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#from-one-generic-model-to-data-specific-models-with-profile-method"><i class="fa fa-check"></i><b>5.1</b> From one generic model to data-specific models with PROFILE method</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#gathering-knowledge-and-data"><i class="fa fa-check"></i><b>5.1.1</b> Gathering knowledge and data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#adapting-patient-profiles-to-a-logical-model"><i class="fa fa-check"></i><b>5.1.2</b> Adapting patient profiles to a logical model</a></li>
+<li class="chapter" data-level="5.1.3" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#personalizing-logical-models-with-patient-data"><i class="fa fa-check"></i><b>5.1.3</b> Personalizing logical models with patient data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#an-integration-tool-for-high-dimensional-data"><i class="fa fa-check"></i><b>5.2</b> An integration tool for high-dimensional data?</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#PROFILE-CL"><i class="fa fa-check"></i><b>5.2.1</b> Biological relevance in cell lines</a></li>
+<li class="chapter" data-level="5.2.2" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#validation-METABRIC"><i class="fa fa-check"></i><b>5.2.2</b> Validation with patient data</a></li>
+<li class="chapter" data-level="5.2.3" data-path="personalization-of-logical-models-method-and-prognostic-validation.html"><a href="personalization-of-logical-models-method-and-prognostic-validation.html#perspectives"><i class="fa fa-check"></i><b>5.2.3</b> Perspectives</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html"><i class="fa fa-check"></i><b>6</b> Personalized logical models to study an interpret drug response</a><ul>
+<li class="chapter" data-level="6.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#one-step-further-with-drugs"><i class="fa fa-check"></i><b>6.1</b> One step further with drugs</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#modeling-response-to-cancer-treatments"><i class="fa fa-check"></i><b>6.1.1</b> Modeling response to cancer treatments</a></li>
+<li class="chapter" data-level="6.1.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#an-application-of-personalized-logical-models"><i class="fa fa-check"></i><b>6.1.2</b> An application of personalized logical models</a></li>
+<li class="chapter" data-level="6.1.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#a-pan-cancer-attempt"><i class="fa fa-check"></i><b>6.1.3</b> A pan-cancer attempt</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#case-study-on-braf-in-melanoma-and-colorectal-cancers"><i class="fa fa-check"></i><b>6.2</b> Case study on BRAF in melanoma and colorectal cancers</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#biological-and-clinical-context"><i class="fa fa-check"></i><b>6.2.1</b> Biological and clinical context</a></li>
+<li class="chapter" data-level="6.2.2" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#a-logical-model-centred-on-braf"><i class="fa fa-check"></i><b>6.2.2</b> A logical model centred on BRAF</a></li>
+<li class="chapter" data-level="6.2.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#cell-lines-data"><i class="fa fa-check"></i><b>6.2.3</b> Cell lines data</a></li>
+<li class="chapter" data-level="6.2.4" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#validation-of-personalized-models-using-crisprcas9-and-drug-screening"><i class="fa fa-check"></i><b>6.2.4</b> Validation of personalized models using CRISPR/Cas9 and drug screening</a></li>
+<li class="chapter" data-level="6.2.5" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#comparison-of-the-mechanistic-approach-with-machine-learning-methods"><i class="fa fa-check"></i><b>6.2.5</b> Comparison of the mechanistic approach with machine learning methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#prostate-model"><i class="fa fa-check"></i><b>6.3</b> Application on prostate cancer study and challenges</a></li>
+<li class="chapter" data-level="6.4" data-path="personalized-logical-models-to-study-an-interpret-drug-response.html"><a href="personalized-logical-models-to-study-an-interpret-drug-response.html#limitations-and-perspectives"><i class="fa fa-check"></i><b>6.4</b> Limitations and perspectives</a></li>
+</ul></li>
+<li class="part"><span><b>III Statistical quantification of the clinical impact of models</b></span></li>
+<li class="chapter" data-level="7" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html"><i class="fa fa-check"></i><b>7</b> Information flows in mechanistic models of cancer</a><ul>
+<li class="chapter" data-level="7.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#processing-of-biological-information"><i class="fa fa-check"></i><b>7.1</b> Processing of biological information</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#information-in-information-out"><i class="fa fa-check"></i><b>7.1.1</b> Information in, information out</a></li>
+<li class="chapter" data-level="7.1.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#emergence-of-information-in-artifical-examples"><i class="fa fa-check"></i><b>7.1.2</b> Emergence of information in artifical examples</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#reanalysis-of-mechanistic-models-of-cancer"><i class="fa fa-check"></i><b>7.2</b> Reanalysis of mechanistic models of cancer</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#ode-model-of-jnk-pathway-by-fey2015signaling"><i class="fa fa-check"></i><b>7.2.1</b> ODE model of JNK pathway by <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span></a></li>
+<li class="chapter" data-level="7.2.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#personalized-logical-models-braf-inhibition-in-melanoma-and-colorectal-cancers"><i class="fa fa-check"></i><b>7.2.2</b> Personalized logical models: BRAF inhibition in melanoma and colorectal cancers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html"><i class="fa fa-check"></i><b>8</b> Clinical evidence generation and causal inference</a><ul>
+<li class="chapter" data-level="8.1" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#clinical-trials-and-beyond"><i class="fa fa-check"></i><b>8.1</b> Clinical trials and beyond</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#randomized-clinical-trials-as-gold-standards"><i class="fa fa-check"></i><b>8.1.1</b> Randomized clinical trials as gold standards</a></li>
+<li class="chapter" data-level="8.1.2" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#observational-data-and-confounding-factors"><i class="fa fa-check"></i><b>8.1.2</b> Observational data and confounding factors</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#causal-inference-methods-to-leverage-data"><i class="fa fa-check"></i><b>8.2</b> Causal inference methods to leverage data</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#notations-in-potential-outcomes-framework"><i class="fa fa-check"></i><b>8.2.1</b> Notations in potential outcomes framework</a></li>
+<li class="chapter" data-level="8.2.2" data-path="clinical-evidence-generation-and-causal-inference.html"><a href="clinical-evidence-generation-and-causal-inference.html#causal-identification-simple"><i class="fa fa-check"></i><b>8.2.2</b> Identification of causal effects</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chapter-precision.html"><a href="chapter-precision.html"><i class="fa fa-check"></i><b>9</b> Causal inference for precision medicine</a><ul>
+<li class="chapter" data-level="9.1" data-path="chapter-precision.html"><a href="chapter-precision.html#precision-medicine-in-oncology"><i class="fa fa-check"></i><b>9.1</b> Precision medicine in oncology</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="chapter-precision.html"><a href="chapter-precision.html#main-PDX"><i class="fa fa-check"></i><b>9.1.1</b> An illustration with patient-derived xenografts</a></li>
+<li class="chapter" data-level="9.1.2" data-path="chapter-precision.html"><a href="chapter-precision.html#clinical-trials-and-treatment-algorithms"><i class="fa fa-check"></i><b>9.1.2</b> Clinical trials and treatment algorithms</a></li>
+<li class="chapter" data-level="9.1.3" data-path="chapter-precision.html"><a href="chapter-precision.html#computational-models-to-assign-cancer-treatments"><i class="fa fa-check"></i><b>9.1.3</b> Computational models to assign cancer treatments</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="chapter-precision.html"><a href="chapter-precision.html#emulating-clinical-trials-to-evaluate-precision-medicine-algorithms"><i class="fa fa-check"></i><b>9.2</b> Emulating clinical trials to evaluate precision medicine algorithms</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="chapter-precision.html"><a href="chapter-precision.html#objectives-and-applications"><i class="fa fa-check"></i><b>9.2.1</b> Objectives and applications</a></li>
+<li class="chapter" data-level="9.2.2" data-path="chapter-precision.html"><a href="chapter-precision.html#causal-estimates"><i class="fa fa-check"></i><b>9.2.2</b> Target trials for precision medicine: definition of causal estimates</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="chapter-precision.html"><a href="chapter-precision.html#causal-inference-methods-and-precision-medicine"><i class="fa fa-check"></i><b>9.3</b> Causal inference methods and precision medicine</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="chapter-precision.html"><a href="chapter-precision.html#a-treatment-with-multiple-versions"><i class="fa fa-check"></i><b>9.3.1</b> A treatment with multiple versions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="chapter-precision.html"><a href="chapter-precision.html#causal-inference-with-multiple-versions"><i class="fa fa-check"></i><b>9.3.2</b> Causal inference with multiple versions</a></li>
+<li class="chapter" data-level="9.3.3" data-path="chapter-precision.html"><a href="chapter-precision.html#identification_causal_PM"><i class="fa fa-check"></i><b>9.3.3</b> Application to precision medicine</a></li>
+<li class="chapter" data-level="9.3.4" data-path="chapter-precision.html"><a href="chapter-precision.html#PM-others"><i class="fa fa-check"></i><b>9.3.4</b> Alternative estimation methods</a></li>
+<li class="chapter" data-level="9.3.5" data-path="chapter-precision.html"><a href="chapter-precision.html#code"><i class="fa fa-check"></i><b>9.3.5</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="chapter-precision.html"><a href="chapter-precision.html#application-to-simulated-data"><i class="fa fa-check"></i><b>9.4</b> Application to simulated data</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="chapter-precision.html"><a href="chapter-precision.html#general-settings"><i class="fa fa-check"></i><b>9.4.1</b> General settings</a></li>
+<li class="chapter" data-level="9.4.2" data-path="chapter-precision.html"><a href="chapter-precision.html#simulation-results"><i class="fa fa-check"></i><b>9.4.2</b> Simulation results</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="chapter-precision.html"><a href="chapter-precision.html#application-to-pdx"><i class="fa fa-check"></i><b>9.5</b> Application to PDX</a></li>
+<li class="chapter" data-level="9.6" data-path="chapter-precision.html"><a href="chapter-precision.html#limitations-and-perspective"><i class="fa fa-check"></i><b>9.6</b> Limitations and perspective</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-datasets.html"><a href="appendix-datasets.html"><i class="fa fa-check"></i><b>A</b> About datasets</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-cl"><i class="fa fa-check"></i><b>A.1</b> Cell lines</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#omics-profiles"><i class="fa fa-check"></i><b>A.1.1</b> Omics profiles</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-GDSC"><i class="fa fa-check"></i><b>A.1.2</b> Drug screenings</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-CRISPR"><i class="fa fa-check"></i><b>A.1.3</b> CRISPR-Cas9 screening</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-PDX"><i class="fa fa-check"></i><b>A.2</b> Patient-derived xenografts</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#overview-of-pdx-data-from-gao2015high"><i class="fa fa-check"></i><b>A.2.1</b> Overview of PDX data from <span class="citation">Gao et al. (<a href="#ref-gao2015high">2015</a>)</span></a></li>
+<li class="chapter" data-level="A.2.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#drug-response-metrics"><i class="fa fa-check"></i><b>A.2.2</b> Drug response metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-datasets-patients"><i class="fa fa-check"></i><b>A.3</b> Patients</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#metabric"><i class="fa fa-check"></i><b>A.3.1</b> METABRIC</a></li>
+<li class="chapter" data-level="A.3.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#tcga-breast-cancer"><i class="fa fa-check"></i><b>A.3.2</b> TCGA: Breast cancer</a></li>
+<li class="chapter" data-level="A.3.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-prostate"><i class="fa fa-check"></i><b>A.3.3</b> TCGA: Prostate cancer</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-logical-models.html"><a href="about-logical-models.html"><i class="fa fa-check"></i><b>B</b> About logical models</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-fumia"><i class="fa fa-check"></i><b>B.1</b> Generic logical model of cancer pathways</a></li>
+<li class="chapter" data-level="B.2" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-verlingue"><i class="fa fa-check"></i><b>B.2</b> Extended logical model of cancer pathways</a></li>
+<li class="chapter" data-level="B.3" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-pantolini"><i class="fa fa-check"></i><b>B.3</b> Logical model of BRAF pathways in melanoma and colorectal cancer</a></li>
+<li class="chapter" data-level="B.4" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-montagud"><i class="fa fa-check"></i><b>B.4</b> Logical model of prostate cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="about-statistics.html"><a href="about-statistics.html"><i class="fa fa-check"></i><b>C</b> About statistics</a><ul>
+<li class="chapter" data-level="C.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-decomp"><i class="fa fa-check"></i><b>C.1</b> Decomposition of <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="C.2" data-path="about-statistics.html"><a href="about-statistics.html#causal-inference-with-multiple-versions-of-treatment"><i class="fa fa-check"></i><b>C.2</b> Causal inference with multiple versions of treatment</a><ul>
+<li class="chapter" data-level="C.2.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-overall-treatment-effect"><i class="fa fa-check"></i><b>C.2.1</b> Overall treatment effect with multiple versions of treatment (equation @ref(eq:overall-treatment-effect))</a></li>
+<li class="chapter" data-level="C.2.2" data-path="about-statistics.html"><a href="about-statistics.html#appendix-distrib-treatment-effect"><i class="fa fa-check"></i><b>C.2.2</b> Treatment effect with predefined distributions of versions of treatment (equation @ref(eq:distrib-treatment-effect))</a></li>
+<li class="chapter" data-level="C.2.3" data-path="about-statistics.html"><a href="about-statistics.html#appendix-IPW"><i class="fa fa-check"></i><b>C.2.3</b> Inverse probability of treatment weighted (IPW) estimators for precision medicine</a></li>
+<li class="chapter" data-level="C.2.4" data-path="about-statistics.html"><a href="about-statistics.html#appendix-TMLE"><i class="fa fa-check"></i><b>C.2.4</b> TMLE</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-precision" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Causal inference for precision medicine</h1>
+<blockquote>
+<p><em>Felix qui potuit rerum cognoscere causas.</em><br/> Virgil (Georgics, 29 BC)</p>
+</blockquote>
+<p>Throughout this manuscript, we first described the complexity of cancer mechanisms, through the diversity of genetic alterations or non-linear signaling pathways. This complexity naturally led to the choice of systemic modeling approaches and in particular mechanistic models whose explicit nature facilitates the study of the effects of new molecular perturbations such as treatments. The simple study of the response to BRAF inhibitors has thus required the consideration of many other genes and pathways.</p>
+<p>This final chapter proposes to take the complexity a step further by considering different treatments. The diversity of patients’ molecular profiles suggests that the best treatment is not necessarily the same for all patients: this is what is known as precision medicine. This is already a clinical reality in oncology that could be reinforced in the future by the emergence of new computational models of cancer, whether mechanistic or not. <strong>How then can we assess the relevance of these models in their ability to guide patient treatment?</strong></p>
+
+<div class="summarybox">
+<h4 id="scientific-content-5" class="unnumbered">Scientific content</h4>
+<p>This chapter presents an extension of the causal inference framework to quantify the value of precision medicine strategies. This work is currently under revision and is available as a preprint in <span class="citation">Béal and Latouche (<a href="#ref-beal2020causal">2020</a>)</span>. All code is available in the dedicated <a href="https://github.com/JonasBeal/Causal_Precision_Medicine">GitHub repository</a></p>
+</div>
+<p></p>
+<div id="precision-medicine-in-oncology" class="section level2">
+<h2><span class="header-section-number">9.1</span> Precision medicine in oncology</h2>
+<p>It is first important to understand what is meant by the concept of precision medicine in the treatment of cancer patients in order to place subsequent questions in a plausible clinical framework.</p>
+<div id="main-PDX" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> An illustration with patient-derived xenografts</h3>
+<p>Precision medicine is based on the diversity of treatment responses observed in different tumors. It has already been observed in previous chapters about BRAF inhibition that <strong>different cell lines respond differently to a particular treatment</strong>. A broader analysis of pre-clinical data shows that the same is true for the vast majority of treatments. It would be possible to illustrate this using the same data from cell lines extended to other drugs. However, because of the more directly clinical impact of the issues discussed in this chapter, the analyses presented below will focus on another type of data that is closer to patient data: patient-derived xenografts (PDX).</p>
+<p>A <strong>PDX is a tumor tissue that has been removed from a patient and implanted into immunodeficient mice</strong> <span class="citation">(Hidalgo et al. <a href="#ref-hidalgo2014patient">2014</a>)</span>. Unlike cell lines, which are <em>in vitro</em> models, PDXs are <em>in vivo</em> models that allow cancer cells to evolve in a more realistic microenvironment. In the same way as for cell lines, PDX can be used for drug screening. The data used in this chapter come from a study by <span class="citation">Gao et al. (<a href="#ref-gao2015high">2015</a>)</span> which contains several hundred tumors and more than fifty drugs. Not all drugs having been tested for all tumors and details of the drugs and types of cancer tested are available in the appendix <a href="appendix-datasets.html#appendix-PDX">A.2</a>. This dataset was generated following the “one animal per model per treatment” approach (<span class="math inline">\(1 \times 1 \times 1\)</span>), the principles of which are summarized in Figure <a href="chapter-precision.html#fig:PDX-principles">9.1</a>A. It should be noted that different drug response metrics are computed in the source data, two of which will be used in the analyses. The first one is continuous and called <em>Best Average Response</em> in the data, it is based on the variation of the tumor volume after treatment, the lower values (and especially negative) corresponding to better responses. The second one is originally categorical and based on a modified Response Evaluation Criteria In Solid Tumors (RECIST) criteria. It was binarized for this study so that the responders have a score of <span class="math inline">\(1\)</span> and non-responders <span class="math inline">\(0\)</span>. The details of the definition and distribution of these metrics are given in appendix <a href="appendix-datasets.html#appendix-PDX">A.2</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:PDX-principles"></span>
+<img src="fig/PDX.png" alt="Principles of PDX screening. (A) Schematic pipeline for PDX screening with tumor biopsies from one patient divided in several pieces later implanted in similar immunodeficient mice. Each mouse is then treated with a different drug; the collection of mice that have received tumor samples from the same patient but have been treated with different drugs therefore gives access to several outcomes for the same tumor of origin. (B) Corresponding counterfactual variables." width="90%" />
+<p class="caption">
+Figure 9.1: <strong>Principles of PDX screening.</strong> (A) Schematic pipeline for PDX screening with tumor biopsies from one patient divided in several pieces later implanted in similar immunodeficient mice. Each mouse is then treated with a different drug; the collection of mice that have received tumor samples from the same patient but have been treated with different drugs therefore gives access to several outcomes for the same tumor of origin. (B) Corresponding counterfactual variables.
+</p>
+</div>
+
+<p>In order to illustrate the diversity of response to treatment, the database is momentarily restricted to the 4 most widely tested drugs and the 180 tumors (or PDX models) that were evaluated for all four drugs. The four chosen drugs target different pathways: binimetinib (MAPK inhibitor), BKM120 (PIK inhibitor), HDM201 (MDM2 inhibitor) and LEE011 (CDK inhibitor). In Figure <a href="chapter-precision.html#fig:PDX-dense">9.2</a>A the 4 treatments show a high variability of response, with a slight advantage for BKM120 and binimetinib on average over all tumors. However, <strong>each of the treatments was found to be the most effective of the 4 for a significant proportion of tumors</strong> (Figure <a href="chapter-precision.html#fig:PDX-dense">9.2</a>B), with binimetinib and BKM being the best treatment for one-third of tumors each and LEE011/HDM201 sharing the remaining one-third of tumors. It thus appears that in view of the molecular diversity of tumors and the increasing number of treatments available, it does not seem advisable, according to these preclinical data, to treat all tumors with the same gold-standard treatment. Furthermore, the tissue of origin of the tumors in this example does not appear to be the main determinant of tumor preference for certain treatments.</p>
+<div class="figure" style="text-align: center"><span id="fig:PDX-dense"></span>
+<img src="09-Precision_files/figure-html/PDX-dense-1.png" alt="Differences in drug response for 4 drugs and 180 tumors a call for precision medicine. (A) Distribution of treatment response for the 4 different drugs, each with all 180 tumors. (B) Number of times each of the 4 drugs is the most effective for a given tumor, distribution by tissue of origin." width="90%" />
+<p class="caption">
+Figure 9.2: <strong>Differences in drug response for 4 drugs and 180 tumors a call for precision medicine.</strong> (A) Distribution of treatment response for the 4 different drugs, each with all 180 tumors. (B) Number of times each of the 4 drugs is the most effective for a given tumor, distribution by tissue of origin.
+</p>
+</div>
+
+</div>
+<div id="clinical-trials-and-treatment-algorithms" class="section level3">
+<h3><span class="header-section-number">9.1.2</span> Clinical trials and treatment algorithms</h3>
+<p>These remarks can be extended to patients. Thus, precision medicine (PM) consists in <strong>assigning the most appropriate treatment to each patient according to his or her characteristics, usually genomic alterations for cancer patients</strong> <span class="citation">(Friedman et al. <a href="#ref-friedman2015precision">2015</a>; De Gramont et al. <a href="#ref-de2015pragmatic">2015</a>)</span>. At the individual level, targeted treatments have provided relevant solutions for patients with specific mutations <span class="citation">(Abou-Jawde et al. <a href="#ref-abou2003overview">2003</a>)</span>. Putting together these various treatments, some precision medicine strategies can be defined. Based on the genomic profile of the patient, the treatment most likely to be successful is chosen. If the information available is reliable, <strong>precision medicine can thus be reduced to a treatment algorithm that takes as input the molecular characteristics of the patient’s tumor and outputs a recommendation of treatment</strong>. An example of such a treatment algorithm from the SHIVA clinical trial by <span class="citation">Le Tourneau et al. (<a href="#ref-le2015molecularly">2015</a>)</span> is shown in Figure <a href="chapter-precision.html#fig:SHIVA">9.3</a> where different treatments are associated with different alterations. In this case, the treatment algorithm can be considered as an aggregation of the medical knowledge accumulated on the individual biomarkers.</p>
+<div class="figure" style="text-align: center"><span id="fig:SHIVA"></span>
+<img src="fig/SHIVA_algo.png" alt="An example of a precision medicine treatment algorithm: the SHIVA clinical trial. Specific molecular alterations and their associated treatments, as proposed in the SHIVA clinical trial (Le Tourneau et al. 2015)." width="80%" />
+<p class="caption">
+Figure 9.3: <strong>An example of a precision medicine treatment algorithm: the SHIVA clinical trial.</strong> Specific molecular alterations and their associated treatments, as proposed in the SHIVA clinical trial <span class="citation">(Le Tourneau et al. <a href="#ref-le2015molecularly">2015</a>)</span>.
+</p>
+</div>
+
+</div>
+<div id="computational-models-to-assign-cancer-treatments" class="section level3">
+<h3><span class="header-section-number">9.1.3</span> Computational models to assign cancer treatments</h3>
+<p>But the treatment algorithm example in Figure <a href="chapter-precision.html#fig:SHIVA">9.3</a> could be more complex. Indeed, previous chapters have stressed, for example, that being mutated for the BRAF gene is not the only predictor of response to an inhibitor of BRAF (here Vemurafenib). The same is true for most treatments that could benefit from more global and systemic analyses, taking into account more variables and their interactions. This complexity would require the use of computational methods.</p>
+<p>It is on this point that this chapter links to the previous ones. <strong>Some of the cancer models studied throughout this thesis, or their future developments, could be interpreted as treatment algorithms</strong>. Indeed, a model capable of predicting the response to a single treatment does not necessarily allow the inference of precision medicine strategies. On the other hand, a model capable of predicting a patient’s response to different treatments is also capable of indicating which one is the best. Such models would then move from systems biology to systems therapeutics <span class="citation">(Hansen and Iyengar <a href="#ref-hansen2013computation">2013</a>)</span>, taking patients’ geneomic features as inputs and outputting a treatment recommendation. In theory, mechanistic models seem to be suitable for this purpose since their explicit representation of genes and proteins makes it possible to simulate the effect of different therapeutic interventions. However, the feasibility of designing and calibrating such a model has yet to be demonstrated. Other types of models are being studied to provide a computational tool for predicting the sensitivity of cell lines to different treatments, in particular using deep learning methods <span class="citation">(Manica et al. <a href="#ref-manica2019toward">2019</a>)</span>.</p>
+<p>In short, if no computational model is sufficiently developed to date to replace the clinician, the emergence of this type of tool is likely in the medium term. This raises the question of <strong>how to assess the clinical value of the precision medicine strategies (and corresponding treatment algorithms) derived from these models</strong>. For the sake of generality, this question will be addressed more broadly in the following without reference to models as a possible source of the treatment algorithm: how to evaluate the clinical impact of a precision medicine strategy and the treatment algorithm? The methods presented will indeed be the same, whether the algorithm evaluated comes from a model or from the knowledge of clinicians as in Figure <a href="chapter-precision.html#fig:SHIVA">9.3</a>. In the spirit of this thesis, the question nevertheless finds its origin in the first hypothesis related to models.</p>
+</div>
+</div>
+<div id="emulating-clinical-trials-to-evaluate-precision-medicine-algorithms" class="section level2">
+<h2><span class="header-section-number">9.2</span> Emulating clinical trials to evaluate precision medicine algorithms</h2>
+<div id="objectives-and-applications" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Objectives and applications</h3>
+<p>The question then arises of how to quantify the clinical benefit provided by these treatment algorithms. Some <strong>precision medicine clinical trials</strong> have been proposed, demonstrating both the feasibility of collecting information about mutations <span class="citation">(Le Tourneau et al. <a href="#ref-le2015molecularly">2015</a>)</span> or RNA <span class="citation">(Rodon et al. <a href="#ref-rodon2019genomic">2019</a>)</span> in real-time and the clinical benefit that can be expected from these approaches for some patients <span class="citation">(Coyne, Takebe, and Chen <a href="#ref-coyne2017defining">2017</a>)</span>. However, the increasing abundance of genomic data and biological knowledge make it progressively easier to establish new algorithms for precision medicine, either directly based on physician knowledge or provided by computational models <span class="citation">(Hansen and Iyengar <a href="#ref-hansen2013computation">2013</a>)</span>. For practical reasons it is not possible to propose a real clinical trial for each new precision medicine algorithm or for any variants, comparing standard of care with new algorithm-based therapeutic strategies.</p>
+<p>Therefore, this work provides a method to assess the clinical impact of proposed PM treatment algorithm based on already generated data, <strong>emulating precision medicine clinical trials and analyzing them in the causal inference framework</strong> <span class="citation">(Hernán and Robins <a href="#ref-hernan2016using">2016</a>)</span>. First we will define the causal estimates of the precision medicine effects (later referred to as causal estimates) we want to assess, and the corresponding ideal clinical trials one would like to perform. Next, we will define the notations and the causal framework we use to infer the causal effects from observational data with multiple versions of treatment, based on the previous work by <span class="citation">VanderWeele and Hernan (<a href="#ref-vanderweele2013causal">2013</a>)</span>. The main principles of the potential outcome framework having been introduced in the previous chapter, an extension to the case of precision medicine will be described, focusing on the multiplicity of treatment versions, <em>i.e.</em>, targeted drugs. Then we will apply these methods to simulated data in order to investigate the different biases of the candidate methods. An example scenario will be presented and a RShiny interactive application has been developed to further explore other user-defined settings. Finally, the analysis of data from patient-derived xenografts (PDX) makes it possible both to apply the methods to pre-clinical situation and to have data approximating the counterfactual responses, thus enabling further validation of the proposed estimation methods.</p>
+</div>
+<div id="causal-estimates" class="section level3">
+<h3><span class="header-section-number">9.2.2</span> Target trials for precision medicine: definition of causal estimates</h3>
+<p>We first specify the precision medicine effects that are to be estimated. These effects will finally be estimated based on observational data through the causal framework and target trial emulation <span class="citation">(Hernán and Robins <a href="#ref-hernan2016using">2016</a>)</span>. In this context the notion of <strong>target trial refers to the real clinical trial whose estimates are sought to be reproduced through causal inference</strong>. Thus, if we think in terms of clinical trials, we are not trying to prove or quantify the superiority of one treatment over another but rather to evaluate the clinical utility of a precision medicine strategy assigning treatments based on genomic features of patients. This is therefore closer to the well-studied biomarker-based designs for clinical trials <span class="citation">(Freidlin, McShane, and Korn <a href="#ref-freidlin2010randomized">2010</a>)</span>. In a way, it is a matter of extending these unidimensional biomarker-based designs to multidimensional strategies that allow a choice between quite a number of different treatments. The potentially large number of treatments thus prompts us to draw more inspiration from scalable biomarker-strategy designs than biomarker-stratified designs <span class="citation">(Freidlin, McShane, and Korn <a href="#ref-freidlin2010randomized">2010</a>)</span>. We can draw a methodological parallel with some trials like the Tumor Chemosensitivity Assay Ovarian Cancer study in which a biochemical assay guides the choice of preferred chemotherapy for patients in a panel of twelve different treatments <span class="citation">(Cree et al. <a href="#ref-cree2007prospective">2007</a>)</span>. More recently, some clinical trials have been proposed that include precision medicine strategies, particularly in oncology <span class="citation">(Le Tourneau et al. <a href="#ref-le2015molecularly">2015</a>; Flaherty et al. <a href="#ref-flaherty2020molecular">2020</a>)</span>.</p>
+<p>On the basis of these clinical examples, we propose three different target trials and their corresponding causal estimates, the clinical relevance of which may vary according to medical contexts. Each target trial contains a <strong>precision-medicine directed arm</strong> in which patients are treated in accordance with the precision medicine algorithm recommendations but they are differentiated from each other by <strong>alternative control arms</strong> (Figure <a href="chapter-precision.html#fig:target-trials">9.4</a>). Causal effects will be estimated solely on patients eligible for the assignment of a personalized treatment, <em>i.e.</em>, those for whom the treatment algorithm is able to recommend a drug.</p>
+<div class="figure" style="text-align: center"><span id="fig:target-trials"></span>
+<img src="fig/target-trials.png" alt="Target trials to estimate causal effect of precision medicine (PM) algorithm versus different controls. Patients are first screened according to their eligibility for the algorithm: based on their genomic characteristics patients are recommended a specific treatment (eligible) or not (no eligible). Then eligible patients are randomized and assigned either to PM-directed arm or to one of the alternative control arms (\(\text{CE}_1\), \(\text{CE}_2\) or \(\text{CE}_3\))" width="90%" />
+<p class="caption">
+Figure 9.4: <strong>Target trials to estimate causal effect of precision medicine (PM) algorithm versus different controls.</strong> Patients are first screened according to their eligibility for the algorithm: based on their genomic characteristics patients are recommended a specific treatment (eligible) or not (no eligible). Then eligible patients are randomized and assigned either to PM-directed arm or to one of the alternative control arms (<span class="math inline">\(\text{CE}_1\)</span>, <span class="math inline">\(\text{CE}_2\)</span> or <span class="math inline">\(\text{CE}_3\)</span>)
+</p>
+</div>
+
+<div id="first-causal-effect-textce_1-comparison-with-a-single-standard" class="section level4">
+<h4><span class="header-section-number">9.2.2.1</span> First causal effect (<span class="math inline">\(\text{CE}_1\)</span>): comparison with a single standard</h4>
+<p>The first possible target trial is to compare the precision medicine arm with a control arm in which <strong>all patients have been treated with the same single treatment</strong>. This could classically be the current standard of care applied to all patients (e.g chemotherapy cancer treatment).</p>
+</div>
+<div id="second-causal-effect-textce_2-comparison-with-physicians-assignment-of-drugs" class="section level4">
+<h4><span class="header-section-number">9.2.2.2</span> Second causal effect (<span class="math inline">\(\text{CE}_2\)</span>): comparison with physician’s assignment of drugs</h4>
+<p>Then, in order to propose a more comprehensive clinical assessment, we propose a second causal effect, <strong>comparing the PM arm with the current clinical practice</strong>, i.e the assignment of the same targeted treatments by physicians in the absence of the algorithm. This implicitly means comparing two PM strategies: the one derived from the algorithm and the one that corresponds to current physician’s knowledge. Unlike the former, the latter may not be perfectly deterministic depending on the heterogeneity of medical knowledge or practices. This way of defining <span class="math inline">\(\text{CE}_2\)</span> by focusing on the doctor’s assignment of the same treatments stems from our question of interest: to quantify the relevance of the algorithm itself. Another possibility would have been to compare the precision medicine arm with the doctor’s treatments, allowing him to use treatments other than those of the PM arm, such as the gold-standard one described in <span class="math inline">\(\text{CE}_1\)</span>. But the differences between the arms could then be biased by the use of treatments with different overall efficacy, changing the focus of the question. We will therefore stick to the first definition, which is more focused on the relevance of the algorithm.</p>
+</div>
+<div id="third-causal-effect-textce_3-comparison-with-random-assignment-of-drugs" class="section level4">
+<h4><span class="header-section-number">9.2.2.3</span> Third causal effect (<span class="math inline">\(\text{CE}_3\)</span>): comparison with random assignment of drugs</h4>
+<p>Finally, we define the <span class="math inline">\(\text{CE}_3\)</span> effect <strong>comparing the PM arm with a control arm using exactly the same pool of treatments assigned randomly</strong>. In this case, we measure the ability of the PM algorithm to assign treatments effectively based on genomic features of patients. This comparison has already been considered in the context of biomarker-based clinical trials <span class="citation">(Sargent et al. <a href="#ref-sargent2005clinical">2005</a>)</span>. Although this comparison with random assignment is methodologically relevant, it may not make sense from a clinical point of view if the common clinical practice already contains strong indications (or contraindications) for some patient-treatment associations.</p>
+</div>
+</div>
+</div>
+<div id="causal-inference-methods-and-precision-medicine" class="section level2">
+<h2><span class="header-section-number">9.3</span> Causal inference methods and precision medicine</h2>
+<div id="a-treatment-with-multiple-versions" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> A treatment with multiple versions</h3>
+<p>The statement of the potential outcomes framework implicitly implies the uniqueness of the versions of the treatment <span class="citation">(Rubin <a href="#ref-rubin1980randomization">1980</a>)</span> or at least the treatment variation irrelevance <span class="citation">(VanderWeele <a href="#ref-vanderweele2009concerning">2009</a>)</span>. <strong>In the precision medicine case, the multiplicity of treatment versions is inherent</strong>: a given treatment status may encompass several drugs since a patient may be associated with several molecular agents based on his or her genomic characteristics. <span class="math inline">\(A\)</span> can be seen as a compound treatment <span class="citation">(Hernán and VanderWeele <a href="#ref-hernan2011compound">2011</a>)</span> or a treatment with multiple versions <span class="citation">(VanderWeele and Hernan <a href="#ref-vanderweele2013causal">2013</a>)</span>.</p>
+<p>Therefore, we define a variable <span class="math inline">\(K_j\)</span> denoting the version of treatment administered to individual <span class="math inline">\(j\)</span>. If <span class="math inline">\(A_j=a\)</span> is the arm to which the patient is assigned, <span class="math inline">\(K^a_j\)</span> is the molecule received, the version of treatment <span class="math inline">\(A=a\)</span> (e.g a specific anti-cancer drug) and <span class="math inline">\(K^a_j \in \mathcal{K}^a\)</span>, the set of versions of treatment <span class="math inline">\(A=a\)</span>. In our precision medicine problem, <span class="math inline">\(A=0\)</span> will denote control patients and <span class="math inline">\(A=1\)</span> the patients treated with an anti-cancer drug of the precision medicine pool. <span class="math inline">\(\mathcal{K}^1=\{k^1_1, ..., k^1_P\}\)</span> is the set of <span class="math inline">\(P\)</span> possible targeted treatments for <span class="math inline">\(A=1\)</span> patients. For the sake of simplicity we will assume that there is only one treatment version for <span class="math inline">\(A=0\)</span> controls, <span class="math inline">\(\mathcal{K}^0=\{k^0\}\)</span>. We also need to define other counterfactual variables like <span class="math inline">\(K^a_j(a)\)</span>, the counterfactual version of treatment <span class="math inline">\(A=a\)</span> if the subject had been given the treatment level <span class="math inline">\(a\)</span>. Thus, we finally write the counterfactual outcome as <span class="math inline">\(Y_j(a,k^a)\)</span> for individual <span class="math inline">\(j\)</span> when treatment <span class="math inline">\(A\)</span> has been set to <span class="math inline">\(a\)</span>, using <span class="math inline">\(k^a\)</span> as the version of treatment <span class="math inline">\(a\)</span>, with <span class="math inline">\(k^a \in \mathcal{K}^a\)</span>. Causal relations between variables <span class="math inline">\(C\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(K\)</span> and <span class="math inline">\(Y\)</span> are depicted in the causal diagram in Figure <a href="chapter-precision.html#fig:DAG-multiple">9.5</a>. It should be noted that <span class="math inline">\(A\)</span> has no direct influence on <span class="math inline">\(Y\)</span>, its only effect is entirely mediated by <span class="math inline">\(K\)</span>, which is the real treatment in the pharmacological sense.</p>
+<div class="figure" style="text-align: center"><span id="fig:DAG-multiple"></span>
+<img src="fig/DAG-multiple.png" alt="Causal diagram illustrating relations between variables under multiple versions of treatment. Treatment \(A\), version of treatment \(K\), outcome \(Y\), and confounding variables \(C\) and \(W\) are placed in a causal digram, along with their interpretation in the precision medicine application." width="90%" />
+<p class="caption">
+Figure 9.5: <strong>Causal diagram illustrating relations between variables under multiple versions of treatment.</strong> Treatment <span class="math inline">\(A\)</span>, version of treatment <span class="math inline">\(K\)</span>, outcome <span class="math inline">\(Y\)</span>, and confounding variables <span class="math inline">\(C\)</span> and <span class="math inline">\(W\)</span> are placed in a causal digram, along with their interpretation in the precision medicine application.
+</p>
+</div>
+
+<p>In this context, we can also define the assignment of a version of treatment for patients eligible for precision medicine algorithm. It is important to note that not all patients are necessarily eligible for the precision medicine strategy. Indeed, the treatment assignment algorithm relies on targetable alterations to establish its recommendations. In the absence of these, no recommendation can be offered to the patient. We denote <span class="math inline">\(\mathcal{C}^{PM}\)</span> the set of eligible patient profiles and consequently define the <strong>drug assignment algorithm as the function <span class="math inline">\(r\)</span> which associates to each <span class="math inline">\(C\)</span> a precision medicine treatment version <span class="math inline">\(K\)</span></strong> such as:</p>
+<p><span class="math display">\[\forall j \in [[ 1, N ]], \: \textrm{if} \: C_j \in \mathcal{C}^{PM}, r(C_j) \in \mathcal{K}^{1}\]</span></p>
+</div>
+<div id="causal-inference-with-multiple-versions" class="section level3">
+<h3><span class="header-section-number">9.3.2</span> Causal inference with multiple versions</h3>
+<p>Consequently, the multiplicity of versions prevents direct application of the framework as described in section <a href="clinical-evidence-generation-and-causal-inference.html#causal-identification-simple">8.2.2</a>. The <strong>theoretical framework has however been extended to causal inference under multiple versions of treatment</strong> and some identifiability conditions and properties have been studied, especially in the seminal article by <span class="citation">VanderWeele and Hernan (<a href="#ref-vanderweele2013causal">2013</a>)</span>. One of the first required adaptation to identify some causal effects is to distinguish between confounders <span class="math inline">\(C\)</span> and <span class="math inline">\(W\)</span> (Figure <a href="chapter-precision.html#fig:DAG-multiple">9.5</a>). <span class="math inline">\(W\)</span> indicates a collection of covariates that may be causes of treatment <span class="math inline">\(A\)</span> or version of treatment <span class="math inline">\(K\)</span> but are not direct causes of <span class="math inline">\(Y\)</span>. These covariates are of special interest for causal effects identification under multiple versions of treatment. <span class="math inline">\(C\)</span> indicates all other covariates. In our precision medicine settings, the genomic features of patients may define the eligibility to precision medicine and therefore affect <span class="math inline">\(A\)</span>. They may also be used to define the version of treatment <span class="math inline">\(K\)</span>. And finally they can influence the response to treatment <span class="math inline">\(Y\)</span>. Thus, the genomic features of patients are a typical example of type <span class="math inline">\(C\)</span> confounders. All causal relationships are summarized in Figure <a href="chapter-precision.html#fig:DAG-multiple">9.5</a>. Please note that no <span class="math inline">\(W\)</span> variable is present in the applications provided later because all the covariates considered in this situation were likely to influence <span class="math inline">\(A\)</span>, <span class="math inline">\(K\)</span> and <span class="math inline">\(Y\)</span> and therefore belonged rather to the covariates of type <span class="math inline">\(C\)</span>. However all subsequent formulas and definitions have been derived taking into account <span class="math inline">\(W\)</span>.</p>
+<p>We summarize here some general observations from <span class="citation">VanderWeele and Hernan (<a href="#ref-vanderweele2013causal">2013</a>)</span> regarding the extension of the framework to multiple versions before discussing specific estimates of interest of our precision medicine settings in the next section. These two sections will be based exclusively on the method called <strong>standardization or parametric g-formula</strong> described in section <a href="clinical-evidence-generation-and-causal-inference.html#std-classic">8.2.2.1</a>. The adaptation of other methods to precision medicine will be discussed more briefly in section <a href="chapter-precision.html#PM-others">9.3.4</a>. First of all, the identifiability conditions have to be adapted. The <em>consistency</em> assumption for instance is extended to <span class="math inline">\(K\)</span>:</p>
+<p><span class="math display">\[\textrm{if} \: A_j=a,  \textrm{then} \: K_j^a(a)=K_j^a\]</span>.</p>
+<p>Then, the <em>conditional exchangeability</em> or no-unmeasured confounding assumptions, may be stated in two different ways, either without or with versions of treatment:</p>
+<span class="math display" id="eq:exchan-noK">\[\begin{equation}
+Y(a) \perp \!\!\! \perp A | (C,W)
+\tag{9.1}
+\end{equation}\]</span>
+<span class="math display" id="eq:exchan-K">\[\begin{equation}
+Y(a, k^a) \perp \!\!\! \perp \{A, K\} | C
+\tag{9.2}
+\end{equation}\]</span>
+<p>If equation <a href="chapter-precision.html#eq:exchan-noK">(9.1)</a> holds, we can derive a new version of the standardised estimator with multiple versions of treatment <span class="citation">(VanderWeele and Hernan <a href="#ref-vanderweele2013causal">2013</a>)</span>:</p>
+<span class="math display" id="eq:overall-treatment-effect">\[\begin{equation}
+E[Y(a)] = E[Y(a, K^a(a))] = \sum_{c,w} E[Y | A=a, C=c, W=w] \times P[c,w]
+\tag{9.3}
+\end{equation}\]</span>
+<p>Specifically, it should be noted that we need to add <span class="math inline">\(W\)</span> in the set of covariates that must be taken into account in standardization, and we need <em>positivity</em> to hold for <span class="math inline">\(C\)</span> and <span class="math inline">\(W\)</span>, <em>i.e.</em>, <span class="math inline">\(0&lt;P[A=a|C=c,W=w]&lt;1\)</span>. Detailed proof of equation <a href="chapter-precision.html#eq:overall-treatment-effect">(9.3)</a> is provided in appendix <a href="about-statistics.html#appendix-overall-treatment-effect">C.2.1</a>. Equation <a href="chapter-precision.html#eq:overall-treatment-effect">(9.3)</a> paves the way to overall treatment effect assessment since <span class="math inline">\(E[Y(1, K^1(1))]-E[Y(0, K^0(0))]\)</span> would estimate the effect of treatment <span class="math inline">\(A=1\)</span> compared to <span class="math inline">\(A=0\)</span> with current versions of treatment.</p>
+<p>Conversely, estimating a treatment effect for a given unique version of treatment <span class="math inline">\(E[Y(a,k^a)]\)</span> would require to check the exchangeability with regard to versions <span class="math inline">\(K\)</span> and therefore to hold equation <a href="chapter-precision.html#eq:exchan-K">(9.2)</a> true <span class="citation">(VanderWeele and Hernan <a href="#ref-vanderweele2013causal">2013</a>)</span>:</p>
+<span class="math display" id="eq:version-treatment-effect">\[\begin{equation}
+E[Y(a, k^a)] = \sum_{c} E[Y | A=a,K^a=k^a, C=c] \times P[c]
+\tag{9.4}
+\end{equation}\]</span>
+<p>Similarly, we can define <span class="math inline">\(G^a\)</span> a random variable for versions of treatment with conditional distribution <span class="math inline">\(P[G^a=k^a| C=c]=g^{k^a,c}\)</span> and assuming the equation <a href="chapter-precision.html#eq:exchan-K">(9.2)</a> to be true we can derive the following formula and its formal proof in appendix <a href="about-statistics.html#appendix-distrib-treatment-effect">C.2.2</a>:</p>
+<span class="math display" id="eq:distrib-treatment-effect">\[\begin{equation}
+E[Y(a, G^a)] = \sum_{c,k^a} E[Y | A=a,K^a=k^a, C=c] \times g^{k^a,c} \times P[c]
+\tag{9.5}
+\end{equation}\]</span>
+<p>In this case, to allow estimation of the right-hand side of the equation, positivity will be defined as <span class="math inline">\(0&lt;P[A=a, K^a=k^a|C]&lt;1\)</span>.</p>
+</div>
+<div id="identification_causal_PM" class="section level3">
+<h3><span class="header-section-number">9.3.3</span> Application to precision medicine</h3>
+<p>In the context of the potential outcomes framework extended to treatments with multiple versions, it is therefore possible to apply equations <a href="chapter-precision.html#eq:overall-treatment-effect">(9.3)</a> and <a href="chapter-precision.html#eq:distrib-treatment-effect">(9.5)</a> in order to define and estimate the precision medicine causal effects previously described in section <a href="chapter-precision.html#causal-estimates">9.2.2</a>.</p>
+<p><span class="math inline">\(A=0\)</span> corresponds to control patients with <span class="math inline">\(\mathcal{K}^0=\{k^0\}\)</span> and <span class="math inline">\(A=1\)</span> to patients treated with a targeted treatments. It is important to notice that from this point on we systematically restrict ourselves to patients eligible for the precision medicine algorithm, <em>i.e.</em>, to individuals <span class="math inline">\(j\)</span> such as <span class="math inline">\(C_j \in \mathcal{C}^{PM}\)</span>.</p>
+<div id="textce_1-estimation" class="section level4">
+<h4><span class="header-section-number">9.3.3.1</span> <span class="math inline">\(\text{CE}_1\)</span> estimation</h4>
+<p><span class="math inline">\(\text{CE}_1\)</span> is a comparison between the precision medicine arm and a single version control arm:</p>
+<span class="math display" id="eq:CE1">\[\begin{equation}
+\text{CE}_1 = E[Y(1, r(C)] - E[Y(0, k^0)]
+\tag{9.6}
+\end{equation}\]</span>
+<p>In details, <span class="math inline">\(E[Y(1, r(C)]\)</span> can be derived from equation <a href="chapter-precision.html#eq:distrib-treatment-effect">(9.5)</a> in the case where <span class="math inline">\(g^{k^a,~c}=1\)</span> if <span class="math inline">\(k^a=r(c)\)</span> and <span class="math inline">\(g^{k^a,~c}=0\)</span> otherwise:</p>
+<p><span class="math display">\[E[Y(1, r(C)] = \sum_{c} E[Y | A=1,K^1=r(c), C=c] \times P[c]\]</span></p>
+<p>Then, <span class="math inline">\(E[Y(0, k^0)]\)</span> and <span class="math inline">\(E[Y(1, k^1_{ref})]\)</span> can be derived from equation <a href="chapter-precision.html#eq:version-treatment-effect">(9.4)</a>:</p>
+<p><span class="math display">\[ E[Y(0, k^0)] = \sum_{c} E[Y | A=0, C=c] \times P[c] \]</span></p>
+<p>Alternatively, if one wants to use as control only one of the treatments used in the PM arm the previous estimate could be replaced by the following one: <span class="math display">\[E[Y(1, k^1_{ref})] = \sum_{c} E[Y | A=1,K^1=k^1_{ref}, C=c] \times P[c]\]</span></p>
+<p>It should be noted that <span class="math inline">\(\text{CE}_1\)</span>, like <span class="math inline">\(\text{CE}_2\)</span> and <span class="math inline">\(\text{CE}_3\)</span> presented later, depends on the PM algorithm of interest <span class="math inline">\(r\)</span>. <span class="math inline">\(\text{CE}_i\)</span> could therefore also be written <span class="math inline">\(\text{CE}_1(r)\)</span>.</p>
+</div>
+<div id="textce_2-estimation" class="section level4">
+<h4><span class="header-section-number">9.3.3.2</span> <span class="math inline">\(\text{CE}_2\)</span> estimation</h4>
+<p>Then, <span class="math inline">\(\text{CE}_2\)</span> is written using <span class="math inline">\(K^1(1)\)</span> the PM targeted treatment that would have been assigned to the patient by the physician if the patient had been allocated in arm <span class="math inline">\(A=1\)</span> with PM targeted treatments:</p>
+<span class="math display" id="eq:CE2">\[\begin{equation}
+\text{CE}_2 = E[Y(1, r(C)] - E[Y(1, K^1(1))]
+\tag{9.7}
+\end{equation}\]</span>
+<p><span class="math inline">\(E[Y(1, K^1(1))]\)</span> is derived from equation <a href="chapter-precision.html#eq:overall-treatment-effect">(9.3)</a>:</p>
+<p><span class="math display">\[E[Y(1, K^1(1))] = \sum_{c,w} E[Y | A=1, C=c, W=w] \times P[c,w]\]</span></p>
+</div>
+<div id="textce_3-estimation" class="section level4">
+<h4><span class="header-section-number">9.3.3.3</span> <span class="math inline">\(\text{CE}_3\)</span> estimation</h4>
+<p>Defining <span class="math inline">\(G^1\)</span> as the random distribution of versions of treatment <span class="math inline">\(k^1 \in \mathcal{K}^{1}\)</span>, <span class="math inline">\(\text{CE}_3\)</span> expresses as:</p>
+<span class="math display" id="eq:CE3">\[\begin{equation}
+\text{CE}_3 = E[Y(1, r(C)] - E[Y(1, G^1)] \text{ with } P[G^1=k^1_i]=\dfrac{1}{|\mathcal{K}^1_{PM}|},
+\tag{9.8}
+\end{equation}\]</span>
+<p><span class="math inline">\(|.|\)</span> denoting the cardinality of the set. In this formula, <span class="math inline">\(E[Y(1, G^1)]\)</span> can be derived from equation @ref{distrib-treatment-effect}:</p>
+<p><span class="math display">\[E[Y(1, G^1)] = \dfrac{1}{|\mathcal{K}^1_{PM}|} \times \sum_{c,k^1_i} E[Y | A=1, K^1=k^1_i, C=c] \times P[c]\]</span></p>
+</div>
+</div>
+<div id="PM-others" class="section level3">
+<h3><span class="header-section-number">9.3.4</span> Alternative estimation methods</h3>
+<p>For the sake of simplicity and brevity, we only detailed the standardization in previous sections. However, other popular candidate methods can be used. Estimators based on the <strong>inverse probability weighting (IPW)</strong> and <strong>targeted maximum likelihood estimation (TMLE)</strong> will also be computed in the following sections. IPW has the particularity of not trying to model the outcome but rather the process of assigning treatments. Its theoretical bases have been described in section <a href="clinical-evidence-generation-and-causal-inference.html#IPW-classic">8.2.2.2</a> and the details of its adaptation to multiple versions of treatment is provided in appendix <a href="about-statistics.html#appendix-IPW">C.2.3</a>.</p>
+<p>The TMLE methods are of a different nature <span class="citation">(Van der Laan and Rose <a href="#ref-van2011targeted">2011</a>)</span>. They combine an outcome model and a treatment model in order to obtain a doubly robust estimate, <em>i.e.</em>, an estimate that is robust to a possible misspecification of either model. Moreover, the estimation is done in several steps in order to optimize the equilibrium bias-variance, not for the overall distribution of the data but specifically for the causal effect of interest. These methods also have the particularity of being very often used with machine learning algorithms to fit the outcome or treatment models, instead of the parametric models classically used in standardization and IPW methods. A more detailed description of TMLE properties and the choices that have been made to adapt it to the problem of precision medicine are available in appendix <a href="about-statistics.html#appendix-TMLE">C.2.4</a>.</p>
+</div>
+<div id="code" class="section level3">
+<h3><span class="header-section-number">9.3.5</span> Code</h3>
+<p>The methods detailed above have been implemented in R and applied to simulate data and PDX data. The code is provided in the form of R notebooks (simulated data and PDX data) as well as in the form of an RShiny interactive application (simulated data only). All of these files are available in the dedicated <a href="https://github.com/JonasBeal/Causal_Precision_Medicine">GitHub repository</a>.</p>
+</div>
+</div>
+<div id="application-to-simulated-data" class="section level2">
+<h2><span class="header-section-number">9.4</span> Application to simulated data</h2>
+<p>The proposed methods are first tested on simulated data in order to check the performance of the estimators in finite sample sizes.</p>
+<div id="general-settings" class="section level3">
+<h3><span class="header-section-number">9.4.1</span> General settings</h3>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:simparam">Table 9.1: </span><strong>Intercepts and linear coefficients in the linear models specified to simulate data</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Response variable
+</th>
+<th style="text-align:right;">
+Intercept
+</th>
+<th style="text-align:right;">
+Lin. coeff. <span class="math inline">\(Y \sim C_1\)</span>
+</th>
+<th style="text-align:right;">
+Lin. coeff. <span class="math inline">\(Y \sim C_2\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(Y(0,k^0)\)</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(Y(1,k^1_1)\)</span>
+</td>
+<td style="text-align:right;">
+-25
+</td>
+<td style="text-align:right;">
+-15
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(Y(1,k^1_2)\)</span>
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+-20
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Using the R package <em>lava</em> based on latent variable models, we simulate a super-population of 10000 patients with variables <span class="math inline">\(C\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(K\)</span> and <span class="math inline">\(Y\)</span> as in Figure @ref{fig:DAG-multiple}. We first define two independent binary variables <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span>, representing mutational status of genomic covariates, with a mutation prevalence of 40%. By analogy with the PDX data, <span class="math inline">\(Y\)</span> represents the evolution of tumor volume and a low value (<em>a fortiori</em> negative) corresponds to a better response. <em>Y</em> is therefore defined as a continuous gaussian variable. For each counterfactual variable of response <span class="math inline">\(Y(a, k^a)\)</span>, we specify the intercept and the linear regression coefficients regarding influence of <span class="math inline">\(C_i\)</span> as described in Table <a href="chapter-precision.html#tab:simparam">9.1</a>. Lower intercepts correspond to better responses/more efficient drugs. Similarly, a negative regression coefficient between <span class="math inline">\(Y(a, k^a_i)\)</span> and <span class="math inline">\(C_j\)</span> means that the gene <span class="math inline">\(C_j\)</span> improves the response to <span class="math inline">\(k^a_i\)</span>. So all in all, <span class="math inline">\(k^1_1\)</span> has the best basal response (lowest intercept). <span class="math inline">\(C_1\)</span> (resp. <span class="math inline">\(C_2\)</span>) improves the response to <span class="math inline">\(k^1_1\)</span> (resp. <span class="math inline">\(k^1_2\)</span>). The treatment algorithm of precision medicine is in line with these settings since patients mutated in <span class="math inline">\(C_1\)</span> (regardless their <span class="math inline">\(C_2\)</span> status) are recommended to take <span class="math inline">\(k^1_1\)</span> and patients mutated for <span class="math inline">\(C_2\)</span> only are recommended to take <span class="math inline">\(k^1_2\)</span>. Patients without mutations are not eligible for precision medicine and not taken into account in the computations. Since <span class="math inline">\(k^1_1\)</span> has the bast basal response we assume it is assigned with greater probability by the physician and implement the following distribution of observed treatments:</p>
+<p><span class="math display">\[P[K=k^1_1]=0.5 \text{ and } P[K=k^1_2]=P[K=k^0]=0.25\]</span></p>
+<p>A super-population of 10000 patients is then generated. 1000 cohorts of 200 patients are sampled without replacement within this super-population which, with the prevalences defined for the mutations, corresponds to an effective sample size of about 130 patients eligible for the PM algortithm. the causal effects <span class="math inline">\(\text{CE}_1\)</span>, <span class="math inline">\(\text{CE}_2\)</span> and <span class="math inline">\(\text{CE}_3\)</span> are computed based on different methods on the sub-cohort eligible for precision medicine:</p>
+<ul>
+<li><strong>True effects</strong>, using all simulated counterfactuals for all patients</li>
+<li><strong>Naive effects</strong>, using observed outcomes only for both PM and control arms</li>
+<li><strong>Corrected effects</strong>: using observed outcome and standardized estimators (Std), inverse probability weighting (IPW) and targeted maximum likelihood estimators (TMLE).</li>
+</ul>
+</div>
+<div id="simulation-results" class="section level3">
+<h3><span class="header-section-number">9.4.2</span> Simulation results</h3>
+<p>First, the distribution of data in the super-population of 10,000 patients can be observed in Figure @ref{simulation-results}A, illustrating the different relations and differences described above. In particular, <span class="math inline">\(Y(1, k^1_1)\)</span> (resp. <span class="math inline">\(Y(1, k^1_2)\)</span>) is lower for <span class="math inline">\(C_1\)</span>-mutated (resp. <span class="math inline">\(C_2\)</span>-mutated) patients. It can also be seen that the response to precision medicine (<span class="math inline">\(Y(1, r(C))\)</span>) differs according to the groups: patients mutated for <span class="math inline">\(C_1\)</span> only have the best response, followed by patients mutated for both <span class="math inline">\(C_1\)</span> and <span class="math inline">\(C_2\)</span> and patients mutated for <span class="math inline">\(C_2\)</span> only. There is therefore a heterogeneity of responses to PM which encourages to take into account the groups of patients and their PM versions. The right side of Figure <a href="chapter-precision.html#fig:simulation-results">9.6</a>A shows the deterministic assignment of the recommended PM treatment (<span class="math inline">\(r(C)\)</span>) to each patient profile and the unbalanced distribution of observed treatments (<span class="math inline">\(K\)</span>) with a predominance of <span class="math inline">\(k^1_1\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:simulation-results"></span>
+<img src="09-Precision_files/figure-html/simulation-results-1.png" alt="Causal effects of precision medicine strategy with simulated data. (A) Main variables and relations in the simulated super-population. From left to right: categories of patient based on their mutations; responses to \(k^0\), \(k^1_1\), \(k^1_2\) and precision medicine \(K=r(C)\); repartition of patients regarding their precision medicine drug and their assigned treatment in observed data. (B) Distribution and deviation of \(\text{CE}_1\) estimates based on different methods, deviation scores being computed based on mean absolute error (MAE). (C) Same for \(\text{CE}_2\). (D) Same for \(\text{CE}_3\)." width="90%" />
+<p class="caption">
+Figure 9.6: <strong>Causal effects of precision medicine strategy with simulated data.</strong> (A) Main variables and relations in the simulated super-population. From left to right: categories of patient based on their mutations; responses to <span class="math inline">\(k^0\)</span>, <span class="math inline">\(k^1_1\)</span>, <span class="math inline">\(k^1_2\)</span> and precision medicine <span class="math inline">\(K=r(C)\)</span>; repartition of patients regarding their precision medicine drug and their assigned treatment in observed data. (B) Distribution and deviation of <span class="math inline">\(\text{CE}_1\)</span> estimates based on different methods, deviation scores being computed based on mean absolute error (MAE). (C) Same for <span class="math inline">\(\text{CE}_2\)</span>. (D) Same for <span class="math inline">\(\text{CE}_3\)</span>.
+</p>
+</div>
+
+<p>In the first target trial, true <span class="math inline">\(\text{CE}_1\)</span> estimates in the sampled cohorts are distributed around -40 (Figure <a href="chapter-precision.html#fig:simulation-results">9.6</a>B), confirming the <strong>superiority of the PM arm over the control arm</strong> as defined in the simulation parameters. Not all methods of estimating the causal effect perform equally well. The so-called naive estimate and the one based on IPW show a net bias. The over-representation of the most advantaged patients by PM tends to cause these methods to overestimate the benefit of PM, as can also be seen in the deviation plots. The same trends are observed for <span class="math inline">\(\text{CE}_2\)</span> and <span class="math inline">\(\text{CE}_3\)</span> (Figure <a href="chapter-precision.html#fig:simulation-results">9.6</a>C and D) where the differences are even more drastic. The <strong>mean absolute error of the naive method is thus divided by more than 2 when using standardized estimates or the TMLE</strong>.</p>
+<p>In order to further dissect the influence of simulation parameters on estimation performances, a slightly different simulation scenario with equal probabilities of observed treatments has been studied: <span class="math display">\[P[K=k^0]=P[K=k^1_1]=P[K=k^1_2]=\dfrac{1}{3}\]</span> In this case, the random and balanced assignment of the observed treatments logically removes the systematic biases of the naive method by providing them with more randomized data. However, the corrections made by the proposed methods of causal inference, and in particular standardization and TMLE, still <strong>reduce the variances in the estimates</strong> due to the heterogeneity of the effects of precision medicine as a function of molecular profiles. Randomly, some sampled cohorts are indeed found with an association between <span class="math inline">\(C\)</span> and observed <span class="math inline">\(K\)</span>, thus generating a confounding effect that the causal methods partially correct.</p>
+<p>The simulated data allow us to imagine an almost infinite number of scenarios depending on the number of biomarkers taken into account in the algorithm, the number of different treatments, the dependencies of their responses or the distribution of treatments observed. In order to allow easy exploration of these scenarios without having to master the underlying R code, an <strong>interactive RShiny application has been developped</strong>. It can be accessed by locally running the <a href="https://github.com/JonasBeal/Causal_Precision_Medicine/blob/master/Application_Causal_PM.R">R source file</a> or by using the online version embedded in Figure <a href="chapter-precision.html#fig:Shiny">9.7</a>. Readers with the ability to run the application locally are encouraged to favor this option because the hosting of the online application is limited to a maximum amount of time per month. The application allows certain additional analyses not presented in this manuscript, in particular the linking of biases observed in the sampled cohorts according to their composition (prevalence of mutations, treatments, etc.). It is thus possible to trace the origin of the biases.</p>
+<div class="figure" style="text-align: center"><span id="fig:Shiny"></span>
+<iframe src="http://jonasbeal.shinyapps.io/application_causal_pm/?showcase=0" width="90%" height="600px">
+</iframe>
+<p class="caption">
+Figure 9.7: <strong>RShiny interactive application to investigate various simulation scenarios of precision medicine evaluation.</strong> It is possible to run the application locally with the <a href="https://github.com/JonasBeal/Causal_Precision_Medicine/blob/master/Application_Causal_PM.R">source R file</a> or online with the version hosted on the <a href="https://jonasbeal.shinyapps.io/application_causal_pm/">shinyapps.io server</a>
+</p>
+</div>
+
+</div>
+</div>
+<div id="application-to-pdx" class="section level2">
+<h2><span class="header-section-number">9.5</span> Application to PDX</h2>
+<p>The method is then applied to public data from patient-derived xenografts <span class="citation">(Gao et al. <a href="#ref-gao2015high">2015</a>)</span>, described in section <a href="chapter-precision.html#main-PDX">9.1.1</a> and appendix <a href="appendix-datasets.html#appendix-PDX">A.2</a>. One of the major interests of this type of data in the context of this chapter is to provide access to treatment response values otherwise considered as hypothetical (or counterfactual). It is indeed possible to have the response of the same tumor (or more precisely of distinct samples from the same tumor) to different treatments, thus representing <strong>proxies for counterfactual variables</strong>, as described in Figure <a href="chapter-precision.html#fig:PDX-principles">9.1</a>. Availability of these data provides a unique ground truth to assess the validity of proposed causal estimates in a pre-clinical context.</p>
+<p>Based on the analysis accompanying the published data <span class="citation">(Gao et al. <a href="#ref-gao2015high">2015</a>)</span>, some biomarkers of treatment response have been selected and resulted in <strong>an example of treatment algorithm</strong>: binimetinib (MEK inhibitor) is recommended to KRAS/BRAF mutated tumors, and BYL719 (alpha-specific PI3K inhibitor, also known as Alpelisib) to PIK3CA mutated tumors. PTEN is also included as a covariate because of its detrimental impact on the response to these two treatments. LEE011 drug (a cell cycle inhibitor also known as Ribociclib) is chosen as the reference drug treatment (<span class="math inline">\(k^0\)</span>). Among the sequenced tumors, 88 are eligible for this precision medicine algorithm (<em>i.e.</em>, mutated for BRAF, KRAS or PIK3CA) and have been tested for all 3 drugs of interest, thus ensuring the availability of all corresponding responses. The following analyses will focus exclusively on this sub-cohort for which a descriptive analysis is provided in Figure <a href="chapter-precision.html#fig:PDX-subcohort">9.8</a>A. As expected BRAF/KRAS-mutated tumors have a better response to binimetinib and PIK3CA-mutated tumors have a better response to BYL719 (Figure <a href="chapter-precision.html#fig:PDX-subcohort">9.8</a>B). In addition, it can be noted that these biomarkers have deleterious cross-effects.</p>
+<div class="figure" style="text-align: center"><span id="fig:PDX-subcohort"></span>
+<img src="09-Precision_files/figure-html/PDX-subcohort-1.png" alt="Description of the 88 PDX models cohort. (A) Tissue of origin and prevalences of the drug biomarkers. (B) Drug response to precision medicine targetd treatments in the 88 PDX models cohort depending on the mutational status of biomarkers" width="90%" />
+<p class="caption">
+Figure 9.8: <strong>Description of the 88 PDX models cohort.</strong> (A) Tissue of origin and prevalences of the drug biomarkers. (B) Drug response to precision medicine targetd treatments in the 88 PDX models cohort depending on the mutational status of biomarkers
+</p>
+</div>
+
+<p>The analysis settings are similar to the ones used for simulated data. 1000 different cohorts of 70 tumors (out of 88) are sampled without replacement assuming each time that only the response to one of the treatments is known for each tumor, reproducing the classical clinical situation. The <strong>distribution of the observed treatments was defined randomly</strong>: <span class="math display">\[P[K=k^0]=P[K=k^1_1]=P[K=k^1_2]=\dfrac{1}{3}\]</span> It should be noted that, contrary to analyses based on simulated data, all the statistical models used for standardization (outcome model), for the IPW (treatment model) and for the TMLE are no longer generalized linear models (GLM) but <strong>random forests (RF)</strong>. Indeed, it was observed that the performance of GLM-based methods was lower than that of the naive method, supporting the importance of relevant model specification consistent with real data. The RF algorithms then allow to limit misspecification due to the largely non-linear nature of the data. Random forests were chosen for their speed and versatility, especially in view of their ability to handle multinomial classification as well.</p>
+<p>The results of estimations are then presented in Figure <a href="chapter-precision.html#fig:PDX-results">9.9</a>. In the presence of randomly assigned and balanced observed treatments, none of the methods (including the naive one) has significant systematic bias. On the other hand, <strong>more sophisticated methods, and in particular TMLE, allow to reduce the gap between estimates and true values</strong>, as visible on the mean absolute errors in Figure <a href="chapter-precision.html#fig:PDX-results">9.9</a> right column. A similar analysis using the binary version of outcome <span class="math inline">\(Y\)</span> is presented in <span class="citation">Béal and Latouche (<a href="#ref-beal2020causal">2020</a>)</span> with similar trends and conclusions, thus supporting the extension of the method to binary outcomes. In the same way as before with the simulated data, it would be possible to study the impact of non-random assignment of the observed treatments, which could systematically bias the results of the naïve methods.</p>
+<div class="figure" style="text-align: center"><span id="fig:PDX-results"></span>
+<img src="09-Precision_files/figure-html/PDX-results-1.png" alt="Causal estimates with PDX data. Distribution and deviation of \(\text{CE}_1\) (A), \(\text{CE}_2\) (B) and \(\text{CE}_3\) (C) estimates based on different methods as in Figure 9.6B." width="90%" />
+<p class="caption">
+Figure 9.9: <strong>Causal estimates with PDX data.</strong> Distribution and deviation of <span class="math inline">\(\text{CE}_1\)</span> (A), <span class="math inline">\(\text{CE}_2\)</span> (B) and <span class="math inline">\(\text{CE}_3\)</span> (C) estimates based on different methods as in Figure <a href="chapter-precision.html#fig:simulation-results">9.6</a>B.
+</p>
+</div>
+
+</div>
+<div id="limitations-and-perspective" class="section level2">
+<h2><span class="header-section-number">9.6</span> Limitations and perspective</h2>
+<p>In synthesis, this work proposes a conceptual framework for evaluating a precision medicine algorithm, taking advantage of data already generated using adapted causal inference tools. However, in a clinical context, these data were not generated in a purely observational manner. Patients were cared for and treated by physicians who probably took into account some of their characteristics. However, the reasoning, formalized or not, behind the physicians’ decisions does not correspond to that which a new investigator might want to test. In the eyes of this new investigator, the data can therefore be considered as observational in that they do not correspond to the randomization he would have liked to have carried out. The possibility for this new investigator to estimate the impact of his PM algorithm using the proposed estimators depends, however, on the consistency, exchangeability and positivity hypotheses.</p>
+<p>The hypothesis of consistency has been made more plausible by taking into account the treatment versions, which makes it possible to explicit the heterogeneity of the molecules administered. Exchangeability remains questionable. The simulations and calculations described above underline the importance of taking into account at least the genomic covariates used in the processing algorithm. The inclusion of additional covariates is likely to be necessary in many real-world applications. <strong>Positivity, on the other hand, can be violated in a much more obvious way in certain situations</strong>. Thus, equation <a href="chapter-precision.html#eq:distrib-treatment-effect">(9.5)</a> requires positivity to be extended to versions of treatment: <span class="math inline">\(0&lt;P[A=a, K^a=k^a|C]&lt;1\)</span>. If the assignment of the observed treatments was done on a deterministic basis with respect to the variables used by the treatment algorithm, each patient’s molecular profile will have been treated with a single drug, thus preventing any subsequent causal inference within the defined framework. The eventual use, by the boards of physicians in charge of assigning the observed treatments, of variables different from those used by the algorithm could then make it possible to verify the positive condition. But these variables would represent unmeasured confounding factors. It is therefore <strong>essential to have an in-depth knowledge of the rationales at work in the assignment of the observed treatments</strong>.</p>
+<p>We developed a user-friendly application that extends the scope of the simulations and makes possible to study and quantify the impact of different situations, including possible (quasi-)violations of positivity or unmeasured confounding. It is thus a <strong>tool for empirically framing cases where this causal inference is reasonable or not</strong>. The analysis of the PDX data provides an illustration and proof of feasibility for these methods on pre-clinical data, closer to the human clinical data generally of interest. Beyond feasibility, this implementation leads to some remarks. Firstly, the improvement of causal inference methods compared to naive estimation of PM effects is conditioned in this case to the use of flexible and non-linear learning algorithms. This underlines the <strong>importance of a proper specification of the outcome and treatment models</strong> whose imperfection, especially when trained on small samples, could explain the modesty of the results compared to the simulated data. The particular nature of the PDX data design used should also be kept in mind: each tumor is tested only once for each drug, which may lead to greater variability of results due to tumor heterogeneity <span class="citation">(Gao et al. <a href="#ref-gao2015high">2015</a>)</span>. Some studies, with smaller numbers of tumors and treatments, propose to form groups of several mice for each treatment-drug combination <span class="citation">(Hidalgo et al. <a href="#ref-hidalgo2014patient">2014</a>)</span>. The use of these mean effects could contribute to more accurate data. In spite of these limitations, which may diminish their ability to provide values with counterfactual interpretation, <strong>PDX data are thus a dataset of interest for studying and validating methods of causal inferences about treatment response</strong>. It can also be noted that the very nature of these data, due to the multiplicity of drugs tested for each tumor, can provide a framework in which the constraints of positivity are singularly alleviated. Even if all drugs were not tested on all patients, considering each tumor-drug combination as a different unit increases the coverage of the data. It is then necessary to take into account the clustered nature of the data, each tumor being present several times.</p>
+<p>Finally, beyond the pre-clinical data presented here, the theoretical framework developed in this article should be more directly applicable to data from clinical trials if these data do not violate the requirements of positivity. If it is necessary to consider several trials, the heterogeneity of practices must be taken into account. The use of different drug lists from one trial to another or from one medical centre to another could also provide an example of confounding factor <span class="math inline">\(W\)</span>, included in the theoretical framework presented here but not used in applications.</p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-abou2003overview">
+<p>Abou-Jawde, Rony, Toni Choueiri, Carlos Alemany, and Tarek Mekhail. 2003. “An Overview of Targeted Treatments in Cancer.” <em>Clinical Therapeutics</em> 25 (8). Elsevier: 2121–37.</p>
+</div>
+<div id="ref-beal2020causal">
+<p>Béal, Jonas, and Aurélien Latouche. 2020. “Causal Inference with Multiple Versions of Treatment and Application to Personalized Medicine.” <em>ArXiv Preprint ArXiv:2005.12427</em>.</p>
+</div>
+<div id="ref-coyne2017defining">
+<p>Coyne, Geraldine O’Sullivan, Naoko Takebe, and Alice P Chen. 2017. “Defining Precision: The Precision Medicine Initiative Trials Nci-Mpact and Nci-Match.” <em>Current Problems in Cancer</em> 41 (3). Elsevier: 182–93.</p>
+</div>
+<div id="ref-cree2007prospective">
+<p>Cree, Ian A, Christian M Kurbacher, Alan Lamont, Andrew C Hindley, Sharon Love, TCA Ovarian Cancer Trial Group, and others. 2007. “A Prospective Randomized Controlled Trial of Tumour Chemosensitivity Assay Directed Chemotherapy Versus Physician’s Choice in Patients with Recurrent Platinum-Resistant Ovarian Cancer.” <em>Anti-Cancer Drugs</em> 18 (9). LWW: 1093–1101.</p>
+</div>
+<div id="ref-de2015pragmatic">
+<p>De Gramont, Armand, Sarah Watson, Lee M Ellis, Jordi Rodón, Josep Tabernero, Aimery De Gramont, and Stanley R Hamilton. 2015. “Pragmatic Issues in Biomarker Evaluation for Targeted Therapies in Cancer.” <em>Nature Reviews Clinical Oncology</em> 12 (4). Nature Publishing Group: 197.</p>
+</div>
+<div id="ref-flaherty2020molecular">
+<p>Flaherty, Keith T, Robert Gray, Alice Chen, Shuli Li, David Patton, Stanley R Hamilton, Paul M Williams, et al. 2020. “THE Molecular Analysis for Therapy Choice (Nci-Match) Trial: LESSONS for Genomic Trial Design.” <em>JNCI: Journal of the National Cancer Institute</em>.</p>
+</div>
+<div id="ref-freidlin2010randomized">
+<p>Freidlin, Boris, Lisa M McShane, and Edward L Korn. 2010. “Randomized Clinical Trials with Biomarkers: Design Issues.” <em>Journal of the National Cancer Institute</em> 102 (3). Oxford University Press: 152–60.</p>
+</div>
+<div id="ref-friedman2015precision">
+<p>Friedman, Adam A, Anthony Letai, David E Fisher, and Keith T Flaherty. 2015. “Precision Medicine for Cancer with Next-Generation Functional Diagnostics.” <em>Nature Reviews Cancer</em> 15 (12). Nature Publishing Group: 747–56.</p>
+</div>
+<div id="ref-gao2015high">
+<p>Gao, Hui, Joshua M Korn, Stéphane Ferretti, John E Monahan, Youzhen Wang, Mallika Singh, Chao Zhang, et al. 2015. “High-Throughput Screening Using Patient-Derived Tumor Xenografts to Predict Clinical Trial Drug Response.” <em>Nature Medicine</em> 21 (11). Nature Publishing Group: 1318.</p>
+</div>
+<div id="ref-hansen2013computation">
+<p>Hansen, J, and R Iyengar. 2013. “Computation as the Mechanistic Bridge Between Precision Medicine and Systems Therapeutics.” <em>Clinical Pharmacology &amp; Therapeutics</em> 93 (1). Wiley Online Library: 117–28.</p>
+</div>
+<div id="ref-hernan2016using">
+<p>Hernán, Miguel A, and James M Robins. 2016. “Using Big Data to Emulate a Target Trial When a Randomized Trial Is Not Available.” <em>American Journal of Epidemiology</em> 183 (8). Oxford University Press: 758–64.</p>
+</div>
+<div id="ref-hernan2011compound">
+<p>Hernán, Miguel A, and Tyler J VanderWeele. 2011. “Compound Treatments and Transportability of Causal Inference.” <em>Epidemiology (Cambridge, Mass.)</em> 22 (3). NIH Public Access: 368.</p>
+</div>
+<div id="ref-hidalgo2014patient">
+<p>Hidalgo, Manuel, Frederic Amant, Andrew V Biankin, Eva Budinská, Annette T Byrne, Carlos Caldas, Robert B Clarke, et al. 2014. “Patient-Derived Xenograft Models: An Emerging Platform for Translational Cancer Research.” <em>Cancer Discovery</em> 4 (9). AACR: 998–1013.</p>
+</div>
+<div id="ref-le2015molecularly">
+<p>Le Tourneau, Christophe, Jean-Pierre Delord, Anthony Gonçalves, Céline Gavoille, Coraline Dubot, Nicolas Isambert, Mario Campone, et al. 2015. “Molecularly Targeted Therapy Based on Tumour Molecular Profiling Versus Conventional Therapy for Advanced Cancer (Shiva): A Multicentre, Open-Label, Proof-of-Concept, Randomised, Controlled Phase 2 Trial.” <em>The Lancet Oncology</em> 16 (13). Elsevier: 1324–34.</p>
+</div>
+<div id="ref-manica2019toward">
+<p>Manica, Matteo, Ali Oskooei, Jannis Born, Vigneshwari Subramanian, Julio Sáez-Rodríguez, and María Rodríguez Martínez. 2019. “Toward Explainable Anticancer Compound Sensitivity Prediction via Multimodal Attention-Based Convolutional Encoders.” <em>Molecular Pharmaceutics</em>. ACS Publications.</p>
+</div>
+<div id="ref-rodon2019genomic">
+<p>Rodon, Jordi, Jean-Charles Soria, Raanan Berger, Wilson H Miller, Eitan Rubin, Aleksandra Kugel, Apostolia Tsimberidou, et al. 2019. “Genomic and Transcriptomic Profiling Expands Precision Cancer Medicine: The Winther Trial.” <em>Nature Medicine</em> 25 (5). Nature Publishing Group: 751.</p>
+</div>
+<div id="ref-rubin1980randomization">
+<p>Rubin, Donald B. 1980. “Randomization Analysis of Experimental Data: The Fisher Randomization Test Comment.” <em>Journal of the American Statistical Association</em> 75 (371). JSTOR: 591–93.</p>
+</div>
+<div id="ref-sargent2005clinical">
+<p>Sargent, Daniel J, Barbara A Conley, Carmen Allegra, and Laurence Collette. 2005. “Clinical Trial Designs for Predictive Marker Validation in Cancer Treatment Trials.” <em>Journal of Clinical Oncology</em> 23 (9). American Society of Clinical Oncology: 2020–7.</p>
+</div>
+<div id="ref-van2011targeted">
+<p>Van der Laan, Mark J, and Sherri Rose. 2011. <em>Targeted Learning: Causal Inference for Observational and Experimental Data</em>. Springer Science &amp; Business Media.</p>
+</div>
+<div id="ref-vanderweele2009concerning">
+<p>VanderWeele, Tyler J. 2009. “Concerning the Consistency Assumption in Causal Inference.” <em>Epidemiology</em> 20 (6). LWW: 880–83.</p>
+</div>
+<div id="ref-vanderweele2013causal">
+<p>VanderWeele, Tyler J, and Miguel A Hernan. 2013. “Causal Inference Under Multiple Versions of Treatment.” <em>Journal of Causal Inference</em> 1 (1). De Gruyter: 1–20.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="clinical-evidence-generation-and-causal-inference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PhdThesis.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

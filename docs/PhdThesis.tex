@@ -85,6 +85,19 @@
 		\color{gray}
      		{\textsc{#1}}}{}}
      		
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Links box
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=blue
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Text box
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4609,8 +4622,10 @@ clinical value? We will show that an additional question could be:
 \subsubsection*{Scientific content}\label{scientific-content-4}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
-This chapter is relying on original unpublished content. The exploratory
-analyses presented below have been the basis for the following chapters
+This chapter is relying on unpublished content. The exploratory analyses
+presented below have helped to clarify considerations expressed
+qualitatively in previous chapters and formed the starting point for
+subsequent chapters on the clinical value of cancer models.
 \EndKnitrBlock{summarybox}
 
 \section{Processing of biological
@@ -4618,7 +4633,7 @@ information}\label{processing-of-biological-information}
 
 Mechanistic models, and their outputs in particular, have so far been
 considered and evaluated as biomarkers. A comprehensive appreciation
-requires that they be seen as information processing tools.
+requires that they be seen as \textbf{information processing tools}.
 
 \subsection{Information in, information
 out}\label{information-in-information-out}
@@ -4636,11 +4651,11 @@ stratify survival curves, only the absolute value of \(Y\) is checked.
 This is an important step and a prerequisite for a well-constructed
 model. On the other hand, it is not sufficient information to understand
 how the model works. Indeed, the inputs \(X\) probably also have a
-predictive or clinical value. In short, measuring only the output value
-of the model does not necessarily reveal the model's ability to make
-sense of the data it uses. At the extreme, it is conceivable that a
-random function of some valuable inputs could be correlated to the
-biological reality.
+predictive or clinical value. In short, \textbf{measuring only the
+output value of the model does not necessarily reveal the model's
+ability to make sense of the data it uses}. At the extreme, it is
+conceivable that a random function of some valuable inputs could be
+correlated to the biological reality.
 
 \begin{figure}
 
@@ -4655,22 +4670,22 @@ Adapted from Figure \ref{fig:boxes}.}\label{fig:box-mech}
 
 
 
-Therefore, the question of incremental value of the model can be
+Therefore, the question of the incremental value of the model can be
 explained as follows: what does the output of the model represent in
 relation to the inputs? If we restrict ourselves to cases where the
 absolute biological/clinical value of \(Y\) is positive, we can then
-identify two families of situations. We can imagine a situation where
-the model has improved the value of the inputs. The outputs would then
-have a higher value than the inputs (better biological validation etc.),
-or in any case a complementary value, a value not present in the inputs.
-This would correspond to the capture by the model of emerging or
-non-linar effects. In the second situation, the output does not capture
-emergent properties but summarizes, totally or partially, the
-information present in the inputs. This would correspond to a
-knowledge-informed dimensionality-reduction. Even in the latter case,
-the scientific value of the model as a tool for understanding is not
-necessarily questioned. The analyses presented below are simply intended
-to supplement the understanding of models and how they process
+identify two families of situations. First we can imagine a situation
+where the model has improved the value of the inputs. The output would
+then have a higher value than the inputs (better biological validation
+etc.), or in any case a complementary value, a value not present in the
+inputs. This would correspond to the \textbf{capture by the model of
+emerging or non-linar effects}. In the second situation, the output does
+not capture emergent properties but summarizes, totally or partially,
+the information present in the inputs. This would correspond to a
+\textbf{knowledge-informed dimensionality-reduction}. Even in the latter
+case, the scientific value of the model as a tool for understanding is
+not necessarily questioned. The analyses presented below are simply
+intended to supplement the understanding of models and how they process
 information.
 
 \subsection{Emergence of information in artifical
@@ -4687,7 +4702,7 @@ the value of \emph{A}. Two mechanistic models are defined, one linear
 (with its output \(O_{linear}\)) and one non-linear (with its output
 \(O_{non-linear}\)). We note that the two outputs are sufficiently well
 defined to be correlated with \emph{Growth} but only the non-linear
-model makes use of \(N_2\) by multiplying it with \(N_2\).
+model makes use of \(N_2\) by multiplying it with \(N_1\).
 
 \begin{figure}
 
@@ -4706,59 +4721,61 @@ Adapted from Figure \ref{fig:boxes}.}\label{fig:model-simulation}
 
 
 The ability of models to use inputs to create or summarize information
-through outputs will be studied using the explained variation metric
-\(R^2\). If a linear model is defined as \(y_i=\beta_0+\beta_1x_i+e_i\),
-linear coefficients \(\beta\) are estimated by minimizing the sum of
-squared differences between predicted and real values of \(y\). The
-fitted model is written \(\hat{y_i}=\hat{\beta_0}+\hat{\beta_1}x_i\) and
-\(R^2\) also called coefficient of determination is defined as:
+through outputs will be studied using the \textbf{explained variation
+metric \(R^2\)}. If a linear model is defined as
+\(y_i=\beta_0+\beta_1x_i+e_i\), linear coefficients \(\beta\) are
+estimated by minimizing the sum of squared differences between predicted
+and real values of \(y\). The fitted model is written
+\(\hat{y_i}=\hat{\beta_0}+\hat{\beta_1}x_i\) and \(R^2\) also called
+coefficient of determination is defined as:
 
 \[R^2=\dfrac{\sum_{i=1}^{n} (\hat{y_i}-\bar{y_i})^2}{\sum_{i=1}^{n}  (y_i-\bar{y_i})^2}\]
 
 Therefore \(R^2\) measures the proportion of variation in \(y\) that is
 explained by the regressors. In order to avoid overfitting, it is
-possible to calculate the adjusted R2 that corrects with the number of
-regressors or to fit the model on training data and calculate the
+possible to calculate the adjusted \(R^2\) that corrects with the number
+of regressors or to fit the model on training data and calculate the
 \(R^2\) on validation data. The latter option was chosen using cross
-validation and averaging of the \(R^2\) obtained in the different folds.
-Metrics with an interpretation similar to \(R^2\) have been defined for
-logistic regressions or survival analysis
+validation and averaging over the \(R^2\) obtained in the different
+folds. Metrics with an interpretation similar to \(R^2\) have been
+defined for logistic regressions or survival analysis
 \citep{choodari2012simulation}. In the case of regressions with several
-variables \(x_i\), it is possible to decompose \(R^2\) into different
-components associated with each of the variables. This decomposition is
-carried out here by averaging over orderings according to the method
-proposed by \citet{lindeman1980introduction} and applied in R code
-\citep{gromping2006relative}. The precise formulas are detailed in
-appendix \ref{appendix-decomp}.
+variables \(x_i\), it is possible to \textbf{decompose \(R^2\) into
+different components associated with each of the variables}. This
+decomposition is carried out here by averaging over orderings according
+to the method proposed by \citet{lindeman1980introduction} and applied
+in R code by \citet{gromping2006relative}. The precise formulas are
+detailed in appendix \ref{appendix-decomp}.
 
 Here is an example of schematic reasoning that can be carried out with
 \(R^2\) about the two models in Figure \ref{fig:model-simulation}. Using
 only the outputs of the models to predict \emph{Growth}, explained
 variations are \(R^2_{O_{non-linear}}=0.455\) and
 \(R^2_{O_{linear}}=0.379\). The models are thus correctly defined and
-partly recover the biological read-out. However, the inputs to the model
+partly recover the biological read-out. However, the inputs of the model
 also have an important predictive value since
 \(R^2_{N_1+N_2+N_3}=0.514\). How can we understand the relationship
 between these values? First, the model including the \(N_i\) inputs and
 the output \(O\) as regressors show different performances with
-\(R^2_{N_1+N_2+N_3+O_{linear}}=0.514\) and
-\(R^2_{N_1+N_2+N_3+O_{non-linear}}=0.586\). This means that the
-\(O_{linear}\) has no added value compared to the inputs. This was
-expected given its definition. On the other hand, \(O_{non-linear}\) has
-allowed to extract an emergent information which improves the global
-prediction when combined with the inputs. We can go further in
-understanding by breaking down the \(R^2\). In Figure
-\ref{fig:R2-artificial}A and B (left columns), \(R^2\) of the inputs'
-models are decomposed to show that \(N_1\) and \(N_3\) contribute most
-to the prediction in a linear model. By using the same strategies for
-decomposing the \(R_2\) and calculating the incremental R2, it is also
-possible to decompose the \(R^2\) of \(O\) according to its origin: its
-component \(N_1\) (\(0.22\) in Figure \ref{fig:R2-artificial}A) is the
-proportion of \(R^2\) that is also explained by \(N_1\), so it can be
-interpreted as being the part of the value of \(N_1\) captured by \(O\).
-In the non-linear case, we can see in the decomposition that \(O\) also
-has a created component (\(0.07\)), it is the non-linear component that
-is not shared with any of the inputs.
+\[R^2_{N_1+N_2+N_3+O_{linear}}=0.514=R^2_{N_1+N_2+N_3},\]
+\[R^2_{N_1+N_2+N_3+O_{non-linear}}=0.586>R^2_{N_1+N_2+N_3}.\] This means
+that \(O_{linear}\) has no added value compared to a linear combination
+of the inputs. This was expected given its definition. On the other
+hand, \(O_{non-linear}\) has allowed to extract an emergent information
+which improves the global prediction when combined linearly with the
+inputs. We can go further in understanding by breaking down the \(R^2\).
+In Figure \ref{fig:R2-artificial}A and B (left columns), \(R^2\) of the
+inputs' models are decomposed to show that \(N_1\) and \(N_3\)
+contribute most to the prediction in a linear model. By using the same
+strategies for decomposing the \(R_2\) and calculating the incremental
+\(R^2\), it is also possible to \textbf{decompose the \(R^2\) of \(O\)
+according to its origin}: its component \(N_1\) (\(0.22\) in Figure
+\ref{fig:R2-artificial}A) is the proportion of \(R^2\) that is also
+explained by \(N_1\), so it can be interpreted as being the part of the
+value of \(N_1\) captured by \(O\). In the non-linear case, we can see
+in the decomposition that \(O_{non-linear}\) has an additional created
+component (\(0.07\)), it is the non-linear component that is not shared
+with any of the inputs.
 
 \begin{figure}
 
@@ -4795,17 +4812,17 @@ The output of the non-linear model also fails to avoid some information
 losses, but at the same time it extracts new non-linear information.
 Thus, in combination with the inputs, it provides added value measured
 by the increase in total \(R^2\). Note that \(R^2\) is used here as one
-tool among others to illustrate the reflection on models as information
-processing tools. The point to remember is not technical but rather
-methodological: these mechanistic models based on omics data cannot be
-evaluated for themselves but must be evaluated in comparison with the
-data they use in order to better explain the way they process
-information. In this logic of model selection, other tools such as the
-Akaike Information Criterion (AIC) have been proposed and could allow to
-quantify if the reduction of dimension carried out by the models (from
-many omics inputs to one mechanistic output) allows a more parsimonious
-description of biology than the direct use of inputs
-\citep{kirk2013model}.
+tool among others to illustrate the reflection on \textbf{personalized
+mechanistic models as information processing tools}. The point to
+remember is not technical but rather methodological: these mechanistic
+models based on omics data cannot be evaluated for themselves but must
+be evaluated in comparison with the data they use in order to better
+explain the way they process information. In this logic of model
+selection, other tools such as the Akaike Information Criterion (AIC)
+have been proposed and could allow to quantify if the reduction of
+dimension carried out by the models (from many omics inputs to one
+mechanistic output) allows a more parsimonious description of biology
+than the direct use of inputs \citep{kirk2013model}.
 
 \section{Reanalysis of mechanistic models of
 cancer}\label{reanalysis-of-mechanistic-models-of-cancer}
@@ -4825,8 +4842,8 @@ performed by assessing the clinical value of the inputs (RNA levels of
 ZAK, MKK4, MKK7, JNK and AKT genes) and outputs (\(H\), \(A\) and
 \(K_{50}\)) separately by comparing them with survival data. The outputs
 were binarized to optimize the separation between the curves in a
-log-rank test. In this section we propose to quantify the value of the
-output in relation to those of the inputs, leaving the output
+log-rank test. In this section we propose to \textbf{quantify the value
+of the output in relation to those of the inputs}, leaving the output
 continuous, using the tools described in the previous section. In the
 context of survival data, the \(R^2\) described above is replaced by the
 \(R^2\) defined by \citet{royston2004new}, whose properties have been
@@ -4840,14 +4857,15 @@ validated using simulated data \citep{choodari2012simulation}.
 
 \caption[Schematic example of logical and ODE modeling around MAPK signaling]{\textbf{Mechanistic modeling of JNK pathway and
 survival of neuroblastima patients, as described by
-\citet{fey2015signaling}.} (A) Schematic representation, as a process
-description, for the ODE model of JNK pathway. (B) Response curve
-(phosphorylated JNK) as a function of the input stimulus (Stress) and
-characterization of the corresponding sigmoidal function with maximal
-amplitude \(A\), Hill exponent \(H\) and activation threshold
-\(K_{50}\). (C) Survival curves for neuroblastoma patients based on
-binarized \(A\), \(K_{50}\) and \(H\); binarization thresholds having
-been defined based on optimization screening on calibration cohort.}\label{fig:fey2}
+\citet{fey2015signaling}.} (A) Schematic representation (as a process
+description \citep{le2015quantitative}) for the ODE model of JNK
+pathway. (B) Response curve (phosphorylated JNK) as a function of the
+input stimulus (Stress) and characterization of the corresponding
+sigmoidal function with maximal amplitude \(A\), Hill exponent \(H\) and
+activation threshold \(K_{50}\). (C) Survival curves for neuroblastoma
+patients based on binarized \(A\), \(K_{50}\) and \(H\); binarization
+thresholds having been defined based on optimization screening on
+calibration cohort.}\label{fig:fey2}
 \end{figure}
 
 
@@ -4861,29 +4879,30 @@ been defined based on optimization screening on calibration cohort.}\label{fig:f
 
 
 
-Thus the \(R^2\) of the output \(H\) is \(0.39\) while that of the
+
+Thus, the \(R^2\) of the output \(H\) is \(0.39\) while that of the
 combined inputs is \(0.60\). We can see from the decompositions that
 \(H\) derives most of its the value from ZAK, MKK4 and AKT (Figure
-\ref{fig:R2-Fey}A, left column), which were already the largest
+\ref{fig:R2-Fey}A, right column), which were already the largest
 contributors in the combined evaluation of the inputs (Figure
-\ref{fig:R2-Fey}A, right column). However, \(H\) also includes an
+\ref{fig:R2-Fey}A, left column). However, \(H\) also includes an
 emerging non-linear share (\(R^2=0.08\)) that was not explained by the
 linear combination of inputs. Thus, combining \(H\) with the inputs in a
 survival prediction model does indeed allow to observe an added value
-with a global \(R^2\) of \(0.08\). In addition, the authors in the
+with a global \(R^2\) of \(0.68\). In addition, the authors in the
 original study stressed the importance of positive feedback from JNK to
 MKK7 (Figure \ref{fig:fey2}A). In its absence, we find that the value of
-H is almost reduced to zero, since not only its non-linear part (Figure
-\ref{fig:R2-Fey}, red share), but also its parts derived from inputs,
-disappear. Analyzing the other outputs of the model (\(A\) and
+\(H\) is almost reduced to zero, since not only its non-linear part
+(Figure \ref{fig:R2-Fey}, red share), but also its parts derived from
+inputs, disappear. Analyzing the other outputs of the model (\(A\) and
 \(K_{50}\)) reveals similar but less dramatic trends underlining the
 importance of this feedback which allows the model to capture a
 clinically relevant behaviour, assimilated by the authors to the
 capacity of cells to trigger apoptosis in case of stress. In the case of
 this model, the analyses provide a better understanding of how the model
-works with respect to survival prediction: the outputs partly summarize
-clinical information already present in the inputs but also reveal
-relevant emerging information.
+works with respect to survival prediction: \textbf{the outputs partly
+summarize clinical information already present in the inputs but also
+reveal relevant emerging information}.
 
 \begin{figure}
 
@@ -4922,23 +4941,23 @@ computational cost, which increases exponentially with the number of
 variables. If we focus on the example best suited to these models, that
 of BRAF inhibition sensistivity, we can however reformulate the question
 more simply. Given that the most important predictor of the answer is
-the status of the BRAF mutation itself, do the personalized models allow
-us to do better or provide additional information? In the case of the
-CRISPR data, the \(R^2\) of BRAF alone is \(0.75\), whereas the \(R^2\)
+the status of the BRAF mutation itself, \textbf{do the personalized
+models allow us to do better or provide additional information?} In the
+case of CRISPR data, the \(R^2\) of BRAF alone is \(0.75\), the \(R^2\)
 of the personalized scores from the models is \(0.73\), while the
 combination of the two increases the \(R^2\) to \(0.83\). In the absence
 of a precise decomposition, this gain can come either from the
 contribution of the other variables used in the model (the RNA levels of
-CRAF for example) or from the evidence of non-linear effects. In both
+CRAF for example) or from the emergence of non-linear effects. In both
 cases, these figures are another way of expressing the remarks in
 section \ref{diff-BRAF}: thanks to the integration of other data and
 their organization in a framework based on literature knowledge, the
 model provides a more precise and complete vision of the response
 mechanisms. As positive as it is, this increase in \(R^2\) remains
-modest, illustrating that the main interest of these models is not
-necessarily a pure gain in predictive performance. Rather, it lies in
-their explanatory capacity and in their ability to support the
-investigation of mechanisms such as in section \ref{diff-BRAF}. In a
+modest, illustrating that the \textbf{main interest of these models is
+not necessarily a pure gain in predictive performance. Rather, it lies
+in their explanatory capacity and in their ability to support the
+investigation of mechanisms} such as in section \ref{diff-BRAF}. In a
 complementary way, one could imagine extending these analyses to other
 nodes of the model and not only to its output in order to dissect even
 more precisely the information processing within the model.
@@ -4972,17 +4991,17 @@ of mechanistic cancer models, on the other hand, is the possibility of
 simulating treatments that imitate therapeutic interventions. Before
 tackling more precise questions, this chapter will therefore introduce
 certain clinical or statistical methods used to evaluate the effect of
-different types of treatments, including drugs, on patoents. A more
-specific issue related to the evaluation of mechanistic models will be
-explored in the next chapter using these methods
+different types of treatments on patients. A more specific issue related
+to the evaluation of mechanistic models will be explored in the next
+chapter using these methods
 
 \BeginKnitrBlock{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-5}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
-This short chapter introduces the framework for causal inference based
-on the literature and the description of causal inference in the
-preprint \citet{beal2020causal}.
+This short chapter introduces the framework of causal inference based on
+the literature and the description of causal inference in the preprint
+\citet{beal2020causal}.
 \EndKnitrBlock{summarybox}
 
 \newcommand{\indep}{\perp \!\!\! \perp}
@@ -4999,29 +5018,29 @@ Without loss of generality, the rationale for this approach can be
 detailed for one drug, which will be referred to as \(A\) in the
 remainder of the chapter (Figure \ref{fig:trials}). The patients who can
 benefit from this drug, and therefore those eligible for the clinical
-trial, are first of all defined (disease, characteristics etc.). Then
-they are randomly separated into two distinct groups, one receiving the
-new treatment to be evaluated (\(A=1\)) and the other generally
-receiving the treatment considered as standard of care, or a placebo if
-no validated treatment is available (\(A=0\)). A predefined treatment
-response criterion \(Y\) (viral load, tumour size, etc.) is then
-compared for the two groups to quantify the average treatment effect
-(ATE):
+trial, are first of all defined (specific disease, characteristics
+etc.). Then, they are randomly separated into two distinct groups, one
+receiving the new treatment to be evaluated (\(A=1\)) and the other
+generally receiving the treatment considered as standard of care, or a
+placebo if no validated treatment is available (\(A=0\)). A predefined
+treatment response criterion \(Y\) (viral load, tumor size, etc.) is
+then compared for the two groups to quantify the average treatment
+effect (ATE):
 
 \[ATE= E[Y|A=1]-E[Y|A=0]\]
 
 Thus it will be possible to say, for example, that ``compared to
 patients who received the standard treatment, those treated with the new
-drug have a 20\% lower tumour volume''. In this example, randomly
+drug have a 20\% lower tumor volume''. In this example, \textbf{randomly
 choosing how the two groups of patients, treated and untreated, are
-constituted ensures \emph{a priori} that the two groups are comparable.
+constituted ensures \emph{a priori} that the two groups are comparable}.
 Indeed, it should be verified that the untreated patients were not on
 average suffering from more advanced cancers that are more likely to
 proliferate and grow. In this case, the difference in outcome between
 the groups could simply come from a difference in initial composition
-and not from a difference in therapeutic intervention. Random assignment
-of treatments therefore offers minimum guarantees concerning the
-characteristics of the two subgroups.
+and not from a difference derived from therapeutic interventions. Random
+assignment of treatments therefore offers minimum guarantees concerning
+the characteristics of the two subgroups.
 
 \begin{figure}
 
@@ -5041,31 +5060,32 @@ factors}\label{observational-data-and-confounding-factors}
 
 The problem of comparability between the two groups is reinforced when
 the data used does not come from a clinical trial. In the remainder of
-this thesis these data will be called observational data. This means
-that in the available data, some patients were treated with the new drug
-(\(A=1\)) and others received the reference treatment (\(A=0\)).
-However, the assignment of treatment was not decided by the observer.
-This assignment was therefore made according to a protocol unknown to
-the observer which has no guarantee that the two groups are in fact
-comparable.
+this thesis these data will be called \textbf{observational data}. This
+means that in the available data, some patients were treated with the
+new drug (\(A=1\)) and others received the reference treatment
+(\(A=0\)). However, the assignment of treatment was not decided by the
+observer. This assignment was therefore made according to a protocol
+unknown to the observer which has no guarantee that the two groups are
+in fact comparable.
 
-The situation can be illustrated with a simple example involving a
-confounding variable \(C\) in addition to the treatment variable \(A\)
-and the outcome variable \(Y\). If \(Y\) represents tumour volume and
-\(A\) the treatment to be evaluated, \(C\) could be a biomarker of
-cancer agressiveness. 1000 patients have been simulated for all
-variables in two different settings represented in Figures
+The situation can be illustrated with a simple simulated example
+involving a confounding variable \(C\) in addition to the treatment
+variable \(A\) and the outcome variable \(Y\). If \(Y\) represents tumor
+volume and \(A\) the treatment to be evaluated, \(C\) could be a
+biomarker of cancer agressiveness. 1000 patients have been simulated for
+all variables in two different settings represented in Figures
 \ref{fig:causality-example} and \ref{fig:causality-example2}. In the
 first case (Figure \ref{fig:causality-example}), the outcome \(Y\) is
-positively correlated to \(C\) (more agressive tumours have bigger
-volume) and decreased when \(A=1\) (treatment decreases tumour volume).
-\(C\) has no influence on \(A\). The causal relationships between the
-variables and the associated coefficients used to simulate data are
-summarized in the directed acyclic graphs (DAG) in Figure
+positively correlated to \(C\) (more agressive tumors have bigger
+volume) and decreased when \(A=1\) (treatment decreases tumor volume).
+\textbf{\(C\) has no influence on \(A\)}. The causal relationships
+between the variables and the associated coefficients used to simulate
+data are summarized in the directed acyclic graphs (DAG) in Figure
 \ref{fig:causality-example}A. The observed relations between variables
 in siimulated data are shown in Figure \ref{fig:causality-example}B, C
-and D. In particular, the theoretical influence of \(A\) on \(Y\) is
-apparent in the observed data.
+and D. In particular, the \textbf{theoretical influence of \(A\) on
+\(Y\) is recovered in the observed data} since
+\(E[Y|A=1]-E[Y|A=0]=-5.05\)
 
 \begin{figure}
 
@@ -5089,12 +5109,14 @@ between variables and parameters used to simulate data. (B) Influence of
 In the second case (Figure \ref{fig:causality-example2}), \(C\) has an
 influence on \(Y\): the more aggressive the tumor, the more likely the
 patient is to be treated with the new drug. In this case the
-simultaneous influence of \(C\) on \(A\) and \(Y\) makes it a real
-confounder. The direct observation of the differences in outcomes
+\textbf{simultaneous influence of \(C\) on \(A\) and \(Y\) makes it a
+real confounder}. The direct observation of the differences in outcomes
 between treated and untreated patients reveals only a small benefit of
 the new treatment which does not correspond to the underlying reality
-used in these simulations since the influence of \(A\) on \(Y\) remained
-the same as in the previous case.
+used in these simulations since the theoretical causal influence of
+\(A\) on \(Y\) remained the same as in the previous case. The
+\textbf{confounding factor prevents the nature of the causal link
+between A and Y from being simply inferred}.
 
 \begin{figure}
 
@@ -5120,7 +5142,7 @@ data}\label{causal-inference-methods-to-leverage-data}
 
 Despite these difficulties, some statistical methods have been developed
 to derive estimates with a causal interpretation from observational
-data, under certain assumptions. This work will focus the potential
+data, under precise assumptions. This work will focus the potential
 outcomes framework \citep{rubin1974estimating}. We will first describe
 briefly the fundamentals of this framework and different methods that
 are part of it.
@@ -5135,15 +5157,15 @@ actual treatment received by individual \(j\) and the outcome. In the
 most simple case, treatment takes values in \(\mathcal{A}=\{0, 1\}\),
 \(1\) denoting the treated patients and \(0\) the control ones. \(Y_j\)
 corresponds to the patient's response to treatment. In the case of
-cancer it may be a continuous value (e.g size of tumour), a binary value
+cancer it may be a continuous value (e.g size of tumor), a binary value
 (e.g status or event indicator), or even a time-to-event (e.g time to
 relapse or death). Only the first two cases will be discussed later.
 Finally, it is necessary to take into account the possible presence of
 confounders influencing both \(A\) and \(Y\) and denoted \(C_j\) for
 individual \(j\).
 
-The potential outcomes framework is sometimes described as
-counterfactual because it defines variables like \(Y_j(a)\) to denote
+The \textbf{potential outcomes framework is also described as
+counterfactual} because it defines variables like \(Y_j(a)\) to denote
 the potential outcome of individual \(j\) in case he has been treated by
 \(A=a\) which may be different from what we observe if \(A_j\neq a\).
 These counterfactual variables make it possible to write the causal
@@ -5177,14 +5199,14 @@ counterfactual variables and cohorts.}\label{fig:causality}
 
 
 \subsection{Identification of causal
-effects}\label{identification-of-causal-effects}
+effects}\label{causal-identification-simple}
 
 The next question is whether it is possible to estimate the
 counterfactual variables \(Y(A)\) and under what conditions. The
-potential outcomes framework explicits assumptions of consistency,
-positivity and conditional exchangeability to estimate these
-counterfactual variables and therefore infer causal estimates from
-observational (non-randomized) data
+potential outcomes framework explicits \textbf{assumptions of
+consistency, positivity and conditional exchangeability to estimate
+these counterfactual variables} and therefore infer causal estimates
+from observational (non-randomized) data
 \citep[\citet{hernan2020causal}]{rubin1974estimating}.
 
 \emph{Consistency} means that values of treatment under comparison
@@ -5211,11 +5233,12 @@ Under these three assumptions, there are different methods and
 estimators available to evaluate causal effects from observational data.
 Two of them will be described and applied to the same example as above:
 the description of the example and the failure of the direct methods are
-recalled in Figure \ref{fig:causality-example3}A and B and both methods
-are illustrated in Figure \ref{fig:causality-example3}C, D and E.
+recalled in Figure \ref{fig:causality-example3}A and B and two causal
+inference methods are illustrated in Figure
+\ref{fig:causality-example3}C, D and E.
 
 \subsubsection{Standardization or parametric
-g-formula}\label{standardization-or-parametric-g-formula}
+g-formula}\label{std-classic}
 
 The first method is called standardization or parametric g-formula and
 it is the one that will be described in more detail in this chapter and
@@ -5250,8 +5273,8 @@ outcome (\(Y\sim C+A\)) is fitted on observed data. This model is then
 used to infer \(E[Y | A=1, C=c]\) and \(E[Y | A=0, C=c]\) for each
 patient with covariate \(C=c\) (Figure \ref{fig:causality-example3}C).
 By averaging these values over the whole cohort the confounding effect
-is corrected and the \(E[Y(A=1)]-E[Y(A=0)]\) estimator is much closer to
-the true value \(-5\) (Figure \ref{fig:causality-example3}D).
+is corrected and the estimator is much closer to the true value \(-5\)
+than the naive estimates (Figure \ref{fig:causality-example3}D and B).
 
 \begin{figure}
 
@@ -5283,18 +5306,18 @@ this panel weights are taken into account in boxplots and estimations.}\label{fi
 
 
 \subsubsection{Inverse probability weighting (IPW) and propensity
-scores}\label{inverse-probability-weighting-ipw-and-propensity-scores}
+scores}\label{IPW-classic}
 
 Based on the same counterfactual framework, it is possible to build
 another class of models, called marginal structural models
 \citep{robins2000marginal}, from which we derive estimators different
 from the standardized estimators called inverse-probability-of-treatment
 weighted (IPW) estimators \citep{cole2008constructing}. IP weighting is
-equivalent to creating a pseudo-population where the link between
-covariates and treatment is cancelled. In the case of binary treatment
-\(A \in {0 ,1}\), weights are defined for each patient as the inverse of
-the probability to have received the version of treatment he or she
-actually received, knowing his or her covariates:
+equivalent to creating a \textbf{pseudo-population where the link
+between covariates and treatment is cancelled}. In the case of binary
+treatment \(A \in {0 ,1}\), weights are defined for each patient as the
+inverse of the probability to have received the version of treatment he
+or she actually received, knowing his or her covariates:
 
 \[W^A=\dfrac{1}{f[A|C]} \text{ with } f[a|c]=P[A=a|C=c],\]
 
@@ -5315,10 +5338,9 @@ E[Y(a)]=\dfrac{\hat{E}[I(A=a)W^{A}Y]}{\hat{E}[I(A=a)W^A]},
 \label{eq:ipweq2}
 \end{equation}
 
-\(I\) being the indicator function. Once again, the use of these
-estimators makes it possible to find the true causal effect by
-correcting for the influence of the confounder (Figure
-\ref{fig:causality-example3}E).
+\(I\) being the indicator function. Once again, this method brings
+estimates closer to the true causal effect by correcting for the
+influence of the confounder (Figure \ref{fig:causality-example3}E).
 
 In summary, evaluating the effect of a treatment requires isolating its
 impact from that of all confounding factors. This can be done in a
@@ -5326,31 +5348,31 @@ randomized clinical trial designed for this purpose. However, there is a
 great amount of other data available that may not have been generated in
 this rigorous framework. It is nevertheless possible to draw causal
 interpretations from them, under certain hypotheses, thus offering
-insights for the a posteriori statistical evaluation of specific
+insights for \emph{a posteriori} statistical evaluation of specific
 therapeutic strategies.
 
 \chapter{Causal inference for precision
-medicine}\label{causal-inference-for-precision-medicine}
+medicine}\label{chapter-precision}
 
 \epigraph{"Felix qui potuit rerum cognoscere causas."}{Virgil (Georgics, 29 BC)}
 
 \initial{T}hroughout this manuscript, we first described the complexity
 of cancer mechanisms, through the diversity of genetic alterations or
 non-linear signaling pathways. This complexity naturally led to the
-choice of systemic modelling approaches and in particular mechanistic
+choice of systemic modeling approaches and in particular mechanistic
 models whose explicit nature facilitates the study of the effects of new
 molecular perturbations such as treatments. The simple study of the
 response to BRAF inhibitors has thus required the consideration of many
 other genes and pathways.
 
-This chapter proposes to take the complexity a step further by
+This final chapter proposes to take the complexity a step further by
 considering different treatments. The diversity of patients' molecular
 profiles suggests that the best treatment is not necessarily the same
 for all patients: this is what is known as precision medicine. This is
 already a clinical reality in oncology that could be reinforced in the
 future by the emergence of new computational models of cancer, whether
-mechanistic or not. How then can we assess the relevance of these models
-in their ability to guide patient treatment?
+mechanistic or not. \textbf{How then can we assess the relevance of
+these models in their ability to guide patient treatment?}
 
 \BeginKnitrBlock{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-6}
@@ -5358,15 +5380,99 @@ in their ability to guide patient treatment?
 
 This chapter presents an extension of the causal inference framework to
 quantify the value of precision medicine strategies. This work is
-currently under revision and is available as a pre-print
-\citet{beal2020causal}.
+currently under revision and is available as a preprint in
+\citet{beal2020causal}. All code is available in the dedicated
+\href{https://github.com/JonasBeal/Causal_Precision_Medicine}{GitHub
+repository}
 \EndKnitrBlock{summarybox}
 
 \section{Precision medicine in
 oncology}\label{precision-medicine-in-oncology}
 
-\subsection{Starting from pre-clinical data: patient-derived
-xenografts}\label{starting-from-pre-clinical-data-patient-derived-xenografts}
+It is first important to understand what is meant by the concept of
+precision medicine in the treatment of cancer patients in order to place
+subsequent questions in a plausible clinical framework.
+
+\subsection{An illustration with patient-derived
+xenografts}\label{main-PDX}
+
+Precision medicine is based on the diversity of treatment responses
+observed in different tumors. It has already been observed in previous
+chapters about BRAF inhibition that \textbf{different cell lines respond
+differently to a particular treatment}. A broader analysis of
+pre-clinical data shows that the same is true for the vast majority of
+treatments. It would be possible to illustrate this using the same data
+from cell lines extended to other drugs. However, because of the more
+directly clinical impact of the issues discussed in this chapter, the
+analyses presented below will focus on another type of data that is
+closer to patient data: patient-derived xenografts (PDX).
+
+A \textbf{PDX is a tumor tissue that has been removed from a patient and
+implanted into immunodeficient mice} \citep{hidalgo2014patient}. Unlike
+cell lines, which are \emph{in vitro} models, PDXs are \emph{in vivo}
+models that allow cancer cells to evolve in a more realistic
+microenvironment. In the same way as for cell lines, PDX can be used for
+drug screening. The data used in this chapter come from a study by
+\citet{gao2015high} which contains several hundred tumors and more than
+fifty drugs. Not all drugs having been tested for all tumors and details
+of the drugs and types of cancer tested are available in the appendix
+\ref{appendix-PDX}. This dataset was generated following the ``one
+animal per model per treatment'' approach (\(1 \times 1 \times 1\)), the
+principles of which are summarized in Figure \ref{fig:PDX-principles}A.
+It should be noted that different drug response metrics are computed in
+the source data, two of which will be used in the analyses. The first
+one is continuous and called \emph{Best Average Response} in the data,
+it is based on the variation of the tumor volume after treatment, the
+lower values (and especially negative) corresponding to better
+responses. The second one is originally categorical and based on a
+modified Response Evaluation Criteria In Solid Tumors (RECIST) criteria.
+It was binarized for this study so that the responders have a score of
+\(1\) and non-responders \(0\). The details of the definition and
+distribution of these metrics are given in appendix \ref{appendix-PDX}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/PDX} 
+
+}
+
+\caption[Principles of PDX screening]{\textbf{Principles of PDX screening.} (A)
+Schematic pipeline for PDX screening with tumor biopsies from one
+patient divided in several pieces later implanted in similar
+immunodeficient mice. Each mouse is then treated with a different drug;
+the collection of mice that have received tumor samples from the same
+patient but have been treated with different drugs therefore gives
+access to several outcomes for the same tumor of origin. (B)
+Corresponding counterfactual variables.}\label{fig:PDX-principles}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+In order to illustrate the diversity of response to treatment, the
+database is momentarily restricted to the 4 most widely tested drugs and
+the 180 tumors (or PDX models) that were evaluated for all four drugs.
+The four chosen drugs target different pathways: binimetinib (MAPK
+inhibitor), BKM120 (PIK inhibitor), HDM201 (MDM2 inhibitor) and LEE011
+(CDK inhibitor). In Figure \ref{fig:PDX-dense}A the 4 treatments show a
+high variability of response, with a slight advantage for BKM120 and
+binimetinib on average over all tumors. However, \textbf{each of the
+treatments was found to be the most effective of the 4 for a significant
+proportion of tumors} (Figure \ref{fig:PDX-dense}B), with binimetinib
+and BKM being the best treatment for one-third of tumors each and
+LEE011/HDM201 sharing the remaining one-third of tumors. It thus appears
+that in view of the molecular diversity of tumors and the increasing
+number of treatments available, it does not seem advisable, according to
+these preclinical data, to treat all tumors with the same gold-standard
+treatment. Furthermore, the tissue of origin of the tumors in this
+example does not appear to be the main determinant of tumor preference
+for certain treatments.
 
 \begin{figure}
 
@@ -5374,9 +5480,15 @@ xenografts}\label{starting-from-pre-clinical-data-patient-derived-xenografts}
 
 }
 
-\caption[Analysis on observed data without confounder]{\textbf{Analysis on observed data without
-confounder.} (A) Directed acyclic graphs}\label{fig:PDX-dense}
+\caption[Differences in drug response for 4 drugs and 180 tumors a call for precision medicine]{\textbf{Differences in drug response for 4 drugs
+and 180 tumors a call for precision medicine.} (A) Distribution of
+treatment response for the 4 different drugs, each with all 180 tumors.
+(B) Number of times each of the 4 drugs is the most effective for a
+given tumor, distribution by tissue of origin.}\label{fig:PDX-dense}
 \end{figure}
+
+
+
 
 
 
@@ -5384,8 +5496,24 @@ confounder.} (A) Directed acyclic graphs}\label{fig:PDX-dense}
 \subsection{Clinical trials and treatment
 algorithms}\label{clinical-trials-and-treatment-algorithms}
 
-Many biomarkers, associated clinical trials and treatment algorithm
-\citep{de2015pragmatic}
+These remarks can be extended to patients. Thus, precision medicine (PM)
+consists in \textbf{assigning the most appropriate treatment to each
+patient according to his or her characteristics, usually genomic
+alterations for cancer patients}
+\citep{friedman2015precision, de2015pragmatic}. At the individual level,
+targeted treatments have provided relevant solutions for patients with
+specific mutations \citep{abou2003overview}. Putting together these
+various treatments, some precision medicine strategies can be defined.
+Based on the genomic profile of the patient, the treatment most likely
+to be successful is chosen. If the information available is reliable,
+\textbf{precision medicine can thus be reduced to a treatment algorithm
+that takes as input the molecular characteristics of the patient's tumor
+and outputs a recommendation of treatment}. An example of such a
+treatment algorithm from the SHIVA clinical trial by
+\citet{le2015molecularly} is shown in Figure \ref{fig:SHIVA} where
+different treatments are associated with different alterations. In this
+case, the treatment algorithm can be considered as an aggregation of the
+medical knowledge accumulated on the individual biomarkers.
 
 \begin{figure}
 
@@ -5395,8 +5523,8 @@ Many biomarkers, associated clinical trials and treatment algorithm
 
 \caption[An example of a precision medicine treatment algorithm: the SHIVA clinical trial]{\textbf{An example of a precision medicine treatment
 algorithm: the SHIVA clinical trial.} Specific molecular alterations and
-their associated treatments, as proposed in the SHIVA clinical trial by
-\citet{le2015molecularly}.}\label{fig:SHIVA}
+their associated treatments, as proposed in the SHIVA clinical trial
+\citep{le2015molecularly}.}\label{fig:SHIVA}
 \end{figure}
 
 
@@ -5404,26 +5532,876 @@ their associated treatments, as proposed in the SHIVA clinical trial by
 
 
 
-\subsection{Models}\label{models}
+\subsection{Computational models to assign cancer
+treatments}\label{computational-models-to-assign-cancer-treatments}
 
-Mechanistic models of cancer pathways are particularly well suited to
-study response to treatment. Their explicit representation of genes and
-proteins makes it possible to simulate the effect of different
-therapeutic interventions. On the basis of this observation, it is
-possible to imagine the following situation
+But the treatment algorithm example in Figure \ref{fig:SHIVA} could be
+more complex. Indeed, previous chapters have stressed, for example, that
+being mutated for the BRAF gene is not the only predictor of response to
+an inhibitor of BRAF (here Vemurafenib). The same is true for most
+treatments that could benefit from more global and systemic analyses,
+taking into account more variables and their interactions. This
+complexity would require the use of computational methods.
+
+It is on this point that this chapter links to the previous ones.
+\textbf{Some of the cancer models studied throughout this thesis, or
+their future developments, could be interpreted as treatment
+algorithms}. Indeed, a model capable of predicting the response to a
+single treatment does not necessarily allow the inference of precision
+medicine strategies. On the other hand, a model capable of predicting a
+patient's response to different treatments is also capable of indicating
+which one is the best. Such models would then move from systems biology
+to systems therapeutics \citep{hansen2013computation}, taking patients'
+geneomic features as inputs and outputting a treatment recommendation.
+In theory, mechanistic models seem to be suitable for this purpose since
+their explicit representation of genes and proteins makes it possible to
+simulate the effect of different therapeutic interventions. However, the
+feasibility of designing and calibrating such a model has yet to be
+demonstrated. Other types of models are being studied to provide a
+computational tool for predicting the sensitivity of cell lines to
+different treatments, in particular using deep learning methods
+\citep{manica2019toward}.
+
+In short, if no computational model is sufficiently developed to date to
+replace the clinician, the emergence of this type of tool is likely in
+the medium term. This raises the question of \textbf{how to assess the
+clinical value of the precision medicine strategies (and corresponding
+treatment algorithms) derived from these models}. For the sake of
+generality, this question will be addressed more broadly in the
+following without reference to models as a possible source of the
+treatment algorithm: how to evaluate the clinical impact of a precision
+medicine strategy and the treatment algorithm? The methods presented
+will indeed be the same, whether the algorithm evaluated comes from a
+model or from the knowledge of clinicians as in Figure \ref{fig:SHIVA}.
+In the spirit of this thesis, the question nevertheless finds its origin
+in the first hypothesis related to models.
+
+\section{Emulating clinical trials to evaluate precision medicine
+algorithms}\label{emulating-clinical-trials-to-evaluate-precision-medicine-algorithms}
+
+\subsection{Objectives and
+applications}\label{objectives-and-applications}
+
+The question then arises of how to quantify the clinical benefit
+provided by these treatment algorithms. Some \textbf{precision medicine
+clinical trials} have been proposed, demonstrating both the feasibility
+of collecting information about mutations \citep{le2015molecularly} or
+RNA \citep{rodon2019genomic} in real-time and the clinical benefit that
+can be expected from these approaches for some patients
+\citep{coyne2017defining}. However, the increasing abundance of genomic
+data and biological knowledge make it progressively easier to establish
+new algorithms for precision medicine, either directly based on
+physician knowledge or provided by computational models
+\citep{hansen2013computation}. For practical reasons it is not possible
+to propose a real clinical trial for each new precision medicine
+algorithm or for any variants, comparing standard of care with new
+algorithm-based therapeutic strategies.
+
+Therefore, this work provides a method to assess the clinical impact of
+proposed PM treatment algorithm based on already generated data,
+\textbf{emulating precision medicine clinical trials and analyzing them
+in the causal inference framework} \citep{hernan2016using}. First we
+will define the causal estimates of the precision medicine effects
+(later referred to as causal estimates) we want to assess, and the
+corresponding ideal clinical trials one would like to perform. Next, we
+will define the notations and the causal framework we use to infer the
+causal effects from observational data with multiple versions of
+treatment, based on the previous work by \citet{vanderweele2013causal}.
+The main principles of the potential outcome framework having been
+introduced in the previous chapter, an extension to the case of
+precision medicine will be described, focusing on the multiplicity of
+treatment versions, \emph{i.e.}, targeted drugs. Then we will apply
+these methods to simulated data in order to investigate the different
+biases of the candidate methods. An example scenario will be presented
+and a RShiny interactive application has been developed to further
+explore other user-defined settings. Finally, the analysis of data from
+patient-derived xenografts (PDX) makes it possible both to apply the
+methods to pre-clinical situation and to have data approximating the
+counterfactual responses, thus enabling further validation of the
+proposed estimation methods.
+
+\subsection{Target trials for precision medicine: definition of causal
+estimates}\label{causal-estimates}
+
+We first specify the precision medicine effects that are to be
+estimated. These effects will finally be estimated based on
+observational data through the causal framework and target trial
+emulation \citep{hernan2016using}. In this context the notion of
+\textbf{target trial refers to the real clinical trial whose estimates
+are sought to be reproduced through causal inference}. Thus, if we think
+in terms of clinical trials, we are not trying to prove or quantify the
+superiority of one treatment over another but rather to evaluate the
+clinical utility of a precision medicine strategy assigning treatments
+based on genomic features of patients. This is therefore closer to the
+well-studied biomarker-based designs for clinical trials
+\citep{freidlin2010randomized}. In a way, it is a matter of extending
+these unidimensional biomarker-based designs to multidimensional
+strategies that allow a choice between quite a number of different
+treatments. The potentially large number of treatments thus prompts us
+to draw more inspiration from scalable biomarker-strategy designs than
+biomarker-stratified designs \citep{freidlin2010randomized}. We can draw
+a methodological parallel with some trials like the Tumor
+Chemosensitivity Assay Ovarian Cancer study in which a biochemical assay
+guides the choice of preferred chemotherapy for patients in a panel of
+twelve different treatments \citep{cree2007prospective}. More recently,
+some clinical trials have been proposed that include precision medicine
+strategies, particularly in oncology
+\citep{le2015molecularly, flaherty2020molecular}.
+
+On the basis of these clinical examples, we propose three different
+target trials and their corresponding causal estimates, the clinical
+relevance of which may vary according to medical contexts. Each target
+trial contains a \textbf{precision-medicine directed arm} in which
+patients are treated in accordance with the precision medicine algorithm
+recommendations but they are differentiated from each other by
+\textbf{alternative control arms} (Figure \ref{fig:target-trials}).
+Causal effects will be estimated solely on patients eligible for the
+assignment of a personalized treatment, \emph{i.e.}, those for whom the
+treatment algorithm is able to recommend a drug.
 
 \begin{figure}
 
-{\centering \href{http://jonasbeal.shinyapps.io/application_causal_pm/}{\includegraphics[width=0.9\linewidth]{09-Precision_files/figure-latex/Shiny-1} }
+{\centering \includegraphics[width=0.9\linewidth]{fig/target-trials} 
 
 }
 
-\caption[Bimodality criteria and their combinations]{\textbf{Schematic extension of PROFILE-personalized
-logical models to drug investigation.}}\label{fig:Shiny}
+\caption[Target trials to estimate causal effect of precision medicine (PM) algorithm versus different controls]{\textbf{Target trials to estimate causal
+effect of precision medicine (PM) algorithm versus different controls.}
+Patients are first screened according to their eligibility for the
+algorithm: based on their genomic characteristics patients are
+recommended a specific treatment (eligible) or not (no eligible). Then
+eligible patients are randomized and assigned either to PM-directed arm
+or to one of the alternative control arms (\(\text{CE}_1\),
+\(\text{CE}_2\) or \(\text{CE}_3\))}\label{fig:target-trials}
 \end{figure}
 
 
 
+
+
+
+
+
+
+
+\subsubsection{\texorpdfstring{First causal effect (\(\text{CE}_1\)):
+comparison with a single
+standard}{First causal effect (\textbackslash{}text\{CE\}\_1): comparison with a single standard}}\label{first-causal-effect-textce_1-comparison-with-a-single-standard}
+
+The first possible target trial is to compare the precision medicine arm
+with a control arm in which \textbf{all patients have been treated with
+the same single treatment}. This could classically be the current
+standard of care applied to all patients (e.g chemotherapy cancer
+treatment).
+
+\subsubsection{\texorpdfstring{Second causal effect (\(\text{CE}_2\)):
+comparison with physician's assignment of
+drugs}{Second causal effect (\textbackslash{}text\{CE\}\_2): comparison with physician's assignment of drugs}}\label{second-causal-effect-textce_2-comparison-with-physicians-assignment-of-drugs}
+
+Then, in order to propose a more comprehensive clinical assessment, we
+propose a second causal effect, \textbf{comparing the PM arm with the
+current clinical practice}, i.e the assignment of the same targeted
+treatments by physicians in the absence of the algorithm. This
+implicitly means comparing two PM strategies: the one derived from the
+algorithm and the one that corresponds to current physician's knowledge.
+Unlike the former, the latter may not be perfectly deterministic
+depending on the heterogeneity of medical knowledge or practices. This
+way of defining \(\text{CE}_2\) by focusing on the doctor's assignment
+of the same treatments stems from our question of interest: to quantify
+the relevance of the algorithm itself. Another possibility would have
+been to compare the precision medicine arm with the doctor's treatments,
+allowing him to use treatments other than those of the PM arm, such as
+the gold-standard one described in \(\text{CE}_1\). But the differences
+between the arms could then be biased by the use of treatments with
+different overall efficacy, changing the focus of the question. We will
+therefore stick to the first definition, which is more focused on the
+relevance of the algorithm.
+
+\subsubsection{\texorpdfstring{Third causal effect (\(\text{CE}_3\)):
+comparison with random assignment of
+drugs}{Third causal effect (\textbackslash{}text\{CE\}\_3): comparison with random assignment of drugs}}\label{third-causal-effect-textce_3-comparison-with-random-assignment-of-drugs}
+
+Finally, we define the \(\text{CE}_3\) effect \textbf{comparing the PM
+arm with a control arm using exactly the same pool of treatments
+assigned randomly}. In this case, we measure the ability of the PM
+algorithm to assign treatments effectively based on genomic features of
+patients. This comparison has already been considered in the context of
+biomarker-based clinical trials \citep{sargent2005clinical}. Although
+this comparison with random assignment is methodologically relevant, it
+may not make sense from a clinical point of view if the common clinical
+practice already contains strong indications (or contraindications) for
+some patient-treatment associations.
+
+\section{Causal inference methods and precision
+medicine}\label{causal-inference-methods-and-precision-medicine}
+
+\subsection{A treatment with multiple
+versions}\label{a-treatment-with-multiple-versions}
+
+The statement of the potential outcomes framework implicitly implies the
+uniqueness of the versions of the treatment
+\citep{rubin1980randomization} or at least the treatment variation
+irrelevance \citep{vanderweele2009concerning}. \textbf{In the precision
+medicine case, the multiplicity of treatment versions is inherent}: a
+given treatment status may encompass several drugs since a patient may
+be associated with several molecular agents based on his or her genomic
+characteristics. \(A\) can be seen as a compound treatment
+\citep{hernan2011compound} or a treatment with multiple versions
+\citep{vanderweele2013causal}.
+
+Therefore, we define a variable \(K_j\) denoting the version of
+treatment administered to individual \(j\). If \(A_j=a\) is the arm to
+which the patient is assigned, \(K^a_j\) is the molecule received, the
+version of treatment \(A=a\) (e.g a specific anti-cancer drug) and
+\(K^a_j \in \mathcal{K}^a\), the set of versions of treatment \(A=a\).
+In our precision medicine problem, \(A=0\) will denote control patients
+and \(A=1\) the patients treated with an anti-cancer drug of the
+precision medicine pool. \(\mathcal{K}^1=\{k^1_1, ..., k^1_P\}\) is the
+set of \(P\) possible targeted treatments for \(A=1\) patients. For the
+sake of simplicity we will assume that there is only one treatment
+version for \(A=0\) controls, \(\mathcal{K}^0=\{k^0\}\). We also need to
+define other counterfactual variables like \(K^a_j(a)\), the
+counterfactual version of treatment \(A=a\) if the subject had been
+given the treatment level \(a\). Thus, we finally write the
+counterfactual outcome as \(Y_j(a,k^a)\) for individual \(j\) when
+treatment \(A\) has been set to \(a\), using \(k^a\) as the version of
+treatment \(a\), with \(k^a \in \mathcal{K}^a\). Causal relations
+between variables \(C\), \(A\), \(K\) and \(Y\) are depicted in the
+causal diagram in Figure \ref{fig:DAG-multiple}. It should be noted that
+\(A\) has no direct influence on \(Y\), its only effect is entirely
+mediated by \(K\), which is the real treatment in the pharmacological
+sense.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/DAG-multiple} 
+
+}
+
+\caption[Causal diagram illustrating relations between variables under multiple versions of treatment]{\textbf{Causal diagram illustrating relations
+between variables under multiple versions of treatment.} Treatment
+\(A\), version of treatment \(K\), outcome \(Y\), and confounding
+variables \(C\) and \(W\) are placed in a causal digram, along with
+their interpretation in the precision medicine application.}\label{fig:DAG-multiple}
+\end{figure}
+
+
+
+
+
+
+
+In this context, we can also define the assignment of a version of
+treatment for patients eligible for precision medicine algorithm. It is
+important to note that not all patients are necessarily eligible for the
+precision medicine strategy. Indeed, the treatment assignment algorithm
+relies on targetable alterations to establish its recommendations. In
+the absence of these, no recommendation can be offered to the patient.
+We denote \(\mathcal{C}^{PM}\) the set of eligible patient profiles and
+consequently define the \textbf{drug assignment algorithm as the
+function \(r\) which associates to each \(C\) a precision medicine
+treatment version \(K\)} such as:
+
+\[\forall j \in [[ 1, N ]], \: \textrm{if} \: C_j \in \mathcal{C}^{PM}, r(C_j) \in \mathcal{K}^{1}\]
+
+\subsection{Causal inference with multiple
+versions}\label{causal-inference-with-multiple-versions}
+
+Consequently, the multiplicity of versions prevents direct application
+of the framework as described in section
+\ref{causal-identification-simple}. The \textbf{theoretical framework
+has however been extended to causal inference under multiple versions of
+treatment} and some identifiability conditions and properties have been
+studied, especially in the seminal article by
+\citet{vanderweele2013causal}. One of the first required adaptation to
+identify some causal effects is to distinguish between confounders \(C\)
+and \(W\) (Figure \ref{fig:DAG-multiple}). \(W\) indicates a collection
+of covariates that may be causes of treatment \(A\) or version of
+treatment \(K\) but are not direct causes of \(Y\). These covariates are
+of special interest for causal effects identification under multiple
+versions of treatment. \(C\) indicates all other covariates. In our
+precision medicine settings, the genomic features of patients may define
+the eligibility to precision medicine and therefore affect \(A\). They
+may also be used to define the version of treatment \(K\). And finally
+they can influence the response to treatment \(Y\). Thus, the genomic
+features of patients are a typical example of type \(C\) confounders.
+All causal relationships are summarized in Figure
+\ref{fig:DAG-multiple}. Please note that no \(W\) variable is present in
+the applications provided later because all the covariates considered in
+this situation were likely to influence \(A\), \(K\) and \(Y\) and
+therefore belonged rather to the covariates of type \(C\). However all
+subsequent formulas and definitions have been derived taking into
+account \(W\).
+
+We summarize here some general observations from
+\citet{vanderweele2013causal} regarding the extension of the framework
+to multiple versions before discussing specific estimates of interest of
+our precision medicine settings in the next section. These two sections
+will be based exclusively on the method called \textbf{standardization
+or parametric g-formula} described in section \ref{std-classic}. The
+adaptation of other methods to precision medicine will be discussed more
+briefly in section \ref{PM-others}. First of all, the identifiability
+conditions have to be adapted. The \emph{consistency} assumption for
+instance is extended to \(K\):
+
+\[\textrm{if} \: A_j=a,  \textrm{then} \: K_j^a(a)=K_j^a\].
+
+Then, the \emph{conditional exchangeability} or no-unmeasured
+confounding assumptions, may be stated in two different ways, either
+without or with versions of treatment:
+
+\begin{equation}
+Y(a) \perp \!\!\! \perp A | (C,W)
+\label{eq:exchan-noK}
+\end{equation}
+
+\begin{equation}
+Y(a, k^a) \perp \!\!\! \perp \{A, K\} | C
+\label{eq:exchan-K}
+\end{equation}
+
+If equation \eqref{eq:exchan-noK} holds, we can derive a new version of
+the standardised estimator with multiple versions of treatment
+\citep{vanderweele2013causal}:
+
+\begin{equation}
+E[Y(a)] = E[Y(a, K^a(a))] = \sum_{c,w} E[Y | A=a, C=c, W=w] \times P[c,w]
+\label{eq:overall-treatment-effect}
+\end{equation}
+
+Specifically, it should be noted that we need to add \(W\) in the set of
+covariates that must be taken into account in standardization, and we
+need \emph{positivity} to hold for \(C\) and \(W\), \emph{i.e.},
+\(0<P[A=a|C=c,W=w]<1\). Detailed proof of equation
+\eqref{eq:overall-treatment-effect} is provided in appendix
+\ref{appendix-overall-treatment-effect}. Equation
+\eqref{eq:overall-treatment-effect} paves the way to overall treatment
+effect assessment since \(E[Y(1, K^1(1))]-E[Y(0, K^0(0))]\) would
+estimate the effect of treatment \(A=1\) compared to \(A=0\) with
+current versions of treatment.
+
+Conversely, estimating a treatment effect for a given unique version of
+treatment \(E[Y(a,k^a)]\) would require to check the exchangeability
+with regard to versions \(K\) and therefore to hold equation
+\eqref{eq:exchan-K} true \citep{vanderweele2013causal}:
+
+\begin{equation}
+E[Y(a, k^a)] = \sum_{c} E[Y | A=a,K^a=k^a, C=c] \times P[c]
+\label{eq:version-treatment-effect}
+\end{equation}
+
+Similarly, we can define \(G^a\) a random variable for versions of
+treatment with conditional distribution \(P[G^a=k^a| C=c]=g^{k^a,c}\)
+and assuming the equation \eqref{eq:exchan-K} to be true we can derive the
+following formula and its formal proof in appendix
+\ref{appendix-distrib-treatment-effect}:
+
+\begin{equation}
+E[Y(a, G^a)] = \sum_{c,k^a} E[Y | A=a,K^a=k^a, C=c] \times g^{k^a,c} \times P[c]
+\label{eq:distrib-treatment-effect}
+\end{equation}
+
+In this case, to allow estimation of the right-hand side of the
+equation, positivity will be defined as \(0<P[A=a, K^a=k^a|C]<1\).
+
+\subsection{Application to precision
+medicine}\label{identification_causal_PM}
+
+In the context of the potential outcomes framework extended to
+treatments with multiple versions, it is therefore possible to apply
+equations \eqref{eq:overall-treatment-effect} and
+\eqref{eq:distrib-treatment-effect} in order to define and estimate the
+precision medicine causal effects previously described in section
+\ref{causal-estimates}.
+
+\(A=0\) corresponds to control patients with \(\mathcal{K}^0=\{k^0\}\)
+and \(A=1\) to patients treated with a targeted treatments. It is
+important to notice that from this point on we systematically restrict
+ourselves to patients eligible for the precision medicine algorithm,
+\emph{i.e.}, to individuals \(j\) such as \(C_j \in \mathcal{C}^{PM}\).
+
+\subsubsection{\texorpdfstring{\(\text{CE}_1\)
+estimation}{\textbackslash{}text\{CE\}\_1 estimation}}\label{textce_1-estimation}
+
+\(\text{CE}_1\) is a comparison between the precision medicine arm and a
+single version control arm:
+
+\begin{equation}
+\text{CE}_1 = E[Y(1, r(C)] - E[Y(0, k^0)]
+\label{eq:CE1}
+\end{equation}
+
+In details, \(E[Y(1, r(C)]\) can be derived from equation
+\eqref{eq:distrib-treatment-effect} in the case where \(g^{k^a,~c}=1\) if
+\(k^a=r(c)\) and \(g^{k^a,~c}=0\) otherwise:
+
+\[E[Y(1, r(C)] = \sum_{c} E[Y | A=1,K^1=r(c), C=c] \times P[c]\]
+
+Then, \(E[Y(0, k^0)]\) and \(E[Y(1, k^1_{ref})]\) can be derived from
+equation \eqref{eq:version-treatment-effect}:
+
+\[ E[Y(0, k^0)] = \sum_{c} E[Y | A=0, C=c] \times P[c] \]
+
+Alternatively, if one wants to use as control only one of the treatments
+used in the PM arm the previous estimate could be replaced by the
+following one:
+\[E[Y(1, k^1_{ref})] = \sum_{c} E[Y | A=1,K^1=k^1_{ref}, C=c] \times P[c]\]
+
+It should be noted that \(\text{CE}_1\), like \(\text{CE}_2\) and
+\(\text{CE}_3\) presented later, depends on the PM algorithm of interest
+\(r\). \(\text{CE}_i\) could therefore also be written
+\(\text{CE}_1(r)\).
+
+\subsubsection{\texorpdfstring{\(\text{CE}_2\)
+estimation}{\textbackslash{}text\{CE\}\_2 estimation}}\label{textce_2-estimation}
+
+Then, \(\text{CE}_2\) is written using \(K^1(1)\) the PM targeted
+treatment that would have been assigned to the patient by the physician
+if the patient had been allocated in arm \(A=1\) with PM targeted
+treatments:
+
+\begin{equation}
+\text{CE}_2 = E[Y(1, r(C)] - E[Y(1, K^1(1))]
+\label{eq:CE2}
+\end{equation}
+
+\(E[Y(1, K^1(1))]\) is derived from equation
+\eqref{eq:overall-treatment-effect}:
+
+\[E[Y(1, K^1(1))] = \sum_{c,w} E[Y | A=1, C=c, W=w] \times P[c,w]\]
+
+\subsubsection{\texorpdfstring{\(\text{CE}_3\)
+estimation}{\textbackslash{}text\{CE\}\_3 estimation}}\label{textce_3-estimation}
+
+Defining \(G^1\) as the random distribution of versions of treatment
+\(k^1 \in \mathcal{K}^{1}\), \(\text{CE}_3\) expresses as:
+
+\begin{equation}
+\text{CE}_3 = E[Y(1, r(C)] - E[Y(1, G^1)] \text{ with } P[G^1=k^1_i]=\dfrac{1}{|\mathcal{K}^1_{PM}|},
+\label{eq:CE3}
+\end{equation}
+
+\(|.|\) denoting the cardinality of the set. In this formula,
+\(E[Y(1, G^1)]\) can be derived from equation
+@ref\{distrib-treatment-effect\}:
+
+\[E[Y(1, G^1)] = \dfrac{1}{|\mathcal{K}^1_{PM}|} \times \sum_{c,k^1_i} E[Y | A=1, K^1=k^1_i, C=c] \times P[c]\]
+
+\subsection{Alternative estimation methods}\label{PM-others}
+
+For the sake of simplicity and brevity, we only detailed the
+standardization in previous sections. However, other popular candidate
+methods can be used. Estimators based on the \textbf{inverse probability
+weighting (IPW)} and \textbf{targeted maximum likelihood estimation
+(TMLE)} will also be computed in the following sections. IPW has the
+particularity of not trying to model the outcome but rather the process
+of assigning treatments. Its theoretical bases have been described in
+section \ref{IPW-classic} and the details of its adaptation to multiple
+versions of treatment is provided in appendix \ref{appendix-IPW}.
+
+The TMLE methods are of a different nature \citep{van2011targeted}. They
+combine an outcome model and a treatment model in order to obtain a
+doubly robust estimate, \emph{i.e.}, an estimate that is robust to a
+possible misspecification of either model. Moreover, the estimation is
+done in several steps in order to optimize the equilibrium
+bias-variance, not for the overall distribution of the data but
+specifically for the causal effect of interest. These methods also have
+the particularity of being very often used with machine learning
+algorithms to fit the outcome or treatment models, instead of the
+parametric models classically used in standardization and IPW methods. A
+more detailed description of TMLE properties and the choices that have
+been made to adapt it to the problem of precision medicine are available
+in appendix \ref{appendix-TMLE}.
+
+\subsection{Code}\label{code}
+
+The methods detailed above have been implemented in R and applied to
+simulate data and PDX data. The code is provided in the form of R
+notebooks (simulated data and PDX data) as well as in the form of an
+RShiny interactive application (simulated data only). All of these files
+are available in the dedicated
+\href{https://github.com/JonasBeal/Causal_Precision_Medicine}{GitHub
+repository}.
+
+\section{Application to simulated
+data}\label{application-to-simulated-data}
+
+The proposed methods are first tested on simulated data in order to
+check the performance of the estimators in finite sample sizes.
+
+\subsection{General settings}\label{general-settings}
+
+\begin{table}
+
+\caption{\label{tab:simparam}\textbf{Intercepts and linear coefficients in the
+linear models specified to simulate data}}
+\centering
+\begin{tabular}[t]{l|r|r|r}
+\hline
+Response variable & Intercept & Lin. coeff. $Y \sim C_1$ & Lin. coeff. $Y \sim C_2$\\
+\hline
+$Y(0,k^0)$ & 0 & 0 & 15\\
+\hline
+$Y(1,k^1_1)$ & -25 & -15 & 10\\
+\hline
+$Y(1,k^1_2)$ & 0 & 0 & -20\\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+Using the R package \emph{lava} based on latent variable models, we
+simulate a super-population of 10000 patients with variables \(C\),
+\(A\), \(K\) and \(Y\) as in Figure @ref\{fig:DAG-multiple\}. We first
+define two independent binary variables \(C_1\) and \(C_2\),
+representing mutational status of genomic covariates, with a mutation
+prevalence of 40\%. By analogy with the PDX data, \(Y\) represents the
+evolution of tumor volume and a low value (\emph{a fortiori} negative)
+corresponds to a better response. \emph{Y} is therefore defined as a
+continuous gaussian variable. For each counterfactual variable of
+response \(Y(a, k^a)\), we specify the intercept and the linear
+regression coefficients regarding influence of \(C_i\) as described in
+Table \ref{tab:simparam}. Lower intercepts correspond to better
+responses/more efficient drugs. Similarly, a negative regression
+coefficient between \(Y(a, k^a_i)\) and \(C_j\) means that the gene
+\(C_j\) improves the response to \(k^a_i\). So all in all, \(k^1_1\) has
+the best basal response (lowest intercept). \(C_1\) (resp. \(C_2\))
+improves the response to \(k^1_1\) (resp. \(k^1_2\)). The treatment
+algorithm of precision medicine is in line with these settings since
+patients mutated in \(C_1\) (regardless their \(C_2\) status) are
+recommended to take \(k^1_1\) and patients mutated for \(C_2\) only are
+recommended to take \(k^1_2\). Patients without mutations are not
+eligible for precision medicine and not taken into account in the
+computations. Since \(k^1_1\) has the bast basal response we assume it
+is assigned with greater probability by the physician and implement the
+following distribution of observed treatments:
+
+\[P[K=k^1_1]=0.5 \text{ and } P[K=k^1_2]=P[K=k^0]=0.25\]
+
+A super-population of 10000 patients is then generated. 1000 cohorts of
+200 patients are sampled without replacement within this
+super-population which, with the prevalences defined for the mutations,
+corresponds to an effective sample size of about 130 patients eligible
+for the PM algortithm. the causal effects \(\text{CE}_1\),
+\(\text{CE}_2\) and \(\text{CE}_3\) are computed based on different
+methods on the sub-cohort eligible for precision medicine:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{True effects}, using all simulated counterfactuals for all
+  patients
+\item
+  \textbf{Naive effects}, using observed outcomes only for both PM and
+  control arms
+\item
+  \textbf{Corrected effects}: using observed outcome and standardized
+  estimators (Std), inverse probability weighting (IPW) and targeted
+  maximum likelihood estimators (TMLE).
+\end{itemize}
+
+\subsection{Simulation results}\label{simulation-results}
+
+First, the distribution of data in the super-population of 10,000
+patients can be observed in Figure @ref\{simulation-results\}A,
+illustrating the different relations and differences described above. In
+particular, \(Y(1, k^1_1)\) (resp. \(Y(1, k^1_2)\)) is lower for
+\(C_1\)-mutated (resp. \(C_2\)-mutated) patients. It can also be seen
+that the response to precision medicine (\(Y(1, r(C))\)) differs
+according to the groups: patients mutated for \(C_1\) only have the best
+response, followed by patients mutated for both \(C_1\) and \(C_2\) and
+patients mutated for \(C_2\) only. There is therefore a heterogeneity of
+responses to PM which encourages to take into account the groups of
+patients and their PM versions. The right side of Figure
+\ref{fig:simulation-results}A shows the deterministic assignment of the
+recommended PM treatment (\(r(C)\)) to each patient profile and the
+unbalanced distribution of observed treatments (\(K\)) with a
+predominance of \(k^1_1\).
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{09-Precision_files/figure-latex/simulation-results-1} 
+
+}
+
+\caption[Causal effects of precision medicine strategy with simulated data]{\textbf{Causal effects of precision
+medicine strategy with simulated data.} (A) Main variables and relations
+in the simulated super-population. From left to right: categories of
+patient based on their mutations; responses to \(k^0\), \(k^1_1\),
+\(k^1_2\) and precision medicine \(K=r(C)\); repartition of patients
+regarding their precision medicine drug and their assigned treatment in
+observed data. (B) Distribution and deviation of \(\text{CE}_1\)
+estimates based on different methods, deviation scores being computed
+based on mean absolute error (MAE). (C) Same for \(\text{CE}_2\). (D)
+Same for \(\text{CE}_3\).}\label{fig:simulation-results}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+In the first target trial, true \(\text{CE}_1\) estimates in the sampled
+cohorts are distributed around -40 (Figure
+\ref{fig:simulation-results}B), confirming the \textbf{superiority of
+the PM arm over the control arm} as defined in the simulation
+parameters. Not all methods of estimating the causal effect perform
+equally well. The so-called naive estimate and the one based on IPW show
+a net bias. The over-representation of the most advantaged patients by
+PM tends to cause these methods to overestimate the benefit of PM, as
+can also be seen in the deviation plots. The same trends are observed
+for \(\text{CE}_2\) and \(\text{CE}_3\) (Figure
+\ref{fig:simulation-results}C and D) where the differences are even more
+drastic. The \textbf{mean absolute error of the naive method is thus
+divided by more than 2 when using standardized estimates or the TMLE}.
+
+In order to further dissect the influence of simulation parameters on
+estimation performances, a slightly different simulation scenario with
+equal probabilities of observed treatments has been studied:
+\[P[K=k^0]=P[K=k^1_1]=P[K=k^1_2]=\dfrac{1}{3}\] In this case, the random
+and balanced assignment of the observed treatments logically removes the
+systematic biases of the naive method by providing them with more
+randomized data. However, the corrections made by the proposed methods
+of causal inference, and in particular standardization and TMLE, still
+\textbf{reduce the variances in the estimates} due to the heterogeneity
+of the effects of precision medicine as a function of molecular
+profiles. Randomly, some sampled cohorts are indeed found with an
+association between \(C\) and observed \(K\), thus generating a
+confounding effect that the causal methods partially correct.
+
+The simulated data allow us to imagine an almost infinite number of
+scenarios depending on the number of biomarkers taken into account in
+the algorithm, the number of different treatments, the dependencies of
+their responses or the distribution of treatments observed. In order to
+allow easy exploration of these scenarios without having to master the
+underlying R code, an \textbf{interactive RShiny application has been
+developped}. It can be accessed by locally running the
+\href{https://github.com/JonasBeal/Causal_Precision_Medicine/blob/master/Application_Causal_PM.R}{R
+source file} or by using the online version embedded in Figure
+\ref{fig:Shiny}. Readers with the ability to run the application locally
+are encouraged to favor this option because the hosting of the online
+application is limited to a maximum amount of time per month. The
+application allows certain additional analyses not presented in this
+manuscript, in particular the linking of biases observed in the sampled
+cohorts according to their composition (prevalence of mutations,
+treatments, etc.). It is thus possible to trace the origin of the
+biases.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/screenshot-shiny} 
+
+}
+
+\caption[RShiny interactive application to investigate various simulation scenarios of precision medicine evaluation]{\textbf{RShiny interactive application to
+investigate various simulation scenarios of precision medicine
+evaluation.} It is possible to run the application locally with the
+\href{https://github.com/JonasBeal/Causal_Precision_Medicine/blob/master/Application_Causal_PM.R}{source
+R file} or online with the version hosted on the
+\href{https://jonasbeal.shinyapps.io/application_causal_pm/}{shinyapps.io
+server}}\label{fig:Shiny}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\section{Application to PDX}\label{application-to-pdx}
+
+The method is then applied to public data from patient-derived
+xenografts \citep{gao2015high}, described in section \ref{main-PDX} and
+appendix \ref{appendix-PDX}. One of the major interests of this type of
+data in the context of this chapter is to provide access to treatment
+response values otherwise considered as hypothetical (or
+counterfactual). It is indeed possible to have the response of the same
+tumor (or more precisely of distinct samples from the same tumor) to
+different treatments, thus representing \textbf{proxies for
+counterfactual variables}, as described in Figure
+\ref{fig:PDX-principles}. Availability of these data provides a unique
+ground truth to assess the validity of proposed causal estimates in a
+pre-clinical context.
+
+Based on the analysis accompanying the published data
+\citep{gao2015high}, some biomarkers of treatment response have been
+selected and resulted in \textbf{an example of treatment algorithm}:
+binimetinib (MEK inhibitor) is recommended to KRAS/BRAF mutated tumors,
+and BYL719 (alpha-specific PI3K inhibitor, also known as Alpelisib) to
+PIK3CA mutated tumors. PTEN is also included as a covariate because of
+its detrimental impact on the response to these two treatments. LEE011
+drug (a cell cycle inhibitor also known as Ribociclib) is chosen as the
+reference drug treatment (\(k^0\)). Among the sequenced tumors, 88 are
+eligible for this precision medicine algorithm (\emph{i.e.}, mutated for
+BRAF, KRAS or PIK3CA) and have been tested for all 3 drugs of interest,
+thus ensuring the availability of all corresponding responses. The
+following analyses will focus exclusively on this sub-cohort for which a
+descriptive analysis is provided in Figure \ref{fig:PDX-subcohort}A. As
+expected BRAF/KRAS-mutated tumors have a better response to binimetinib
+and PIK3CA-mutated tumors have a better response to BYL719 (Figure
+\ref{fig:PDX-subcohort}B). In addition, it can be noted that these
+biomarkers have deleterious cross-effects.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{09-Precision_files/figure-latex/PDX-subcohort-1} 
+
+}
+
+\caption[Description of the 88 PDX models cohort]{\textbf{Description of the 88 PDX models
+cohort.} (A) Tissue of origin and prevalences of the drug biomarkers.
+(B) Drug response to precision medicine targetd treatments in the 88 PDX
+models cohort depending on the mutational status of biomarkers}\label{fig:PDX-subcohort}
+\end{figure}
+
+
+
+
+
+
+The analysis settings are similar to the ones used for simulated data.
+1000 different cohorts of 70 tumors (out of 88) are sampled without
+replacement assuming each time that only the response to one of the
+treatments is known for each tumor, reproducing the classical clinical
+situation. The \textbf{distribution of the observed treatments was
+defined randomly}: \[P[K=k^0]=P[K=k^1_1]=P[K=k^1_2]=\dfrac{1}{3}\] It
+should be noted that, contrary to analyses based on simulated data, all
+the statistical models used for standardization (outcome model), for the
+IPW (treatment model) and for the TMLE are no longer generalized linear
+models (GLM) but \textbf{random forests (RF)}. Indeed, it was observed
+that the performance of GLM-based methods was lower than that of the
+naive method, supporting the importance of relevant model specification
+consistent with real data. The RF algorithms then allow to limit
+misspecification due to the largely non-linear nature of the data.
+Random forests were chosen for their speed and versatility, especially
+in view of their ability to handle multinomial classification as well.
+
+The results of estimations are then presented in Figure
+\ref{fig:PDX-results}. In the presence of randomly assigned and balanced
+observed treatments, none of the methods (including the naive one) has
+significant systematic bias. On the other hand, \textbf{more
+sophisticated methods, and in particular TMLE, allow to reduce the gap
+between estimates and true values}, as visible on the mean absolute
+errors in Figure \ref{fig:PDX-results} right column. A similar analysis
+using the binary version of outcome \(Y\) is presented in
+\citet{beal2020causal} with similar trends and conclusions, thus
+supporting the extension of the method to binary outcomes. In the same
+way as before with the simulated data, it would be possible to study the
+impact of non-random assignment of the observed treatments, which could
+systematically bias the results of the naïve methods.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{09-Precision_files/figure-latex/PDX-results-1} 
+
+}
+
+\caption[Causal estimates with PDX data]{\textbf{Causal estimates with PDX data.}
+Distribution and deviation of \(\text{CE}_1\) (A), \(\text{CE}_2\) (B)
+and \(\text{CE}_3\) (C) estimates based on different methods as in
+Figure \ref{fig:simulation-results}B.}\label{fig:PDX-results}
+\end{figure}
+
+
+
+
+
+
+\section{Limitations and perspective}\label{limitations-and-perspective}
+
+In synthesis, this work proposes a conceptual framework for evaluating a
+precision medicine algorithm, taking advantage of data already generated
+using adapted causal inference tools. However, in a clinical context,
+these data were not generated in a purely observational manner. Patients
+were cared for and treated by physicians who probably took into account
+some of their characteristics. However, the reasoning, formalized or
+not, behind the physicians' decisions does not correspond to that which
+a new investigator might want to test. In the eyes of this new
+investigator, the data can therefore be considered as observational in
+that they do not correspond to the randomization he would have liked to
+have carried out. The possibility for this new investigator to estimate
+the impact of his PM algorithm using the proposed estimators depends,
+however, on the consistency, exchangeability and positivity hypotheses.
+
+The hypothesis of consistency has been made more plausible by taking
+into account the treatment versions, which makes it possible to explicit
+the heterogeneity of the molecules administered. Exchangeability remains
+questionable. The simulations and calculations described above underline
+the importance of taking into account at least the genomic covariates
+used in the processing algorithm. The inclusion of additional covariates
+is likely to be necessary in many real-world applications.
+\textbf{Positivity, on the other hand, can be violated in a much more
+obvious way in certain situations}. Thus, equation
+\eqref{eq:distrib-treatment-effect} requires positivity to be extended to
+versions of treatment: \(0<P[A=a, K^a=k^a|C]<1\). If the assignment of
+the observed treatments was done on a deterministic basis with respect
+to the variables used by the treatment algorithm, each patient's
+molecular profile will have been treated with a single drug, thus
+preventing any subsequent causal inference within the defined framework.
+The eventual use, by the boards of physicians in charge of assigning the
+observed treatments, of variables different from those used by the
+algorithm could then make it possible to verify the positive condition.
+But these variables would represent unmeasured confounding factors. It
+is therefore \textbf{essential to have an in-depth knowledge of the
+rationales at work in the assignment of the observed treatments}.
+
+We developed a user-friendly application that extends the scope of the
+simulations and makes possible to study and quantify the impact of
+different situations, including possible (quasi-)violations of
+positivity or unmeasured confounding. It is thus a \textbf{tool for
+empirically framing cases where this causal inference is reasonable or
+not}. The analysis of the PDX data provides an illustration and proof of
+feasibility for these methods on pre-clinical data, closer to the human
+clinical data generally of interest. Beyond feasibility, this
+implementation leads to some remarks. Firstly, the improvement of causal
+inference methods compared to naive estimation of PM effects is
+conditioned in this case to the use of flexible and non-linear learning
+algorithms. This underlines the \textbf{importance of a proper
+specification of the outcome and treatment models} whose imperfection,
+especially when trained on small samples, could explain the modesty of
+the results compared to the simulated data. The particular nature of the
+PDX data design used should also be kept in mind: each tumor is tested
+only once for each drug, which may lead to greater variability of
+results due to tumor heterogeneity \citep{gao2015high}. Some studies,
+with smaller numbers of tumors and treatments, propose to form groups of
+several mice for each treatment-drug combination
+\citep{hidalgo2014patient}. The use of these mean effects could
+contribute to more accurate data. In spite of these limitations, which
+may diminish their ability to provide values with counterfactual
+interpretation, \textbf{PDX data are thus a dataset of interest for
+studying and validating methods of causal inferences about treatment
+response}. It can also be noted that the very nature of these data, due
+to the multiplicity of drugs tested for each tumor, can provide a
+framework in which the constraints of positivity are singularly
+alleviated. Even if all drugs were not tested on all patients,
+considering each tumor-drug combination as a different unit increases
+the coverage of the data. It is then necessary to take into account the
+clustered nature of the data, each tumor being present several times.
+
+Finally, beyond the pre-clinical data presented here, the theoretical
+framework developed in this article should be more directly applicable
+to data from clinical trials if these data do not violate the
+requirements of positivity. If it is necessary to consider several
+trials, the heterogeneity of practices must be taken into account. The
+use of different drug lists from one trial to another or from one
+medical centre to another could also provide an example of confounding
+factor \(W\), included in the theoretical framework presented here but
+not used in applications.
+
+\chapter*{Conclusion}\label{conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+Bla bla bla
 
 \appendix \addcontentsline{toc}{chapter}{\appendixname}
 
@@ -5537,24 +6515,32 @@ targeting of genes. These scores are computed based on the fold change
 distribution of sgRNA \citep{hart2016bagel}. The highest values indicate
 that the targeted gene is essential to the cell fitness.
 
-\section{Patient-derived xenografts}\label{patient-derived-xenografts}
+\section{Patient-derived xenografts}\label{appendix-PDX}
 
 Another type of data exists, halfway between cell lines and patients,
 and that is patient-derived xenografts (PDX). Each patient tumour is
 divided into pieces later implanted in several immunodeficient cloned
 mice treated with different drugs, thus providing access to
-sensitivities to several different drugs for each tumour. The PDX
-dataset used in this thesis is the one published by \citet{gao2015high}.
-The original dataset contains 281 different tumours of origin (sometimes
-called PDX models, in the sense of a biological model) and 63 tested
-drugs, not all drugs having been tested for all tumours and some drugs
-have been tested with tissue-specific patterns (Figure
-\ref{fig:PDX-appendix}). 192 of these tumours have also been
+sensitivities to several different drugs for each tumour.
+
+\subsection{\texorpdfstring{Overview of PDX data from
+\citet{gao2015high}}{Overview of PDX data from @gao2015high}}\label{overview-of-pdx-data-from-gao2015high}
+
+The PDX dataset used in this thesis is the one published by
+\citet{gao2015high}. The original dataset contains 281 different tumours
+of origin (sometimes called PDX models, in the sense of a biological
+model) and 63 tested drugs, not all drugs having been tested for all
+tumours and some drugs have been tested with tissue-specific patterns
+(Figure \ref{fig:PDX-appendix}). 192 of these tumours have also been
 characterized for their mutations, copy-number alterations and mRNA.
+More detailed analyses of this dataset are available in the dedicated
+\href{https://github.com/JonasBeal/Causal_Precision_Medicine}{Github
+repository}, in the file \emph{Analysis\_PDX.Rmd} and its corresponding
+HTML report.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{10-Appendix_files/figure-latex/PDX-appendix-1} 
+{\centering \includegraphics[width=0.95\linewidth]{10-Appendix_files/figure-latex/PDX-appendix-1} 
 
 }
 
@@ -5564,6 +6550,38 @@ drugs screened in PDX dataset from \citet{gao2015high}.}}\label{fig:PDX-appendix
 
 
 
+
+\subsection{Drug response metrics}\label{drug-response-metrics}
+
+\subsubsection{A continuous outcome}\label{a-continuous-outcome}
+
+The first drug response metric used in this article is called \emph{Best
+Average Response}. For each combination tumour/drug, the response is
+determined by comparing tumor volume change at time \(t\), \(V_t\) to
+tumor volume at time \(t_0\), \(V_{t_0}\). Several scores are computed:
+
+\[\text{Tumour Volume Change (\%)} = \Delta Vol_t = 100\% \times \dfrac{V_t-V_{t_0}}{V_t}\]
+
+\[\text{Best Response} = min(\Delta Vol_t), t>10d\]
+
+\[\text{Average Response}_t = mean(\Delta Vol_i, 0 \leq i\leq t)\]
+
+\[\text{Best Average Response} = min(\text{Average Response}_t), t>10d\]
+
+We will mainly focus on \emph{Best Average Response}. This metric
+``captures a combination of speed, strength and durability of response
+into a single value'' \emph{gao2015high}. Qualitatively, lower values
+correspond to more efficient drugs.
+
+\subsubsection{A binary outcome}\label{a-binary-outcome}
+
+Thresholds of \emph{Best Response} and \emph{Best Average Response} are
+also defined, inspired by RECIST criteria \citep{therasse2000new}, in
+order to classify response to treatment into 4 categories: Complete
+Response (CR), Partial Response (PR, Stable Disease (SD) and Progressive
+Disease (PD). We designed a binary response status by combining the
+response categories (CR, PR and SD) into a single `responder' category
+(1), opposed to the `non-responders' progressive diseases (0).
 
 \section{Patients}\label{appendix-datasets-patients}
 
@@ -5859,6 +6877,173 @@ order \(r\) can be written as
 All in all, the \(R^2\) allocated to \(x_k\) after decomposition is:
 
 \[R^2_{decomp}(x_k)=\dfrac{1}{p!}\sum_{r\text{ permutations}}seqR^2(\{x_k\}|r)\]
+
+\section{Causal inference with multiple versions of
+treatment}\label{causal-inference-with-multiple-versions-of-treatment}
+
+This section gathers the demonstrations of the equations present in
+chapter \ref{chapter-precision} when they are not present in this
+chapter and additional details about other estimators based on IPW and
+TMLE.
+
+\subsection{Overall treatment effect with multiple versions of treatment
+(equation
+\eqref{eq:overall-treatment-effect})}\label{appendix-overall-treatment-effect}
+
+Here is the formal proof for equation \eqref{eq:overall-treatment-effect},
+mostly derived from the proof of Proposition 3 in
+\citep{vanderweele2013causal}.
+
+\begingroup
+\footnotesize
+
+\begin{equation*}
+\begin{aligned}
+  E[ & Y(a, K^a(a))] = E[Y(a)] &&K^a \text{ actually received}\\
+                  & = \sum_{c,w} E[Y(a)|c,w] \times P[c,w]&& \\
+                  & = \sum_{c,w} E[Y(a)|a,c,w] \times P[c,w]
+                  && Y(a) \perp \!\!\! \perp A | (C,W)\\
+                  & = \sum_{c,w} E[Y(a, K^a(a))|a,c,w] \times P[c,w]&& \\
+                  & = \sum_{c,w,k^a} E[Y(a, k^a)|a,K^a(a)=k^a,c,w]\times P[K^a(a)=k^a|a,c,w] \times P[c,w] &&\\
+                  & = \sum_{c,w,k^a} E[Y(a, k^a)|a,K^a=k^a,c,w]\times P[K^a=k^a|a,c,w] \times P[c,w]
+                  &&\text{consistency K} \\
+                  & = \sum_{c,w,k^a} E[Y|a,K^a=k^a,c,w]\times P[K^a=k^a|a,c,w] \times P[c,w]
+                  &&\text{consistency Y} \\
+                  & = \sum_{c,w} E[Y|a,c,w]\times P[c,w]
+\end{aligned}
+\end{equation*}
+
+\endgroup
+
+Then, the overall treatment effect can be defined and computed by:
+
+\[E[Y(a, K^a(a))] - E[Y(a^*, K^{a^*}(a^*))]\]
+
+\subsection{Treatment effect with predefined distributions of versions
+of treatment (equation
+\eqref{eq:distrib-treatment-effect})}\label{appendix-distrib-treatment-effect}
+
+Here is the formal proof for equation \eqref{eq:distrib-treatment-effect},
+partially derived from the proof of Proposition 5 in
+\citep{vanderweele2013causal}.
+
+\begingroup
+\footnotesize
+
+\begin{equation*}
+\begin{aligned}
+  E[ & Y(a, G^a)] = \sum_{c} E[Y(a, G^a)|C=c] \times P[c]\\
+             & = \sum_{c, k^a} E[Y(a, k^a)|G^a=k^a, C=c] \times P[G^a=k^a|C=c] \times P[c]\\
+             & = \sum_{c, k^a} E[Y(a, k^a)| C=c] \times g^{k^a,c} \times P[c]
+             &&\text{since } P[G^a=k^a] = g^{k^a,c}\\
+             & = \sum_{c, k^a} E[Y(a, k^a)| A=a, K^a=k^a, C=c] \times g^{k^a,c} \times P[c] 
+             &&\text{with } Y(a,k^a) \perp \!\!\! \perp \{A,K\} | C\\
+             & = \sum_{c, k^a} E[Y| A=a, K^a=k^a, C=c] \times P[c]
+             &&\text{by consistency for Y}
+\end{aligned}
+\end{equation*}
+
+\endgroup
+
+\subsection{Inverse probability of treatment weighted (IPW) estimators
+for precision medicine}\label{appendix-IPW}
+
+An extension of IPW methods described in section \ref{IPW-classic} to
+multi-valued treatments (only treatment \(K\) with different modalities
+and no \(A\)) has already been studied and the different formulas and
+estimators adapted accordingly {[}\citet{imbens2000role};
+feng2012generalized{]}, defining in particular a generalized propensity
+score:
+
+\[f(k|c)=P[K=k|C=c]=E[I(k)|C=c]\]
+
+\begin{equation*}
+\text{with }
+I(k) = \left\{
+\begin{array}{ll}
+1 & \quad \text{if } K = k \\
+0 & \quad \text{otherwise}
+\end{array}
+\right.
+\end{equation*}
+
+and a subsequent estimator:
+
+\[E[Y(k)]=\dfrac{\hat{E}[I(K=k)W^{K}Y]}{\hat{E}[I(K=k)W^K]} \text{ with } W^K=\dfrac{1}{f[K|C]}\]
+
+In our precision medicine settings, to be consistent with the previously
+defined causal diagram (Figure \ref{fig:DAG-multiple}), we have both
+\(A\), binary status depending on the class of drugs, and \(K\), the
+multinomial variable for versions of treatments, \emph{i.e.}, the
+precise drug. Therefore we need to define a slightly different
+propensity score with joint probabilities:
+
+\begin{equation*}
+\begin{aligned}
+f(a,k|c) & =P[A=a,K=k|C=c]\\
+         & =P[K=k|A=a, C=c].P[A=a|C=c]\\
+         & =E[I(a,k)|C=c] 
+\end{aligned}
+\end{equation*}
+
+\begin{equation*}
+\text{with }
+I(a,k) = \left\{
+\begin{array}{ll}
+1 & \quad \text{if } A = a, K = k \\
+0 & \quad \text{otherwise}
+\end{array}
+\right.
+\end{equation*}
+
+From this we can deduce the estimator:
+
+\[E[Y(a, k)]=\dfrac{\hat{E}[I(A=a,K=k)W^{A,K}Y]}{\hat{E}[I(A=a,K=k)W^{A,K}]} \text{ with } W^{A,K}=\dfrac{1}{f[A,K|C]}\]
+
+In all the examples presented in this study and implemented in the code,
+\(\mathcal{K}^{0} \cap \mathcal{K}^{1} = \emptyset\), it is therefore
+possible to simplify the joint probabilities since the knowledge of K
+automatically results in the knowledge of A allowing
+\(P[A=a, K=k|C=c]=P[K=k|C=c]\). The above formulas with the attached
+probabilities are still necessary in the general case and allow for the
+derivation of causal effects \(\text{CE}_1\), \(\text{CE}_2\) and
+\(\text{CE}_3\) previously described.
+
+\subsection{TMLE}\label{appendix-TMLE}
+
+Targeted maximum likelihood estimation is framework based on a doubly
+robust maximum-likelihood--based approach that includes a ``targeting''
+step that optimizes the bias-variance trade-off for a defined target
+parameter. In particular, this method is perfectly compatible with the
+use of machine learning algorithms for outcome or treatment models. A
+detailed description of the method and its implementations can be found
+in \citet{van2011targeted}.
+
+The implementation proposed in this article is very similar to the one
+proposed in a recent tutorial concerning the application to binary
+processing \citep{luque2018targeted}. The specific characteristics of
+the problem of precision medicine studied here lead to modify this
+approach. In particular, the outcome and treatment models used in the
+first steps are modified in the same way as the one explained for the
+standardized estimators (outcome model) and for the IPW estimators
+(treatment model). The step of updating the estimates is done on a model
+similar to \citet{luque2018targeted}.
+
+The algorithm used for the models internal to the TMLE are, as much as
+possible, the same as those used for the standardised and IPW
+estimators:
+
+\begin{itemize}
+\tightlist
+\item
+  For simulated data: generalized linear models in all cases except
+  multinomial classification performed through the function
+  \emph{multinom} in \emph{nnet} package.
+\item
+  For PDX data: random forests for all models. Use of SuperLearner
+  \citep{van2007super} is made possible by simple modifications to the
+  code but significantly slows down its execution.
+\end{itemize}
 
 \bibliography{bib/thesis.bib}
 
