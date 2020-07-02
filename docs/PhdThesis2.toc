@@ -1,0 +1,8 @@
+\contentsline {subsubsection}{Scientific content}{x}{section*.5}
+\par \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\bf Page}\par \penalty \@M 
+\contentsline {chapter}{List of Tables}{xii}{section*.6}
+\contentsline {chapter}{List of Figures}{xiii}{section*.7}
+\contentsline {part}{\partnumberline {I}Cells and their models}{1}{part.1}
+\contentsline {chapter}{\chapternumberline {1}Scientific modeling: abstract the complexity}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}What is a model?}{4}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}In your own words}{4}{subsection.1.1.1}

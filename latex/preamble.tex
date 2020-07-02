@@ -5,6 +5,7 @@
 \usepackage{booktabs}
 \usepackage{amsthm}
 \usepackage{./cover/psl-cover} % specifies the path to the cover page template
+%\usepackage{psl-cover} % specifies the path to the cover page template
 
 %\makeatletter
 %\def\thm@space@setup{%
@@ -32,10 +33,10 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=black,
     filecolor=blue,      
     urlcolor=blue,
-    citecolor=blue
+    citecolor=black
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,6 +85,7 @@
 
 \usepackage{calc} % simple arithmetics in latex commands
 \usepackage{soul} % hyphenation for letterspacing, underlining, etc.
+\renewcommand{\topfraction}{.85}
 
 \makeatletter
 \newlength\dlf@normtxtw
@@ -152,15 +154,15 @@
 % \otherinstitute{CEA Saclay}
 % \logootherinstitute{logo-institute}
 
-\jurymember{1}{Test NOM}{Titre, Établissement}{Rapporteur}
-\jurymember{2}{Test NOM}{Titre, Établissement}{Rapporteur}
-\jurymember{3}{Test NOM}{Titre, Établissement}{Examinateur}
-\jurymember{4}{Test NOM}{Titre, Établissement}{Examinateur}
-\jurymember{5}{Emmanuel BARILLOT}{Institut Curie, INSERM, Mines ParisTech, PSL}{Directeur de thèse}
-\jurymember{6}{Aurélien LATOUCHE}{Institut Curie, Cnam}{Directeur de thèse}
-\jurymember{7}{Laurence CALZONE}{Institut Curie, INSERM, Mines ParisTech, PSL}{Co-encadrante de thèse}
-% \jurymember{9}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
-% \jurymember{10}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
+\jurymember{1}{Adeline LECLERQ-SAMSON}{Professeur, Université Grenoble Alpes}{Rapporteur}
+\jurymember{2}{Lodewyk WESSELS}{Professeur, Netherlands Cancer Institute}{Rapporteur}
+\jurymember{3}{Émilie LANOY}{Ingénieure de recherche, Gustave Roussy}{Examinateur}
+\jurymember{4}{Denis THIEFFRY}{Professeur, ENS, PSL}{Examinateur}
+\jurymember{5}{Emmanuel BARILLOT}{Directeur de Recherche, Institut Curie, PSL}{Directeur de thèse}
+\jurymember{6}{Aurélien LATOUCHE}{Professeur, Institut Curie, Cnam}{Directeur de thèse}
+\jurymember{7}{}{}{}
+\jurymember{8}{Laurence CALZONE}{Ingénieure de recherche, Institut Curie, PSL}{Membre invitée, co-encadrante de thèse}
+
 
 \frabstract{
   Au delà de ses mécanismes génétiques, le cancer peut-être compris comme une maladie de réseaux qui résulte souvent de l’interaction entre différentes perturbations dans un réseau de régulation cellulaire.  La dynamique de ces réseaux et des voies de signalisation associées est complexe et requiert des approches intégrées. Une d’entre elles est la conception de modèles dits mécanistiques qui traduisent mathématiquement la connaissance biologique des réseaux afin de pouvoir simuler le fonctionnement moléculaire des cancers informatiquement. Ces modèles ne traduisent cependant que les mécanismes généraux à l’oeuvre dans certains cancers en particulier.

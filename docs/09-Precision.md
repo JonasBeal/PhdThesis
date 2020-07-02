@@ -326,6 +326,16 @@ The simulated data allow us to imagine an almost infinite number of scenarios de
 
 ## Application to PDX
 
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/screenshot-shiny} 
+
+}
+
+\caption[RShiny interactive application to investigate various simulation scenarios of precision medicine evaluation]{(ref:Shiny2-caption)}(\#fig:Shiny2)
+\end{figure}
+(ref:Shiny2-caption) **RShiny test**
+
 The method is then applied to public data from patient-derived xenografts [@gao2015high], described in section \@ref(main-PDX) and appendix \@ref(appendix-PDX). One of the major interests of this type of data in the context of this chapter is to provide access to treatment response values otherwise considered as hypothetical (or counterfactual). It is indeed possible to have the response of the same tumor (or more precisely of distinct samples from the same tumor) to different treatments, thus representing **proxies for counterfactual variables**, as described in Figure \@ref(fig:PDX-principles). Availability of these data provides a unique ground truth to assess the validity of proposed causal estimates in a pre-clinical context.  
   
   

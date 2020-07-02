@@ -643,11 +643,22 @@ if (is_html_output()){
   knitr::include_graphics("fig/screenshot-shiny.png")
 }
 
-
 ```
 (ref:Shiny-caption) **RShiny interactive application to investigate various simulation scenarios of precision medicine evaluation.** It is possible to run the application locally with the [source R file](https://github.com/JonasBeal/Causal_Precision_Medicine/blob/master/Application_Causal_PM.R) or online with the version hosted on the [shinyapps.io server](https://jonasbeal.shinyapps.io/application_causal_pm/)
 
 ## Application to PDX
+
+```{r Shiny2, echo=FALSE, out.width = "90%", fig.cap='(ref:Shiny2-caption)', fig.scap='RShiny interactive application to investigate various simulation scenarios of precision medicine evaluation', fig.align='center'}
+
+if (is_html_output()){
+  knitr::include_app('https://yihui.shinyapps.io/miniUI/', height = '600px')
+} else {
+  knitr::include_graphics("fig/screenshot-shiny.png")
+}
+
+
+```
+(ref:Shiny2-caption) **RShiny test**
 
 The method is then applied to public data from patient-derived xenografts [@gao2015high], described in section \@ref(main-PDX) and appendix \@ref(appendix-PDX). One of the major interests of this type of data in the context of this chapter is to provide access to treatment response values otherwise considered as hypothetical (or counterfactual). It is indeed possible to have the response of the same tumor (or more precisely of distinct samples from the same tumor) to different treatments, thus representing **proxies for counterfactual variables**, as described in Figure \@ref(fig:PDX-principles). Availability of these data provides a unique ground truth to assess the validity of proposed causal estimates in a pre-clinical context.  
   

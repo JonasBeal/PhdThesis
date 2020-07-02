@@ -165,7 +165,7 @@
 
       %% background PSL logo
       \node[on background layer]
-      at (current page.center) {\includegraphics{\@pslassetspath/cover/pictures/front-bg.jpg}};
+      at (current page.center) {\includegraphics[width=21cm, height=29.7cm]{\@pslassetspath/cover/pictures/front-bg.jpg}};
 
       %% node origin
       \coordinate (o) at (current page.center);
@@ -265,7 +265,7 @@
 
       %% PSL institute logo
       \node[xshift=-56mm, yshift=-124mm] at (o) {
-        \includegraphics[scale=.4]{\@pslassetspath/cover/pictures/logo-institute.png}
+        \includegraphics[width=7cm]{\@pslassetspath/cover/pictures/logo-institute.png}
       };
 
       %% other institute logo (cotutelle)
@@ -298,7 +298,7 @@
 
       %% background images (PSL logo and blue semi-circle)
       \node[on background layer, xshift=73mm, yshift=-94mm] at (current page.north west)
-      {\includegraphics[scale=.75]{\@pslassetspath/cover/pictures/back-bg.png}};
+      {\includegraphics[width=15.75cm, height=22.275cm]{\@pslassetspath/cover/pictures/back-bg.png}};
       \coordinate[xshift=-21mm] (circcenter) at (current page.south east);
       \filldraw[pslblue] (circcenter) circle(21mm);
       \coordinate[xshift=-56mm, yshift=.2mm] (gl0) at (current page.south east);

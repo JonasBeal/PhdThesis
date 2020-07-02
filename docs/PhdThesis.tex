@@ -65,6 +65,7 @@
 \usepackage{booktabs}
 \usepackage{amsthm}
 \usepackage{./cover/psl-cover} % specifies the path to the cover page template
+%\usepackage{psl-cover} % specifies the path to the cover page template
 
 %\makeatletter
 %\def\thm@space@setup{%
@@ -92,10 +93,10 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=black,
     filecolor=blue,      
     urlcolor=blue,
-    citecolor=blue
+    citecolor=black
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -144,6 +145,7 @@
 
 \usepackage{calc} % simple arithmetics in latex commands
 \usepackage{soul} % hyphenation for letterspacing, underlining, etc.
+\renewcommand{\topfraction}{.85}
 
 \makeatletter
 \newlength\dlf@normtxtw
@@ -212,15 +214,15 @@
 % \otherinstitute{CEA Saclay}
 % \logootherinstitute{logo-institute}
 
-\jurymember{1}{Test NOM}{Titre, Établissement}{Rapporteur}
-\jurymember{2}{Test NOM}{Titre, Établissement}{Rapporteur}
-\jurymember{3}{Test NOM}{Titre, Établissement}{Examinateur}
-\jurymember{4}{Test NOM}{Titre, Établissement}{Examinateur}
-\jurymember{5}{Emmanuel BARILLOT}{Institut Curie, INSERM, Mines ParisTech, PSL}{Directeur de thèse}
-\jurymember{6}{Aurélien LATOUCHE}{Institut Curie, Cnam}{Directeur de thèse}
-\jurymember{7}{Laurence CALZONE}{Institut Curie, INSERM, Mines ParisTech, PSL}{Co-encadrante de thèse}
-% \jurymember{9}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
-% \jurymember{10}{Pr√©nom NOM}{Titre, √©tablissement}{Invit√©}
+\jurymember{1}{Adeline LECLERQ-SAMSON}{Professeur, Université Grenoble Alpes}{Rapporteur}
+\jurymember{2}{Lodewyk WESSELS}{Professeur, Netherlands Cancer Institute}{Rapporteur}
+\jurymember{3}{Émilie LANOY}{Ingénieure de recherche, Gustave Roussy}{Examinateur}
+\jurymember{4}{Denis THIEFFRY}{Professeur, ENS, PSL}{Examinateur}
+\jurymember{5}{Emmanuel BARILLOT}{Directeur de Recherche, Institut Curie, PSL}{Directeur de thèse}
+\jurymember{6}{Aurélien LATOUCHE}{Professeur, Institut Curie, Cnam}{Directeur de thèse}
+\jurymember{7}{}{}{}
+\jurymember{8}{Laurence CALZONE}{Ingénieure de recherche, Institut Curie, PSL}{Membre invitée, co-encadrante de thèse}
+
 
 \frabstract{
   Au delà de ses mécanismes génétiques, le cancer peut-être compris comme une maladie de réseaux qui résulte souvent de l’interaction entre différentes perturbations dans un réseau de régulation cellulaire.  La dynamique de ces réseaux et des voies de signalisation associées est complexe et requiert des approches intégrées. Une d’entre elles est la conception de modèles dits mécanistiques qui traduisent mathématiquement la connaissance biologique des réseaux afin de pouvoir simuler le fonctionnement moléculaire des cancers informatiquement. Ces modèles ne traduisent cependant que les mécanismes généraux à l’oeuvre dans certains cancers en particulier.
@@ -271,6 +273,28 @@ and statistical evaluation}
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \maketitle
+
+\vspace*{\fill}
+
+\begin{center}
+\begin{quote}
+
+\emph{Ce sont les sévères artistes}\\
+\emph{Que l’aube attire à ses blancheurs,}\\
+\emph{Les savants, les inventeurs tristes,}\\
+\emph{Les puiseurs d’ombre, les chercheurs,}\\
+\emph{Qui ramassent dans les ténèbres}\\
+\emph{Les faits, les chiffres, les algèbres,}\\
+\emph{Le nombre où tout est contenu,}\\
+\emph{Le doute où nos calculs succombent,}\\
+\emph{Et tous les morceaux noirs qui tombent}\\
+\emph{Du grand fronton de l’inconnu !}\\
+Victor Hugo (\emph{Les mages})
+
+\end{quote}
+\end{center}
+
+\vfill
 
 \chapter*{Abstract}
 
@@ -408,7 +432,7 @@ information delivered by these models?}
 
 Moreover, this thesis also exists in an online version that allows to
 take advantage of the interactivity of some graphs and applications:
-\url{https://jonasbeal.github.io/thesis/}.
+\url{https://jonasbeal.github.io/files/PhdThesis/}.
 
 \BeginKnitrBlock{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content}
@@ -416,8 +440,8 @@ take advantage of the interactivity of some graphs and applications:
 
 Except for the first part, essentially introductory and based on
 scientific literature, the different chapters are based on original
-scientific work done during this thesis and mentioned at the beginning
-of each chapter in a box similar to the this one.
+scientific work done during this thesis (2017-2020) and mentioned at the
+beginning of each chapter in a box similar to the this one.
 
 The main articles behind this thesis are indicated below with one
 published article and two pre-prints currently under review:
@@ -429,16 +453,26 @@ published article and two pre-prints currently under review:
   Laurence Calzone. ``Personalization of logical models with multi-omics
   data allows clinical stratification of patients.'' Frontiers in
   physiology 9 (2019): 1965.
+  \href{https://www.frontiersin.org/articles/10.3389/fphys.2018.01965/full}{Link}.
 \item
   Béal, Jonas, Lorenzo Pantolini, Vincent Noël, Emmanuel Barillot, and
   Laurence Calzone. ``Personalized logical models to investigate cancer
   response to BRAF treatments in melanomas and colorectal cancers.''
   bioRxiv (2020).
+  \href{https://www.biorxiv.org/content/10.1101/2020.05.27.119016v2}{Link}.
 \item
   Béal, Jonas, and Aurélien Latouche. ``Causal inference with multiple
   versions of treatment and application to personalized medicine.''
   arXiv preprint arXiv:2005.12427 (2020).
+  \href{https://arxiv.org/abs/2005.12427}{Link}.
 \end{itemize}
+
+These three articles were described or completed in oral presentations,
+respectively in International Conference of Systems Biology 2018,
+conference on Intelligent Systems for Molecular Biology (ISMB/ECCB 2019,
+\href{https://www.youtube.com/watch?v=6EMBycoR0Ow}{Video}) and
+conference of International Society of Clincial Biostatistics (ISCB41,
+coming in August 2020).
 \EndKnitrBlock{summarybox}
 
 \clearemptydoublepage
@@ -712,9 +746,9 @@ and based on most relevant PubMed entries for ``cancer model'' search.}\label{fi
 Another way to classify cancer models may be to group them into the
 following categories: \emph{in vivo}, \emph{in vitro} and \emph{in
 silico}. The first two clearly belong to the physical models but one
-uses whole living organisms (e.g.~a human tumour implanted in an
+uses whole living organisms (e.g.~a human tumor implanted in an
 immunodeficient mouse) and the other separates the living from its
-organism in order to place it in a controlled environment (e.g.~tumour
+organism in order to place it in a controlled environment (e.g.~tumor
 cells in growth medium in a Petri dish). \textbf{In the thesis, data
 from both \emph{in vivo} and \emph{in vitro} models will be used.
 However, unless otherwise stated, a model will always refer to a
@@ -767,28 +801,28 @@ generation inside the box. (C) Statistical modeling finding the function
 The first modeling approach, that we will call \textbf{mechanistic},
 consists in \textbf{building the box by imitating what we think is the
 process of data generation} (Figure \ref{fig:boxes}B). This integration
-of a priori knowledge can take different forms. In this thesis it will
+of prior knowledge can take different forms. In this thesis it will
 often come back to presupposing certain relations between entities
 according to what is known about their behaviour. \(X_1\) which acts on
 \(X_3\) may correspond to the action of one biological entity on
 another, supposedly unidirectional; just as the joint action of \(X_2\)
 and \(X_3\) may reflect a known synergy in the expression of genes or
 the action of proteins. Mathematically this is expressed here with a
-perfectly deterministic model defined a priori. All in all, in a purely
-mechanistic approach, the nature of the relations between entities
-should be linked to biological processes and the parameters in the model
-all have biological definitions in such a way that it could even be
-considered to measure them directly. For example, the coefficient \(2\)
-multiplying \(X_2X_3\) can correspond to a stoichiometric coefficient or
-a reaction constant which have a theoretical justification or are
-accessible by experimentation. In some fields of literature these models
-are sometimes called mathematical models because they propose a
-mathematical translation of a phenomenon, which does not start from the
-data in a bottom-up approach but rather from a top-down theoretical
-framework. In this thesis we will adhere to the \emph{mechanistic model}
-name, which is more transparent and less ambiguous compared to other
-approaches also based on mathematics, without necessarily the other
-characteristics described above.
+perfectly deterministic model defined \emph{a priori}. All in all, in a
+purely mechanistic approach, the nature of the relations between
+entities should be linked to biological processes and the parameters in
+the model all have biological definitions in such a way that it could
+even be considered to measure them directly. For example, the
+coefficient \(2\) multiplying \(X_2X_3\) can correspond to a
+stoichiometric coefficient or a reaction constant which have a
+theoretical justification or are accessible by experimentation. In some
+fields of literature these models are sometimes called mathematical
+models because they propose a mathematical translation of a phenomenon,
+which does not start from the data in a bottom-up approach but rather
+from a top-down theoretical framework. In this thesis we will adhere to
+the \emph{mechanistic model} name, which is more transparent and less
+ambiguous compared to other approaches also based on mathematics,
+without necessarily the other characteristics described above.
 
 The second approach, often called \textbf{statistical modeling}, or
 sometimes machine learning depending on the precise context and
@@ -940,10 +974,11 @@ assumed that the growth of the lynx population depends primarily on the
 availability of food for all lynxes, summarized in the \(b_2HL\) term.
 In the absence of hares, the lynx population decreases, as denoted by
 the coefficient \(-b_1L\). Important features of mechanistic models are
-illustrated here: the equations are based on a priori knowledge or
-assumptions about the structure of the problem and the parameters of the
-model can be interpreted. \(a_1\), for example, could correspond to the
-frequency of litters among hares and the number of offspring per litter.
+illustrated here: the equations are based on \emph{a priori} knowledge
+or assumptions about the structure of the problem and the parameters of
+the model can be interpreted. \(a_1\), for example, could correspond to
+the frequency of litters among hares and the number of offspring per
+litter.
 
 \begin{figure}
 
@@ -966,8 +1001,8 @@ initial conditions.}\label{fig:lotka}
 
 
 
-This being said, the structure of the model having been defined a
-priori, it remains to determine its parameters. Two options would
+This being said, the structure of the model having been defined \emph{a
+priori}, it remains to determine its parameters. Two options would
 theoretically be possible: to propose values based on the interpretation
 of the parameters and ecological knowledge, or to fit the model to the
 data in order to find the best parameters. For the sake of simplicity,
@@ -1029,7 +1064,7 @@ concise manner by the poet Paul Valéry at the beginning of this chapter.
 \textbf{Whatever its nature, a model is always a simplified
 representation of reality and by extension is always wrong to a certain
 extent}. This is a generally well-accepted fact, but it is crucial to
-understand the implications for the modeller. This simplification is not
+understand the implications for the modeler. This simplification is not
 a collateral effect but an intrinsic feature of any model:
 
 \begin{quote}
@@ -1127,7 +1162,7 @@ summarize some of the most important characteristics of this disease
 before returning to the models themselves in the next chapter. Without
 aiming for exhaustiveness, and after an epidemiological and statistical
 description, we will focus on the most useful information for the
-modeller, i.e., the underlying biological mechanisms and available data.
+modeler, i.e., the underlying biological mechanisms and available data.
 
 \begin{figure}
 
@@ -1652,8 +1687,8 @@ the TCGA data about genetic alterations, presented in Figure
 not only their internal organization but also their cross-talk
 \citep{sanchez2018oncogenic}. This representation is proposed in Figure
 \ref{fig:pathways} and is one the most recent and comprehensive view of
-the kind of tools and data available to the modeller who wants to
-dissect more deeply the mechanisms involved in cancer.
+the kind of tools and data available to the modeler who wants to dissect
+more deeply the mechanisms involved in cancer.
 
 \chapter{Mechanistic modeling of cancer: from complex disease to systems
 biology}\label{mechanistic-cancer}
@@ -1712,7 +1747,7 @@ to make sense of cancer incidence statistics
 \citep[\citet{knudson1971mutation}]{armitage1954age}. These models,
 however, remained relatively descriptive in that they did not shed any
 particular light on the biological mechanisms involved and focused on
-gross characteristics of tumours. The integration of more advanced
+gross characteristics of tumors. The integration of more advanced
 knowledge as well as the progressive refinement of mathematical
 formalisms has nevertheless allowed these models to proliferate while
 gaining in interpretability, with for instance mechanistic models of
@@ -1722,8 +1757,7 @@ mathematicians {[}\citet{araujo2004history}; byrne2010dissecting{]},
 even predicting invasion or response to surgical treatments using
 spatial modeling \citep{swanson2003virtual}. This line of research is
 still quite active today and provides a mathematical basis for
-comparison with tumour experimental growth
-\citep{benzekry2014classical}.
+comparison with tumor experimental growth \citep{benzekry2014classical}.
 
 \begin{figure}
 
@@ -1796,21 +1830,22 @@ elements. While these systems can be found in many different scientific
 fields, the cell as a complex system is characterized by the diversity
 and multifunctionality of its constituent elements (genes, proteins,
 small molecules, enzymes), which nevertheless contribute to organized
-and a priori non-chaotic behaviour \citep{kitano2002computational}.
-Thus, the role of a protein such as the p53 tumour suppressor can only
-be understood by taking into account the interplay between its
-relationships with transcription factors and biochemical modifications
-of the molecule itself \citep{kitano2002computational}. In a cell, as in
-any complex system, the multiplication of components and interactions
-can make the response or behaviour of the system unexpected or
-unpredictable. Non-linear responses, such as abrupt changes in the state
-of a system, called critical transitions, can be observed in response to
-a moderate change in the signal \citep{trefois2015critical}. Generally
-speaking, it is possible to observe \textbf{emergent behaviours}, i.e.,
-behaviours of the system as a whole that were not trivially deducible
-from the individual behaviours of its components. This has been
-documented, through experiments and simulations, in the study of cell
-signalling pathways and the resulting biological decisions
+and \emph{a priori} non-chaotic behaviour
+\citep{kitano2002computational}. Thus, the role of a protein such as the
+p53 tumor suppressor can only be understood by taking into account the
+interplay between its relationships with transcription factors and
+biochemical modifications of the molecule itself
+\citep{kitano2002computational}. In a cell, as in any complex system,
+the multiplication of components and interactions can make the response
+or behaviour of the system unexpected or unpredictable. Non-linear
+responses, such as abrupt changes in the state of a system, called
+critical transitions, can be observed in response to a moderate change
+in the signal \citep{trefois2015critical}. Generally speaking, it is
+possible to observe \textbf{emergent behaviours}, i.e., behaviours of
+the system as a whole that were not trivially deducible from the
+individual behaviours of its components. This has been documented,
+through experiments and simulations, in the study of cell signalling
+pathways and the resulting biological decisions
 \citep{bhalla1999emergent, helikar2008emergent}. These considerations
 have thus given rise to \textbf{system-level or holistic approaches that
 aim to integrate data and knowledge into more comprehensive
@@ -1829,7 +1864,7 @@ the responses triggered by a drug on a presumably promising molecular
 target, makes little sense without integrated approaches. In addition,
 cancers are characterized by the accumulation of numerous mutations and
 alterations over time that must be considered concomitantly. These
-points of view of biologists and modellers reinforce the observation
+points of view of biologists and modelers reinforce the observation
 already made in the previous chapter of cancer as a network disease, as
 a system disease (Figure \ref{fig:pathways}).
 
@@ -2064,7 +2099,7 @@ Drawbacks & Difficulty determining or fitting parameters & More difficult to lin
 
 
 
-These two formalisms, which are among the most frequent for modelling
+These two formalisms, which are among the most frequent for modeling
 biological networks, share many similarities, in particular the
 propensity to be built according to bottom-up strategies based on
 knowledge of the elementary parts of the model, i.e., biological
@@ -2852,7 +2887,7 @@ a powerful tool to study their particularities
 
 Finally, the data can be used to validate the \textbf{biological or
 clinical relevance of the models} (Figure \ref{fig:logical-data}, sixth
-step). Compared to a system of differential equations, logical modelling
+step). Compared to a system of differential equations, logical modeling
 has the particularity of being more abstract and therefore less directly
 reliable to an experimental reality for its validation. A system of
 differential equations can be compared to the chemical kinetics of the
@@ -3643,13 +3678,14 @@ focused on the application of the PROFILE method.
 \section{One step further with drugs}\label{one-step-further-with-drugs}
 
 One of the main clinical consequences of the underlying molecular
-complexity of cancers is the divergent response to treatment, even for a
-priori similar tumors. In the light of high-throughput sequencing data,
-the mechanisms governing these responses are somewhat better understood,
-for patients and especially for model organisms such as cell lines
-\citep{heiser2012subtype, garnett2012systematic}. But beyond a few
-simple cases, the diversity of response biomarkers once again calls for
-\textbf{holistic approaches} to unravel the underlying mechanisms.
+complexity of cancers is the divergent response to treatment, even for
+\emph{a priori} similar tumors. In the light of high-throughput
+sequencing data, the mechanisms governing these responses are somewhat
+better understood, for patients and especially for model organisms such
+as cell lines \citep{heiser2012subtype, garnett2012systematic}. But
+beyond a few simple cases, the diversity of response biomarkers once
+again calls for \textbf{holistic approaches} to unravel the underlying
+mechanisms.
 
 \subsection{Modeling response to cancer
 treatments}\label{modeling-response-to-cancer-treatments}
@@ -3760,9 +3796,9 @@ Generally speaking, one must be able to \textbf{translate the mechanism
 of action of the treatment into the logical model}. The impact of more
 systemic treatments such as chemotherapy or radiotherapy is more
 difficult to study with these methods, in any case with most of the
-logical models published to date, even if in theory, precise modelling
-of the pathways associated with these treatments (such as DNA repair)
-could contribute to this.
+logical models published to date, even if in theory, precise modeling of
+the pathways associated with these treatments (such as DNA repair) could
+contribute to this.
 
 It is then possible to analyze the personalized scores for each cell
 line (asyptotic values of the phenotypic read-outs of the model) with or
@@ -3777,7 +3813,7 @@ to facilitate the interpretation of positions and drug-induced
 displacements. In this mock example, based on personalized models,
 treatment would promote a shift from proliferative to more apoptotic or
 quiescent behaviors, in particular in the red and green cell lines,
-which are a priori more sensitive to the treatment.
+which are \emph{a priori} more sensitive to the treatment.
 
 \subsection{A pan-cancer attempt}\label{a-pan-cancer-attempt}
 
@@ -3832,7 +3868,7 @@ experimental sensitivities, one realizes that responses to
 \textbf{certain drugs are correctly predicted when others are not
 correlated at all}. But it is difficult to decide between two different
 interpretations: does this mean that correctly predicted drugs are well
-modelled and others are not? Or does it mean that some correlations
+modeled and others are not? Or does it mean that some correlations
 appear to be better by chance because so many drugs have been modeled? A
 case study can be illustrated more precisely with the example shown in
 Figure \ref{fig:PROFILE-PCA}. In order to simplify the analysis
@@ -3920,8 +3956,8 @@ features**.
 
 }
 
-\caption[BRAF modelling flowchart: from a biological question to validated personalized logical models]{\textbf{BRAF modelling flowchart: from a
-biological question to validated personalized logical models.}}\label{fig:BRAF-GA}
+\caption[BRAF modeling flowchart: from a biological question to validated personalized logical models]{\textbf{BRAF modeling flowchart: from a biological
+question to validated personalized logical models.}}\label{fig:BRAF-GA}
 \end{figure}
 
 
@@ -4153,21 +4189,17 @@ panel A to panel C.
 
 \caption[Validation of personalized models of BRAF inhibition with cell lines data]{\textbf{Validation of personalized models of
 BRAF inhibition with cell lines data.} (A) Pearson correlations between
-normalized \emph{Proliferation} scores from personalized models and
-experimental sensitivities to BRAF inhibition by drug or CRISPR
-targeting; each row corresponds to a different personalization strategy;
-only the values for the significant correlations are displayed. (B)
-Scatter plots with non-overlapping points corresponding to correlations
-of panel A, with the three personalization strategies, focusing on one
-drug (PLX-4720) and one CRISPR dataset (Broad). (C) Enlargement of one
-scatter plot in B (left) with the table describing the omics profiles
-used for each cell line to explore the response mechanisms; interactive
+normalized \emph{Proliferation} scores from models and experimental
+sensitivities to BRAF inhibition (drug or CRISPR); only significant
+correlations are displayed. (B) Scatter plots with non-overlapping
+points corresponding to correlations of panel A for one drug (PLX-4720)
+and one CRISPR dataset (Broad) only. (C) Enlargement of one scatter plot
+in B (left) with the table describing the omics profiles used for each
+cell line to explore the response mechanisms (right); interactive
 version in Figure \ref{fig:BRAF-interactive} or
 \href{https://github.com/sysbio-curie/PROFILE_BRAF_Model/blob/master/Analysis.html}{GitHub
 files}.}\label{fig:BRAF-results}
 \end{figure}
-
-
 
 
 
@@ -6220,6 +6252,17 @@ server}}\label{fig:Shiny}
 
 
 \section{Application to PDX}\label{application-to-pdx}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{fig/screenshot-shiny} 
+
+}
+
+\caption[RShiny interactive application to investigate various simulation scenarios of precision medicine evaluation]{\textbf{RShiny test}}\label{fig:Shiny2}
+\end{figure}
+
+
 
 The method is then applied to public data from patient-derived
 xenografts \citep{gao2015high}, described in section \ref{main-PDX} and
