@@ -163,7 +163,7 @@ These questions can be addressed using cell line data. Using the logical model o
 
 }
 
-\caption[Validation of personalized *Proliferation* scores in cell lines]{(ref:PROFILE-CL-caption)}(\#fig:PROFILE-CL)
+\caption[Validation of personalized \emph{Proliferation} scores in cell lines]{(ref:PROFILE-CL-caption)}(\#fig:PROFILE-CL)
 \end{figure}
 (ref:PROFILE-CL-caption) **Validation of personalized *Proliferation* scores in cell lines.** (A) Comparison with MKI67 proliferation biomarker for all cancer cell lines. (B) Same with breast (BRCA) and lung (LUAD) cancer only. (C) Comparison with doubling times in a subset of 60 cell lines.  
   
@@ -178,7 +178,7 @@ It is possible to go one step further by comparing these personalized *Prolifera
 
 }
 
-\caption[Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort]{(ref:PROFILE-METABRIC-Grade-caption)}(\#fig:PROFILE-METABRIC-Grade)
+\caption[Comparaison of personalized scores with tumor grades for breast cancer patients in METABRIC cohort]{(ref:PROFILE-METABRIC-Grade-caption)}(\#fig:PROFILE-METABRIC-Grade)
 \end{figure}
 (ref:PROFILE-METABRIC-Grade-caption) **Comparaison of personalized scores with tumor grades for breast cancer patients in METABRIC cohort.** Comparisons are provided for different personalization strategies (with mutations and/or RNA) and two different model nodes (*Proliferation* and *Apoptosis*). 
 
@@ -192,7 +192,7 @@ Patient data can as well be used to reproduce analyses of the same type as those
 
 }
 
-\caption[Hazard ratios for *Proliferation* and *Apoptosis* in a survival Cox model in METABRIC cohort]{(ref:PROFILE-METABRIC-Cox-caption)}(\#fig:PROFILE-METABRIC-Cox)
+\caption[Hazard ratios for \emph{Proliferation} and \emph{Apoptosis} in a survival Cox model in METABRIC cohort]{(ref:PROFILE-METABRIC-Cox-caption)}(\#fig:PROFILE-METABRIC-Cox)
 \end{figure}
 (ref:PROFILE-METABRIC-Cox-caption) **Hazard ratios for *Proliferation* and *Apoptosis* in a survival Cox model in METABRIC cohort.** Higher *Proliferation* (resp. *Apoptosis*) scores correspond to higher (resp. lower) probabilities of death.
 
@@ -204,7 +204,7 @@ This comparison to clinical data can be extended to **patient survival data** in
 
 }
 
-\caption[Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort]{(ref:PROFILE-METABRIC-Survival-caption)}(\#fig:PROFILE-METABRIC-Survival)
+\caption[Prognostic value of \emph{Proliferation} scores for breast cancer patients in METABRIC cohort]{(ref:PROFILE-METABRIC-Survival-caption)}(\#fig:PROFILE-METABRIC-Survival)
 \end{figure}
 (ref:PROFILE-METABRIC-Survival-caption) **Prognostic value of *Proliferation* scores for breast cancer patients in METABRIC cohort.** (A) Survival curve for overall survival stratified with *Proliferation* scores from personalized models integrating mutations and RNA; scores have binarized based on median and survival censored at 120 months. (B) Same with *Apoptosis* scores. (C) Survival curve stratified with combinations of *Proliferation* and *Apoptosis* scores, based on the same thresholds, and the corresponding number of patients at risk (D).
 

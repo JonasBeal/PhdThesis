@@ -92,7 +92,7 @@ One of the first applications of personalized mechanistic models to cancer is th
 
 }
 
-\caption[Schematic example of logical and ODE modeling around MAPK signaling]{(ref:fey2-caption)}(\#fig:fey2)
+\caption[Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by Fey \emph{et al}.]{(ref:fey2-caption)}(\#fig:fey2)
 \end{figure}
 (ref:fey2-caption) **Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by @fey2015signaling.** (A) Schematic representation (as a process description [@le2015quantitative]) for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude $A$, Hill exponent $H$ and activation threshold $K_{50}$. (C) Survival curves for neuroblastoma patients based on binarized $A$, $K_{50}$ and $H$; binarization thresholds having been defined based on optimization screening on calibration cohort.  
   
@@ -105,7 +105,7 @@ Thus, the $R^2$ of the output $H$ is $0.39$ while that of the combined inputs is
 
 }
 
-\caption[Decomposition of $R^2$ for inputs and output for ODE model in @fey2015signaling]{(ref:R2-Fey-caption)}(\#fig:R2-Fey)
+\caption[Decomposition of $R^2$ for inputs and output for ODE model in Fey \emph{et al}.]{(ref:R2-Fey-caption)}(\#fig:R2-Fey)
 \end{figure}
 (ref:R2-Fey-caption) **Decomposition of $R^2$ for inputs and output for ODE model in @fey2015signaling.** (A) Results for the Fey model inputs and output $H$ as defined in Figure \@ref(fig:fey2)A and B. (B) Same using the model without positive feedback between JNK and MKK7. Colors represent the origine of $R^2$ contribution. In particular, for right colums (model$Y\sim H$), the red share represent the proportion of the $R^2$ of the output $H$ that does not come linearly from the inputs, and therefore its emerging part.  
 

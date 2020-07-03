@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  2 JUL 2020 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  3 JUL 2020 16:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1991,9 +1991,6 @@ Package rerunfilecheck Info: File `PhdThesis2.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 546.
  ) 
 Here is how much of TeX's memory you used:
@@ -2013,7 +2010,7 @@ mr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on PhdThesis2.pdf (24 pages, 7177071 bytes).
+Output written on PhdThesis2.pdf (24 pages, 7177053 bytes).
 PDF statistics:
  204 PDF objects out of 1000 (max. 8388607)
  163 compressed objects within 2 object streams
