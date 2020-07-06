@@ -404,7 +404,7 @@ Biostatistiques, Inférence causale, Médecine de précision
 
 \afterpage{\blankpage}
 
-\chapter*{Acknowledgements}
+\chapter*{Remerciements}
 
 \initial{O}n ne se lance pas une thèse dans le seul but d'en écrire les
 remerciements. C'est peut être un tort tant l'occasion est belle d'en
@@ -477,7 +477,7 @@ ma capacité à choisir ma voie et à la tracer avec succès.
 
 Enfin merci à Honorine pour tout le reste, c'est à dire pour
 l'essentiel. Si ``\emph{on ne possède d'un être que ce qu'on change en
-lui}\footnote{André Malraux, \emph{La condition humaine}}'', ne doute
+lui}''\footnote{André Malraux, \emph{La condition humaine}}, ne doute
 jamais qu'une large portion de ce travail t'appartient. Son auteur quant
 à lui ne s'appartient déjà plus tout à fait\ldots{}
 
@@ -1343,7 +1343,7 @@ covariates.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{fig/globocan-map} 
+{\centering \includegraphics[width=1\linewidth]{fig/globocan-map} 
 
 }
 
@@ -5934,8 +5934,8 @@ standard}{First causal effect (\textbackslash{}text\{CE\}\_1): comparison with a
 The first possible target trial is to compare the precision medicine arm
 with a control arm in which \textbf{all patients have been treated with
 the same single treatment}. This could classically be the current
-standard of care applied to all patients (e.g chemotherapy cancer
-treatment).
+standard of care applied to all patients (\emph{e.g.}, chemotherapy
+cancer treatment).
 
 \subsubsection{\texorpdfstring{Second causal effect (\(\text{CE}_2\)):
 comparison with physician's assignment of
@@ -5995,13 +5995,13 @@ characteristics. \(A\) can be seen as a compound treatment
 Therefore, we define a variable \(K_j\) denoting the version of
 treatment administered to individual \(j\). If \(A_j=a\) is the arm to
 which the patient is assigned, \(K^a_j\) is the molecule received, the
-version of treatment \(A=a\) (e.g a specific anti-cancer drug) and
-\(K^a_j \in \mathcal{K}^a\), the set of versions of treatment \(A=a\).
-In our precision medicine problem, \(A=0\) will denote control patients
-and \(A=1\) the patients treated with an anti-cancer drug of the
-precision medicine pool. \(\mathcal{K}^1=\{k^1_1, ..., k^1_P\}\) is the
-set of \(P\) possible targeted treatments for \(A=1\) patients. For the
-sake of simplicity we will assume that there is only one treatment
+version of treatment \(A=a\) (\emph{e.g.}, a specific anti-cancer drug)
+and \(K^a_j \in \mathcal{K}^a\), the set of versions of treatment
+\(A=a\). In our precision medicine problem, \(A=0\) will denote control
+patients and \(A=1\) the patients treated with an anti-cancer drug of
+the precision medicine pool. \(\mathcal{K}^1=\{k^1_1, ..., k^1_P\}\) is
+the set of \(P\) possible targeted treatments for \(A=1\) patients. For
+the sake of simplicity we will assume that there is only one treatment
 version for \(A=0\) controls, \(\mathcal{K}^0=\{k^0\}\). We also need to
 define other counterfactual variables like \(K^a_j(a)\), the
 counterfactual version of treatment \(A=a\) if the subject had been
@@ -6560,7 +6560,8 @@ Figure \ref{fig:simulation-results}B.}\label{fig:PDX-results}
 
 
 
-\section{Limitations and perspective}\label{limitations-and-perspective}
+\section{Limitations and
+perspectives}\label{limitations-and-perspectives-1}
 
 In synthesis, this work proposes a conceptual framework for evaluating a
 precision medicine algorithm, taking advantage of data already generated
@@ -6912,7 +6913,7 @@ relative quantification of proteins with RPPA technology (Figure
 
 }
 
-\caption[Available omics and survival in METABRIC Breast Cancer dataset]{\textbf{Available omics for TCGA Breast and
+\caption[Available omics for TCGA Breast and Prostate cancer]{\textbf{Available omics for TCGA Breast and
 Prostate cancer}. (A) Number of patients for each omics type and their
 combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive
 Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma)
@@ -6961,7 +6962,7 @@ Factors} (GFs), \emph{Hypoxia}, \emph{TNFalpha}, \emph{ROS},
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINsim representation of the logical model
+\caption[GINsim representation of the logical model described in Fumia et al. (2013)]{\textbf{GINsim representation of the logical model
 described in \citet{fumia2013boolean}.}}\label{fig:Fumia}
 \end{figure}
 
@@ -6991,7 +6992,7 @@ autor has helped to avoid potential errors in use.
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINsim representation of the `Verlingue'
+\caption[GINsim representation of the "Verlingue" logical model described in Verlingue et al.]{\textbf{GINsim representation of the `Verlingue'
 logical model described in \citet{verlingue2016silico}.}}\label{fig:Verlingue}
 \end{figure}
 
@@ -7121,7 +7122,7 @@ Androgen, TNF alpha and Carcinogen presence) and 6 outputs
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINsim representation of the `Montagud'
+\caption[GINsim representation of the "Montagud" logical model of prostate cancer]{\textbf{GINsim representation of the `Montagud'
 logical model of prostate cancer.}}\label{fig:Montagud}
 \end{figure}
 

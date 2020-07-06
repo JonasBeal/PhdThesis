@@ -1,4 +1,4 @@
-\chapter*{Acknowledgements}
+\chapter*{Remerciements}
 
 \initial{O}n ne se lance pas une thèse dans le seul but d’en écrire les remerciements. C’est peut être un tort tant l’occasion est belle d’en profiter pour exprimer sa gratitude à tous ceux qui la méritent sans que l’on pense toujours à le leur dire. Je vais donc essayer de remercier tous ceux qui occupent mon esprit à l’heure où j’écris ces lignes, d’un bout à l’autre du spectre, de ceux sans qui cette thèse n’aurait pas été la même à ceux sans qui je serais bien différent.  
   
@@ -24,6 +24,6 @@ De manière toujours plus personnelle, je me dois aussi de remercier tous les am
 Une grande partie de la gratitude restante à ce stade revient à ma famille pour son soutien sans faille. Merci à mes parents, frère, soeur et grand-mère pour m’avoir accompagné tout au long de mes études de leur curiosité et de leur fierté, autant de vent dans mes voiles sans lequel je n’aurais pas tant avancé. Merci tout spécialement à mes parents, je dois à votre tranquille mais tenace confiance de n’avoir jamais douté de ma capacité à choisir ma voie et à la tracer avec succès.  
   
 
-Enfin merci à Honorine pour tout le reste, c’est à dire pour l’essentiel. Si "*on ne possède d’un être que ce qu’on change en lui*^[André Malraux, *La condition humaine*]", ne doute jamais qu’une large portion de ce travail t'appartient. Son auteur quant à lui ne s’appartient déjà plus tout à fait…
+Enfin merci à Honorine pour tout le reste, c’est à dire pour l’essentiel. Si "*on ne possède d’un être que ce qu’on change en lui*"^[André Malraux, *La condition humaine*], ne doute jamais qu’une large portion de ce travail t'appartient. Son auteur quant à lui ne s’appartient déjà plus tout à fait…
 
 \clearemptydoublepage

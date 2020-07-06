@@ -34,7 +34,7 @@ Before going down to the molecular level, it is important to detail some figures
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{fig/globocan-map} 
+{\centering \includegraphics[width=1\linewidth]{fig/globocan-map} 
 
 }
 

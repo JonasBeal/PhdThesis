@@ -113,7 +113,7 @@ Another reference database for breast cancer is the one from the TCGA consortium
 
 }
 
-\caption[Available omics and survival in METABRIC Breast Cancer dataset]{(ref:TCGA-bp-caption)}(\#fig:TCGA-bp)
+\caption[Available omics for TCGA Breast and Prostate cancer]{(ref:TCGA-bp-caption)}(\#fig:TCGA-bp)
 \end{figure}
 (ref:TCGA-bp-caption) **Available omics for TCGA Breast and Prostate cancer**. (A) Number of patients for each omics type and their combinations, depicted as a Venn diagram, in TCGA BRCA (Breast Invasive Carcinoma) study. (B) Same for the TCGA PRAD (Prostate Adenocarcinoma) study.
 
@@ -135,7 +135,7 @@ For this thesis, a published Boolean model from [@fumia2013boolean] has first be
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{(ref:Fumia-caption)}(\#fig:Fumia)
+\caption[GINsim representation of the logical model described in Fumia et al. (2013)]{(ref:Fumia-caption)}(\#fig:Fumia)
 \end{figure}
 (ref:Fumia-caption) **GINsim representation of the logical model described in @fumia2013boolean.**
 
@@ -149,7 +149,7 @@ Another logical model of similar size and scope was also used, primarily for the
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{(ref:Verlingue-caption)}(\#fig:Verlingue)
+\caption[GINsim representation of the "Verlingue" logical model described in Verlingue et al.]{(ref:Verlingue-caption)}(\#fig:Verlingue)
 \end{figure}
 (ref:Verlingue-caption) **GINsim representation of the 'Verlingue' logical model described in @verlingue2016silico.**
 
@@ -184,7 +184,7 @@ In the context of the European project [PRECISE](https://precise-project.eu/) (P
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{(ref:Montagud-caption)}(\#fig:Montagud)
+\caption[GINsim representation of the "Montagud" logical model of prostate cancer]{(ref:Montagud-caption)}(\#fig:Montagud)
 \end{figure}
 (ref:Montagud-caption) **GINsim representation of the 'Montagud' logical model of prostate cancer.**
 

@@ -60,7 +60,7 @@ plot_B <- filter(CL_clin, TCGA_label %in% big_labels) %>%
 
 plot_Bis <- cowplot::plot_grid(NULL, plot_B$Main_bar, plot_B$Sizes, plot_B$Matrix,
                                nrow=2, align='hv', rel_heights = c(1,1),
-                               rel_widths = c(1,3))
+                               rel_widths = c(1,2))
 
 plot_grid(plot_A, plot_Bis, nrow = 2, rel_heights = c(3, 4), labels = "AUTO")
 
@@ -204,7 +204,7 @@ plot_grid(plot_A, plot_grid(plot_B$plot,
 
 Another reference database for breast cancer is the one from the TCGA consortium [@cancer2012comprehensive]. The cohort is smaller than METABRIC and its clinical follow-up is more limited. In contrast, the omics data are more comprehensive and include RNA sequencing and relative quantification of proteins with RPPA technology (Figure \@ref(fig:TCGA-bp)A). 
 
-```{r TCGA-bp, echo=FALSE, out.width = "70%", fig.cap='(ref:TCGA-bp-caption)', fig.scap='Available omics and survival in METABRIC Breast Cancer dataset', fig.align='center', fig.height=5, fig.width=8}
+```{r TCGA-bp, echo=FALSE, out.width = "70%", fig.cap='(ref:TCGA-bp-caption)', fig.scap='Available omics for TCGA Breast and Prostate cancer', fig.align='center', fig.height=5, fig.width=8}
 
 #data types breast
 TCGA_BRCA_list <- readRDS("data/appendix/TCGA_b_list.rds")
@@ -232,7 +232,7 @@ Several logical models of cancer are used in this thesis and some additional des
 
 For this thesis, a published Boolean model from [@fumia2013boolean] has first been used to illustrate our PROFILE methodology. This regulatory network summarizes several key players and pathways involved in cancer mechanisms such as RTKs, PI3K/AKT, WNT/$\beta$-catenin, TGF-$\beta$/Smads, Rb, HIF-1, p53 and ATM/ATR. An input node *Acidosis* has been added, along with an output node *Proliferation* used as a readout for the activity of any of the cyclins (*CyclinA*, *CyclinB*, *CyclinD* and *CyclinE*). This slightly extended model contains 98 nodes and 254 edges and its inputs are *Acidosis*, *Nutrients*, *Growth Factors* (GFs), *Hypoxia*, *TNFalpha*, *ROS*, *PTEN*, *p14ARF*, *GLI*, *FOXO*, *APC* and *MAX*. Its outputs are *Proliferation*, *Apoptosis*, *DNA_repair*, *DNA_damage*, *VEGF*, *Lactic_acid*, *GSH*, *GLUT1* and *COX412*.
 
-```{r Fumia, echo=FALSE, out.width = "90%", fig.cap='(ref:Fumia-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
+```{r Fumia, echo=FALSE, out.width = "90%", fig.cap='(ref:Fumia-caption)', fig.scap='GINsim representation of the logical model described in Fumia et al. (2013)', fig.align='center'}
 knitr::include_graphics("fig/Fumia2013.png")
 ```
 (ref:Fumia-caption) **GINsim representation of the logical model described in @fumia2013boolean.**
@@ -241,7 +241,7 @@ knitr::include_graphics("fig/Fumia2013.png")
 
 Another logical model of similar size and scope was also used, primarily for the study of treatment responses. This model was built by Loïc Verlingue, a medical oncologist and member of the laboratory and preliminary versions of the model are described in @verlingue2016comprehensive and @verlingue2016silico. One of the interests of this model is that it has been designed with a more clinical perspective, notably centred on the response to MTOR inhibitors. In addition, it presents more biological read-outs used for interpretation, and we will use mainly *Proliferation* (also called *G1_S* in the model files to designate the associated stage of the cell cycle), *Apoptosis* and *Quiescence* in particular. In addition, being able to discuss and collaborate directly with the model autor has helped to avoid potential errors in use.
 
-```{r Verlingue, echo=FALSE, out.width = "90%", fig.cap='(ref:Verlingue-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
+```{r Verlingue, echo=FALSE, out.width = "90%", fig.cap='(ref:Verlingue-caption)', fig.scap='GINsim representation of the "Verlingue" logical model described in Verlingue et al.', fig.align='center'}
 knitr::include_graphics("fig/Verlingue.png")
 ```
 (ref:Verlingue-caption) **GINsim representation of the 'Verlingue' logical model described in @verlingue2016silico.**
@@ -271,7 +271,7 @@ Besides a list of formalized biological assertions, retrieved from literature, h
 In the context of the European project [PRECISE](https://precise-project.eu/) (Personalized Engine for Cancer Integrative Study and Evaluation), focused on the integrative study of prostate cancer, an adapted logical model has been built. This prostate cancer model is initially based on the generic structure of the Fumia model presented in section \@ref(appendix-fumia), which has been considerably enriched and extended with genes and mechanisms specific to prostate cancer such as ERG, SPOP or AR. The model contains 133 nodes and 449 edges (Figure \@ref(fig:Montagud)) and includes pathways like androgen receptor and growth factor signalling, several signaling pathways (Wnt, NFkB, PI3K/AKT, MAPK, mTOR, SHH), cell cycle, epithelial-mesenchymal transition (EMT), Apoptosis, DNA damage, etc. The model has 9 inputs (EGF, FGF, TGF beta, Nutrients, Hypoxia, Acidosis, Androgen, TNF alpha and Carcinogen presence) and 6 outputs (*Proliferation*, *Apoptosis*, *Invasion*, *Migration*, (bone) *Metastasis* and *DNA repair*).
 
 
-```{r Montagud, echo=FALSE, out.width = "90%", fig.cap='(ref:Montagud-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
+```{r Montagud, echo=FALSE, out.width = "90%", fig.cap='(ref:Montagud-caption)', fig.scap='GINsim representation of the "Montagud" logical model of prostate cancer', fig.align='center'}
 knitr::include_graphics("fig/Montagud.png")
 ```
 (ref:Montagud-caption) **GINsim representation of the 'Montagud' logical model of prostate cancer.**
