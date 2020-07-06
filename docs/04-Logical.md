@@ -14,7 +14,7 @@ Ils tiennent le monde entre leurs infinis ;
 
 Ils expliquent le fond et l’essence des choses,
 
-Puisqu’à travers les temps planent leurs causes."}{Émile Verhaeren (Les nombres)}
+Puisqu’à travers les temps planent leurs causes."}{Émile Verhaeren (Les nombres, in Les Flambeaux noirs, 1891)}
 
 
 

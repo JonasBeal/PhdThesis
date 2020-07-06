@@ -1,6 +1,6 @@
 # Cancer as deregulation of complex machinery
 
-\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka)}
+\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka, 1848)}
 
 
 

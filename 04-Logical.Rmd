@@ -9,7 +9,7 @@ Ils sont, pour éternellement rester : les mêmes.\n
 Primordiaux et définis,\n
 Ils tiennent le monde entre leurs infinis ;\n
 Ils expliquent le fond et l’essence des choses,\n
-Puisqu’à travers les temps planent leurs causes."}{Émile Verhaeren (Les nombres)}')
+Puisqu’à travers les temps planent leurs causes."}{Émile Verhaeren (Les nombres, in Les Flambeaux noirs, 1891)}')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
@@ -21,7 +21,7 @@ knitr::asis_output(
    >Ils tiennent le monde entre leurs infinis ;  
    >Ils expliquent le fond et l’essence des choses,  
    >Puisqu’à travers les temps planent leurs causes.*    
-   >Émile Verhaeren (Les nombres)'
+   >Émile Verhaeren (Les nombres, in Les Flambeaux noirs, 1891)'
    )
 ```
 

@@ -21,7 +21,7 @@ Several analyses in previous chapters are based on data derived from cell lines.
 
 ### Omics profiles
 
-The omics profiles of cancer cell lines have been downloaded from Cell Model Passports [@van2019cell] containing genotypic and phenotypic information about more than 1000 cell lines. Among the available data used in this thesis are the exome sequencing, copy number variations and RNA-sequencing.
+The omics profiles of cancer cell lines have been downloaded from Cell Model Passports [@van2019cell] containing genotypic and phenotypic information about more than 1,000 cell lines. Among the available data used in this thesis are the exome sequencing, copy number variations and RNA-sequencing.
 
 ### Drug screenings {#appendix-GDSC}
 
@@ -68,7 +68,7 @@ plot_grid(plot_A, plot_Bis, nrow = 2, rel_heights = c(3, 4), labels = "AUTO")
 (ref:GDSC-caption) **Distribution of cancer types and data types in GDSC-associated dataset.** (A) Distribution of cell lines per cancer types, highlighting the ones selected in this thesis with more than 20 cell lines. (B) Availibility of data for the 663 selected cell lines in 17 different cancer types.  
   
 
-The cell lines are treated with increasing concentration of drugs and the viability of the cell line relative to untreated control is measured. The dose-response relative viability curve is fitted and then used to compute the half maximal inhibitory concentration ($IC_{50}$) and the area under the dose-response curve (AUC) [@vis2016multilevel], both being represented in Figure. Since the $IC_{50}$ values are often extrapolated outside the concentration range actually tested, we will focus on the AUC metric for all validation with drug screening data. AUC is a value between 0 and 1: values close to 1 mean that the relative viability has not been decreased, and lower values correspond to increased sensitivity to inhibitions. In cases where the ranges of concentrations tested for different drugs vary, comparison of their AUC values does not have a simple and straightforward interpretation.
+The cell lines are treated with increasing concentration of drugs and the viability of the cell line relative to untreated control is measured. The dose-response relative viability curve is fitted and then used to compute the half maximal inhibitory concentration ($IC_{50}$) and the area under the dose-response curve (AUC) [@vis2016multilevel], both being represented in Figure \@ref(fig:AUC). Since the $IC_{50}$ values are often extrapolated outside the concentration range actually tested, we will focus on the AUC metric for all validation with drug screening data. AUC is a value between 0 and 1: values close to 1 mean that the relative viability has not been decreased, and lower values correspond to increased sensitivity to inhibitions. In cases where the ranges of concentrations tested for different drugs vary, comparison of their AUC values does not have a simple and straightforward interpretation.
 
 ```{r AUC, echo=FALSE, out.width = "50%", fig.cap='(ref:AUC-caption)', fig.scap='Drug screening metrics in cell lines', fig.align='center'}
 knitr::include_graphics("fig/AUC.png")
@@ -77,7 +77,7 @@ knitr::include_graphics("fig/AUC.png")
 
 ### CRISPR-Cas9 screening {#appendix-CRISPR}
 
-On top the previous drug response characterization, some CRISPR-Cas9 screenings have  been performed on cancer cell lines. Very basically, this involves using single-guide RNAs (sgRNAs) to direct the targeted inhibition of certain genes. Conceptually, screening is not very different from drug screening since it allows the sensitivity of cell lines to the inhibition of certain targets to be studied. However, this technology makes it possible to target many more different genes since it is based on RNA guide synthesis and not on the existence of drugs with an affinity for the target of interest. Schematically, sreening is therefore broader (thousands of genes), less biased (any gene can be targeted a priori) and more precise (much lower off-target effect).  
+On top the previous drug response characterization, some CRISPR-Cas9 screenings have  been performed on cancer cell lines. Very basically, this involves using single-guide RNAs (sgRNAs) to direct the targeted inhibition of certain genes. Conceptually, screening is not very different from drug screening since it allows the sensitivity of cell lines to the inhibition of certain targets to be studied. However, this technology makes it possible to target many more different genes since it is based on RNA guide synthesis and not on the existence of drugs with an affinity for the target of interest. Schematically, sreening is therefore broader (thousands of genes), less biased (any gene can be targeted *a priori*) and more precise (much lower off-target effect).  
   
 
 Among the various databases available, the ones used in this thesis have been downloaded from Cell Model Passports and come from Sanger Institute [@behan2019prioritization] and Broad Institute [@meyers2017computational]. Both databases present CRISPR inhibition results for thousands of genes for a few hundred cell lines among those presented in the previous section. The Sanger dataset for instance includes 324 cell lines, and 238 in common with the subcohort previously described in the previous section and in Figure \@ref(fig:GDSC).  
@@ -153,17 +153,17 @@ $$\text{Average Response}_t = mean(\Delta Vol_i, 0 \leq i\leq t)$$
 
 $$\text{Best Average Response} = min(\text{Average Response}_t), t>10d$$
 
-We will mainly focus on *Best Average Response*. This metric "captures a combination of speed, strength and durability of response into a single value" *gao2015high*. Qualitatively, lower values correspond to more efficient drugs.
+We will mainly focus on *Best Average Response*. This metric "captures a combination of speed, strength and durability of response into a single value" [@gao2015high]. Qualitatively, lower values correspond to more efficient drugs.
 
 #### A binary outcome
 
-Thresholds of *Best Response* and *Best Average Response* are also defined, inspired by RECIST criteria [@therasse2000new], in order to classify response to treatment into 4 categories: Complete Response (CR), Partial Response (PR, Stable Disease (SD) and Progressive Disease (PD). We designed a binary response status by combining the response categories (CR, PR and SD) into a single 'responder' category (1), opposed to the 'non-responders' progressive diseases (0).
+Thresholds of *Best Response* and *Best Average Response* are also defined, inspired by RECIST criteria [@therasse2000new], in order to classify response to treatment into 4 categories: Complete Response (CR), Partial Response (PR, Stable Disease (SD) and Progressive Disease (PD). We designed a binary response status by combining the response categories (CR, PR and SD) into a single "responder"" category (1), opposed to the "non-responders" progressive diseases (0).
 
 ## Patients {#appendix-datasets-patients}
 
 ### METABRIC
 
-METABRIC dataset is large breast cancer dataset with more than 2000 patients [@pereira2016somatic]. Mutations, CNA, expression (transcriptomics micro-array) and clinical data are available for a majority of patients (Figure \@ref(fig:METABRIC)A), with 1904 patients for whom all the data is available. One of the  particular features of these data is to propose a very long clinical follow-up, over more than 10 years (Figure \@ref(fig:METABRIC)B).
+METABRIC dataset is large breast cancer dataset with more than 2'000 patients [@pereira2016somatic]. Mutations, CNA, expression (transcriptomics micro-array) and clinical data are available for a majority of patients (Figure \@ref(fig:METABRIC)A), with 1'904 patients for whom all the data is available. One of the  particular features of these data is to propose a very long clinical follow-up, over more than 10 years (Figure \@ref(fig:METABRIC)B).
 
 ```{r METABRIC, echo=FALSE, out.width = "90%", fig.cap='(ref:METABRIC-caption)', fig.scap='Available omics and survival in METABRIC Breast Cancer dataset', fig.align='center', fig.height=5, fig.width=8}
 #data types
@@ -202,7 +202,7 @@ plot_grid(plot_A, plot_grid(plot_B$plot,
 
 ### TCGA: Breast cancer
 
-Another reference database for breast cancer is the one from the TCGA consortium [@cancer2012comprehensive]. The cohort is smaller than METABRIC and its clinical follow-up is more limited. In contrast, the omics data are more comprehensive and include RNA sequencing and relative quantification ofsproteins with RPPA technology (Figure \@ref(fig:TCGA-bp)A). 
+Another reference database for breast cancer is the one from the TCGA consortium [@cancer2012comprehensive]. The cohort is smaller than METABRIC and its clinical follow-up is more limited. In contrast, the omics data are more comprehensive and include RNA sequencing and relative quantification of proteins with RPPA technology (Figure \@ref(fig:TCGA-bp)A). 
 
 ```{r TCGA-bp, echo=FALSE, out.width = "70%", fig.cap='(ref:TCGA-bp-caption)', fig.scap='Available omics and survival in METABRIC Breast Cancer dataset', fig.align='center', fig.height=5, fig.width=8}
 
@@ -239,7 +239,7 @@ knitr::include_graphics("fig/Fumia2013.png")
 
 ## Extended logical model of cancer pathways {#appendix-verlingue}
 
-Another logical model of similar size and scope was also used, primarily for the study of treatment responses. This model was built by Loïc Verlingue, a medical oncologist and member of the laboratory and preliminary versions of the model are described in @verlingue2016comprehensive and @verlingue2016silico. One of the interests of this model is that it has been designed with a more clinical perspective, notably centred on the response to MTOR inhibitors. In addition, it presents more biological read-outs used for interpretation, and we will use mainly *Proliferation* (also called *G1_S* in the moel files to designate the associated stage of the cell cycle), *Apoptosis* and *Quiescence* in particular. In addition, being able to discuss and collaborate directly with the model autor has helped to avoid potential errors in use.
+Another logical model of similar size and scope was also used, primarily for the study of treatment responses. This model was built by Loïc Verlingue, a medical oncologist and member of the laboratory and preliminary versions of the model are described in @verlingue2016comprehensive and @verlingue2016silico. One of the interests of this model is that it has been designed with a more clinical perspective, notably centred on the response to MTOR inhibitors. In addition, it presents more biological read-outs used for interpretation, and we will use mainly *Proliferation* (also called *G1_S* in the model files to designate the associated stage of the cell cycle), *Apoptosis* and *Quiescence* in particular. In addition, being able to discuss and collaborate directly with the model autor has helped to avoid potential errors in use.
 
 ```{r Verlingue, echo=FALSE, out.width = "90%", fig.cap='(ref:Verlingue-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
 knitr::include_graphics("fig/Verlingue.png")
@@ -351,7 +351,7 @@ Here is the formal proof for equation \@ref(eq:distrib-treatment-effect), partia
 
 ### Inverse probability of treatment weighted (IPW) estimators for precision medicine {#appendix-IPW}
 
-An extension of IPW methods described in section \@ref(IPW-classic) to multi-valued treatments (only treatment $K$ with different modalities and no $A$) has already been studied and the different formulas and estimators adapted accordingly [@imbens2000role; feng2012generalized], defining in particular a generalized propensity score:
+An extension of IPW methods described in section \@ref(IPW-classic) to multi-valued treatments (only treatment $K$ with different modalities and no $A$) has already been studied and the different formulas and estimators adapted accordingly [@imbens2000role; @feng2012generalized], defining in particular a generalized propensity score:
 
 $$f(k|c)=P[K=k|C=c]=E[I(k)|C=c]$$
 

@@ -221,29 +221,34 @@
 \jurymember{4}{Denis THIEFFRY}{Professeur, ENS, PSL}{Examinateur}
 \jurymember{5}{Emmanuel BARILLOT}{Directeur de Recherche, Institut Curie, PSL}{Directeur de thèse}
 \jurymember{6}{Aurélien LATOUCHE}{Professeur, Institut Curie, Cnam}{Directeur de thèse}
-\jurymember{7}{}{}{}
-\jurymember{8}{Laurence CALZONE}{Ingénieure de recherche, Institut Curie, PSL}{Membre invitée, co-encadrante de thèse}
+\jurymember{7}{Laurence CALZONE}{Ingénieure de recherche, Institut Curie, PSL}{Membre invitée, co-encadrante de thèse}
 
 
 \frabstract{
-  Au delà de ses mécanismes génétiques, le cancer peut-être compris comme une maladie de réseaux qui résulte souvent de l’interaction entre différentes perturbations dans un réseau de régulation cellulaire.  La dynamique de ces réseaux et des voies de signalisation associées est complexe et requiert des approches intégrées. Une d’entre elles est la conception de modèles dits mécanistiques qui traduisent mathématiquement la connaissance biologique des réseaux afin de pouvoir simuler le fonctionnement moléculaire des cancers informatiquement. Ces modèles ne traduisent cependant que les mécanismes généraux à l’oeuvre dans certains cancers en particulier.
+  Au delà de ses mécanismes génétiques, le cancer peut être compris comme une maladie de réseaux qui résulte souvent de l’interaction entre différentes perturbations dans un réseau de régulation cellulaire.  La dynamique de ces réseaux et des voies de signalisation associées est complexe et requiert des approches intégrées. Une d’entre elles est la conception de modèles dits mécanistiques qui traduisent mathématiquement la connaissance biologique des réseaux afin de pouvoir simuler le fonctionnement moléculaire des cancers informatiquement. Ces modèles ne traduisent cependant que les mécanismes généraux à l’oeuvre dans certains cancers en particulier.  
+  
 
-Cette thèse propose en premier lieu de définir des modèles mécanistiques personnalisés de cancer. Un modèle générique est  d’abord défini dans un formalisme logique (ou Booléen), avant d’utiliser les données omiques (mutations, ARN, protéines) de patients ou de lignées cellulaires afin de rendre le modèle spécifique à chacun. Ces modèles personnalisés peuvent ensuite être confrontés aux données cliniques de patients pour vérifier leur validité. Le cas de la réponse clinique aux traitements est exploré en particulier dans cette thèse. La représentation explicite des mécanismes moléculaires par ces modèles permet en effet de simuler l’effet de différents traitements suivant leur mode d’action et de vérifier si la sensibilité d’un patient à un traitement est bien prédite par le modèle personnalisé correspondant. Un exemple concernant la réponse aux inhibiteurs de BRAF dans les mélanomes et cancers colorectaux est ainsi proposé.
+Cette thèse propose en premier lieu de définir des modèles mécanistiques personnalisés de cancer. Un modèle générique est  d’abord défini dans un formalisme logique (ou Booléen), avant d’utiliser les données omiques (mutations, ARN, protéines) de patients ou de lignées cellulaires afin de rendre le modèle spécifique à chacun. Ces modèles personnalisés peuvent ensuite être confrontés aux données cliniques de patients pour vérifier leur validité. Le cas de la réponse clinique aux traitements est exploré en particulier dans ce travail. La représentation explicite des mécanismes moléculaires par ces modèles permet en effet de simuler l’effet de différents traitements suivant leur mode d’action et de vérifier si la sensibilité d’un patient à un traitement est bien prédite par le modèle personnalisé correspondant. Un exemple concernant la réponse aux inhibiteurs de BRAF dans les mélanomes et cancers colorectaux est ainsi proposé.  
+  
 
-La confrontation des modèles mécanistiques de cancer, ceux présentés dans cette thèse et d’autres, aux données cliniques incite par ailleurs à évaluer rigoureusement leurs éventuels bénéfices dans la cadre d’une utilisation médicale. La quantification et l’interprétation de la valeur de certains modèles à visée pronostique est brièvement présentée avant de se focaliser sur le cas particulier des modèles capables de sélectionner le meilleur traitement pour chaque patient en fonction des ses caractéristiques moléculaires. Un cadre théorique est proposé pour étendre les méthodes d’inférence causale à l’évaluation de tels algorithmes de médecine de précision. Une illustration est fournie à l’aide de données simulées et de xénogreffes dérivées de  patients
+La confrontation des modèles mécanistiques de cancer, ceux présentés dans cette thèse et d’autres, aux données cliniques incite par ailleurs à évaluer rigoureusement leurs éventuels bénéfices dans la cadre d’une utilisation médicale. La quantification et l’interprétation de la valeur pronostique des biomarqueurs issus de certains modèles méchanistiques est brièvement présentée avant de se focaliser sur le cas particulier des modèles capables de sélectionner le meilleur traitement pour chaque patient en fonction des ses caractéristiques moléculaires. Un cadre théorique est proposé pour étendre les méthodes d’inférence causale à l’évaluation de tels algorithmes de médecine de précision. Une illustration est fournie à l’aide de données simulées et de xénogreffes dérivées de  patients.  
+  
 
-L’ensemble des méthodes et applications décrites tracent donc un chemin, de la conception de modèles mécanistiques de cancer à leur évaluation grâce à des modèles statistiques émulant des essais cliniques.
+L’ensemble des méthodes et applications décrites tracent donc un chemin, de la conception de modèles mécanistiques de cancer à leur évaluation grâce à des modèles statistiques émulant des essais cliniques, proposant ainsi un cadre pour la mise en oeuvre de la médecine de précision en oncologie.
 
 }
 
 \enabstract{
-  Beyond its genetic mechanisms, cancer can be understood as a network disease that often results from the interaction between different perturbations in a cellular regulatory network.  The dynamics of these networks and associated signaling pathways are complex and require integrated approaches. One approach is to design mechanistic models that translate the biological knowledge of networks in mathematical terms to simulate the molecular features of cancers in a computer-readable form. However, these models only reflect the general mechanisms at work in cancers.
+  Beyond its genetic mechanisms, cancer can be understood as a network disease that often results from the interactions between different perturbations in a cellular regulatory network.  The dynamics of these networks and associated signaling pathways are complex and require integrated approaches. One approach is to design mechanistic models that translate the biological knowledge of networks in mathematical terms to simulate computationally the molecular features of cancers. However, these models only reflect the general mechanisms at work in cancers.  
+  
 
-This thesis proposes to define personalized mechanistic models of cancer. A generic model is first defined in a logical (or Boolean) formalism, before using omics data (mutations, RNA, proteins) from patients or cell lines in order to make the model specific to each one profile. These personalized models can then be compared with the clinical data of patients in order to validate them. The response to treatment is investigated in particular in this thesis. The explicit representation of the molecular mechanisms by these models allows to simulate the effect of different treatments according to their targets and to verify if the sensitivity of a patient to a drug is well predicted by the corresponding personalized model. An example concerning the response to BRAF inhibitors in melanomas and colorectal cancers is thus presented.
+This thesis proposes to define personalized mechanistic models of cancer. A generic model is first defined in a logical (or Boolean) formalism, before using omics data (mutations, RNA, proteins) from patients or cell lines in order to make the model specific to each one profile. These personalized models can then be compared with the clinical data of patients in order to validate them. The response to treatment is investigated in particular in this thesis. The explicit representation of the molecular mechanisms by these models allows to simulate the effect of different treatments according to their targets and to verify if the sensitivity of a patient to a drug is well predicted by the corresponding personalized model. An example concerning the response to BRAF inhibitors in melanomas and colorectal cancers is thus presented.  
+  
 
-The comparison of mechanistic models of cancer, those presented in this thesis and others, with clinical data also encourages a rigorous evaluation of their possible benefits in the context of medical use. The quantification and interpretation of the value of certain prognostic models is briefly presented before focusing on the particular case of models able to recommend the best treatment for each patient according to his molecular profile. A theoretical framework is defined to extend causal inference methods to the evaluation of such precision medicine algorithms. An illustration is provided using simulated data and patient derived xenografts.
+The comparison of mechanistic models of cancer, those presented in this thesis and others, with clinical data also encourages a rigorous evaluation of their possible benefits in the context of medical use. The quantification and interpretation of the prognostic value of outputs of some mechanistic models is briefly presented before focusing on the particular case of models able to recommend the best treatment for each patient according to his molecular profile. A theoretical framework is defined to extend causal inference methods to the evaluation of such precision medicine algorithms. An illustration is provided using simulated data and patient derived xenografts.  
+  
 
-All the methods and applications put forward a possible path from the design of mechanistic models of cancer to their evaluation using statistical models emulating clinical trials.
+All the methods and applications put forward a possible path from the design of mechanistic models of cancer to their evaluation using statistical models emulating clinical trials. As such, this thesis provides one framework for the implementation of precision medicine in oncology.
 
 }
 
@@ -326,13 +331,13 @@ thus presented.
 The comparison of mechanistic models of cancer, those presented in this
 thesis and others, with clinical data also encourages a rigorous
 evaluation of their possible benefits in the context of medical use. The
-quantification and interpretation of the value of certain prognostic
-models is briefly presented before focusing on the particular case of
-models able to recommend the best treatment for each patient according
-to his molecular profile. A theoretical framework is defined to extend
-causal inference methods to the evaluation of such precision medicine
-algorithms. An illustration is provided using simulated data and patient
-derived xenografts.
+quantification and interpretation of the prognostic value of outputs of
+some mechanistic models is briefly presented before focusing on the
+particular case of models able to recommend the best treatment for each
+patient according to his molecular profile. A theoretical framework is
+defined to extend causal inference methods to the evaluation of such
+precision medicine algorithms. An illustration is provided using
+simulated data and patient derived xenografts.
 
 All the methods and applications put forward a possible path from the
 design of mechanistic models of cancer to their evaluation using
@@ -377,13 +382,14 @@ La confrontation des modèles mécanistiques de cancer, ceux présentés
 dans cette thèse et d'autres, aux données cliniques incite par ailleurs
 à évaluer rigoureusement leurs éventuels bénéfices dans la cadre d'une
 utilisation médicale. La quantification et l'interprétation de la valeur
-de certains modèles à visée pronostique est brièvement présentée avant
-de se focaliser sur le cas particulier des modèles capables de
-sélectionner le meilleur traitement pour chaque patient en fonction des
-ses caractéristiques moléculaires. Un cadre théorique est proposé pour
-étendre les méthodes d'inférence causale à l'évaluation de tels
-algorithmes de médecine de précision. Une illustration est fournie à
-l'aide de données simulées et de xénogreffes dérivées de patients.
+pronostique des biomarqueurs issus de certains modèles méchanistiques
+est brièvement présentée avant de se focaliser sur le cas particulier
+des modèles capables de sélectionner le meilleur traitement pour chaque
+patient en fonction des ses caractéristiques moléculaires. Un cadre
+théorique est proposé pour étendre les méthodes d'inférence causale à
+l'évaluation de tels algorithmes de médecine de précision. Une
+illustration est fournie à l'aide de données simulées et de xénogreffes
+dérivées de patients.
 
 L'ensemble des méthodes et applications décrites tracent donc un chemin,
 de la conception de modèles mécanistiques de cancer à leur évaluation
@@ -400,14 +406,80 @@ Biostatistiques, Inférence causale, Médecine de précision
 
 \chapter*{Acknowledgements}
 
-\initial{M}any persons to thanks. Lorem ipsum dolor sit amet,
-consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+\initial{O}n ne se lance pas une thèse dans le seul but d'en écrire les
+remerciements. C'est peut être un tort tant l'occasion est belle d'en
+profiter pour exprimer sa gratitude à tous ceux qui la méritent sans que
+l'on pense toujours à le leur dire. Je vais donc essayer de remercier
+tous ceux qui occupent mon esprit à l'heure où j'écris ces lignes, d'un
+bout à l'autre du spectre, de ceux sans qui cette thèse n'aurait pas été
+la même à ceux sans qui je serais bien différent.
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+Merci tout d'abord aux membres du jury, Denis Thieffry, Émilie Lanoy, et
+en particulier aux rapporteurs Adeline Leclerq-Samson et Lodewyk
+Wessels, d'avoir accepté d'évaluer ce travail, contribuant ainsi à le
+rendre plus enrichissant pour moi. Merci également aux membres de mes
+comités de suivi de thèses Benno Schwikowski, Mélanie Prague et Xavier
+Paoletti pour leur regard extérieur et leurs remarques pertinentes et
+constructives.
+
+Mes remerciements suivants, à la fois professionnels et personnels vont
+à Laurence, Aurélien et Emmanuel pour avoir supervisé cette thèse en
+m'orientant sans me diriger, dans un juste équilibre d'encadrement et de
+liberté, chacun suivant ses spécificités. Merci en particulier à
+Laurence pour son inépuisable bienveillance, prodiguée avec générosité.
+Merci à Aurélien pour sa disponibilité et sa positivité, mot piégé s'il
+en est. Et enfin merci à Emmanuel pour sa capacité à prendre du recul.
+
+Merci ensuite à tous les collègues de l'équipe de biologie des systèmes,
+présents ou passés, particulièrement ceux avec lesquels j'ai pu
+collaborer directement. Merci à Arnau pour m'avoir inoculé son souci
+excessif de certains détails, à Vincent pour m'avoir enseigné certaines
+bonnes pratiques, à Pauline pour m'avoir accueilli à l'Institut et à
+Lorenzo pour m'avoir supporté. Merci plus largement à tous les membres
+de l'équipe qui ont fait de cette thèse une période d'échanges,
+scientifiques ou non: Nicolas, Mihaly, Cristobal, Andrei, Urczula,
+Céline, Laura, Loredana, Jane, Om, Marianyela, Christine, Maria, Inna.
+Mention spéciale à mes collègues de bureau successifs Loïc et Jonathan
+pour leur humour bienvenu et pour avoir toléré le mien. Merci de la même
+manière aux collègues de de l'équipe STAMPM, tout spécialement à
+Bassirou et Alessandra pour m'avoir accueilli dans leur bureau mouvant
+de Saint Cloud, mais aussi Christophe et Xavier (à nouveau) pour leur
+écoute et leurs conseils. Merci aux autres membres de l'U900, avec une
+pensée particulière pour Caroline et Kati dont le sens de l'organisation
+a contribué à me faciliter la vie.
+
+Merci également à tous ces collègues inconnus qui partagent librement
+connaissances, tutoriels, code informatique ou modèles typographiques.
+Ils forment une communauté virtuelle à l'impact bien réel.
+
+Merci aussi à ceux qui ont contribué à orienter mon parcours au fil des
+années, de Polytechnique à la biologie computationnelle. Je pense
+notamment à François et Fred chez Novadiscovery ainsi qu'à Vassily et
+Misko à l'EPFL.
+
+De manière toujours plus personnelle, je me dois aussi de remercier tous
+les amis qui ont fait de ces trois années un voyage agréable. Au sein de
+l'Institut tout d'abord, pour quelques repas avec Élise et Anne, au
+Collège des Ingénieurs, pour des discussions intellectuellement variées
+et rafraichissantes. Merci ensuite à tous ces amis, connus à
+Saint-Étienne, Lyon, Palaiseau, Paris ou Lausanne, que se reconnaitront
+sans qu'il soit nécessaire de tous les nommer exhaustivement. Mention
+spéciale à Guillaume, Laurent, Reda, Michaël, Pierre, Etienne, Florian
+et Amélie pour m'avoir aidé ou réjoui plus souvent qu'à leur tour.
+
+Une grande partie de la gratitude restante à ce stade revient à ma
+famille pour son soutien sans faille. Merci à mes parents, frère, soeur
+et grand-mère pour m'avoir accompagné tout au long de mes études de leur
+curiosité et de leur fierté, autant de vent dans mes voiles sans lequel
+je n'aurais pas tant avancé. Merci tout spécialement à mes parents, je
+dois à votre tranquille mais tenace confiance de n'avoir jamais douté de
+ma capacité à choisir ma voie et à la tracer avec succès.
+
+Enfin merci à Honorine pour tout le reste, c'est à dire pour
+l'essentiel. Si ``\emph{on ne possède d'un être que ce qu'on change en
+lui}\footnote{André Malraux, \emph{La condition humaine}}'', ne doute
+jamais qu'une large portion de ce travail t'appartient. Son auteur quant
+à lui ne s'appartient déjà plus tout à fait\ldots{}
 
 \clearemptydoublepage
 
@@ -1164,7 +1236,7 @@ Lewis Carroll, \emph{Sylvie and Bruno} (1893)
 \chapter{Cancer as deregulation of complex
 machinery}\label{cancer-as-deregulation-of-complex-machinery}
 
-\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka)}
+\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka, 1848)}
 
 \initial{A}rmed with all these models, whether statistical or
 mechanistic, we are going to look at cancer, a particularly complex
@@ -1706,7 +1778,7 @@ dissect more deeply the mechanisms involved in cancer.
 \chapter{Mechanistic modeling of cancer: from complex disease to systems
 biology}\label{mechanistic-cancer}
 
-\epigraph{"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."}{George Whitesides}
+\epigraph{"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."}{George Whitesides (The improbability of life, 2012)}
 
 \initial{T}he previous chapter identified the need to organize cancer
 knowledge and data. The integration of biological knowledge,
@@ -2235,8 +2307,8 @@ potential lack of patient data needed to personalize them
 
 }
 
-\caption[Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by Fey et al.]{\textbf{Mechanistic modeling of JNK pathway and
-survival of neuroblastima patients, as described by
+\caption[Mechanistic modeling of JNK pathway and survival of neuroblastoma patients, as described by Fey et al.]{\textbf{Mechanistic modeling of JNK pathway and
+survival of neuroblastoma patients, as described by
 \citet{fey2015signaling}.} (A) Schematic representation, as a process
 description, for the ODE model of JNK pathway. (B) Response curve
 (phosphorylated JNK) as a function of the input stimulus (Stress) and
@@ -2279,7 +2351,7 @@ in the KEGG database \citep{kanehisa2012kegg}. The benefit of
 mechanistic modeling is then to organize high-dimensional data and to
 facilitate the \emph{a posteriori} analysis of the results.
 
-\subsection{Predictive models}\label{prognostic}
+\subsection{Predictive models}\label{predictive}
 
 But the explicit representation of biological entities in mechanistic
 models makes them particularly \textbf{suitable for the study of
@@ -2360,7 +2432,7 @@ Ils tiennent le monde entre leurs infinis ;
 
 Ils expliquent le fond et l’essence des choses,
 
-Puisqu’à travers les temps planent leurs causes."}{Émile Verhaeren (Les nombres)}
+Puisqu’à travers les temps planent leurs causes."}{Émile Verhaeren (Les nombres, in Les Flambeaux noirs, 1891)}
 
 \initial{A}nother way of ordering the diversity of mechanistic models
 presented above is to consider their relationship to biological data.
@@ -4292,9 +4364,9 @@ in one single column on the left using only mutations (with normalized
 \emph{Proliferation} scores around 0.5), have been moved in different
 directions. Many of the most sensitive cell lines (scaled Bayesian
 factor above 2) have been pushed to the left in accordance with the high
-sensitivities observed experimentally (e.g., HT-29 or SK-MEL-24). It is
-even observed that the model corrected the position of the two BRAF
-mutated cell lines, but whose sensitivity is experimentally low
+sensitivities observed experimentally (\emph{e.g.}, HT-29 or SK-MEL-24).
+It is even observed that the model corrected the position of the two
+BRAF mutated cell lines, but whose sensitivity is experimentally low
 (melanoma cell line HT-144 and colorectal cell line HT-55). Only one
 cell line (SK-MEL-30) has seen its positioning evolve
 counter-intuitively as a result of the addition of RNA in the
@@ -4313,10 +4385,12 @@ only (\(R=0.69\), \(p.value=0.006\)).
 \caption[Multi-omics integration and enhanced value of RNA in addition to mutations]{\textbf{Multi-omics integration and
 enhanced value of RNA in addition to mutations.} For each cell line, an
 arrow shows the impact of adding RNA in the customization strategy. This
-graph is present in an interactive format in the online version of the
-thesis in order to give easy access to the omic profile corresponding to
-each point.}\label{fig:BRAF-interactive}
+graph is present in an
+\href{https://jonasbeal.github.io/files/PhdThesis/personalized-logical-models-to-study-an-interpret-drug-response.html\#fig:BRAF-interactive}{interactive
+format} in the online version of the thesis in order to give easy access
+to the omic profile corresponding to each point.}\label{fig:BRAF-interactive}
 \end{figure}
+
 
 
 
@@ -4374,18 +4448,18 @@ expresses high levels of PDPK1, in addition to high levels of CRAF,
 supporting the idea that the presence of both MAPK and PI3K/AKT pathways
 may confer resistance to BRAF inhibition treatments. We can also mention
 a cluster of RAS mutated cell lines, usually NRAS mutated for melanomas
-(e.g., SK-MEL-2) and KRAS for colorectal cancers (e.g., COLO-678), which
-are classified by the model as resistant. Interestingly, in these cell
-lines, a low level of CRAF is not enough to block the signal of the MAPK
-pathway, which is stronger in the model because of the simulation of the
-RAS mutation (RAS is set to \(1\)). Only SK-MEL-30 appears to be
-incorrectly classified and is observed to be more sensitive than the
-other cell lines with a similar mutation profile. This could be due to
-the fact that our network is incomplete and not able to account for some
-alterations responsible for this cell line sensitivity. The problem may
-also come from the fact that this cell line contains a frameshift
-mutation of RPS6KB2 (p70 node) not referenced in OncoKB and therefore
-not included in the simulation.
+(\emph{e.g.}, SK-MEL-2) and KRAS for colorectal cancers (\emph{e.g.},
+COLO-678), which are classified by the model as resistant.
+Interestingly, in these cell lines, a low level of CRAF is not enough to
+block the signal of the MAPK pathway, which is stronger in the model
+because of the simulation of the RAS mutation (RAS is set to \(1\)).
+Only SK-MEL-30 appears to be incorrectly classified and is observed to
+be more sensitive than the other cell lines with a similar mutation
+profile. This could be due to the fact that our network is incomplete
+and not able to account for some alterations responsible for this cell
+line sensitivity. The problem may also come from the fact that this cell
+line contains a frameshift mutation of RPS6KB2 (p70 node) not referenced
+in OncoKB and therefore not included in the simulation.
 
 \begin{figure}
 
@@ -4636,7 +4710,22 @@ studied, since for instance some BRAF inhibitors have affinities that
 vary according to mutations in the BRAF gene itself. The integration of
 truly precise data on the nature of the drug is nevertheless limited by
 logical formalism and is more often found in more flexible approaches,
-e.g.~in deep learning \citep{manica2019toward}.
+\emph{e.g.}, in deep learning \citep{manica2019toward}.
+
+The application presented in this chapter, focused on BRAF inhibitors,
+made it possible to verify the good performance of the models through
+different types of data (drug or CRISPR/Cas9). However, the molecular
+profiles used to personalize the models were all derived from cell
+lines, reported in the same database \citep{van2019cell}. It would be
+possible to use different types of data such as organoids,
+patient-derived xenografts (PDX), etc. The critical clinical question
+will then be: \textbf{do the mechanisms highlighted for cell lines
+transfer easily to tumours in vivo?} The ability to identify common
+reasons explaining the response to treatments has been studied by
+different statistical approaches with the aim of promoting translational
+medicine \citep{mourragui2019precise, kim2019genomic}. The ability of
+personalized mechanistic models to follow this path remains to be
+explored.
 
 To conclude, we provide a comprehensive pipeline from clinical question
 to a validated mechanistic model which uses different types of omics
@@ -4674,7 +4763,7 @@ how can their clinical validity and impact be rigorously measured?
 
 First of all, the purpose of this chapter is to outline some of the
 limitations of the previously presented evaluations of mechanistic
-models. These evaluations answered the question: are the models of
+models. These evaluations answered the question: do the models have any
 clinical utility? We will show that an additional question could be:
 \textbf{do mechanistic models have an incremental clinical utility}, in
 comparison to the direct use of the data used to construct or specify
@@ -4768,10 +4857,12 @@ stratify survival curves, only the univariate value of \(Y\) is checked.
 This is an important step and a prerequisite for a well-constructed
 model. On the other hand, it is not sufficient information to understand
 how the model works. Indeed, the inputs \(X\) probably also have a
-value. In short, \textbf{measuring only the output value of the model
+value: \emph{e.g.}, if the mechanistic model uses different inputs, each
+of which has a prognostic value, the fact that the output also has a
+prognostic value does not necessarily indicate the relevance of the
+model. In short, \textbf{measuring only the output value of the model
 does not necessarily reveal the model's ability to make sense of the
-data it uses}. At the extreme, it is conceivable that a random function
-of some valuable inputs could be correlated to the biological reality.
+data it uses}.
 
 \begin{figure}
 
@@ -4799,14 +4890,18 @@ value not present in the inputs. This would correspond to the
 sake of simplification, we will here assimilate the two in the sense
 that a non-linear effect resulting from the interaction between certain
 variables was indeed not predictable from the components taken
-individually, and therefore emergent. In the second situation, the
-output does not capture emergent properties but summarizes, totally or
-partially, the information present in the inputs. This would correspond
-to a \textbf{knowledge-informed dimensionality-reduction}. Even in the
-latter case, the scientific value of the model as a tool for
-understanding is not necessarily questioned. The analyses presented
-below are simply intended to supplement the understanding of models and
-how they process information.
+individually, and therefore emergent. Note, for example, that the
+identification and capture by statistical models of non-linear
+components of treatment response is important in the ability to
+generalize findings from preclinical models to human tumours
+\citep{mourragui2020precise}. In the second situation, the output does
+not capture emergent properties but summarizes, totally or partially,
+the information present in the inputs. This would correspond to a
+\textbf{knowledge-informed dimensionality-reduction}. Even in the latter
+case, the scientific value of the model as a tool for understanding is
+not necessarily questioned. The analyses presented below are simply
+intended to supplement the understanding of models and how they process
+information.
 
 \subsection{Emergence of information in artifical
 examples}\label{emergence-of-information-in-artifical-examples}
@@ -4933,17 +5028,16 @@ losses, but at the same time it extracts new non-linear information.
 Thus, in combination with the inputs, it provides incremental value
 measured by the increase in total \(R^2\). Note that \(R^2\) is used
 here as one tool among others to illustrate the reflection on
-\textbf{personalized mechanistic models as information processing
-tools}. The point to remember is not technical but rather
-methodological: these mechanistic models based on omics data cannot be
-evaluated for themselves but must be evaluated in comparison with the
-data they use in order to better explain the way they process
-information. In this logic of model selection, other tools such as the
-Akaike Information Criterion (AIC) have been proposed and could allow to
-quantify if the reduction of dimension carried out by the models (from
-many omics inputs to one mechanistic output) allows a more parsimonious
-description of biology than the direct use of inputs
-\citep{kirk2013model}.
+personalized mechanistic models as information processing tools. The
+point to remember is not technical but rather methodological: these
+\textbf{mechanistic models using on omics data cannot be evaluated for
+themselves but must be evaluated in comparison with the data they use in
+order to better explain the way they process information}. In this logic
+of model selection, other tools such as the Akaike Information Criterion
+(AIC) have been proposed and could allow to quantify if the reduction of
+dimension carried out by the models (from many omics inputs to one
+mechanistic output) allows a more parsimonious description of biology
+than the direct use of inputs \citep{kirk2013model}.
 
 \section{Reanalysis of mechanistic models of
 cancer}\label{reanalysis-of-mechanistic-models-of-cancer}
@@ -4976,13 +5070,13 @@ validated using simulated data \citep{choodari2012simulation}.
 
 }
 
-\caption[Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by Fey \emph{et al}.]{\textbf{Mechanistic modeling of JNK pathway and
-survival of neuroblastima patients, as described by
+\caption[Mechanistic modeling of JNK pathway and survival of neuroblastoma patients, as described by Fey \emph{et al}.]{\textbf{Mechanistic modeling of JNK pathway and
+survival of neuroblastoma patients, as described by
 \citet{fey2015signaling}.} (A) Schematic representation (as a process
 description \citep{le2015quantitative}) for the ODE model of JNK
 pathway. (B) Response curve (phosphorylated JNK) as a function of the
 input stimulus (Stress) and characterization of the corresponding
-sigmoidal function with maximal amplitude \(A\), Hill exponent \(H\) and
+sigmoidal function with maximum amplitude \(A\), Hill exponent \(H\) and
 activation threshold \(K_{50}\). (C) Survival curves for neuroblastoma
 patients based on binarized \(A\), \(K_{50}\) and \(H\); binarization
 thresholds having been defined based on optimization screening on
@@ -5114,7 +5208,7 @@ tackling more precise questions, this chapter will therefore introduce
 certain clinical or statistical methods used to evaluate the effect of
 different types of treatments on patients. A more specific issue related
 to the evaluation of mechanistic models will be explored in the next
-chapter using these methods
+chapter using these methods.
 
 \BeginKnitrBlock{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-5}
@@ -5289,18 +5383,24 @@ The \textbf{potential outcomes framework is also described as
 counterfactual} because it defines variables like \(Y_j(a)\) to denote
 the potential outcome of individual \(j\) in case he/she has been
 treated by \(A=a\) which may be different from what we observe if
-\(A_j\neq a\). These counterfactual variables make it possible to write
-the causal estimands. For instance, in this context, we can easily
-compute the difference in outcome between treated patients and control
-patients (Figure \ref{fig:causality}, left part):
-\(E[Y | A=1] - E[Y | A=0].\) However, this difference has no causal
-interpretation as it does not offer any guarantees as to the confounding
-factor, as an unbalanced distribution of \(C\) can induce biases. Thus
-we define another estimate: \(E[Y(1)] - E[Y(0)].\) In this case, we
-compare between two ideal cohorts (Figure \ref{fig:causality}, right
-part), one in which all patients have been treated (possibly contrary to
-the fact) and one in which all patients have been left in the control
-arm (once again, possibly contrary to the fact).
+\(A_j\neq a\). This definition can be illustrated at the individual
+level, for patient \(j\), where \(A\) is the smoking status (\(1\) for
+smokers, \(0 otherwise\)) and \(Y\) is the outcome, \emph{e.g.}, cancer
+status at a given date. If patient \(j\) is a smoker then
+\(Y_j=Y_j(A=1)\). \(Y_j(A=0)\) would be the outcome if this same patient
+had not been a smoker, all other things being equal. This counterfactual
+outcome is therefore not observed in the data. These counterfactual
+variables make it possible to write the causal estimands. For instance,
+in this context, we can easily compute the difference in outcome between
+treated patients and control patients (Figure \ref{fig:causality}, left
+part): \(E[Y | A=1] - E[Y | A=0].\) However, this difference has no
+causal interpretation as it does not offer any guarantees as to the
+confounding factor, as an unbalanced distribution of \(C\) can induce
+biases. Thus we define another estimate: \(E[Y(1)] - E[Y(0)].\) In this
+case, we compare between two ideal cohorts (Figure \ref{fig:causality},
+right part), one in which all patients have been treated (possibly
+contrary to the fact) and one in which all patients have been left in
+the control arm (once again, possibly contrary to the fact).
 
 \begin{figure}
 
@@ -5328,7 +5428,7 @@ potential outcomes framework explicits \textbf{assumptions of
 consistency, positivity and conditional exchangeability to estimate
 these counterfactual variables} and therefore infer causal estimates
 from observational (non-randomized) data
-\citep[\citet{hernan2020causal}]{rubin1974estimating}.
+\citep{rubin1974estimating, hernan2020causal}.
 
 \emph{Consistency} means that values of treatment under comparison
 represent well-defined interventions which themselves correspond to the
@@ -5341,7 +5441,7 @@ they would have had the same outcomes as the controls, and conversely.
 Since we usually observe some confounders we define conditional
 exchangeability to hold if cohorts are exchangeable for same values of
 confounding \(C\). Therefore conditional exchangeability will hold if
-there are no unmeasured confounding: \(Y(a) \indep A | C.\)
+there is no unmeasured confounding: \(Y(a) \indep A | C.\)
 
 \emph{Positivity} assumption states that the probability of being
 administered a certain version of treatment conditional on \(C\) is
@@ -5461,27 +5561,28 @@ E[Y(a)]=\dfrac{\hat{E}[I(A=a)W^{A}Y]}{\hat{E}[I(A=a)W^A]},
 \label{eq:ipweq2}
 \end{equation}
 
-\(I\) being the indicator function. Once again, this method brings
-estimates closer to the true causal effect by correcting for the
-influence of the confounder (Figure \ref{fig:causality-example3}E).
+\(I\) being the indicator function, such as \(I(A=a)=1\) if \(A=a\) and
+\(I(A=a)=0\) if \(A\neq a\). Once again, this method brings estimates
+closer to the true causal effect by correcting for the influence of the
+confounder (Figure \ref{fig:causality-example3}E).
 
 \subsubsection{Limitations and additional
 methods}\label{limitations-and-additional-methods}
 
-These causal inference methods therefore allow to control for the effect
-of possible biases and confounders, at the cost of strong hypotheses
-that it is not possible to verify. The plausibility of these hypotheses,
-and therefore of the resulting estimates, requires a good knowledge of
-the context. Furthermore, the estimates are largely based on statical
-models of outcome or treatment. The correct specification of these
-models is therefore imperative to ensure the relevance of the estimates.
-In order to limit the risks of misspecification, some \textbf{doubly
-robust} approaches have also been developed. They require estimating
-both an outcome model and a treatment model, but the resulting estimates
-are asymptotically correct if at least one of the two models is
-correctly specified. One of these methodologies among others, called
-Targeted Maximum Likelihood Estimation (TMLE), will be mentioned in the
-next section and is detailed in appendix \ref{appendix-TMLE}.
+These causal inference methods therefore allow to correct some biases
+due to observed confounders, at the cost of strong hypotheses that it is
+not possible to verify. The plausibility of these hypotheses, and
+therefore of the resulting estimates, requires a good knowledge of the
+context. Furthermore, the estimates are largely based on statical models
+of outcome or treatment. The correct specification of these models is
+therefore imperative to ensure unbiased causal estimates. In order to
+limit the risks of misspecification, some \textbf{doubly robust}
+approaches have also been developed. They require estimating both an
+outcome model and a treatment model, but the resulting estimates are
+consistent if at least one of the two models is correctly specified. One
+of these methodologies among others, called Targeted Maximum Likelihood
+Estimation (TMLE), will be mentioned in the next section and is detailed
+in appendix \ref{appendix-TMLE}.
 
 In summary, evaluating the effect of a treatment requires isolating its
 impact from that of all confounding factors. This can be done in a
@@ -5537,7 +5638,7 @@ subsequent questions in a plausible clinical framework.
 \subsection{An illustration with patient-derived
 xenografts}\label{main-PDX}
 
-Precision medicine is based on the diversity of treatment responses
+Precision medicine stems from the diversity of treatment responses
 observed in different tumors. It has already been observed in previous
 chapters about BRAF inhibition that \textbf{different cell lines respond
 differently to a particular treatment}. A broader analysis of
@@ -5555,8 +5656,8 @@ models that allow cancer cells to evolve in a more realistic
 microenvironment. In the same way as for cell lines, PDX can be used for
 drug screening. The data used in this chapter come from a study by
 \citet{gao2015high} which contains several hundred tumors and more than
-fifty drugs. Not all drugs have been tested for all tumors and details
-of the drugs and types of cancer tested are available in the appendix
+fifty drugs. Not all drugs have been tested for all tumors; details of
+the drugs and types of cancer tested are available in the appendix
 \ref{appendix-PDX}. This dataset was generated following the ``one
 animal per model per treatment'' approach (\(1 \times 1 \times 1\)), the
 principles of which are summarized in Figure \ref{fig:PDX-principles}A.
@@ -5621,8 +5722,8 @@ for certain treatments.
 
 }
 
-\caption[Differences in drug response for 4 drugs and 180 tumors a call for precision medicine]{\textbf{Differences in drug response for 4 drugs
-and 180 tumors a call for precision medicine.} (A) Distribution of
+\caption[Differences in drug response for 4 drugs and 180 tumors: a call for precision medicine]{\textbf{Differences in drug response for 4 drugs
+and 180 tumors: a call for precision medicine.} (A) Distribution of
 treatment response for the 4 different drugs, each with all 180 tumors.
 (B) Number of times each of the 4 drugs is the most effective for a
 given tumor, distribution by tissue of origin.}\label{fig:PDX-dense}
@@ -5700,7 +5801,7 @@ simulate the effect of different therapeutic interventions. However, the
 feasibility of designing and calibrating such a model has yet to be
 demonstrated. Other types of models are being studied that could achieve
 these goals. For example, some recent approaches propose the use of deep
-learning to provide a computational tools for predicting the growth of
+learning to provide a computational tool for predicting the growth of
 cells \citep{ma2018using}, or even the sensitivity of cell lines to
 different treatments \citep{manica2019toward}.
 
@@ -5788,7 +5889,7 @@ guides the choice of preferred chemotherapy for patients in a panel of
 twelve different treatments \citep{cree2007prospective}. More recently,
 some clinical trials have been proposed that include precision medicine
 strategies, particularly in oncology
-\citep{le2015molecularly, flaherty2020molecular}.
+\citep{von2010pilot, le2015molecularly, flaherty2020molecular}.
 
 On the basis of these clinical examples, we propose three different
 target trials and their corresponding causal estimates, the clinical
@@ -6057,7 +6158,7 @@ precision medicine causal effects previously described in section
 \ref{causal-estimates}.
 
 \(A=0\) corresponds to control patients with \(\mathcal{K}^0=\{k^0\}\)
-and \(A=1\) to patients treated with a targeted treatments. It is
+and \(A=1\) to patients treated with a targeted treatment. It is
 important to notice that from this point on we systematically restrict
 ourselves to patients eligible for the precision medicine algorithm,
 \emph{i.e.}, to individuals \(j\) such as \(C_j \in \mathcal{C}^{PM}\).
@@ -6125,7 +6226,7 @@ Defining \(G^1\) as the random distribution of versions of treatment
 
 \(|.|\) denoting the cardinality of the set. In this formula,
 \(E[Y(1, G^1)]\) can be derived from equation
-@ref\{distrib-treatment-effect\}:
+\eqref{eq:distrib-treatment-effect}:
 
 \[E[Y(1, G^1)] = \dfrac{1}{|\mathcal{K}^1_{PM}|} \times \sum_{c,k^1_i} E[Y | A=1, K^1=k^1_i, C=c] \times P[c]\]
 
@@ -6195,8 +6296,8 @@ $Y(1,k^1_2)$ & 0 & 0 & -20\\
 
 
 Using the R package \emph{lava} based on latent variable models, we
-simulate a super-population of 10000 patients with variables \(C\),
-\(A\), \(K\) and \(Y\) as in Figure @ref\{fig:DAG-multiple\}. We first
+simulate a super-population of 10,000 patients with variables \(C\),
+\(A\), \(K\) and \(Y\) as in Figure \ref{fig:DAG-multiple}. We first
 define two independent binary variables \(C_1\) and \(C_2\),
 representing mutational status of genomic covariates, with a mutation
 prevalence of 40\%. By analogy with the PDX data, \(Y\) represents the
@@ -6216,17 +6317,17 @@ patients mutated in \(C_1\) (regardless their \(C_2\) status) are
 recommended to take \(k^1_1\) and patients mutated for \(C_2\) only are
 recommended to take \(k^1_2\). Patients without mutations are not
 eligible for precision medicine and not taken into account in the
-computations. Since \(k^1_1\) has the bast basal response we assume it
+computations. Since \(k^1_1\) has the best basal response we assume it
 is assigned with greater probability by the physician and implement the
 following distribution of observed treatments:
 
 \[P[K=k^1_1]=0.5 \text{ and } P[K=k^1_2]=P[K=k^0]=0.25\]
 
-A super-population of 10000 patients is then generated. 1000 cohorts of
-200 patients are sampled without replacement within this
+A super-population of 10,000 patients is then generated. 1,000 cohorts
+of 200 patients are sampled without replacement within this
 super-population which, with the prevalences defined for the mutations,
 corresponds to an effective sample size of about 130 patients eligible
-for the PM algortithm. the causal effects \(\text{CE}_1\),
+for the PM algortithm. The causal effects \(\text{CE}_1\),
 \(\text{CE}_2\) and \(\text{CE}_3\) are computed based on different
 methods on the sub-cohort eligible for precision medicine:
 
@@ -6247,7 +6348,7 @@ methods on the sub-cohort eligible for precision medicine:
 \subsection{Simulation results}\label{simulation-results}
 
 First, the distribution of data in the super-population of 10,000
-patients can be observed in Figure @ref\{simulation-results\}A,
+patients can be observed in Figure \ref{fig:simulation-results}A,
 illustrating the different relations and differences described above. In
 particular, \(Y(1, k^1_1)\) (resp. \(Y(1, k^1_2)\)) is lower for
 \(C_1\)-mutated (resp. \(C_2\)-mutated) patients. It can also be seen
@@ -6362,17 +6463,6 @@ server}}\label{fig:Shiny}
 
 \section{Application to PDX}\label{application-to-pdx}
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.9\linewidth]{fig/screenshot-shiny} 
-
-}
-
-\caption[RShiny interactive application to investigate various simulation scenarios of precision medicine evaluation]{\textbf{RShiny test}}\label{fig:Shiny2}
-\end{figure}
-
-
-
 The method is then applied to public data from patient-derived
 xenografts \citep{gao2015high}, described in section \ref{main-PDX} and
 appendix \ref{appendix-PDX}. One of the major interests of this type of
@@ -6413,8 +6503,8 @@ biomarkers have deleterious cross-effects.
 
 \caption[Description of the 88 PDX models cohort]{\textbf{Description of the 88 PDX models
 cohort.} (A) Tissue of origin and prevalences of the drug biomarkers.
-(B) Drug response to precision medicine targetd treatments in the 88 PDX
-models cohort depending on the mutational status of biomarkers}\label{fig:PDX-subcohort}
+(B) Drug response to precision medicine targeted treatments in the 88
+PDX models cohort depending on the mutational status of biomarkers}\label{fig:PDX-subcohort}
 \end{figure}
 
 
@@ -6423,7 +6513,7 @@ models cohort depending on the mutational status of biomarkers}\label{fig:PDX-su
 
 
 The analysis settings are similar to the ones used for simulated data.
-1000 different cohorts of 70 tumors (out of 88) are sampled without
+1,000 different cohorts of 70 tumors (out of 88) are sampled without
 replacement assuming each time that only the response to one of the
 treatments is known for each tumor, reproducing the classical clinical
 situation. The \textbf{distribution of the observed treatments was
@@ -6451,7 +6541,7 @@ using the binary version of outcome \(Y\) is presented in
 supporting the extension of the method to binary outcomes. In the same
 way as before with the simulated data, it would be possible to study the
 impact of non-random assignment of the observed treatments, which could
-systematically bias the results of the naïve methods.
+systematically bias the results of the naive methods.
 
 \begin{figure}
 
@@ -6542,7 +6632,7 @@ the coverage of the data. It is then necessary to take into account the
 clustered nature of the data, each tumor being present several times.
 
 Finally, beyond the pre-clinical data presented here, the theoretical
-framework developed in this article should be more directly applicable
+framework developed in this chapter should be more directly applicable
 to data from clinical trials if these data do not violate the
 requirements of positivity. If it is necessary to consider several
 trials, the heterogeneity of practices must be taken into account. The
@@ -6556,8 +6646,8 @@ not used in applications.
 
 The aim of this thesis was to trace \textbf{a path to link the
 biological knowledge of cancer to the clinical impact through
-mechanistics models}. Among the many possible orientations, it was
-chosen to take the opposite side of the data-intensive machine learning
+mechanistic models}. Among the many possible orientations, it was chosen
+to take the opposite side of the data-intensive machine learning
 methods. The main approach proposed uses a qualitative logical formalism
 and \textbf{integrates the data by interpreting them} rather than by
 optimizing the parameters with respect to a particular objective. As a
@@ -6571,21 +6661,21 @@ because, while all kinds of applications are theoretically possible, the
 need to rely on detailed biological knowledge and appropriate data
 limits its scope.
 
-In the case of mechanistic molecular signaling models, this
-interpretative nature of the models is confirmed by statistical
-analyses. The main value of these models is to provide an understandable
-framework for extracting relevant biological information in the context
-of current biological knowledge. The \textbf{ability of these models to
-detect emerging non-linear information is also proven, but is rarer and
-of relatively smaller magnitude}. Given the influx of biological
-knowledge and data, computational models of cancer, with various
-formalisms, are nevertheless multiplying, particularly with medical
-aims. In the context of cancer, their use to recommend personalised
-treatment for each patient is a possible horizon. The evaluation of
-these models could then become increasingly acute. This thesis proposes
-the \textbf{adaptation of causal inference methods in order to simulate
-their evaluation in clinical trials} and to come as close as possible to
-medical evaluation standards.
+In the case of mechanistic molecular signaling models, this interpretive
+nature of the models is confirmed by statistical analyses. The main
+value of these models is to provide an understandable framework for
+extracting relevant biological information in the context of current
+biological knowledge. The \textbf{ability of these models to detect
+emerging non-linear information is also proven, but is rarer and of
+relatively smaller magnitude}. Given the influx of biological knowledge
+and data, computational models of cancer, with various formalisms, are
+nevertheless multiplying, particularly with medical aims. In the context
+of cancer, their use to recommend personalised treatment for each
+patient is a possible horizon. The evaluation of these models could then
+become increasingly acute. This thesis proposes the \textbf{adaptation
+of causal inference methods in order to simulate their evaluation in
+clinical trials} and to come as close as possible to medical evaluation
+standards.
 
 In a word, cancer models still have a bright future ahead of them.
 Mechanistic models will continue to be attractive because of their
@@ -6610,7 +6700,7 @@ for additional details.
 
 The omics profiles of cancer cell lines have been downloaded from Cell
 Model Passports \citep{van2019cell} containing genotypic and phenotypic
-information about more than 1000 cell lines. Among the available data
+information about more than 1,000 cell lines. Among the available data
 used in this thesis are the exome sequencing, copy number variations and
 RNA-sequencing.
 
@@ -6649,13 +6739,13 @@ the viability of the cell line relative to untreated control is
 measured. The dose-response relative viability curve is fitted and then
 used to compute the half maximal inhibitory concentration (\(IC_{50}\))
 and the area under the dose-response curve (AUC)
-\citep{vis2016multilevel}, both being represented in Figure. Since the
-\(IC_{50}\) values are often extrapolated outside the concentration
-range actually tested, we will focus on the AUC metric for all
-validation with drug screening data. AUC is a value between 0 and 1:
-values close to 1 mean that the relative viability has not been
-decreased, and lower values correspond to increased sensitivity to
-inhibitions. In cases where the ranges of concentrations tested for
+\citep{vis2016multilevel}, both being represented in Figure
+\ref{fig:AUC}. Since the \(IC_{50}\) values are often extrapolated
+outside the concentration range actually tested, we will focus on the
+AUC metric for all validation with drug screening data. AUC is a value
+between 0 and 1: values close to 1 mean that the relative viability has
+not been decreased, and lower values correspond to increased sensitivity
+to inhibitions. In cases where the ranges of concentrations tested for
 different drugs vary, comparison of their AUC values does not have a
 simple and straightforward interpretation.
 
@@ -6688,7 +6778,8 @@ technology makes it possible to target many more different genes since
 it is based on RNA guide synthesis and not on the existence of drugs
 with an affinity for the target of interest. Schematically, sreening is
 therefore broader (thousands of genes), less biased (any gene can be
-targeted a priori) and more precise (much lower off-target effect).
+targeted \emph{a priori}) and more precise (much lower off-target
+effect).
 
 Among the various databases available, the ones used in this thesis have
 been downloaded from Cell Model Passports and come from Sanger Institute
@@ -6761,7 +6852,7 @@ tumor volume at time \(t_0\), \(V_{t_0}\). Several scores are computed:
 
 We will mainly focus on \emph{Best Average Response}. This metric
 ``captures a combination of speed, strength and durability of response
-into a single value'' \emph{gao2015high}. Qualitatively, lower values
+into a single value'' \citep{gao2015high}. Qualitatively, lower values
 correspond to more efficient drugs.
 
 \subsubsection{A binary outcome}\label{a-binary-outcome}
@@ -6771,17 +6862,18 @@ also defined, inspired by RECIST criteria \citep{therasse2000new}, in
 order to classify response to treatment into 4 categories: Complete
 Response (CR), Partial Response (PR, Stable Disease (SD) and Progressive
 Disease (PD). We designed a binary response status by combining the
-response categories (CR, PR and SD) into a single `responder' category
-(1), opposed to the `non-responders' progressive diseases (0).
+response categories (CR, PR and SD) into a single ``responder''"
+category (1), opposed to the ``non-responders'' progressive diseases
+(0).
 
 \section{Patients}\label{appendix-datasets-patients}
 
 \subsection{METABRIC}\label{metabric}
 
-METABRIC dataset is large breast cancer dataset with more than 2000
+METABRIC dataset is large breast cancer dataset with more than 2'000
 patients \citep{pereira2016somatic}. Mutations, CNA, expression
 (transcriptomics micro-array) and clinical data are available for a
-majority of patients (Figure \ref{fig:METABRIC}A), with 1904 patients
+majority of patients (Figure \ref{fig:METABRIC}A), with 1'904 patients
 for whom all the data is available. One of the particular features of
 these data is to propose a very long clinical follow-up, over more than
 10 years (Figure \ref{fig:METABRIC}B).
@@ -6811,7 +6903,7 @@ Another reference database for breast cancer is the one from the TCGA
 consortium \citep{cancer2012comprehensive}. The cohort is smaller than
 METABRIC and its clinical follow-up is more limited. In contrast, the
 omics data are more comprehensive and include RNA sequencing and
-relative quantification ofsproteins with RPPA technology (Figure
+relative quantification of proteins with RPPA technology (Figure
 \ref{fig:TCGA-bp}A).
 
 \begin{figure}
@@ -6888,7 +6980,7 @@ of the interests of this model is that it has been designed with a more
 clinical perspective, notably centred on the response to MTOR
 inhibitors. In addition, it presents more biological read-outs used for
 interpretation, and we will use mainly \emph{Proliferation} (also called
-\emph{G1\_S} in the moel files to designate the associated stage of the
+\emph{G1\_S} in the model files to designate the associated stage of the
 cell cycle), \emph{Apoptosis} and \emph{Quiescence} in particular. In
 addition, being able to discuss and collaborate directly with the model
 autor has helped to avoid potential errors in use.
@@ -7142,9 +7234,9 @@ for precision medicine}\label{appendix-IPW}
 An extension of IPW methods described in section \ref{IPW-classic} to
 multi-valued treatments (only treatment \(K\) with different modalities
 and no \(A\)) has already been studied and the different formulas and
-estimators adapted accordingly {[}\citet{imbens2000role};
-feng2012generalized{]}, defining in particular a generalized propensity
-score:
+estimators adapted accordingly
+\citep{imbens2000role, feng2012generalized}, defining in particular a
+generalized propensity score:
 
 \[f(k|c)=P[K=k|C=c]=E[I(k)|C=c]\]
 

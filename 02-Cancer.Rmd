@@ -1,13 +1,13 @@
 # Cancer as deregulation of complex machinery
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
-knitr::asis_output('\\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka)}')
+knitr::asis_output('\\epigraph{"Does not the entireness of the complex hint at the perfection of the simple?"}{Edgar Allan Poe (Eureka, 1848)}')
 ```
 
 ```{r, include=knitr::is_html_output(), echo=FALSE}
 knitr::asis_output(
   '>*Does not the entireness of the complex hint at the perfection of the simple?*  
-   >Edgar Allan Poe (Eureka)')
+   >Edgar Allan Poe (Eureka, 1848)')
 ```
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}

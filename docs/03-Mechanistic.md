@@ -1,6 +1,6 @@
 # Mechanistic modeling of cancer: from complex disease to systems biology {#mechanistic-cancer}
 
-\epigraph{"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."}{George Whitesides}
+\epigraph{"How remarkable is life? The answer is: very. Those of us who deal in networks of chemical reactions know of nothing like it... How could a chemical sludge become a rose, even with billions of years to try."}{George Whitesides (The improbability of life, 2012)}
 
 
 
@@ -156,15 +156,15 @@ One of the first mechanistic models of cell signalling to have been explicitly p
 
 }
 
-\caption[Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by Fey et al.]{(ref:fey-caption)}(\#fig:fey)
+\caption[Mechanistic modeling of JNK pathway and survival of neuroblastoma patients, as described by Fey et al.]{(ref:fey-caption)}(\#fig:fey)
 \end{figure}
-(ref:fey-caption) **Mechanistic modeling of JNK pathway and survival of neuroblastima patients, as described by @fey2015signaling.** (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude $A$, Hill exponent $H$ and activation threshold $K_{50}$. (C) Survival curves for neuroblastoma patients based on binarized $A$, $K_{50}$ and $H$; binarization thresholds having been defined based on optimization screening on calibration cohort.  
+(ref:fey-caption) **Mechanistic modeling of JNK pathway and survival of neuroblastoma patients, as described by @fey2015signaling.** (A) Schematic representation, as a process description, for the ODE model of JNK pathway. (B) Response curve (phosphorylated JNK) as a function of the input stimulus (Stress) and characterization of the corresponding sigmoidal function with maximal amplitude $A$, Hill exponent $H$ and activation threshold $K_{50}$. (C) Survival curves for neuroblastoma patients based on binarized $A$, $K_{50}$ and $H$; binarization thresholds having been defined based on optimization screening on calibration cohort.  
   
 
 On the logical modeling side, there are also studies including prognostic value validation. Thus, @khan2017unraveling proposed two logical models of epithelio-mesenchymal transition (EMT) in bladder and breast cancers. These models are inferred from prior mechanisms knowledge and data analysis with particular attention to potential feedback loops. Using these models, it is possible to study the behaviour of them for all combinations of model inputs (growth factors and receptor proteins) and derive subsequent signatures for good or bad prognosis. These signatures are later validated with cohorts of patients. In this case, the mechanistic model does not seek to capture a dynamic behavior but to facilitate and **make understandable the exploration of combinations of input signals that grow exponentially with the number of inputs considered**. Other formalisms, called pathway activity analysis and following the same activity flows principles (Figure \@ref(fig:toyraf)A), have been analysed in the light of their prognostic value. Their greater flexibility enables the direct use of networks of several hundred or thousands of genes, such as those present in the KEGG database [@kanehisa2012kegg]. The benefit of mechanistic modeling is then to organize high-dimensional data and to facilitate the *a posteriori* analysis of the results.
   
 
-### Predictive models {#prognostic}
+### Predictive models {#predictive}
 
 But the explicit representation of biological entities in mechanistic models makes them particularly **suitable for the study of well-defined perturbations such as drug effects**. Indeed, by assuming that the mechanism of action of a drug is at least partially known, it is possible to integrate this mechanism into the model if it contains the target of the drug (Figure \@ref(fig:netdrug)). One can therefore simulate the effect of one drug or even compare several. These strategies have already been implemented in a qualitative way with logical models used to explain resistance to certain treatments of breast cancer [@zanudo2017network] or even highlight the synergy of certain combinations of treatments in gastric cancer [@flobak2015discovery]. The value of these models, however, is more scientific than clinical in that they focus on a single cell line or a restricted group of cell lines. The possibility to personalize the predictions or recommendations for different molecular profiles of cell lines or patients is therefore not obvious. Still within the context of logical formalism, @knijnenburg2016logic proposed a broader approach: if their model needs to be trained, it can nevertheless provide an analytical framework for several hundred cell lines, while remaining within the scope of the training data to ensure the validity of predictions.  
   
