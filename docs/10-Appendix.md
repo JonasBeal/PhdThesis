@@ -137,7 +137,7 @@ For this thesis, a published Boolean model from [@fumia2013boolean] has first be
 
 \caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{(ref:Fumia-caption)}(\#fig:Fumia)
 \end{figure}
-(ref:Fumia-caption) **GINSIM representation of the logical model described in @fumia2013boolean.**
+(ref:Fumia-caption) **GINsim representation of the logical model described in @fumia2013boolean.**
 
 ## Extended logical model of cancer pathways {#appendix-verlingue}
 
@@ -151,7 +151,7 @@ Another logical model of similar size and scope was also used, primarily for the
 
 \caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{(ref:Verlingue-caption)}(\#fig:Verlingue)
 \end{figure}
-(ref:Verlingue-caption) **GINSIM representation of the 'Verlingue' logical model described in @verlingue2016silico.**
+(ref:Verlingue-caption) **GINsim representation of the 'Verlingue' logical model described in @verlingue2016silico.**
 
 ## Logical model of BRAF pathways in melanoma and colorectal cancer {#appendix-pantolini}
 
@@ -186,7 +186,7 @@ In the context of the European project [PRECISE](https://precise-project.eu/) (P
 
 \caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{(ref:Montagud-caption)}(\#fig:Montagud)
 \end{figure}
-(ref:Montagud-caption) **GINSIM representation of the 'Montagud' logical model of prostate cancer.**
+(ref:Montagud-caption) **GINsim representation of the 'Montagud' logical model of prostate cancer.**
 
 # About statistics
 

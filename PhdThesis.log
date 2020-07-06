@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  4 JUL 2020 00:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  6 JUL 2020 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1554,7 +1554,11 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen343
 \c@nlinenum=\count334
 \TeXr@lab=\toks63
-) (./PhdThesis.aux)
+) (./PhdThesis.aux
+
+LaTeX Warning: Label `prognostic' multiply defined.
+
+)
 \openout1 = `PhdThesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 275.
@@ -1754,50 +1758,47 @@ Overfull \hbox (0.99359pt too wide) detected at line 81
 
 
 Overfull \hbox (1.66797pt too wide) detected at line 82
- \TU/lmr/bx/n/12 119
+ \TU/lmr/bx/n/12 115
  []
 
 
-Overfull \hbox (1.66797pt too wide) detected at line 90
- \TU/lmr/bx/n/12 129
+Overfull \hbox (1.66797pt too wide) detected at line 91
+ \TU/lmr/bx/n/12 127
  []
 
 
-Overfull \hbox (1.66797pt too wide) detected at line 100
- \TU/lmr/bx/n/12 139
+Overfull \hbox (1.66797pt too wide) detected at line 102
+ \TU/lmr/bx/n/12 137
  []
 
 [15]
-Overfull \hbox (1.66797pt too wide) detected at line 126
+Overfull \hbox (1.66797pt too wide) detected at line 128
+ \TU/lmr/bx/n/12 163
+ []
+
+
+Overfull \hbox (1.66797pt too wide) detected at line 129
+ \TU/lmr/bx/n/12 164
+ []
+
+
+Overfull \hbox (1.66797pt too wide) detected at line 130
  \TU/lmr/bx/n/12 165
  []
 
 
-Overfull \hbox (1.66797pt too wide) detected at line 127
- \TU/lmr/bx/n/12 166
+Overfull \hbox (1.66797pt too wide) detected at line 144
+ \TU/lmr/bx/n/12 173
  []
 
 
-Overfull \hbox (1.66797pt too wide) detected at line 128
- \TU/lmr/bx/n/12 167
+Overfull \hbox (1.66797pt too wide) detected at line 149
+ \TU/lmr/bx/n/12 179
  []
-
-
-Overfull \hbox (1.66797pt too wide) detected at line 142
- \TU/lmr/bx/n/12 175
- []
-
-
-Overfull \hbox (1.66797pt too wide) detected at line 147
- \TU/lmr/bx/n/12 181
- []
-
-
-Underfull \vbox (badness 1655) has occurred while \output is active []
 
 [16]
-Overfull \hbox (1.66797pt too wide) detected at line 154
- \TU/lmr/bx/n/12 187
+Overfull \hbox (1.66797pt too wide) detected at line 156
+ \TU/lmr/bx/n/12 185
  []
 
 ) [17] (./PhdThesis.lot
@@ -2200,7 +2201,7 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [96]
 File: 06-Drugs_files/figure-latex/PROFILE-PCA-1.pdf Graphic file (type QTm)
 <use  "06-Drugs_files/figure-latex/PROFILE-PCA-1.pdf" >
-Underfull \hbox (badness 2486) in paragraph at lines 3929--3929
+Underfull \hbox (badness 2486) in paragraph at lines 3932--3932
 []\TU/lmr/m/n/12 Figure 6.2: []\TU/lmr/bx/sc/12 PROFILE-generated models and se
 nsitivites to
  []
@@ -2227,19 +2228,22 @@ File: 06-Drugs_files/figure-latex/BRAF-GDSC-1.pdf Graphic file (type QTm)
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [101]
-Underfull \vbox (badness 7631) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [102]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [103]
 File: fig/BRAF-results.png Graphic file (type QTm)
 <use  "fig/BRAF-results.png" >
 
-LaTeX Warning: Float too large for page by 29.62427pt on input line 4220.
+LaTeX Warning: Float too large for page by 29.62427pt on input line 4230.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2299,317 +2303,323 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 ] [117] [118] [119
 
 ]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[120] [121]
 File: fig/box-mech.png Graphic file (type QTm)
 <use  "fig/box-mech.png" >
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[120]
-File: fig/model-simulation.png Graphic file (type QTm)
-<use  "fig/model-simulation.png" > [121]
-Overfull \vbox (14.49998pt too high) has occurred while \output is active []
-
 [122]
+File: fig/model-simulation.png Graphic file (type QTm)
+<use  "fig/model-simulation.png" > [123]
 File: 07-Evaluation_files/figure-latex/R2-artificial-1.pdf Graphic file (type Q
 Tm)
-<use  "07-Evaluation_files/figure-latex/R2-artificial-1.pdf" > [123]
+<use  "07-Evaluation_files/figure-latex/R2-artificial-1.pdf" >
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [124]
-File: fig/fey.png Graphic file (type QTm)
-<use  "fig/fey.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [125]
+File: fig/fey.png Graphic file (type QTm)
+<use  "fig/fey.png" >
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[126]
 File: 07-Evaluation_files/figure-latex/R2-Fey-1.pdf Graphic file (type QTm)
-<use  "07-Evaluation_files/figure-latex/R2-Fey-1.pdf" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<use  "07-Evaluation_files/figure-latex/R2-Fey-1.pdf" > [127]
+Underfull \vbox (badness 5475) has occurred while \output is active []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[126] [127] [128
+[128] [129] [130
 
-] [129]
+] [131]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[130]
+[132]
 File: fig/trials.png Graphic file (type QTm)
 <use  "fig/trials.png" >
 File: 08-Causal_files/figure-latex/causality-example-1.pdf Graphic file (type Q
 Tm)
-<use  "08-Causal_files/figure-latex/causality-example-1.pdf" > [131]
+<use  "08-Causal_files/figure-latex/causality-example-1.pdf" > [133]
 File: 08-Causal_files/figure-latex/causality-example2-1.pdf Graphic file (type 
 QTm)
 <use  "08-Causal_files/figure-latex/causality-example2-1.pdf" >
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[132] [133]
+[134] [135]
 File: fig/causality.png Graphic file (type QTm)
 <use  "fig/causality.png" >
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[134] [135]
+[136] [137]
 File: 08-Causal_files/figure-latex/causality-example3-1.pdf Graphic file (type 
 QTm)
 <use  "08-Causal_files/figure-latex/causality-example3-1.pdf" >
+Underfull \vbox (badness 2573) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[136] [137]
+[138] [139]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[138] [139
+[140] [141
 
-] [140]
+] [142]
 File: fig/PDX.png Graphic file (type QTm)
 <use  "fig/PDX.png" >
 Underfull \vbox (badness 1629) has occurred while \output is active []
 
-[141]
+[143]
 File: 09-Precision_files/figure-latex/PDX-dense-1.pdf Graphic file (type QTm)
-<use  "09-Precision_files/figure-latex/PDX-dense-1.pdf" > [142]
+<use  "09-Precision_files/figure-latex/PDX-dense-1.pdf" > [144]
 File: fig/SHIVA_algo.png Graphic file (type QTm)
-<use  "fig/SHIVA_algo.png" > [143] [144]
-Overfull \vbox (14.49998pt too high) has occurred while \output is active []
-
-[145]
-File: fig/target-trials.png Graphic file (type QTm)
-<use  "fig/target-trials.png" > [146]
+<use  "fig/SHIVA_algo.png" > [145] [146]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [147]
-File: fig/DAG-multiple.png Graphic file (type QTm)
-<use  "fig/DAG-multiple.png" > [148]
+File: fig/target-trials.png Graphic file (type QTm)
+<use  "fig/target-trials.png" > [148]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[149] [150]
+[149]
+File: fig/DAG-multiple.png Graphic file (type QTm)
+<use  "fig/DAG-multiple.png" > [150]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [151] [152]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[153] [154] [155]
+[153] [154]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[155] [156] [157]
 File: 09-Precision_files/figure-latex/simulation-results-1.pdf Graphic file (ty
 pe QTm)
-<use  "09-Precision_files/figure-latex/simulation-results-1.pdf" > [156] [157]
+<use  "09-Precision_files/figure-latex/simulation-results-1.pdf" > [158] [159]
 File: fig/screenshot-shiny.png Graphic file (type QTm)
 <use  "fig/screenshot-shiny.png" >
 File: fig/screenshot-shiny.png Graphic file (type QTm)
-<use  "fig/screenshot-shiny.png" > [158]
+<use  "fig/screenshot-shiny.png" > [160]
 File: 09-Precision_files/figure-latex/PDX-subcohort-1.pdf Graphic file (type QT
 m)
 <use  "09-Precision_files/figure-latex/PDX-subcohort-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[159] [160]
+[161] [162]
 File: 09-Precision_files/figure-latex/PDX-results-1.pdf Graphic file (type QTm)
 
 <use  "09-Precision_files/figure-latex/PDX-results-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[161]
+[163]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[162] [163] [164
+[164] [165] [166
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[165] [166] [167
+[167] [168] [169
 
 ]
 File: 10-Appendix_files/figure-latex/GDSC-1.pdf Graphic file (type QTm)
 <use  "10-Appendix_files/figure-latex/GDSC-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[168]
+[170]
 File: fig/AUC.png Graphic file (type QTm)
-<use  "fig/AUC.png" > [169]
+<use  "fig/AUC.png" > [171]
 File: 10-Appendix_files/figure-latex/PDX-appendix-1.pdf Graphic file (type QTm)
 
 <use  "10-Appendix_files/figure-latex/PDX-appendix-1.pdf" >
-Underfull \hbox (badness 1383) in paragraph at lines 6648--6648
+Underfull \hbox (badness 1383) in paragraph at lines 6739--6739
 []\TU/lmr/m/n/12 Figure A.3: []\TU/lmr/bx/sc/12 Comprehensive overview of tumou
 rs and drugs
  []
 
-[170]
+[172]
 Underfull \vbox (badness 3323) has occurred while \output is active []
 
-[171]
+[173]
 File: 10-Appendix_files/figure-latex/METABRIC-1.pdf Graphic file (type QTm)
 <use  "10-Appendix_files/figure-latex/METABRIC-1.pdf" >
 File: 10-Appendix_files/figure-latex/TCGA-bp-1.pdf Graphic file (type QTm)
-<use  "10-Appendix_files/figure-latex/TCGA-bp-1.pdf" > [172] [173] [174
+<use  "10-Appendix_files/figure-latex/TCGA-bp-1.pdf" > [174] [175] [176
 
 ]
 File: fig/Fumia2013.png Graphic file (type QTm)
 <use  "fig/Fumia2013.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[175]
+[177]
 File: fig/Verlingue.png Graphic file (type QTm)
-<use  "fig/Verlingue.png" > [176]
+<use  "fig/Verlingue.png" > [178]
 Underfull \vbox (badness 2744) has occurred while \output is active []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[177]
-Underfull \hbox (badness 1603) in paragraph at lines 6893--6897
+[179]
+Underfull \hbox (badness 1603) in paragraph at lines 6984--6988
 \TU/lmr/m/n/12 axis, which mediates resistance through the activation of the
  []
 
-[178]
+[180]
 File: fig/Montagud.png Graphic file (type QTm)
-<use  "fig/Montagud.png" > [179] [180]
+<use  "fig/Montagud.png" > [181] [182]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 6951.
-[181
+(Font)              <17.28> on input line 7042.
+[183
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 6991.
+(hyperref)                removing `\hbox' on input line 7082.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 6991.
+(hyperref)                removing `\mathsurround' on input line 7082.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 6991.
+(hyperref)                removing `\z@' on input line 7082.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\unskip' on input line 6991.
+(hyperref)                removing `\unskip' on input line 7082.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@italiccorr' on input line 6991.
+(hyperref)                removing `\@@italiccorr' on input line 7082.
 
 
-Overfull \hbox (46.72809pt too wide) detected at line 7014
+Overfull \hbox (46.72809pt too wide) detected at line 7105
 [][]
  []
 
-[182]
+[184]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 7024.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 7024.
+(hyperref)                removing `\hbox' on input line 7115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 7024.
+(hyperref)                removing `\mathsurround' on input line 7115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\unskip' on input line 7024.
+(hyperref)                removing `\z@' on input line 7115.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@italiccorr' on input line 7024.
+(hyperref)                removing `\unskip' on input line 7115.
 
 
-Overfull \hbox (32.9962pt too wide) detected at line 7044
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@@italiccorr' on input line 7115.
+
+
+Overfull \hbox (32.9962pt too wide) detected at line 7135
 [][]
  []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[183] [184] (./PhdThesis.bbl
+[185] [186] (./PhdThesis.bbl
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[185] [186
+[187] [188
 
-] [187] [188]
-Underfull \hbox (badness 1038) in paragraph at lines 199--204
+] [189] [190]
+Underfull \hbox (badness 1038) in paragraph at lines 203--208
 []\TU/lmr/m/n/12 Sébastien Benzekry, Clare Lamont, Afshin Beheshti, Amanda Trac
 z,
  []
 
-[189] [190] [191] [192] [193]
-Underfull \hbox (badness 1226) in paragraph at lines 570--575
+[191] [192] [193] [194] [195]
+Underfull \hbox (badness 1226) in paragraph at lines 568--573
 []\TU/lmr/m/n/12 Federica Eduati, Patricia Jaaks, Jessica Wappler, Thorsten Cra
 mer,
  []
 
-[194] [195] [196] [197] [198] [199] [200] [201] [202] [203] [204] [205]
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1453
+[196] [197] [198] [199] [200] [201] [202] [203] [204] [205] [206] [207]
+Underfull \hbox (badness 10000) in paragraph at lines 1453--1460
 []\TU/lmr/m/n/12 Livia Perfetto, Leonardo Briganti, Alberto Calderone, Andrea
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 1446--1453
+Underfull \hbox (badness 2772) in paragraph at lines 1453--1460
 \TU/lmr/m/n/12 Cerquone Perpetuini, Marta Iannuccelli, Francesca Langone, Lu-
  []
 
-[206] [207]
-Underfull \hbox (badness 3482) in paragraph at lines 1596--1602
+[208] [209]
+Underfull \hbox (badness 3482) in paragraph at lines 1603--1609
 []\TU/lmr/m/n/12 Julio Saez-Rodriguez, Leonidas G Alexopoulos, MingSheng Zhang,
 
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 1605--1614
+Underfull \hbox (badness 2726) in paragraph at lines 1612--1620
 []\TU/lmr/m/n/12 Julio Saez-Rodriguez, Leonidas G. Alexopoulos, MingSheng Zhang
 ,
  []
 
-[208]
-Underfull \hbox (badness 2027) in paragraph at lines 1617--1623
+[210]
+Underfull \hbox (badness 2027) in paragraph at lines 1623--1629
 []\TU/lmr/m/n/12 Özgür Sahin, Holger Fröhlich, Christian Löbke, Ulrike Korf, Sa
 ra
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 1617--1623
+Underfull \hbox (badness 1622) in paragraph at lines 1623--1629
 \TU/lmr/m/n/12 Burmester, Meher Majety, Jens Mattern, Ingo Schupp, Claudine
  []
 
-[209] [210] [211] [212] [213] [214])
+[211] [212] [213] [214] [215] [216])
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 7150.
+(in both cases you will find help in the memoir manual). on input line 7241.
 
-[215] [216
+[217] [218
 
 
-] [217]
+] [219]
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 7150.
+(Font)              scaled to size 9.14278pt on input line 7241.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7150--7150
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7241--7241
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 7150.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 7241.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 7150.
+(Font)              <11> on input line 7241.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 7150.
+(Font)              <7.69997> on input line 7241.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 7150.
+(Font)              <5.5> on input line 7241.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7150--7150
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7150--7150
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7241--7241
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7150--7150
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7241--7241
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7241--7241
 [][] 
  []
 
@@ -2622,23 +2632,26 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 7150--7150
 \tf@lof=\write10
 \openout10 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7150.
-[218]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7150.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7241.
+[220]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7241.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7150.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7150.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7241.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7241.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 39064 strings out of 493005
- 747976 string characters out of 6134597
- 935063 words of memory out of 5000000
- 42369 multiletter control sequences out of 15000+600000
+ 39084 strings out of 493005
+ 748525 string characters out of 6134597
+ 935979 words of memory out of 5000000
+ 42389 multiletter control sequences out of 15000+600000
  53139 words of font info for 118 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 68i,15n,120p,10407b,981s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,15n,120p,10407b,989s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on PhdThesis.pdf (243 pages).
+Output written on PhdThesis.pdf (245 pages).

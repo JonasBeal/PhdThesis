@@ -2279,7 +2279,7 @@ in the KEGG database \citep{kanehisa2012kegg}. The benefit of
 mechanistic modeling is then to organize high-dimensional data and to
 facilitate the \emph{a posteriori} analysis of the results.
 
-\subsection{Predictive models}\label{predictive-models}
+\subsection{Predictive models}\label{prognostic}
 
 But the explicit representation of biological entities in mechanistic
 models makes them particularly \textbf{suitable for the study of
@@ -2453,7 +2453,7 @@ edges can represent the formation of active complexes, mediation of
 synthesis, catalysis, etc. and they will be later depicted as green
 arrows (\(\leftarrow\)). Negative edges on the other hand can represent
 inhibition of synthesis, degradation, inhibiting (de)phosphorylation,
-etc. and they will be depicted as red turnstile (\(\vdash\)).
+etc. and they will be depicted as red turnstiles (\(\vdash\)).
 
 \begin{figure}
 
@@ -2507,7 +2507,7 @@ the difference with regulatory graphs. That way, trajectories from an
 initial condition to all the final states can be determined. In a model
 with \(n\) nodes, the STG can contain up to \(2^n\) model state nodes;
 thus, if \(n\) is too big, the construction and the visualization of the
-graph becomes difficult.
+graph become difficult.
 
 \begin{figure}
 
@@ -2687,7 +2687,7 @@ several trajectories in order to get an insight of the average behavior
 by generating a \textbf{population of stochastic trajectories} over the
 asynchronous state transition graph (Figure \ref{fig:maboss}D). The
 aggregation of stochastic trajectories can also be interpreted as a
-description of an heterogeneous population. In fact, in all the examples
+description of a heterogeneous population. In fact, in all the examples
 in next chapters, all simulations have consisted of thousands of
 computed trajectories. The larger the model, the larger the space of
 possibilities and the more trajectories are required to explore it.
@@ -2963,7 +2963,7 @@ validation}\label{personalization-of-logical-models-method-and-prognostic-valida
 \initial{N}ow that logical modeling has been introduced, it is possible
 to come back to the question that structures this part and to refine it.
 \textbf{Is it possible to use routine omics data to obtain logical
-models that provide qualitative clinical interpretation?}. We thus
+models that provide qualitative clinical interpretation?} We thus
 propose a sequential approach, separating the model construction process
 from the integration of biological data. A generic logical model is
 first built, based on the literature knowledge, and the data are then
@@ -3086,7 +3086,7 @@ In addition to these examples proposed in the original article, an
 application to \textbf{cell line data} is proposed in section
 \ref{PROFILE-CL} to link to the next chapters. A cohort of 663 cell
 lines from different types of cancer will be used. The data are from
-Cell Models Passpors \citep[@][]{van2019cell} and are described in more
+Cell Models Passports \citep{van2019cell} and are described in more
 detail in the appendix \ref{appendix-cl}. In all cases, samples and cell
 lines will sometimes be referred to as patients for the sake of
 simplicity.
@@ -3095,7 +3095,7 @@ simplicity.
 model}\label{adapting-patient-profiles-to-a-logical-model}
 
 Before describing precisely the methodologies for using the data to
-generate patent-specific models, it is important to understand that
+generate patient-specific models, it is important to understand that
 these data will need to be transformed. This is the transformation of
 raw omics data into processed profiles that can be used directly in
 logical modeling.
@@ -3104,14 +3104,15 @@ logical modeling.
 data}\label{functional-inference-of-discrete-data}
 
 Since the logical formalism is itself discrete, the integration of
-discrete data is more straightforward. The most natural idea, used in
-many previous works, is to \textbf{interpret the functional effect of
-these alterations} and to encode it directly in the model. For instance,
-a deleterious mutation is integrated into the model by setting the
-corresponding node to \(0\) and ignoring the logical rule associated to
-it. For activating mutation, the node is set to \(1\). The main obstacle
-is therefore to estimate the functional impact of the alterations in
-order to translate them as well as possible in the model.
+discrete data is more straightforward, at least at the first glance. The
+most natural idea, used in many previous works, is to \textbf{interpret
+the functional effect of these alterations} and to encode it directly in
+the model. For instance, a deleterious mutation is integrated into the
+model by setting the corresponding node to \(0\) and ignoring the
+logical rule associated to it. For activating mutation, the node is set
+to \(1\). The main obstacle is therefore to estimate the functional
+impact of the alterations in order to translate them as well as possible
+in the model.
 
 For mutations, based on the variant classification provided by the data,
 inactivating mutations (nonsense, frame-shift insertions or deletions
@@ -3309,7 +3310,7 @@ the subsequent normalizations are summarized in Figure
 \ref{fig:logical-processing}. With the help of the categories described
 here, it is also possible to binarize the continuous data quite simply.
 This binarization is required for some methods of network inference or
-logical modeling but will not be used in the examples presented beloww.
+logical modeling but will not be used in the examples presented below.
 Readers may refer to \citet{beal2019personalization} for more details.
 
 \begin{figure}
@@ -3458,9 +3459,9 @@ below.
 data?}\label{an-integration-tool-for-high-dimensional-data}
 
 Once the method has been defined, it is imperative to study its validity
-and possible limitations. This comes down to answering the question: do
-personalized models capture a biological reality, and in our case do
-they discriminate between different types of cancer?
+and possible limitations. This comes down to answering the question:
+\textbf{do personalized models capture a biological reality}, and in our
+case do they discriminate between different types of cancer?
 
 \subsection{Biological relevance in cell lines}\label{PROFILE-CL}
 
@@ -3595,19 +3596,21 @@ risk of event while \emph{Apoptosis} is associated with a lower risk,
 which is again consistent (Figure \ref{fig:PROFILE-METABRIC-Cox}). In a
 more schematic and visual way, it is possible to transform these
 continuous \emph{Proliferation} and \emph{Apoptosis} scores into binary
-indicators (using medians) and observe their impact on survival, as has
-been done in previously mentioned studies
-\citep{fey2015signaling, salvucci2019system}. We then observe the same
-behaviour for the two personalized scores (Figure
-\ref{fig:PROFILE-METABRIC-Survival}A and B). Interestingly, if we
-combine the indicators to create groups that are expected to be of very
-bad prognosis (high \emph{Proliferation}, low \emph{Apoptosis}) or of
-very good prognosis (low \emph{Proliferation}, high \emph{Apoptosis}),
-we further discriminate patients and confirm the qualitatively
-meaningful interpretation of the personalized scores. It should be noted
-that the clinical validations presented here remain voluntarily simple
-and quite close to those proposed in similar articles. Discussions and
-statistical developments will be proposed in Part III.
+indicators (using medians) and observe their impact on survival, as it
+has been done in previously mentioned studies
+\citep{fey2015signaling, salvucci2019system}. The shortcomings of such
+approaches will be discussed from a statistical point of view in Part
+III. We then observe the same behaviour for the two personalized scores
+(Figure \ref{fig:PROFILE-METABRIC-Survival}A and B). Interestingly, if
+we combine the indicators to create groups that are expected to be of
+very bad prognosis (high \emph{Proliferation}, low \emph{Apoptosis}) or
+of very good prognosis (low \emph{Proliferation}, high
+\emph{Apoptosis}), we further discriminate patients and confirm the
+qualitatively meaningful interpretation of the personalized scores. It
+should be noted that the clinical validations presented here remain
+voluntarily simple and quite close to those proposed in similar
+articles. Discussions and statistical developments will be proposed in
+Part III.
 
 \begin{figure}
 
@@ -3619,10 +3622,10 @@ statistical developments will be proposed in Part III.
 \emph{Proliferation} scores for breast cancer patients in METABRIC
 cohort.} (A) Survival curve for overall survival stratified with
 \emph{Proliferation} scores from personalized models integrating
-mutations and RNA; scores have binarized based on median and survival
-censored at 120 months. (B) Same with \emph{Apoptosis} scores. (C)
-Survival curve stratified with combinations of \emph{Proliferation} and
-\emph{Apoptosis} scores, based on the same thresholds, and the
+mutations and RNA; scores have been binarized based on median and
+survival censored at 120 months. (B) Same with \emph{Apoptosis} scores.
+(C) Survival curve stratified with combinations of \emph{Proliferation}
+and \emph{Apoptosis} scores, based on the same thresholds, and the
 corresponding number of patients at risk (D).}\label{fig:PROFILE-METABRIC-Survival}
 \end{figure}
 
@@ -3708,10 +3711,10 @@ mechanisms.
 \subsection{Modeling response to cancer
 treatments}\label{modeling-response-to-cancer-treatments}
 
-To study these observed differences in drug response in various cancers,
-some approaches based on mathematical modeling were developed to explore
-the complexity of differential drug sensitivities. A number of
-\textbf{machine learning-based methods for predicting sensitivities}
+To study these observed differences in drugs response in various
+cancers, some approaches based on mathematical modeling were developed
+to explore the complexity of differential drug sensitivities. A number
+of \textbf{machine learning-based methods for predicting sensitivities}
 have been proposed \citep{costello2014community}, either without
 particular constraints or with varying degrees of prior knowledge; but
 they do not necessarily provide a mechanistic understanding of the
@@ -3777,16 +3780,16 @@ possible to do this with a rather limited amount of data}.
 PROFILE-personalized logical models to drug investigation.} (A)
 Schematic representation of a logical model of cancer molecular
 networks, in particular the one described in appendix
-\ref{appendix-verlingue} and used in the nexte subsection. (B)
-Sequential pipeline for drug response investigation with PROFILE,
-starting from a generic logical model, then transformed into several
-personalized models with different molecular profiles (correspondong to
-several cell lines); these models are finally simulated with a defined
-drug inhibition. (C) A possible analysis of the predictions of
-personalized models obtained from the generic model described in (A);
-the position of the personalized models in the PCA phenotype (or
-read-out) space of the model is studied as well as the impact of the
-treatment on this position.}\label{fig:PROFILE-drug}
+\ref{appendix-verlingue} and used in the next subsection. (B) Sequential
+pipeline for drug response investigation with PROFILE, starting from a
+generic logical model, then transformed into several personalized models
+with different molecular profiles (correspondong to several cell lines);
+these models are finally simulated with a defined drug inhibition. (C) A
+possible analysis of the predictions of personalized models obtained
+from the generic model described in (A); the position of the
+personalized models in the PCA phenotype (or read-out) space of the
+model is studied as well as the impact of the treatment on this
+position.}\label{fig:PROFILE-drug}
 \end{figure}
 
 
@@ -3819,8 +3822,8 @@ the pathways associated with these treatments (such as DNA repair) could
 contribute to this.
 
 It is then possible to analyze the personalized scores for each cell
-line (asyptotic values of the phenotypic read-outs of the model) with or
-without the effect of treatment. If the model includes more than two
+line (asymptotic values of the phenotypic read-outs of the model) with
+or without the effect of treatment. If the model includes more than two
 phenotypes of interest, such as the one in Figure
 \ref{fig:PROFILE-drug}A, one can visualize these behaviors in the PCA
 space of the personalized scores, as shown schematically in Figure
@@ -3837,12 +3840,12 @@ which are \emph{a priori} more sensitive to the treatment.
 
 This versatile analysis framework was first applied during this thesis
 to a \textbf{large pan-drug and pan-cancer analysis}. On the basis of
-generic logical models such as those previously presented (cf appendix
+generic logical models such as those previously presented (see appendix
 \ref{appendix-fumia} and \ref{appendix-verlingue}), and in view of the
 abundance of available data (across cancer tissues and drugs such as in
-GDSC cell line dataset, cf appendix \ref{appendix-fumia}), there were no
-theoretical obstacles to such an analysis. Although the simulations were
-carried out without any problems, the analysis nevertheless proved
+GDSC cell line dataset, see appendix \ref{appendix-fumia}), there were
+no theoretical obstacle to such an analysis. Although the simulations
+were carried out without any problems, the analysis nevertheless proved
 extremely difficult to interpret. We will highlight the various problems
 encountered, propose an illustration and some perspectives that led to
 the work presented in the following section.
@@ -3853,7 +3856,7 @@ these personalized models, several dozen of potential drugs have a
 mechanism of action that can be mechanistically translated into the
 logical model. We thus obtain \textbf{tens of thousands of
 ``personalized model/drug'' pairs that correspond to experimentally
-evaluated drug sensitivies} (cf appendix @ref(\#appendix-GDSC) for
+evaluated drug sensitivies} (cf appendix \ref{appendix-GDSC} for
 details). Firstly, the comparison of simulated and experimental data is
 not straightforward. As the models are qualitative, it is necessary to
 carry out the validation in this spirit. The idea is not to predict
@@ -3920,8 +3923,8 @@ or not.
 
 }
 
-\caption[PROFILE-generated models and sensitivites to MAP2K1  inhibitors avergaed per cancer type]{\textbf{PROFILE-generated models and
-sensitivites to MAP2K1 inhibitors avergaed per cancer type.} (A) Effects
+\caption[PROFILE-generated models and sensitivites to MAP2K1  inhibitors averaged per cancer type]{\textbf{PROFILE-generated models and
+sensitivites to MAP2K1 inhibitors averaged per cancer type.} (A) Effects
 of MAP2K1 inhibitors on personalized logical models averaged per cancer
 types and represented in a normalized PCA space with super-imposed
 original phenotypes. (B) Proportion of BRAF- and RAS-mutated cell lines
@@ -3962,11 +3965,11 @@ analysis, we propose here a pipeline based on logical modeling and able
 to go from the formulation of a specific biological question to the
 validation of a mathematical model on pre-clinical data, in this case a
 set of cell lines, and the subsequent interpretation of potential
-resistance mechanisms (Figure \ref{fig:BRAF-GA}). As before,** one of
-the main points of differentiation with existing mechanistic approaches,
-is that this framework does not rely on any training of parameters but
-only on the automatic integration and interpretation of omics
-features**.
+resistance mechanisms (Figure \ref{fig:BRAF-GA}). As before, \textbf{one
+of the main points of differentiation with existing mechanistic
+approaches, is that this framework does not rely on any training of
+parameters but only on the automatic integration and interpretation of
+molecular features}.
 
 \begin{figure}
 
@@ -3975,8 +3978,14 @@ features**.
 }
 
 \caption[BRAF modeling flowchart: from a biological question to validated personalized logical models]{\textbf{BRAF modeling flowchart: from a biological
-question to validated personalized logical models.}}\label{fig:BRAF-GA}
+question to validated personalized logical models.} Logical models are
+written with MaBoSS, and the checking model procedure is therefore
+provided in the same formalism. Cell line data are taken from Cell Model
+Passports \citep{van2019cell}.}\label{fig:BRAF-GA}
 \end{figure}
+
+
+
 
 
 
@@ -3985,31 +3994,32 @@ question to validated personalized logical models.}}\label{fig:BRAF-GA}
 context}\label{biological-and-clinical-context}
 
 The construction of a mathematical model must be based first and
-foremost on a precise and specific biological problem, at the origin of
+foremost on a precise and specific biological question, at the origin of
 the design of the model. Here, we choose to explore the different
-responses to treatments in diverse cancers that bear the same mutation.
-A well-studied example of these variations is the BRAF mutation and
-especially its V600E substitution. BRAF is mutated in 40 to 70\% of
-melanoma tumors and in 10\% of colorectal tumors, each time composed
-almost entirely of V600E mutations \citep{cantwell2011brafv600e}. In
-spite of these similarities, \textbf{BRAF inhibition treatments have
-experienced opposite results with improved survival in patients with
-melanoma \citep{chapman2011improved} and significant resistance in
-colorectal cancers \citep{kopetz2010plx4032}}, suggesting drastic
-mechanistic differences. Some subsequent studies have proposed
-context-based molecular explanations, often highlighting surrounding
-genes or signalling pathways, such as a feedback activation of EGFR
+responses to treatments in tumors from diverse cancers that bear the
+same mutation. A well-studied example of these variations is the BRAF
+mutation and especially its V600E substitution. BRAF is mutated in 40 to
+70\% of melanoma tumors and in 10\% of colorectal tumors, each time
+composed almost entirely of V600E mutations
+\citep{cantwell2011brafv600e}. In spite of these similarities,
+\textbf{BRAF inhibition treatments have experienced opposite results
+with improved survival in patients with melanoma
+\citep{chapman2011improved} and significant resistance in colorectal
+cancers \citep{kopetz2010plx4032}}, suggesting drastic mechanistic
+differences. Some subsequent studies have proposed context-based
+molecular explanations, often highlighting surrounding genes or
+signalling pathways, such as a feedback activation of EGFR
 \citep{prahallad2012unresponsiveness} or other mechanisms
-{[}\citet{poulikakos2011raf}; sun2014reversible{]}. These various
-findings support the need for an integrative mechanistic model able to
-formalize and explain more systematically the differences in drug
-sensitivities depending on the molecular context. The purpose of the
-study we propose here is not to provide a comprehensive molecular
-description of the response but to verify that the existence and
-functionality of the suggested feedback loops around the signalling
-pathway in which BRAF is involved \citep{prahallad2012unresponsiveness}
-may be a first hint towards these differences. For a more thorough study
-of these cancers, we refer to other works
+\citep{poulikakos2011raf, sun2014reversible}. These various findings
+support the need for an integrative mechanistic model able to formalize
+and explain more systematically the differences in drug sensitivities
+depending on the molecular context. The purpose of the study we propose
+here is not to provide a comprehensive molecular description of the
+response but to verify that the existence and functionality of the
+suggested feedback loops around the signalling pathway in which BRAF is
+involved \citep{prahallad2012unresponsiveness} may be a first hint
+towards these differences. For a more thorough study of these cancers,
+we refer to other works
 \citep{eduati2017drug, baur2020connecting, cho2016attractor}.
 
 \subsection{A logical model centred on
@@ -4042,7 +4052,7 @@ resistance to anti-BRAF treatments.
 
 }
 
-\caption[Logical model of signaling pathways around BRAF in colorectal andmelanoma cancers]{\textbf{Logical model of signaling pathways
+\caption[Logical model of signaling pathways around BRAF in colorectal and melanoma cancers]{\textbf{Logical model of signaling pathways
 around BRAF in colorectal andmelanoma cancers.} Grey nodes represent
 input nodes, which may correspond to the environmental conditions.
 Square nodes represent multi-valued variable (MEK, ERK, p70 and
@@ -4071,8 +4081,8 @@ through EGFR signal after BRAF inhibition in colorectal cancer
 simulation of this situation with the model gives the same result or
 not. Because there are many such assertions and because it is useful to
 verify them as the model is built, automatic model-checking tools have
-been defined, based on the MaBoSS syntax and inspired by the python
-unittest library. More details are provided in
+been defined, based on the MaBoSS syntax and inspired by the Python
+\emph{unittest} library. More details are provided in
 \citet{beal2020personalized} and in a corresponding
 \href{https://github.com/sysbio-curie/MaBoSS_test}{GitHub repository}.
 The list of biological assertions used to validate the model is detailed
@@ -4104,7 +4114,7 @@ most frequently mutated genes and their combinations (plot from UpSetR
 package \citep{conway2017upsetr}). (B) Differential sensitivities to
 BRAF inhibition by the drug PLX-4720 (lower panel) or by CRISPR
 inhibition (upper panel), depending on BRAF mutational status and cancer
-type. Numbers of cell lines in eache category are indicated. Note that
+type. Numbers of cell lines in each category are indicated. Note that
 high sensitivities correspond to low AUC and high scaled Bayesian
 factors.}\label{fig:BRAF-GDSC}
 \end{figure}
@@ -4143,12 +4153,12 @@ targeted inhibitions of certain genes. Two different datasets from
 Sanger Institute \citep{behan2019prioritization} and Broad Institute
 \citep{meyers2017computational} are available. We use \textbf{scaled
 Bayesian factors} to assess the effect of CRISPR targeting of genes.
-These scores are computed based on the fold change distribution of sgRNA
-\citep{hart2016bagel}. The highest values indicate that the targeted
-gene is essential to the cell fitness. The agreement between the two
-databases is good \citep{dempster2019agreement} but we choose to focus
-on the Broad database, which is more balanced in terms of the relative
-proportions of melanomas and colorectal cancers.
+These scores are computed based on the fold change distribution of
+single guide RNAs \citep{hart2016bagel}. The highest values indicate
+that the targeted gene is essential to the cell fitness. The agreement
+between the two databases is good \citep{dempster2019agreement} but we
+choose to focus on the Broad database, which is more balanced in terms
+of the relative proportions of melanomas and colorectal cancers.
 
 Figure \ref{fig:BRAF-GDSC}B illustrates both the relative quantities of
 cell lines for which drug or CRISPR screening data are available
@@ -4258,34 +4268,35 @@ right).
 
 Using only RNA data as continuous personalization (Figure
 \ref{fig:BRAF-results}A and B, middle rows) is both less informative and
-more difficult to interpret. For continuous data such as RNAseq data, we
-normalize the expression values and set both the initial conditions and
-the transition rates of the model variables to the corresponding values.
-Correlations with experimental BRAF inhibitions appear weaker and more
-uncertain. The key point, however, is that the \textbf{combination of
-mutations and RNA, as depicted in Figure \ref{fig:BRAF-results} A and B
-lower rows, seems to be more relevant}. This is partially true in
-quantitative terms but it is even easier to interpret in the
-corresponding scatter plots (Figure \ref{fig:BRAF-interactive}).
-Comparing first the Broad CRISPR scatter plots using mutations only
-(Figure \ref{fig:BRAF-results}B, upper right) and using both mutations
-and RNA (Figure \ref{fig:BRAF-results}B, lower right), we can observe
-that non-responsive cell lines (scaled Bayesian factor below 0), grouped
-in the lower right corner and correctly predicted using only mutations
-stayed in the same area: these strong mutational phenotypes have not
-been displaced by the addition of RNA data. Other cell lines previously
-considered to be of intermediate sensitivity by the model (e.g.,
-COLO-678 or SK-MEL-2) were shifted to the right, consistent with the
-lack of sensitivity observed experimentally. Finally, BRAF-mutated cell
-lines, previously clustered in one single column on the left using only
-mutations (with normalized \emph{Proliferation} scores around 0.5), have
-been moved in different directions. Many of the most sensitive cell
-lines (scaled Bayesian factor above 2) have been pushed to the left in
-accordance with the high sensitivities observed experimentally (e.g.,
-HT-29 or SK-MEL-24). It is even observed that the model corrected the
-position of the two BRAF mutated cell lines, but whose sensitivity is
-experimentally low (melanoma cell line HT-144 and colorectal cell line
-HT-55). Only one cell line (SK-MEL-30) has seen its positioning evolve
+more difficult to interpret. For continuous data such as RNA-sequencing
+data, we normalize the expression values and set both the initial
+conditions and the transition rates of the model variables to the
+corresponding values. Correlations with experimental BRAF inhibitions
+appear weaker and more uncertain. The key point, however, is that the
+\textbf{combination of mutations and RNA, as depicted in Figure
+\ref{fig:BRAF-results} A and B lower rows, seems to be more relevant}.
+This is partially true in quantitative terms but it is even easier to
+interpret in the corresponding scatter plots (Figure
+\ref{fig:BRAF-interactive}). Comparing first the Broad CRISPR scatter
+plots using mutations only (Figure \ref{fig:BRAF-results}B, upper right)
+and using both mutations and RNA (Figure \ref{fig:BRAF-results}B, lower
+right), we can observe that non-responsive cell lines (scaled Bayesian
+factor below 0), grouped in the lower right corner and correctly
+predicted using only mutations stayed in the same area: these strong
+mutational phenotypes have not been displaced by the addition of RNA
+data. Other cell lines previously considered to be of intermediate
+sensitivity by the model (\emph{e.g.}, COLO-678 or SK-MEL-2) were
+shifted to the right, consistent with the lack of sensitivity observed
+experimentally. Finally, BRAF-mutated cell lines, previously clustered
+in one single column on the left using only mutations (with normalized
+\emph{Proliferation} scores around 0.5), have been moved in different
+directions. Many of the most sensitive cell lines (scaled Bayesian
+factor above 2) have been pushed to the left in accordance with the high
+sensitivities observed experimentally (e.g., HT-29 or SK-MEL-24). It is
+even observed that the model corrected the position of the two BRAF
+mutated cell lines, but whose sensitivity is experimentally low
+(melanoma cell line HT-144 and colorectal cell line HT-55). Only one
+cell line (SK-MEL-30) has seen its positioning evolve
 counter-intuitively as a result of the addition of RNA in the
 personalization strategy: relatively sensitive to the inhibition of
 BRAF, it has, however, seen its standardised \emph{Proliferation} score
@@ -4356,7 +4367,7 @@ Another interesting contribution of RNA appears in the melanoma cell
 line UACC-62, which is particularly sensitive to treatment. The model is
 able to correctly predict its response once RNA levels are integrated.
 In this case, the reason for sensitivity seems to be due to the low
-level of PDPK1, which makes it difficult to activate p70 and thus
+level of PDPK1, which makes it difficult to activate p70 and thus to
 trigger the resistance linked to PI3K/AKT pathway activation. Similarly,
 the CRC resistant cell line, HT55, which carries only the BRAF mutation,
 expresses high levels of PDPK1, in addition to high levels of CRAF,
@@ -4371,11 +4382,10 @@ RAS mutation (RAS is set to \(1\)). Only SK-MEL-30 appears to be
 incorrectly classified and is observed to be more sensitive than the
 other cell lines with a similar mutation profile. This could be due to
 the fact that our network is incomplete and not able to account for some
-alterations responsible for this cell line sensitivity. The exploration
-of the mutational profile for this cell line might be a hint of The
-problem may also come from the fact that this cell line contains a
-frameshift mutation of RPS6KB2 (p70 node) not referenced in OncoKB and
-therefore not included in the simulation.
+alterations responsible for this cell line sensitivity. The problem may
+also come from the fact that this cell line contains a frameshift
+mutation of RPS6KB2 (p70 node) not referenced in OncoKB and therefore
+not included in the simulation.
 
 \begin{figure}
 
@@ -4650,23 +4660,25 @@ cancer}\label{information-flows-in-mechanistic-models-of-cancer}
 \epigraph{"Et l'effet qui s'en va nous decouvre les causes."}{Alfred de Musset (Poésies nouvelles, 1843)}
 
 \initial{T}he mechanistic models of cancer presented in the previous
-section have allowed us to integrate the omics data, to make them speak
-in order to better understand the clinical characteristics of cell lines
-or patients. But beyond their undeniable intellectual and scientific
-interest, do they have a direct clinical value? Given the abundance and
-complexity of patient data available to physicians, the use of computer
-tools and mathematical models is inevitable and increasingly frequent.
-Because of their explicit representation of phenomena, mechanistic
-models can provide a more easily understood alternative for physicians
-or patients. Is it therefore desirable and relevant to use these models
-in support of medical decision making? And how can their clinical
-validity and impact be rigorously measured?
+section have allowed us to integrate the omics data, to ``make them
+speak''" in order to better understand the clinical characteristics of
+cell lines or patients. But beyond their undeniable intellectual and
+scientific interest, do they have a direct clinical utility? Given the
+abundance and complexity of patient data available to physicians, the
+use of computer tools and mathematical models is inevitable and
+increasingly frequent. Because of their explicit representation of
+phenomena, mechanistic models can provide a more easily understood
+alternative for physicians or patients. Is it therefore desirable and
+relevant to use these models in support of medical decision making? And
+how can their clinical validity and impact be rigorously measured?
 
 First of all, the purpose of this chapter is to outline some of the
 limitations of the previously presented evaluations of mechanistic
 models. These evaluations answered the question: are the models of
-clinical value? We will show that an additional question could be:
-\textbf{do mechanistic models have an added clinical value?}
+clinical utility? We will show that an additional question could be:
+\textbf{do mechanistic models have an incremental clinical utility}, in
+comparison to the direct use of the data used to construct or specify
+them?
 
 \BeginKnitrBlock{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-4}
@@ -4675,15 +4687,70 @@ clinical value? We will show that an additional question could be:
 This chapter is relying on unpublished content. The exploratory analyses
 presented below have helped to clarify considerations expressed
 qualitatively in previous chapters and formed the starting point for
-subsequent chapters on the clinical value of cancer models.
+subsequent chapters on the clinical impact of cancer models.
 \EndKnitrBlock{summarybox}
+
+\section{Evaluation of models as
+biomarkers}\label{evaluation-of-models-as-biomarkers}
+
+Firstly, it is possible to consider mechanistic models of cancer as
+biomarkers among others, and therefore to evaluate them as such. This
+means focusing on the clinical information provided by the model
+outputs. In the previous examples, these outputs would be for example
+the \(H\)/\(K_{50}\)/\(A\) biomarkers from Fey's model (decribed in
+section \ref{prognostic}) or the personalized \emph{Proliferation}
+scores from the mechanistic models in the examples in sections
+\ref{validation-METABRIC} or \ref{diff-BRAF}. The prognostic or
+predictive value of model outputs can then be evaluated according to the
+methods and recommendations present in the literature on prognostic or
+predictive biomarkers. Without going into too much detail, guidelines in
+this area are quite numerous and detailed
+\citep{mcshane2005reporting, sauerbrei2018reporting}, and many of the
+points should apply identically for the particular type of biomarker
+that are the outputs of mechanistic models of cancer. For instance, in
+the context of prognostic biomarkers, it is of course necessary to
+present univariate analyses showing the relationship between the marker
+and the outcome, which is almost systematically done, but also
+multivariate analyses incorporating other possible known prognostic
+factors.
+
+Another frequent issue, already encountered in the previous examples, is
+the discretization of continuous markers. This is often done in order to
+classify patients into high and low risk groups for example for
+prognostic biomarkers. In the first place, although discretization may
+be required clinically, it is not necessary to evaluate the clinical
+value of the biomarker beforehand. Secondly, the choice of thresholds is
+crucial. In particular, in the case of biomarkers derived from
+mechanistic models, the artificial nature of the markers often makes
+difficult a binarization based on an \emph{a priori} interpretation of
+the values. Choosing the cut-off point in order to maximise the
+significance or separation of the survival curves, as proposed in
+\citet{fey2015signaling} and presented in Figure \ref{fig:fey}, is
+however not recommended \citep{altman1994dangers}, among other things
+because it can be interpreted as uncorrected multiple testing. Such
+practices may thus contribute to the low clinical reproducibility of the
+contribution of certain biomarkers \citep{hilsenbeck1992so}. For this
+problem in particular, tools have been proposed in the literature on
+clinical biomarkers, such as the predictivenesse curve
+\citep{mboup2020evaluating}. Beyond this example and in a general sense,
+the first step in a good evaluation of mechanistic models would be that
+the \textbf{standards recommended for the evaluation of biomarkers can
+be applied in the same way to mechanistic models} that have certain
+applications or validation based on prognostic or predictive values. As
+these topics are well covered in the relevant literature, we will
+subsequently focus on some aspects that are more specific to mechanistic
+models.
 
 \section{Processing of biological
 information}\label{processing-of-biological-information}
 
 Mechanistic models, and their outputs in particular, have so far been
 considered and evaluated as biomarkers. A comprehensive appreciation
-requires that they be seen as \textbf{information processing tools}.
+requires that they be seen as \textbf{information processing tools}. In
+this section, we will focus on a toy example to introduce some tools. We
+will thus speak in general terms of the clinical value of this model,
+understood in the sense of a prognostic or predictive value depending on
+the application.
 
 \subsection{Information in, information
 out}\label{information-in-information-out}
@@ -4697,15 +4764,14 @@ through a mechanistic model (here the grey box) to result in an output
 transformation, often non-linear, of \(X\) in \(Y\). Thus, when
 validating the biological or clinical relevance of \(Y\), either by
 calculating a correlation with the ground truth or by using it to
-stratify survival curves, only the absolute value of \(Y\) is checked.
+stratify survival curves, only the univariate value of \(Y\) is checked.
 This is an important step and a prerequisite for a well-constructed
 model. On the other hand, it is not sufficient information to understand
 how the model works. Indeed, the inputs \(X\) probably also have a
-predictive or clinical value. In short, \textbf{measuring only the
-output value of the model does not necessarily reveal the model's
-ability to make sense of the data it uses}. At the extreme, it is
-conceivable that a random function of some valuable inputs could be
-correlated to the biological reality.
+value. In short, \textbf{measuring only the output value of the model
+does not necessarily reveal the model's ability to make sense of the
+data it uses}. At the extreme, it is conceivable that a random function
+of some valuable inputs could be correlated to the biological reality.
 
 \begin{figure}
 
@@ -4725,18 +4791,22 @@ explained as follows: what does the output of the model represent in
 relation to the inputs? If we restrict ourselves to cases where the
 absolute biological/clinical value of \(Y\) is positive, we can then
 identify two families of situations. First we can imagine a situation
-where the model has improved the value of the inputs. The output would
-then have a higher value than the inputs (better biological validation
-etc.), or in any case a complementary value, a value not present in the
-inputs. This would correspond to the \textbf{capture by the model of
-emerging or non-linar effects}. In the second situation, the output does
-not capture emergent properties but summarizes, totally or partially,
-the information present in the inputs. This would correspond to a
-\textbf{knowledge-informed dimensionality-reduction}. Even in the latter
-case, the scientific value of the model as a tool for understanding is
-not necessarily questioned. The analyses presented below are simply
-intended to supplement the understanding of models and how they process
-information.
+where the model has improved the value of the inputs: the output would
+then have a higher value than the inputs (better biological validation,
+better pronostic value etc.), or in any case a complementary value, a
+value not present in the inputs. This would correspond to the
+\textbf{capture by the model of emerging or non-linear effects}. For the
+sake of simplification, we will here assimilate the two in the sense
+that a non-linear effect resulting from the interaction between certain
+variables was indeed not predictable from the components taken
+individually, and therefore emergent. In the second situation, the
+output does not capture emergent properties but summarizes, totally or
+partially, the information present in the inputs. This would correspond
+to a \textbf{knowledge-informed dimensionality-reduction}. Even in the
+latter case, the scientific value of the model as a tool for
+understanding is not necessarily questioned. The analyses presented
+below are simply intended to supplement the understanding of models and
+how they process information.
 
 \subsection{Emergence of information in artifical
 examples}\label{emergence-of-information-in-artifical-examples}
@@ -4744,7 +4814,7 @@ examples}\label{emergence-of-information-in-artifical-examples}
 These questions can be illustrated using a very simple artificial model
 represented in Figure \ref{fig:model-simulation}. On the one hand there
 are two latent biological variables called \emph{Proliferation (P)} and
-\emph{Apoptosis (A)} resulting in our biological groud truth,
+\emph{Apoptosis (A)} resulting in our biological ground truth,
 \emph{Growth}. On the other hand, the modeler has access to three
 different random variables \(N_1\), \(N_2\) and \(N_3\) respectively
 associated with the sign of \emph{P}, the absolute value of \emph{P} and
@@ -4809,23 +4879,23 @@ between these values? First, the model including the \(N_i\) inputs and
 the output \(O\) as regressors show different performances with
 \[R^2_{N_1+N_2+N_3+O_{linear}}=0.514=R^2_{N_1+N_2+N_3},\]
 \[R^2_{N_1+N_2+N_3+O_{non-linear}}=0.586>R^2_{N_1+N_2+N_3}.\] This means
-that \(O_{linear}\) has no added value compared to a linear combination
-of the inputs. This was expected given its definition. On the other
-hand, \(O_{non-linear}\) has allowed to extract an emergent information
-which improves the global prediction when combined linearly with the
-inputs. We can go further in understanding by breaking down the \(R^2\).
-In Figure \ref{fig:R2-artificial}A and B (left columns), \(R^2\) of the
-inputs' models are decomposed to show that \(N_1\) and \(N_3\)
-contribute most to the prediction in a linear model. By using the same
-strategies for decomposing the \(R_2\) and calculating the incremental
-\(R^2\), it is also possible to \textbf{decompose the \(R^2\) of \(O\)
-according to its origin}: its component \(N_1\) (\(0.22\) in Figure
-\ref{fig:R2-artificial}A) is the proportion of \(R^2\) that is also
-explained by \(N_1\), so it can be interpreted as being the part of the
-value of \(N_1\) captured by \(O\). In the non-linear case, we can see
-in the decomposition that \(O_{non-linear}\) has an additional created
-component (\(0.07\)), it is the non-linear component that is not shared
-with any of the inputs.
+that \(O_{linear}\) has no incremental value compared to a linear
+combination of the inputs. This was expected given its definition. On
+the other hand, \(O_{non-linear}\) has allowed to extract an emergent
+information which improves the global prediction when combined linearly
+with the inputs. We can go further in understanding by breaking down the
+\(R^2\). In Figure \ref{fig:R2-artificial}A and B (left columns),
+\(R^2\) of the inputs' models are decomposed to show that \(N_1\) and
+\(N_3\) contribute most to the prediction in a linear model. By using
+the same strategies for decomposing the \(R_2\) and calculating the
+incremental \(R^2\), it is also possible to \textbf{decompose the
+\(R^2\) of \(O\) according to its origin}: its component \(N_1\)
+(\(0.22\) in Figure \ref{fig:R2-artificial}A) is the proportion of
+\(R^2\) that is also explained by \(N_1\), so it can be interpreted as
+being the part of the value of \(N_1\) captured by \(O\). In the
+non-linear case, we can see in the decomposition that \(O_{non-linear}\)
+has an additional created component (\(0.07\)), it is the non-linear
+component that is not shared with any of the inputs.
 
 \begin{figure}
 
@@ -4837,7 +4907,7 @@ with any of the inputs.
 and output of example models.} (A) Results for the non-linear model
 inputs and output \(O_{non-linear}\) as defined in Figure
 \ref{fig:model-simulation}. (B) Same with the linear model. Colors
-represent the origine of \(R^2\) contribution. In particular, for right
+represent the origin of \(R^2\) contribution. In particular, for right
 colums (model\(Y\sim O\)), the red share represent the proportion of the
 \(R^2\) of the output \(O\) that does not come linearly from the inputs,
 and therefore its emerging part.}\label{fig:R2-artificial}
@@ -4860,19 +4930,20 @@ summarizes some of the information present in the inputs, without
 creating any. It can be likened to a relevant dimensionality reduction.
 The output of the non-linear model also fails to avoid some information
 losses, but at the same time it extracts new non-linear information.
-Thus, in combination with the inputs, it provides added value measured
-by the increase in total \(R^2\). Note that \(R^2\) is used here as one
-tool among others to illustrate the reflection on \textbf{personalized
-mechanistic models as information processing tools}. The point to
-remember is not technical but rather methodological: these mechanistic
-models based on omics data cannot be evaluated for themselves but must
-be evaluated in comparison with the data they use in order to better
-explain the way they process information. In this logic of model
-selection, other tools such as the Akaike Information Criterion (AIC)
-have been proposed and could allow to quantify if the reduction of
-dimension carried out by the models (from many omics inputs to one
-mechanistic output) allows a more parsimonious description of biology
-than the direct use of inputs \citep{kirk2013model}.
+Thus, in combination with the inputs, it provides incremental value
+measured by the increase in total \(R^2\). Note that \(R^2\) is used
+here as one tool among others to illustrate the reflection on
+\textbf{personalized mechanistic models as information processing
+tools}. The point to remember is not technical but rather
+methodological: these mechanistic models based on omics data cannot be
+evaluated for themselves but must be evaluated in comparison with the
+data they use in order to better explain the way they process
+information. In this logic of model selection, other tools such as the
+Akaike Information Criterion (AIC) have been proposed and could allow to
+quantify if the reduction of dimension carried out by the models (from
+many omics inputs to one mechanistic output) allows a more parsimonious
+description of biology than the direct use of inputs
+\citep{kirk2013model}.
 
 \section{Reanalysis of mechanistic models of
 cancer}\label{reanalysis-of-mechanistic-models-of-cancer}
@@ -4937,9 +5008,9 @@ combined inputs is \(0.60\). We can see from the decompositions that
 contributors in the combined evaluation of the inputs (Figure
 \ref{fig:R2-Fey}A, left column). However, \(H\) also includes an
 emerging non-linear share (\(R^2=0.08\)) that was not explained by the
-linear combination of inputs. Thus, combining \(H\) with the inputs in a
-survival prediction model does indeed allow to observe an added value
-with a global \(R^2\) of \(0.68\). In addition, the authors in the
+linear combination of inputs. Thus, incorporating \(H\) with the inputs
+in a survival prediction model does indeed allow to observe an added
+value with a global \(R^2\) of \(0.68\). In addition, the authors in the
 original study stressed the importance of positive feedback from JNK to
 MKK7 (Figure \ref{fig:fey2}A). In its absence, we find that the value of
 \(H\) is almost reduced to zero, since not only its non-linear part
@@ -5033,7 +5104,7 @@ dans laquelle ta mère
 
 rencontra ton père!"}{Robert Desnos (La colombe de l'arche, 1923)}
 
-\initial{T}he previous chapter proposed some tools to evaluate and
+\initial{T}he previous chapter introduced some tools to evaluate and
 quantify the value of mechanistic models, and in particular their
 outputs, with simple statistical tools. The latter, such as \(R^2\), are
 by no means specific to medical applications. One of the particularities
@@ -5068,7 +5139,7 @@ Without loss of generality, the rationale for this approach can be
 detailed for one drug, which will be referred to as \(A\) in the
 remainder of the chapter (Figure \ref{fig:trials}). The patients who can
 benefit from this drug, and therefore those eligible for the clinical
-trial, are first of all defined (specific disease, characteristics
+trial, are first of all defined (specific disease, characteristics,
 etc.). Then, they are randomly separated into two distinct groups, one
 receiving the new treatment to be evaluated (\(A=1\)) and the other
 generally receiving the treatment considered as standard of care, or a
@@ -5109,10 +5180,10 @@ This trial evaluates the impact of treatment \(A\).}\label{fig:trials}
 factors}\label{observational-data-and-confounding-factors}
 
 The problem of comparability between the two groups is reinforced when
-the data used does not come from a clinical trial. In the remainder of
-this thesis these data will be called \textbf{observational data}. This
-means that in the available data, some patients were treated with the
-new drug (\(A=1\)) and others received the reference treatment
+the data used does not come from a randomized clinical trial. In the
+remainder of this thesis these data will be called \textbf{observational
+data}. This means that in the available data, some patients were treated
+with the new drug (\(A=1\)) and others received the reference treatment
 (\(A=0\)). However, the assignment of treatment was not decided by the
 observer. This assignment was therefore made according to a protocol
 unknown to the observer which has no guarantee that the two groups are
@@ -5132,7 +5203,7 @@ volume) and decreased when \(A=1\) (treatment decreases tumor volume).
 between the variables and the associated coefficients used to simulate
 data are summarized in the directed acyclic graphs (DAG) in Figure
 \ref{fig:causality-example}A. The observed relations between variables
-in siimulated data are shown in Figure \ref{fig:causality-example}B, C
+in simulated data are shown in Figure \ref{fig:causality-example}B, C
 and D. In particular, the \textbf{theoretical influence of \(A\) on
 \(Y\) is recovered in the observed data} since
 \(E[Y|A=1]-E[Y|A=0]=-5.05\)
@@ -5192,7 +5263,7 @@ data}\label{causal-inference-methods-to-leverage-data}
 
 Despite these difficulties, some statistical methods have been developed
 to derive estimates with a causal interpretation from observational
-data, under precise assumptions. This work will focus the potential
+data, under precise assumptions. This work will focus on the potential
 outcomes framework \citep{rubin1974estimating}. We will first describe
 briefly the fundamentals of this framework and different methods that
 are part of it.
@@ -5207,29 +5278,29 @@ actual treatment received by individual \(j\) and the outcome. In the
 most simple case, treatment takes values in \(\mathcal{A}=\{0, 1\}\),
 \(1\) denoting the treated patients and \(0\) the control ones. \(Y_j\)
 corresponds to the patient's response to treatment. In the case of
-cancer it may be a continuous value (e.g size of tumor), a binary value
-(e.g status or event indicator), or even a time-to-event (e.g time to
-relapse or death). Only the first two cases will be discussed later.
-Finally, it is necessary to take into account the possible presence of
-confounders influencing both \(A\) and \(Y\) and denoted \(C_j\) for
-individual \(j\).
+cancer it may be a continuous value (\emph{e.g.}, size of tumor), a
+binary value (\emph{e.g.}, status or event indicator), or even a
+time-to-event (\emph{e.g.}, time to relapse or death). Only the first
+two cases will be discussed later. Finally, it is necessary to take into
+account the possible presence of confounders influencing both \(A\) and
+\(Y\) and denoted \(C_j\) for individual \(j\).
 
 The \textbf{potential outcomes framework is also described as
 counterfactual} because it defines variables like \(Y_j(a)\) to denote
-the potential outcome of individual \(j\) in case he has been treated by
-\(A=a\) which may be different from what we observe if \(A_j\neq a\).
-These counterfactual variables make it possible to write the causal
-estimands. For instance, in this context, we can easily compute the
-difference in outcome between treated patients and control patients
-(Figure \ref{fig:causality}, left part): \(E[Y | A=1] - E[Y | A=0].\)
-However, this difference has no causal interpretation as it does not
-offer any guarantees as to the confounding factor, as an unbalanced
-distribution of \(C\) can induce biases. Thus we define another
-estimate: \(E[Y(1)] - E[Y(0)].\) In this case, we compare between two
-ideal cohorts (Figure \ref{fig:causality}, right part), one in which all
-patients have been treated (possibly contrary to the fact) and one in
-which all patients have been left in the control arm (once again,
-possibly contrary to the fact).
+the potential outcome of individual \(j\) in case he/she has been
+treated by \(A=a\) which may be different from what we observe if
+\(A_j\neq a\). These counterfactual variables make it possible to write
+the causal estimands. For instance, in this context, we can easily
+compute the difference in outcome between treated patients and control
+patients (Figure \ref{fig:causality}, left part):
+\(E[Y | A=1] - E[Y | A=0].\) However, this difference has no causal
+interpretation as it does not offer any guarantees as to the confounding
+factor, as an unbalanced distribution of \(C\) can induce biases. Thus
+we define another estimate: \(E[Y(1)] - E[Y(0)].\) In this case, we
+compare between two ideal cohorts (Figure \ref{fig:causality}, right
+part), one in which all patients have been treated (possibly contrary to
+the fact) and one in which all patients have been left in the control
+arm (once again, possibly contrary to the fact).
 
 \begin{figure}
 
@@ -5238,7 +5309,7 @@ possibly contrary to the fact).
 }
 
 \caption[Association, causation and their associated cohorts]{\textbf{Association, causation and their
-associated cohorts.} Assocation analyses are based on observed cohorts
+associated cohorts.} Association analyses are based on observed cohorts
 and conditional probabilities. Causation analyses are based on
 counterfactual variables and cohorts.}\label{fig:causality}
 \end{figure}
@@ -5265,9 +5336,9 @@ treatments in the data:
 \(\textrm{if} \: A_j=a, \textrm{then} \: Y_j(a)=Y_j.\)
 
 \emph{Exchangeability} means that treated and control patients are
-exchangeable, i.e if the treated patients had not been treated they
-would have had the same outcomes as the controls, and conversely. Since
-we usually observe some confounders we define conditional
+exchangeable, \emph{i.e.}, if the treated patients had not been treated
+they would have had the same outcomes as the controls, and conversely.
+Since we usually observe some confounders we define conditional
 exchangeability to hold if cohorts are exchangeable for same values of
 confounding \(C\). Therefore conditional exchangeability will hold if
 there are no unmeasured confounding: \(Y(a) \indep A | C.\)
@@ -5317,14 +5388,16 @@ with standardized means:
 Computationally, non-parametric estimation of \(E[Y | A=a, C=c]\) is
 usually out of reach. Thus, on real-world dataset, \(E[Y | A=a, C=c]\)
 is estimated through \textbf{outcome modeling} and explicit computation
-\(P[C=c]\) is replaced by its empirical estimate. In the simple example
-depicted in Figure \ref{fig:causality-example3}A, a linear model of the
-outcome (\(Y\sim C+A\)) is fitted on observed data. This model is then
-used to infer \(E[Y | A=1, C=c]\) and \(E[Y | A=0, C=c]\) for each
-patient with covariate \(C=c\) (Figure \ref{fig:causality-example3}C).
-By averaging these values over the whole cohort the confounding effect
-is corrected and the estimator is much closer to the true value \(-5\)
-than the naive estimates (Figure \ref{fig:causality-example3}D and B).
+\(P[C=c]\) is replaced by its empirical estimate. The nature of the
+statistical model used will be specified in the various applications
+presented. In the simple example depicted in Figure
+\ref{fig:causality-example3}A, a linear model of the outcome
+(\(Y\sim C+A\)) is fitted on observed data. This model is then used to
+infer \(E[Y | A=1, C=c]\) and \(E[Y | A=0, C=c]\) for each patient with
+covariate \(C=c\) (Figure \ref{fig:causality-example3}C). By averaging
+these values over the whole cohort the confounding effect is corrected
+and the estimator is much closer to the true value \(-5\) than the naive
+estimates (Figure \ref{fig:causality-example3}D and B).
 
 \begin{figure}
 
@@ -5371,7 +5444,7 @@ or she actually received, knowing his or her covariates:
 
 \[W^A=\dfrac{1}{f[A|C]} \text{ with } f[a|c]=P[A=a|C=c],\]
 
-\(f[a|c]\) being called the propensity score, \emph{i.e.,} the
+\(f[a|c]\) being called the propensity score, \emph{i.e.}, the
 probability to have received the treatment \(A=a\), given the covariates
 \(C=c\). Again, propensity scores will be estimated in later examples
 using a parametric model. In this case with a binary treatment \(A\), a
@@ -5380,7 +5453,7 @@ weights \(W^A\) (Figure \ref{fig:causality-example3}C). Note that
 propensity scores are also useful for positivity investigations since
 values very close to \(0\) or \(1\) may indicate (quasi-)violations of
 positivity. Under the same hypothesis of exchangeability, positivity and
-consistency we can derive the modified Horvitz-Thompson estimator
+consistency, we can derive the modified Horvitz-Thompson estimator
 \citep{horvitz1952generalization, hernan2020causal}:
 
 \begin{equation}
@@ -5391,6 +5464,24 @@ E[Y(a)]=\dfrac{\hat{E}[I(A=a)W^{A}Y]}{\hat{E}[I(A=a)W^A]},
 \(I\) being the indicator function. Once again, this method brings
 estimates closer to the true causal effect by correcting for the
 influence of the confounder (Figure \ref{fig:causality-example3}E).
+
+\subsubsection{Limitations and additional
+methods}\label{limitations-and-additional-methods}
+
+These causal inference methods therefore allow to control for the effect
+of possible biases and confounders, at the cost of strong hypotheses
+that it is not possible to verify. The plausibility of these hypotheses,
+and therefore of the resulting estimates, requires a good knowledge of
+the context. Furthermore, the estimates are largely based on statical
+models of outcome or treatment. The correct specification of these
+models is therefore imperative to ensure the relevance of the estimates.
+In order to limit the risks of misspecification, some \textbf{doubly
+robust} approaches have also been developed. They require estimating
+both an outcome model and a treatment model, but the resulting estimates
+are asymptotically correct if at least one of the two models is
+correctly specified. One of these methodologies among others, called
+Targeted Maximum Likelihood Estimation (TMLE), will be mentioned in the
+next section and is detailed in appendix \ref{appendix-TMLE}.
 
 In summary, evaluating the effect of a treatment requires isolating its
 impact from that of all confounding factors. This can be done in a
@@ -5464,7 +5555,7 @@ models that allow cancer cells to evolve in a more realistic
 microenvironment. In the same way as for cell lines, PDX can be used for
 drug screening. The data used in this chapter come from a study by
 \citet{gao2015high} which contains several hundred tumors and more than
-fifty drugs. Not all drugs having been tested for all tumors and details
+fifty drugs. Not all drugs have been tested for all tumors and details
 of the drugs and types of cancer tested are available in the appendix
 \ref{appendix-PDX}. This dataset was generated following the ``one
 animal per model per treatment'' approach (\(1 \times 1 \times 1\)), the
@@ -5585,13 +5676,13 @@ their associated treatments, as proposed in the SHIVA clinical trial
 \subsection{Computational models to assign cancer
 treatments}\label{computational-models-to-assign-cancer-treatments}
 
-But the treatment algorithm example in Figure \ref{fig:SHIVA} could be
-more complex. Indeed, previous chapters have stressed, for example, that
-being mutated for the BRAF gene is not the only predictor of response to
-an inhibitor of BRAF (here Vemurafenib). The same is true for most
-treatments that could benefit from more global and systemic analyses,
-taking into account more variables and their interactions. This
-complexity would require the use of computational methods.
+The treatment algorithm example in Figure \ref{fig:SHIVA} could,
+however, be more complex. Indeed, previous chapters have stressed, for
+example, that being mutated for the BRAF gene is not the only predictor
+of response to an inhibitor of BRAF (here Vemurafenib). The same is true
+for most treatments that could benefit from more global and systemic
+analyses, taking into account more variables and their interactions.
+This complexity would require the use of computational methods.
 
 It is on this point that this chapter links to the previous ones.
 \textbf{Some of the cancer models studied throughout this thesis, or
@@ -5602,8 +5693,8 @@ medicine strategies. On the other hand, a model capable of predicting a
 patient's response to different treatments is also capable of indicating
 which one is the best. Such models would then move from systems biology
 to systems therapeutics \citep{hansen2013computation}, taking patients'
-geneomic features as inputs and outputting a treatment recommendation.
-In theory, mechanistic models seem to be suitable for this purpose since
+genomic features as inputs and outputting a treatment recommendation. In
+theory, mechanistic models seem to be suitable for this purpose since
 their explicit representation of genes and proteins makes it possible to
 simulate the effect of different therapeutic interventions. However, the
 feasibility of designing and calibrating such a model has yet to be
@@ -5751,8 +5842,8 @@ drugs}{Second causal effect (\textbackslash{}text\{CE\}\_2): comparison with phy
 
 Then, in order to propose a more comprehensive clinical assessment, we
 propose a second causal effect, \textbf{comparing the PM arm with the
-current clinical practice}, i.e the assignment of the same targeted
-treatments by physicians in the absence of the algorithm. This
+current clinical practice}, \emph{i.e.}, the assignment of the same
+targeted treatments by physicians in the absence of the algorithm. This
 implicitly means comparing two PM strategies: the one derived from the
 algorithm and the one that corresponds to current physician's knowledge.
 Unlike the former, the latter may not be perfectly deterministic
@@ -6470,7 +6561,7 @@ chosen to take the opposite side of the data-intensive machine learning
 methods. The main approach proposed uses a qualitative logical formalism
 and \textbf{integrates the data by interpreting them} rather than by
 optimizing the parameters with respect to a particular objective. As a
-result, the resulting personalized mechanical models have proven to be
+result, the resulting personalized mechanistic models have proven to be
 \textbf{more of an interpretive than a predictive tool}. Their
 versatility and low data requirements nevertheless allow them to be
 applied to a wide range of questions, particularly concerning the
@@ -6480,7 +6571,7 @@ because, while all kinds of applications are theoretically possible, the
 need to rely on detailed biological knowledge and appropriate data
 limits its scope.
 
-In the case of mechanistic molecular signalling models, this
+In the case of mechanistic molecular signaling models, this
 interpretative nature of the models is confirmed by statistical
 analyses. The main value of these models is to provide an understandable
 framework for extracting relevant biological information in the context
@@ -6778,7 +6869,7 @@ Factors} (GFs), \emph{Hypoxia}, \emph{TNFalpha}, \emph{ROS},
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINSIM representation of the logical model
+\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINsim representation of the logical model
 described in \citet{fumia2013boolean}.}}\label{fig:Fumia}
 \end{figure}
 
@@ -6808,7 +6899,7 @@ autor has helped to avoid potential errors in use.
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINSIM representation of the `Verlingue'
+\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINsim representation of the `Verlingue'
 logical model described in \citet{verlingue2016silico}.}}\label{fig:Verlingue}
 \end{figure}
 
@@ -6938,7 +7029,7 @@ Androgen, TNF alpha and Carcinogen presence) and 6 outputs
 
 }
 
-\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINSIM representation of the `Montagud'
+\caption[Graphical abstract of PROFILE method to personalize logical models with omics data]{\textbf{GINsim representation of the `Montagud'
 logical model of prostate cancer.}}\label{fig:Montagud}
 \end{figure}
 

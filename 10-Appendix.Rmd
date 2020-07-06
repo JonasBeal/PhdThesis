@@ -235,7 +235,7 @@ For this thesis, a published Boolean model from [@fumia2013boolean] has first be
 ```{r Fumia, echo=FALSE, out.width = "90%", fig.cap='(ref:Fumia-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
 knitr::include_graphics("fig/Fumia2013.png")
 ```
-(ref:Fumia-caption) **GINSIM representation of the logical model described in @fumia2013boolean.**
+(ref:Fumia-caption) **GINsim representation of the logical model described in @fumia2013boolean.**
 
 ## Extended logical model of cancer pathways {#appendix-verlingue}
 
@@ -244,7 +244,7 @@ Another logical model of similar size and scope was also used, primarily for the
 ```{r Verlingue, echo=FALSE, out.width = "90%", fig.cap='(ref:Verlingue-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
 knitr::include_graphics("fig/Verlingue.png")
 ```
-(ref:Verlingue-caption) **GINSIM representation of the 'Verlingue' logical model described in @verlingue2016silico.**
+(ref:Verlingue-caption) **GINsim representation of the 'Verlingue' logical model described in @verlingue2016silico.**
 
 ## Logical model of BRAF pathways in melanoma and colorectal cancer {#appendix-pantolini}
 
@@ -274,7 +274,7 @@ In the context of the European project [PRECISE](https://precise-project.eu/) (P
 ```{r Montagud, echo=FALSE, out.width = "90%", fig.cap='(ref:Montagud-caption)', fig.scap='Graphical abstract of PROFILE method to personalize logical models with omics data', fig.align='center'}
 knitr::include_graphics("fig/Montagud.png")
 ```
-(ref:Montagud-caption) **GINSIM representation of the 'Montagud' logical model of prostate cancer.**
+(ref:Montagud-caption) **GINsim representation of the 'Montagud' logical model of prostate cancer.**
 
 # About statistics
 
