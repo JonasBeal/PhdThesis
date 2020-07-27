@@ -5,6 +5,6 @@ output_dir: "docs"
 new_session: yes
 
 rmd_files: # defines the .Rmd files to be included in each output format
-  html: ["index.Rmd", "01-Models.Rmd", "02-Cancer.Rmd", "03-Mechanistic.Rmd", "04-Logical.Rmd", "05-Personalized.Rmd", "06-Drugs.Rmd", "07-Evaluation.Rmd", "08-Causal.Rmd", "09-Precision.Rmd", "10-Appendix.Rmd", "99-References.Rmd"]
-  latex: ["index.Rmd","00-Epigraph.Rmd","00-Abstract.Rmd", "00-Resume.Rmd", "00-Acknowledgements.Rmd", "00-Preface.Rmd", "00-Toc.Rmd", "01-Models.Rmd", "02-Cancer.Rmd", "03-Mechanistic.Rmd", "04-Logical.Rmd", "05-Personalized.Rmd", "06-Drugs.Rmd", "07-Evaluation.Rmd", "08-Causal.Rmd", "09-Precision.Rmd", "10-Appendix.Rmd"]
+  html: ["index.Rmd", "01-Models.Rmd", "02-Cancer.Rmd", "03-Mechanistic.Rmd", "04-Logical.Rmd", "05-Personalized.Rmd", "06-Drugs.Rmd", "07-Evaluation.Rmd", "08-Causal.Rmd", "09-Precision.Rmd", "10-Appendix.Rmd", "11-ResumeLong.Rmd", "99-References.Rmd"]
+  latex: ["index.Rmd","00-Epigraph.Rmd","00-Abstract.Rmd", "00-Resume.Rmd", "00-Acknowledgements.Rmd", "00-Preface.Rmd", "00-Toc.Rmd", "01-Models.Rmd", "02-Cancer.Rmd", "03-Mechanistic.Rmd", "04-Logical.Rmd", "05-Personalized.Rmd", "06-Drugs.Rmd", "07-Evaluation.Rmd", "08-Causal.Rmd", "09-Precision.Rmd", "10-Appendix.Rmd", "11-ResumeLong.Rmd"]
   
