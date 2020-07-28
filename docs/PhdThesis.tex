@@ -7379,7 +7379,7 @@ existence découlen de la complexité des phénomènes étudiés, les modèles
 sont par nature des \textbf{simplifications de la réalité}. Le recours
 au bon niveau de détail et la justification des choix effectués sont
 ainsi beaucoup plus importants qu'une impossible exactitude. Ou comme le
-disait Paul Valéry:
+disait Paul Valéry :
 
 \begin{quote}
 \emph{Ce qui est simple est toujours faux. Ce qui ne l'est pas est
@@ -7391,7 +7391,37 @@ cancer}\label{de-la-duxe9ruxe9gulation-de-la-machinerie-cellulaire-au-cancer}
 \addcontentsline{toc}{subsection}{De la dérégulation de la machinerie
 cellulaire au cancer}
 
-Bla bla bla
+Le cancer, de par sa grande complexité cellulaire et moléculaire, est un
+terrain de prédilection pour les modèles en tout genre. Les
+manifestations cliniques de la maladie, résumées par une proliferation
+incontrôlée de cellules, sont connues depuis des siècles. La
+compréhension des mécanismes biologiques sous-jacents ne s'est
+approfondie qu'à partir de la découverte de l'ADN comme support de
+l'information génétique, au milieu du XXème siècle. Le cancer est
+aujourd'hui reconnu comme une \textbf{maladie génétique} dont l'origine
+réside essentiellement dans des altérations de l'ADN. La
+\textbf{combinaison de certaines altérations}, souvent accumulées au fil
+du temps, est alors nécéssaire pour inactiver les différentes
+protections biologiques qui prémunissent en temps normal contre une
+prolifération cellulaire excessive.
+
+Ainsi, il apparait de plus en plus indispensable de considérer les
+informations biologiques de chaque patient (mutations de l'ADN, niveaux
+d'expression ARN etc.) non plus séparément mais conjointement afin de
+comprendre le phénomène tumoral. La prise en compte des \textbf{réseaux
+d'interactions} entre gènes, ARN et protéines éclaire également la
+compréhension: le cancer n'est plus seulement une maladie génétique mais
+également une maladie de réseaux (Figure \ref{fig:pathways}).
+
+Sur le plan technologique, la recherche profite également depuis le
+début du XXIème siècle de données beaucoup plus abondantes, issues
+notamment du séquençage à haut débit, qui permettent une vision plus
+globale en renseignant sur des milliers de gènes et \textbf{différents
+types de données omiques}: génomique (ADN), transcriptomique (ARN),
+protéomique (protéines) etc. Ces données sont notamment disponibles
+publiquement pour des \textbf{milliers de patients} atteints de cancer
+(consortimu TCGA par exemple) mais aussi pour de \textbf{nombreux
+modèles précliniques} comme des lignées cellulaires issues de patients.
 
 \subsection*{Modélisation mécanistique du cancer : d'une maladie
 complexe à la biologie des
@@ -7399,13 +7429,201 @@ systèmes}\label{moduxe9lisation-muxe9canistique-du-cancer-dune-maladie-complexe
 \addcontentsline{toc}{subsection}{Modélisation mécanistique du cancer :
 d'une maladie complexe à la biologie des systèmes}
 
-\section*{Des modèles logiques personalisés de
-cancer}\label{des-moduxe8les-logiques-personalisuxe9s-de-cancer}
-\addcontentsline{toc}{section}{Des modèles logiques personalisés de
+L'abondance des données et des relations entre les entités biologiques a
+rendu nécessaire l'utilisation de méthodes computationnelles pour les
+analyser et les modéliser. Ce thèse se focalise sur la
+\textbf{modélisation au niveau moléculaire}, celui des interactions
+entre gènes, ARN et protéines au sein des cellules. Même en se
+focalisant sur les modèles mécanistiques qui intègrent la connaissance
+biologique et biochimique sur ces entités, plusieurs formalismes
+mathématique existent pour écrire un modèle. Deux formalismes parmi les
+plus fréquents concentreront l'essentiel des analyses de cette thèse. Le
+premier est constitué d'\textbf{équations différentielles}, il est
+quantitatif mais mobilise de nombreux paramètres. Le second est le
+\textbf{formalisme logique}, plus parsimonieux mais qualitatif et qui
+sera décrit en détail plus avant.
+
+L'un comme l'autre ont pour vocation de répliquer le phénomène tumoral
+étudié (activation d'une voie de siganlisation, impact d'une mutations
+etc.) tout en représentant explicitement les entités biologiques
+impliquées. De par leur structure complexe, souvent non-linéaire, ils
+peuvent mettre en évidence des comportements dit \textbf{émergents} qui
+relèvent d'une réponse du système dans son ensemble et ne pouvaient se
+déduire des entités biologiques prises séparément.
+
+Au delà de leur utilité intellectuelle et scientifique dans l'étude des
+phénomène stumoraux, ces modèles mécanistiques moléculaires du cancer
+sont parfois utilisés pour des \textbf{analyses ou prédictions à portée
+clinique et médicale} : survie d'un patient en l'absence de traitement
+(valeur pronostique), réponse d'un patient à un traitement donné (valeur
+prédictive). Cette thèse se focalise essentiellement sur ces questions
+d'impact clinique des modèles mécanistiques de cancer, entre biologie
+des systèmes et biostatistiques.
+
+\section*{Des modèles logiques personnalisés de
+cancer}\label{des-moduxe8les-logiques-personnalisuxe9s-de-cancer}
+\addcontentsline{toc}{section}{Des modèles logiques personnalisés de
 cancer}
 
-\subsection*{Test}\label{test}
-\addcontentsline{toc}{subsection}{Test}
+\subsection*{Principes de modélisation logique et intégration des
+données}\label{principes-de-moduxe9lisation-logique-et-intuxe9gration-des-donnuxe9es}
+\addcontentsline{toc}{subsection}{Principes de modélisation logique et
+intégration des données}
+
+L'essentiel des modèles mécanistiques présentés dans cette thèse
+relèvent du formalisme logique. Chaque entité biologique y est
+représentée par une \textbf{variable discrète}, souvent binaire,
+interpétée comme une abstraction de son activité: \(0\) si inactive
+(gène non transcrit, protéine en trop faible concentration etc.), \(1\)
+si active (gène transcrit, protéine phosphorylée, ARN stabilisé etc.).
+Ces entités sont reliées entre elles par des règles logiques composées à
+partir des opérateurs ET (\&), OU (\textbar{}), NON (!). On pourra ainsi
+définir qu'une entité A doit être activée si B l'est et que, dans le
+même temps, C ne l'est pas (``B \& !C'').
+
+Par la suite les modèles logiques seront simulés suivant une
+\textbf{actualisation asynchrone} telle qu'encodée dans le logiciel
+MaBoSS dont le fonctionnement est résumé en Figure \ref{fig:maboss}. En
+bref, cela signifie que la mise à jour de l'état des variables du modèle
+(par exemple le passage de l'état \(0\) à l'état \(1\) si la règle
+logique est vérifiée) se fait une variable à la fois et que l'ordre des
+mises à jour est défini stochastiquement à partir de \textbf{constantes
+de réactions} associés aux variables (algorithme de Gillespie).
+
+La plupart des modèles logiques utilisés par la suite ont été construits
+à partir de la littéraure comme source primaire d'information.
+Cependant, dans ce formalisme comme dans les autres, les \textbf{données
+biologiques sont de toute première importance} à différentes étapes du
+modèles, que ce soit pour le définir, la paramétrer ou le valider
+(Figure \ref{fig:logical-data}).
+
+\subsection*{Personnalisation des modèles logiques : méthode et
+validation
+pronostique}\label{personnalisation-des-moduxe8les-logiques-muxe9thode-et-validation-pronostique}
+\addcontentsline{toc}{subsection}{Personnalisation des modèles logiques
+: méthode et validation pronostique}
+
+Les modèles définis à partir de la litérature sont par construction
+assez génériques et ne permettent pas d'explorer, pour un même cancer,
+les différences entre individus en termes d'agressivité de la tumeur ou
+de réponse au traitement. À partir d'un réseau générique, une des
+possibilités est d'utiliser les données biologiques des différentes
+tumeurs pour spécifier, personnaliser les modèles. Les méthodes
+existantes proposent pour la plupart d'\textbf{entraîner et d'optimiser
+les paramètres des modèles} à l'aide d'une fonction d'objectif
+pré-définie. Cela requiert cependant des données riches, souvent des
+données de perturbations qui sont rarement accessibles en dehors de
+certains modèles précliniques comme les lignées cellulaires.
+
+Une autre approche a été suivie dans cette thèse consistant à
+personnaliser les modèles en \textbf{interpétant biologiquement des
+données statiques} (par opposition aux données de perturbation) issues
+d'un seul prélèvement initial. Le formalisme logique est alors mobilisé,
+sa nature qualitative et parsimmonieuse étant adaptée aux données
+utilisées. Peut-on alors obtenir de ces données des modèles
+mécanistiques de cancer personnalisés et interpétables cliniquement ? La
+\textbf{méthode PROFILE} conçue durant cette thèse cherche à répondre à
+cette question \textbf{sans entraînement des modèles}.
+
+Son principe peut se diviser en deux méthodes distinctes: \textbf{la
+personnalisation discrète et la personnalisation continue} (Figure
+\ref{fig:logical-personalization}). La première infère l'\textbf{effect
+fonctionnel des altérations génétiques} considérées discrètes comme les
+mutations ou les altérations du nombre de copies d'un gène. Une mutation
+connue pour impliquer une perte (resp. un gain) de fonction de l'entité
+biologique sera traduite en forçant la variable correspondant du modèle
+à rester à \(0\) (resp. \(1\)) pour le patient concerné. La seconde
+méthode consiste elle à interpréter des quantités continues comme
+peuvent l'être les niveaux d'ARN, de protéines, de phosphorylation etc.
+Il s'agit alors, \textbf{pour chaque variable, de détecter la forme de
+distribution au sein de la cohorte puis de la normaliser}, c'est à dire
+de la transformer en une variable continue comprise entre \(0\) et \(1\)
+(Figure \ref{fig:logical-processing}). Cette valeur peut ensuite être
+utilisée pour définir les constantes de réactions associées à chaque
+variable du modèle et qui influent sur la rapidité avec laquelle ladite
+variable sera mise à jour. Les deux types de personnalisations peuvent
+être combinés, en intégrant par exemple les mutations et les niveaux
+d'ARN chacun suivant la méthode adaptée. Cette combinaison sera celle
+utilisée par défaut dans les analyses évoquées ultérieurement.
+
+Une première validation de la méthode est faite en vérifiant la capacité
+des modèles logiques personnalisés à différencier des tumeurs plus ou
+moins agressives. Des analyses de survies de patientes atteintes de
+cancers du sein sont notamment proposées en Figure
+\ref{fig:PROFILE-METABRIC-Survival} et démontrent la capacité des
+modèles personnalisés à \textbf{stratifier des patientes présentant des
+pronostics différents}.
+
+\subsection*{Des modèles logiques personnalisés pour interpréter la
+réponse aux
+traitements}\label{des-moduxe8les-logiques-personnalisuxe9s-pour-interpruxe9ter-la-ruxe9ponse-aux-traitements}
+\addcontentsline{toc}{subsection}{Des modèles logiques personnalisés
+pour interpréter la réponse aux traitements}
+
+Mais l'intérêt principal des modèles mécanistiques personnalisés réside
+dans leur représentation explicite des entités et mécanismes biologiques
+sous-jacents. Une des façons de mettre à profit cet avantage est de
+s'intéresser à l'\textbf{effet de certains traitements sur les modèles}.
+Il est en effet possible de modéliser l'effet d'un traitement si sa
+cible et son mode d'action sont suffisament connus. Cette analyse n'est
+\emph{a priori} pas possible dans un modèle statistique si le traitement
+n'est pas compris dans les données d'entraînement.
+
+Une première analyse à large spectre est menée à l'aide de données
+concernant plusieurs centaines de lignées cellulaires (provenant de
+différents types de cancer) et de traitements. L'utilisation d'un modèle
+logique générique n'a cependant pas permis de tirer des enseignements
+précis de cette analsye. Une étude plus ciblée a donc été menée par la
+suite pour étudier la \textbf{réponse aux inhibiteurs de BRAF des
+mélanomes et cancers colorectaux}, étant observé que les premiers
+répondent assez bien au traitement et pas les seconds, en dépit de
+profils moléculaires assez semblables. Un modèle centré autour de BRAF
+tout d'abord construit et validé qualitativement. Il est ensuite
+personalisé à l'aide des données de mutations et d'ARN issues de lignées
+cellaires des deux cancers concernés. La réponse des modèles
+personalisés à l'inhibition de BRAF est ensuite évaluée en observant le
+score de \emph{Proliferation} atteints par ces modèles avec et sans
+inhibiteurs. La réduction de \emph{Proliferation} engendrée par
+l'inhibition simulée de BRAF est comparée aux résulats expérimentaux
+issus de l'inhibition de BRAF sur les mêmes lignées cellulaires par un
+traitement ou par CRISPR/Cas9. Les corrélations significatives entre
+sensibilités expérimentales et simulées valident la pertinence des
+modèles personnalisés, en particulier ceux résultant de l'intégration
+conjointe des données de mutation et d'ARN (Figure
+\ref{fig:BRAF-results}). Les modèles personalisés apparaissent par
+ailleurs comme un outil d'investigation qualitative porteur de sens en
+permettant de mettre en lumière et en contexte certains mécanismes de
+résistance, liés à CRAF par exemple (Figure \ref{fig:BRAF-interactive}).
+Une comparaison avec des méthodes d'apprentissage automatique, ici des
+forêts aléatoires, est effectuée afin de souligner la complémentarité
+des approches et l'intérêt des modèles logiques personnalisés sans
+entraînement en présence d'un nombre d'échantillons réduit.
+
+Une application de cette méthode de personnalisation au cancer de la
+prostate est ensuite présentée. La stratégie est similaire au cas
+précédent, en insistant sur l'identification de nouvelles cibles
+thérapeutiques pour une lignée cellulaire en particulier. Certaines
+cibles identifiées comme efficaces par les modèles personnalisés sont
+ensuite testées et validées \emph{in vitro}.
+
+\section*{Quantification statistique de l'impact clinique des
+modèles}\label{quantification-statistique-de-limpact-clinique-des-moduxe8les}
+\addcontentsline{toc}{section}{Quantification statistique de l'impact
+clinique des modèles}
+
+\subsection*{Flux d'information dans les modèles mécanistiques de
+cancer}\label{flux-dinformation-dans-les-moduxe8les-muxe9canistiques-de-cancer}
+\addcontentsline{toc}{subsection}{Flux d'information dans les modèles
+mécanistiques de cancer}
+
+\subsection*{Essais cliniques et inférence
+causale}\label{essais-cliniques-et-infuxe9rence-causale}
+\addcontentsline{toc}{subsection}{Essais cliniques et inférence causale}
+
+\subsection*{Inférence causale pour la médecine de
+précision}\label{infuxe9rence-causale-pour-la-muxe9decine-de-pruxe9cision}
+\addcontentsline{toc}{subsection}{Inférence causale pour la médecine de
+précision}
 
 \bibliography{bib/thesis.bib}
 
