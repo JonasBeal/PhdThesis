@@ -6,9 +6,9 @@ En vertu de l'[article L121-3 du code de l’éducation](https://www.legifrance.
 
 **De la modélisation mécanistique des voies de signalisation dans le cancer à l'interprétation des modèles et de leurs apports : applications cliniques et évaluation statistique**
 
-## Modélisation et cancer {.unlisted .unnumbered}
+## Modélisation et cancer 
 
-### La modélisation scientifique, la complexité et l'abstraction {.unlisted .unnumbered}
+**La modélisation scientifique, la complexité et l'abstraction**
 
 Il importe en premier lieu d'effectuer une brève clarification sémantique et épistémologique concernant les *modèles*, de loin le mot plus fréquent de cette thèse. C'est en effet un terme polysémique, y compris en se restreignant à la seule pratique scientifique. Si les modèles y sont généralement reconnus comme des représentations des phénomènes étudiés, ils peuvent recouvrir des réalités diverses, tantôt objet physique manipulable (Figure \@ref(fig:orrery)) et tantôt construction purement formelle ou mathématique. C'est à cette deuxième catégorie que nous allons nous attacher tout au long de cette thèse, en la spécifiant davantage encore.  
   
@@ -18,7 +18,7 @@ Un point crucial à retenir concernant ces modèles, et en particulier les modè
 
 > *Ce qui est simple est toujours faux. Ce qui ne l'est pas est inutilisable*
 
-### De la dérégulation de la machinerie cellulaire au cancer {.unlisted .unnumbered}
+**De la dérégulation de la machinerie cellulaire au cancer**
 
 Le cancer, de par sa grande complexité cellulaire et moléculaire, est un terrain de prédilection pour les modèles en tout genre. Les manifestations cliniques de la maladie, caractérisée par une prolifération incontrôlée de cellules, sont connues depuis des siècles. La compréhension des mécanismes biologiques sous-jacents ne s'est elle approfondie qu'à partir de la découverte de l'ADN comme support de l'information génétique, au milieu du XX^ème^ siècle. Le cancer est aujourd'hui reconnu comme une **maladie génétique** dont l'origine réside essentiellement dans des altérations de l'ADN. C'est la **combinaison de plusieurs altérations**, souvent accumulées au fil du temps, qui permet d'inactiver les différentes protections biologiques qui prémunissent en temps normal contre une prolifération cellulaire excessive.
 
@@ -26,7 +26,7 @@ Ainsi, il apparait de plus en plus indispensable de considérer les informations
 
 Sur le plan technologique, la recherche profite également depuis le début du XXI^ème^ siècle de données beaucoup plus abondantes, issues notamment du séquençage à haut débit, qui permettent une vision plus globale en renseignant sur des milliers de gènes et ce à travers **différents types de données omiques** : génomique (ADN), transcriptomique (ARN), protéomique (protéines) etc. Ces données sont notamment disponibles publiquement pour des **milliers de patients** atteints de cancer (consortium TCGA par exemple) mais aussi pour de **nombreux modèles précliniques** comme des lignées cellulaires provenant de patients.
 
-### Modélisation mécanistique du cancer : d'une maladie complexe à la biologie des systèmes {.unlisted .unnumbered}
+**Modélisation mécanistique du cancer : d'une maladie complexe à la biologie des systèmes**
 
 L'abondance des données et des relations entre les entités biologiques a rendu nécessaire l'utilisation de méthodes computationnelles pour les comprendre et les modéliser. Ce thèse se focalise sur la **modélisation au niveau moléculaire**, celui des interactions entre gènes, ARN et protéines au sein des cellules. Même en se focalisant sur les modèles mécanistiques qui intègrent la connaissance biologique et biochimique sur ces entités, plusieurs formalismes mathématique existent pour écrire un modèle. Deux formalismes parmi les plus fréquents concentreront l'essentiel des analyses de cette thèse. Le premier est constitué d'**équations différentielles**, il est quantitatif mais mobilise de nombreux paramètres. Le second est le **formalisme logique**, plus parcimonieux mais qualitatif et qui sera décrit en détail plus avant.
 
@@ -34,9 +34,9 @@ L'un comme l'autre ont pour vocation de répliquer le phénomène tumoral étudi
 
 Au-delà de leur utilité intellectuelle et scientifique dans l'étude des phénomènes tumoraux, ces modèles mécanistiques moléculaires du cancer sont parfois utilisés pour des **analyses ou prédictions à portée clinique et médicale** : survie d'un patient en l'absence de traitement (valeur pronostique), réponse d'un patient à un traitement donné (valeur prédictive). Cette thèse se focalise essentiellement sur ces questions d'impact clinique des modèles mécanistiques de cancer, entre biologie des systèmes et biostatistiques.
 
-## Des modèles logiques personnalisés de cancer {.unlisted .unnumbered}
+## Des modèles logiques personnalisés de cancer 
 
-### Principes de modélisation logique et intégration des données {.unlisted .unnumbered}
+**Principes de modélisation logique et intégration des données**
 
 L'essentiel des modèles mécanistiques présentés dans cette thèse relèvent du formalisme logique. Chaque entité biologique y est représentée par une **variable discrète**, souvent binaire, interprétée comme une abstraction de son activité: $0$ si inactive (gène non transcrit, ARN dégradé, protéine en trop faible concentration etc.), $1$ si active (gène transcrit, protéine phosphorylée etc.). Ces entités sont reliées entre elles par des règles logiques composées à partir des opérateurs ET (&), OU (|), NON (!). On pourra ainsi définir qu'une entité A doit être activée si B l'est et que, dans le même temps, C ne l'est pas ("B & !C").
 
@@ -44,7 +44,7 @@ Par la suite les modèles logiques seront simulés suivant une **actualisation a
 
 La plupart des modèles logiques utilisés par la suite ont été construits à partir de la littérature comme source primaire d'information. Cependant, dans ce formalisme comme dans les autres, les **données biologiques sont de toute première importance** à différentes étapes du modèles, que ce soit pour le définir, la paramétrer ou le valider (Figure \@ref(fig:logical-data)).
 
-### Personnalisation des modèles logiques : méthode et validation pronostique {.unlisted .unnumbered}
+**Personnalisation des modèles logiques : méthode et validation pronostique**
 
 Les modèles définis à partir de la littérature sont par construction assez génériques et ne permettent pas d'explorer, pour un même cancer, les différences entre individus en termes d'agressivité de la tumeur ou de réponse au traitement. À partir d'un réseau moléculaire générique, une des possibilités est d'utiliser les données biologiques des différentes tumeurs pour spécifier, personnaliser les modèles. Les méthodes existantes proposent pour la plupart d'**entraîner et d'optimiser les paramètres des modèles** à l'aide d'une fonction d'objectif prédéfinie. Cela requiert cependant des données riches, souvent des données de perturbations qui sont rarement accessibles en dehors de certains modèles précliniques comme les lignées cellulaires.
 
@@ -54,7 +54,7 @@ Son principe peut se diviser en deux méthodes distinctes: **la personnalisation
 
 Une première validation de la méthode est faite en vérifiant la capacité des modèles logiques personnalisés à différencier des tumeurs plus ou moins agressives. Des analyses de survies de patientes atteintes de cancers du sein sont notamment proposées en Figure \@ref(fig:PROFILE-METABRIC-Survival) et démontrent la capacité des modèles personnalisés à **stratifier des patientes présentant des pronostics différents**.
 
-### Des modèles logiques personnalisés pour interpréter la réponse aux traitements {.unlisted .unnumbered}
+**Des modèles logiques personnalisés pour interpréter la réponse aux traitements**
 
 Mais l'intérêt principal des modèles mécanistiques personnalisés réside dans leur représentation explicite des entités et mécanismes biologiques sous-jacents. Une des façons de mettre à profit cet avantage est de s'intéresser à l'**effet de certains traitements sur les modèles**. Il est en effet possible de modéliser l'effet d'un traitement si sa cible et son mode d'action sont suffisamment connus. Cette analyse n'est *a priori* pas possible dans un modèle statistique si le traitement n'est pas compris dans les données d'entraînement.
 
@@ -62,21 +62,21 @@ Une première analyse à large spectre est menée à l'aide de données concerna
 
 Une application de cette méthode de personnalisation au cancer de la prostate est ensuite présentée. La stratégie est similaire au cas précédent, en insistant sur l'identification de nouvelles cibles thérapeutiques pour une lignée cellulaire en particulier. Certaines cibles identifiées comme efficaces par les modèles personnalisés sont ensuite testées et validées *in vitro*.
 
-## Quantification statistique de l'impact clinique des modèles {.unlisted .unnumbered}
+## Quantification statistique de l'impact clinique des modèles 
 
-### Flux d'informations dans les modèles mécanistiques de cancer {.unlisted .unnumbered}
+**Flux d'informations dans les modèles mécanistiques de cancer**
 
 La valeur clinique, c'est à dire pronostique ou prédictive, des modèles mécanistiques a été analysée jusqu'ici de manière assez simple en se focalisant sur la capacité des sorties du modèle (souvent des variables à interprétation phénotypique comme *Prolifération*) à corréler avec des résultats cliniques. Cependant les données utilisées en entrée des modèles mécanistiques, pour les paramétrer ou les personnaliser, sont souvent déjà des variables pertinentes cliniquement : statut d'une mutation, biomarqueur ARN etc. Il est donc nécessaire de considérer à la fois les variables d'entrée et de sortie du modèle à l'aune des résultats cliniques afin de comprendre **comment le modèle traite et transforme les informations cliniques qu'il ingère**.
 
 Un premier exemple est fourni, fondé sur des données simulées et l'utilisation du pourcentage de la variance exprimée ($R^2$), pour mettre en exergue deux grandes catégories de modèles mécanistiques (Figures \@ref(fig:model-simulation) et \@ref(fig:R2-artificial)). La première correspond à ceux dont les sorties ont une valeur clinique inférieure aux entrées. Les sorties du modèles, généralement en nombre réduit, peuvent néanmoins constituer une **réduction de dimension** pertinente des entrées, souvent nombreuses. La seconde catégorie est celle des modèles dont les sorties ont une valeur supérieure ou complémentaire aux entrées : ils ont **capturé un comportement émergent** qui a une valeur clinique. Cette analyse est appliquée à des modèles déjà publiés pour illustrer la nature de l'information clinique qu'ils fournissent. 
 
-### Essais cliniques et inférence causale {.unlisted .unnumbered}
+**Essais cliniques et inférence causale**
 
 Si l'on se focalise sur la capacité des modèles mécanistiques à orienter le choix des traitements, il devient nécessaire de développer d'autres méthodes d'analyse des modèles, plus proches de la pratique clinique. En la matière, l'évaluation des traitements et stratégies thérapeutiques se fait souvent à travers des **essais cliniques randomisés** qui permettent de comparer des populations similaires qui ne diffèrent que par l'administration du traitement ou du contrôle. Dans le cas de données non randomisées, que l'on appellera ici **observationnelles**, le choix des patients qui ont reçu le traitement ou le contrôle peut avoir été fait suivant des critères particuliers qui deviennent ainsi des **facteurs de confusion** dans l'analyse : la différence de résultats peut provenir de l'effet du traitement ou d'une répartition déséquilibrée des patients (Figures \@ref(fig:causality-example) et \@ref(fig:causality-example2)).
 
 Il est toutefois possible d'utiliser des méthodes pour corriger certains de ses déséquilibres et ainsi, sous certaines conditions, d'interpréter les différences résiduelles de résultats entre patients traités et contrôles comme résultant de l'effet causal du traitement. Trois implémentations différentes de ces méthodes d'**inférence causale** sont utilisées dans la thèse, chacune fondée sur un modèle statistique différent pour contrôler l'effet des facteurs de confusion: la standardisation (modèle du résultat du traitement), la pondération selon l'inverse de la probabilité (modèle de l'assignation du traitement), le *targeted maximum likelihood estimation* TMLE (combinaison des deux modèles précédents). Ces méthodes dépendent cependant toutes d'hypothèses parfois difficiles à vérifier.
 
-### Inférence causale pour la médecine de précision {.unlisted .unnumbered}
+**Inférence causale pour la médecine de précision**
 
 Mais les modèles mécanistiques peuvent théoriquement permettre de choisir parmi plusieurs traitements pour chaque profil moléculaire de patient. Ils sont ainsi assimilables à une **stratégie ou un algorithme de médecine de précision**. Peut-on alors appliquer les méthodes d'inférence causale à l'évaluation de ce genre de stratégies cliniques qui englobent différentes molécules thérapeutiques ? Dans le dernier temps de cette thèse, une extension de ces méthodes est proposée pour s'adapter à des stratégies cliniques comprenant **différentes versions de traitement**. Cela revient à utiliser des données observationnelles pour simuler des essais cliniques comparant un bras où les patients sont traités suivant les recommandations de l'algorithme de médecine de précision (qui peut être un modèle mécanistique) avec différents types de bras contrôle: traitement standard de référence (molécule unique), traitement prévu par le médecin, ou traitement ciblé aléatoirement défini.
 
@@ -84,6 +84,6 @@ Ces méthodes et les estimateurs statistiques associés sont d'abord validés su
 
 Dans un deuxième temps, une application a été menée avec des données précliniques issues de **xénogreffes dérivées de patients** (PDX). Cela correspond à des tumeurs prélevées chez des patients avant d'être divisées en échantillons implantés chez des souris immunodéprimées identiques qui seront traitées avec des molécules différentes (Figure \@ref(fig:PDX-principles)). En conséquence, il est possible d'accéder, pour chaque tumeur, à sa réponse thérapeutique face à différents traitements. Ces informations, qui ne sont pas disponibles pour les vrais patients qui ne peuvent recevoir qu'un traitement à la fois, permettent d'**accéder directement dans les données à l'effet de différentes stratégies thérapeutiques pour chaque tumeur**. Ainsi, il a été possible de valider, sur des données précliniques réelles, la supériorité des valeurs issues des nouvelles méthodes d'inférence causale proposées par rapport aux valeurs obtenues suivant des méthodes plus directes. 
 
-## Conclusion {.unlisted .unnumbered}
+## Conclusion 
 
 Cette thèse trace un chemin, **de la conception de modèles mécanistiques du cancer à la quantification de leur impact clinique**. La faculté de ces modèles à passer de l'outil théorique à une interprétation clinique repose ici sur leur personnalisation permise par l'intégration des données omiques dans un canevas tissé à partir des connaissances biologiques issues de la littérature. Les modèles logiques personnalisés qui ont été présentés restent essentiellement des supports qualitatifs à l'interprétation clinique des phénomène tumoraux. La réflexion menée par la suite sur leur impact clinique a mis en évidence l'importance d'une évaluation globale qui permette de comprendre l'origine de leur valeur clinique et la nécessité de développer des méthodes statistiques adaptées pour évaluer leurs apports en termes de médecine de précision.
