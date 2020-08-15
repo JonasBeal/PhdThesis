@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  30 JUL 2020 12:35
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  14 AUG 2020 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2081,6 +2081,9 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [64] [65]
 File: fig/logical-data.png Graphic file (type QTm)
 <use  "fig/logical-data.png" >
+Underfull \vbox (badness 4132) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [66]
@@ -2096,14 +2099,23 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [69]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [70]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[71] [72
+[71]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-] [73]
+[72] [73
+
+]
 File: fig/PROFILE-abstract.png Graphic file (type QTm)
 <use  "fig/PROFILE-abstract.png" >
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
@@ -2208,7 +2220,7 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [96]
 File: 06-Drugs_files/figure-latex/PROFILE-PCA-1.pdf Graphic file (type QTm)
 <use  "06-Drugs_files/figure-latex/PROFILE-PCA-1.pdf" >
-Underfull \hbox (badness 2486) in paragraph at lines 4004--4004
+Underfull \hbox (badness 2486) in paragraph at lines 4017--4017
 []\TU/lmr/m/n/12 Figure 6.2: []\TU/lmr/bx/sc/12 PROFILE-generated models and se
 nsitivites to
  []
@@ -2250,7 +2262,7 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 File: fig/BRAF-results.png Graphic file (type QTm)
 <use  "fig/BRAF-results.png" >
 
-LaTeX Warning: Float too large for page by 29.65363pt on input line 4302.
+LaTeX Warning: Float too large for page by 29.65363pt on input line 4315.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2439,7 +2451,7 @@ File: fig/AUC.png Graphic file (type QTm)
 File: 10-Appendix_files/figure-latex/PDX-appendix-1.pdf Graphic file (type QTm)
 
 <use  "10-Appendix_files/figure-latex/PDX-appendix-1.pdf" >
-Underfull \hbox (badness 1383) in paragraph at lines 6831--6831
+Underfull \hbox (badness 1383) in paragraph at lines 6844--6844
 []\TU/lmr/m/n/12 Figure A.3: []\TU/lmr/bx/sc/12 Comprehensive overview of tumou
 rs and drugs
  []
@@ -2467,7 +2479,7 @@ Underfull \vbox (badness 2744) has occurred while \output is active []
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [179]
-Underfull \hbox (badness 1603) in paragraph at lines 7077--7081
+Underfull \hbox (badness 1603) in paragraph at lines 7090--7094
 \TU/lmr/m/n/12 axis, which mediates resistance through the activation of the
  []
 
@@ -2475,58 +2487,58 @@ Underfull \hbox (badness 1603) in paragraph at lines 7077--7081
 File: fig/Montagud.png Graphic file (type QTm)
 <use  "fig/Montagud.png" > [181] [182]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 7135.
+(Font)              <17.28> on input line 7148.
 [183
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 7175.
+(hyperref)                removing `\hbox' on input line 7188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 7175.
+(hyperref)                removing `\mathsurround' on input line 7188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 7175.
+(hyperref)                removing `\z@' on input line 7188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\unskip' on input line 7175.
+(hyperref)                removing `\unskip' on input line 7188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@italiccorr' on input line 7175.
+(hyperref)                removing `\@@italiccorr' on input line 7188.
 
 
-Overfull \hbox (46.72809pt too wide) detected at line 7198
+Overfull \hbox (46.72809pt too wide) detected at line 7211
 [][]
  []
 
 [184]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 7208.
+(hyperref)                removing `\hbox' on input line 7221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 7208.
+(hyperref)                removing `\mathsurround' on input line 7221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 7208.
+(hyperref)                removing `\z@' on input line 7221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\unskip' on input line 7208.
+(hyperref)                removing `\unskip' on input line 7221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@italiccorr' on input line 7208.
+(hyperref)                removing `\@@italiccorr' on input line 7221.
 
 
-Overfull \hbox (32.9962pt too wide) detected at line 7228
+Overfull \hbox (32.9962pt too wide) detected at line 7241
 [][]
  []
 
@@ -2605,7 +2617,7 @@ Underfull \hbox (badness 1622) in paragraph at lines 1654--1660
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 7711.
+(in both cases you will find help in the memoir manual). on input line 7724.
 
 [227] [228
 
@@ -2614,31 +2626,31 @@ either increase the head height or redesign the header
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 7711.
+(Font)              scaled to size 9.14278pt on input line 7724.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7711--7711
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7724--7724
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 7711.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 7724.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 7711.
+(Font)              <11> on input line 7724.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 7711.
+(Font)              <7.69997> on input line 7724.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 7711.
+(Font)              <5.5> on input line 7724.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7711--7711
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7711--7711
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7724--7724
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 7711--7711
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7724--7724
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 7724--7724
 [][] 
  []
 
@@ -2651,12 +2663,12 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 7711--7711
 \tf@lof=\write10
 \openout10 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7711.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7724.
 [230]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7711.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7724.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7711.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7711.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7724.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7724.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2664,7 +2676,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  39109 strings out of 493005
  749209 string characters out of 6134597
- 938792 words of memory out of 5000000
+ 937792 words of memory out of 5000000
  42412 multiletter control sequences out of 15000+600000
  53147 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

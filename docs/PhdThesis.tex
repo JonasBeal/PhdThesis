@@ -2609,11 +2609,14 @@ time step all the variables that can be changed (Figure
 \ref{fig:synchronous}). This method is referred to as a
 \textbf{synchronous updating strategy}. In the second method, referred
 to as a \textbf{asynchronous updating strategy}, variables are changed
-one at a time in some predefined or in no particular order (Figure
-\ref{fig:asynchronous}) and therefore each state has as many successors
-as there are components whose state must be changed according to logical
-rules (Figure \ref{fig:asynchronous}A). The latter asynchronous method
-will be used exclusively in the work presented thereafter.
+one at a time (Figure \ref{fig:asynchronous}) and therefore each state
+has as many successors as there are components whose state must be
+changed according to logical rules (Figure \ref{fig:asynchronous}A).
+Performing only one transition at a time implies having to choose this
+transition between the different possible options, which can be done
+according to pre-established rules or stochastically as explained in
+section \ref{maboss-section}. The latter asynchronous method will be
+used exclusively in the work presented thereafter.
 
 \begin{figure}
 
@@ -2723,6 +2726,16 @@ trajectories.}\label{fig:maboss}
 
 
 \subsection{Gillespie algorithm}\label{gillespie-algorithm}
+
+The implementation of asynchronous updates proposed by the MaBoSS
+software is based on continuous time Markov process applied on a Boolean
+state space. The place of this software in the Markovian formalism, and
+the associated demonstrations, are available in the original publication
+by \citet{stoll2012continuous} and detailed in particular in the related
+supplementary document\footnote{Additional information on Markov
+  processes and MaBoSS in the following
+  \href{https://static-content.springer.com/esm/art\%3A10.1186\%2F1752-0509-6-116/MediaObjects/12918_2012_969_MOESM1_ESM.pdf}{document}}.
+The essence of the formalism is outlined below.
 
 Gillespie algorithm provides a \textbf{stochastic way to choose a
 specific transition among several possible ones} and to infer a
