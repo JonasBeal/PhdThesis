@@ -257,7 +257,7 @@ The first method is called standardization or parametric g-formula and it is the
 \begin{equation*}
 \begin{aligned}
   E[Y(a)] & = \sum_{c} E[Y(a)|c] \times P[c] \\
-          & = \sum_{c} E[Y(a)|a,c] \times P[c,w]
+          & = \sum_{c} E[Y(a)|a,c] \times P[c]
           &&\text{ (exchangeability } Y(a) \perp \!\!\! \perp A | C \text{ )} \\
           & = \sum_{c} E[Y|a,c] \times P[c]
           &&\text{ (consistency)}
