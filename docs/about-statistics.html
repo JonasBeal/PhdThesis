@@ -242,7 +242,10 @@
 <li class="chapter" data-level="B.4" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-montagud"><i class="fa fa-check"></i><b>B.4</b> Logical model of prostate cancer</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="about-statistics.html"><a href="about-statistics.html"><i class="fa fa-check"></i><b>C</b> About statistics</a><ul>
-<li class="chapter" data-level="C.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-decomp"><i class="fa fa-check"></i><b>C.1</b> Decomposition of <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="C.1" data-path="about-statistics.html"><a href="about-statistics.html#r2-and-beyond"><i class="fa fa-check"></i><b>C.1</b> <span class="math inline">\(R^2\)</span> and beyond</a><ul>
+<li class="chapter" data-level="C.1.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-decomp"><i class="fa fa-check"></i><b>C.1.1</b> Decomposition of <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="C.1.2" data-path="about-statistics.html"><a href="about-statistics.html#appendix-r2surv"><i class="fa fa-check"></i><b>C.1.2</b> <span class="math inline">\(R^2\)</span> for survival data</a></li>
+</ul></li>
 <li class="chapter" data-level="C.2" data-path="about-statistics.html"><a href="about-statistics.html#causal-inference-with-multiple-versions-of-treatment"><i class="fa fa-check"></i><b>C.2</b> Causal inference with multiple versions of treatment</a><ul>
 <li class="chapter" data-level="C.2.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-overall-treatment-effect"><i class="fa fa-check"></i><b>C.2.1</b> Overall treatment effect with multiple versions of treatment (equation @ref(eq:overall-treatment-effect))</a></li>
 <li class="chapter" data-level="C.2.2" data-path="about-statistics.html"><a href="about-statistics.html#appendix-distrib-treatment-effect"><i class="fa fa-check"></i><b>C.2.2</b> Treatment effect with predefined distributions of versions of treatment (equation @ref(eq:distrib-treatment-effect))</a></li>
@@ -279,8 +282,10 @@
             <section class="normal" id="section-">
 <div id="about-statistics" class="section level1">
 <h1><span class="header-section-number">C</span> About statistics</h1>
-<div id="appendix-decomp" class="section level2">
-<h2><span class="header-section-number">C.1</span> Decomposition of <span class="math inline">\(R^2\)</span></h2>
+<div id="r2-and-beyond" class="section level2">
+<h2><span class="header-section-number">C.1</span> <span class="math inline">\(R^2\)</span> and beyond</h2>
+<div id="appendix-decomp" class="section level3">
+<h3><span class="header-section-number">C.1.1</span> Decomposition of <span class="math inline">\(R^2\)</span></h3>
 <p>The decomposition of <span class="math inline">\(R^2\)</span> according to the method of <span class="citation">Lindeman (<a href="#ref-lindeman1980introduction">1980</a>)</span> is detailed below. The presentation is taken directly from <span class="citation">Grömping and others (<a href="#ref-gromping2006relative">2006</a>)</span>.</p>
 <p>A linear model is written <span class="math inline">\(y_i=\beta_0+\beta_1x_{i1}+...+\beta_px_{ip}+e_i\)</span> and the corresponding <span class="math inline">\(R^2\)</span> is:</p>
 <p><span class="math display">\[R^2=\dfrac{\sum_{i=1}^{n} (\hat{y_i}-\bar{y_i})^2}{\sum_{i=1}^{n}  (y_i-\bar{y_i})^2}\]</span> Additionally, we define <span class="math inline">\(R^2(S)\)</span> for a model with regressors in set S. The additional <span class="math inline">\(R^2\)</span> when adding the regressors in set <span class="math inline">\(M\)</span> to a model with the regressors in set <span class="math inline">\(S\)</span> is given as:</p>
@@ -289,6 +294,24 @@
 <p><span class="math display">\[seqR^2(\{x_k\}|S_k(r))=R^2(\{x_k\}\cup S_k(r))-R^2(S_k(r))\]</span></p>
 <p>All in all, the <span class="math inline">\(R^2\)</span> allocated to <span class="math inline">\(x_k\)</span> after decomposition is:</p>
 <p><span class="math display">\[R^2_{decomp}(x_k)=\dfrac{1}{p!}\sum_{r\text{ permutations}}seqR^2(\{x_k\}|r)\]</span></p>
+</div>
+<div id="appendix-r2surv" class="section level3">
+<h3><span class="header-section-number">C.1.2</span> <span class="math inline">\(R^2\)</span> for survival data</h3>
+<p>Among the different <span class="math inline">\(R^2\)</span> analogues that have been proposed to measure the variation explained by survival models, the one described by <span class="citation">Royston and Sauerbrei (<a href="#ref-royston2004new">2004</a>)</span>, called <span class="math inline">\(R^2_D\)</span> appears to be one of the most relevant with respect to the following criteria: independance from sensoring, interpretability and robustness to model misspecification <span class="citation">(Choodari-Oskooei, Royston, and Parmar <a href="#ref-choodari2012simulation">2012</a>)</span>.</p>
+<p>The description is given below in the context of a Cox proportional hazards (PH) survival model with <span class="math inline">\(n\)</span> individuals with <span class="math inline">\(T_i\)</span> and <span class="math inline">\(C_i\)</span> corresponding respectively to potential death (or relapse) and censoring times, with <span class="math inline">\(i=1,2,...,n\)</span>. In this time-to-event setting, <span class="math inline">\(X_i=min(T_i,C_i)\)</span> is the time variables and <span class="math inline">\(\delta_i=I(T_i \leq C_i)\)</span> the status variable, <span class="math inline">\(I\)</span> being the indicator function. The Cox PH model then expresses the hazard function as follows:</p>
+<p><span class="math display">\[h(t|X)=h_0(t).\text{exp}(\beta&#39;X)\]</span>,</p>
+<p>with <span class="math inline">\(t\)</span> the time to a death event, <span class="math inline">\(X\)</span> the covariate vector and <span class="math inline">\(beta\)</span> the parameter vector. The adapted <span class="math inline">\(R^2\)</span> called <span class="math inline">\(R^2_D\)</span> is given by <span class="citation">(Royston <a href="#ref-royston2006explained">2006</a>)</span>:</p>
+<p><span class="math display">\[R^2=\dfrac{D^2/\kappa^2}{D^2/\kappa^2 + \sigma^2_{\epsilon}}\]</span>,</p>
+<p>with the following component:</p>
+<ul>
+<li><span class="math inline">\(D\)</span> quantifies the separation of survival curves. It is computed by ordering the estimated prognostic index, <span class="math inline">\(\beta&#39;X\)</span>, calculating the expected standard normal order statistics corresponding to these values, dividing the latter by a factor <span class="math inline">\(\kappa\)</span>, and performing an auxiliary regression on the scaled scores: the resulting regression coefficient is <span class="math inline">\(D\)</span>.</li>
+<li><span class="math inline">\(\kappa=\sqrt{8/\pi}\approx 1.60\)</span> <span class="citation">(Royston and Sauerbrei <a href="#ref-royston2004new">2004</a>)</span></li>
+<li><span class="math inline">\(\sigma^2_{\epsilon}\)</span> is the variance of the error term, <span class="math inline">\(\sigma^2_{\epsilon}=\pi^2/6\)</span> for Cox PH models</li>
+</ul>
+<p>For a better understanding of this formula, it is interesting to note that in a linear regression model <span class="math inline">\(Y\sim N(\beta&#39;X, \sigma^2)\)</span>, it is also possible to write <span class="math inline">\(R^2\)</span> equivalently as follows:</p>
+<p><span class="math display">\[R^2=\dfrac{\text{Var}(\beta&#39;X)}{\text{Var}(\beta&#39;X)+\sigma^2}\]</span></p>
+<p>This formula underlines the analogy with <span class="math inline">\(R^2_D\)</span>, with <span class="math inline">\(D^2/\kappa^2\)</span> being interpreted as an estimate of the variance of the prognostic index <span class="math inline">\(\beta&#39;X\)</span> for the Cox PH model.</p>
+</div>
 </div>
 <div id="causal-inference-with-multiple-versions-of-treatment" class="section level2">
 <h2><span class="header-section-number">C.2</span> Causal inference with multiple versions of treatment</h2>
@@ -385,6 +408,9 @@ I(a,k) = \left\{
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-choodari2012simulation">
+<p>Choodari-Oskooei, Babak, Patrick Royston, and Mahesh KB Parmar. 2012. “A Simulation Study of Predictive Ability Measures in a Survival Model I: Explained Variation Measures.” <em>Statistics in Medicine</em> 31 (23). Wiley Online Library: 2627–43.</p>
+</div>
 <div id="ref-feng2012generalized">
 <p>Feng, Ping, Xiao-Hua Zhou, Qing-Ming Zou, Ming-Yu Fan, and Xiao-Song Li. 2012. “Generalized Propensity Score for Estimating the Average Treatment Effect of Multiple Treatments.” <em>Statistics in Medicine</em> 31 (7). Wiley Online Library: 681–97.</p>
 </div>
@@ -399,6 +425,12 @@ I(a,k) = \left\{
 </div>
 <div id="ref-luque2018targeted">
 <p>Luque-Fernandez, Miguel Angel, Michael Schomaker, Bernard Rachet, and Mireille E Schnitzer. 2018. “Targeted Maximum Likelihood Estimation for a Binary Treatment: A Tutorial.” <em>Statistics in Medicine</em> 37 (16). Wiley Online Library: 2530–46.</p>
+</div>
+<div id="ref-royston2006explained">
+<p>Royston, Patrick. 2006. “Explained Variation for Survival Models.” <em>The Stata Journal</em> 6 (1). SAGE Publications Sage CA: Los Angeles, CA: 83–96.</p>
+</div>
+<div id="ref-royston2004new">
+<p>Royston, Patrick, and Willi Sauerbrei. 2004. “A New Measure of Prognostic Separation in Survival Data.” <em>Statistics in Medicine</em> 23 (5). Wiley Online Library: 723–48.</p>
 </div>
 <div id="ref-van2011targeted">
 <p>Van der Laan, Mark J, and Sherri Rose. 2011. <em>Targeted Learning: Causal Inference for Observational and Experimental Data</em>. Springer Science &amp; Business Media.</p>

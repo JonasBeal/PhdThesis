@@ -278,7 +278,9 @@ knitr::include_graphics("fig/Montagud.png")
 
 # About statistics
 
-## Decomposition of $R^2$ {#appendix-decomp}
+## $R^2$ and beyond
+
+### Decomposition of $R^2$ {#appendix-decomp}
 
 The decomposition of $R^2$ according to the method of @lindeman1980introduction is detailed below. The presentation is taken directly from @gromping2006relative.  
   
@@ -297,6 +299,31 @@ $$seqR^2(\{x_k\}|S_k(r))=R^2(\{x_k\}\cup S_k(r))-R^2(S_k(r))$$
 All in all, the $R^2$ allocated to $x_k$ after decomposition is:
 
 $$R^2_{decomp}(x_k)=\dfrac{1}{p!}\sum_{r\text{ permutations}}seqR^2(\{x_k\}|r)$$
+
+### $R^2$ for survival data {#appendix-r2surv}
+
+Among the different $R^2$ analogues that have been proposed to measure the variation explained by survival models, the one described by @royston2004new, called $R^2_D$ appears to be one of the most relevant with respect to the following criteria: independance from sensoring, interpretability and robustness to model misspecification [@choodari2012simulation]. 
+
+
+The description is given below in the context of a Cox proportional hazards (PH) survival model with $n$ individuals with $T_i$ and $C_i$ corresponding respectively to potential death (or relapse) and censoring times, with $i=1,2,...,n$. In this time-to-event setting, $X_i=min(T_i,C_i)$ is the time variables and $\delta_i=I(T_i \leq C_i)$ the status variable, $I$ being the indicator function. The Cox PH model then expresses the hazard function as follows:
+
+$$h(t|X)=h_0(t).\text{exp}(\beta'X)$$,
+
+with $t$ the time to a death event, $X$ the covariate vector and $beta$ the parameter vector. The adapted $R^2$ called $R^2_D$ is given by [@royston2006explained]:
+
+$$R^2=\dfrac{D^2/\kappa^2}{D^2/\kappa^2 + \sigma^2_{\epsilon}}$$,
+
+with the following component:
+
+* $D$ quantifies the separation of survival curves. It is computed by ordering the estimated prognostic index, $\beta'X$, calculating the expected standard normal order statistics corresponding to these values, dividing the latter by a factor $\kappa$, and performing an auxiliary regression on the scaled scores: the resulting regression coefficient is $D$.
+* $\kappa=\sqrt{8/\pi}\approx 1.60$ [@royston2004new]
+* $\sigma^2_{\epsilon}$ is the variance of the error term, $\sigma^2_{\epsilon}=\pi^2/6$ for Cox PH models
+
+For a better understanding of this formula, it is interesting to note that in a linear regression model $Y\sim N(\beta'X, \sigma^2)$, it is also possible to write $R^2$ equivalently as follows:
+
+$$R^2=\dfrac{\text{Var}(\beta'X)}{\text{Var}(\beta'X)+\sigma^2}$$
+
+This formula underlines the analogy with $R^2_D$, with $D^2/\kappa^2$ being interpreted as an estimate of the variance of the prognostic index $\beta'X$ for the Cox PH model. 
 
 ## Causal inference with multiple versions of treatment
 
