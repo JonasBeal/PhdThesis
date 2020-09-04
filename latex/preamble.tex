@@ -42,11 +42,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Text box
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{xcolor}
+%\usepackage[dvipsnames]{xcolor}
+%\PassOptionsToPackage{usenames,dvipsnames}{xcolor}
 \usepackage{xcolor}
+\definecolor{steelblue}{rgb}{0.27, 0.51, 0.71}
+\definecolor{maroon}{rgb}{0.5, 0.0, 0.0}
+\definecolor{indianred}{rgb}{0.8, 0.36, 0.36}
+
 \usepackage{tcolorbox}
 \newtcolorbox{summarybox}{
-  colback=lightgray,
-  colframe=teal,
+  colback= black!10!white,
+  colframe=steelblue,
+  coltext=black,
+  boxsep=5pt,
+  arc=4pt}
+  
+\newtcolorbox{conclubox}{
+  colback= black!10!white,
+  colframe=indianred,
   coltext=black,
   boxsep=5pt,
   arc=4pt}

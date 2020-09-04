@@ -1,5 +1,5 @@
 
-# Clinical evidence generation and causal inference
+# Clinical evidence generation and causal inference {#causal-chap}
 
 \epigraph{"Maudit
 
@@ -87,7 +87,7 @@ In the second case (Figure \@ref(fig:causality-example2)), $C$ has an influence 
 \end{figure}
 (ref:causality-example2-caption) **Analysis on observed data with confounder.** (A) Directed acyclic graphs with causal relations between variables and parameters used to simulate data. (B) Influence of $C$ on $A$ in observed simulated data. (C) Same with $C$ and $Y$. (D) Same with $A$ and $Y$.
 
-## Causal inference methods to leverage data
+## Causal inference methods to leverage data {#causal-basic}
 
 Despite these difficulties, some statistical methods have been developed to derive estimates with a causal interpretation from observational data, under precise assumptions. This work will focus on the potential outcomes framework [@rubin1974estimating]. We will first describe briefly the fundamentals of this framework and different methods that are part of it.
 
@@ -183,3 +183,9 @@ These causal inference methods therefore allow to correct some biases due to obs
 
 In summary, evaluating the effect of a treatment requires isolating its impact from that of all confounding factors. This can be done in a randomized clinical trial designed for this purpose. However, there is a great amount of other data available that may not have been generated in this rigorous framework. It is nevertheless possible to draw causal interpretations from them, under certain hypotheses, thus offering insights for *a posteriori* statistical evaluation of specific therapeutic strategies.
 
+
+\BeginKnitrBlock{conclubox}<div class="conclubox">
+#### Summary {-}
+
+In the process of evaluating a treatment, it is crucial to monitor the effect of confounding factors in order to identify the causal effect of the treatment and not spurious associations. This may involve randomized clinical trials specifically designed for this evaluation. In the case of observational data generated outside this framework, it is nevertheless possible to use causal inference methods to estimate, under certain conditions, the causal effect of the treatment.
+</div>\EndKnitrBlock{conclubox}

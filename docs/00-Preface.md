@@ -1,15 +1,18 @@
 \chapter*{Preface}
 
-\initial{T}he present thesis is structured in three parts, each subdivided into three chapters. Since the whole thesis is about cancer modeling, the first part aims at defining the type of model to be referred to, and in particular models that will be called mechanistic, as well as the object of the modeling, *i.e.*, the molecular networks involved in cancer. So the first part answers the question: **what is a cancer model and what is its purpose?**  
-  
+\initial{T}he understanding of cancer has progressed dramatically in recent decades, fueled in particular by the contribution of increasingly precise and abundant biological data. These advances have taken cancer modeling from theory to practice: it is now possible to simulate the molecular mechanisms of cancer in great detail. **But are cancer models more than objects of scientific investigation? Can they be considered as patient-oriented clinical tools?** These questions are at the heart of the present thesis which will focus on specific and limited examples to bring some partial answers to these general questions. The following chapters will thus propose **a comprehensive journey, from the design of a cancer model to its clinical application**.
 
-The second part will be devoted to the methods developed during this thesis to transform qualitative models of molecular networks, known as logical models, into personalized models that can be interpreted clinically. In short, **how can a mathematical representation of biological knowledge be transformed into a tool that contributes to the understanding of the clinical manifestations of cancer?**  
-  
 
-Finally, the third and last part will look at how the clinical relevance of all the above-mentioned models can be rigorously evaluated, both in their ability to predict the evolution of the disease and in their ability to recommend the most appropriate treatments for each patient. **How to quantify and interpret the value of the clinical information delivered by these models?**  
-  
+In more detail, this thesis is structured in three parts, each subdivided into three chapters. Since the whole thesis is about cancer modeling, the first part aims at defining the type of model to be referred to, and in particular models that will be called mechanistic, as well as the object of the modeling, *i.e.*, the molecular networks involved in cancer. So the first part answers the question: **what is a cancer model and what is its purpose?** It is thus essentially an **introduction**, intended to outline the concepts and objects studied afterwards. 
 
-Moreover, this thesis also exists in an online version that allows to take advantage of the interactivity of some graphs and applications: \url{https://jonasbeal.github.io/files/PhdThesis/}.  
+
+The second part will be devoted to the methods developed during this thesis to transform qualitative models of molecular networks, known as logical models, into personalized models that can be interpreted clinically. In short, **how can a mathematical representation of biological knowledge be transformed into a tool that contributes to the understanding of the clinical manifestations of cancer?** This part therefore focuses on the first part of the journey, which is **systems biology**, starting from the biological question and seeking to model it while beginning to evaluate the clinical perspectives of such a model.
+
+
+Finally, the third and last part will look at how the clinical relevance of all the above-mentioned models can be rigorously evaluated, both in their ability to predict the evolution of the disease and in their ability to recommend the most appropriate treatments for each patient. **How to quantify and interpret the value of the clinical information delivered by these models?** So this is the last part of the path, where the cancer model is considered to be complete, and the aim is to quantify its clinical relevance, using **statistical methods**.
+
+  
+As for the form of this thesis, it exists both in PDF format and in an online HTML version (<https://jonasbeal.github.io/files/PhdThesis/>). The two versions are strictly identical but the second one contains some additional interactive graphs or applications. Both documents have been generated with R from the same source files that also include the data and code required for the provided figures^[The thesis document, both in its PDF version and its online HTML version, is based on the R package *bookdown* and inspired by the architecture proposed by Ladislas Nalborczyk in its [GitHub repository](https://github.com/lnalborczyk/phd_thesis)]. All materials are available on the dedicated GitHub repository (<https://github.com/JonasBeal/PhdThesis>).
   
 
 \BeginKnitrBlock{summarybox}<div class="summarybox">
@@ -23,7 +26,7 @@ The main articles behind this thesis are indicated below with one published arti
 * Béal, Jonas, Lorenzo Pantolini, Vincent Noël, Emmanuel Barillot, and Laurence Calzone. "Personalized logical models to investigate cancer response to BRAF treatments in melanomas and colorectal cancers." bioRxiv (2020). [Link](https://www.biorxiv.org/content/10.1101/2020.05.27.119016v2).
 * Béal, Jonas, and Aurélien Latouche. "Causal inference with multiple versions of treatment and application to personalized medicine." arXiv preprint arXiv:2005.12427 (2020). [Link](https://arxiv.org/abs/2005.12427).  
   
-These three articles were described or completed in oral presentations, respectively in International Conference of Systems Biology 2018, conference on Intelligent Systems for Molecular Biology (ISMB/ECCB 2019, [Video](https://www.youtube.com/watch?v=6EMBycoR0Ow)) and conference of International Society of Clincial Biostatistics (ISCB41, coming in August 2020).
+These three articles were described or completed in oral presentations, respectively in International Conference of Systems Biology 2018, conference on Intelligent Systems for Molecular Biology (ISMB/ECCB 2019, [Video](https://www.youtube.com/watch?v=6EMBycoR0Ow)) and conference of International Society of Clinical Biostatistics (ISCB41 2020).
 </div>\EndKnitrBlock{summarybox}
 
 \clearemptydoublepage

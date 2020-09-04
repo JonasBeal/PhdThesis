@@ -1,5 +1,5 @@
 
-# Personalization of logical models: method and prognostic validation
+# Personalization of logical models: method and prognostic validation {#chap5}
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
 knitr::asis_output('\\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}')
@@ -38,7 +38,8 @@ knitr::opts_chunk$set(
 
 #### Scientific content {-}
 
-This chapter presents the method developed during the thesis to personalize logical models, i.e., generate patient-specific models from a single generic one. The principles of the method and some analyses on patient data have been comprehensively described in @beal2019personalization and briefly summarized in @beal2020personalized. Analyses on cell lines are unpublished.
+This chapter presents the method developed during the thesis to personalize logical models, *i.e.*, generate patient-specific models from a single generic one. The principles of the method and some analyses on patient data have been comprehensively described in @beal2019personalization and briefly summarized in @beal2020personalized. Analyses on cell lines are unpublished.
+
 ```
 
 ## From one generic model to data-specific models with PROFILE method
@@ -162,7 +163,10 @@ Once the method has been defined, it is imperative to study its validity and pos
 
 ### Biological relevance in cell lines {#PROFILE-CL}
 
-These questions can be addressed using cell line data. Using the logical model of cancer pathways from @fumia2013boolean, it is possible to study the 663 cell lines from different types of tumors by integrating their processed omics profiles to the generic logical model to obtain as many personalized models. If we focus on the read-out of *Proliferation*, one of the easiest to interpret, there are several ways to study its relevance. For each cell line and each personalization strategy (and corresponding data type) we can define a personalized model and derive the asymptotic value the *Proliferation* node, called *Proliferation* score. This score is therefore *a priori* different for all cell lines that present a different molecular profile. For the whole population of cell lines, this score can be confronted with other markers of proliferation such as the levels of Ki67 [@miller2018ki67], here replaced as an example by the RNA levels of the corresponding MKI67 gene. It can then be observed that the simulated *Proliferation* indicator, derived from the personalized models, correlates positively with the biomarker, but only when RNA has been used in the personalization (Figure \@ref(fig:PROFILE-CL)A). The **correlation makes qualitative sense, but the heterogeneity appears to be very large and most of the variability is not captured by the models**. This heterogeneity is also visible by focusing on some types of cancer (Figure \@ref(fig:PROFILE-CL)B). Thus this kind of comparison only validates the models' ability to retrieve a RNA biomarker (not used in personalization) when they themselves integrate other RNA data. It is also consistent that scores from models personalized with mutations only have less uniform distributions due to the discrete nature of the data and the many identical profiles: many cell lines are not distinguishable by mutations only.
+These questions can be addressed using cell line data. Using the logical model of cancer pathways from @fumia2013boolean, it is possible to study the 663 cell lines from different types of tumors by integrating their processed omics profiles to the generic logical model to obtain as many personalized models. If we focus on the read-out of *Proliferation*, one of the easiest to interpret, there are several ways to study its relevance. For each cell line and each personalization strategy (and corresponding data type) we can define a personalized model and derive the asymptotic value the *Proliferation* node, called *Proliferation* score. This score is therefore *a priori* different for all cell lines that present a different molecular profile. For the whole population of cell lines, this score can be confronted with other markers of proliferation such as the levels of Ki67 [@miller2018ki67], here replaced as an example by the RNA levels of the corresponding MKI67 gene. Thus, two independent indicators of the proliferative nature of cell lines are compared. The first is the *Proliferation* score, which is the final, supposedly asymptotic, value of the *Proliferation* node, for models that have been constrained with the omics profiles of the corresponding cell lines. On the other hand, an independent experimental indicator of proliferation is used, both the level of the MKI67 biomarker (not used in the personalization process).
+
+
+It can then be observed that the simulated *Proliferation* indicator, derived from the personalized models, correlates positively with the biomarker, but only when RNA has been used in the personalization (Figure \@ref(fig:PROFILE-CL)A). The **sign of the correlation is qualitatively correct, but the heterogeneity appears to be very large and most of the variability is not captured by the models**. This heterogeneity is also visible by focusing on some types of cancer (Figure \@ref(fig:PROFILE-CL)B). Thus this kind of comparison only validates the models' ability to retrieve a RNA biomarker (not used in personalization) when they themselves integrate other RNA data. It is also consistent that scores from models personalized with mutations only have less uniform distributions due to the discrete nature of the data and the many identical profiles: many cell lines are not distinguishable by mutations only.
 
 ```{r PROFILE-CL, echo=FALSE, out.width = "90%", fig.cap='(ref:PROFILE-CL-caption)', fig.scap='Validation of personalized \\emph{Proliferation} scores in cell lines', fig.align='center', fig.height=8, fig.width=7}
 plot_data_GDSC_noDrug <- readRDS("data/personalized/plot_data_GDSC_noDrug.rds") %>%
@@ -366,3 +370,12 @@ Surv_A <- ggsurvplot(fit_bin_a,
 ### Perspectives
 
 In summary, this kind of application of personalized models allows the **integration of quite heterogeneous and moderately dimensional biological data in a constrained framework** that orders the relationships between variables and guides interpretations. Comparison with external biological or clinical data then makes it possible to verify the absence of major contradictions in the definition of the model. However, the interest of these mechanistic approaches in this type of task appears as quite moderate compared to statistical models. The qualitative aspect is not necessarily compensated here by the integration of knowledge into the structure of the model, especially in examples that use an extremely broad logical model, which has not been specifically designed for the problems to which it is applied. It is then necessary to study the application of these personalized models to more suitable problems, in which the explicitly mechanistic nature of the models can be exploited.
+
+
+```{block2, type='conclubox', echo = TRUE}
+
+#### Summary {-}
+
+Mechanistic models built from the literature are necessarily generic and not patient-specific, which hampers their clinical application. The PROFILE method proposes to personalize a generic knowledge-based structure with patient omics data. The restriction to only initial and static patient omics profiles calls for the use of a parsimonious modeling framework such as logical formalism. The method is then based on the application of patient-specific constraints to the generic model without fitting any parameter but interpreting *a priori* the biological effect of its alterations: nodes maintained forcibly in their states to translate mutations, or transitions between certain favoured states to translate RNA/protein over- or under-expression. Model simulations are thus induced to follow stochastic trajectories closer to the inferred patient states. The biological relevance of the personalized models thus obtained is validated a first time by verifying their capacity to recover certain characteristics of the systems studied such as differences in the proliferation of cell lines or differences in the prognosis of certain patients.
+
+```

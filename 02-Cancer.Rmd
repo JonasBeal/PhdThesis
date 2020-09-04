@@ -231,3 +231,12 @@ knitr::include_graphics("fig/pathways.jpg")
 
 The final step, to obtain one of the most complete and integrated visions of cancer biology, is then to integrate omics knowledge with knowledge about the structure of pathways to try to understand in detail how their combinations can lead to so many cancers that are both similar and different. An example of such a representation is given by mapping the TCGA data about genetic alterations, presented in Figure \@ref(fig:tcga), on a representation of the different pathways showing not only their internal organization but also their cross-talk [@sanchez2018oncogenic]. This representation is proposed in Figure \@ref(fig:pathways) and is one of the most recent and comprehensive view of the kind of tools and data available to the modeler who wants to dissect more deeply the mechanisms involved in cancer.
 
+
+```{block2, type='conclubox', echo = TRUE}
+
+#### Summary {-}
+
+Cancer is more than ever seen as a genetic disease. Its appearance in a patient results from the accumulation of various genetic alterations that invalidate the protective mechanisms naturally intended to prevent uncontrolled proliferation. The simultaneous consideration of the numerous biological entities involved and the regulatory networks that link them calls for global systems biology methods. Technological developments also provide access to different types of omics data (genes, RNA, proteins, etc.) that provide complementary information, the joint analysis of which allows us to better understand the complexity of the mechanisms involved. It should be noted that many physical models of cancer (cell lines) extend the field of experimentation and generate data.
+
+```
+
