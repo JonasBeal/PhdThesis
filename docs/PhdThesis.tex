@@ -7338,7 +7338,8 @@ of the developed methods to reduce bias in the estimation of effects.
 \chapter*{Conclusion}\label{conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
 
-\section{One path among others}\label{one-path-among-others}
+\section*{One path among others}\label{one-path-among-others}
+\addcontentsline{toc}{section}{One path among others}
 
 The aim of this thesis was to trace \textbf{a path to link the
 biological knowledge of cancer to the clinical impact through
@@ -7378,7 +7379,8 @@ of causal inference methods in order to simulate their evaluation in
 clinical trials} and to come as close as possible to medical evaluation
 standards.
 
-\section{In other directions}\label{in-other-directions}
+\section*{In other directions}\label{in-other-directions}
+\addcontentsline{toc}{section}{In other directions}
 
 Along this path, many forks are conceivable, as well as the further
 pursuit of some of the paths that have been explored. Without going back
@@ -7476,18 +7478,85 @@ related to the correct mathematical translation of biological knowledge
 and interpreted omics data. Continued growth in the quantity and quality
 of data is likely to give an overall advantage in the medium term to the
 above mentioned quantitative mechanistic methods, more data-intensive
-but more accurate. Qualitative models such as those in chapters
+but more accurate. \textbf{Qualitative models such as those in chapters
 \ref{chap5} and \ref{chap6} may nonetheless remain a complementary
 approach, used beforehand or in more data-poor cases that do not allow
-for learning, as discussed when comparing with machine learning
+for learning}, as discussed when comparing with machine learning
 approaches in section \ref{ML-comp}.
 
-What about pure ML? Acceptability
+In such a world of abundant data, is it only then relevant to continue
+to propose mechanistic models instead of biologically agnostic machine
+learning models? The latter have indeed become much more frequent with a
+particular emphasis in recent years on deep learning approaches
+\citep{angermueller2016deep, eraslan2019deep}. The comparison between
+quantitative mechanistic approaches and machine learning approaches then
+uses terms similar to the previous comparison between qualitative and
+quantitative mechanistic approaches. Machine learning approaches can be
+even more flexible because their degrees of freedom are not constrained
+by an \emph{a priori} biological structure, but they consequently
+require larger amounts of data. The loss of any internal mechanistic
+structure can however hamper the interpretability of the results,
+although many methods have been developed to facilitate this
+interpretation of machine learning models in biology
+\citep{azuaje2019artificial, manica2019toward}. The loss of the
+mechanistic nature in most machine learning approaches also makes it
+impossible to test perturbation or hypotheses that are clearly outside
+the scope of training data. If one can imagine the predominance of
+well-calibrated machine learning models for routine decisions,
+\textbf{more exploratory and prospective investigations could however
+favour mechanistic models more capable of extrapolation}. Moreover,
+while the question of the acceptability of computational decision
+support models in oncology arises \citep{vollmer2020machine}, the
+explicit representation of the internal mechanisms may present a
+reassuring aspect. It is simpler for both the patient and the physician
+to imagine the functioning of a model that replicates human bodies or
+cells than a more exclusively mathematical black box. However, this
+argument only seems valid in the case of very similar performances.
 
-Stat
+Finally, most of the remaining questions that arise concern all
+computational models of cancer in the same way, whatever their nature.
+\citet{wiens2019no} thus propose a \textbf{roadmap for the responsible
+use of the models in the clinic} that targets a number of challenges.
+One of the first of them is to know how computational models can be
+seamlessly integrated into medical practice while leaving the various
+stakeholders, from medical experts to patients, in the loop. Physicians,
+for example, need to be informed in a relevant way about the nature and
+limitations of these models, which can facilitate the decision but whose
+technical details may escape them. The presentation of these models to
+them is therefore particularly crucial in order to ensure their proper
+use, as \citet{sendak2020presenting} point out by proposing standardized
+methods of presentation and communication. Numerous ethical or data
+privacy issues also arise when precise genetic information about
+patients needs to be processed.
 
-In a word, cancer models still have a bright future ahead of them.
-Mechanistic models will continue to be attractive because of their
+One of the challenges mentioned by \citet{wiens2019no} which resonates
+particularly with this thesis is that of the rigorous evaluation of the
+clinical contribution of these models, mechanistic or not. The choice of
+metrics is therefore very important and must be made to optimize
+clinical information. For example, while the discrimination capability
+of models is frequently measured, the calibration performance of risk
+prediction models is also crucial to inform clinical practice
+\citep{van2019calibration}. In general, although computational cancer
+models are changing the cancer research landscape, \textbf{proven
+standards from epidemiology or clinical statistics for evaluation should
+be maintained} to allow comparison and quantification of improvements
+beyond scientific trends \citep{christodoulou2019systematic}. These
+evaluations require real clinical expertise to measure the extent to
+which a gain in algorithmic performance can be translated into clinical
+improvement depending on the patients concerned and the resources
+mobilized. Concerning the mechanistic models in particular, for example,
+their capacity to extrapolate and possibly reason about new treatments
+for which data are missing or few have been underlined several times.
+However, the clinical evaluation of their impact always requires data at
+the end of the day. The methods of causal inference applied in chapter
+\ref{chapter-precision} make it possible to correct the effects and
+bring them closer to the standards of clinical trials, but they can only
+rearrange clinical strategies on the basis of existing data.
+\textbf{Mechanistic models are therefore there to guide or enlighten
+experiments, but are not intended to replace them}.
+
+To conclude in a word, cancer models still have a bright future ahead of
+them. Mechanistic models will continue to be attractive because of their
 ability not only to predict but, more importantly, to explain. However,
 the transparency of their mechanisms should not prevent them from being
 rigorously evaluated statistically. It is not enough for them to
