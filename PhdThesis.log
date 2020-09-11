@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  5 SEP 2020 18:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.7.5)  11 SEP 2020 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2244,15 +2244,12 @@ File: 06-Drugs_files/figure-latex/BRAF-GDSC-1.pdf Graphic file (type QTm)
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [108]
-Underfull \vbox (badness 7631) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [109]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [110]
@@ -2300,15 +2297,18 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [117]
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+[118]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
-[118]
-Overfull \vbox (14.49998pt too high) has occurred while \output is active []
-
 [119]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [120]
@@ -2489,7 +2489,7 @@ File: fig/AUC.png Graphic file (type QTm)
 File: 10-Appendix_files/figure-latex/PDX-appendix-1.pdf Graphic file (type QTm)
 
 <use  "10-Appendix_files/figure-latex/PDX-appendix-1.pdf" >
-Underfull \hbox (badness 1383) in paragraph at lines 7708--7708
+Underfull \hbox (badness 1383) in paragraph at lines 7710--7710
 []\TU/lmr/m/n/12 Figure A.3: []\TU/lmr/bx/sc/12 Comprehensive overview of tumou
 rs and drugs
  []
@@ -2517,7 +2517,7 @@ Underfull \vbox (badness 2744) has occurred while \output is active []
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
 [193]
-Underfull \hbox (badness 1603) in paragraph at lines 7954--7958
+Underfull \hbox (badness 1603) in paragraph at lines 7956--7960
 \TU/lmr/m/n/12 axis, which mediates resistance through the activation of the
  []
 
@@ -2525,32 +2525,32 @@ Underfull \hbox (badness 1603) in paragraph at lines 7954--7958
 File: fig/Montagud.png Graphic file (type QTm)
 <use  "fig/Montagud.png" > [195] [196]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 8012.
+(Font)              <17.28> on input line 8014.
 [197
 
 ] [198]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 8110.
+(hyperref)                removing `\hbox' on input line 8112.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 8110.
+(hyperref)                removing `\mathsurround' on input line 8112.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 8110.
+(hyperref)                removing `\z@' on input line 8112.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\unskip' on input line 8110.
+(hyperref)                removing `\unskip' on input line 8112.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@italiccorr' on input line 8110.
+(hyperref)                removing `\@@italiccorr' on input line 8112.
 
 
-Overfull \hbox (46.72809pt too wide) detected at line 8133
+Overfull \hbox (46.72809pt too wide) detected at line 8135
 [][]
  []
 
@@ -2563,26 +2563,26 @@ Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 [199]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 8143.
+(hyperref)                removing `\hbox' on input line 8145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 8143.
+(hyperref)                removing `\mathsurround' on input line 8145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 8143.
+(hyperref)                removing `\z@' on input line 8145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\unskip' on input line 8143.
+(hyperref)                removing `\unskip' on input line 8145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@italiccorr' on input line 8143.
+(hyperref)                removing `\@@italiccorr' on input line 8145.
 
 
-Overfull \hbox (32.9962pt too wide) detected at line 8163
+Overfull \hbox (32.9962pt too wide) detected at line 8165
 [][]
  []
 
@@ -2622,35 +2622,35 @@ mer,
 
 [221] [222] [223] [224] [225] [226] [227] [228] [229] [230] [231] [232] [233] [
 234]
-Underfull \hbox (badness 10000) in paragraph at lines 1667--1674
+Underfull \hbox (badness 10000) in paragraph at lines 1675--1682
 []\TU/lmr/m/n/12 Livia Perfetto, Leonardo Briganti, Alberto Calderone, Andrea
  []
 
 
-Underfull \hbox (badness 2772) in paragraph at lines 1667--1674
+Underfull \hbox (badness 2772) in paragraph at lines 1675--1682
 \TU/lmr/m/n/12 Cerquone Perpetuini, Marta Iannuccelli, Francesca Langone, Lu-
  []
 
-[235] [236]
-Underfull \hbox (badness 3482) in paragraph at lines 1822--1828
+[235] [236] [237]
+Underfull \hbox (badness 3482) in paragraph at lines 1830--1836
 []\TU/lmr/m/n/12 Julio Saez-Rodriguez, Leonidas G Alexopoulos, MingSheng Zhang,
 
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 1831--1839
+Underfull \hbox (badness 2726) in paragraph at lines 1839--1847
 []\TU/lmr/m/n/12 Julio Saez-Rodriguez, Leonidas G. Alexopoulos, MingSheng Zhang
 ,
  []
 
-[237]
-Underfull \hbox (badness 2027) in paragraph at lines 1842--1848
+
+Underfull \hbox (badness 2027) in paragraph at lines 1850--1856
 []\TU/lmr/m/n/12 Özgür Sahin, Holger Fröhlich, Christian Löbke, Ulrike Korf, Sa
 ra
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 1842--1848
+Underfull \hbox (badness 1622) in paragraph at lines 1850--1856
 \TU/lmr/m/n/12 Burmester, Meher Majety, Jens Mattern, Ingo Schupp, Claudine
  []
 
@@ -2659,7 +2659,7 @@ Underfull \hbox (badness 1622) in paragraph at lines 1842--1848
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 8646.
+(in both cases you will find help in the memoir manual). on input line 8648.
 
 [245] [246
 
@@ -2668,31 +2668,31 @@ either increase the head height or redesign the header
 File: ./cover/pictures/back-bg.png Graphic file (type QTm)
 <use  "./cover/pictures/back-bg.png" >
 LaTeX Font Info:    Font shape `TU/Arial(0)/m/n' will be
-(Font)              scaled to size 9.14278pt on input line 8646.
+(Font)              scaled to size 9.14278pt on input line 8648.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 8646--8646
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 8648--8648
 [][] 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 8646.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 8648.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 8646.
+(Font)              <11> on input line 8648.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 8646.
+(Font)              <7.69997> on input line 8648.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 8646.
+(Font)              <5.5> on input line 8648.
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 8646--8646
-[][] 
- []
-
-
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 8646--8646
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 8648--8648
 [][] 
  []
 
 
-Overfull \hbox (1.42065pt too wide) in paragraph at lines 8646--8646
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 8648--8648
+[][] 
+ []
+
+
+Overfull \hbox (1.42065pt too wide) in paragraph at lines 8648--8648
 [][] 
  []
 
@@ -2705,23 +2705,23 @@ Overfull \hbox (1.42065pt too wide) in paragraph at lines 8646--8646
 \tf@lof=\write10
 \openout10 = `PhdThesis.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8646.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8648.
 [248]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 8646.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 8648.
 (./PhdThesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 8646.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 8646.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 8648.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 8648.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 39251 strings out of 493005
- 752250 string characters out of 6134597
- 943783 words of memory out of 5000000
- 42553 multiletter control sequences out of 15000+600000
+ 39254 strings out of 493005
+ 752340 string characters out of 6134597
+ 943880 words of memory out of 5000000
+ 42556 multiletter control sequences out of 15000+600000
  53147 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 68i,15n,120p,10407b,1073s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,15n,120p,10407b,1069s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on PhdThesis.pdf (275 pages).

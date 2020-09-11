@@ -20,7 +20,7 @@ knitr::asis_output('Historically, all mechanistic models of molecular networks, 
 ```
 
 ```{r 6_packages, echo=FALSE, warning=FALSE, message=FALSE}
-invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra", "ggrepel", "UpSetR", "gghalves", "ggh4x", "latex2exp", "plotly"),
+invisible(lapply(X =  c("knitr", "tidyverse", "magrittr",  "ggplot2", "ggpubr", "patchwork", "cowplot", "kableExtra", "ggrepel", "UpSetR", "gghalves", "ggh4x", "latex2exp", "plotly", "ggstance"),
        FUN = require,
        character.only = TRUE))
 
@@ -188,7 +188,7 @@ Once the structure of the model was defined, and before moving on to its persona
 
 The omics profiles of colorectal and melanoma cell lines are downloaded from Cell Model Passports portal [@van2019cell]. 64 colorectal cancer (CRC) cell lines and 65 cutaneaous melanoma (CM) cell lines are listed in the database, with at least mutation or RNA-seq data (59 CM and 53 CRC with both mutations and RNA-seq data). These omics profiles are used to generate cell-line-specific logical models as described in PROFILE method (Figure \@ref(fig:PROFILE-abstract)). The prevalence of mutations and their combination for the two types of cancer can be seen in Figure \@ref(fig:BRAF-GDSC)A and is consistent with the clinical situation described above with melanomas more frequently BRAF-mutated and colorectal cancers more frequently RAS-mutated.   
 
-```{r BRAF-GDSC, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-GDSC-caption)', fig.scap='Descriptive analysis of cell lines for melanomas and colorectal cancers', out.width="95%", fig.height=5, fig.width=8}
+```{r BRAF-GDSC, echo=FALSE, fig.align='center', fig.cap='(ref:BRAF-GDSC-caption)', fig.scap='Descriptive analysis of cell lines for melanomas and colorectal cancers', out.width="95%", fig.height=5, fig.width=12}
 colors_types <- c(CM="#B47562FF", CRC="#332826FF")
 plot_data_upset <- readRDS("data/drugs/plot_data_upset.rds")
 plot_data_BRAF_GDSC <- readRDS("data/drugs/plot_data_BRAF_GDSC.rds")
@@ -199,34 +199,102 @@ plot_A <- upset(plot_data_upset,
       order.by="freq", group.by="degree",
       query.legend = "bottom",
       sets.x.label = "Total mutations",
-      mainbar.y.label = "Combinations of mutations prevalence",
+      mainbar.y.label = "Combinations of mutations\nprevalence",
+      #query.legend=NULL,
       queries = list(
   list(query = intersects, params = list("TCGA_label", "CM", "CRC"), color = colors_types["CRC"], active = T, query.name = "CRC"),
   list(query = intersects, params = list("TCGA_label", "CM"), color = colors_types["CM"], active = T, query.name = "CM")))
 
-plot_B <- ggplot(plot_data_BRAF_GDSC, aes(x=TCGA_label, y=Value, fill=TCGA_label)) +
-  geom_half_dotplot(binaxis='y',dotsize = 0.8) +
-  geom_half_boxplot(alpha=0.8) +
-  geom_text(data = plot_data_BRAF_GDSC_label,
-            aes(label=paste0("n=", Number), y=y),
-            color="black") +
-  scale_fill_manual(values = colors_types,
-                    guide = guide_legend(direction = "horizontal")) +
+t <- gather(plot_data_upset, key="Gene", value = "Status", -TCGA_label) %>%
+  filter(Status==1) %>% select(-Status) %>%
+  mutate(Gene=factor(Gene, levels=c("p53:0", "PI3K:1", "RAS:1", "BRAF:1")))
+  
+plot_sets <- ggplot(t, aes(y=Gene, fill=TCGA_label)) +
+  geom_barh(show.legend = FALSE) +
+  scale_y_discrete(position = "right") +
+  scale_x_reverse() +
+  scale_fill_manual(values = colors_types) +
+  labs(x="Total mut.") +
+  theme_classic() +
+  theme(axis.ticks.y = element_blank(),
+        axis.line.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.y = element_blank())
+
+empty_plot <- ggplot() + theme_void() + labs(tag="A")
+
+plot_Abis <- cowplot::plot_grid(
+  empty_plot,
+  plot_A$Main_bar,
+  plot_sets, plot_A$Matrix,
+  nrow=2, align='hv', rel_heights = c(2,1),
+  rel_widths = c(2,4))
+
+
+#####
+
+plot_data_BRAF_GDSC %<>%
+  mutate(Variant=if_else(Metric=="AUC","Drug (PLX-4720)", "CRISPR (Broad)"))
+
+plot_data_BRAF_GDSC_label %<>%
+  mutate(Variant=if_else(Variant=="PLX-4720\n(AUC)","Drug (PLX-4720)", "CRISPR (Broad)"))
+
+plot_Ba <- ggplot(filter(plot_data_BRAF_GDSC, Variant=="Drug (PLX-4720)")) +
+  geom_boxplot(aes(x=TCGA_label, y=Value, fill=TCGA_label),
+               position = position_nudge(x = -0.2), outlier.shape=NA,
+               alpha=0.5, width=.15,
+               show.legend = FALSE) +
+  geom_dotplot(aes(x=TCGA_label, y=Value, fill=TCGA_label),
+               position = position_nudge(x = +0.2), binwidth = 0.015,
+               binaxis='y',dotsize = 1, stackdir = "center",
+               show.legend = FALSE) +
+  geom_text(data = filter(plot_data_BRAF_GDSC_label, Variant=="Drug (PLX-4720)"),
+            aes(x=TCGA_label, label=paste0("n=", Number)),
+            y=0.52) +
+  scale_fill_manual(values = colors_types) +
   facet_grid(Variant~BRAF, scales = "free") +
   theme_pubclean() +
   theme(legend.position = "right",
-        legend.title = element_text(face = 'bold')) +
-  labs(x = "Cancer types",
-       y= "Inhibition metric",
-       fill= "Cancer types:") 
+        axis.title.x = element_blank(), axis.ticks.x = element_blank(),
+        axis.text.x = element_blank()) +
+  labs(y= "AUC", tag="B") +
+  ylim(c(0.5,1.05)) +
+  stat_compare_means(aes(x=TCGA_label, y=Value),
+                     label.x.npc = 0.25, label.y.npc = 0.95)
 
-plot_Abis <- cowplot::plot_grid(NULL, plot_A$Main_bar, plot_A$Sizes, plot_A$Matrix,
-                               nrow=2, align='hv', rel_heights = c(2,1),
-                               rel_widths = c(2,3))
+plot_Bb <- ggplot(filter(plot_data_BRAF_GDSC, Variant=="CRISPR (Broad)")) +
+  geom_boxplot(aes(x=TCGA_label, y=Value, fill=TCGA_label),
+               position = position_nudge(x = -0.2),
+               alpha=0.5, width=.15,outlier.shape=NA,
+               show.legend = FALSE) +
+  geom_dotplot(aes(x=TCGA_label, y=Value, fill=TCGA_label),
+               position = position_nudge(x = +0.2),
+               binaxis='y',dotsize = 1, stackdir = "center") +
+  geom_text(data = filter(plot_data_BRAF_GDSC_label, Variant=="CRISPR (Broad)"),
+            aes(x=TCGA_label, label=paste0("n=", Number)),
+            y=-2.8) +
+  scale_fill_manual(values = colors_types,
+                    guide = guide_legend(direction = "horizontal")
+                    ) +
+  facet_grid(Variant~BRAF, scales = "free") +
+  theme_pubclean() +
+  theme(legend.position = "bottom",
+        strip.background.x = element_blank(),
+        strip.text.x = element_blank(),
+        axis.title.x = element_blank()) +
+  labs(x = "Cancer types", y= "Scaled Bayes. factor", fill= "Cancer types:") +
+  ylim(c(-3,6.5)) +
+  stat_compare_means(aes(x=TCGA_label, y=Value),
+                     label.x.npc = 0.25, label.y.npc = 0.95)
 
-(plot_Abis + plot_B) / guide_area() +
-  plot_layout(heights = c(6,1), guides = 'collect') +
-  plot_annotation(tag_levels = 'A')
+plot_B <- ((plot_Ba / plot_Bb) | guide_area()) +
+  plot_layout(widths = c(6,1), guides = 'collect')
+
+plot_B <- ((plot_Ba / plot_Bb / guide_area())) +
+  plot_layout(heights = c(6,6,1), guides = 'collect')
+
+ggarrange(plot_Abis, patchworkGrob(plot_B))
+
 ```
 (ref:BRAF-GDSC-caption) **Descriptive analysis of cell lines for melanomas and colorectal cancers.** (A) Number of cell lines for the four most frequently mutated genes and their combinations (plot from UpSetR package [@conway2017upsetr]). (B) Differential sensitivities to BRAF inhibition by the drug PLX-4720 (lower panel) or by CRISPR inhibition (upper panel), depending on BRAF mutational status and cancer type. Numbers of cell lines in each category are indicated. Note that high sensitivities correspond to low AUC and high scaled Bayesian factors.  
   

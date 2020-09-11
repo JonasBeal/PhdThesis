@@ -551,7 +551,7 @@ with R from the same source files that also include the data and code
 required for the provided figures\footnote{The thesis document, both in
   its PDF version and its online HTML version, is based on the R package
   \emph{bookdown} and inspired by the architecture proposed by Ladislas
-  Nalborczyk in its
+  Nalborczyk in his
   \href{https://github.com/lnalborczyk/phd_thesis}{GitHub repository}}.
 All materials are available on the dedicated GitHub repository
 (\url{https://github.com/JonasBeal/PhdThesis}).
@@ -2533,11 +2533,11 @@ view and to link them to the statistical approaches that will be the
 subject of the third part of the dissertation. First of all, it should
 be remembered that statistical models only highlight associations
 between biological variables or entities and not causal relationships.
-On the other hand, by explicitly constraining the of relations between
-variables, mechanistic models become less flexible flexibility but
-already propose a causal interpretation. Therefore, the \textbf{notion
-of causality is intrinsically embedded in the definition of the
-mechanistic model} (section \ref{stat-mech}).
+On the other hand, by explicitly constraining the structure of relations
+between variables, mechanistic models become less flexible flexibility
+but already propose a causal interpretation. Therefore, the
+\textbf{notion of causality is intrinsically embedded in the definition
+of the mechanistic model} (section \ref{stat-mech}).
 
 However, if causality is not a by-product when using a statistical or
 machine learning model, it is possible to access it through specific
@@ -7384,7 +7384,7 @@ standards.
 
 Along this path, many forks are conceivable, as well as the further
 pursuit of some of the paths that have been explored. Without going back
-over the technical limits and perspectives of parts II and II, already
+over the technical limits and perspectives of parts II and III, already
 mentioned in sections \ref{part2-limits} and \ref{part3-limits}
 respectively, it is possible to paint a broader picture of some of the
 obstacles and alternatives.
@@ -7436,7 +7436,7 @@ The previous mention of quantitative pharmacology models also underlines
 the \textbf{intrinsic limitations of qualitative mechanistic models},
 \emph{a fortiori} for clinical applications. Thus the outputs of the
 personalized logical models can only be interpreted in relation to each
-other, it is difficult to give each one an absolute interpretation.
+other; it is difficult to give each one an absolute interpretation.
 Without proper calibration, what does a \emph{Proliferation} score of
 0.2 or 0.8 mean? On first reading, they have only a relative
 significance that precludes direct clinical interpretation. However, it
@@ -7467,22 +7467,24 @@ of the availability of patient data with the view to one day apply these
 models as close as possible to the clinic. Today it is inconceivable to
 obtain such rich data for patients. This would imply being able to
 develop cell lines for each patient, then screen all of them for drugs
-and use the results. This is not yet technically accessible today. If it
-were possible, the models would probably be replaced by the experiments
-themselves. More realistically, it is hoped that once the model has been
-sufficiently trained, the data required to make predictions for a new
-patient will be more modest. However, this new patient still needs to
-remain within the training data field. Conversely, logical models
-personalized without learning are based on other assumptions, mainly
-related to the correct mathematical translation of biological knowledge
-and interpreted omics data. Continued growth in the quantity and quality
-of data is likely to give an overall advantage in the medium term to the
-above mentioned quantitative mechanistic methods, more data-intensive
-but more accurate. \textbf{Qualitative models such as those in chapters
+and use the results. This is a prospect whose feasibility is being
+studied \citep{lee2018pharmacogenomic}, but it is not a routine clinical
+procedure today. If it were possible, the models would probably be
+replaced by the experiments themselves. More realistically, it is hoped
+that once the model has been sufficiently trained, the data required to
+make predictions for a new patient will be more modest. However, this
+new patient still needs to remain within the training data field.
+Conversely, logical models personalized without learning are based on
+other assumptions, mainly related to the correct mathematical
+translation of biological knowledge and interpreted omics data.
+Continued growth in the quantity and quality of data is likely to give
+an overall advantage in the medium term to the above mentioned
+quantitative mechanistic methods, more data-intensive but more accurate.
+\textbf{Qualitative models such as those presented in chapters
 \ref{chap5} and \ref{chap6} may nonetheless remain a complementary
 approach, used beforehand or in more data-poor cases that do not allow
-for learning}, as discussed when comparing with machine learning
-approaches in section \ref{ML-comp}.
+for learning}, as discussed when comparing the results with machine
+learning approaches in section \ref{ML-comp}.
 
 In such a world of abundant data, is it only then relevant to continue
 to propose mechanistic models instead of biologically agnostic machine
@@ -7500,7 +7502,7 @@ although many methods have been developed to facilitate this
 interpretation of machine learning models in biology
 \citep{azuaje2019artificial, manica2019toward}. The loss of the
 mechanistic nature in most machine learning approaches also makes it
-impossible to test perturbation or hypotheses that are clearly outside
+impossible to test perturbations or hypotheses that are clearly outside
 the scope of training data. If one can imagine the predominance of
 well-calibrated machine learning models for routine decisions,
 \textbf{more exploratory and prospective investigations could however
@@ -7517,17 +7519,17 @@ Finally, most of the remaining questions that arise concern all
 computational models of cancer in the same way, whatever their nature.
 \citet{wiens2019no} thus propose a \textbf{roadmap for the responsible
 use of the models in the clinic} that targets a number of challenges.
-One of the first of them is to know how computational models can be
-seamlessly integrated into medical practice while leaving the various
-stakeholders, from medical experts to patients, in the loop. Physicians,
-for example, need to be informed in a relevant way about the nature and
-limitations of these models, which can facilitate the decision but whose
-technical details may escape them. The presentation of these models to
-them is therefore particularly crucial in order to ensure their proper
-use, as \citet{sendak2020presenting} point out by proposing standardized
-methods of presentation and communication. Numerous ethical or data
-privacy issues also arise when precise genetic information about
-patients needs to be processed.
+One of them is to know how computational models can be seamlessly
+integrated into medical practice while leaving the various stakeholders,
+from medical experts to patients, in the loop. Physicians, for example,
+need to be informed in a relevant way about the nature and limitations
+of these models, which can facilitate the decision but whose technical
+details may escape them. The presentation of these models to them is
+therefore particularly crucial in order to ensure their proper use, as
+\citet{sendak2020presenting} point out by proposing standardized methods
+of presentation and communication. Numerous ethical or data privacy
+issues also arise when precise genetic information about patients needs
+to be processed.
 
 One of the challenges mentioned by \citet{wiens2019no} which resonates
 particularly with this thesis is that of the rigorous evaluation of the
