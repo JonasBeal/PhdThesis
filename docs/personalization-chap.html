@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Personalization of logical models: method and prognostic validation | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</title>
+  <meta name="description" content="This is my PhD thesis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Personalization of logical models: method and prognostic validation | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is my PhD thesis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Personalization of logical models: method and prognostic validation | From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation" />
+  
+  <meta name="twitter:description" content="This is my PhD thesis." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="logical-modeling-principles-and-data-integration.html"/>
+<link rel="next" href="logical-drug-chap.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Jonas BÉAL</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>PhD Thesis</a></li>
+<li><a href="section.html#section"></a></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="resumé.html"><a href="resumé.html"><i class="fa fa-check"></i>Resumé</a></li>
+<li class="chapter" data-level="" data-path="remerciements.html"><a href="remerciements.html"><i class="fa fa-check"></i>Remerciements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Cells and their models</b></span></li>
+<li class="chapter" data-level="1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html"><i class="fa fa-check"></i><b>1</b> Scientific modeling: abstract the complexity</a><ul>
+<li class="chapter" data-level="1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#what-is-a-model"><i class="fa fa-check"></i><b>1.1</b> What is a model?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#in-your-own-words"><i class="fa fa-check"></i><b>1.1.1</b> In your own words</a></li>
+<li class="chapter" data-level="1.1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#physical-world-and-world-of-ideas"><i class="fa fa-check"></i><b>1.1.2</b> Physical world and world of ideas</a></li>
+<li class="chapter" data-level="1.1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#preview-about-cancer-models"><i class="fa fa-check"></i><b>1.1.3</b> Preview about cancer models</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#stat-mech"><i class="fa fa-check"></i><b>1.2</b> Statistics or mechanistic</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#the-inside-of-the-box"><i class="fa fa-check"></i><b>1.2.1</b> The inside of the box</a></li>
+<li class="chapter" data-level="1.2.2" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#lotkasection"><i class="fa fa-check"></i><b>1.2.2</b> A tale of prey and predators</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="scientific-modeling-abstract-the-complexity.html"><a href="scientific-modeling-abstract-the-complexity.html#simplicity-is-the-ultimate-sophistication"><i class="fa fa-check"></i><b>1.3</b> Simplicity is the ultimate sophistication</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html"><i class="fa fa-check"></i><b>2</b> Cancer as deregulation of complex machinery</a><ul>
+<li class="chapter" data-level="2.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#what-is-cancer"><i class="fa fa-check"></i><b>2.1</b> What is cancer?</a></li>
+<li class="chapter" data-level="2.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#epidemio"><i class="fa fa-check"></i><b>2.2</b> Cancer from a distance: epidemiology and main figures</a></li>
+<li class="chapter" data-level="2.3" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#molecular-biology"><i class="fa fa-check"></i><b>2.3</b> Basic molecular biology and cancer</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#central-dogma-and-core-principles"><i class="fa fa-check"></i><b>2.3.1</b> Central dogma and core principles</a></li>
+<li class="chapter" data-level="2.3.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#a-rogue-machinery"><i class="fa fa-check"></i><b>2.3.2</b> A rogue machinery</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#the-new-era-of-genomics"><i class="fa fa-check"></i><b>2.4</b> The new era of genomics</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#from-sequencing-to-multi-omics-data"><i class="fa fa-check"></i><b>2.4.1</b> From sequencing to multi-omics data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#state-of-the-art-of-cancer-data"><i class="fa fa-check"></i><b>2.4.2</b> State-of-the art of cancer data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="cancer-as-deregulation-of-complex-machinery.html"><a href="cancer-as-deregulation-of-complex-machinery.html#data-and-beyond-from-genetic-to-network-disease"><i class="fa fa-check"></i><b>2.5</b> Data and beyond: from genetic to network disease</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html"><i class="fa fa-check"></i><b>3</b> Mechanistic modeling of cancer: from complex disease to systems biology</a><ul>
+<li class="chapter" data-level="3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#mechanistic-family"><i class="fa fa-check"></i><b>3.1</b> Introducing the diversity of mechanistic models of cancer</a></li>
+<li class="chapter" data-level="3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#cell-circuitry-and-the-need-for-cancer-systems-biology"><i class="fa fa-check"></i><b>3.2</b> Cell circuitry and the need for cancer systems biology</a></li>
+<li class="chapter" data-level="3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#mechanistic-models-of-molecular-signaling"><i class="fa fa-check"></i><b>3.3</b> Mechanistic models of molecular signaling</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#networks-and-data"><i class="fa fa-check"></i><b>3.3.1</b> Networks and data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#different-formalisms-for-different-applications"><i class="fa fa-check"></i><b>3.3.2</b> Different formalisms for different applications</a></li>
+<li class="chapter" data-level="3.3.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#some-examples-of-complex-features"><i class="fa fa-check"></i><b>3.3.3</b> Some examples of complex features</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#from-mechanistic-models-to-clinical-impact"><i class="fa fa-check"></i><b>3.4</b> From mechanistic models to clinical impact?</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#a-new-class-of-biomarkers"><i class="fa fa-check"></i><b>3.4.1</b> A new class of biomarkers</a></li>
+<li class="chapter" data-level="3.4.2" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#prognostic"><i class="fa fa-check"></i><b>3.4.2</b> Prognostic models</a></li>
+<li class="chapter" data-level="3.4.3" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#predictive"><i class="fa fa-check"></i><b>3.4.3</b> Predictive models</a></li>
+<li class="chapter" data-level="3.4.4" data-path="mechanistic-cancer.html"><a href="mechanistic-cancer.html#mechanistic-models-interventions-and-causality"><i class="fa fa-check"></i><b>3.4.4</b> Mechanistic models, interventions and causality</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Personalized logical models of cancer</b></span></li>
+<li class="chapter" data-level="4" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html"><i class="fa fa-check"></i><b>4</b> Logical modeling principles and data integration</a><ul>
+<li class="chapter" data-level="4.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-modeling-paradigms-for-qualitative-description"><i class="fa fa-check"></i><b>4.1</b> Logical modeling paradigms for qualitative description</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#regulatory-graph-and-logical-rules"><i class="fa fa-check"></i><b>4.1.1</b> Regulatory graph and logical rules</a></li>
+<li class="chapter" data-level="4.1.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#state-transition-graph-and-updates"><i class="fa fa-check"></i><b>4.1.2</b> State transition graph and updates</a></li>
+<li class="chapter" data-level="4.1.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-tools-list"><i class="fa fa-check"></i><b>4.1.3</b> Tools for logical modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#maboss-section"><i class="fa fa-check"></i><b>4.2</b> The MaBoSS framework for logical modeling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#continuous-time-markov-processes"><i class="fa fa-check"></i><b>4.2.1</b> Continuous-time Markov processes</a></li>
+<li class="chapter" data-level="4.2.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#gillespie-algorithm"><i class="fa fa-check"></i><b>4.2.2</b> Gillespie algorithm</a></li>
+<li class="chapter" data-level="4.2.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#a-stochastic-exploration-of-model-behaviours"><i class="fa fa-check"></i><b>4.2.3</b> A stochastic exploration of model behaviours</a></li>
+<li class="chapter" data-level="4.2.4" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#from-theoretical-models-to-data-models"><i class="fa fa-check"></i><b>4.2.4</b> From theoretical models to data models?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#logical-data-section"><i class="fa fa-check"></i><b>4.3</b> Data integration and semi-quantitative logical modeling</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#build-the-regulatory-graph"><i class="fa fa-check"></i><b>4.3.1</b> Build the regulatory graph</a></li>
+<li class="chapter" data-level="4.3.2" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#define-the-logical-rules"><i class="fa fa-check"></i><b>4.3.2</b> Define the logical rules</a></li>
+<li class="chapter" data-level="4.3.3" data-path="logical-modeling-principles-and-data-integration.html"><a href="logical-modeling-principles-and-data-integration.html#validate-the-model"><i class="fa fa-check"></i><b>4.3.3</b> Validate the model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="personalization-chap.html"><a href="personalization-chap.html"><i class="fa fa-check"></i><b>5</b> Personalization of logical models: method and prognostic validation</a><ul>
+<li class="chapter" data-level="5.1" data-path="personalization-chap.html"><a href="personalization-chap.html#from-one-generic-model-to-data-specific-models-with-profile-method"><i class="fa fa-check"></i><b>5.1</b> From one generic model to data-specific models with PROFILE method</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="personalization-chap.html"><a href="personalization-chap.html#gathering-knowledge-and-data"><i class="fa fa-check"></i><b>5.1.1</b> Gathering knowledge and data</a></li>
+<li class="chapter" data-level="5.1.2" data-path="personalization-chap.html"><a href="personalization-chap.html#adapting-patient-profiles-to-a-logical-model"><i class="fa fa-check"></i><b>5.1.2</b> Adapting patient profiles to a logical model</a></li>
+<li class="chapter" data-level="5.1.3" data-path="personalization-chap.html"><a href="personalization-chap.html#personalizing-logical-models-with-patient-data"><i class="fa fa-check"></i><b>5.1.3</b> Personalizing logical models with patient data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="personalization-chap.html"><a href="personalization-chap.html#an-integration-tool-for-high-dimensional-data"><i class="fa fa-check"></i><b>5.2</b> An integration tool for high-dimensional data?</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="personalization-chap.html"><a href="personalization-chap.html#PROFILE-CL"><i class="fa fa-check"></i><b>5.2.1</b> Biological relevance in cell lines</a></li>
+<li class="chapter" data-level="5.2.2" data-path="personalization-chap.html"><a href="personalization-chap.html#validation-METABRIC"><i class="fa fa-check"></i><b>5.2.2</b> Validation with patient data</a></li>
+<li class="chapter" data-level="5.2.3" data-path="personalization-chap.html"><a href="personalization-chap.html#perspectives"><i class="fa fa-check"></i><b>5.2.3</b> Perspectives</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html"><i class="fa fa-check"></i><b>6</b> Personalized logical models to study an interpret drug response</a><ul>
+<li class="chapter" data-level="6.1" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#one-step-further-with-drugs"><i class="fa fa-check"></i><b>6.1</b> One step further with drugs</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#modeling-response-to-cancer-treatments"><i class="fa fa-check"></i><b>6.1.1</b> Modeling response to cancer treatments</a></li>
+<li class="chapter" data-level="6.1.2" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#an-application-of-personalized-logical-models"><i class="fa fa-check"></i><b>6.1.2</b> An application of personalized logical models</a></li>
+<li class="chapter" data-level="6.1.3" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#a-pan-cancer-attempt"><i class="fa fa-check"></i><b>6.1.3</b> A pan-cancer attempt</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#case-study-on-braf-in-melanoma-and-colorectal-cancers"><i class="fa fa-check"></i><b>6.2</b> Case study on BRAF in melanoma and colorectal cancers</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#biological-and-clinical-context"><i class="fa fa-check"></i><b>6.2.1</b> Biological and clinical context</a></li>
+<li class="chapter" data-level="6.2.2" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#a-logical-model-centred-on-braf"><i class="fa fa-check"></i><b>6.2.2</b> A logical model centred on BRAF</a></li>
+<li class="chapter" data-level="6.2.3" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#cell-lines-data"><i class="fa fa-check"></i><b>6.2.3</b> Cell lines data</a></li>
+<li class="chapter" data-level="6.2.4" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#validation-of-personalized-models-using-crisprcas9-and-drug-screening"><i class="fa fa-check"></i><b>6.2.4</b> Validation of personalized models using CRISPR/Cas9 and drug screening</a></li>
+<li class="chapter" data-level="6.2.5" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#ML-comp"><i class="fa fa-check"></i><b>6.2.5</b> Comparison of the mechanistic approach with machine learning methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#prostate-model"><i class="fa fa-check"></i><b>6.3</b> Application on prostate cancer study and challenges</a></li>
+<li class="chapter" data-level="6.4" data-path="logical-drug-chap.html"><a href="logical-drug-chap.html#part2-limits"><i class="fa fa-check"></i><b>6.4</b> Limitations and perspectives</a></li>
+</ul></li>
+<li class="part"><span><b>III Statistical quantification of the clinical impact of models</b></span></li>
+<li class="chapter" data-level="7" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html"><i class="fa fa-check"></i><b>7</b> Information flows in mechanistic models of cancer</a><ul>
+<li class="chapter" data-level="7.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#evaluation-of-models-as-biomarkers"><i class="fa fa-check"></i><b>7.1</b> Evaluation of models as biomarkers</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#evaluation-framework-and-general-principles"><i class="fa fa-check"></i><b>7.1.1</b> Evaluation framework and general principles</a></li>
+<li class="chapter" data-level="7.1.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#some-frequent-problems-and-recommended-statistical-tools"><i class="fa fa-check"></i><b>7.1.2</b> Some frequent problems and recommended statistical tools</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#processing-of-biological-information"><i class="fa fa-check"></i><b>7.2</b> Processing of biological information</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#information"><i class="fa fa-check"></i><b>7.2.1</b> Information in, information out</a></li>
+<li class="chapter" data-level="7.2.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#emergence-of-information-in-artificial-examples"><i class="fa fa-check"></i><b>7.2.2</b> Emergence of information in artificial examples</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#reanalysis"><i class="fa fa-check"></i><b>7.3</b> Reanalysis of mechanistic models of cancer</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#ode-model-of-jnk-pathway-by-fey2015signaling"><i class="fa fa-check"></i><b>7.3.1</b> ODE model of JNK pathway by <span class="citation">Fey et al. (<a href="#ref-fey2015signaling">2015</a>)</span></a></li>
+<li class="chapter" data-level="7.3.2" data-path="information-flows-in-mechanistic-models-of-cancer.html"><a href="information-flows-in-mechanistic-models-of-cancer.html#personalized-logical-models-braf-inhibition-in-melanoma-and-colorectal-cancers"><i class="fa fa-check"></i><b>7.3.2</b> Personalized logical models: BRAF inhibition in melanoma and colorectal cancers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="causal-chap.html"><a href="causal-chap.html"><i class="fa fa-check"></i><b>8</b> Clinical evidence generation and causal inference</a><ul>
+<li class="chapter" data-level="8.1" data-path="causal-chap.html"><a href="causal-chap.html#clinical-trials-and-beyond"><i class="fa fa-check"></i><b>8.1</b> Clinical trials and beyond</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="causal-chap.html"><a href="causal-chap.html#randomized-clinical-trials-as-gold-standards"><i class="fa fa-check"></i><b>8.1.1</b> Randomized clinical trials as gold standards</a></li>
+<li class="chapter" data-level="8.1.2" data-path="causal-chap.html"><a href="causal-chap.html#observational-data-and-confounding-factors"><i class="fa fa-check"></i><b>8.1.2</b> Observational data and confounding factors</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="causal-chap.html"><a href="causal-chap.html#causal-basic"><i class="fa fa-check"></i><b>8.2</b> Causal inference methods to leverage data</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="causal-chap.html"><a href="causal-chap.html#notations-in-potential-outcomes-framework"><i class="fa fa-check"></i><b>8.2.1</b> Notations in potential outcomes framework</a></li>
+<li class="chapter" data-level="8.2.2" data-path="causal-chap.html"><a href="causal-chap.html#causal-identification-simple"><i class="fa fa-check"></i><b>8.2.2</b> Identification of causal effects</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chapter-precision.html"><a href="chapter-precision.html"><i class="fa fa-check"></i><b>9</b> Causal inference for precision medicine</a><ul>
+<li class="chapter" data-level="9.1" data-path="chapter-precision.html"><a href="chapter-precision.html#precision-medicine-in-oncology"><i class="fa fa-check"></i><b>9.1</b> Precision medicine in oncology</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="chapter-precision.html"><a href="chapter-precision.html#main-PDX"><i class="fa fa-check"></i><b>9.1.1</b> An illustration with patient-derived xenografts</a></li>
+<li class="chapter" data-level="9.1.2" data-path="chapter-precision.html"><a href="chapter-precision.html#clinical-trials-and-treatment-algorithms"><i class="fa fa-check"></i><b>9.1.2</b> Clinical trials and treatment algorithms</a></li>
+<li class="chapter" data-level="9.1.3" data-path="chapter-precision.html"><a href="chapter-precision.html#computational-models-to-assign-cancer-treatments"><i class="fa fa-check"></i><b>9.1.3</b> Computational models to assign cancer treatments</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="chapter-precision.html"><a href="chapter-precision.html#emulating-clinical-trials-to-evaluate-precision-medicine-algorithms"><i class="fa fa-check"></i><b>9.2</b> Emulating clinical trials to evaluate precision medicine algorithms</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="chapter-precision.html"><a href="chapter-precision.html#objectives-and-applications"><i class="fa fa-check"></i><b>9.2.1</b> Objectives and applications</a></li>
+<li class="chapter" data-level="9.2.2" data-path="chapter-precision.html"><a href="chapter-precision.html#causal-estimates"><i class="fa fa-check"></i><b>9.2.2</b> Target trials for precision medicine: definition of causal estimates</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="chapter-precision.html"><a href="chapter-precision.html#causal-inference-methods-and-precision-medicine"><i class="fa fa-check"></i><b>9.3</b> Causal inference methods and precision medicine</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="chapter-precision.html"><a href="chapter-precision.html#a-treatment-with-multiple-versions"><i class="fa fa-check"></i><b>9.3.1</b> A treatment with multiple versions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="chapter-precision.html"><a href="chapter-precision.html#causal-inference-with-multiple-versions"><i class="fa fa-check"></i><b>9.3.2</b> Causal inference with multiple versions</a></li>
+<li class="chapter" data-level="9.3.3" data-path="chapter-precision.html"><a href="chapter-precision.html#identification_causal_PM"><i class="fa fa-check"></i><b>9.3.3</b> Application to precision medicine</a></li>
+<li class="chapter" data-level="9.3.4" data-path="chapter-precision.html"><a href="chapter-precision.html#PM-others"><i class="fa fa-check"></i><b>9.3.4</b> Alternative estimation methods</a></li>
+<li class="chapter" data-level="9.3.5" data-path="chapter-precision.html"><a href="chapter-precision.html#code"><i class="fa fa-check"></i><b>9.3.5</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="chapter-precision.html"><a href="chapter-precision.html#application-to-simulated-data"><i class="fa fa-check"></i><b>9.4</b> Application to simulated data</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="chapter-precision.html"><a href="chapter-precision.html#general-settings"><i class="fa fa-check"></i><b>9.4.1</b> General settings</a></li>
+<li class="chapter" data-level="9.4.2" data-path="chapter-precision.html"><a href="chapter-precision.html#simulation-results"><i class="fa fa-check"></i><b>9.4.2</b> Simulation results</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="chapter-precision.html"><a href="chapter-precision.html#application-to-pdx"><i class="fa fa-check"></i><b>9.5</b> Application to PDX</a></li>
+<li class="chapter" data-level="9.6" data-path="chapter-precision.html"><a href="chapter-precision.html#part3-limits"><i class="fa fa-check"></i><b>9.6</b> Limitations and perspectives</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>Conclusion</a><ul>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html#one-path-among-others"><i class="fa fa-check"></i>One path among others</a></li>
+<li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html#in-other-directions"><i class="fa fa-check"></i>In other directions</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-datasets.html"><a href="appendix-datasets.html"><i class="fa fa-check"></i><b>A</b> About datasets</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-cl"><i class="fa fa-check"></i><b>A.1</b> Cell lines</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#omics-profiles"><i class="fa fa-check"></i><b>A.1.1</b> Omics profiles</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-GDSC"><i class="fa fa-check"></i><b>A.1.2</b> Drug screenings</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-CRISPR"><i class="fa fa-check"></i><b>A.1.3</b> CRISPR-Cas9 screening</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-PDX"><i class="fa fa-check"></i><b>A.2</b> Patient-derived xenografts</a><ul>
+<li class="chapter" data-level="A.2.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#overview-of-pdx-data-from-gao2015high"><i class="fa fa-check"></i><b>A.2.1</b> Overview of PDX data from <span class="citation">Gao et al. (<a href="#ref-gao2015high">2015</a>)</span></a></li>
+<li class="chapter" data-level="A.2.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#drug-response-metrics"><i class="fa fa-check"></i><b>A.2.2</b> Drug response metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-datasets-patients"><i class="fa fa-check"></i><b>A.3</b> Patients</a><ul>
+<li class="chapter" data-level="A.3.1" data-path="appendix-datasets.html"><a href="appendix-datasets.html#metabric"><i class="fa fa-check"></i><b>A.3.1</b> METABRIC</a></li>
+<li class="chapter" data-level="A.3.2" data-path="appendix-datasets.html"><a href="appendix-datasets.html#tcga-breast-cancer"><i class="fa fa-check"></i><b>A.3.2</b> TCGA: Breast cancer</a></li>
+<li class="chapter" data-level="A.3.3" data-path="appendix-datasets.html"><a href="appendix-datasets.html#appendix-prostate"><i class="fa fa-check"></i><b>A.3.3</b> TCGA: Prostate cancer</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="about-logical-models.html"><a href="about-logical-models.html"><i class="fa fa-check"></i><b>B</b> About logical models</a><ul>
+<li class="chapter" data-level="B.1" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-fumia"><i class="fa fa-check"></i><b>B.1</b> Generic logical model of cancer pathways</a></li>
+<li class="chapter" data-level="B.2" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-verlingue"><i class="fa fa-check"></i><b>B.2</b> Extended logical model of cancer pathways</a></li>
+<li class="chapter" data-level="B.3" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-pantolini"><i class="fa fa-check"></i><b>B.3</b> Logical model of BRAF pathways in melanoma and colorectal cancer</a></li>
+<li class="chapter" data-level="B.4" data-path="about-logical-models.html"><a href="about-logical-models.html#appendix-montagud"><i class="fa fa-check"></i><b>B.4</b> Logical model of prostate cancer</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="about-statistics.html"><a href="about-statistics.html"><i class="fa fa-check"></i><b>C</b> About statistics</a><ul>
+<li class="chapter" data-level="C.1" data-path="about-statistics.html"><a href="about-statistics.html#r2-and-beyond"><i class="fa fa-check"></i><b>C.1</b> <span class="math inline">\(R^2\)</span> and beyond</a><ul>
+<li class="chapter" data-level="C.1.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-decomp"><i class="fa fa-check"></i><b>C.1.1</b> Decomposition of <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="C.1.2" data-path="about-statistics.html"><a href="about-statistics.html#appendix-r2surv"><i class="fa fa-check"></i><b>C.1.2</b> <span class="math inline">\(R^2\)</span> for survival data</a></li>
+</ul></li>
+<li class="chapter" data-level="C.2" data-path="about-statistics.html"><a href="about-statistics.html#causal-inference-with-multiple-versions-of-treatment"><i class="fa fa-check"></i><b>C.2</b> Causal inference with multiple versions of treatment</a><ul>
+<li class="chapter" data-level="C.2.1" data-path="about-statistics.html"><a href="about-statistics.html#appendix-overall-treatment-effect"><i class="fa fa-check"></i><b>C.2.1</b> Overall treatment effect with multiple versions of treatment (equation @ref(eq:overall-treatment-effect))</a></li>
+<li class="chapter" data-level="C.2.2" data-path="about-statistics.html"><a href="about-statistics.html#appendix-distrib-treatment-effect"><i class="fa fa-check"></i><b>C.2.2</b> Treatment effect with predefined distributions of versions of treatment (equation @ref(eq:distrib-treatment-effect))</a></li>
+<li class="chapter" data-level="C.2.3" data-path="about-statistics.html"><a href="about-statistics.html#appendix-IPW"><i class="fa fa-check"></i><b>C.2.3</b> Inverse probability of treatment weighted (IPW) estimators for precision medicine</a></li>
+<li class="chapter" data-level="C.2.4" data-path="about-statistics.html"><a href="about-statistics.html#appendix-TMLE"><i class="fa fa-check"></i><b>C.2.4</b> TMLE</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html"><i class="fa fa-check"></i><b>D</b> Résumé détaillé</a><ul>
+<li class="chapter" data-level="D.1" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#modélisation-et-cancer"><i class="fa fa-check"></i><b>D.1</b> Modélisation et cancer</a></li>
+<li class="chapter" data-level="D.2" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#des-modèles-logiques-personnalisés-de-cancer"><i class="fa fa-check"></i><b>D.2</b> Des modèles logiques personnalisés de cancer</a></li>
+<li class="chapter" data-level="D.3" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#quantification-statistique-de-limpact-clinique-des-modèles"><i class="fa fa-check"></i><b>D.3</b> Quantification statistique de l'impact clinique des modèles</a></li>
+<li class="chapter" data-level="D.4" data-path="résumé-détaillé.html"><a href="résumé-détaillé.html#conclusion-1"><i class="fa fa-check"></i><b>D.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="personalization-chap" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Personalization of logical models: method and prognostic validation</h1>
+<blockquote>
+<p><em>All happy families are alike; each unhappy family is unhappy in its own way.</em><br/> Leo Tolstoy (Anna Karenina, 1877)</p>
+</blockquote>
+<p>Now that logical modeling has been introduced, it is possible to come back to the question that structures this part and to refine it. <strong>Is it possible to use routine omics data to obtain logical models that provide qualitative clinical interpretation?</strong> We thus propose a sequential approach, separating the model construction process from the integration of biological data. A generic logical model is first built, based on the literature knowledge, and the data are then used to specify the model. Indeed, the model as defined from the literature is often generic in the sense that it summarizes the state of knowledge on a probably heterogeneous pathology or population. Assuming that this general regulatory scheme provides a relevant framework for the system, it may then be relevant to use more precise omics data to impose biologically sourced constraints on the model: inactivation of a gene in a patient, activation of a protein or a signalling pathway by overexpression or phosphorylation, etc. This approach, called <strong>PROFILE</strong> (PeRsonalization OF logIcaL ModEls), allows the integration of both discrete (mutations) and continuous data (RNA expression levels, proteins) based on the MaBoSS software, and leads to specific models of a cell line or a patient.</p>
+
+<div class="summarybox">
+<h4 id="scientific-content-2" class="unnumbered">Scientific content</h4>
+<p>This chapter presents the method developed during the thesis to personalize logical models, <em>i.e.</em>, generate patient-specific models from a single generic one. The principles of the method and some analyses on patient data have been comprehensively described in <span class="citation">Béal et al. (<a href="#ref-beal2019personalization">2019</a>)</span> and briefly summarized in <span class="citation">Béal et al. (<a href="#ref-beal2020personalized">2020</a>)</span>. Analyses on cell lines are unpublished.</p>
+</div>
+<p></p>
+<div id="from-one-generic-model-to-data-specific-models-with-profile-method" class="section level2">
+<h2><span class="header-section-number">5.1</span> From one generic model to data-specific models with PROFILE method</h2>
+<p>The PROFILE method is summarized in Figure <a href="personalization-chap.html#fig:PROFILE-abstract">5.1</a> and the different steps are successively described in the following subsections.</p>
+<div class="figure" style="text-align: center"><span id="fig:PROFILE-abstract"></span>
+<img src="fig/PROFILE-abstract.png" alt="Graphical abstract of PROFILE method to personalize logical models with omics data. On the one hand (upper left), a generic logical model, in a MaBoSS format is derived from literature knowledge to serve as the starting-point. On the other hand (upper right), omics data are gathered (e.g., genome and transcriptome) as data frames, and processed through functional inference methods (for already discrete genome data) or binarization/normalization (for continuous expression data). The resulting patient profiles are used to perform model personalization, i.e., adapt the generic model with patient data. The merging of the generic model with the patient profiles creates a personalized MaBoSS model per patient. Then, biological or clinical relevance of these patient-specific models can be assessed." width="80%" />
+<p class="caption">
+Figure 5.1: <strong>Graphical abstract of PROFILE method to personalize logical models with omics data.</strong> On the one hand (upper left), a generic logical model, in a MaBoSS format is derived from literature knowledge to serve as the starting-point. On the other hand (upper right), omics data are gathered (e.g., genome and transcriptome) as data frames, and processed through functional inference methods (for already discrete genome data) or binarization/normalization (for continuous expression data). The resulting patient profiles are used to perform model personalization, i.e., adapt the generic model with patient data. The merging of the generic model with the patient profiles creates a personalized MaBoSS model per patient. Then, biological or clinical relevance of these patient-specific models can be assessed.
+</p>
+</div>
+
+<div id="gathering-knowledge-and-data" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Gathering knowledge and data</h3>
+<p>The first steps are therefore to build a logical model adapted to the biological question (Figure <a href="personalization-chap.html#fig:PROFILE-abstract">5.1</a>, upper left) and to collect omics data that will be used to personalize the model (Figure <a href="personalization-chap.html#fig:PROFILE-abstract">5.1</a>, upper right). The construction of the model can be based on literature or data (see previous chapter). In the latter case, the data used to build the model will preferably be distinct from those used to personalize the model.</p>
+<div id="a-generic-logical-model-of-cancer-pathways" class="section level4">
+<h4><span class="header-section-number">5.1.1.1</span> A generic logical model of cancer pathways</h4>
+<p>In this chapter, which is essentially methodological in nature, we will use a <strong>published logical model of cancer pathways</strong> to illustrate our PROFILE methodology. It is based on a regulatory network summarizing several key players and pathways involved in cancer mechanisms: RTKs, PI3K/AKT, WNT/<span class="math inline">\(\beta\)</span>-catenin, TGF-<span class="math inline">\(\beta\)</span>/Smads, Rb, HIF-1, p53 and ATM/ATR <span class="citation">(Fumia and Martins <a href="#ref-fumia2013boolean">2013</a>)</span>. The later analyses will be mainly focused on two read-out nodes, <em>Proliferation</em> and <em>Apoptosis</em>. Based on the model’s logical rules <em>Proliferation</em> node is activated by any of the cyclins (CyclinA, CyclinB, CyclinD, and CyclinE) and is, thus, an indicator of cyclin activity as an abstraction and simplification of the cell cycle behavior. <em>Apoptosis</em> node is regulated by Caspase8 and Caspase9. This generic model contains 98 nodes and 254 edges. Further details and visual representation are provided in section <a href="about-logical-models.html#appendix-fumia">B.1</a> and Figure <a href="about-logical-models.html#fig:Fumia">B.1</a>. Model files are available in MaBoSS format in a dedicated <a href="https://github.com/sysbio-curie/PROFILE/tree/master/Models/Fumia2013">GitHub repository</a>.</p>
+</div>
+<div id="cancer-data-to-feed-the-models" class="section level4">
+<h4><span class="header-section-number">5.1.1.2</span> Cancer data to feed the models</h4>
+<p>In order to showcase the method, <strong>breast-cancer patient data</strong> are gathered from METABRIC studies <span class="citation">(Curtis et al. <a href="#ref-curtis2012genomic">2012</a>; Pereira et al. <a href="#ref-pereira2016somatic">2016</a>)</span>. 1904 patients have data for both mutations, copy number alterations, RNA expression and clinical status (e.g. survival). This number rises to 2504 patients if we only look at the mutations. Additional analyses were also performed based on the smaller and clinically less complete TCGA breast cancer data <span class="citation">(TCGA and others <a href="#ref-cancer2012comprehensive">2012</a>)</span>. These are detailed in <span class="citation">Béal et al. (<a href="#ref-beal2019personalization">2019</a>)</span> but not included in this thesis. A more comprehensive description of these two databases can be found in section <a href="appendix-datasets.html#appendix-datasets-patients">A.3</a>.</p>
+<p>In addition to these examples proposed in the original article, an application to <strong>cell line data</strong> is proposed in section <a href="personalization-chap.html#PROFILE-CL">5.2.1</a> to link to the next chapters. A cohort of 663 cell lines from different types of cancer will be used. The data are from Cell Models Passports <span class="citation">(Meer et al. <a href="#ref-van2019cell">2019</a>)</span> and are described in more detail in the appendix <a href="appendix-datasets.html#appendix-cl">A.1</a>. In all cases, samples and cell lines will sometimes be referred to as patients for the sake of simplicity.</p>
+</div>
+</div>
+<div id="adapting-patient-profiles-to-a-logical-model" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Adapting patient profiles to a logical model</h3>
+<p>Before describing precisely the methodologies for using the data to generate patient-specific models, it is important to understand that these data will need to be transformed. This is the transformation of raw omics data into processed profiles that can be used directly in logical modeling.</p>
+<div id="functional-inference-of-discrete-data" class="section level4">
+<h4><span class="header-section-number">5.1.2.1</span> Functional inference of discrete data</h4>
+<p>Since the logical formalism is itself discrete, the integration of discrete data is more straightforward, at least at the first glance. The most natural idea, used in many previous works, is to <strong>interpret the functional effect of these alterations</strong> and to encode it directly in the model. For instance, a deleterious mutation is integrated into the model by setting the corresponding node to <span class="math inline">\(0\)</span> and ignoring the logical rule associated to it. For activating mutation, the node is set to <span class="math inline">\(1\)</span>. The main obstacle is therefore to estimate the functional impact of the alterations in order to translate them as well as possible in the model.</p>
+<p>For mutations, based on the variant classification provided by the data, inactivating mutations (nonsense, frame-shift insertions or deletions and mutation in splice or translation start sites) are assumed to correspond to loss of function mutations and therefore the corresponding nodes of the model are forced to <span class="math inline">\(0\)</span>. Then, missense mutations are matched with OncoKB database <span class="citation">(Chakravarty et al. <a href="#ref-chakravarty2017oncokb">2017</a>)</span>: for each mutation present in the database, an effect is assessed (gain or loss of function assigned to <span class="math inline">\(1\)</span> and <span class="math inline">\(0\)</span>, respectively) with a corresponding confidence based on expert and literature knowledge. Then, mutations targeting oncogenes (resp. tumor-suppressor genes), as defined in the 2020+ driver gene prediction method <span class="citation">(Tokheim et al. <a href="#ref-tokheim2016evaluating">2016</a>)</span>, are assumed to be gain of function mutations (resp. loss of function) and therefore assigned to <span class="math inline">\(1\)</span> (resp. <span class="math inline">\(0\)</span>). To rule potential passenger mutations out, each automatic assignment of a oncogene/tumor-suppressor gene muations requires that the effect of the mutation has been identified as significant by predictive software based on protein structure such as SIFT <span class="citation">(Kumar, Henikoff, and Ng <a href="#ref-kumar2009predicting">2009</a>)</span> or PolyPhen <span class="citation">(Adzhubei et al. <a href="#ref-adzhubei2010method">2010</a>)</span>.</p>
+<p>For integration of copy number alterations, we use the discrete estimation of gain and loss of copies from GISTIC algorithm processing <span class="citation">(Mermel et al. <a href="#ref-mermel2011gistic">2011</a>)</span>. The loss of both alleles of a gene (labelled -2) can thus be interpreted as a 0. Conversely, a significant gain of copies (labelled +2) denotes a gene that tends to be more highly expressed although the interpretation is more uncertain.</p>
+</div>
+<div id="normalization-of-continuous-data" class="section level4">
+<h4><span class="header-section-number">5.1.2.2</span> Normalization of continuous data</h4>
+<p>The integration of continuous data, such as RNA expression levels, in logical modeling is more difficult. The stochastic framework of MaBoSS provides however some possibilities. The main continuous mechanistic parameters of MaBoSS are the initial conditions of each node (its initial probability of being activated among the set of simulated stochastic trajectories) and the transition rates associated with the nodes (its probability to have its transition performed in an asynchronous update). In order to facilitate the use of continuous data through one of these two possibilities, we propose to transform them so that the <strong>values are continuous between 0 and 1</strong>, what we will refer to hereafter as normalized data. <strong>It is assumed that these continuous data can be good proxies of biological activity</strong>, 0 corresponding to a very low level of activity of the biological entity and 1 to a very high level. This assumption will have to be explained and justified each time: high level of expression of an RNA or significant phosphorylation of a protein interpreted as continuous markers of an important biological activity for example.</p>
+<div class="figure" style="text-align: center"><span id="fig:ERG"></span>
+<img src="05-Personalized_files/figure-html/ERG-1.png" alt="Bimodal distribution of ERG gene in TCGA prostate cancer cohort. This bimodality is largely explained by the fusion status of ERG gene. Patients for whom the gene has fused with TMPRSS2 have a much higher level of RNA expression for ERG." width="60%" />
+<p class="caption">
+Figure 5.2: <strong>Bimodal distribution of ERG gene in TCGA prostate cancer cohort.</strong> This bimodality is largely explained by the fusion status of ERG gene. Patients for whom the gene has fused with TMPRSS2 have a much higher level of RNA expression for ERG.
+</p>
+</div>
+
+<p>One of the assumptions of our analysis is that the interpretation of continuous data can only be relative and not absolute. It is indeed difficult to define an absolute threshold of RNA level at which a gene will be considered as activated. This may depend on contexts, technologies or even the way in which the data have been processed. On the other hand, it is possible to estimate that a gene is over-expressed for a patient compared to a cohort of interest. In contrast, the effect of a mutation can be estimated more independently. Thus, the <strong>continuous data will be normalized for the whole cohort studied</strong>, for each gene individually. In order to retain biological information as much as possible, distribution patterns are identified and normalized in different ways (Figure <a href="personalization-chap.html#fig:logical-processing">5.4</a>). We will illustrate the process by taking the example of the expression data expressed with continuous RNA levels. Beforehand, genes with no variation in expression level or too many missing values are discarded from the analysis. Then, we seek to identify first the genes that have a <strong>bimodal</strong> distribution. Indeed, these naturally fit into a binary formalism and this bimodality often has an underlying biological explanation. As an example, in the TCGA prostate cancer cohort (used in section <a href="logical-drug-chap.html#prostate-model">6.3</a>), a gene called ERG has a bimodal distribution when looking at RNA levels in all patients. This distribution is almost entirely explained by an underlying genetic alteration that is the fusion of the ERG gene with the TMPRSS2 gene promoter (Figure <a href="personalization-chap.html#fig:ERG">5.2</a>), which is very common in this cancer <span class="citation">(Tomlins et al. <a href="#ref-tomlins2005recurrent">2005</a>)</span>. In the data we identify bimodal patterns based on three distinct criteria: <strong>Hartigan’s dip test of unimodality, Bimodality Index (BI) and kurtosis</strong>. The dip test measures multi-modality in a sample using the maximum difference between empirical distribution and the best unimodal distribution, i.e., the one that minimizes this maximum difference <span class="citation">(Hartigan and Hartigan <a href="#ref-hartigan1985dip">1985</a>)</span>. Values below <span class="math inline">\(0.05\)</span> indicate a significant multi-modality. In PROFILE, this dip statistic is computed using the R package <em>diptest</em>. The Bimodality Index (BI) evaluates the ability to fit two distinct Gaussian components with equal variance <span class="citation">(Wang et al. <a href="#ref-wang2009bimodality">2009</a>)</span>. Once the best 2-Gaussian fit is determined, along with the respective means <span class="math inline">\(\mu_0\)</span> and <span class="math inline">\(\mu_1\)</span> and common variance <span class="math inline">\(\sigma\)</span>, the standardized distance <span class="math inline">\(\delta\)</span> between the two populations is given by</p>
+<p><span class="math display">\[\delta = \dfrac{|\mu_0-\mu_1|}{\sigma}\]</span></p>
+<p>with <span class="math inline">\(\mu_i\)</span> the mean of Gaussian component <span class="math inline">\(i\)</span>, and the BI is defined by</p>
+<p><span class="math display">\[BI=[p(1-p)]^{1/2}\delta\]</span></p>
+<p>where <span class="math inline">\(p\)</span> is the proportion of observations in the first component. In PROFILE, BI is computed using the R package <em>mclust</em>. Finally, the kurtosis method corresponds to a descriptor of the shape of the distribution, of its tailedness, or non-Gaussianity. A negative kurtosis distribution, especially, defines platykurtic (flattened) distributions, and potentially bimodal distributions. It has been proposed as a tool to identify small outliers subgroups or major subdivisions <span class="citation">(Teschendorff et al. <a href="#ref-teschendorff2006pack">2006</a>)</span>. In our case, we focus on negative kurtosis distributions to rule out non-relevant bimodal distributions composed of a major mode and a very small outliers’ group or a single outlier. Although Dip test, BI and negative kurtosis criteria emerge as similar tools in the sense that they select genes whose values can be clustered in two distinct groups of comparable size, we choose to combine them in order to correct their respective limits and increase the robustness of our method. For that, we consider that <strong>all three conditions (Dip test, Bimodality Index and kurtosis) must be fulfilled in order for a gene to be considered as bimodal</strong>. The thresholds of each test are inspired by those advocated in the papers presenting the tools individually. Dip test is a statistical test to which the classical <span class="math inline">\(0.05\)</span> threshold has been chosen. In the article describing BI, authors explored a cut-off range between 1.1 and 1.5 and we chose <span class="math inline">\(1.5\)</span> for the present work. Regarding kurtosis, the usual cut-off is <span class="math inline">\(0\)</span>, but since this criterion does not directly target bimodality, this criterion has been relaxed to <span class="math inline">\(K &lt; 1\)</span>. Several examples of the relative differences and complementarities between these criteria can be seen in Figure <a href="personalization-chap.html#fig:bimodality">5.3</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:bimodality"></span>
+<img src="fig/bimodality.png" alt="Bimodality criteria and their combinations. Examples of gene expression distributions for the different combinations of bimodality criteria: Dip test, Bimodality Index (BI) and kurtosis (K). Plots are organized in a Venn diagram." width="80%" />
+<p class="caption">
+Figure 5.3: <strong>Bimodality criteria and their combinations.</strong> Examples of gene expression distributions for the different combinations of bimodality criteria: Dip test, Bimodality Index (BI) and kurtosis (K). Plots are organized in a Venn diagram.
+</p>
+</div>
+
+<p>Non-bimodal genes are further classified as unimodal or zero-inflated distributions, looking at the position of the distribution density peak (Figure <a href="personalization-chap.html#fig:logical-processing">5.4</a>A). Then, based on this three category classification of genes, a <strong>pattern-preserving normalization</strong> can be performed, as summarized in Figure <a href="personalization-chap.html#fig:logical-processing">5.4</a>B. For a bimodal gene <span class="math inline">\(i\)</span>, a 2-component Gaussian mixture model is fitted using <em>mclust</em> R package resulting in a <em>lower</em> component <span class="math inline">\(C_{i,0}\)</span> (with mean <span class="math inline">\(\mu\)</span>) and an <em>upper</em> component <span class="math inline">\(C_{i,1}\)</span>. Denoting <span class="math inline">\(X_{i,j}\)</span> the expression value for gene <span class="math inline">\(i\)</span> and sample <span class="math inline">\(j\)</span>, <span class="math inline">\(X_{i,j}\)</span> has a probability to belong to <span class="math inline">\(C_{i,0}\)</span> or <span class="math inline">\(C_{i,1}\)</span> such as <span class="math inline">\(P[X_{i,j} \in C_{i,0}]+P[X_{i,j} \in C_{i,1}]=1\)</span>. These probabilities result from posterior inference using Bayes' rule. For bimodal genes, the normalization processing is therefore defined as:</p>
+<p><span class="math display">\[X_{i,j}^{norm}=P[X_{i,j} \in C_{i,1}]\]</span></p>
+<p>For unimodal distributions, we transform data through a sigmoid function in order to maintain the most common pattern which is unimodal and nearly-symmetric:</p>
+<p><span class="math display">\[X_{i, j}^{norm}=\dfrac{1}{1+e^{-\lambda(X_{i, j}-median(X_{i}))}}\]</span></p>
+<p>Since the slope of the function depends on <span class="math inline">\(\lambda\)</span>, we adapt it to the dispersion of initial data in order to maintain a significant dispersion in <span class="math inline">\([0, 1]\)</span> interval: more dispersed unimodal distributions are mapped with a gentle slope, peaked distributions with a steep one. We map the median absolute deviation <span class="math inline">\(MAD(X_{i})=median(|X_{i}-median(X_i)|)\)</span> on both sides of the median respectively to <span class="math inline">\(0.25\)</span> and <span class="math inline">\(0.75\)</span> to ensure a minimal dispersion of the mapping. Thus, the proposed mapping results in:</p>
+<p><span class="math display">\[\lambda=\dfrac{log(3)}{MAD(X_i)}\]</span></p>
+<p>Last, zero-inflated distributions are transformed by linear normalization of the initial distribution:</p>
+<p><span class="math display">\[X_{i, j}^{norm}=\dfrac{X_{i, j}-min(X_{i})}{max(X_{i}-min(X_{i}))}\]</span></p>
+<p>The transformation is applied to data between 1st and 99th quantiles to be more robust to outliers. Values outside this range are respectively assigned to <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>. All the categoriation of distributions and the subsequent normalizations are summarized in Figure <a href="personalization-chap.html#fig:logical-processing">5.4</a>. With the help of the categories described here, it is also possible to binarize the continuous data quite simply. This binarization is required for some methods of network inference or logical modeling but will not be used in the examples presented below. Readers may refer to <span class="citation">Béal et al. (<a href="#ref-beal2019personalization">2019</a>)</span> for more details.</p>
+<div class="figure" style="text-align: center"><span id="fig:logical-processing"></span>
+<img src="fig/logical-processing.png" alt="Normalization of continuous data for logical modeling. (A) Combinations of tests and criteria to classify distributions of continuous data (such as gene expression for one gene and all patients) as bimodal, unimodal or zero-inflated. (B) Normalization methods for each kind of distribution." width="80%" />
+<p class="caption">
+Figure 5.4: <strong>Normalization of continuous data for logical modeling.</strong> (A) Combinations of tests and criteria to classify distributions of continuous data (such as gene expression for one gene and all patients) as bimodal, unimodal or zero-inflated. (B) Normalization methods for each kind of distribution.
+</p>
+</div>
+
+</div>
+</div>
+<div id="personalizing-logical-models-with-patient-data" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Personalizing logical models with patient data</h3>
+<p>It is now possible to redefine more precisely the ways of integrating data into a logical model defined with MaBoSS, as sketched at the beginning of the previous section. <strong>Personalization is defined here as the specification of a logical model with data from a given patient</strong>: each patient has a personalized model tailored to his/her data, so that all personalized models are different specifications of the same logical model, using data from different patients (Figure <a href="personalization-chap.html#fig:PROFILE-abstract">5.1</a>). Based on MaBoSS formalism and the processed patient data, there are several possibilities to personalize a generic logical model with patient data. One possibility to have patient-specific models is to force the value of the variables corresponding to the altered genes in a given patient, i.e., constraining some model nodes to an inactive (<span class="math inline">\(0\)</span>) or active (<span class="math inline">\(1\)</span>) state (Figure <a href="personalization-chap.html#fig:logical-personalization">5.5</a>A). In order to constrain a node to <span class="math inline">\(0\)</span> (resp. <span class="math inline">\(1\)</span>), the initial value of the node is set to <span class="math inline">\(0\)</span> (resp. <span class="math inline">\(1\)</span>) and <span class="math inline">\(k_{0\rightarrow 1}\)</span> (resp. <span class="math inline">\(k_{1\rightarrow 0}\)</span>) to <span class="math inline">\(0\)</span> to force the node to maintain its initially defined state. For instance, the effect of a TP53 inactivating mutation can be modeled by setting the node <em>p53</em> in the model and its initial condition to <span class="math inline">\(0\)</span> and ignoring the logical rule of p53 variable. Because of the type of data used, this personalization method is referred to as <strong>discrete personalization</strong>. It has also been called <em>strict node variants</em> in <span class="citation">Béal et al. (<a href="#ref-beal2019personalization">2019</a>)</span> because this data integration overwrites the logical rules.</p>
+<div class="figure" style="text-align: center"><span id="fig:logical-personalization"></span>
+<img src="fig/logical-personalization.png" alt="Methods for personalization of logical models. (A) Personalization with discrete data, such as mutations, with some nodes forced to \(0\) based on loss of function alteration (left) or \(1\) based on gain of function/constitutive activation (right). (B) Personalization with continuous data used to define the initial conditions of nodes and to influence the transitions rates and the subsequent probabilities of transition in asynchronous update; the graph on the left represents the normalized values of genes A, B and C for patients 1, 2 and N; the right side represents the personalization of logical model using values from patient N (red profile), first defining the initial probabilities of node activation (middle) and then influencing the probabilities of transitions from one state to another (right)." width="90%" />
+<p class="caption">
+Figure 5.5: <strong>Methods for personalization of logical models.</strong> (A) Personalization with discrete data, such as mutations, with some nodes forced to <span class="math inline">\(0\)</span> based on loss of function alteration (left) or <span class="math inline">\(1\)</span> based on gain of function/constitutive activation (right). (B) Personalization with continuous data used to define the initial conditions of nodes and to influence the transitions rates and the subsequent probabilities of transition in asynchronous update; the graph on the left represents the normalized values of genes A, B and C for patients 1, 2 and N; the right side represents the personalization of logical model using values from patient N (red profile), first defining the initial probabilities of node activation (middle) and then influencing the probabilities of transitions from one state to another (right).
+</p>
+</div>
+
+<p>Another possible strategy is to modify the initial conditions of the variables of the altered genes according to the results of the normalization (i.e., the probability of initial activation for one node among the thousands of stochastic trajectories). These initial conditions can capture different environmental and genetic conditions. Nevertheless, in the course of the simulation, these variables will be prone to be updated depending on their logical rules. Finally, as MaBoSS uses Gillespie algorithm to explore the STG, data can be mapped to the transition rates of this algorithm. In the simplest case, all transition rates of the model are set to <span class="math inline">\(1\)</span>, meaning that all possible transitions are equally probable. Alternatively, it is possible to separate the speed of processes by setting the transition rates to different values to account for what is known about the reactions: more probable reactions will have a larger transition rate than less probable reactions <span class="citation">(Stoll et al. <a href="#ref-stoll2012continuous">2012</a>)</span>. For this, different orders of magnitude for these values can be used. They are set according to the activation status of the node (derived from normalized values) and an amplification factor <span class="math inline">\(F\)</span>, designed to generate a higher relative difference in the transition rates, and are therefore defined for each node <span class="math inline">\(i\)</span> and sample <span class="math inline">\(j\)</span>:</p>
+<p><span class="math display">\[k^{0\rightarrow1}_{i,j}=F^{2(X^{norm}_{i,j}-0.5)}\]</span> <span class="math display">\[k^{1\rightarrow0}_{i,j}=\dfrac{1}{k^{0\rightarrow1}_{i,j}}\]</span> Thus, if a gene has a value of <span class="math inline">\(1\)</span> based on its RNA profile, <span class="math inline">\(k_{0\rightarrow1}\)</span> (resp. <span class="math inline">\(k_{1\rightarrow0}\)</span>) will be <span class="math inline">\(10^2\)</span> (resp. <span class="math inline">\(10^{-2}\)</span>) with an amplification factor of <span class="math inline">\(100\)</span>. This amplification factor is therefore a hyper-parameter of the method. Very low values of <span class="math inline">\(F\)</span> will have no impact while higher values will make some transitions almost impossible and the method will then approach the discrete personalization described above. Some quantitative illustrations of the influence of <span class="math inline">\(F\)</span> are provided in <span class="citation">Béal et al. (<a href="#ref-beal2019personalization">2019</a>)</span>. The integration of continuous data through the initial conditions of the nodes and the transition rates are combined to form a second personalization method called <strong>continuous personalization</strong> and described in Figure <a href="personalization-chap.html#fig:logical-personalization">5.5</a>B. This method has also been called <em>soft node variants</em> to emphasize its difference with discrete/strict personalization: it may influence the trajectories in the solution state space leading to a change in probabilities of the resulting stable state but it does not overwrite the logical rules. To illustrate a little more explicitly the impact of continuous personalization, if a given node has a normalized value of <span class="math inline">\(0.8\)</span> after data processing (based on proteins levels for instance), it will be initialized as <span class="math inline">\(1\)</span> in 80% of the stochastic trajectories, its transition rate <span class="math inline">\(k_{0\rightarrow1}\)</span> will be increased (favoring its activation) and its transition rate <span class="math inline">\(k_{1\rightarrow0}\)</span> will be decreased (hampering its inactivation). These changes increase the probability that this node will remain in an activated state close to the one inferred from the patient’s data, while maintaining the validity of its logical rule. Thus, continuous personalization appears as a smoother way to shape logical models’ simulations based on patient data.</p>
+<p>In summary, different types of data can be used, with different integration methods. Note that it is quite natural to use genetic alterations (mutations, CNA) to specify definitive changes in models (such as those of discrete personalization) since this corresponds to biological reality: a mutation cannot be undone or reversed. Conversely, continuous alterations in expression or phosphorylation are subject to modification and regulation, thus justifying their interpretation in a less strong and definitive way (such as continuous personalization). Finally, it follows from these definitions that there are different strategies for personalizing a logical model since discrete and continuous personalizations can each use different types of data; and moreover, these two strategies can be combined. <strong>Except otherwise stated, mutations (resp. RNA or protein) will always be integrated using discrete (resp. continuous) personalization and the joint integration of both types of data will therefore combine both methods.</strong> The relative merits of the different personalization strategies will be discussed below.</p>
+</div>
+</div>
+<div id="an-integration-tool-for-high-dimensional-data" class="section level2">
+<h2><span class="header-section-number">5.2</span> An integration tool for high-dimensional data?</h2>
+<p>Once the method has been defined, it is imperative to study its validity and possible limitations. This comes down to answering the question: <strong>do personalized models capture a biological reality</strong>, and in our case do they discriminate between different types of cancer?</p>
+<div id="PROFILE-CL" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Biological relevance in cell lines</h3>
+<p>These questions can be addressed using cell line data. Using the logical model of cancer pathways from <span class="citation">Fumia and Martins (<a href="#ref-fumia2013boolean">2013</a>)</span>, it is possible to study the 663 cell lines from different types of tumors by integrating their processed omics profiles to the generic logical model to obtain as many personalized models. If we focus on the read-out of <em>Proliferation</em>, one of the easiest to interpret, there are several ways to study its relevance. For each cell line and each personalization strategy (and corresponding data type) we can define a personalized model and derive the asymptotic value the <em>Proliferation</em> node, called <em>Proliferation</em> score. This score is therefore <em>a priori</em> different for all cell lines that present a different molecular profile. For the whole population of cell lines, this score can be confronted with other markers of proliferation such as the levels of Ki67 <span class="citation">(Miller et al. <a href="#ref-miller2018ki67">2018</a>)</span>, here replaced as an example by the RNA levels of the corresponding MKI67 gene. Thus, two independent indicators of the proliferative nature of cell lines are compared. The first is the <em>Proliferation</em> score, which is the final, supposedly asymptotic, value of the <em>Proliferation</em> node, for models that have been constrained with the omics profiles of the corresponding cell lines. On the other hand, an independent experimental indicator of proliferation is used, both the level of the MKI67 biomarker (not used in the personalization process).</p>
+<p>It can then be observed that the simulated <em>Proliferation</em> indicator, derived from the personalized models, correlates positively with the biomarker, but only when RNA has been used in the personalization (Figure <a href="personalization-chap.html#fig:PROFILE-CL">5.6</a>A). The <strong>sign of the correlation is qualitatively correct, but the heterogeneity appears to be very large and most of the variability is not captured by the models</strong>. This heterogeneity is also visible by focusing on some types of cancer (Figure <a href="personalization-chap.html#fig:PROFILE-CL">5.6</a>B). Thus this kind of comparison only validates the models' ability to retrieve a RNA biomarker (not used in personalization) when they themselves integrate other RNA data. It is also consistent that scores from models personalized with mutations only have less uniform distributions due to the discrete nature of the data and the many identical profiles: many cell lines are not distinguishable by mutations only.</p>
+<div class="figure" style="text-align: center"><span id="fig:PROFILE-CL"></span>
+<img src="05-Personalized_files/figure-html/PROFILE-CL-1.png" alt="Validation of personalized Proliferation scores in cell lines. (A) Comparison with MKI67 proliferation biomarker for all cancer cell lines. (B) Same with breast (BRCA) and lung (LUAD) cancer only. (C) Comparison with doubling times in a subset of 60 cell lines." width="90%" />
+<p class="caption">
+Figure 5.6: <strong>Validation of personalized <em>Proliferation</em> scores in cell lines.</strong> (A) Comparison with MKI67 proliferation biomarker for all cancer cell lines. (B) Same with breast (BRCA) and lung (LUAD) cancer only. (C) Comparison with doubling times in a subset of 60 cell lines.
+</p>
+</div>
+
+<p>It is possible to go one step further by comparing these personalized <em>Proliferation</em> scores with the doubling time of the cell lines, i.e., the time it takes for the cell line population to double. A cell line described as proliferative (high <em>Proliferation</em> score) should thus have a low doubling time. This can be observed qualitatively by using a subgroup of cell lines for which this information is available (Figure <a href="personalization-chap.html#fig:PROFILE-CL">5.6</a>C). These correlations are not significant and once again summarize a large heterogeneity. Predicting doubling times is, however, a rather difficult task with poor accuracies, even with the help of more flexible machine learning low <span class="citation">(Kurilov, Haibe-Kains, and Brors <a href="#ref-kurilov2020assessment">2020</a>)</span>.</p>
+</div>
+<div id="validation-METABRIC" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Validation with patient data</h3>
+<div class="figure" style="text-align: center"><span id="fig:PROFILE-METABRIC-Grade"></span>
+<img src="05-Personalized_files/figure-html/PROFILE-METABRIC-Grade-1.png" alt="Comparaison of personalized scores with tumor grades for breast cancer patients in METABRIC cohort. Comparisons are provided for different personalization strategies (with mutations and/or RNA) and two different model nodes (Proliferation and Apoptosis)." width="90%" />
+<p class="caption">
+Figure 5.7: <strong>Comparaison of personalized scores with tumor grades for breast cancer patients in METABRIC cohort.</strong> Comparisons are provided for different personalization strategies (with mutations and/or RNA) and two different model nodes (<em>Proliferation</em> and <em>Apoptosis</em>).
+</p>
+</div>
+
+<p>Patient data can as well be used to reproduce analyses of the same type as those previously performed with the MKI67 biomarker, as was done in <span class="citation">Béal et al. (<a href="#ref-beal2019personalization">2019</a>)</span>, but we focus here on the more clinical applications of the personalized mechanistic models. By analogy with the validations proposed for other mechanistic models <span class="citation">(Fey et al. <a href="#ref-fey2015signaling">2015</a>)</span>, it is also possible to evaluate the <strong>prognostic value of personalized logical models on patient data</strong>. For example, when studying breast cancer patients in the METABRIC cohort, <em>Proliferation</em> and <em>Apoptosis</em> scores differ according to tumor grade. The more advanced tumors (grade 3) are associated with higher <em>Proliferation</em> scores and lower <em>Apoptosis</em> scores (Figure <a href="personalization-chap.html#fig:PROFILE-METABRIC-Grade">5.7</a>). This is in line with the natural interpretation that could be given since proliferation is by definition a sign of cancer progression while apoptosis, a programmed death of defective cells, is on the contrary a protective mechanism. While these trends are monotonous and clearly significant for the third strategy using both mutations and RNA (<span class="math inline">\(p&lt;10^{-12}\)</span> with Jonckheere–Terpstra test for ordered differences among classes, for both nodes), this is not the case when the two types of data are used separately: mutations (resp. RNA) are not sufficient to personalize <em>Proliferation</em> (resp. <em>Apoptosis</em>) scores in a meaningful way. The personalisation method therefore seems to be able to combine discrete and continuous data in such a way that some of the biological information is preserved.</p>
+<div class="figure" style="text-align: center"><span id="fig:PROFILE-METABRIC-Cox"></span>
+<img src="05-Personalized_files/figure-html/PROFILE-METABRIC-Cox-1.png" alt="Hazard ratios for Proliferation and Apoptosis in a survival Cox model in METABRIC cohort. Higher Proliferation (resp. Apoptosis) scores correspond to higher (resp. lower) probabilities of death." width="90%" />
+<p class="caption">
+Figure 5.8: <strong>Hazard ratios for <em>Proliferation</em> and <em>Apoptosis</em> in a survival Cox model in METABRIC cohort.</strong> Higher <em>Proliferation</em> (resp. <em>Apoptosis</em>) scores correspond to higher (resp. lower) probabilities of death.
+</p>
+</div>
+
+<p>This comparison to clinical data can be extended to <strong>patient survival data</strong> in the same cohort. If we focus on the strategy integrating both mutations and RNA, we observe that in a Cox model of survival, <em>Proliferation</em> is significantly associated with a higher risk of event while <em>Apoptosis</em> is associated with a lower risk, which is again consistent (Figure <a href="personalization-chap.html#fig:PROFILE-METABRIC-Cox">5.8</a>). In a more schematic and visual way, it is possible to transform these continuous <em>Proliferation</em> and <em>Apoptosis</em> scores into binary indicators (using medians) and observe their impact on survival, as it has been done in previously mentioned studies <span class="citation">(Fey et al. <a href="#ref-fey2015signaling">2015</a>; Salvucci, Zakaria, et al. <a href="#ref-salvucci2019system">2019</a>)</span>. The shortcomings of such approaches will be discussed from a statistical point of view in Part III. We then observe the same behaviour for the two personalized scores (Figure <a href="personalization-chap.html#fig:PROFILE-METABRIC-Survival">5.9</a>A and B). Interestingly, if we combine the indicators to create groups that are expected to be of very bad prognosis (high <em>Proliferation</em>, low <em>Apoptosis</em>) or of very good prognosis (low <em>Proliferation</em>, high <em>Apoptosis</em>), we further discriminate patients and confirm the qualitatively meaningful interpretation of the personalized scores. It should be noted that the clinical validations presented here remain voluntarily simple and quite close to those proposed in similar articles. Discussions and statistical developments will be proposed in Part III.</p>
+<div class="figure" style="text-align: center"><span id="fig:PROFILE-METABRIC-Survival"></span>
+<img src="05-Personalized_files/figure-html/PROFILE-METABRIC-Survival-1.png" alt="Prognostic value of Proliferation scores for breast cancer patients in METABRIC cohort. (A) Survival curve for overall survival stratified with Proliferation scores from personalized models integrating mutations and RNA; scores have been binarized based on median and survival censored at 120 months. (B) Same with Apoptosis scores. (C) Survival curve stratified with combinations of Proliferation and Apoptosis scores, based on the same thresholds, and the corresponding number of patients at risk (D)." width="90%" />
+<p class="caption">
+Figure 5.9: <strong>Prognostic value of <em>Proliferation</em> scores for breast cancer patients in METABRIC cohort.</strong> (A) Survival curve for overall survival stratified with <em>Proliferation</em> scores from personalized models integrating mutations and RNA; scores have been binarized based on median and survival censored at 120 months. (B) Same with <em>Apoptosis</em> scores. (C) Survival curve stratified with combinations of <em>Proliferation</em> and <em>Apoptosis</em> scores, based on the same thresholds, and the corresponding number of patients at risk (D).
+</p>
+</div>
+
+</div>
+<div id="perspectives" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Perspectives</h3>
+<p>In summary, this kind of application of personalized models allows the <strong>integration of quite heterogeneous and moderately dimensional biological data in a constrained framework</strong> that orders the relationships between variables and guides interpretations. Comparison with external biological or clinical data then makes it possible to verify the absence of major contradictions in the definition of the model. However, the interest of these mechanistic approaches in this type of task appears as quite moderate compared to statistical models. The qualitative aspect is not necessarily compensated here by the integration of knowledge into the structure of the model, especially in examples that use an extremely broad logical model, which has not been specifically designed for the problems to which it is applied. It is then necessary to study the application of these personalized models to more suitable problems, in which the explicitly mechanistic nature of the models can be exploited.</p>
+
+<div class="conclubox">
+<h4 id="summary-5" class="unnumbered">Summary</h4>
+<p>Mechanistic models built from the literature are necessarily generic and not patient-specific, which hampers their clinical application. The PROFILE method proposes to personalize a generic knowledge-based structure with patient omics data. The restriction to only initial and static patient omics profiles calls for the use of a parsimonious modeling framework such as logical formalism. The method is then based on the application of patient-specific constraints to the generic model without fitting any parameter but interpreting <em>a priori</em> the biological effect of its alterations: nodes maintained forcibly in their states to translate mutations, or transitions between certain favoured states to translate RNA/protein over- or under-expression. Model simulations are thus induced to follow stochastic trajectories closer to the inferred patient states. The biological relevance of the personalized models thus obtained is validated a first time by verifying their capacity to recover certain characteristics of the systems studied such as differences in the proliferation of cell lines or differences in the prognosis of certain patients.</p>
+</div>
+<p></p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-adzhubei2010method">
+<p>Adzhubei, Ivan A., Steffen Schmidt, Leonid Peshkin, Vasily E. Ramensky, Anna Gerasimova, Peer Bork, Alexey S. Kondrashov, and Shamil R. Sunyaev. 2010. “A Method and Server for Predicting Damaging Missense Mutations.” <em>Nature Methods</em> 7 (4): 248–49. doi:<a href="https://doi.org/10.1038/nmeth0410-248">10.1038/nmeth0410-248</a>.</p>
+</div>
+<div id="ref-beal2019personalization">
+<p>Béal, Jonas, Arnau Montagud, Pauline Traynard, Emmanuel Barillot, and Laurence Calzone. 2019. “Personalization of Logical Models With Multi-Omics Data Allows Clinical Stratification of Patients.” <em>Frontiers in Physiology</em>. Frontiers Media S.A. doi:<a href="https://doi.org/10.3389/fphys.2018.01965">10.3389/fphys.2018.01965</a>.</p>
+</div>
+<div id="ref-beal2020personalized">
+<p>Béal, Jonas, Lorenzo Pantolini, Vincent Noël, Emmanuel Barillot, and Laurence Calzone. 2020. “Personalized Logical Models to Investigate Cancer Response to Braf Treatments in Melanomas and Colorectal Cancers.” <em>BioRxiv</em>. Cold Spring Harbor Laboratory.</p>
+</div>
+<div id="ref-chakravarty2017oncokb">
+<p>Chakravarty, Debyani, Jianjiong Gao, Sarah Phillips, Ritika Kundra, Hongxin Zhang, Jiaojiao Wang, Julia E. Rudolph, et al. 2017. “OncoKB: A Precision Oncology Knowledge Base.” <em>JCO Precision Oncology</em>, no. 1 (May): 1–16. doi:<a href="https://doi.org/10.1200/PO.17.00011">10.1200/PO.17.00011</a>.</p>
+</div>
+<div id="ref-curtis2012genomic">
+<p>Curtis, Christina, Sohrab P. Shah, Suet-Feung Chin, Gulisa Turashvili, Oscar M. Rueda, Mark J. Dunning, Doug Speed, et al. 2012. “The Genomic and Transcriptomic Architecture of 2,000 Breast Tumours Reveals Novel Subgroups.” <em>Nature</em> 486 (7403): 346–52. doi:<a href="https://doi.org/10.1038/nature10983">10.1038/nature10983</a>.</p>
+</div>
+<div id="ref-fey2015signaling">
+<p>Fey, Dirk, Melinda Halasz, Daniel Dreidax, Sean P Kennedy, Jordan F Hastings, Nora Rauch, Amaya Garcia Munoz, et al. 2015. “Signaling Pathway Models as Biomarkers: Patient-Specific Simulations of Jnk Activity Predict the Survival of Neuroblastoma Patients.” <em>Sci. Signal.</em> 8 (408). American Association for the Advancement of Science: ra130–ra130.</p>
+</div>
+<div id="ref-fumia2013boolean">
+<p>Fumia, Herman F, and Marcelo L Martins. 2013. “Boolean Network Model for Cancer Pathways: Predicting Carcinogenesis and Targeted Therapy Outcomes.” <em>PloS One</em> 8 (7). Public Library of Science.</p>
+</div>
+<div id="ref-hartigan1985dip">
+<p>Hartigan, J. A., and P. M. Hartigan. 1985. “The Dip Test of Unimodality.” <em>The Annals of Statistics</em> 13 (1): 70–84. doi:<a href="https://doi.org/10.1214/aos/1176346577">10.1214/aos/1176346577</a>.</p>
+</div>
+<div id="ref-kumar2009predicting">
+<p>Kumar, Prateek, Steven Henikoff, and Pauline C. Ng. 2009. “Predicting the Effects of Coding Non-Synonymous Variants on Protein Function Using the SIFT Algorithm.” <em>Nature Protocols</em> 4 (7): 1073. doi:<a href="https://doi.org/10.1038/nprot.2009.86">10.1038/nprot.2009.86</a>.</p>
+</div>
+<div id="ref-kurilov2020assessment">
+<p>Kurilov, Roman, Benjamin Haibe-Kains, and Benedikt Brors. 2020. “Assessment of Modelling Strategies for Drug Response Prediction in Cell Lines and Xenografts.” <em>Scientific Reports</em> 10 (1). Nature Publishing Group: 1–11.</p>
+</div>
+<div id="ref-van2019cell">
+<p>Meer, Dieudonne van der, Syd Barthorpe, Wanjuan Yang, Howard Lightfoot, Caitlin Hall, James Gilbert, Hayley E Francies, and Mathew J Garnett. 2019. “Cell Model Passports—a Hub for Clinical, Genetic and Functional Datasets of Preclinical Cancer Models.” <em>Nucleic Acids Research</em> 47 (D1). Oxford University Press: D923–D929.</p>
+</div>
+<div id="ref-mermel2011gistic">
+<p>Mermel, Craig H., Steven E. Schumacher, Barbara Hill, Matthew L. Meyerson, Rameen Beroukhim, and Gad Getz. 2011. “GISTIC2.0 Facilitates Sensitive and Confident Localization of the Targets of Focal Somatic Copy-Number Alteration in Human Cancers.” <em>Genome Biology</em> 12 (April): R41. doi:<a href="https://doi.org/10.1186/gb-2011-12-4-r41">10.1186/gb-2011-12-4-r41</a>.</p>
+</div>
+<div id="ref-miller2018ki67">
+<p>Miller, Iain, Mingwei Min, Chen Yang, Chengzhe Tian, Sara Gookin, Dylan Carter, and Sabrina L Spencer. 2018. “Ki67 Is a Graded Rather Than a Binary Marker of Proliferation Versus Quiescence.” <em>Cell Reports</em> 24 (5). Elsevier: 1105–12.</p>
+</div>
+<div id="ref-pereira2016somatic">
+<p>Pereira, Bernard, Suet-Feung Chin, Oscar M. Rueda, Hans-Kristian Moen Vollan, Elena Provenzano, Helen A. Bardwell, Michelle Pugh, et al. 2016. “The Somatic Mutation Profiles of 2,433 Breast Cancers Refines Their Genomic and Transcriptomic Landscapes.” <em>Nature Communications</em> 7 (May). doi:<a href="https://doi.org/10.1038/ncomms11479">10.1038/ncomms11479</a>.</p>
+</div>
+<div id="ref-salvucci2019system">
+<p>Salvucci, Manuela, Zaitun Zakaria, Steven Carberry, Amanda Tivnan, Volker Seifert, Donat Kögel, Brona M Murphy, and Jochen HM Prehn. 2019. “System-Based Approaches as Prognostic Tools for Glioblastoma.” <em>BMC Cancer</em> 19 (1). Springer: 1092.</p>
+</div>
+<div id="ref-stoll2012continuous">
+<p>Stoll, Gautier, Eric Viara, Emmanuel Barillot, and Laurence Calzone. 2012. “Continuous Time Boolean Modeling for Biological Signaling: Application of Gillespie Algorithm.” <em>BMC Systems Biology</em> 6 (1). BioMed Central: 116.</p>
+</div>
+<div id="ref-cancer2012comprehensive">
+<p>TCGA, and others. 2012. “Comprehensive Molecular Portraits of Human Breast Tumours.” <em>Nature</em> 490 (7418). Nature Publishing Group: 61.</p>
+</div>
+<div id="ref-teschendorff2006pack">
+<p>Teschendorff, Andrew E, Ali Naderi, Nuno L Barbosa-Morais, and Carlos Caldas. 2006. “PACK: Profile Analysis Using Clustering and Kurtosis to Find Molecular Classifiers in Cancer.” <em>Bioinformatics</em> 22 (18). Oxford University Press: 2269–75.</p>
+</div>
+<div id="ref-tokheim2016evaluating">
+<p>Tokheim, Collin J., Nickolas Papadopoulos, Kenneth W. Kinzler, Bert Vogelstein, and Rachel Karchin. 2016. “Evaluating the Evaluation of Cancer Driver Genes.” <em>Proceedings of the National Academy of Sciences</em> 113 (50): 14330–5. doi:<a href="https://doi.org/10.1073/pnas.1616440113">10.1073/pnas.1616440113</a>.</p>
+</div>
+<div id="ref-tomlins2005recurrent">
+<p>Tomlins, Scott A, Daniel R Rhodes, Sven Perner, Saravana M Dhanasekaran, Rohit Mehra, Xiao-Wei Sun, Sooryanarayana Varambally, et al. 2005. “Recurrent Fusion of Tmprss2 and Ets Transcription Factor Genes in Prostate Cancer.” <em>Science</em> 310 (5748). American Association for the Advancement of Science: 644–48.</p>
+</div>
+<div id="ref-wang2009bimodality">
+<p>Wang, Jing, Sijin Wen, W. Fraser Symmans, Lajos Pusztai, and Kevin R. Coombes. 2009. “The Bimodality Index: A Criterion for Discovering and Ranking Bimodal Signatures from Cancer Gene Expression Profiling Data.” <em>Cancer Informatics</em> 7 (August): 199–216.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="logical-modeling-principles-and-data-integration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="logical-drug-chap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PhdThesis.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

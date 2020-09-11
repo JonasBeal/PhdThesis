@@ -1,5 +1,5 @@
 
-# Personalization of logical models: method and prognostic validation {#chap5}
+# Personalization of logical models: method and prognostic validation {#personalization-chap}
 
 \epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}
 

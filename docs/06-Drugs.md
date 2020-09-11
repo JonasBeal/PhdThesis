@@ -1,5 +1,5 @@
 
-# Personalized logical models to study an interpret drug response {#chap6}
+# Personalized logical models to study an interpret drug response {#logical-drug-chap}
 
 \epigraph{"Il serait excellent que tout médecin ait la possibilité d'expérimenter un grand nombre de médicaments sur lui-même. Sa compréhension de leurs effets en serait tout autre."}{Mikhail Bulgakov (Morphine, 1927)}
 

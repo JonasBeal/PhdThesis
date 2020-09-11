@@ -1,5 +1,5 @@
 
-# Personalization of logical models: method and prognostic validation {#chap5}
+# Personalization of logical models: method and prognostic validation {#personalization-chap}
 
 ```{r, include=knitr::is_latex_output(), echo=FALSE}
 knitr::asis_output('\\epigraph{"All happy families are alike; each unhappy family is unhappy in its own way."}{Leo Tolstoy (Anna Karenina, 1877)}')
