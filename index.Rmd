@@ -44,7 +44,9 @@ description: "This is my PhD thesis."
 cat("# PhD Thesis{-}
 by [Jonas Béal](http://jonasbeal.github.io)
 
-Supervised by Laurence Calzone, Aurélien Latouche and Emmanuel Barillot,
+Supervised by Laurence Calzone, Aurélien Latouche and Emmanuel Barillot.
+
+**Phd Defense on September 23rd, 2020 at 2pm. A live streaming link will be posted here**: xxxxxxxx
 
 # {-}
   
