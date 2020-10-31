@@ -14,7 +14,7 @@ link-citations: yes
 bibliography: [bib/thesis.bib]
 #nocite: '@ito_control_2008' # references appearing in the references section but not in text
 
-description: "This is my PhD thesis."
+description: "Jonas Béal - PhD thesis in Genomics"
 ---
 
 

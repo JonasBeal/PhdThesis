@@ -14,7 +14,7 @@ link-citations: yes
 bibliography: [bib/thesis.bib]
 #nocite: '@ito_control_2008' # references appearing in the references section but not in text
 
-description: "This is my PhD thesis."
+description: "Jonas Béal - PhD thesis in Genomics"
 ---
 
 ```{r setup, include=FALSE}
@@ -46,7 +46,7 @@ by [Jonas Béal](http://jonasbeal.github.io)
 
 Supervised by Laurence Calzone, Aurélien Latouche and Emmanuel Barillot.
 
-**Phd Defense on September 23rd, 2020 at 2pm. A live streaming link will be posted here**: https://www.twitch.tv/jonasbeal
+**Phd Defense presentation (September 23rd, 2020) available on Youtube**: https://www.youtube.com/watch?v=x4mGaVpdZxA
 
 # {-}
   
