@@ -229,13 +229,13 @@
 % \otherinstitute{CEA Saclay}
 % \logootherinstitute{logo-institute}
 
-\jurymember{1}{Adeline LECLERQ-SAMSON}{Professeur, Université Grenoble Alpes}{Rapporteur}
+\jurymember{1}{Denis THIEFFRY}{Professeur, ENS, PSL}{Président}
 \jurymember{2}{Lodewyk WESSELS}{Professeur, Netherlands Cancer Institute}{Rapporteur}
-\jurymember{3}{Émilie LANOY}{Ingénieure de recherche, Gustave Roussy}{Examinateur}
-\jurymember{4}{Denis THIEFFRY}{Professeur, ENS, PSL}{Examinateur}
-\jurymember{5}{Emmanuel BARILLOT}{Directeur de Recherche, Institut Curie, PSL}{Directeur de thèse}
-\jurymember{6}{Aurélien LATOUCHE}{Professeur, Institut Curie, Cnam}{Directeur de thèse}
-\jurymember{7}{Laurence CALZONE}{Ingénieure de recherche, Institut Curie, PSL}{Membre invitée, co-encadrante de thèse}
+\jurymember{3}{Adeline LECLERQ-SAMSON}{Professeur, Université Grenoble Alpes}{Rapporteur}
+\jurymember{4}{Émilie LANOY}{Ingénieure de recherche, Gustave Roussy}{Examinateur}
+\jurymember{5}{Aurélien LATOUCHE}{Professeur, Institut Curie, Cnam}{Co-directeur de thèse}
+\jurymember{6}{Emmanuel BARILLOT}{Directeur de Recherche, Institut Curie, PSL}{Directeur de thèse}
+%\jurymember{7}{Laurence CALZONE}{Ingénieure de recherche, Institut Curie, PSL}{Membre invitée, co-encadrante de thèse}
 
 
 \frabstract{
@@ -270,6 +270,12 @@ All the methods and applications put forward a possible path from the design of 
 \enkeywords{ Modeling, Cancer, Mechanistic model, Biostatistics, Causal inference, Precision medicine.}
   
 \pagenumbering{roman}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -288,9 +294,12 @@ All the methods and applications put forward a possible path from the design of 
 \title{From the mechanistic modeling of signaling pathways in cancer to the
 interpretation of models and their contributions: clinical applications
 and statistical evaluation}
+\providecommand{\subtitle}[1]{}
+\subtitle{(De la modélisation mécanistique des voies de signalisation dans le
+cancer à l'interprétation des modèles et de leurs apports: applications
+cliniques et évaluation statistique)}
 \date{23/09/2020}
 
-\let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \maketitle
 
@@ -556,7 +565,7 @@ required for the provided figures\footnote{The thesis document, both in
 All materials are available on the dedicated GitHub repository
 (\url{https://github.com/JonasBeal/PhdThesis}).
 
-\BeginKnitrBlock{summarybox}
+\begin{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
@@ -595,7 +604,7 @@ conference on Intelligent Systems for Molecular Biology (ISMB/ECCB 2019,
 \href{https://www.youtube.com/watch?v=6EMBycoR0Ow}{Video}) and
 conference of International Society of Clinical Biostatistics (ISCB41
 2020).
-\EndKnitrBlock{summarybox}
+\end{summarybox}
 
 \clearemptydoublepage
 
@@ -1275,7 +1284,7 @@ I assure you it does nearly as well.''}\\
 Lewis Carroll, \emph{Sylvie and Bruno} (1893)
 \end{quote}
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -1287,7 +1296,7 @@ and relationships between the underlying entities of the system. These
 models will be called mechanistic and sometimes opposed to statistical
 models or machine learning models which do not presuppose \emph{a
 priori} knowledge on the internal mechanisms of the system.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \chapter{Cancer as deregulation of complex
 machinery}\label{cancer-as-deregulation-of-complex-machinery}
@@ -1831,7 +1840,7 @@ not only their internal organization but also their cross-talk
 of the kind of tools and data available to the modeler who wants to
 dissect more deeply the mechanisms involved in cancer.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-1}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -1847,7 +1856,7 @@ joint analysis of which allows us to better understand the complexity of
 the mechanisms involved. It should be noted that many physical models of
 cancer (cell lines) extend the field of experimentation and generate
 data.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \chapter{Mechanistic modeling of cancer: from complex disease to systems
 biology}\label{mechanistic-cancer}
@@ -2580,7 +2589,7 @@ connection based on logical formalism, before the third part proposes a
 more statistical evaluation of the prognostic and predictive values of
 the models presented in the previous parts.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-2}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -2598,7 +2607,7 @@ approaches are often proposed to translate tumor mechanisms. Most of
 these mechanistic models have a purely theoretical or investigative
 purpose but some are used to predict the evolution or response to cancer
 treatment, they are then respectively prognostic or predictive.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \part{Personalized logical models of
 cancer}\label{part-personalized-logical-models-of-cancer}
@@ -2648,7 +2657,7 @@ the name of logical modeling. Logical modeling in general will be
 detailed in this chapter before describing an original personalized
 approach in the next two chapters.
 
-\BeginKnitrBlock{summarybox}
+\begin{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-1}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
@@ -2657,7 +2666,7 @@ tools used thereafter. The content is taken entirely from the literature
 and the personal presentation that is made is the one that was used to
 introduce article \citet{beal2019personalization} and to organize review
 \citet{beal2020modelisation}.
-\EndKnitrBlock{summarybox}
+\end{summarybox}
 
 \section{Logical modeling paradigms for qualitative
 description}\label{logical-modeling-paradigms-for-qualitative-description}
@@ -3356,7 +3365,7 @@ predictions resulting from the modeling is then the ultimate stage in
 the validation of a logical model, completing the fruitful round trip
 between models and data.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-3}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -3371,7 +3380,7 @@ translate the stochastic diversity of heterogeneous cell populations.
 Finally, although discrete and theoretical in nature, logical models
 allow the use of quantitative experimental data, in order to support or
 validate their biological relevance.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \chapter{Personalization of logical models: method and prognostic
 validation}\label{personalization-chap}
@@ -3398,7 +3407,7 @@ integration of both discrete (mutations) and continuous data (RNA
 expression levels, proteins) based on the MaBoSS software, and leads to
 specific models of a cell line or a patient.
 
-\BeginKnitrBlock{summarybox}
+\begin{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-2}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
@@ -3408,7 +3417,7 @@ models from a single generic one. The principles of the method and some
 analyses on patient data have been comprehensively described in
 \citet{beal2019personalization} and briefly summarized in
 \citet{beal2020personalized}. Analyses on cell lines are unpublished.
-\EndKnitrBlock{summarybox}
+\end{summarybox}
 
 \section{From one generic model to data-specific models with PROFILE
 method}\label{from-one-generic-model-to-data-specific-models-with-profile-method}
@@ -4097,7 +4106,7 @@ then necessary to study the application of these personalized models to
 more suitable problems, in which the explicitly mechanistic nature of
 the models can be exploited.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-4}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -4118,7 +4127,7 @@ personalized models thus obtained is validated a first time by verifying
 their capacity to recover certain characteristics of the systems studied
 such as differences in the proliferation of cell lines or differences in
 the prognosis of certain patients.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \chapter{Personalized logical models to study an interpret drug
 response}\label{logical-drug-chap}
@@ -4139,7 +4148,7 @@ the numerous statistical models designed to predict the sensitivity of
 cell lines to treatements, what information do these personalized
 mechanistic models provide?
 
-\BeginKnitrBlock{summarybox}
+\begin{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-3}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
@@ -4160,7 +4169,7 @@ succinctly.
 Finally, the work on prostate cancer presented in a third section will
 be submitted soon. It is also a joint work, in which my participation
 focused on the application of the PROFILE method.
-\EndKnitrBlock{summarybox}
+\end{summarybox}
 
 \section{One step further with drugs}\label{one-step-further-with-drugs}
 
@@ -5180,7 +5189,7 @@ interest of logical formalism to make use of scarce and static data
 facilitating application to a wide range of issues and datasets in a way
 that is sometimes complementary to learning-based approaches.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-5}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -5201,7 +5210,7 @@ work in these differences in sensitivities. Finally, a comparison with
 machine learning approaches requiring training, such as random forests,
 shows the complementarity of mechanistic apparoches, particularly in the
 case of small sample sizes.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \part{Statistical quantification of the clinical impact of
 models}\label{part-statistical-quantification-of-the-clinical-impact-of-models}
@@ -5234,7 +5243,7 @@ to the direct use of the data used to construct or specify them? This
 chapter is intended as a statistical introduction for systems biologists
 to some of the problems encountered in model evaluation.
 
-\BeginKnitrBlock{summarybox}
+\begin{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-4}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
@@ -5243,7 +5252,7 @@ unpublished content for the second. The exploratory analyses presented
 below have helped to clarify considerations expressed qualitatively in
 previous chapters and formed the starting point for subsequent chapters
 on the clinical impact of cancer models.
-\EndKnitrBlock{summarybox}
+\end{summarybox}
 
 \section{Evaluation of models as
 biomarkers}\label{evaluation-of-models-as-biomarkers}
@@ -5786,7 +5795,7 @@ complementary way, one could imagine extending these analyses to other
 nodes of the model and not only to its output in order to dissect even
 more precisely the information processing within the model.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-6}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -5803,7 +5812,7 @@ transformation of biological data, including possibly other biomarkers.
 The prognostic or predictive value of mechanistic models must then be
 interpreted against the value of the biological data used to build or
 customize the models.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \chapter{Clinical evidence generation and causal
 inference}\label{causal-chap}
@@ -5838,14 +5847,14 @@ different types of treatments on patients. A more specific issue related
 to the evaluation of mechanistic models will be explored in the next
 chapter using these methods.
 
-\BeginKnitrBlock{summarybox}
+\begin{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-5}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
 This short chapter introduces the framework of causal inference based on
 the literature and the description of causal inference in the preprint
 \citet{beal2020causal}.
-\EndKnitrBlock{summarybox}
+\end{summarybox}
 
 \newcommand{\indep}{\perp \!\!\! \perp}
 
@@ -6220,7 +6229,7 @@ interpretations from them, under certain hypotheses, thus offering
 insights for \emph{a posteriori} statistical evaluation of specific
 therapeutic strategies.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-7}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -6231,7 +6240,7 @@ clinical trials specifically designed for this evaluation. In the case
 of observational data generated outside this framework, it is
 nevertheless possible to use causal inference methods to estimate, under
 certain conditions, the causal effect of the treatment.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \chapter{Causal inference for precision
 medicine}\label{chapter-precision}
@@ -6256,7 +6265,7 @@ future by the emergence of new computational models of cancer, whether
 mechanistic or not. \textbf{How then can we assess the relevance of
 these models in their ability to guide patient treatment?}
 
-\BeginKnitrBlock{summarybox}
+\begin{summarybox}
 \subsubsection*{Scientific content}\label{scientific-content-6}
 \addcontentsline{toc}{subsubsection}{Scientific content}
 
@@ -6266,7 +6275,7 @@ currently under revision and is available as a preprint in
 \citet{beal2020causal}. All code is available in the dedicated
 \href{https://github.com/JonasBeal/Causal_Precision_Medicine}{GitHub
 repository}
-\EndKnitrBlock{summarybox}
+\end{summarybox}
 
 \section{Precision medicine in
 oncology}\label{precision-medicine-in-oncology}
@@ -7309,7 +7318,7 @@ medical centre to another could also provide an example of confounding
 factor \(W\), included in the theoretical framework presented here but
 not used in applications.
 
-\BeginKnitrBlock{conclubox}
+\begin{conclubox}
 \subsubsection*{Summary}\label{summary-8}
 \addcontentsline{toc}{subsubsection}{Summary}
 
@@ -7333,7 +7342,7 @@ presented on preclinical data from PDX, which provides for each tumor
 the experimental response to different treatments. Access to these data,
 otherwise considered as counterfactual, allows to validate the capacity
 of the developed methods to reduce bias in the estimation of effects.
-\EndKnitrBlock{conclubox}
+\end{conclubox}
 
 \chapter*{Conclusion}\label{conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}

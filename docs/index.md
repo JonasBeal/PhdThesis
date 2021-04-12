@@ -1,5 +1,6 @@
 --- 
 title: 'From the mechanistic modeling of signaling pathways in cancer to the interpretation of models and their contributions: clinical applications and statistical evaluation'
+subtitle: '(De la modélisation mécanistique des voies de signalisation dans le cancer à l’interprétation des modèles et de leurs apports: applications cliniques et évaluation statistique)'
 author: "" # defined in _output.yml
 date: "23/09/2020" # defined in _output.yml
 site: bookdown::bookdown_site

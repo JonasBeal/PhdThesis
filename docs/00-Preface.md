@@ -15,7 +15,8 @@ Finally, the third and last part will look at how the clinical relevance of all 
 As for the form of this thesis, it exists both in PDF format and in an online HTML version (<https://jonasbeal.github.io/files/PhdThesis/>). The two versions are strictly identical but the second one contains some additional interactive graphs or applications. Both documents have been generated with R from the same source files that also include the data and code required for the provided figures^[The thesis document, both in its PDF version and its online HTML version, is based on the R package *bookdown* and inspired by the architecture proposed by Ladislas Nalborczyk in his [GitHub repository](https://github.com/lnalborczyk/phd_thesis)]. All materials are available on the dedicated GitHub repository (<https://github.com/JonasBeal/PhdThesis>).
   
 
-\BeginKnitrBlock{summarybox}<div class="summarybox">
+\BeginKnitrBlock{summarybox}
+
 #### Scientific content {-}
 
 Except for the first part, essentially introductory and based on scientific literature, the different chapters are based on original scientific work done during this thesis (2017-2020) and mentioned at the beginning of each chapter in a box similar to the this one.  
@@ -27,6 +28,7 @@ The main articles behind this thesis are indicated below with one published arti
 * Béal, Jonas, and Aurélien Latouche. "Causal inference with multiple versions of treatment and application to personalized medicine." arXiv preprint arXiv:2005.12427 (2020). [Link](https://arxiv.org/abs/2005.12427).  
   
 These three articles were described or completed in oral presentations, respectively in International Conference of Systems Biology 2018, conference on Intelligent Systems for Molecular Biology (ISMB/ECCB 2019, [Video](https://www.youtube.com/watch?v=6EMBycoR0Ow)) and conference of International Society of Clinical Biostatistics (ISCB41 2020).
-</div>\EndKnitrBlock{summarybox}
+
+\EndKnitrBlock{summarybox}
 
 \clearemptydoublepage
